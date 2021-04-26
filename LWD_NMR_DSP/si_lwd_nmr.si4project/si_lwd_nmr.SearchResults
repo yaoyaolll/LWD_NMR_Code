@@ -1,0 +1,4 @@
+---- PPDIF_Nrept_1C Matches (4 in 0 files) ----
+CheckReadTable in TableHandle.c (source) : 			PPDIF_Nrept_1C = *CheckTablePt;
+CheckReadTable in TableHandle.c (source) : 			if (PPDIF_Nrept_1C < 1 || PPDIF_Nrept_1C > 300)    // number
+CheckReadTable in TableHandle.c (source) : 				PPDIF_Nrept_1C = 25;
