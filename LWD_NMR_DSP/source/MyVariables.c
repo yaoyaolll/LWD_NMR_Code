@@ -28,19 +28,28 @@
 #include "MyFunctions.h"
 #include "MyVariables.h"
 
+// 高斯拟合变量
+float x[9];
+float y[9];
+float a;
+float b;
+float c;
+
 // 发送数据长度
 Uint16 modeDataSendLen;
 
 // 事件板状态字
 enum EB_STATE EventBoardState;
 	
-void (* eventFunc[])(void) = {IdleStateCtl, OperaStateCtl, CasDctStateCtl, AcqFinStateCtl};
+void (* eventFunc[])(void) = {0, IdleStateCtl, OperaStateCtl, CasDctStateCtl, AcqFinStateCtl};
 
 // 下述标志位通知模式函数进行事件处理
-Uint16 _caseingDetectFlag;	// 套管检测启动标志位
-Uint16 _operationFlag;		// 工作模式启动标志位
-Uint16 _modeDataSendFlag;	// 上传模式数据标志位
-	
+Uint16 _caseingDetectFlag = CLEAR;	// 套管检测启动标志位
+Uint16 _operationFlag = CLEAR;		// 工作模式启动标志位
+Uint16 _modeDataSendFlag = CLEAR;	// 上传模式数据标志位
+Uint16 _casingDetectErrFlag = CLEAR;	// 工作模式启动时，套管检测是否正常
+Uint16 _casingOrOperaFlag = CLEAR;	// 用作流程判断，在ACQ_FIN状态时，上一个状态是Casing还是Operation
+
 // 模式标志位
 Uint16 ScanModeFlag;	//scan mode flag：扫频模式标志，为1时要进入扫频模式
 Uint16 PPModeFlag;
@@ -54,7 +63,6 @@ Uint16 CenterFreq;         	// 工作频率
 Uint16 ScanDeltaFreq;      	// 扫描步进频率
 Uint16 NoiseAcqTime;       	// 噪声采集时间
 Uint16 NoiseAcqFreq;       	// 噪声采样率
-Uint16 HegtWidth;          	// 180度脉冲角度，仪器根据此角度计算出脉冲宽度
 Uint16 SiglAcqPrdNum;	   	// signal acquisition period number:回波信号采集周期数
 Uint16 SiglAcqFreqTim;     	// 回波采样率相对于回波信号频率的倍数，signal acquisition freqency times
 Uint16 EchoAcqWindowShift; 	// 回波采集时间窗偏移
@@ -272,7 +280,6 @@ Uint16 PulseReadBuf;
 Uint16 SingleModeFlag;
 Uint16 DEMn;
 Uint16 WidthCnt;
-Uint16 HegtWidth;		//回波发射脉冲宽度寄存器数值
 Uint16 SftWinWidth;		//采集窗时间滑动寄存器
 Uint16 DCFreqSel;
 Uint16 DCPulseWidth;
@@ -549,7 +556,6 @@ Uint16 RecSendTableCmdParaLen;	// 保存长度
 #pragma DATA_SECTION(SingleModeFlag    ,"MyVariablesZone");
 #pragma DATA_SECTION(DEMn              ,"MyVariablesZone");
 #pragma DATA_SECTION(WidthCnt          ,"MyVariablesZone");
-#pragma DATA_SECTION(HegtWidth         ,"MyVariablesZone");
 #pragma DATA_SECTION(SftWinWidth       ,"MyVariablesZone");
 #pragma DATA_SECTION(DCFreqSel         ,"MyVariablesZone");
 #pragma DATA_SECTION(DCPulseWidth      ,"MyVariablesZone");
@@ -694,7 +700,6 @@ Uint16 RecSendTableCmdParaLen;	// 保存长度
 #pragma DATA_SECTION(ScanDeltaFreq    ,"MyVariablesZone");
 #pragma DATA_SECTION(NoiseAcqTime     ,"MyVariablesZone");
 #pragma DATA_SECTION(NoiseAcqFreq     ,"MyVariablesZone");
-#pragma DATA_SECTION(HegtWidth        ,"MyVariablesZone");
 #pragma DATA_SECTION(SiglAcqPrdNum    ,"MyVariablesZone");
 #pragma DATA_SECTION(SiglAcqFreqTim   ,"MyVariablesZone");
 #pragma DATA_SECTION(EchoAcqWindowShift,"MyVariablesZone");
@@ -779,4 +784,11 @@ Uint16 RecSendTableCmdParaLen;	// 保存长度
 #pragma DATA_SECTION(_operationFlag   	,"MyVariablesZone"); 
 #pragma DATA_SECTION(_modeDataSendFlag  ,"MyVariablesZone"); 
 #pragma DATA_SECTION(modeDataSendLen   	,"MyVariablesZone");
+#pragma DATA_SECTION(_casingDetectErrFlag,"MyVariablesZone");
+#pragma DATA_SECTION(_casingOrOperaFlag	,"MyVariablesZone");
 
+#pragma DATA_SECTION(x                  ,"MyVariablesZone");
+#pragma DATA_SECTION(y                  ,"MyVariablesZone");
+#pragma DATA_SECTION(a                  ,"MyVariablesZone");
+#pragma DATA_SECTION(b                  ,"MyVariablesZone");
+#pragma DATA_SECTION(c                  ,"MyVariablesZone");

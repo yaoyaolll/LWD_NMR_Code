@@ -59,6 +59,13 @@ source/DSP281x_SysCtrl.obj: ../source/DSP281x_SysCtrl.c $(GEN_OPTS) $(GEN_HDRS)
 	@echo 'Finished building: $<'
 	@echo ' '
 
+source/GuassFitAlogrithm.obj: ../source/GuassFitAlogrithm.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: C2000 Compiler'
+	"D:/CCSv6/ccsv6/tools/compiler/c2000_6.2.7/bin/cl2000" -v28 -ml -mt --include_path="D:/CCSv6/ccsv6/tools/compiler/c2000_6.2.7/include" --include_path="E:/LWD_NMR/Code/LWD_NMR_DSP/include" -g --diag_warning=225 --display_error_number --diag_wrap=off --preproc_with_compile --preproc_dependency="source/GuassFitAlogrithm.pp" --obj_directory="source" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
 source/MainInitial.obj: ../source/MainInitial.c $(GEN_OPTS) $(GEN_HDRS)
 	@echo 'Building file: $<'
 	@echo 'Invoking: C2000 Compiler'

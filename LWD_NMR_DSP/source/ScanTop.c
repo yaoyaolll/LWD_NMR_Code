@@ -40,9 +40,7 @@ void ScanModeTop(void)
 		*(Uint16 *)DDS_FREQ_ADDR	= FreqScan;
 		ScanFreqOnce(); //扫频操作
 		CalSignal(ScanSignalNum);  //计算信号
-
-		SaveSTempPt = (Uint16 *)(SCANTABLE_START + MiniFreqCnt + 31);    //指向幅值地址
-		*SaveSTempPt = _IQint(_IQmpy(SignalAmpIQ,_IQ(10)));
+		SaveSignal(SCANTABLE_START + MiniFreqCnt + 31);
 	}
 
 	RELAY_ON_CLOSE = RelayAry[1]<<8;   //频带1继电器断开

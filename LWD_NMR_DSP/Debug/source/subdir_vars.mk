@@ -12,6 +12,7 @@ C_SRCS += \
 ../source/DSP281x_PieCtrl.c \
 ../source/DSP281x_PieVect.c \
 ../source/DSP281x_SysCtrl.c \
+../source/GuassFitAlogrithm.c \
 ../source/MainInitial.c \
 ../source/MyFPGAFunctions.c \
 ../source/MyFunctions.c \
@@ -36,6 +37,7 @@ OBJS += \
 ./source/DSP281x_PieCtrl.obj \
 ./source/DSP281x_PieVect.obj \
 ./source/DSP281x_SysCtrl.obj \
+./source/GuassFitAlogrithm.obj \
 ./source/MainInitial.obj \
 ./source/MyFPGAFunctions.obj \
 ./source/MyFunctions.obj \
@@ -60,6 +62,7 @@ C_DEPS += \
 ./source/DSP281x_PieCtrl.pp \
 ./source/DSP281x_PieVect.pp \
 ./source/DSP281x_SysCtrl.pp \
+./source/GuassFitAlogrithm.pp \
 ./source/MainInitial.pp \
 ./source/MyFPGAFunctions.pp \
 ./source/MyFunctions.pp \
@@ -84,6 +87,7 @@ C_DEPS__QUOTED += \
 "source\DSP281x_PieCtrl.pp" \
 "source\DSP281x_PieVect.pp" \
 "source\DSP281x_SysCtrl.pp" \
+"source\GuassFitAlogrithm.pp" \
 "source\MainInitial.pp" \
 "source\MyFPGAFunctions.pp" \
 "source\MyFunctions.pp" \
@@ -108,6 +112,7 @@ OBJS__QUOTED += \
 "source\DSP281x_PieCtrl.obj" \
 "source\DSP281x_PieVect.obj" \
 "source\DSP281x_SysCtrl.obj" \
+"source\GuassFitAlogrithm.obj" \
 "source\MainInitial.obj" \
 "source\MyFPGAFunctions.obj" \
 "source\MyFunctions.obj" \
@@ -132,6 +137,7 @@ C_SRCS__QUOTED += \
 "../source/DSP281x_PieCtrl.c" \
 "../source/DSP281x_PieVect.c" \
 "../source/DSP281x_SysCtrl.c" \
+"../source/GuassFitAlogrithm.c" \
 "../source/MainInitial.c" \
 "../source/MyFPGAFunctions.c" \
 "../source/MyFunctions.c" \

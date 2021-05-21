@@ -1,0 +1,32 @@
+Microsemi Libero Software
+Version: 11.9.6.7
+Release: v11.9 SP6
+
+'IDE_DESIGNERVIEW_ROOTDIR' set to
+'E:\LWD_NMR\Code\20201119\Libero_v11.9\2D_NMR_EC_FPGA_150205\designer'
+Info: The design NMR_TOP_1.adb was last modified by software version 11.9.6.7.
+Opened an existing Libero design NMR_TOP_1.adb.
+
+The Execute Script command succeeded ( 00:00:16 )
+Checking for software updates...
+This software version is up to date.
+
+ Netlist Reading Time = 1.0 seconds
+Imported the files:
+   E:\LWD_NMR\Code\20201119\Libero_v11.9\2D_NMR_EC_FPGA_150205\synthesis\NMR_TOP.edn
+
+E:\LWD_NMR\Code\20201119\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\NMR_TOP\NMR_TOP.pdc
+   E:\LWD_NMR\Code\20201119\Libero_v11.9\2D_NMR_EC_FPGA_150205\synthesis\NMR_TOP_sdc.sdc
+   E:\LWD_NMR\Code\20201119\Libero_v11.9\2D_NMR_EC_FPGA_150205\constraint\NMR_TOP_PIN_LOCKED.pdc
+
+The Import command succeeded ( 00:00:11 )
+Design saved to file
+E:\LWD_NMR\Code\20201119\Libero_v11.9\2D_NMR_EC_FPGA_150205\designer\impl3\NMR_TOP_1.adb.
+Error: Cannot execute the specified report command in this design state.
+
+The Report command failed ( 00:00:00 )
+Error: Failure when executing Tcl script. [ Line 1 ]
+
+The Execute Script command failed ( 00:00:00 )
+Design closed.
+

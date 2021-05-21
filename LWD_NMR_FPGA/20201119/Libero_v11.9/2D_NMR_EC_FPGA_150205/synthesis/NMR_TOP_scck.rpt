@@ -1,0 +1,35 @@
+# Synopsys Constraint Checker(syntax only), version mapact, Build 2172R, built Oct 30 2017
+# Copyright (C) 1994-2017 Synopsys, Inc. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
+
+# Written on Thu Jan 21 15:00:50 2021
+
+
+##### DESIGN INFO #######################################################
+
+Top View:                "NMR_TOP"
+Constraint File(s):      "E:\LWD_NMR\Code\20201119\Libero_v11.9\2D_NMR_EC_FPGA_150205\constraint\NMR_TOP_syn.sdc"
+
+#Run constraint checker to find more issues with constraints.
+#########################################################################
+
+
+
+No issues found in constraint syntax.
+
+
+
+Clock Summary
+*************
+
+Start                                                       Requested     Requested     Clock        Clock                   Clock
+Clock                                                       Frequency     Period        Type         Group                   Load 
+----------------------------------------------------------------------------------------------------------------------------------
+ClockManagement_0.clk_10k_0.clock_10khz                     1.0 MHz       1000.000      declared     1MHz                    6    
+ClockManagement_0.pllclk_0.GLA                              110.0 MHz     9.091         declared     100MHz                  1789 
+NMR_TOP|dds_clk_out                                         105.0 MHz     9.524         inferred     Inferred_clkgroup_0     140  
+Signal_Noise_Acq_0.noise_acq_0.n_rdclk_syn_0.n_rdclk        20.0 MHz      50.000        declared     DSP                     32   
+Signal_Noise_Acq_0.noise_acq_0.noiseclk_0.clkout            20.0 MHz      50.000        declared     50MHz                   42   
+Signal_Noise_Acq_0.signal_acq_0.s_clk_div4_0.clkout         20.0 MHz      50.000        declared     8MHz                    20   
+Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.clk_add     10.0 MHz      100.000       declared     8MHz                    164  
+ddsclkout                                                   40.0 MHz      25.000        declared     32MHz                   0    
+==================================================================================================================================

@@ -1,0 +1,15 @@
+*****************************************************************
+Pin Report - Date: Fri Jan 22 17:08:44 2021 Pinchecksum: NOT-AVAILABLE
+Product: Designer
+Release: v11.9 SP6
+Version: 11.9.6.7
+Design Name: top
+Family: ProASIC3
+Die: A3P1000
+Package: 208 PQFP
+*****************************************************************
+Port      |Pin |Fixed |Function       |I/O Std |Output Drive (mA) |Slew |Resistor Pull |Skew |Output Load (pF) |Use I/O Reg |Hot Swappable |
+----------|----|------|---------------|--------|------------------|-----|--------------|-----|-----------------|------------|--------------|
+clk1k      87   Yes    IO133RSB2       LVTTL    12                 High  None           No    35                No           No
+clk5MHz    86   Yes    IO135RSB2       LVTTL    12                 High  None           No    35                No           No
+clk100MHz  26   Yes    GFA0/IO207NPB3  LVTTL    ---                ---   None           ---   ---               No           No

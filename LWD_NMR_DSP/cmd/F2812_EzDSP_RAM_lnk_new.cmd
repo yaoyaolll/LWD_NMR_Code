@@ -77,6 +77,7 @@ PAGE 0 :
      BEGIN      	: origin = 0x3F7FF6, length = 0x000002
      RAMM0_0    	: origin = 0x000040, length = 0x000330
      PRAMH0      	: origin = 0x3f8000, length = 0x002000
+     RAML1_RSV    	: origin = 0x009000, length = 0x001000		/* 新增 */
      RAMOUT_0     	: origin = 0x100000, length = 0x01FFFF
      FLASH_E     	: origin = 0x3D8000, length = 0x01F000
      RESET       	: origin = 0x3FFFC0, length = 0x000002     /* part of boot ROM (MP/MCn=0) or XINTF zone 7 (MP/MCn=1) */
@@ -91,7 +92,7 @@ PAGE 1 :
    RAML0_CODE_USE   		: origin = 0x008000, length = 0x000100   /*存储参数表*/
    RAML0_CODE_USE1     		: origin = 0x008100, length = 0x000490	 /*存储噪声*/
    myzone   				: origin = 0x008590, length = 0x000A70
-   RAML1_RSV    			: origin = 0x009000, length = 0x001000
+   /*RAML1_RSV    			: origin = 0x009000, length = 0x001000*/
    RAMOUT_1_CODE_USE 		: origin = 0x120000, length = 0x01FFFF
    RAMOUT_2_RSV 			: origin = 0x140000, length = 0x03FFFF
    FPGA_RSV 				: origin = 0x080000, length = 0x080000
@@ -164,7 +165,7 @@ SECTIONS
 
 /*	ramfuncs	    : > PRAMH0,  	    PAGE = 0*/
 
-	.text		    : {*(.text)} >> PRAMH0,  	    PAGE = 0
+	.text		    : {*(.text)} >> PRAMH0 | RAML1_RSV,  	    PAGE = 0
 
 	Datatable 	    : > RAMOUT_0,       PAGE = 0
 

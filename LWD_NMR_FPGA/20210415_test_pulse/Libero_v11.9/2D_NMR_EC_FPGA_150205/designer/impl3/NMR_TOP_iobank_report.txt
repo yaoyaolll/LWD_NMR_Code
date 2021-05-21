@@ -1,0 +1,48 @@
+********************************************************************
+                            I/O Bank Report
+********************************************************************
+  
+Product: Designer
+Release: v11.9 SP6
+Version: 11.9.6.7
+Date: Thu Apr 15 11:22:07 2021
+Design Name: NMR_TOP  Family: ProASIC3  Die: A3P1000  Package: 208 PQFP
+
+
+I/O Function:
+
+    Type                                  | w/o register  | w/ register  | w/ DDR register
+    --------------------------------------|---------------|--------------|----------------
+    Input I/O                             | 38            | 0            | 0
+    Output I/O                            | 34            | 8            | 0
+    Bidirectional I/O                     | 16            | 0            | 0
+    Differential Input I/O Pairs          | 0             | 0            | 0
+    Differential Output I/O Pairs         | 0             | 0            | 0
+
+I/O Technology:
+
+                                    |   Voltages    |             I/Os
+    --------------------------------|-------|-------|-------|--------|--------------
+    I/O Standard(s)                 | Vcci  | Vref  | Input | Output | Bidirectional
+    --------------------------------|-------|-------|-------|--------|--------------
+    LVCMOS33                        | 3.30v | N/A   | 38    | 42     | 16
+
+I/O Bank Resource Usage:
+
+          |   Voltages    | Single I/Os  | Diff I/O Pairs |        Vref I/Os
+          |-------|-------|------|-------|-------|--------|------|-------|----------
+          | Vcci  | Vref  | Used | Total | Used  | Total  | Used | Total | Vref Pins
+    ------|-------|-------|------|-------|-------|--------|------|-------|----------
+    Bank0 | 3.30v | N/A   | 21   | 41    | 0     | 0      | N/A  | N/A   | N/A
+    Bank1 | 3.30v | N/A   | 30   | 36    | 0     | 16     | N/A  | N/A   | N/A
+    Bank2 | 3.30v | N/A   | 20   | 38    | 0     | 0      | N/A  | N/A   | N/A
+    Bank3 | 3.30v | N/A   | 25   | 39    | 0     | 19     | N/A  | N/A   | N/A
+
+I/O Voltage Usage:
+
+       Voltages    |     I/Os
+    -------|-------|------|-------
+     Vcci  | Vref  | Used | Total
+    -------|-------|------|-------
+     3.30v | N/A   | 96   | 154
+

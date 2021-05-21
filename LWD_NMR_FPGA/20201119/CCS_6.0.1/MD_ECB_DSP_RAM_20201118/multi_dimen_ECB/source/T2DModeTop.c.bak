@@ -1,0 +1,1445 @@
+//###########################################################################
+//
+// FILE:   T2DModeTop.c
+//
+// TITLE:  .
+//
+// DESCRIPTION:
+//
+//         Example initialization of system resources.
+//
+//###########################################################################
+//
+//  Ver | dd mmm yyyy | Who  | Description of changes
+// =====|=============|======|===============================================
+//  1.00| 11 Sep 2003 | L.H. | Changes since previous version (v.58 Alpha)
+//      |             |      | Additional comments added to explain the PLL
+//      |             |      |    initialization.
+//      |             |      | Changed the PLL initialization to take into
+//      |             |      |    account bit definitions for the PLLCR register
+//      |             |      | Removed DFT initialization - no longer needed 
+//      |             |      |    as of Rev C F2810/12 silicon
+//      |             |      | Split some operations into their own function
+//      |             |      |    for better modularity
+//      |             |      | Added pipeline flush after the Flash Init
+//###########################################################################
+#include "DSP281x_Device.h"     // DSP281x Headerfile Include File
+#include "DSP281x_Examples.h"   // DSP281x Examples Include File
+#include "MyHeaderFiles.h"
+
+void ST2DModeTop(void)
+{
+	ScaleMn	= 1;	
+	ScaleM	= 0;
+	EchoNum	= 2*(1+T2DCBWNreptA+T2DDEmn);
+	DataTotalNum	= 4*(T2DCPMGNeA+T2DDENeA*T2DDEmn+T2DCBWNeA*T2DCBWNreptA);
+	MiniStorAddr1	= MINITABLE_START+1;	
+	PhaseFlag		= POSITIVE;	   
+//A1+-
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSel];   //继电器闭合
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+
+	Tes	= (Uint32)100 * T2DDCTesA *  FPGA_COUNT;
+	Tel	= Tes;  
+	Ne	= T2DCPMGNeA;
+	Pulse90StoreAddr	= T2D_STORE_START+(Uint32)DataTotalNum+22;
+	PulseF180StoreAddr	= Pulse90StoreAddr+EchoNum;
+	PulseL180StoreAddr	= PulseF180StoreAddr+EchoNum;
+	EchoStorAddr		= T2D_STORE_START+(Uint32)10;
+	for (T2DCnt=0;T2DCnt<2;T2DCnt++)
+	{
+		if (T2DCnt==0)
+		{
+			InverseTurnFlag	= SET;
+		}
+		MiniScan(FreqAry[T2DFreqSel],MiniStorAddr1+9,MiniStorAddr1);
+		MiniStorAddr1+=12;
+		DCWorkOnce(T2DFreqSel);
+		//Delay(30);
+		if (T2DCnt==0)
+		{		
+			StartS1msModule(T2DCPMGTwA*FPGA_BC+T2D_REPAIR1-MINI_TEST);					
+		}
+		ChangePhase();
+		Pulse90StoreAddr++;
+		PulseF180StoreAddr++;
+		PulseL180StoreAddr++;		
+		EchoStorAddr += 2*T2DCPMGNeA;						  
+	}	
+//A8+-
+	Tes	= (Uint32)100 * T2DCBWTeAB *  FPGA_COUNT;
+	Tel	= Tes;  
+	Ne	= T2DCBWNeA;
+	for (T2DCnt=0;T2DCnt<2*T2DCBWNreptA;T2DCnt++)
+	{		
+		if (T2DCnt==0)
+		{
+			StartS1msModule(T2DCBWTwA*FPGA_BC+T2D_REPAIR1-MINI_TEST);			
+			MiniScan(FreqAry[T2DFreqSel],MiniStorAddr1+9,MiniStorAddr1);
+			MiniStorAddr1+= 12;
+		}
+		else
+		{
+			StartS1msModule(T2DCBWTwA*FPGA_BC-T2D_REPAIR2);
+		}
+		if (T2DCnt==(2*T2DCBWNreptA-1))
+		{
+			InverseTurnFlag	= SET;
+		}				
+		DCWorkOnce(T2DFreqSel);
+		Pulse90StoreAddr++;
+		PulseF180StoreAddr++;
+		PulseL180StoreAddr++;
+		EchoStorAddr += 2*T2DCBWNeA;
+		if (T2DCnt==T2DCBWNreptA-1)
+		{
+			ChangePhase();
+		}							
+	}
+	ChangePhase();
+
+//A2-A7+-
+	Tes	= (Uint32)100 * T2DDCTesA *  FPGA_COUNT;
+	Ne	= T2DDENeA;
+	ScaleM	= T2DDEm;
+	for (T2DCnt=2;T2DCnt<2*T2DDEmn+2;T2DCnt++)
+	{
+		StartS1msModule(T2DDETwA*FPGA_BC+T2D_REPAIR1-MINI_TEST);
+		MiniScan(FreqAry[T2DFreqSel],MiniStorAddr1+9,MiniStorAddr1);
+		MiniStorAddr1+= 12;		
+
+		Tel	= (Uint32)100 * T2DDETelAAry[(T2DCnt>>1)] *  FPGA_COUNT;
+		InverseTurnFlag	= SET;					
+		DCWorkOnce(T2DFreqSel);
+		ChangePhase();
+		Pulse90StoreAddr++;
+		PulseF180StoreAddr++;
+		PulseL180StoreAddr++;
+		EchoStorAddr += 2*T2DDENeA;	
+	}	  
+	
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSel]<<8;   
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+//other data store
+	SaveNTempPt	= (int *)T2D_STORE_START;
+	*SaveNTempPt	= 0x9695;
+	SaveNTempPt++;
+	*SaveNTempPt	= 0x0010;
+	SaveSixFreq();
+	SaveNTempPt++;
+	*SaveNTempPt	= T2DFreqSel;
+	SaveNTempPt++;
+	*SaveNTempPt	= 0x55AA;
+
+	SaveNTempPt	= (int *)(T2D_STORE_START+DataTotalNum+19);
+	SaveSTempPt	= (Uint16 *)(T2D_STORE_START+DataTotalNum+10);
+	ST2DMiniNum	= 3+2*T2DDEmn;
+	StoreMiniAryPt	= &ST2DMiniNum;
+	StoreMini(1,SaveNTempPt,SaveSTempPt); 
+
+	McbspSendData(T2D_STORE_START,DataTotalNum+3*EchoNum+22);    
+	return;		  
+}
+
+void DT2DModeTop(void)
+{
+	ScaleMn	= 1;	
+	ScaleM	= 0;
+	EchoNum	= 2*(2+T2DCBWNreptA+T2DCBWNreptB+2*T2DDEmn);
+	DataTotalNum = 4*(T2DCPMGNeA+T2DCPMGNeB+(T2DDENeA+T2DDENeB)*T2DDEmn+T2DCBWNeA*T2DCBWNreptA+T2DCBWNeB*T2DCBWNreptB);	
+	
+	MiniStorAddr1	= MINITABLE_START+1;
+	MiniStorAddr2	= MiniStorAddr1+180;
+	T2DTwMid1		= T2DCPMGTwB-T2DDETwA-1297;
+	T2DTwMid2		= T2DCPMGTwA-T2DTwMid1-1950;
+
+	PhaseFlag	= POSITIVE;	   
+//A1+
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[1]];   //继电器闭合
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+
+	MiniScan(FreqAry[T2DFreqSelAry[1]],MiniStorAddr1+9,MiniStorAddr1);
+
+	Tes	= (Uint32)100 * T2DDCTesA *  FPGA_COUNT;
+	Tel	= Tes;  
+	Ne	= T2DCPMGNeA;
+	Pulse90StoreAddr	= T2D_STORE_START+(Uint32)DataTotalNum+34;
+	PulseF180StoreAddr	= Pulse90StoreAddr+EchoNum;
+	PulseL180StoreAddr	= PulseF180StoreAddr+EchoNum;
+	EchoStorAddr		= T2D_STORE_START+(Uint32)10;
+	DCWorkOnce(T2DFreqSelAry[1]);	
+//A8+-
+	Tes	= (Uint32)100 * T2DCBWTeAB *  FPGA_COUNT;
+	Tel	= Tes;  
+	Ne	= T2DCBWNeA;
+	EchoStorAddr += 2*T2DCPMGNeA;
+	for (T2DCnt=0;T2DCnt<2*T2DCBWNreptA;T2DCnt++)
+	{		
+		if (T2DCnt==0)
+		{
+			StartS1msModule(T2DCBWTwA*FPGA_BC+T2D_REPAIR1-MINI_TEST);//the time parameter should be adjusted
+			MiniStorAddr1 += 12;
+			MiniScan(FreqAry[T2DFreqSelAry[1]],MiniStorAddr1+9,MiniStorAddr1);
+		}
+		else
+		{
+			StartS1msModule(T2DCBWTwA*FPGA_BC-T2D_REPAIR2);
+		}
+
+		Pulse90StoreAddr++;
+		PulseF180StoreAddr++;
+		PulseL180StoreAddr++;	
+		if (T2DCnt==(2*T2DCBWNreptA-1))
+		{
+			InverseTurnFlag	= SET;
+		}						
+		DCWorkOnce(T2DFreqSelAry[1]);
+					
+		EchoStorAddr += 2*T2DCBWNeA;
+		if (T2DCnt==T2DCBWNreptA-1)
+		{
+			ChangePhase();
+		}
+		
+	}
+	ChangePhase();
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[1]]<<8;   //继电器断开
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+//B1+
+	StartS1msModule(T2DTwMid2*FPGA_BC+1-MINI_TEST);//the time parameter should be adjusted
+		
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[2]];   //继电器闭合
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+
+	MiniScan(FreqAry[T2DFreqSelAry[2]],MiniStorAddr2+9,MiniStorAddr2);
+
+	Tes	= (Uint32)100 * T2DDETesB *  FPGA_COUNT;
+	Tel	= Tes;  
+	Ne	= T2DCPMGNeB;
+	Pulse90StoreAddr++;
+	PulseF180StoreAddr++;
+	PulseL180StoreAddr++;
+	DCWorkOnce(T2DFreqSelAry[2]);
+	EchoStorAddr += 2*T2DCPMGNeB;	
+//B8+-
+	Tes	= (Uint32)100 * T2DCBWTeAB *  FPGA_COUNT;
+	Tel	= Tes;  
+	Ne	= T2DCBWNeB;
+	for (T2DCnt=0;T2DCnt<2*T2DCBWNreptB;T2DCnt++)
+	{		
+		if (T2DCnt==0)
+		{
+			StartS1msModule(T2DCBWTwB*FPGA_BC+T2D_REPAIR1-MINI_TEST);
+			MiniStorAddr2 += 12;
+			MiniScan(FreqAry[T2DFreqSelAry[2]],MiniStorAddr2+9,MiniStorAddr2);
+		}
+		else
+		{
+			StartS1msModule(T2DCBWTwB*FPGA_BC-T2D_REPAIR2);
+		}
+		Pulse90StoreAddr++;
+		PulseF180StoreAddr++;
+		PulseL180StoreAddr++;	
+		if (T2DCnt==(2*T2DCBWNreptB-1))
+		{
+			InverseTurnFlag	= SET;
+		}						
+		DCWorkOnce(T2DFreqSelAry[2]);
+		EchoStorAddr += 2*T2DCBWNeB;
+		if (T2DCnt==T2DCBWNreptA-1)
+		{
+			ChangePhase();
+		}									
+	}
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[2]]<<8;   //继电器断开
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+//A1-
+	StartS1msModule(T2DTwMid1*FPGA_BC+1-MINI_TEST);
+
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[1]];   //继电器闭合
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+
+	MiniStorAddr1 += 12;
+	MiniScan(FreqAry[T2DFreqSelAry[1]],MiniStorAddr1+9,MiniStorAddr1);
+
+	PhaseFlag	= NEGATIVE;
+
+	Tes	= (Uint32)100 * T2DDCTesA *  FPGA_COUNT;
+	Tel	= Tes;  
+	Ne	= T2DCPMGNeA;
+	Pulse90StoreAddr++;
+	PulseF180StoreAddr++;
+	PulseL180StoreAddr++;
+	InverseTurnFlag	= SET;
+	DCWorkOnce(T2DFreqSelAry[1]);
+	EchoStorAddr += 2*T2DCPMGNeA;	
+	//Delay(30);
+//A2+
+	StartS1msModule(T2DDETwA*FPGA_BC+10-MINI_TEST);
+	MiniStorAddr1 += 12;
+	MiniScan(FreqAry[T2DFreqSelAry[1]],MiniStorAddr1+9,MiniStorAddr1);
+
+	PhaseFlag	= POSITIVE;
+
+	Tes	= (Uint32)100 * T2DDCTesA *  FPGA_COUNT;
+	Tel	= (Uint32)100 * T2DDETelAAry[1] *  FPGA_COUNT;  
+	Ne	= T2DDENeA;
+	ScaleM	= T2DDEm;
+	Pulse90StoreAddr++;
+	PulseF180StoreAddr++;
+	PulseL180StoreAddr++;
+	InverseTurnFlag	= SET;
+	DCWorkOnce(T2DFreqSelAry[1]);
+	EchoStorAddr += 2*T2DDENeA;	
+
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[1]]<<8;   //继电器断开
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+//B1-
+	StartS1msModule(1455-MINI_TEST);
+
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[2]];   //继电器闭合
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+
+	MiniStorAddr2 += 12;
+	MiniScan(FreqAry[T2DFreqSelAry[2]],MiniStorAddr2+9,MiniStorAddr2);
+
+	PhaseFlag	= NEGATIVE;
+
+	Tes	= (Uint32)100 * T2DDETesB *  FPGA_COUNT;
+	Tel	= Tes;  
+	Ne	= T2DCPMGNeB;
+	ScaleM	= 0;
+	Pulse90StoreAddr++;
+	PulseF180StoreAddr++;
+	PulseL180StoreAddr++;
+	InverseTurnFlag	= SET;
+	DCWorkOnce(T2DFreqSelAry[2]);
+	EchoStorAddr += 2*T2DCPMGNeB;	
+	//Delay(30);
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[2]]<<8;   //继电器断开
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+//A2-
+	StartS1msModule(2039-MINI_TEST);
+
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[1]];   //继电器闭合
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+
+	MiniStorAddr1 += 12;
+	MiniScan(FreqAry[T2DFreqSelAry[1]],MiniStorAddr1+9,MiniStorAddr1);
+
+	Tes	= (Uint32)100 * T2DDCTesA *  FPGA_COUNT;
+	Tel	= (Uint32)100 * T2DDETelAAry[1] *  FPGA_COUNT;  
+	Ne	= T2DDENeA;
+	ScaleM	= T2DDEm;
+	Pulse90StoreAddr++;
+	PulseF180StoreAddr++;
+	PulseL180StoreAddr++;
+	InverseTurnFlag	= SET;
+	DCWorkOnce(T2DFreqSelAry[1]);
+	EchoStorAddr += 2*T2DDENeA;	
+	//Delay(30);
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[1]]<<8;   //继电器断开
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+//B2+
+	StartS1msModule(1440-MINI_TEST);
+
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[2]];   //继电器断开
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+
+	MiniStorAddr2 += 12;
+	MiniScan(FreqAry[T2DFreqSelAry[2]],MiniStorAddr2+9,MiniStorAddr2);
+
+	PhaseFlag	= POSITIVE;
+
+	Tes	= (Uint32)100 * T2DDETesB *  FPGA_COUNT;
+	Tel	= (Uint32)100 * T2DDETelBAry[1] *  FPGA_COUNT;  
+	Ne	= T2DDENeB;
+	Pulse90StoreAddr++;
+	PulseF180StoreAddr++;
+	PulseL180StoreAddr++;
+	InverseTurnFlag	= SET;
+	DCWorkOnce(T2DFreqSelAry[2]);
+	EchoStorAddr += 2*T2DDENeB;	
+	//Delay(30);
+
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[2]]<<8;   //继电器断开
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+//A3+
+	StartS1msModule(2039-MINI_TEST);
+
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[1]];   //继电器断开
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+
+	MiniStorAddr1 += 12;
+	MiniScan(FreqAry[T2DFreqSelAry[1]],MiniStorAddr1+9,MiniStorAddr1);
+
+	Tes	= (Uint32)100 * T2DDCTesA *  FPGA_COUNT;
+	Tel	= (Uint32)100 * T2DDETelAAry[2] *  FPGA_COUNT;  
+	Ne	= T2DDENeA;
+	Pulse90StoreAddr++;
+	PulseF180StoreAddr++;
+	PulseL180StoreAddr++;
+	InverseTurnFlag	= SET;
+	DCWorkOnce(T2DFreqSelAry[1]);
+	EchoStorAddr += 2*T2DDENeA;	
+	//Delay(30);
+
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[1]]<<8;   //继电器断开
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+//B2-
+	StartS1msModule(1430-MINI_TEST);
+
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[2]];   //继电器断开
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+
+	MiniStorAddr2 += 12;
+	MiniScan(FreqAry[T2DFreqSelAry[2]],MiniStorAddr2+9,MiniStorAddr2);
+
+	PhaseFlag	= NEGATIVE;
+
+	Tes	= (Uint32)100 * T2DDETesB *  FPGA_COUNT;
+	Tel	= (Uint32)100 * T2DDETelBAry[1] *  FPGA_COUNT;  
+	Ne	= T2DDENeB;
+	Pulse90StoreAddr++;
+	PulseF180StoreAddr++;
+	PulseL180StoreAddr++;
+	InverseTurnFlag	= SET;
+	DCWorkOnce(T2DFreqSelAry[2]);
+	EchoStorAddr += 2*T2DDENeB;	
+	//Delay(30);
+
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[2]]<<8;   //继电器断开
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+//A3-
+	StartS1msModule(2049-MINI_TEST);
+
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[1]];   //继电器断开
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+
+	MiniStorAddr1 += 12;
+	MiniScan(FreqAry[T2DFreqSelAry[1]],MiniStorAddr1+9,MiniStorAddr1);
+
+	Tes	= (Uint32)100 * T2DDCTesA *  FPGA_COUNT;
+	Tel	= (Uint32)100 * T2DDETelAAry[2] *  FPGA_COUNT;  
+	Ne	= T2DDENeA;
+	Pulse90StoreAddr++;
+	PulseF180StoreAddr++;
+	PulseL180StoreAddr++;
+	InverseTurnFlag	= SET;
+	DCWorkOnce(T2DFreqSelAry[1]);
+	EchoStorAddr += 2*T2DDENeA;	
+	//Delay(30);
+
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[1]]<<8;   //继电器断开
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+//B3+
+	StartS1msModule(1420-MINI_TEST);
+
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[2]];   //继电器断开
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+
+	MiniStorAddr2 += 12;
+	MiniScan(FreqAry[T2DFreqSelAry[2]],MiniStorAddr2+9,MiniStorAddr2);
+
+	PhaseFlag	= POSITIVE;
+
+	Tes	= (Uint32)100 * T2DDETesB *  FPGA_COUNT;
+	Tel	= (Uint32)100 * T2DDETelBAry[2] *  FPGA_COUNT;  
+	Ne	= T2DDENeB;
+	Pulse90StoreAddr++;
+	PulseF180StoreAddr++;
+	PulseL180StoreAddr++;
+	InverseTurnFlag	= SET;
+	DCWorkOnce(T2DFreqSelAry[2]);
+	EchoStorAddr += 2*T2DDENeB;	
+	//Delay(30);
+
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[2]]<<8;   //继电器断开
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+//A4+
+	StartS1msModule(2049-MINI_TEST);
+
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[1]];   //继电器断开
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+
+	MiniStorAddr1 += 12;
+	MiniScan(FreqAry[T2DFreqSelAry[1]],MiniStorAddr1+9,MiniStorAddr1);
+
+	Tes	= (Uint32)100 * T2DDCTesA *  FPGA_COUNT;
+	Tel	= (Uint32)100 * T2DDETelAAry[3] *  FPGA_COUNT;  
+	Ne	= T2DDENeA;
+	Pulse90StoreAddr++;
+	PulseF180StoreAddr++;
+	PulseL180StoreAddr++;
+	InverseTurnFlag	= SET;
+	DCWorkOnce(T2DFreqSelAry[1]);
+	EchoStorAddr += 2*T2DDENeA;	
+	//Delay(30);
+
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[1]]<<8;   //继电器断开
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+//B3-
+	StartS1msModule(1400-MINI_TEST);
+
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[2]];   //继电器断开
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+
+	MiniStorAddr2 += 12;
+	MiniScan(FreqAry[T2DFreqSelAry[2]],MiniStorAddr2+9,MiniStorAddr2);
+
+	PhaseFlag	= NEGATIVE;
+
+	Tes	= (Uint32)100 * T2DDETesB *  FPGA_COUNT;
+	Tel	= (Uint32)100 * T2DDETelBAry[2] *  FPGA_COUNT;  
+	Ne	= T2DDENeB;
+	Pulse90StoreAddr++;
+	PulseF180StoreAddr++;
+	PulseL180StoreAddr++;
+	InverseTurnFlag	= SET;
+	DCWorkOnce(T2DFreqSelAry[2]);
+	EchoStorAddr += 2*T2DDENeB;	
+	//Delay(30);
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[2]]<<8;   //继电器断开
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+//A4-
+	StartS1msModule(2069-MINI_TEST);
+
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[1]];   //继电器断开
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+
+	MiniStorAddr1 += 12;
+	MiniScan(FreqAry[T2DFreqSelAry[1]],MiniStorAddr1+9,MiniStorAddr1);
+
+	Tes	= (Uint32)100 * T2DDCTesA *  FPGA_COUNT;
+	Tel	= (Uint32)100 * T2DDETelAAry[3] *  FPGA_COUNT;  
+	Ne	= T2DDENeA;
+	Pulse90StoreAddr++;
+	PulseF180StoreAddr++;
+	PulseL180StoreAddr++;
+	InverseTurnFlag	= SET;
+	DCWorkOnce(T2DFreqSelAry[1]);
+	EchoStorAddr += 2*T2DDENeA;	
+	//Delay(30);
+
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[1]]<<8;   //继电器断开
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+//B4+
+	StartS1msModule(1380-MINI_TEST);
+
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[2]];   //继电器断开
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+
+	MiniStorAddr2 += 12;
+	MiniScan(FreqAry[T2DFreqSelAry[2]],MiniStorAddr2+9,MiniStorAddr2);
+
+	PhaseFlag	= POSITIVE;
+
+	Tes	= (Uint32)100 * T2DDETesB *  FPGA_COUNT;
+	Tel	= (Uint32)100 * T2DDETelBAry[3] *  FPGA_COUNT;  
+	Ne	= T2DDENeB;
+	Pulse90StoreAddr++;
+	PulseF180StoreAddr++;
+	PulseL180StoreAddr++;
+	InverseTurnFlag	= SET;
+	DCWorkOnce(T2DFreqSelAry[2]);
+	EchoStorAddr += 2*T2DDENeB;	
+	//Delay(30);
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[2]]<<8;   //继电器断开
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+//A5+
+	StartS1msModule(2069-MINI_TEST);
+
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[1]];   //继电器断开
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+
+	MiniStorAddr1 += 12;
+	MiniScan(FreqAry[T2DFreqSelAry[1]],MiniStorAddr1+9,MiniStorAddr1);
+
+	Tes	= (Uint32)100 * T2DDCTesA *  FPGA_COUNT;
+	Tel	= (Uint32)100 * T2DDETelAAry[4] *  FPGA_COUNT;  
+	Ne	= T2DDENeA;
+	Pulse90StoreAddr++;
+	PulseF180StoreAddr++;
+	PulseL180StoreAddr++;
+	InverseTurnFlag	= SET;
+	DCWorkOnce(T2DFreqSelAry[1]);
+	EchoStorAddr += 2*T2DDENeA;	
+	//Delay(30);
+
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[1]]<<8;   //继电器断开
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+//B4-
+	StartS1msModule(1350-MINI_TEST);
+
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[2]];   //继电器断开
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+
+	MiniStorAddr2 += 12;
+	MiniScan(FreqAry[T2DFreqSelAry[2]],MiniStorAddr2+9,MiniStorAddr2);
+
+	PhaseFlag	= NEGATIVE;
+
+	Tes	= (Uint32)100 * T2DDETesB *  FPGA_COUNT;
+	Tel	= (Uint32)100 * T2DDETelBAry[3] *  FPGA_COUNT;  
+	Ne	= T2DDENeB;
+	Pulse90StoreAddr++;
+	PulseF180StoreAddr++;
+	PulseL180StoreAddr++;
+	InverseTurnFlag	= SET;
+	DCWorkOnce(T2DFreqSelAry[2]);
+	EchoStorAddr += 2*T2DDENeB;	
+	//Delay(30);
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[2]]<<8;   //继电器断开
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+//A5-
+	StartS1msModule(2099-MINI_TEST);
+
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[1]];   //继电器断开
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+
+	MiniStorAddr1 += 12;
+	MiniScan(FreqAry[T2DFreqSelAry[1]],MiniStorAddr1+9,MiniStorAddr1);
+
+	Tes	= (Uint32)100 * T2DDCTesA *  FPGA_COUNT;
+	Tel	= (Uint32)100 * T2DDETelAAry[4] *  FPGA_COUNT;  
+	Ne	= T2DDENeA;
+	Pulse90StoreAddr++;
+	PulseF180StoreAddr++;
+	PulseL180StoreAddr++;
+	InverseTurnFlag	= SET;
+	DCWorkOnce(T2DFreqSelAry[1]);
+	EchoStorAddr += 2*T2DDENeA;	
+	//Delay(30);
+
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[1]]<<8;   //继电器断开
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+//B5+
+	StartS1msModule(1320-MINI_TEST);
+
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[2]];   //继电器断开
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+
+	MiniStorAddr2 += 12;
+	MiniScan(FreqAry[T2DFreqSelAry[2]],MiniStorAddr2+9,MiniStorAddr2);
+
+	PhaseFlag	= POSITIVE;
+
+	Tes	= (Uint32)100 * T2DDETesB *  FPGA_COUNT;
+	Tel	= (Uint32)100 * T2DDETelBAry[4] *  FPGA_COUNT;  
+	Ne	= T2DDENeB;
+	Pulse90StoreAddr++;
+	PulseF180StoreAddr++;
+	PulseL180StoreAddr++;
+	InverseTurnFlag	= SET;
+	DCWorkOnce(T2DFreqSelAry[2]);
+	EchoStorAddr += 2*T2DDENeB;	
+	//Delay(30);
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[2]]<<8;   //继电器断开
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+//A6+
+	StartS1msModule(2099-MINI_TEST);
+
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[1]];   //继电器断开
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+
+	MiniStorAddr1 += 12;
+	MiniScan(FreqAry[T2DFreqSelAry[1]],MiniStorAddr1+9,MiniStorAddr1);
+
+	Tes	= (Uint32)100 * T2DDCTesA *  FPGA_COUNT;
+	Tel	= (Uint32)100 * T2DDETelAAry[5] *  FPGA_COUNT;  
+	Ne	= T2DDENeA;
+	Pulse90StoreAddr++;
+	PulseF180StoreAddr++;
+	PulseL180StoreAddr++;
+	InverseTurnFlag	= SET;
+	DCWorkOnce(T2DFreqSelAry[1]);
+	EchoStorAddr += 2*T2DDENeA;	
+	//Delay(30);
+
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[1]]<<8;   //继电器断开
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+//B5-
+	StartS1msModule(1280-MINI_TEST);
+
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[2]];   //继电器断开
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+				 
+	MiniStorAddr2 += 12;
+	MiniScan(FreqAry[T2DFreqSelAry[2]],MiniStorAddr2+9,MiniStorAddr2);
+
+	PhaseFlag	= NEGATIVE;
+
+	Tes	= (Uint32)100 * T2DDETesB *  FPGA_COUNT;
+	Tel	= (Uint32)100 * T2DDETelBAry[4] *  FPGA_COUNT;  
+	Ne	= T2DDENeB;
+	Pulse90StoreAddr++;
+	PulseF180StoreAddr++;
+	PulseL180StoreAddr++;
+	InverseTurnFlag	= SET;
+	DCWorkOnce(T2DFreqSelAry[2]);
+	EchoStorAddr += 2*T2DDENeB;	
+	//Delay(30);
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[2]]<<8;   //继电器断开
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+//A6-
+	StartS1msModule(2139-MINI_TEST);
+
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[1]];   //继电器断开
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+
+	MiniStorAddr1 += 12;
+	MiniScan(FreqAry[T2DFreqSelAry[1]],MiniStorAddr1+9,MiniStorAddr1);
+
+	Tes	= (Uint32)100 * T2DDCTesA *  FPGA_COUNT;
+	Tel	= (Uint32)100 * T2DDETelAAry[5] *  FPGA_COUNT;  
+	Ne	= T2DDENeA;
+	Pulse90StoreAddr++;
+	PulseF180StoreAddr++;
+	PulseL180StoreAddr++;
+	InverseTurnFlag	= SET;
+	DCWorkOnce(T2DFreqSelAry[1]);
+	EchoStorAddr += 2*T2DDENeA;	
+	//Delay(30);
+
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[1]]<<8;   //继电器断开
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+//B6+
+	StartS1msModule(1240-MINI_TEST);
+
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[2]];   //继电器断开
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+
+	MiniStorAddr2 += 12;
+	MiniScan(FreqAry[T2DFreqSelAry[2]],MiniStorAddr2+9,MiniStorAddr2);
+
+	PhaseFlag	= POSITIVE;
+
+	Tes	= (Uint32)100 * T2DDETesB *  FPGA_COUNT;
+	Tel	= (Uint32)100 * T2DDETelBAry[5] *  FPGA_COUNT;  
+	Ne	= T2DDENeB;
+	Pulse90StoreAddr++;
+	PulseF180StoreAddr++;
+	PulseL180StoreAddr++;
+	InverseTurnFlag	= SET;
+	DCWorkOnce(T2DFreqSelAry[2]);
+	EchoStorAddr += 2*T2DDENeB;	
+	//Delay(30);
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[2]]<<8;   //继电器断开
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+//A7+
+	StartS1msModule(2139-MINI_TEST);
+
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[1]];   //继电器断开
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+
+	MiniStorAddr1 += 12;
+	MiniScan(FreqAry[T2DFreqSelAry[1]],MiniStorAddr1+9,MiniStorAddr1);
+
+	Tes	= (Uint32)100 * T2DDCTesA *  FPGA_COUNT;
+	Tel	= (Uint32)100 * T2DDETelAAry[6] *  FPGA_COUNT;  
+	Ne	= T2DDENeA;
+	Pulse90StoreAddr++;
+	PulseF180StoreAddr++;
+	PulseL180StoreAddr++;
+	InverseTurnFlag	= SET;
+	DCWorkOnce(T2DFreqSelAry[1]);
+	EchoStorAddr += 2*T2DDENeA;	
+	//Delay(30);
+
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[1]]<<8;   //继电器断开
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+//B6-
+	StartS1msModule(1120-MINI_TEST);
+
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[2]];   //继电器断开
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+
+	MiniStorAddr2 += 12;
+	MiniScan(FreqAry[T2DFreqSelAry[2]],MiniStorAddr2+9,MiniStorAddr2);
+
+	PhaseFlag	= NEGATIVE;
+
+	Tes	= (Uint32)100 * T2DDETesB *  FPGA_COUNT;
+	Tel	= (Uint32)100 * T2DDETelBAry[5] *  FPGA_COUNT;  
+	Ne	= T2DDENeB;
+	Pulse90StoreAddr++;
+	PulseF180StoreAddr++;
+	PulseL180StoreAddr++;
+	InverseTurnFlag	= SET;
+	DCWorkOnce(T2DFreqSelAry[2]);
+	EchoStorAddr += 2*T2DDENeB;	
+	//Delay(30);
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[2]]<<8;   //继电器断开
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+//A7-
+	StartS1msModule(2259-MINI_TEST);
+
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[1]];   //继电器断开
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+
+	MiniStorAddr1 += 12;
+	MiniScan(FreqAry[T2DFreqSelAry[1]],MiniStorAddr1+9,MiniStorAddr1);
+
+	Tes	= (Uint32)100 * T2DDCTesA *  FPGA_COUNT;
+	Tel	= (Uint32)100 * T2DDETelAAry[6] *  FPGA_COUNT;  
+	Ne	= T2DDENeA;
+	Pulse90StoreAddr++;
+	PulseF180StoreAddr++;
+	PulseL180StoreAddr++;
+	InverseTurnFlag	= SET;
+	DCWorkOnce(T2DFreqSelAry[1]);
+	EchoStorAddr += 2*T2DDENeA;	
+	//Delay(30);
+
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[1]]<<8;   //继电器断开
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+//B7+-
+	StartS1msModule(1001-MINI_TEST);
+
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[2]];   //继电器断开
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+
+	MiniStorAddr2 += 12;
+	MiniScan(FreqAry[T2DFreqSelAry[2]],MiniStorAddr2+9,MiniStorAddr2);
+
+	PhaseFlag	= POSITIVE;
+
+	Tes	= (Uint32)100 * T2DDETesB *  FPGA_COUNT;
+	Tel	= (Uint32)100 * T2DDETelBAry[6] *  FPGA_COUNT;  
+	Ne	= T2DDENeB;
+	Pulse90StoreAddr++;
+	PulseF180StoreAddr++;
+	PulseL180StoreAddr++;
+	InverseTurnFlag	= SET;
+	DCWorkOnce(T2DFreqSelAry[2]);
+	EchoStorAddr += 2*T2DDENeB;	
+	//Delay(30);
+	StartS1msModule(T2DDETwB*FPGA_BC+T2D_REPAIR1-MINI_TEST);
+	MiniStorAddr2 += 12;
+	MiniScan(FreqAry[T2DFreqSelAry[2]],MiniStorAddr2+9,MiniStorAddr2);
+
+	PhaseFlag	= NEGATIVE;
+
+	Tes	= (Uint32)100 * T2DDETesB *  FPGA_COUNT;
+	Tel	= (Uint32)100 * T2DDETelBAry[6] *  FPGA_COUNT;  
+	Ne	= T2DDENeB;
+	Pulse90StoreAddr++;
+	PulseF180StoreAddr++;
+	PulseL180StoreAddr++;
+	InverseTurnFlag	= SET;
+	DCWorkOnce(T2DFreqSelAry[2]);	
+	//Delay(30);
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[2]]<<8;   //继电器断开
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+//store data
+	SaveNTempPt	= (int *)T2D_STORE_START;
+	*SaveNTempPt	= 0x9695;
+	SaveNTempPt++;
+	*SaveNTempPt	= 0x0020;
+	SaveSixFreq();
+	SaveNTempPt++;
+	*SaveNTempPt	= T2DFreqSel;
+	SaveNTempPt++;
+	*SaveNTempPt	= 0x55AA;
+
+	SaveNTempPt	= (int *)(T2D_STORE_START+DataTotalNum+28);
+	SaveSTempPt	= (Uint16 *)(T2D_STORE_START+DataTotalNum+10);
+
+	StoreMiniAryPt	= &DT2DMiniNumAry[0];
+	StoreMini(2,SaveNTempPt,SaveSTempPt); 
+
+	McbspSendData(T2D_STORE_START,DataTotalNum+3*EchoNum+34);    
+	return;	
+}
+
+void MT2DModeTop(void)
+{
+	ScaleMn	= 1;
+	ScaleM	= 0;		
+	EchoNum	= 2*(1+T2DCBWNreptA+2*T2DDEmn);
+	DataTotalNum = 4*(T2DCPMGNeA+T2DCBWNeA*T2DCBWNreptA+2*T2DDENeBC*T2DDEmn);	
+	
+	MiniStorAddr1	= MINITABLE_START+1;
+	MiniStorAddr2	= MiniStorAddr1+36;
+	MiniStorAddr3	= MiniStorAddr2+24*T2DDEmn;
+	T2DTwMid1		= T2DCPMGTwA-4893;
+
+	Pulse90StoreAddr	= T2D_STORE_START+(Uint32)DataTotalNum+46;
+	PulseF180StoreAddr	= Pulse90StoreAddr+EchoNum;
+	PulseL180StoreAddr	= PulseF180StoreAddr+EchoNum;
+	EchoStorAddr		= T2D_STORE_START+(Uint32)10;
+
+	PhaseFlag	= POSITIVE;	 
+//A1+
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[1]];   
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+	
+	MiniScan(FreqAry[T2DFreqSelAry[1]],MiniStorAddr1+9,MiniStorAddr1);
+
+	Tes	= (Uint32)100 * T2DDCTes *  FPGA_COUNT;
+	Tel	= Tes;  
+	Ne	= T2DCPMGNeA;
+	InverseTurnFlag	= SET;
+	DCWorkOnce(T2DFreqSelAry[1]);
+	EchoStorAddr += 2*T2DCPMGNeA;
+	//Delay(30);
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[1]]<<8;   
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+//B1+-
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[2]];   
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+
+	StartS1msModule(1000-MINI_TEST);
+
+	Tes	= (Uint32)100 * T2DDCTes *  FPGA_COUNT;
+	Tel	= (Uint32)100 * T2DDETelBAry[1] *  FPGA_COUNT;  
+	Ne	= T2DDENeBC;
+	ScaleM	= T2DDEm;
+
+	for (T2DCnt=0;T2DCnt<2;T2DCnt++	)
+	{ 		
+		MiniScan(FreqAry[T2DFreqSelAry[2]],MiniStorAddr2+9,MiniStorAddr2);
+
+		Pulse90StoreAddr++;
+		PulseF180StoreAddr++;
+		PulseL180StoreAddr++;
+		InverseTurnFlag	= SET;
+		DCWorkOnce(T2DFreqSelAry[2]);
+		EchoStorAddr += 2*T2DDENeBC;
+		//Delay(30);
+		if (T2DCnt==0)
+		{
+			StartS1msModule(T2DDETwBC*FPGA_BC+T2D_REPAIR1-MINI_TEST);
+			MiniStorAddr2	+= 12;
+		} 
+		ChangePhase();
+	}
+
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[2]]<<8;   
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+//C1+-
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[3]];   
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+
+	StartS1msModule(1000-MINI_TEST);
+
+	//Tes	= (Uint32)100 * T2DDCTes *  FPGA_COUNT;
+	Tel	= (Uint32)100 * T2DDETelCAry[1] *  FPGA_COUNT;  
+	//Ne	= T2DDENeBC;
+
+	for (T2DCnt=0;T2DCnt<2;T2DCnt++	)
+	{ 
+		MiniScan(FreqAry[T2DFreqSelAry[3]],MiniStorAddr3+9,MiniStorAddr3);
+
+		Pulse90StoreAddr++;
+		PulseF180StoreAddr++;
+		PulseL180StoreAddr++;
+		InverseTurnFlag	= SET;
+		DCWorkOnce(T2DFreqSelAry[3]);
+		EchoStorAddr += 2*T2DDENeBC;
+		//Delay(30);		
+
+		if (T2DCnt==0)
+		{
+			StartS1msModule(T2DDETwBC*FPGA_BC+T2D_REPAIR1-MINI_TEST);
+			MiniStorAddr3	+= 12;
+			ChangePhase();
+		} 
+	}
+
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[3]]<<8;   
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+//A1-
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[1]];   
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+
+	StartS1msModule(5179*FPGA_BC-MINI_TEST);
+	MiniStorAddr1	+=12;
+	MiniScan(FreqAry[T2DFreqSelAry[1]],MiniStorAddr1+9,MiniStorAddr1);
+
+	Tes	= (Uint32)100 * T2DDCTes *  FPGA_COUNT;
+	Tel	= Tes;  
+	Ne	= T2DCPMGNeA;
+
+	ScaleM	= 0;
+
+	Pulse90StoreAddr++;
+	PulseF180StoreAddr++;
+	PulseL180StoreAddr++;
+	DCWorkOnce(T2DFreqSelAry[1]);
+	EchoStorAddr += 2*T2DCPMGNeA;
+	//Delay(30);	
+//A2+-
+	Tes	= (Uint32)100 * T2DCBWTeA *  FPGA_COUNT;
+	Tel	= Tes;  
+	Ne	= T2DCBWNeA;
+	PhaseFlag	= POSITIVE;
+	for (T2DCnt=0;T2DCnt<2*T2DCBWNreptA;T2DCnt++)
+	{
+		if (T2DCnt==0)
+		{
+			StartS1msModule(T2DCBWTwA*FPGA_BC+T2D_REPAIR1-MINI_TEST);
+			MiniStorAddr1	+=12;
+			MiniScan(FreqAry[T2DFreqSelAry[1]],MiniStorAddr1+9,MiniStorAddr1);		
+		}
+		else
+		{
+			StartS1msModule(T2DCBWTwA*FPGA_BC-T2D_REPAIR2);
+		}
+		Pulse90StoreAddr++;
+		PulseF180StoreAddr++;
+		PulseL180StoreAddr++;
+		if (T2DCnt==(2*T2DCBWNreptA-1))
+		{
+			InverseTurnFlag	= SET;
+		}	
+		DCWorkOnce(T2DFreqSelAry[1]);
+		EchoStorAddr += 2*T2DCBWNeA;
+		if (T2DCnt==T2DCBWNreptA-1)
+		{
+			ChangePhase();
+		}	
+	}
+	ChangePhase();
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[1]]<<8;   
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+//B2+-
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[2]];   
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+
+	StartS1msModule(1000-MINI_TEST);
+
+	Tes	= (Uint32)100 * T2DDCTes *  FPGA_COUNT;
+	Tel	= (Uint32)100 * T2DDETelBAry[2] *  FPGA_COUNT;  
+	Ne	= T2DDENeBC;
+	ScaleM	= T2DDEm;
+
+	for (T2DCnt=0;T2DCnt<2;T2DCnt++	)
+	{ 
+		MiniStorAddr2	+=12;
+		MiniScan(FreqAry[T2DFreqSelAry[2]],MiniStorAddr2+9,MiniStorAddr2);
+
+		Pulse90StoreAddr++;
+		PulseF180StoreAddr++;
+		PulseL180StoreAddr++;
+
+		DCWorkOnce(T2DFreqSelAry[2]);
+		EchoStorAddr += 2*T2DDENeBC;
+		//Delay(30);		
+		if (T2DCnt==0)
+		{
+			StartS1msModule(T2DDETwBC*FPGA_BC-T2D_REPAIR1-MINI_TEST);
+		} 
+		ChangePhase();
+	}
+
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[2]]<<8;   
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+//C2+-
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[3]];   
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+
+	StartS1msModule(1001-MINI_TEST);
+
+	//Tes	= (Uint32)100 * T2DDCTes *  FPGA_COUNT;
+	Tel	= (Uint32)100 * T2DDETelCAry[2] *  FPGA_COUNT;  
+	//Ne	= T2DDENeBC;
+
+	for (T2DCnt=0;T2DCnt<2;T2DCnt++	)
+	{ 
+		MiniStorAddr3	+=12;
+		MiniScan(FreqAry[T2DFreqSelAry[3]],MiniStorAddr3+9,MiniStorAddr3);
+
+		Pulse90StoreAddr++;
+		PulseF180StoreAddr++;
+		PulseL180StoreAddr++;
+
+		DCWorkOnce(T2DFreqSelAry[3]);
+		EchoStorAddr += 2*T2DDENeBC;
+		//Delay(30);		
+		if (T2DCnt==0)
+		{
+			StartS1msModule(T2DDETwBC*FPGA_BC+T2D_REPAIR1-MINI_TEST);
+		}
+		ChangePhase(); 
+	}
+
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[3]]<<8;   
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+//B3+-
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[2]];   
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+
+	StartS1msModule(1000-MINI_TEST);
+	//Tes	= (Uint32)100 * T2DDCTes *  FPGA_COUNT;
+	Tel	= (Uint32)100 * T2DDETelBAry[3] *  FPGA_COUNT;  
+	//Ne	= T2DDENeBC;
+
+	ScaleM	= T2DDEm;
+
+	for (T2DCnt=0;T2DCnt<2;T2DCnt++	)
+	{ 
+		MiniStorAddr2	+=12;
+		MiniScan(FreqAry[T2DFreqSelAry[2]],MiniStorAddr2+9,MiniStorAddr2);
+
+		Pulse90StoreAddr++;
+		PulseF180StoreAddr++;
+		PulseL180StoreAddr++;
+
+		DCWorkOnce(T2DFreqSelAry[2]);
+		EchoStorAddr += 2*T2DDENeBC;
+		//Delay(30);		
+		if (T2DCnt==0)
+		{
+			StartS1msModule(T2DDETwBC*FPGA_BC+T2D_REPAIR1-MINI_TEST);
+		} 
+		ChangePhase();
+	}
+
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[2]]<<8;   
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+//C3+-
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[3]];   
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+
+	StartS1msModule(1000-MINI_TEST);
+
+	//Tes	= (Uint32)100 * T2DDCTes *  FPGA_COUNT;
+	Tel	= (Uint32)100 * T2DDETelCAry[3] *  FPGA_COUNT;  
+	//Ne	= T2DDENeBC;
+
+	for (T2DCnt=0;T2DCnt<2;T2DCnt++	)
+	{ 
+		MiniStorAddr3	+=12;
+		MiniScan(FreqAry[T2DFreqSelAry[3]],MiniStorAddr3+9,MiniStorAddr3);
+
+		Pulse90StoreAddr++;
+		PulseF180StoreAddr++;
+		PulseL180StoreAddr++;
+
+		DCWorkOnce(T2DFreqSelAry[3]);
+		EchoStorAddr += 2*T2DDENeBC;
+		//Delay(30);		
+		if (T2DCnt==0)
+		{
+			StartS1msModule(T2DDETwBC*FPGA_BC+T2D_REPAIR1-MINI_TEST);
+		}
+		ChangePhase(); 
+	}
+
+	RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[3]]<<8;   
+	Delay(120);                       
+	RELAY_ON_CLOSE = 0x0000;
+//store data
+	SaveNTempPt	= (int *)T2D_STORE_START;
+	*SaveNTempPt	= 0x9695;
+	SaveNTempPt++;
+	*SaveNTempPt	= 0x0030;
+	SaveSixFreq();
+	SaveNTempPt++;
+	*SaveNTempPt	= T2DFreqSel;
+	SaveNTempPt++;
+	*SaveNTempPt	= 0x55AA;
+
+	SaveNTempPt	= (int *)(T2D_STORE_START+DataTotalNum+37);
+	SaveSTempPt	= (Uint16 *)(T2D_STORE_START+DataTotalNum+10);
+
+	StoreMiniAryPt	= &MT2DMiniNumAry[0];
+	StoreMini(3,SaveNTempPt,SaveSTempPt); 
+
+	McbspSendData(T2D_STORE_START,DataTotalNum+3*EchoNum+46);    
+	return;	
+}
+/*
+void MT2DModeTop(void)
+{
+	ScaleMn	= 1;		
+	ScaleM	= 0;
+	EchoNum	= 2*(1+T2DCBWNreptA+2*T2DDEmn);
+	DataTotalNum = 4*(T2DCPMGNeA+T2DCBWNeA*T2DCBWNreptA+2*T2DDENeBC*T2DDEmn);	
+	
+	MiniStorAddr1	= MINITABLE_START-11;
+	MiniStorAddr2	= MiniStorAddr1+24*(1+T2DCBWNreptA);
+	MiniStorAddr3	= MiniStorAddr2+24*T2DDEmn;
+	T2DTwMid1		= T2DCPMGTwA-4893;
+
+	Pulse90StoreAddr	= T2D_STORE_START+(Uint32)DataTotalNum+45;
+	PulseF180StoreAddr	= T2D_STORE_START+(Uint32)DataTotalNum+EchoNum+45;
+	PulseL180StoreAddr	= T2D_STORE_START+(Uint32)DataTotalNum+2*EchoNum+45;
+	EchoStorAddr		= T2D_STORE_START+(Uint32)10;
+
+	PhaseFlag	= POSITIVE;	  
+	for (T2DCnt=0;T2DCnt<2;T2DCnt++)
+	{
+//A1+-
+		RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[1]];   //继电器闭合
+		Delay(120);                       
+		RELAY_ON_CLOSE = 0x0000;
+
+		Tes	= (Uint32)100 * T2DDCTes *  FPGA_COUNT;
+		Tel	= Tes;  
+		Ne	= T2DCPMGNeA;
+		ScaleM	= 0;
+		Pulse90StoreAddr++;
+		PulseF180StoreAddr++;
+		PulseL180StoreAddr++;
+		DCWorkOnce(T2DFreqSelAry[1]);
+		EchoStorAddr += 2*T2DCPMGNeA;
+		//Delay(30);
+		MiniStorAddr1 += 12;
+		MiniScan(FreqAry[T2DFreqSelAry[1]],MiniStorAddr1+9,MiniStorAddr1);
+//A2+-
+		Tes	= (Uint32)100 * 4 *  FPGA_COUNT;
+		Tel	= Tes;  
+		Ne	= T2DCBWNeA;
+		EchoStorAddr += 2*T2DCPMGNeA;
+		for (T2DCnt=0;T2DCnt<T2DCBWNreptA;T2DCnt++)
+		{		
+			StartS1msModule(T2DCBWTwA*FPGA_BC-T2D_REPAIR1-MINI_TEST);//the time parameter should be adjusted
+			Pulse90StoreAddr++;
+			PulseF180StoreAddr++;
+			PulseL180StoreAddr++;						
+			DCWorkOnce(T2DFreqSelAry[1]);
+			EchoStorAddr += 2*T2DCBWNeA;
+			//Delay(30);
+			MiniStorAddr1 += 12;
+			MiniScan(FreqAry[T2DFreqSelAry[1]],MiniStorAddr1+9,MiniStorAddr1);			
+		}
+		RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[1]]<<8;   //继电器断开
+		Delay(120);                       
+		RELAY_ON_CLOSE = 0x0000;
+//B1+-
+		StartS1msModule(2000-MINI_TEST);//the time parameter should be adjusted
+		RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[2]];   //继电器闭合
+		Delay(120);                       
+		RELAY_ON_CLOSE = 0x0000;
+
+		Tes	= (Uint32)100 * T2DDCTes *  FPGA_COUNT;
+		Tel	= (Uint32)100 * T2DDETelBAry[1] *  FPGA_COUNT;  
+		Ne	= T2DDENeBC;
+		ScaleM	= T2DDEm;
+		Pulse90StoreAddr++;
+		PulseF180StoreAddr++;
+		PulseL180StoreAddr++;
+		DCWorkOnce(T2DFreqSelAry[2]);
+		EchoStorAddr += 2*T2DDENeBC;
+		//Delay(30);
+		MiniStorAddr2	+= 12;
+		MiniScan(FreqAry[T2DFreqSelAry[2]],MiniStorAddr2+9,MiniStorAddr2);
+
+		RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[2]]<<8;   //继电器闭合
+		Delay(120);                       
+		RELAY_ON_CLOSE = 0x0000;
+//C1+-
+		StartS1msModule(2000-MINI_TEST);//the time parameter should be adjusted
+		RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[3]];   //继电器闭合
+		Delay(120);                       
+		RELAY_ON_CLOSE = 0x0000;
+
+		Tes	= (Uint32)100 * T2DDCTes *  FPGA_COUNT;
+		Tel	= (Uint32)100 * T2DDETelCAry[1] *  FPGA_COUNT;  
+		Ne	= T2DDENeBC;
+		Pulse90StoreAddr++;
+		PulseF180StoreAddr++;
+		PulseL180StoreAddr++;
+		DCWorkOnce(T2DFreqSelAry[3]);
+		EchoStorAddr += 2*T2DDENeBC;
+		//Delay(30);
+		MiniStorAddr3	+= 12;
+		MiniScan(FreqAry[T2DFreqSelAry[2]],MiniStorAddr3+9,MiniStorAddr3);
+
+		RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[3]]<<8;   //继电器闭合
+		Delay(120);                       
+		RELAY_ON_CLOSE = 0x0000;
+//B2+-
+		StartS1msModule(4938-MINI_TEST);//the time parameter should be adjusted
+		RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[2]];   //继电器闭合
+		Delay(120);                       
+		RELAY_ON_CLOSE = 0x0000;
+
+		Tes	= (Uint32)100 * T2DDCTes *  FPGA_COUNT;
+		Tel	= (Uint32)100 * T2DDETelBAry[2] *  FPGA_COUNT;  
+		Ne	= T2DDENeBC;
+		Pulse90StoreAddr++;
+		PulseF180StoreAddr++;
+		PulseL180StoreAddr++;
+		DCWorkOnce(T2DFreqSelAry[2]);
+		EchoStorAddr += 2*T2DDENeBC;
+		//Delay(30);
+		MiniStorAddr2	+= 12;
+		MiniScan(FreqAry[T2DFreqSelAry[2]],MiniStorAddr2+9,MiniStorAddr2);
+
+		RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[2]]<<8;   //继电器闭合
+		Delay(120);                       
+		RELAY_ON_CLOSE = 0x0000;
+//C2+-
+		StartS1msModule(2000-MINI_TEST);//the time parameter should be adjusted
+		RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[3]];   //继电器闭合
+		Delay(120);                       
+		RELAY_ON_CLOSE = 0x0000;
+
+		Tes	= (Uint32)100 * T2DDCTes *  FPGA_COUNT;
+		Tel	= (Uint32)100 * T2DDETelCAry[2] *  FPGA_COUNT;  
+		Ne	= T2DDENeBC;
+		Pulse90StoreAddr++;
+		PulseF180StoreAddr++;
+		PulseL180StoreAddr++;
+		DCWorkOnce(T2DFreqSelAry[3]);
+		EchoStorAddr += 2*T2DDENeBC;
+		//Delay(30);
+		MiniStorAddr3	+= 12;
+		MiniScan(FreqAry[T2DFreqSelAry[2]],MiniStorAddr3+9,MiniStorAddr3);
+
+		RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[3]]<<8;   //继电器闭合
+		Delay(120);                       
+		RELAY_ON_CLOSE = 0x0000;
+//B3+-
+		StartS1msModule(4898-MINI_TEST);//the time parameter should be adjusted
+		RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[2]];   //继电器闭合
+		Delay(120);                       
+		RELAY_ON_CLOSE = 0x0000;
+
+		Tes	= (Uint32)100 * T2DDCTes *  FPGA_COUNT;
+		Tel	= (Uint32)100 * T2DDETelBAry[3] *  FPGA_COUNT;  
+		Ne	= T2DDENeBC;
+		Pulse90StoreAddr++;
+		PulseF180StoreAddr++;
+		PulseL180StoreAddr++;
+		DCWorkOnce(T2DFreqSelAry[2]);
+		EchoStorAddr += 2*T2DDENeBC;
+		//Delay(30);
+		MiniStorAddr2	+= 12;
+		MiniScan(FreqAry[T2DFreqSelAry[2]],MiniStorAddr2+9,MiniStorAddr2);
+
+		RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[2]]<<8;   //继电器闭合
+		Delay(120);                       
+		RELAY_ON_CLOSE = 0x0000;
+//C3+-
+		StartS1msModule(2000-MINI_TEST);//the time parameter should be adjusted
+		RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[3]];   //继电器闭合
+		Delay(120);                       
+		RELAY_ON_CLOSE = 0x0000;
+
+		Tes	= (Uint32)100 * T2DDCTes *  FPGA_COUNT;
+		Tel	= (Uint32)100 * T2DDETelCAry[3] *  FPGA_COUNT;  
+		Ne	= T2DDENeBC;
+		Pulse90StoreAddr++;
+		PulseF180StoreAddr++;
+		PulseL180StoreAddr++;
+		DCWorkOnce(T2DFreqSelAry[3]);
+		//Delay(30);
+		MiniStorAddr3	+= 12;
+		MiniScan(FreqAry[T2DFreqSelAry[2]],MiniStorAddr3+9,MiniStorAddr3);
+
+		RELAY_ON_CLOSE = RelayAry[T2DFreqSelAry[3]]<<8;   //继电器闭合
+		Delay(120);                       
+		RELAY_ON_CLOSE = 0x0000;
+	
+		if (T2DCnt==0)
+		{
+			StartS1msModule(T2DTwMid1-MINI_TEST);//the time parameter should be adjusted
+			PhaseFlag	= NEGATIVE;
+			EchoStorAddr+= 2*T2DDENeBC;
+		}		
+	} 
+//store data
+	SaveNTempPt	= (int *)T2D_STORE_START;
+	*SaveNTempPt	= 0x9695;
+	SaveNTempPt++;
+	*SaveNTempPt	= 0x0030;
+	SaveNTempPt++;
+	*SaveNTempPt	= FreqAry[1];
+	SaveNTempPt++;
+	*SaveNTempPt	= FreqAry[2];
+	SaveNTempPt++;
+	*SaveNTempPt	= FreqAry[3];
+	SaveNTempPt++;
+	*SaveNTempPt	= FreqAry[4];
+	SaveNTempPt++;
+	*SaveNTempPt	= FreqAry[5];
+	SaveNTempPt++;
+	*SaveNTempPt	= FreqAry[6];
+	SaveNTempPt++;
+	*SaveNTempPt	= T2DFreqSel;
+	SaveNTempPt++;
+	*SaveNTempPt	= 0x55AA;
+
+	SaveNTempPt	= (int *)(T2D_STORE_START+DataTotalNum+37);
+	SaveSTempPt	= (Uint16 *)(T2D_STORE_START+DataTotalNum+10);
+	T2DMiniNumAry[0]= 2*(1+T2DCBWNreptA);
+	StoreMiniAryPt	= &T2DMiniNumAry[0];
+	StoreMini(3,SaveNTempPt,SaveSTempPt); 
+
+	McbspSendData(T2D_STORE_START,DataTotalNum+3*EchoNum+46);    
+	return;	
+}
+*/

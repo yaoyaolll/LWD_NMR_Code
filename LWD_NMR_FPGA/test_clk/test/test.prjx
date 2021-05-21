@@ -1,0 +1,363 @@
+KEY LIBERO "11.9"
+KEY CAPTURE "11.9.6.7"
+KEY DEFAULT_IMPORT_LOC "F:\Project\tmp\2DNMRECBP\Final_One\2D_NMR_EC_FPGA_1010\stimulus"
+KEY DEFAULT_OPEN_LOC "E:\FPGA_project\NMR_EC_FPGA_RVB20120425_For_load\hdl"
+KEY ProjectID "0"
+KEY HDLTechnology "VERILOG"
+KEY VERILOGMODE "VERILOG2001"
+KEY VHDLMODE "VHDL2008"
+KEY UseConstraintFlowTechnology "FALSE"
+KEY VendorTechnology_Family "ProASIC3"
+KEY VendorTechnology_Die "IS8X8M2"
+KEY VendorTechnology_Package "pq208"
+KEY VendorTechnology_Speed "STD"
+KEY VendorTechnology_DieVoltage "1.5"
+KEY VendorTechnology_PART_RANGE "MIL"
+KEY VendorTechnology_DSW_VCCA_VOLTAGE_RAMP_RATE ""
+KEY VendorTechnology_IO_DEFT_STD "LVTTL"
+KEY VendorTechnology_OPCONR ""
+KEY VendorTechnology_PLL_SUPPLY ""
+KEY VendorTechnology_RAD_EXPOSURE ""
+KEY VendorTechnology_RESERVEMIGRATIONPINS "1"
+KEY VendorTechnology_RESTRICTPROBEPINS "1"
+KEY VendorTechnology_RESTRICTSPIPINS "0"
+KEY VendorTechnology_SYSTEM_CONTROLLER_SUSPEND_MODE ""
+KEY VendorTechnology_TARGETDEVICESFORMIGRATION "IS8X8M2"
+KEY VendorTechnology_TEMPR "MIL"
+KEY VendorTechnology_UNUSED_MSS_IO_RESISTOR_PULL "None"
+KEY VendorTechnology_VCCI_1.5_VOLTR "COM"
+KEY VendorTechnology_VCCI_1.8_VOLTR "COM"
+KEY VendorTechnology_VCCI_2.5_VOLTR "COM"
+KEY VendorTechnology_VCCI_3.3_VOLTR "COM"
+KEY VendorTechnology_VOLTR "MIL"
+KEY ProjectLocation "E:\LWD_NMR\Code\test_clk\test"
+KEY ProjectDescription ""
+KEY Pa4PeripheralNewSeq "GOOD"
+KEY SimulationType "VERILOG"
+KEY Vendor "Actel"
+KEY ActiveRoot "top::work"
+LIST REVISIONS
+VALUE="Impl1",NUM=1
+CURREV=1
+ENDLIST
+LIST FileManager
+VALUE "<project>\component\work\DESIGN_FIRMWARE\DESIGN_FIRMWARE.cxf,actgen_cxf"
+STATE="utd"
+TIME="1608531708"
+SIZE="437"
+ENDFILE
+VALUE "<project>\component\work\DESIGN_IO\DESIGN_IO.cxf,actgen_cxf"
+STATE="utd"
+TIME="1608531708"
+SIZE="413"
+ENDFILE
+VALUE "<project>\component\work\top\top.cxf,actgen_cxf"
+STATE="utd"
+TIME="1611306484"
+SIZE="1985"
+ENDFILE
+VALUE "<project>\component\work\top\top.v,hdl"
+STATE="utd"
+TIME="1611306483"
+SIZE="2248"
+PARENT="<project>\component\work\top\top.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\designer\impl1\top.adb,adb"
+STATE="utd"
+TIME="1608539137"
+SIZE="36352"
+ENDFILE
+VALUE "<project>\designer\impl1\top.ide_des,ide_des"
+STATE="utd"
+TIME="1608539137"
+SIZE="934"
+ENDFILE
+VALUE "<project>\designer\impl1\top.pdb,pdb"
+STATE="utd"
+TIME="1611306632"
+SIZE="80526"
+ENDFILE
+VALUE "<project>\designer\impl1\top_ba.sdf,ba_sdf"
+STATE="ood"
+TIME="1608539108"
+SIZE="2390"
+ENDFILE
+VALUE "<project>\designer\impl1\top_compile_log.rpt,log"
+STATE="utd"
+TIME="1608531793"
+SIZE="5860"
+ENDFILE
+VALUE "<project>\designer\impl1\top_fp\projectData\top.pdb,pdb"
+STATE="utd"
+TIME="1608539948"
+SIZE="78432"
+ENDFILE
+VALUE "<project>\designer\impl1\top_fp\top.pro,pro"
+STATE="utd"
+TIME="1608539949"
+SIZE="2326"
+ENDFILE
+VALUE "<project>\designer\impl1\top_placeroute_log.rpt,log"
+STATE="utd"
+TIME="1611306525"
+SIZE="2378"
+ENDFILE
+VALUE "<project>\designer\impl1\top_prgdata_log.rpt,log"
+STATE="utd"
+TIME="1611306633"
+SIZE="631"
+ENDFILE
+VALUE "<project>\designer\impl1\top_verifytiming_log.rpt,log"
+STATE="utd"
+TIME="1611306614"
+SIZE="1096"
+ENDFILE
+VALUE "<project>\hdl\div_fre.v,hdl"
+STATE="utd"
+TIME="1611305379"
+SIZE="890"
+ENDFILE
+VALUE "<project>\smartgen\pll_clk\pll_clk.cxf,actgen_cxf"
+STATE="utd"
+TIME="1611305362"
+SIZE="1476"
+ENDFILE
+VALUE "<project>\smartgen\pll_clk\pll_clk.gen,gen"
+STATE="utd"
+TIME="1611305359"
+SIZE="536"
+PARENT="<project>\smartgen\pll_clk\pll_clk.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\smartgen\pll_clk\pll_clk.log,log"
+STATE="utd"
+TIME="1611305360"
+SIZE="2730"
+PARENT="<project>\smartgen\pll_clk\pll_clk.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\smartgen\pll_clk\pll_clk.v,hdl"
+STATE="utd"
+TIME="1611305360"
+SIZE="2660"
+PARENT="<project>\smartgen\pll_clk\pll_clk.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\synthesis\clk_out.so,so"
+STATE="utd"
+TIME="1608531273"
+SIZE="213"
+ENDFILE
+VALUE "<project>\synthesis\clk_out_syn.prj,prj"
+STATE="utd"
+TIME="1608531274"
+SIZE="1690"
+ENDFILE
+VALUE "<project>\synthesis\top.edn,syn_edn"
+STATE="utd"
+TIME="1608531778"
+SIZE="12552"
+ENDFILE
+VALUE "<project>\synthesis\top.so,so"
+STATE="utd"
+TIME="1608531778"
+SIZE="205"
+ENDFILE
+VALUE "<project>\synthesis\top_sdc.sdc,syn_sdc"
+STATE="utd"
+TIME="1608531778"
+SIZE="310"
+ENDFILE
+VALUE "<project>\synthesis\top_syn.prj,prj"
+STATE="utd"
+TIME="1608531778"
+SIZE="1767"
+ENDFILE
+ENDLIST
+LIST UsedFile
+ENDLIST
+LIST NewModulesInfo
+LIST "top::work"
+FILE "<project>\component\work\top\top.v,hdl"
+LIST ProjectState5.1
+LIST Impl1
+LiberoState=Post_Layout
+ideDESIGNER(<project>\designer\impl1\top.adb,adb)=StateSuccess
+ideSYNTHESIS(<project>\synthesis\top.edn,syn_edn)=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+ENDLIST
+LIST PinReports
+VALUE "<project>\designer\impl1\top_report_pin_byname.txt,log"
+VALUE "<project>\designer\impl1\top_report_pin_bynumber.txt,log"
+ENDLIST
+ENDLIST
+ENDLIST
+LIST AssociatedStimulus
+ENDLIST
+LIST Other_Association
+ENDLIST
+LIST SimulationOptions
+UseAutomaticDoFile=true
+IncludeWaveDo=false
+Type=max
+RunTime=1000ns
+Resolution=1ps
+VsimOpt=
+EntityName=testbench
+TopInstanceName=<top>_0
+DoFileName=
+DoFileName2=wave.do
+DoFileParams=
+DisplayDUTWave=false
+LogAllSignals=false
+DisablePulseFiltering=false
+DumpVCD=false
+VCDFileName=power.vcd
+VHDL2008=false
+Verilog2001=false
+SystemVerilog=false
+TimeUnit=1
+TimeUnitBase=ns
+Precision=100
+PrecisionBase=ps
+ENDLIST
+LIST ModelSimLibPath
+UseCustomPath=FALSE
+LibraryPath=
+ENDLIST
+LIST GlobalFlowOptions
+GenerateHDLAfterSynthesis=FALSE
+GenerateHDLAfterPhySynthesis=FALSE
+RunDRCAfterSynthesis=FALSE
+AutoCheckConstraints=TRUE
+UpdateModelSimIni=TRUE
+NoIOMode=FALSE
+PeriInitStandalone=FALSE
+EnableViewDraw=FALSE
+UpdateViewDrawIni=TRUE
+GenerateHDLFromSchematic=TRUE
+VmNetlistFlowOn=FALSE
+EnableDesignSeparationOn=FALSE
+EnableSETMitigationOn=FALSE
+DisplayFanoutLimit=10
+AbortFlowOnPDCErrorsOn=TRUE
+AbortFlowOnSDCErrorsOn=TRUE
+InstantiateInSmartDesign=TRUE
+FlashProInputFile=pdb
+SmartGenCompileReport=T
+ENDLIST
+LIST PhySynthesisOptions
+ENDLIST
+LIST Profiles
+NAME="SoftConsole"
+FUNCTION="SoftwareIDE"
+TOOL="SoftConsole"
+LOCATION="eclipse.exe"
+PARAM=""
+BATCH=0
+LICENSE=""
+IS32BIT="1"
+EndProfile
+NAME="Synplify Pro ME"
+FUNCTION="Synthesis"
+TOOL="Synplify Pro ME"
+LOCATION="D:\Libero_Soc11.9\SynplifyPro\bin\synplify_pro.exe"
+PARAM="-licensetype synplifypro_actel -batch -log synplify.log"
+BATCH=1
+LICENSE=""
+IS32BIT="1"
+EndProfile
+NAME="ModelSim ME"
+FUNCTION="Simulation"
+TOOL="ModelSim"
+LOCATION="D:\Libero_Soc11.9\Modelsim\win32acoem\modelsim.exe"
+PARAM=""
+BATCH=0
+LICENSE=""
+IS32BIT="1"
+EndProfile
+NAME="FPExpress"
+FUNCTION="Program"
+TOOL="FlashPro"
+LOCATION="D:\Libero_Soc11.9\Designer\bin\FPExpress.exe"
+PARAM=""
+BATCH=0
+LICENSE=""
+IS32BIT="1"
+EndProfile
+NAME="Identify Debugger"
+FUNCTION="IdentifyDebugger"
+TOOL="Identify Debugger"
+LOCATION="D:\Libero_Soc11.9\Identify\bin\identify_debugger.exe"
+PARAM=""
+BATCH=0
+LICENSE=""
+IS32BIT="1"
+EndProfile
+ENDLIST
+LIST ProjectState5.1
+LIST "top::work"
+LIST Impl1
+LiberoState=Post_Layout
+ideDESIGNER(<project>\designer\impl1\top.adb,adb)=StateSuccess
+ideSYNTHESIS(<project>\synthesis\top.edn,syn_edn)=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+ENDLIST
+ENDLIST
+LIST ExcludePackageForSimulation
+ENDLIST
+LIST ExcludePackageForSynthesis
+ENDLIST
+LIST IncludeModuleForSimulation
+ENDLIST
+LIST CDBOrder
+ENDLIST
+LIST UserCustomizedFileList
+ENDLIST
+LIST OpenedFileList
+ORIENTATION;HORIZONTAL
+Reports;Reports;0
+ReportsCurrentItem;Generate Programming Data:top_prgdata_log.rpt
+StartPage;StartPage;0
+SmartDesign;top;0
+ACTIVEVIEW;Reports
+ENDLIST
+LIST ModuleSubBlockList
+LIST "DESIGN_FIRMWARE::work","component\work\DESIGN_FIRMWARE\DESIGN_FIRMWARE.cxf","TRUE","FALSE"
+ENDLIST
+LIST "DESIGN_IO::work","component\work\DESIGN_IO\DESIGN_IO.cxf","TRUE","FALSE"
+ENDLIST
+LIST "div_fre::work","hdl\div_fre.v","FALSE","FALSE"
+ENDLIST
+LIST "pll_clk::work","smartgen\pll_clk\pll_clk.v","TRUE","FALSE"
+ENDLIST
+LIST "top::work","component\work\top\top.v","TRUE","FALSE"
+SUBBLOCK "div_fre::work","hdl\div_fre.v","FALSE","FALSE"
+SUBBLOCK "pll_clk::work","smartgen\pll_clk\pll_clk.v","TRUE","FALSE"
+ENDLIST
+ENDLIST
+LIST ActiveTestBenchList
+ENDLIST
+LIST IOTabList
+ENDLIST
+LIST FPTabList
+ENDLIST
+LIST TimingTabList
+ENDLIST
+LIST FDCTabList
+ENDLIST

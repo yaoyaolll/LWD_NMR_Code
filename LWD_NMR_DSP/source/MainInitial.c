@@ -31,26 +31,28 @@ void InitAll(void)
 	IER = 0x0000;                          //禁止所有的中断
 	IFR = 0x0000;
 
-	SciaRegs.SCICTL1.bit.SLEEP=1;   //启动SCI睡眠模式
+	//SciaRegs.SCICTL1.bit.SLEEP=1;   //启动SCI睡眠模式
 
 	EALLOW;                                //保护寄存器 
 	PieVectTable.XINT1 = &XINT1_STOP;      //外部中断1入口地址
 	PieVectTable.XINT2 = &XINT2_DCStorData;      //外部中断2入口地址
 	PieVectTable.RXAINT = &SCIRXINTA_ISR;   	//SCIA接收中断向量入口地址
-
 	EDIS;                                  // 释放保护的寄存器  
+
 	IER |= M_INT1;
-	IER|=M_INT9;
+	IER |= M_INT9;
 	PieCtrlRegs.PIEIER1.bit.INTx4 = 1;
 	PieCtrlRegs.PIEIER1.bit.INTx5 = 1;
-	PieCtrlRegs.PIEIER9.bit.INTx1=1;       // SCIA
+	PieCtrlRegs.PIEIER9.bit.INTx1 = 1;       // SCIA
 	XIntruptRegs.XINT1CR.all =0x5;         //打开管脚xint1外中断,设置上升沿中断
 	XIntruptRegs.XINT2CR.all =0x5;         //打开管脚xint2外中断,设置上升沿中断
 	PieCtrlRegs.PIEACK.all = PIEACK_GROUP1;    //清除PIE分组1的中断响应位
 	PieCtrlRegs.PIEACK.all = PIEACK_GROUP9;
 	EINT;                                  // Enable Global interrupt INTM       
 
-	GpioDataRegs.GPFDAT.bit.GPIOF9=0;   //485接收器为接收状态
+	GpioDataRegs.GPFDAT.bit.GPIOF11=0;   //485接收器为接收状态
+
+    InitSci();
 
 	// Initial MCBSP module
     // InitMcbsp();
@@ -742,20 +744,60 @@ void InitGpio(void)                //GPIOA，B口配置函数
     // 在这里插入初始化函数的代码
 	GpioMuxRegs.GPFMUX.bit.SCITXDA_GPIOF4=1;  //设置SCIA的发送引脚
 	GpioMuxRegs.GPFMUX.bit.SCIRXDA_GPIOF5=1;  //设置SCIA的接收引脚
-	GpioMuxRegs.GPFMUX.bit.MCLKRA_GPIOF9=0;//通用数字IO口
-	GpioMuxRegs.GPFDIR.bit.GPIOF9=1;  //配置为输出口
-	//	 GpioDataRegs.GPFDAT.bit.GPIOF11=0;
-
-	GpioMuxRegs.GPAMUX.bit.PWM4_GPIOA3=0;  //通用数字IO口
-	GpioMuxRegs.GPAMUX.bit.PWM2_GPIOA1=0;  //通用数字IO口
-	GpioMuxRegs.GPADIR.bit.GPIOA3=1;	//配置为输出口
-	GpioMuxRegs.GPADIR.bit.GPIOA1=1;
-
-	GpioMuxRegs.GPAMUX.bit.TDIRA_GPIOA11 = 0;
-	GpioMuxRegs.GPADIR.bit.GPIOA11 = 1;
+	GpioMuxRegs.GPFMUX.bit.MFSRA_GPIOF11=0;//通用数字IO口
+	GpioMuxRegs.GPFDIR.bit.GPIOF11=1;        //配置为输出口
 
     EDIS;
 	return;
+}
+
+void InitSci(void)
+{
+    SciaRegs.SCICCR.bit.STOPBITS = 0;
+    SciaRegs.SCICCR.bit.PARITYENA=0;
+    SciaRegs.SCICCR.bit.LOOPBKENA=0;
+    SciaRegs.SCICCR.bit.ADDRIDLE_MODE=0;
+    SciaRegs.SCICCR.bit.SCICHAR=7;
+    SciaRegs.SCICTL1.bit.TXENA=1;          //SCIA模块的发送使能
+    SciaRegs.SCICTL1.bit.RXENA=1;          //SCIA模块的接收使能
+    SciaRegs.SCIHBAUD=0x0;
+    SciaRegs.SCILBAUD=32;                //波特率为115200
+    SciaRegs.SCICTL2.bit.RXBKINTENA = 1;
+    SciaRegs.SCICTL1.bit.SWRESET=1;
+
+/*    EALLOW;
+//  SciaRegs.SCICTL1.bit.SWRESET=0;
+    SciaRegs.SCICCR.bit.STOPBITS=0;        //1位停止位
+    SciaRegs.SCICCR.bit.PARITYENA=0;       //禁止极性功能
+    SciaRegs.SCICCR.bit.LOOPBKENA=0;       //禁止回送测试模式功能
+//  SciaRegs.SCICCR.bit.ADDRIDLE_MODE=0;   //空闲线模式
+    SciaRegs.SCICCR.bit.ADDRIDLE_MODE=1;   //address模式
+    SciaRegs.SCICCR.bit.SCICHAR=7;         //8位数据位
+
+    SciaRegs.SCICTL1.bit.TXENA=1;          //SCIA模块的发送使能
+    SciaRegs.SCICTL1.bit.RXENA=1;          //SCIA模块的接收使能
+
+    // 新增
+    SciaRegs.SCICTL2.bit.RXBKINTENA = 1;
+
+    SciaRegs.SCIHBAUD=0x0;
+    SciaRegs.SCILBAUD=32;                //波特率为115200
+    //SciaRegs.SCILBAUD=0xF3; // 19200
+
+    SciaRegs.SCIFFTX.bit.TXFIFOXRESET=1;
+    SciaRegs.SCIFFTX.bit.SCIFFENA=1;
+
+    SciaRegs.SCIFFRX.bit.RXFFOVF=0;      //接收FIFO没有溢出
+    SciaRegs.SCIFFRX.bit.RXFFOVRCLR=1;    //对RXFFOVF标志位没有影响
+    SciaRegs.SCIFFRX.bit.RXFIFORESET=1;  //重新使能接收FIFO的操作
+    SciaRegs.SCIFFRX.bit.RXFIFST=0;      //接收FIFO队列为空
+    SciaRegs.SCIFFRX.bit.RXFFINT=0;      //没有产生接收中断
+    SciaRegs.SCIFFRX.bit.RXFFINTCLR=1;   //清除接收中断标志位
+    SciaRegs.SCIFFRX.bit.RXFFIENA=1;     //使能FIFO接收中断
+    SciaRegs.SCIFFRX.bit.RXFFIL=1;       //FIFO接收中断级别为8.也就是说当接收FIFO中有8个字符时发生中断
+
+    SciaRegs.SCICTL1.bit.SWRESET=1;        //重启SCI
+    EDIS;*/
 }
 
 void InitFPGA(void)

@@ -1,0 +1,24 @@
+Timing Violation Report Min Delay Analysis
+
+SmartTime Version v11.9 SP6
+Microsemi Corporation - Microsemi Libero Software Release v11.9 SP6 (Version 11.9.6.7)
+Date: Fri Jan 22 17:10:14 2021
+
+
+Design: top
+Family: ProASIC3
+Die: A3P1000
+Package: 208 PQFP
+Temperature Range: -55 - 125 C
+Voltage Range: 1.425 - 1.575 V
+Speed Grade: STD
+Design State: Post-Layout
+Data source: Silicon verified
+Min Operating Conditions: BEST - 1.575 V - -55 C
+Max Operating Conditions: WORST - 1.425 V - 125 C
+Using Enhanced Min Delay Analysis
+Scenario for Timing Analysis: Primary
+
+
+No Path
+

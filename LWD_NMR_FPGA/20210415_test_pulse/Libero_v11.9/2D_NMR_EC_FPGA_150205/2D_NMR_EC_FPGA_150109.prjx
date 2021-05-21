@@ -1,0 +1,2481 @@
+KEY LIBERO "11.9"
+KEY CAPTURE "11.9.6.7"
+KEY DEFAULT_IMPORT_LOC "F:\Project\tmp\2DNMRECBP\Final_One\2D_NMR_EC_FPGA_1010\stimulus"
+KEY DEFAULT_OPEN_LOC "E:\FPGA_project\NMR_EC_FPGA_RVB20120425_For_load\hdl"
+KEY ProjectID "ad02c3d3-4528-4bd9-bc9d-aac0b7ac005c"
+KEY HDLTechnology "VERILOG"
+KEY VERILOGMODE "VERILOG2001"
+KEY VHDLMODE "VHDL2008"
+KEY UseConstraintFlowTechnology "FALSE"
+KEY VendorTechnology_Family "ProASIC3"
+KEY VendorTechnology_Die "IS8X8M2"
+KEY VendorTechnology_Package "pq208"
+KEY VendorTechnology_Speed "-2"
+KEY VendorTechnology_DieVoltage "1.5"
+KEY VendorTechnology_PART_RANGE "COM"
+KEY VendorTechnology_DSW_VCCA_VOLTAGE_RAMP_RATE ""
+KEY VendorTechnology_IO_DEFT_STD ""
+KEY VendorTechnology_OPCONR ""
+KEY VendorTechnology_PLL_SUPPLY ""
+KEY VendorTechnology_RAD_EXPOSURE ""
+KEY VendorTechnology_RESERVEMIGRATIONPINS "1"
+KEY VendorTechnology_RESTRICTPROBEPINS "1"
+KEY VendorTechnology_RESTRICTSPIPINS "0"
+KEY VendorTechnology_SYSTEM_CONTROLLER_SUSPEND_MODE ""
+KEY VendorTechnology_TARGETDEVICESFORMIGRATION "A3P1000;"
+KEY VendorTechnology_TEMPR "COM"
+KEY VendorTechnology_UNUSED_MSS_IO_RESISTOR_PULL "None"
+KEY VendorTechnology_VOLTR "COM"
+KEY ProjectLocation "E:\LWD_NMR\Code\LWD_NMR_FPGA\20210415_test_pulse\Libero_v11.9\2D_NMR_EC_FPGA_150205"
+KEY ProjectDescription ""
+KEY Pa4PeripheralNewSeq "GOOD"
+KEY SimulationType "VERILOG"
+KEY Vendor "Actel"
+KEY ActiveRoot "NMR_TOP::work"
+LIST REVISIONS
+VALUE="Impl3",NUM=3
+CURREV=1
+ENDLIST
+LIST FileManager
+VALUE "<project>\component\work\CAL\CAL.cxf,actgen_cxf"
+STATE="utd"
+TIME="1604369354"
+SIZE="2490"
+ENDFILE
+VALUE "<project>\component\work\CAL\CAL.v,hdl"
+STATE="utd"
+TIME="1604369354"
+SIZE="1382"
+PARENT="<project>\component\work\CAL\CAL.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\work\CAL\testbench.v,tb_hdl"
+STATE="utd"
+TIME="1604369354"
+SIZE="1556"
+PARENT="<project>\component\work\CAL\CAL.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\work\ClockManagement\ClockManagement.cxf,actgen_cxf"
+STATE="utd"
+TIME="1604369354"
+SIZE="3415"
+ENDFILE
+VALUE "<project>\component\work\ClockManagement\ClockManagement.pdc,pdc"
+STATE="utd"
+TIME="1604369354"
+SIZE="3010"
+PARENT="<project>\component\work\ClockManagement\ClockManagement.cxf"
+BEGIN_USE_CONSTRAINT
+TOOL_CONSTRAINT_TYPE="ideDESIGNER"
+END_USE_CONSTRAINT
+USE_FOR_ANY_TOOL="FALSE"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\work\ClockManagement\ClockManagement.v,hdl"
+STATE="utd"
+TIME="1604369354"
+SIZE="1282"
+PARENT="<project>\component\work\ClockManagement\ClockManagement.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\work\ClockManagement\testbench.v,tb_hdl"
+STATE="utd"
+TIME="1604369354"
+SIZE="1584"
+PARENT="<project>\component\work\ClockManagement\ClockManagement.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\work\DDS\DDS.cxf,actgen_cxf"
+STATE="utd"
+TIME="1604369354"
+SIZE="4471"
+ENDFILE
+VALUE "<project>\component\work\DDS\DDS.pdc,pdc"
+STATE="utd"
+TIME="1604369354"
+SIZE="3999"
+PARENT="<project>\component\work\DDS\DDS.cxf"
+BEGIN_USE_CONSTRAINT
+TOOL_CONSTRAINT_TYPE="ideDESIGNER"
+END_USE_CONSTRAINT
+USE_FOR_ANY_TOOL="FALSE"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\work\DDS\DDS.v,hdl"
+STATE="utd"
+TIME="1604369354"
+SIZE="2352"
+PARENT="<project>\component\work\DDS\DDS.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\work\DDS\testbench.v,tb_hdl"
+STATE="utd"
+TIME="1604369354"
+SIZE="1614"
+PARENT="<project>\component\work\DDS\DDS.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\work\DSTimer\DSTimer.cxf,actgen_cxf"
+STATE="utd"
+TIME="1604369354"
+SIZE="2447"
+ENDFILE
+VALUE "<project>\component\work\DSTimer\DSTimer.v,hdl"
+STATE="utd"
+TIME="1604369354"
+SIZE="981"
+PARENT="<project>\component\work\DSTimer\DSTimer.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\work\DSTimer\testbench.v,tb_hdl"
+STATE="utd"
+TIME="1604369354"
+SIZE="1585"
+PARENT="<project>\component\work\DSTimer\DSTimer.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\work\DUMP\DUMP.cxf,actgen_cxf"
+STATE="utd"
+TIME="1604369354"
+SIZE="3420"
+ENDFILE
+VALUE "<project>\component\work\DUMP\DUMP.v,hdl"
+STATE="utd"
+TIME="1604369354"
+SIZE="5679"
+PARENT="<project>\component\work\DUMP\DUMP.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\work\DUMP\testbench.v,tb_hdl"
+STATE="utd"
+TIME="1604369354"
+SIZE="1652"
+PARENT="<project>\component\work\DUMP\DUMP.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\work\DUMP_OFF\DUMP_OFF.cxf,actgen_cxf"
+STATE="utd"
+TIME="1604369354"
+SIZE="2138"
+ENDFILE
+VALUE "<project>\component\work\DUMP_OFF\DUMP_OFF.v,hdl"
+STATE="utd"
+TIME="1604369354"
+SIZE="1453"
+PARENT="<project>\component\work\DUMP_OFF\DUMP_OFF.cxf"
+ENDFILE
+VALUE "<project>\component\work\DUMP_OFF\testbench.v,tb_hdl"
+STATE="utd"
+TIME="1604369354"
+SIZE="1501"
+PARENT="<project>\component\work\DUMP_OFF\DUMP_OFF.cxf"
+ENDFILE
+VALUE "<project>\component\work\DUMP_ON\DUMP_ON.cxf,actgen_cxf"
+STATE="utd"
+TIME="1604369354"
+SIZE="2134"
+ENDFILE
+VALUE "<project>\component\work\DUMP_ON\DUMP_ON.v,hdl"
+STATE="utd"
+TIME="1604369354"
+SIZE="1449"
+PARENT="<project>\component\work\DUMP_ON\DUMP_ON.cxf"
+ENDFILE
+VALUE "<project>\component\work\DUMP_ON\testbench.v,tb_hdl"
+STATE="utd"
+TIME="1604369354"
+SIZE="1497"
+PARENT="<project>\component\work\DUMP_ON\DUMP_ON.cxf"
+ENDFILE
+VALUE "<project>\component\work\GPMI\GPMI.cxf,actgen_cxf"
+STATE="utd"
+TIME="1604369354"
+SIZE="3128"
+ENDFILE
+VALUE "<project>\component\work\GPMI\GPMI.v,hdl"
+STATE="utd"
+TIME="1604369354"
+SIZE="1471"
+PARENT="<project>\component\work\GPMI\GPMI.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\work\GPMI\testbench.v,tb_hdl"
+STATE="utd"
+TIME="1604369354"
+SIZE="1606"
+PARENT="<project>\component\work\GPMI\GPMI.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\work\NMR_TOP\NMR_TOP.cxf,actgen_cxf"
+STATE="utd"
+TIME="1604369354"
+SIZE="12891"
+ENDFILE
+VALUE "<project>\component\work\NMR_TOP\NMR_TOP.pdc,pdc"
+STATE="utd"
+TIME="1604369354"
+SIZE="3302"
+PARENT="<project>\component\work\NMR_TOP\NMR_TOP.cxf"
+BEGIN_USE_CONSTRAINT
+TOOL_CONSTRAINT_TYPE="ideDESIGNER"
+END_USE_CONSTRAINT
+USE_FOR_ANY_TOOL="FALSE"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\work\NMR_TOP\NMR_TOP.v,hdl"
+STATE="utd"
+TIME="1604369354"
+SIZE="71450"
+PARENT="<project>\component\work\NMR_TOP\NMR_TOP.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\work\NMR_TOP\testbench.v,tb_hdl"
+STATE="utd"
+TIME="1604369354"
+SIZE="2112"
+PARENT="<project>\component\work\NMR_TOP\NMR_TOP.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\work\noise_acq\noise_acq.cxf,actgen_cxf"
+STATE="utd"
+TIME="1604369354"
+SIZE="3764"
+ENDFILE
+VALUE "<project>\component\work\noise_acq\noise_acq.v,hdl"
+STATE="utd"
+TIME="1604369354"
+SIZE="5231"
+PARENT="<project>\component\work\noise_acq\noise_acq.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\work\noise_acq\testbench.v,tb_hdl"
+STATE="utd"
+TIME="1604369354"
+SIZE="1721"
+PARENT="<project>\component\work\noise_acq\noise_acq.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\work\pd_pluse_top\pd_pluse_top.cxf,actgen_cxf"
+STATE="utd"
+TIME="1604369354"
+SIZE="3158"
+ENDFILE
+VALUE "<project>\component\work\pd_pluse_top\pd_pluse_top.v,hdl"
+STATE="utd"
+TIME="1604369354"
+SIZE="3898"
+PARENT="<project>\component\work\pd_pluse_top\pd_pluse_top.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\work\pd_pluse_top\testbench.v,tb_hdl"
+STATE="utd"
+TIME="1604369354"
+SIZE="1681"
+PARENT="<project>\component\work\pd_pluse_top\pd_pluse_top.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\work\PLUSE\PLUSE.cxf,actgen_cxf"
+STATE="utd"
+TIME="1604369354"
+SIZE="4705"
+ENDFILE
+VALUE "<project>\component\work\PLUSE\PLUSE.v,hdl"
+STATE="utd"
+TIME="1604369354"
+SIZE="8731"
+PARENT="<project>\component\work\PLUSE\PLUSE.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\work\PLUSE\testbench.v,tb_hdl"
+STATE="utd"
+TIME="1604369354"
+SIZE="1794"
+PARENT="<project>\component\work\PLUSE\PLUSE.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\work\sd_acq_top\sd_acq_top.cxf,actgen_cxf"
+STATE="utd"
+TIME="1604369354"
+SIZE="3293"
+ENDFILE
+VALUE "<project>\component\work\sd_acq_top\sd_acq_top.v,hdl"
+STATE="utd"
+TIME="1604369354"
+SIZE="5082"
+PARENT="<project>\component\work\sd_acq_top\sd_acq_top.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\work\sd_acq_top\testbench.v,tb_hdl"
+STATE="utd"
+TIME="1604369354"
+SIZE="1697"
+PARENT="<project>\component\work\sd_acq_top\sd_acq_top.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\work\signal_acq\signal_acq.cxf,actgen_cxf"
+STATE="utd"
+TIME="1604369354"
+SIZE="3873"
+ENDFILE
+VALUE "<project>\component\work\signal_acq\signal_acq.v,hdl"
+STATE="utd"
+TIME="1604369354"
+SIZE="31612"
+PARENT="<project>\component\work\signal_acq\signal_acq.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\work\signal_acq\testbench.v,tb_hdl"
+STATE="utd"
+TIME="1604369354"
+SIZE="1726"
+PARENT="<project>\component\work\signal_acq\signal_acq.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\work\Signal_Noise_Acq\Signal_Noise_Acq.cxf,actgen_cxf"
+STATE="utd"
+TIME="1604369354"
+SIZE="5012"
+ENDFILE
+VALUE "<project>\component\work\Signal_Noise_Acq\Signal_Noise_Acq.v,hdl"
+STATE="utd"
+TIME="1604369354"
+SIZE="8974"
+PARENT="<project>\component\work\Signal_Noise_Acq\Signal_Noise_Acq.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\work\Signal_Noise_Acq\testbench.v,tb_hdl"
+STATE="utd"
+TIME="1604369354"
+SIZE="1984"
+PARENT="<project>\component\work\Signal_Noise_Acq\Signal_Noise_Acq.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\work\timer_top\testbench.v,tb_hdl"
+STATE="utd"
+TIME="1604369354"
+SIZE="1788"
+PARENT="<project>\component\work\timer_top\timer_top.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\work\timer_top\timer_top.cxf,actgen_cxf"
+STATE="utd"
+TIME="1604369354"
+SIZE="3835"
+ENDFILE
+VALUE "<project>\component\work\timer_top\timer_top.v,hdl"
+STATE="utd"
+TIME="1604369354"
+SIZE="6359"
+PARENT="<project>\component\work\timer_top\timer_top.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\constraint\NMR_TOP_PIN_LOCKED.pdc,pdc"
+STATE="utd"
+TIME="1618456387"
+SIZE="11465"
+ENDFILE
+VALUE "<project>\constraint\NMR_TOP_PLACEMENT.pdc,pdc"
+STATE="utd"
+TIME="1604369354"
+SIZE="4921"
+ENDFILE
+VALUE "<project>\constraint\NMR_TOP_syn.sdc,sdc"
+STATE="utd"
+TIME="1604369354"
+SIZE="7651"
+ENDFILE
+VALUE "<project>\designer\impl1\NMR_TOP_prgdata_log.rpt,log"
+STATE="utd"
+TIME="1618213662"
+SIZE="864"
+ENDFILE
+VALUE "<project>\designer\impl3\NMR_TOP.adb,adb"
+STATE="ood"
+TIME="1604369355"
+SIZE="6109696"
+ENDFILE
+VALUE "<project>\designer\impl3\NMR_TOP.pdb,pdb"
+STATE="ood"
+TIME="1604369355"
+SIZE="333824"
+ENDFILE
+VALUE "<project>\designer\impl3\NMR_TOP_1.adb,adb"
+STATE="utd"
+TIME="1618213660"
+SIZE="6417920"
+ENDFILE
+VALUE "<project>\designer\impl3\NMR_TOP_1.ide_des,ide_des"
+STATE="utd"
+TIME="1618213661"
+SIZE="1650"
+ENDFILE
+VALUE "<project>\designer\impl3\NMR_TOP_1_ba.sdf,ba_sdf"
+STATE="ood"
+TIME="1604369355"
+SIZE="3899776"
+ENDFILE
+VALUE "<project>\designer\impl3\NMR_TOP_1_ba.v,ba_hdl"
+STATE="ood"
+TIME="1604369356"
+SIZE="1968091"
+ENDFILE
+VALUE "<project>\designer\impl3\NMR_TOP_1_fp\NMR_TOP_1.pro,pro"
+STATE="utd"
+TIME="1618218489"
+SIZE="2477"
+ENDFILE
+VALUE "<project>\designer\impl3\NMR_TOP_1_fp\projectData\NMR_TOP_1.pdb,pdb"
+STATE="utd"
+TIME="1618218489"
+SIZE="294725"
+ENDFILE
+VALUE "<project>\designer\impl3\NMR_TOP_ba.sdf,ba_sdf"
+STATE="ood"
+TIME="1611213624"
+SIZE="3899389"
+ENDFILE
+VALUE "<project>\designer\impl3\NMR_TOP_compile_log.rpt,log"
+STATE="utd"
+TIME="1618456496"
+SIZE="20323"
+ENDFILE
+VALUE "<project>\designer\impl3\NMR_TOP_fp\NMR_TOP.pro,pro"
+STATE="utd"
+TIME="1617853904"
+SIZE="0"
+ENDFILE
+VALUE "<project>\designer\impl3\NMR_TOP_fp\projectData\NMR_TOP.pdb,pdb"
+STATE="utd"
+TIME="1604369356"
+SIZE="335872"
+ENDFILE
+VALUE "<project>\designer\impl3\NMR_TOP_placeroute_log.rpt,log"
+STATE="utd"
+TIME="1618456936"
+SIZE="2649"
+ENDFILE
+VALUE "<project>\hdl\1ms_dump_choice.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="2538"
+ENDFILE
+VALUE "<project>\hdl\add_reg.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="537"
+ENDFILE
+VALUE "<project>\hdl\bridge_div.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="2710"
+ENDFILE
+VALUE "<project>\hdl\bri_coder.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="1379"
+ENDFILE
+VALUE "<project>\hdl\bri_dump_sw.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="3183"
+ENDFILE
+VALUE "<project>\hdl\bri_state.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="4832"
+ENDFILE
+VALUE "<project>\hdl\bri_timer.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="1144"
+ENDFILE
+VALUE "<project>\hdl\cal_div.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="1419"
+ENDFILE
+VALUE "<project>\hdl\cal_load.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="469"
+ENDFILE
+VALUE "<project>\hdl\clk_10k.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="1768"
+ENDFILE
+VALUE "<project>\hdl\clk_5k.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="918"
+ENDFILE
+VALUE "<project>\hdl\clk_div500.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="1722"
+ENDFILE
+VALUE "<project>\hdl\ctrl_addr.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="960"
+ENDFILE
+VALUE "<project>\hdl\dds_change.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="1682"
+ENDFILE
+VALUE "<project>\hdl\dds_coder.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="941"
+ENDFILE
+VALUE "<project>\hdl\dds_state.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="5536"
+ENDFILE
+VALUE "<project>\hdl\dds_timer.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="676"
+ENDFILE
+VALUE "<project>\hdl\dump_coder.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="2759"
+ENDFILE
+VALUE "<project>\hdl\dump_state.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="4105"
+ENDFILE
+VALUE "<project>\hdl\dump_sustain_timer.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="1468"
+ENDFILE
+VALUE "<project>\hdl\dump_timer.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="686"
+ENDFILE
+VALUE "<project>\hdl\link.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="226"
+ENDFILE
+VALUE "<project>\hdl\long_timer.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="1874"
+ENDFILE
+VALUE "<project>\hdl\noiseclk.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="1822"
+ENDFILE
+VALUE "<project>\hdl\noiseclkctrl.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="1030"
+ENDFILE
+VALUE "<project>\hdl\noisestate.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="7180"
+ENDFILE
+VALUE "<project>\hdl\noise_addr.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="485"
+ENDFILE
+VALUE "<project>\hdl\nsctrl_choice.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="3655"
+ENDFILE
+VALUE "<project>\hdl\n_pluse_acq.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="1219"
+ENDFILE
+VALUE "<project>\hdl\n_rdclk_syn.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="922"
+ENDFILE
+VALUE "<project>\hdl\n_s_change.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="845"
+ENDFILE
+VALUE "<project>\hdl\off_on_coder.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="733"
+ENDFILE
+VALUE "<project>\hdl\off_on_state.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="2184"
+ENDFILE
+VALUE "<project>\hdl\off_on_timer.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="697"
+ENDFILE
+VALUE "<project>\hdl\para_load.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="1110"
+ENDFILE
+VALUE "<project>\hdl\pd_pluse_coder.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="2361"
+ENDFILE
+VALUE "<project>\hdl\pd_pluse_state.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="5814"
+ENDFILE
+VALUE "<project>\hdl\pd_pluse_timer.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="907"
+ENDFILE
+VALUE "<project>\hdl\plusestate.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="8861"
+ENDFILE
+VALUE "<project>\hdl\qq_coder.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="944"
+ENDFILE
+VALUE "<project>\hdl\qq_state.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="3178"
+ENDFILE
+VALUE "<project>\hdl\qq_timer.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="633"
+ENDFILE
+VALUE "<project>\hdl\readata_choice.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="2176"
+ENDFILE
+VALUE "<project>\hdl\reset_module.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="1697"
+ENDFILE
+VALUE "<project>\hdl\scalestate.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="26501"
+ENDFILE
+VALUE "<project>\hdl\scanstate.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="7674"
+ENDFILE
+VALUE "<project>\hdl\scan_scale_sw.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="1088"
+ENDFILE
+VALUE "<project>\hdl\sd_acq_coder.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="4434"
+ENDFILE
+VALUE "<project>\hdl\sd_acq_state.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="6762"
+ENDFILE
+VALUE "<project>\hdl\sd_acq_timer.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="707"
+ENDFILE
+VALUE "<project>\hdl\signalclkctrl.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="2904"
+ENDFILE
+VALUE "<project>\hdl\state_1ms.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="8269"
+ENDFILE
+VALUE "<project>\hdl\state_switch.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="3680"
+ENDFILE
+VALUE "<project>\hdl\s_acq_change.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="2623"
+ENDFILE
+VALUE "<project>\hdl\s_clk_div.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="1116"
+ENDFILE
+VALUE "<project>\hdl\ten_choice_one.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="1334"
+ENDFILE
+VALUE "<project>\hdl\timer.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="3650"
+ENDFILE
+VALUE "<project>\hdl\topctrlchange.v,hdl"
+STATE="utd"
+TIME="1618454705"
+SIZE="3117"
+ENDFILE
+VALUE "<project>\hdl\top_code.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="19779"
+ENDFILE
+VALUE "<project>\hdl\tri_state.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="398"
+ENDFILE
+VALUE "<project>\hdl\xwe_xzcs2_syn.v,hdl"
+STATE="utd"
+TIME="1604369357"
+SIZE="1024"
+ENDFILE
+VALUE "<project>\simulation\modelsim.log,log"
+STATE="utd"
+TIME="1604369357"
+SIZE="68262"
+ENDFILE
+VALUE "<project>\simulation\run.do,do"
+STATE="utd"
+TIME="1604369359"
+SIZE="5609"
+ENDFILE
+VALUE "<project>\smartgen\cmp_constant_4b\cmp_constant_4b.cxf,actgen_cxf"
+STATE="utd"
+TIME="1604369363"
+SIZE="1230"
+ENDFILE
+VALUE "<project>\smartgen\cmp_constant_4b\cmp_constant_4b.gen,gen"
+STATE="utd"
+TIME="1604369363"
+SIZE="453"
+PARENT="<project>\smartgen\cmp_constant_4b\cmp_constant_4b.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\smartgen\cmp_constant_4b\cmp_constant_4b.log,log"
+STATE="utd"
+TIME="1604369363"
+SIZE="1525"
+PARENT="<project>\smartgen\cmp_constant_4b\cmp_constant_4b.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\smartgen\cmp_constant_4b\cmp_constant_4b.v,hdl"
+STATE="utd"
+TIME="1604369363"
+SIZE="1123"
+PARENT="<project>\smartgen\cmp_constant_4b\cmp_constant_4b.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\smartgen\necount_cmp\necount_cmp.cxf,actgen_cxf"
+STATE="utd"
+TIME="1604369363"
+SIZE="1407"
+ENDFILE
+VALUE "<project>\smartgen\necount_cmp\necount_cmp.gen,gen"
+STATE="utd"
+TIME="1604369363"
+SIZE="462"
+PARENT="<project>\smartgen\necount_cmp\necount_cmp.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\smartgen\necount_cmp\necount_cmp.log,log"
+STATE="utd"
+TIME="1604369363"
+SIZE="1677"
+PARENT="<project>\smartgen\necount_cmp\necount_cmp.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\smartgen\necount_cmp\necount_cmp.v,hdl"
+STATE="utd"
+TIME="1604369363"
+SIZE="4282"
+PARENT="<project>\smartgen\necount_cmp\necount_cmp.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\smartgen\necount_inc\necount_inc.cxf,actgen_cxf"
+STATE="utd"
+TIME="1604369363"
+SIZE="1234"
+ENDFILE
+VALUE "<project>\smartgen\necount_inc\necount_inc.gen,gen"
+STATE="utd"
+TIME="1604369363"
+SIZE="487"
+PARENT="<project>\smartgen\necount_inc\necount_inc.cxf"
+ENDFILE
+VALUE "<project>\smartgen\necount_inc\necount_inc.log,log"
+STATE="utd"
+TIME="1604369363"
+SIZE="1411"
+PARENT="<project>\smartgen\necount_inc\necount_inc.cxf"
+ENDFILE
+VALUE "<project>\smartgen\necount_inc\necount_inc.v,hdl"
+STATE="utd"
+TIME="1604369363"
+SIZE="2555"
+PARENT="<project>\smartgen\necount_inc\necount_inc.cxf"
+ENDFILE
+VALUE "<project>\smartgen\pd_pluse_inc\pd_pluse_inc.cxf,actgen_cxf"
+STATE="utd"
+TIME="1604369363"
+SIZE="1390"
+ENDFILE
+VALUE "<project>\smartgen\pd_pluse_inc\pd_pluse_inc.gen,gen"
+STATE="utd"
+TIME="1604369363"
+SIZE="488"
+PARENT="<project>\smartgen\pd_pluse_inc\pd_pluse_inc.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\smartgen\pd_pluse_inc\pd_pluse_inc.log,log"
+STATE="utd"
+TIME="1604369363"
+SIZE="1420"
+PARENT="<project>\smartgen\pd_pluse_inc\pd_pluse_inc.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\smartgen\pd_pluse_inc\pd_pluse_inc.v,hdl"
+STATE="utd"
+TIME="1604369363"
+SIZE="4141"
+PARENT="<project>\smartgen\pd_pluse_inc\pd_pluse_inc.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\smartgen\pllclk\pllclk.cxf,actgen_cxf"
+STATE="utd"
+TIME="1611213017"
+SIZE="1610"
+ENDFILE
+VALUE "<project>\smartgen\pllclk\pllclk.gen,gen"
+STATE="utd"
+TIME="1611213013"
+SIZE="651"
+PARENT="<project>\smartgen\pllclk\pllclk.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\smartgen\pllclk\pllclk.log,log"
+STATE="utd"
+TIME="1611213014"
+SIZE="2887"
+PARENT="<project>\smartgen\pllclk\pllclk.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\smartgen\pllclk\pllclk.v,hdl"
+STATE="utd"
+TIME="1611213014"
+SIZE="2825"
+PARENT="<project>\smartgen\pllclk\pllclk.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\smartgen\RAM\RAM.cxf,actgen_cxf"
+STATE="utd"
+TIME="1604369363"
+SIZE="3500"
+ENDFILE
+VALUE "<project>\smartgen\RAM\RAM.gen,gen"
+STATE="utd"
+TIME="1604369363"
+SIZE="740"
+PARENT="<project>\smartgen\RAM\RAM.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\smartgen\RAM\RAM.log,log"
+STATE="utd"
+TIME="1604369363"
+SIZE="3106"
+PARENT="<project>\smartgen\RAM\RAM.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\smartgen\RAM\RAM.v,hdl"
+STATE="utd"
+TIME="1604369363"
+SIZE="55862"
+PARENT="<project>\smartgen\RAM\RAM.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\smartgen\RAM\RAM_R0C0.mem,sim"
+STATE="utd"
+TIME="1604369363"
+SIZE="5632"
+PARENT="<project>\smartgen\RAM\RAM.cxf"
+ENDFILE
+VALUE "<project>\smartgen\RAM\RAM_R0C1.mem,sim"
+STATE="utd"
+TIME="1604369363"
+SIZE="5632"
+PARENT="<project>\smartgen\RAM\RAM.cxf"
+ENDFILE
+VALUE "<project>\smartgen\RAM\RAM_R0C10.mem,sim"
+STATE="utd"
+TIME="1604369363"
+SIZE="5632"
+PARENT="<project>\smartgen\RAM\RAM.cxf"
+ENDFILE
+VALUE "<project>\smartgen\RAM\RAM_R0C11.mem,sim"
+STATE="utd"
+TIME="1604369363"
+SIZE="5632"
+PARENT="<project>\smartgen\RAM\RAM.cxf"
+ENDFILE
+VALUE "<project>\smartgen\RAM\RAM_R0C2.mem,sim"
+STATE="utd"
+TIME="1604369363"
+SIZE="5632"
+PARENT="<project>\smartgen\RAM\RAM.cxf"
+ENDFILE
+VALUE "<project>\smartgen\RAM\RAM_R0C3.mem,sim"
+STATE="utd"
+TIME="1604369363"
+SIZE="5632"
+PARENT="<project>\smartgen\RAM\RAM.cxf"
+ENDFILE
+VALUE "<project>\smartgen\RAM\RAM_R0C4.mem,sim"
+STATE="utd"
+TIME="1604369363"
+SIZE="5632"
+PARENT="<project>\smartgen\RAM\RAM.cxf"
+ENDFILE
+VALUE "<project>\smartgen\RAM\RAM_R0C5.mem,sim"
+STATE="utd"
+TIME="1604369363"
+SIZE="5632"
+PARENT="<project>\smartgen\RAM\RAM.cxf"
+ENDFILE
+VALUE "<project>\smartgen\RAM\RAM_R0C6.mem,sim"
+STATE="utd"
+TIME="1604369363"
+SIZE="5632"
+PARENT="<project>\smartgen\RAM\RAM.cxf"
+ENDFILE
+VALUE "<project>\smartgen\RAM\RAM_R0C7.mem,sim"
+STATE="utd"
+TIME="1604369363"
+SIZE="5632"
+PARENT="<project>\smartgen\RAM\RAM.cxf"
+ENDFILE
+VALUE "<project>\smartgen\RAM\RAM_R0C8.mem,sim"
+STATE="utd"
+TIME="1604369363"
+SIZE="5632"
+PARENT="<project>\smartgen\RAM\RAM.cxf"
+ENDFILE
+VALUE "<project>\smartgen\RAM\RAM_R0C9.mem,sim"
+STATE="utd"
+TIME="1604369363"
+SIZE="5632"
+PARENT="<project>\smartgen\RAM\RAM.cxf"
+ENDFILE
+VALUE "<project>\smartgen\sd_sacq_inc\sd_sacq_inc.cxf,actgen_cxf"
+STATE="utd"
+TIME="1604369363"
+SIZE="1386"
+ENDFILE
+VALUE "<project>\smartgen\sd_sacq_inc\sd_sacq_inc.gen,gen"
+STATE="utd"
+TIME="1604369363"
+SIZE="487"
+PARENT="<project>\smartgen\sd_sacq_inc\sd_sacq_inc.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\smartgen\sd_sacq_inc\sd_sacq_inc.log,log"
+STATE="utd"
+TIME="1604369363"
+SIZE="1417"
+PARENT="<project>\smartgen\sd_sacq_inc\sd_sacq_inc.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\smartgen\sd_sacq_inc\sd_sacq_inc.v,hdl"
+STATE="utd"
+TIME="1604369363"
+SIZE="6194"
+PARENT="<project>\smartgen\sd_sacq_inc\sd_sacq_inc.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\smartgen\Timer_Cmp\Timer_Cmp.cxf,actgen_cxf"
+STATE="utd"
+TIME="1604369363"
+SIZE="1398"
+ENDFILE
+VALUE "<project>\smartgen\Timer_Cmp\Timer_Cmp.gen,gen"
+STATE="utd"
+TIME="1604369363"
+SIZE="472"
+PARENT="<project>\smartgen\Timer_Cmp\Timer_Cmp.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\smartgen\Timer_Cmp\Timer_Cmp.log,log"
+STATE="utd"
+TIME="1604369363"
+SIZE="1683"
+PARENT="<project>\smartgen\Timer_Cmp\Timer_Cmp.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\smartgen\Timer_Cmp\Timer_Cmp.v,hdl"
+STATE="utd"
+TIME="1604369363"
+SIZE="9090"
+PARENT="<project>\smartgen\Timer_Cmp\Timer_Cmp.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\stimulus\dump_sustain_timer_tb.v,tb_hdl"
+STATE="utd"
+TIME="1604369363"
+SIZE="542"
+ENDFILE
+VALUE "<project>\stimulus\NMR_TOP_DE-test_tb.v,tb_hdl"
+STATE="utd"
+TIME="1604369363"
+SIZE="25220"
+ENDFILE
+VALUE "<project>\stimulus\NMR_TOP_DEI90_tb.v,tb_hdl"
+STATE="utd"
+TIME="1604369363"
+SIZE="26230"
+ENDFILE
+VALUE "<project>\stimulus\noise_acq_tb.v,tb_hdl"
+STATE="utd"
+TIME="1604369363"
+SIZE="1531"
+ENDFILE
+VALUE "<project>\stimulus\scale_scan_tb.v,tb_hdl"
+STATE="utd"
+TIME="1604369363"
+SIZE="17830"
+ENDFILE
+VALUE "<project>\stimulus\Scan_Testbench.v,tb_hdl"
+STATE="utd"
+TIME="1604369363"
+SIZE="5679"
+ENDFILE
+VALUE "<project>\stimulus\State1ms_Tbench.v,tb_hdl"
+STATE="utd"
+TIME="1604369363"
+SIZE="5806"
+ENDFILE
+VALUE "<project>\stimulus\sustaintb.v,tb_hdl"
+STATE="utd"
+TIME="1604369363"
+SIZE="821"
+ENDFILE
+VALUE "<project>\stimulus\TestBench_NoiseAcq.v,tb_hdl"
+STATE="utd"
+TIME="1604369363"
+SIZE="5426"
+ENDFILE
+VALUE "<project>\stimulus\TestBench_pulse.v,tb_hdl"
+STATE="utd"
+TIME="1604369363"
+SIZE="9152"
+ENDFILE
+VALUE "<project>\stimulus\TestBench_SignalAcq.v,tb_hdl"
+STATE="utd"
+TIME="1604369363"
+SIZE="15596"
+ENDFILE
+VALUE "<project>\synthesis\NMR_TOP.edn,syn_edn"
+STATE="utd"
+TIME="1618207060"
+SIZE="3551856"
+ENDFILE
+VALUE "<project>\synthesis\NMR_TOP.so,so"
+STATE="utd"
+TIME="1618207060"
+SIZE="260"
+ENDFILE
+VALUE "<project>\synthesis\NMR_TOP.v,syn_hdl"
+STATE="ood"
+TIME="1604369363"
+SIZE="1152396"
+ENDFILE
+VALUE "<project>\synthesis\NMR_TOP_sdc.sdc,syn_sdc"
+STATE="utd"
+TIME="1618207060"
+SIZE="1414"
+ENDFILE
+VALUE "<project>\synthesis\NMR_TOP_syn.prj,prj"
+STATE="utd"
+TIME="1618207062"
+SIZE="12147"
+ENDFILE
+VALUE "<project>\viewdraw\sym\add_code.1,sym"
+STATE="utd"
+TIME="1604369364"
+SIZE="650"
+ENDFILE
+VALUE "<project>\viewdraw\sym\add_reg.1,sym"
+STATE="utd"
+TIME="1604369364"
+SIZE="662"
+ENDFILE
+VALUE "<project>\viewdraw\sym\bb_c.1,sym"
+STATE="utd"
+TIME="1604369364"
+SIZE="1178"
+ENDFILE
+VALUE "<project>\viewdraw\sym\bb_new.1,sym"
+STATE="utd"
+TIME="1604369364"
+SIZE="941"
+ENDFILE
+VALUE "<project>\viewdraw\sym\bridge.1,sym"
+STATE="utd"
+TIME="1604369364"
+SIZE="934"
+ENDFILE
+VALUE "<project>\viewdraw\sym\bridge_div.1,sym"
+STATE="utd"
+TIME="1604369364"
+SIZE="754"
+ENDFILE
+VALUE "<project>\viewdraw\sym\bri_dump_sw.1,sym"
+STATE="utd"
+TIME="1604369364"
+SIZE="1301"
+ENDFILE
+VALUE "<project>\viewdraw\sym\cal_ddsdivide.1,sym"
+STATE="utd"
+TIME="1604369364"
+SIZE="766"
+ENDFILE
+VALUE "<project>\viewdraw\sym\clkroad.1,sym"
+STATE="utd"
+TIME="1604369364"
+SIZE="549"
+ENDFILE
+VALUE "<project>\viewdraw\sym\clk_div1000.1,sym"
+STATE="utd"
+TIME="1604369364"
+SIZE="483"
+ENDFILE
+VALUE "<project>\viewdraw\sym\ctrl_addr.1,sym"
+STATE="utd"
+TIME="1604369364"
+SIZE="646"
+ENDFILE
+VALUE "<project>\viewdraw\sym\ddsconfig.1,sym"
+STATE="utd"
+TIME="1604369364"
+SIZE="1127"
+ENDFILE
+VALUE "<project>\viewdraw\sym\doff_change.1,sym"
+STATE="utd"
+TIME="1604369364"
+SIZE="788"
+ENDFILE
+VALUE "<project>\viewdraw\sym\dumpoff.1,sym"
+STATE="utd"
+TIME="1604369364"
+SIZE="549"
+ENDFILE
+VALUE "<project>\viewdraw\sym\dumpon.1,sym"
+STATE="utd"
+TIME="1604369364"
+SIZE="543"
+ENDFILE
+VALUE "<project>\viewdraw\sym\fq_ud_n.1,sym"
+STATE="utd"
+TIME="1604369364"
+SIZE="677"
+ENDFILE
+VALUE "<project>\viewdraw\sym\link.1,sym"
+STATE="utd"
+TIME="1604369364"
+SIZE="482"
+ENDFILE
+VALUE "<project>\viewdraw\sym\maindump.1,sym"
+STATE="utd"
+TIME="1604369364"
+SIZE="1048"
+ENDFILE
+VALUE "<project>\viewdraw\sym\NMR_TOP.1,sym"
+STATE="utd"
+TIME="1604369364"
+SIZE="2239"
+ENDFILE
+VALUE "<project>\viewdraw\sym\noiseclk.1,sym"
+STATE="utd"
+TIME="1604369364"
+SIZE="742"
+ENDFILE
+VALUE "<project>\viewdraw\sym\noiseclkctrl.1,sym"
+STATE="utd"
+TIME="1604369364"
+SIZE="832"
+ENDFILE
+VALUE "<project>\viewdraw\sym\noisestate.1,sym"
+STATE="utd"
+TIME="1604369364"
+SIZE="1284"
+ENDFILE
+VALUE "<project>\viewdraw\sym\noise_addr.1,sym"
+STATE="utd"
+TIME="1604369364"
+SIZE="575"
+ENDFILE
+VALUE "<project>\viewdraw\sym\nsctrl_choice.1,sym"
+STATE="utd"
+TIME="1604369364"
+SIZE="1835"
+ENDFILE
+VALUE "<project>\viewdraw\sym\n_pluse_acq.1,sym"
+STATE="utd"
+TIME="1604369364"
+SIZE="654"
+ENDFILE
+VALUE "<project>\viewdraw\sym\n_s_change.1,sym"
+STATE="utd"
+TIME="1604369364"
+SIZE="1290"
+ENDFILE
+VALUE "<project>\viewdraw\sym\plusestate.1,sym"
+STATE="utd"
+TIME="1604369364"
+SIZE="1917"
+ENDFILE
+VALUE "<project>\viewdraw\sym\posi_nege.1,sym"
+STATE="utd"
+TIME="1604369364"
+SIZE="753"
+ENDFILE
+VALUE "<project>\viewdraw\sym\ppheavy_on_timer.1,sym"
+STATE="utd"
+TIME="1604369364"
+SIZE="866"
+ENDFILE
+VALUE "<project>\viewdraw\sym\Q18_Q36.1,sym"
+STATE="utd"
+TIME="1604369364"
+SIZE="821"
+ENDFILE
+VALUE "<project>\viewdraw\sym\Q27_Q45.1,sym"
+STATE="utd"
+TIME="1604369364"
+SIZE="821"
+ENDFILE
+VALUE "<project>\viewdraw\sym\Q_SW.1,sym"
+STATE="utd"
+TIME="1604369364"
+SIZE="1129"
+ENDFILE
+VALUE "<project>\viewdraw\sym\rdata_choice.1,sym"
+STATE="utd"
+TIME="1604369364"
+SIZE="1573"
+ENDFILE
+VALUE "<project>\viewdraw\sym\scalestate.1,sym"
+STATE="utd"
+TIME="1604369364"
+SIZE="2957"
+ENDFILE
+VALUE "<project>\viewdraw\sym\scancode.1,sym"
+STATE="utd"
+TIME="1604369364"
+SIZE="742"
+ENDFILE
+VALUE "<project>\viewdraw\sym\scanstate.1,sym"
+STATE="utd"
+TIME="1604369364"
+SIZE="1372"
+ENDFILE
+VALUE "<project>\viewdraw\sym\scan_scale_sw.1,sym"
+STATE="utd"
+TIME="1604369364"
+SIZE="931"
+ENDFILE
+VALUE "<project>\viewdraw\sym\signalclkctrl.1,sym"
+STATE="utd"
+TIME="1604369364"
+SIZE="961"
+ENDFILE
+VALUE "<project>\viewdraw\sym\singletimer.1,sym"
+STATE="utd"
+TIME="1604369364"
+SIZE="942"
+ENDFILE
+VALUE "<project>\viewdraw\sym\s_clk_div4.1,sym"
+STATE="utd"
+TIME="1604369364"
+SIZE="562"
+ENDFILE
+VALUE "<project>\viewdraw\sym\ten_choice_one.1,sym"
+STATE="utd"
+TIME="1604369364"
+SIZE="1640"
+ENDFILE
+VALUE "<project>\viewdraw\sym\timer.1,sym"
+STATE="utd"
+TIME="1604369364"
+SIZE="736"
+ENDFILE
+VALUE "<project>\viewdraw\sym\topctrlchange.1,sym"
+STATE="utd"
+TIME="1604369364"
+SIZE="1891"
+ENDFILE
+VALUE "<project>\viewdraw\sym\top_code.1,sym"
+STATE="utd"
+TIME="1604369364"
+SIZE="2482"
+ENDFILE
+VALUE "<project>\viewdraw\sym\tri_state.1,sym"
+STATE="utd"
+TIME="1604369364"
+SIZE="691"
+ENDFILE
+ENDLIST
+LIST UsedFile
+ENDLIST
+LIST NewModulesInfo
+LIST "CAL::work"
+FILE "<project>\component\work\CAL\CAL.v,hdl"
+LIST Other_Association
+VALUE "<project>\component\work\CAL\testbench.v,tb_hdl"
+ENDLIST
+LIST AssociatedStimulus
+VALUE "<project>\component\work\CAL\testbench.v,tb_hdl"
+ENDLIST
+LIST ProjectState5.1
+LIST Impl3
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+ENDLIST
+ENDLIST
+LIST "ClockManagement::work"
+FILE "<project>\component\work\ClockManagement\ClockManagement.v,hdl"
+LIST Other_Association
+VALUE "<project>\component\work\ClockManagement\testbench.v,tb_hdl"
+VALUE "<project>\component\work\ClockManagement\ClockManagement.pdc,pdc"
+ENDLIST
+LIST AssociatedStimulus
+VALUE "<project>\component\work\ClockManagement\testbench.v,tb_hdl"
+ENDLIST
+LIST ProjectState5.1
+LIST Impl3
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+ENDLIST
+ENDLIST
+LIST "DDS::work"
+FILE "<project>\component\work\DDS\DDS.v,hdl"
+LIST Other_Association
+VALUE "<project>\component\work\DDS\testbench.v,tb_hdl"
+VALUE "<project>\component\work\DDS\DDS.pdc,pdc"
+ENDLIST
+LIST AssociatedStimulus
+VALUE "<project>\component\work\DDS\testbench.v,tb_hdl"
+ENDLIST
+LIST ProjectState5.1
+LIST Impl3
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+ENDLIST
+ENDLIST
+LIST "DSTimer::work"
+FILE "<project>\component\work\DSTimer\DSTimer.v,hdl"
+LIST Other_Association
+VALUE "<project>\component\work\DSTimer\testbench.v,tb_hdl"
+ENDLIST
+LIST AssociatedStimulus
+VALUE "<project>\component\work\DSTimer\testbench.v,tb_hdl"
+ENDLIST
+LIST ProjectState5.1
+LIST Impl3
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+ENDLIST
+ENDLIST
+LIST "DUMP::work"
+FILE "<project>\component\work\DUMP\DUMP.v,hdl"
+LIST Other_Association
+VALUE "<project>\component\work\DUMP\testbench.v,tb_hdl"
+ENDLIST
+LIST AssociatedStimulus
+VALUE "<project>\component\work\DUMP\testbench.v,tb_hdl"
+ENDLIST
+LIST ProjectState5.1
+LIST Impl3
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+ENDLIST
+ENDLIST
+LIST "DUMP_OFF::work"
+FILE "<project>\component\work\DUMP_OFF\DUMP_OFF.v,hdl"
+LIST Other_Association
+VALUE "<project>\component\work\DUMP_OFF\testbench.v,tb_hdl"
+ENDLIST
+ENDLIST
+LIST "DUMP_ON::work"
+FILE "<project>\component\work\DUMP_ON\DUMP_ON.v,hdl"
+LIST Other_Association
+VALUE "<project>\component\work\DUMP_ON\testbench.v,tb_hdl"
+ENDLIST
+ENDLIST
+LIST "GPMI::work"
+FILE "<project>\component\work\GPMI\GPMI.v,hdl"
+LIST Other_Association
+VALUE "<project>\component\work\GPMI\testbench.v,tb_hdl"
+ENDLIST
+LIST AssociatedStimulus
+VALUE "<project>\component\work\GPMI\testbench.v,tb_hdl"
+ENDLIST
+LIST ProjectState5.1
+LIST Impl3
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+ENDLIST
+ENDLIST
+LIST "NMR_TOP::work"
+FILE "<project>\component\work\NMR_TOP\NMR_TOP.v,hdl"
+LIST Other_Association
+VALUE "<project>\component\work\NMR_TOP\testbench.v,tb_hdl"
+VALUE "<project>\component\work\NMR_TOP\NMR_TOP.pdc,pdc"
+ENDLIST
+LIST AssociatedStimulus
+VALUE "<project>\stimulus\NMR_TOP_DEI90_tb.v,tb_hdl"
+ENDLIST
+LIST SynthesisConstraints
+VALUE "<project>\constraint\NMR_TOP_syn.sdc,sdc"
+ENDLIST
+LIST ProjectState5.1
+LIST Impl3
+LiberoState=Post_Layout
+ideSTIMULUS=StateSuccess
+ideSYNTHESIS(<project>\synthesis\NMR_TOP.edn,syn_edn)=StateSuccess
+ideDESIGNER(<project>\designer\impl3\NMR_TOP_1.adb,adb)=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+VALUE "<project>\synthesis\NMR_TOP.edn,syn_edn"
+VALUE "<project>\synthesis\NMR_TOP_sdc.sdc,syn_sdc"
+VALUE "<project>\synthesis\NMR_TOP.v,syn_hdl"
+VALUE "<project>\phy_synthesis\NMR_TOP_palace.edn,palace_edn"
+VALUE "<project>\phy_synthesis\NMR_TOP_palace.gcf,palace_gcf"
+VALUE "<project>\phy_synthesis\NMR_TOP_palace.pdc,palace_pdc"
+VALUE "<project>\phy_synthesis\NMR_TOP_palace.sdc,palace_sdc"
+VALUE "<project>\phy_synthesis\NMR_TOP_palace.v,palace_hdl"
+VALUE "<project>\designer\impl3\NMR_TOP_1.adb,adb"
+VALUE "<project>\designer\impl3\NMR_TOP_1_ba.sdf,ba_sdf"
+VALUE "<project>\designer\impl3\NMR_TOP_1_ba.v,ba_hdl"
+VALUE "<project>\designer\impl3\NMR_TOP_1.prb,prb"
+VALUE "<project>\designer\impl3\NMR_TOP_1.fdb,fdb"
+VALUE "<project>\designer\impl3\NMR_TOP_1.pdb,pdb"
+VALUE "<project>\designer\impl3\NMR_TOP_1.stp,stp"
+VALUE "<project>\designer\impl3\NMR_TOP_1_fp\NMR_TOP_1.pro,pro"
+ENDUsed_File_List
+ENDLIST
+ENDLIST
+LIST PinReports
+VALUE "<project>\designer\impl3\NMR_TOP_report_pin_byname.txt,log"
+VALUE "<project>\designer\impl3\NMR_TOP_report_pin_bynumber.txt,log"
+ENDLIST
+ENDLIST
+LIST "noise_acq::work"
+FILE "<project>\component\work\noise_acq\noise_acq.v,hdl"
+LIST Other_Association
+VALUE "<project>\component\work\noise_acq\testbench.v,tb_hdl"
+ENDLIST
+LIST AssociatedStimulus
+VALUE "<project>\component\work\noise_acq\testbench.v,tb_hdl"
+ENDLIST
+LIST ProjectState5.1
+LIST Impl3
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+ENDLIST
+ENDLIST
+LIST "pd_pluse_top::work"
+FILE "<project>\component\work\pd_pluse_top\pd_pluse_top.v,hdl"
+LIST Other_Association
+VALUE "<project>\component\work\pd_pluse_top\testbench.v,tb_hdl"
+ENDLIST
+LIST AssociatedStimulus
+VALUE "<project>\component\work\pd_pluse_top\testbench.v,tb_hdl"
+ENDLIST
+LIST ProjectState5.1
+LIST Impl3
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+ENDLIST
+ENDLIST
+LIST "PLUSE::work"
+FILE "<project>\component\work\PLUSE\PLUSE.v,hdl"
+LIST Other_Association
+VALUE "<project>\component\work\PLUSE\testbench.v,tb_hdl"
+ENDLIST
+LIST AssociatedStimulus
+VALUE "<project>\component\work\PLUSE\testbench.v,tb_hdl"
+ENDLIST
+LIST ProjectState5.1
+LIST Impl3
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+ENDLIST
+ENDLIST
+LIST "RAM::work"
+FILE "<project>\smartgen\RAM\RAM.v,hdl"
+LIST Other_Association
+VALUE "<project>\smartgen\RAM\RAM_R0C0.mem,sim"
+VALUE "<project>\smartgen\RAM\RAM_R0C1.mem,sim"
+VALUE "<project>\smartgen\RAM\RAM_R0C2.mem,sim"
+VALUE "<project>\smartgen\RAM\RAM_R0C3.mem,sim"
+VALUE "<project>\smartgen\RAM\RAM_R0C4.mem,sim"
+VALUE "<project>\smartgen\RAM\RAM_R0C5.mem,sim"
+VALUE "<project>\smartgen\RAM\RAM_R0C6.mem,sim"
+VALUE "<project>\smartgen\RAM\RAM_R0C7.mem,sim"
+VALUE "<project>\smartgen\RAM\RAM_R0C8.mem,sim"
+VALUE "<project>\smartgen\RAM\RAM_R0C9.mem,sim"
+VALUE "<project>\smartgen\RAM\RAM_R0C10.mem,sim"
+VALUE "<project>\smartgen\RAM\RAM_R0C11.mem,sim"
+ENDLIST
+ENDLIST
+LIST "sd_acq_top::work"
+FILE "<project>\component\work\sd_acq_top\sd_acq_top.v,hdl"
+LIST Other_Association
+VALUE "<project>\component\work\sd_acq_top\testbench.v,tb_hdl"
+ENDLIST
+LIST AssociatedStimulus
+VALUE "<project>\component\work\sd_acq_top\testbench.v,tb_hdl"
+ENDLIST
+LIST ProjectState5.1
+LIST Impl3
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+ENDLIST
+ENDLIST
+LIST "signal_acq::work"
+FILE "<project>\component\work\signal_acq\signal_acq.v,hdl"
+LIST Other_Association
+VALUE "<project>\component\work\signal_acq\testbench.v,tb_hdl"
+ENDLIST
+LIST AssociatedStimulus
+VALUE "<project>\component\work\signal_acq\testbench.v,tb_hdl"
+ENDLIST
+LIST ProjectState5.1
+LIST Impl3
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+ENDLIST
+ENDLIST
+LIST "Signal_Noise_Acq::work"
+FILE "<project>\component\work\Signal_Noise_Acq\Signal_Noise_Acq.v,hdl"
+LIST Other_Association
+VALUE "<project>\component\work\Signal_Noise_Acq\testbench.v,tb_hdl"
+ENDLIST
+LIST AssociatedStimulus
+VALUE "<project>\component\work\Signal_Noise_Acq\testbench.v,tb_hdl"
+ENDLIST
+LIST ProjectState5.1
+LIST Impl3
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+ENDLIST
+ENDLIST
+LIST "timer_top::work"
+FILE "<project>\component\work\timer_top\timer_top.v,hdl"
+LIST Other_Association
+VALUE "<project>\component\work\timer_top\testbench.v,tb_hdl"
+ENDLIST
+LIST AssociatedStimulus
+VALUE "<project>\component\work\timer_top\testbench.v,tb_hdl"
+ENDLIST
+LIST ProjectState5.1
+LIST Impl3
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+ENDLIST
+ENDLIST
+ENDLIST
+LIST AssociatedStimulus
+LIST NMR_TOP
+VALUE "<project>\stimulus\NMR_TOP_DEI90_tb.v,tb_hdl"
+ENDLIST
+LIST CAL
+VALUE "<project>\component\work\CAL\testbench.v,tb_hdl"
+ENDLIST
+LIST ClockManagement
+VALUE "<project>\component\work\ClockManagement\testbench.v,tb_hdl"
+ENDLIST
+LIST DDS
+VALUE "<project>\component\work\DDS\testbench.v,tb_hdl"
+ENDLIST
+LIST DSTimer
+VALUE "<project>\component\work\DSTimer\testbench.v,tb_hdl"
+ENDLIST
+LIST DUMP
+VALUE "<project>\component\work\DUMP\testbench.v,tb_hdl"
+ENDLIST
+LIST GPMI
+VALUE "<project>\component\work\GPMI\testbench.v,tb_hdl"
+ENDLIST
+LIST PLUSE
+VALUE "<project>\component\work\PLUSE\testbench.v,tb_hdl"
+ENDLIST
+LIST Signal_Noise_Acq
+VALUE "<project>\component\work\Signal_Noise_Acq\testbench.v,tb_hdl"
+ENDLIST
+LIST noise_acq
+VALUE "<project>\component\work\noise_acq\testbench.v,tb_hdl"
+ENDLIST
+LIST signal_acq
+VALUE "<project>\component\work\signal_acq\testbench.v,tb_hdl"
+ENDLIST
+LIST pd_pluse_top
+VALUE "<project>\component\work\pd_pluse_top\testbench.v,tb_hdl"
+ENDLIST
+LIST sd_acq_top
+VALUE "<project>\component\work\sd_acq_top\testbench.v,tb_hdl"
+ENDLIST
+LIST timer_top
+VALUE "<project>\component\work\timer_top\testbench.v,tb_hdl"
+ENDLIST
+ENDLIST
+LIST Other_Association
+LIST NMR_TOP
+VALUE "<project>\component\work\NMR_TOP\testbench.v,tb_hdl"
+VALUE "<project>\component\work\NMR_TOP\NMR_TOP.pdc,pdc"
+ENDLIST
+LIST CAL
+VALUE "<project>\component\work\CAL\testbench.v,tb_hdl"
+ENDLIST
+LIST ClockManagement
+VALUE "<project>\component\work\ClockManagement\testbench.v,tb_hdl"
+VALUE "<project>\component\work\ClockManagement\ClockManagement.pdc,pdc"
+ENDLIST
+LIST DDS
+VALUE "<project>\component\work\DDS\testbench.v,tb_hdl"
+VALUE "<project>\component\work\DDS\DDS.pdc,pdc"
+ENDLIST
+LIST DSTimer
+VALUE "<project>\component\work\DSTimer\testbench.v,tb_hdl"
+ENDLIST
+LIST DUMP
+VALUE "<project>\component\work\DUMP\testbench.v,tb_hdl"
+ENDLIST
+LIST DUMP_OFF
+VALUE "<project>\component\work\DUMP_OFF\testbench.v,tb_hdl"
+ENDLIST
+LIST DUMP_ON
+VALUE "<project>\component\work\DUMP_ON\testbench.v,tb_hdl"
+ENDLIST
+LIST GPMI
+VALUE "<project>\component\work\GPMI\testbench.v,tb_hdl"
+ENDLIST
+LIST PLUSE
+VALUE "<project>\component\work\PLUSE\testbench.v,tb_hdl"
+ENDLIST
+LIST Signal_Noise_Acq
+VALUE "<project>\component\work\Signal_Noise_Acq\testbench.v,tb_hdl"
+ENDLIST
+LIST noise_acq
+VALUE "<project>\component\work\noise_acq\testbench.v,tb_hdl"
+ENDLIST
+LIST RAM
+VALUE "<project>\smartgen\RAM\RAM_R0C0.mem,sim"
+VALUE "<project>\smartgen\RAM\RAM_R0C1.mem,sim"
+VALUE "<project>\smartgen\RAM\RAM_R0C2.mem,sim"
+VALUE "<project>\smartgen\RAM\RAM_R0C3.mem,sim"
+VALUE "<project>\smartgen\RAM\RAM_R0C4.mem,sim"
+VALUE "<project>\smartgen\RAM\RAM_R0C5.mem,sim"
+VALUE "<project>\smartgen\RAM\RAM_R0C6.mem,sim"
+VALUE "<project>\smartgen\RAM\RAM_R0C7.mem,sim"
+VALUE "<project>\smartgen\RAM\RAM_R0C8.mem,sim"
+VALUE "<project>\smartgen\RAM\RAM_R0C9.mem,sim"
+VALUE "<project>\smartgen\RAM\RAM_R0C10.mem,sim"
+VALUE "<project>\smartgen\RAM\RAM_R0C11.mem,sim"
+ENDLIST
+LIST signal_acq
+VALUE "<project>\component\work\signal_acq\testbench.v,tb_hdl"
+ENDLIST
+LIST pd_pluse_top
+VALUE "<project>\component\work\pd_pluse_top\testbench.v,tb_hdl"
+ENDLIST
+LIST sd_acq_top
+VALUE "<project>\component\work\sd_acq_top\testbench.v,tb_hdl"
+ENDLIST
+LIST timer_top
+VALUE "<project>\component\work\timer_top\testbench.v,tb_hdl"
+ENDLIST
+ENDLIST
+LIST SimulationOptions
+UseAutomaticDoFile=true
+IncludeWaveDo=false
+Type=max
+RunTime=0
+Resolution=1ps
+VsimOpt=
+EntityName=testbench
+TopInstanceName=<top>_0
+DoFileName=E:/Documents/2D_FPGA_DSP_prjs/2D_NMR_EC_FPGA/1011/2D_NMR_EC_FPGA_1010/simulation/run.do
+DoFileName2=wave.do
+DoFileParams=
+DisplayDUTWave=false
+LogAllSignals=false
+DisablePulseFiltering=false
+DumpVCD=false
+VCDFileName=power.vcd
+VHDL2008=false
+Verilog2001=false
+SystemVerilog=false
+TimeUnit=1
+TimeUnitBase=ns
+Precision=100
+PrecisionBase=ps
+ENDLIST
+LIST ModelSimLibPath
+UseCustomPath=FALSE
+LibraryPath=C:/Actel/Libero_v9.1/Designer/lib/modelsim/precompiled/vlog/proasic3
+ENDLIST
+LIST GlobalFlowOptions
+GenerateHDLAfterSynthesis=FALSE
+GenerateHDLAfterPhySynthesis=FALSE
+RunDRCAfterSynthesis=FALSE
+AutoCheckConstraints=TRUE
+UpdateModelSimIni=FALSE
+NoIOMode=FALSE
+PeriInitStandalone=FALSE
+EnableViewDraw=FALSE
+UpdateViewDrawIni=FALSE
+GenerateHDLFromSchematic=TRUE
+VmNetlistFlowOn=FALSE
+EnableDesignSeparationOn=FALSE
+EnableSETMitigationOn=FALSE
+DisplayFanoutLimit=10
+AbortFlowOnPDCErrorsOn=TRUE
+AbortFlowOnSDCErrorsOn=TRUE
+InstantiateInSmartDesign=TRUE
+FlashProInputFile=pdb
+SmartGenCompileReport=T
+ENDLIST
+LIST PhySynthesisOptions
+ENDLIST
+LIST Profiles
+NAME="SoftConsole"
+FUNCTION="SoftwareIDE"
+TOOL="SoftConsole"
+LOCATION="eclipse.exe"
+PARAM=""
+BATCH=0
+LICENSE=""
+IS32BIT="1"
+EndProfile
+NAME="Synplify Pro ME"
+FUNCTION="Synthesis"
+TOOL="Synplify Pro ME"
+LOCATION="D:\Libero_Soc11.9\SynplifyPro\bin\synplify_pro.exe"
+PARAM=""
+BATCH=0
+LICENSE=""
+IS32BIT="1"
+EndProfile
+NAME="ModelSim ME"
+FUNCTION="Simulation"
+TOOL="ModelSim"
+LOCATION="D:\Libero_Soc11.9\Modelsim\win32acoem\modelsim.exe"
+PARAM=""
+BATCH=0
+LICENSE=""
+IS32BIT="1"
+EndProfile
+NAME="FPExpress"
+FUNCTION="Program"
+TOOL="FlashPro"
+LOCATION="D:\Libero_Soc11.9\Designer\bin\FPExpress.exe"
+PARAM=""
+BATCH=0
+LICENSE=""
+IS32BIT="1"
+EndProfile
+NAME="Identify Debugger"
+FUNCTION="IdentifyDebugger"
+TOOL="Identify Debugger"
+LOCATION="D:\Libero_Soc11.9\Identify\bin\identify_debugger.exe"
+PARAM=""
+BATCH=0
+LICENSE=""
+IS32BIT="1"
+EndProfile
+ENDLIST
+LIST ProjectState5.1
+LIST "CAL::work"
+LIST Impl3
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+ENDLIST
+LIST "ClockManagement::work"
+LIST Impl3
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+ENDLIST
+LIST "DDS::work"
+LIST Impl3
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+ENDLIST
+LIST "DSTimer::work"
+LIST Impl3
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+ENDLIST
+LIST "DUMP::work"
+LIST Impl3
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+ENDLIST
+LIST "GPMI::work"
+LIST Impl3
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+ENDLIST
+LIST "NMR_TOP::work"
+LIST Impl3
+LiberoState=Post_Layout
+ideSTIMULUS=StateSuccess
+ideSYNTHESIS(<project>\synthesis\NMR_TOP.edn,syn_edn)=StateSuccess
+ideDESIGNER(<project>\designer\impl3\NMR_TOP_1.adb,adb)=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+VALUE "<project>\synthesis\NMR_TOP.edn,syn_edn"
+VALUE "<project>\synthesis\NMR_TOP_sdc.sdc,syn_sdc"
+VALUE "<project>\synthesis\NMR_TOP.v,syn_hdl"
+VALUE "<project>\phy_synthesis\NMR_TOP_palace.edn,palace_edn"
+VALUE "<project>\phy_synthesis\NMR_TOP_palace.gcf,palace_gcf"
+VALUE "<project>\phy_synthesis\NMR_TOP_palace.pdc,palace_pdc"
+VALUE "<project>\phy_synthesis\NMR_TOP_palace.sdc,palace_sdc"
+VALUE "<project>\phy_synthesis\NMR_TOP_palace.v,palace_hdl"
+VALUE "<project>\designer\impl3\NMR_TOP_1.adb,adb"
+VALUE "<project>\designer\impl3\NMR_TOP_1_ba.sdf,ba_sdf"
+VALUE "<project>\designer\impl3\NMR_TOP_1_ba.v,ba_hdl"
+VALUE "<project>\designer\impl3\NMR_TOP_1.prb,prb"
+VALUE "<project>\designer\impl3\NMR_TOP_1.fdb,fdb"
+VALUE "<project>\designer\impl3\NMR_TOP_1.pdb,pdb"
+VALUE "<project>\designer\impl3\NMR_TOP_1.stp,stp"
+VALUE "<project>\designer\impl3\NMR_TOP_1_fp\NMR_TOP_1.pro,pro"
+ENDUsed_File_List
+ENDLIST
+ENDLIST
+LIST "noise_acq::work"
+LIST Impl3
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+ENDLIST
+LIST "pd_pluse_top::work"
+LIST Impl3
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+ENDLIST
+LIST "PLUSE::work"
+LIST Impl3
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+ENDLIST
+LIST "sd_acq_top::work"
+LIST Impl3
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+ENDLIST
+LIST "signal_acq::work"
+LIST Impl3
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+ENDLIST
+LIST "Signal_Noise_Acq::work"
+LIST Impl3
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+ENDLIST
+LIST "timer_top::work"
+LIST Impl3
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+ENDLIST
+ENDLIST
+LIST ExcludePackageForSimulation
+ENDLIST
+LIST ExcludePackageForSynthesis
+ENDLIST
+LIST IncludeModuleForSimulation
+ENDLIST
+LIST CDBOrder
+ENDLIST
+LIST UserCustomizedFileList
+ENDLIST
+LIST OpenedFileList
+ORIENTATION;HORIZONTAL
+Reports;Reports;0
+ReportsCurrentItem;Place and Route:NMR_TOP_placeroute_log.rpt
+StartPage;StartPage;0
+SmartDesign;PLUSE;0
+SmartDesign;NMR_TOP;0
+SmartDesign;GPMI;0
+ACTIVEVIEW;Reports
+ENDLIST
+LIST ModuleSubBlockList
+LIST "add_reg::work","hdl\add_reg.v","FALSE","FALSE"
+ENDLIST
+LIST "bri_coder::work","hdl\bri_coder.v","FALSE","FALSE"
+ENDLIST
+LIST "bri_dump_sw::work","hdl\bri_dump_sw.v","FALSE","FALSE"
+ENDLIST
+LIST "bri_qq_load::work","hdl\para_load.v","FALSE","FALSE"
+ENDLIST
+LIST "bri_state::work","hdl\bri_state.v","FALSE","FALSE"
+ENDLIST
+LIST "bri_timer::work","hdl\bri_timer.v","FALSE","FALSE"
+ENDLIST
+LIST "bridge_div::work","hdl\bridge_div.v","FALSE","FALSE"
+ENDLIST
+LIST "CAL::work","component\work\CAL\CAL.v","TRUE","FALSE"
+SUBBLOCK "cal_div::work","hdl\cal_div.v","FALSE","FALSE"
+SUBBLOCK "cal_load::work","hdl\cal_load.v","FALSE","FALSE"
+ENDLIST
+LIST "cal_div::work","hdl\cal_div.v","FALSE","FALSE"
+ENDLIST
+LIST "cal_load::work","hdl\cal_load.v","FALSE","FALSE"
+ENDLIST
+LIST "clk_10k::work","hdl\clk_10k.v","FALSE","FALSE"
+ENDLIST
+LIST "clk_5k::work","hdl\clk_5k.v","FALSE","FALSE"
+ENDLIST
+LIST "clk_div500::work","hdl\clk_div500.v","FALSE","FALSE"
+ENDLIST
+LIST "ClockManagement::work","component\work\ClockManagement\ClockManagement.v","TRUE","FALSE"
+SUBBLOCK "clk_10k::work","hdl\clk_10k.v","FALSE","FALSE"
+SUBBLOCK "clk_div500::work","hdl\clk_div500.v","FALSE","FALSE"
+SUBBLOCK "long_timer::work","hdl\long_timer.v","FALSE","FALSE"
+SUBBLOCK "pllclk::work","smartgen\pllclk\pllclk.v","TRUE","FALSE"
+ENDLIST
+LIST "cmp_constant_4b::work","smartgen\cmp_constant_4b\cmp_constant_4b.v","TRUE","FALSE"
+ENDLIST
+LIST "ctrl_addr::work","hdl\ctrl_addr.v","FALSE","FALSE"
+ENDLIST
+LIST "DDS::work","component\work\DDS\DDS.v","TRUE","FALSE"
+SUBBLOCK "dds_coder::work","hdl\dds_coder.v","FALSE","FALSE"
+SUBBLOCK "dds_state::work","hdl\dds_state.v","FALSE","FALSE"
+SUBBLOCK "dds_timer::work","hdl\dds_timer.v","FALSE","FALSE"
+ENDLIST
+LIST "dds_change::work","hdl\dds_change.v","FALSE","FALSE"
+ENDLIST
+LIST "dds_coder::work","hdl\dds_coder.v","FALSE","FALSE"
+ENDLIST
+LIST "dds_state::work","hdl\dds_state.v","FALSE","FALSE"
+ENDLIST
+LIST "dds_timer::work","hdl\dds_timer.v","FALSE","FALSE"
+ENDLIST
+LIST "DSTimer::work","component\work\DSTimer\DSTimer.v","TRUE","FALSE"
+SUBBLOCK "dump_sustain_timer::work","hdl\dump_sustain_timer.v","FALSE","FALSE"
+ENDLIST
+LIST "DUMP::work","component\work\DUMP\DUMP.v","TRUE","FALSE"
+SUBBLOCK "dump_coder::work","hdl\dump_coder.v","FALSE","FALSE"
+SUBBLOCK "dump_state::work","hdl\dump_state.v","FALSE","FALSE"
+SUBBLOCK "dump_timer::work","hdl\dump_timer.v","FALSE","FALSE"
+SUBBLOCK "off_on_coder::work","hdl\off_on_coder.v","FALSE","FALSE"
+SUBBLOCK "off_on_state::work","hdl\off_on_state.v","FALSE","FALSE"
+SUBBLOCK "off_on_timer::work","hdl\off_on_timer.v","FALSE","FALSE"
+ENDLIST
+LIST "dump_coder::work","hdl\dump_coder.v","FALSE","FALSE"
+ENDLIST
+LIST "DUMP_OFF::work","component\work\DUMP_OFF\DUMP_OFF.v","TRUE","FALSE"
+SUBBLOCK "off_on_coder::work","hdl\off_on_coder.v","FALSE","FALSE"
+SUBBLOCK "off_on_state::work","hdl\off_on_state.v","FALSE","FALSE"
+SUBBLOCK "off_on_timer::work","hdl\off_on_timer.v","FALSE","FALSE"
+ENDLIST
+LIST "DUMP_ON::work","component\work\DUMP_ON\DUMP_ON.v","TRUE","FALSE"
+SUBBLOCK "off_on_coder::work","hdl\off_on_coder.v","FALSE","FALSE"
+SUBBLOCK "off_on_state::work","hdl\off_on_state.v","FALSE","FALSE"
+SUBBLOCK "off_on_timer::work","hdl\off_on_timer.v","FALSE","FALSE"
+ENDLIST
+LIST "dump_state::work","hdl\dump_state.v","FALSE","FALSE"
+ENDLIST
+LIST "dump_sustain_timer::work","hdl\dump_sustain_timer.v","FALSE","FALSE"
+SUBBLOCK "cmp_constant_4b::work","smartgen\cmp_constant_4b\cmp_constant_4b.v","TRUE","FALSE"
+ENDLIST
+LIST "dump_timer::work","hdl\dump_timer.v","FALSE","FALSE"
+ENDLIST
+LIST "GPMI::work","component\work\GPMI\GPMI.v","TRUE","FALSE"
+SUBBLOCK "rst_n_module::work","hdl\reset_module.v","FALSE","FALSE"
+SUBBLOCK "tri_state::work","hdl\tri_state.v","FALSE","FALSE"
+SUBBLOCK "xwe_xzcs2_syn::work","hdl\xwe_xzcs2_syn.v","FALSE","FALSE"
+ENDLIST
+LIST "link::work","hdl\link.v","FALSE","FALSE"
+ENDLIST
+LIST "long_timer::work","hdl\long_timer.v","FALSE","FALSE"
+ENDLIST
+LIST "n_pluse_acq::work","hdl\n_pluse_acq.v","FALSE","FALSE"
+ENDLIST
+LIST "n_rdclk_syn::work","hdl\n_rdclk_syn.v","FALSE","FALSE"
+ENDLIST
+LIST "n_s_change::work","hdl\n_s_change.v","FALSE","FALSE"
+ENDLIST
+LIST "necount_cmp::work","smartgen\necount_cmp\necount_cmp.v","TRUE","FALSE"
+ENDLIST
+LIST "necount_inc::work","smartgen\necount_inc\necount_inc.v","TRUE","FALSE"
+ENDLIST
+LIST "NMR_TOP::work","component\work\NMR_TOP\NMR_TOP.v","TRUE","FALSE"
+SUBBLOCK "CAL::work","component\work\CAL\CAL.v","TRUE","FALSE"
+SUBBLOCK "ClockManagement::work","component\work\ClockManagement\ClockManagement.v","TRUE","FALSE"
+SUBBLOCK "DDS::work","component\work\DDS\DDS.v","TRUE","FALSE"
+SUBBLOCK "DSTimer::work","component\work\DSTimer\DSTimer.v","TRUE","FALSE"
+SUBBLOCK "DUMP::work","component\work\DUMP\DUMP.v","TRUE","FALSE"
+SUBBLOCK "DUMP_OFF::work","component\work\DUMP_OFF\DUMP_OFF.v","TRUE","FALSE"
+SUBBLOCK "DUMP_ON::work","component\work\DUMP_ON\DUMP_ON.v","TRUE","FALSE"
+SUBBLOCK "GPMI::work","component\work\GPMI\GPMI.v","TRUE","FALSE"
+SUBBLOCK "PLUSE::work","component\work\PLUSE\PLUSE.v","TRUE","FALSE"
+SUBBLOCK "Signal_Noise_Acq::work","component\work\Signal_Noise_Acq\Signal_Noise_Acq.v","TRUE","FALSE"
+SUBBLOCK "bri_dump_sw::work","hdl\bri_dump_sw.v","FALSE","FALSE"
+SUBBLOCK "bridge_div::work","hdl\bridge_div.v","FALSE","FALSE"
+SUBBLOCK "dds_change::work","hdl\dds_change.v","FALSE","FALSE"
+SUBBLOCK "n_pluse_acq::work","hdl\n_pluse_acq.v","FALSE","FALSE"
+SUBBLOCK "noisestate::work","hdl\noisestate.v","FALSE","FALSE"
+SUBBLOCK "nsctrl_choice::work","hdl\nsctrl_choice.v","FALSE","FALSE"
+SUBBLOCK "pd_pluse_top::work","component\work\pd_pluse_top\pd_pluse_top.v","TRUE","FALSE"
+SUBBLOCK "plusestate::work","hdl\plusestate.v","FALSE","FALSE"
+SUBBLOCK "s_acq_change::work","hdl\s_acq_change.v","FALSE","FALSE"
+SUBBLOCK "scalestate::work","hdl\scalestate.v","FALSE","FALSE"
+SUBBLOCK "scan_scale_sw::work","hdl\scan_scale_sw.v","FALSE","FALSE"
+SUBBLOCK "scanstate::work","hdl\scanstate.v","FALSE","FALSE"
+SUBBLOCK "sd_acq_top::work","component\work\sd_acq_top\sd_acq_top.v","TRUE","FALSE"
+SUBBLOCK "state1ms_choice::work","hdl\1ms_dump_choice.v","FALSE","FALSE"
+SUBBLOCK "state_1ms::work","hdl\state_1ms.v","FALSE","FALSE"
+SUBBLOCK "timer_top::work","component\work\timer_top\timer_top.v","TRUE","FALSE"
+SUBBLOCK "top_code::work","hdl\top_code.v","FALSE","FALSE"
+SUBBLOCK "topctrlchange::work","hdl\topctrlchange.v","FALSE","FALSE"
+ENDLIST
+LIST "noise_acq::work","component\work\noise_acq\noise_acq.v","TRUE","FALSE"
+SUBBLOCK "RAM::work","smartgen\RAM\RAM.v","TRUE","FALSE"
+SUBBLOCK "link::work","hdl\link.v","FALSE","FALSE"
+SUBBLOCK "n_rdclk_syn::work","hdl\n_rdclk_syn.v","FALSE","FALSE"
+SUBBLOCK "noise_addr::work","hdl\noise_addr.v","FALSE","FALSE"
+SUBBLOCK "noiseclk::work","hdl\noiseclk.v","FALSE","FALSE"
+SUBBLOCK "noiseclkctrl::work","hdl\noiseclkctrl.v","FALSE","FALSE"
+ENDLIST
+LIST "noise_addr::work","hdl\noise_addr.v","FALSE","FALSE"
+ENDLIST
+LIST "noiseclk::work","hdl\noiseclk.v","FALSE","FALSE"
+ENDLIST
+LIST "noiseclkctrl::work","hdl\noiseclkctrl.v","FALSE","FALSE"
+ENDLIST
+LIST "noisestate::work","hdl\noisestate.v","FALSE","FALSE"
+ENDLIST
+LIST "nsctrl_choice::work","hdl\nsctrl_choice.v","FALSE","FALSE"
+ENDLIST
+LIST "off_on_coder::work","hdl\off_on_coder.v","FALSE","FALSE"
+ENDLIST
+LIST "off_on_state::work","hdl\off_on_state.v","FALSE","FALSE"
+ENDLIST
+LIST "off_on_timer::work","hdl\off_on_timer.v","FALSE","FALSE"
+ENDLIST
+LIST "pd_pluse_coder::work","hdl\pd_pluse_coder.v","FALSE","FALSE"
+ENDLIST
+LIST "pd_pluse_inc::work","smartgen\pd_pluse_inc\pd_pluse_inc.v","TRUE","FALSE"
+ENDLIST
+LIST "pd_pluse_state::work","hdl\pd_pluse_state.v","FALSE","FALSE"
+ENDLIST
+LIST "pd_pluse_timer::work","hdl\pd_pluse_timer.v","FALSE","FALSE"
+SUBBLOCK "pd_pluse_inc::work","smartgen\pd_pluse_inc\pd_pluse_inc.v","TRUE","FALSE"
+ENDLIST
+LIST "pd_pluse_top::work","component\work\pd_pluse_top\pd_pluse_top.v","TRUE","FALSE"
+SUBBLOCK "pd_pluse_coder::work","hdl\pd_pluse_coder.v","FALSE","FALSE"
+SUBBLOCK "pd_pluse_state::work","hdl\pd_pluse_state.v","FALSE","FALSE"
+SUBBLOCK "pd_pluse_timer::work","hdl\pd_pluse_timer.v","FALSE","FALSE"
+ENDLIST
+LIST "pllclk::work","smartgen\pllclk\pllclk.v","TRUE","FALSE"
+ENDLIST
+LIST "PLUSE::work","component\work\PLUSE\PLUSE.v","TRUE","FALSE"
+SUBBLOCK "bri_coder::work","hdl\bri_coder.v","FALSE","FALSE"
+SUBBLOCK "bri_qq_load::work","hdl\para_load.v","FALSE","FALSE"
+SUBBLOCK "bri_state::work","hdl\bri_state.v","FALSE","FALSE"
+SUBBLOCK "bri_timer::work","hdl\bri_timer.v","FALSE","FALSE"
+SUBBLOCK "qq_coder::work","hdl\qq_coder.v","FALSE","FALSE"
+SUBBLOCK "qq_state::work","hdl\qq_state.v","FALSE","FALSE"
+SUBBLOCK "qq_timer::work","hdl\qq_timer.v","FALSE","FALSE"
+ENDLIST
+LIST "plusestate::work","hdl\plusestate.v","FALSE","FALSE"
+ENDLIST
+LIST "qq_coder::work","hdl\qq_coder.v","FALSE","FALSE"
+ENDLIST
+LIST "qq_state::work","hdl\qq_state.v","FALSE","FALSE"
+ENDLIST
+LIST "qq_timer::work","hdl\qq_timer.v","FALSE","FALSE"
+ENDLIST
+LIST "RAM::work","smartgen\RAM\RAM.v","TRUE","FALSE"
+ENDLIST
+LIST "rdata_choice::work","hdl\readata_choice.v","FALSE","FALSE"
+ENDLIST
+LIST "rst_n_module::work","hdl\reset_module.v","FALSE","FALSE"
+ENDLIST
+LIST "s_acq_change::work","hdl\s_acq_change.v","FALSE","FALSE"
+ENDLIST
+LIST "s_clk_div4::work","hdl\s_clk_div.v","FALSE","FALSE"
+ENDLIST
+LIST "scalestate::work","hdl\scalestate.v","FALSE","FALSE"
+SUBBLOCK "necount_cmp::work","smartgen\necount_cmp\necount_cmp.v","TRUE","FALSE"
+SUBBLOCK "necount_inc::work","smartgen\necount_inc\necount_inc.v","TRUE","FALSE"
+ENDLIST
+LIST "scan_scale_sw::work","hdl\scan_scale_sw.v","FALSE","FALSE"
+ENDLIST
+LIST "scanstate::work","hdl\scanstate.v","FALSE","FALSE"
+ENDLIST
+LIST "sd_acq_top::work","component\work\sd_acq_top\sd_acq_top.v","TRUE","FALSE"
+SUBBLOCK "sd_sacq_coder::work","hdl\sd_acq_coder.v","FALSE","FALSE"
+SUBBLOCK "sd_sacq_state::work","hdl\sd_acq_state.v","FALSE","FALSE"
+SUBBLOCK "sd_sacq_timer::work","hdl\sd_acq_timer.v","FALSE","FALSE"
+ENDLIST
+LIST "sd_sacq_coder::work","hdl\sd_acq_coder.v","FALSE","FALSE"
+ENDLIST
+LIST "sd_sacq_inc::work","smartgen\sd_sacq_inc\sd_sacq_inc.v","TRUE","FALSE"
+ENDLIST
+LIST "sd_sacq_state::work","hdl\sd_acq_state.v","FALSE","FALSE"
+ENDLIST
+LIST "sd_sacq_timer::work","hdl\sd_acq_timer.v","FALSE","FALSE"
+SUBBLOCK "sd_sacq_inc::work","smartgen\sd_sacq_inc\sd_sacq_inc.v","TRUE","FALSE"
+ENDLIST
+LIST "signal_acq::work","component\work\signal_acq\signal_acq.v","TRUE","FALSE"
+SUBBLOCK "add_reg::work","hdl\add_reg.v","FALSE","FALSE"
+SUBBLOCK "ctrl_addr::work","hdl\ctrl_addr.v","FALSE","FALSE"
+SUBBLOCK "rdata_choice::work","hdl\readata_choice.v","FALSE","FALSE"
+SUBBLOCK "s_clk_div4::work","hdl\s_clk_div.v","FALSE","FALSE"
+SUBBLOCK "signalclkctrl::work","hdl\signalclkctrl.v","FALSE","FALSE"
+SUBBLOCK "ten_choice_one::work","hdl\ten_choice_one.v","FALSE","FALSE"
+ENDLIST
+LIST "Signal_Noise_Acq::work","component\work\Signal_Noise_Acq\Signal_Noise_Acq.v","TRUE","FALSE"
+SUBBLOCK "n_s_change::work","hdl\n_s_change.v","FALSE","FALSE"
+SUBBLOCK "noise_acq::work","component\work\noise_acq\noise_acq.v","TRUE","FALSE"
+SUBBLOCK "signal_acq::work","component\work\signal_acq\signal_acq.v","TRUE","FALSE"
+ENDLIST
+LIST "signalclkctrl::work","hdl\signalclkctrl.v","FALSE","FALSE"
+ENDLIST
+LIST "state1ms_choice::work","hdl\1ms_dump_choice.v","FALSE","FALSE"
+ENDLIST
+LIST "state_1ms::work","hdl\state_1ms.v","FALSE","FALSE"
+ENDLIST
+LIST "state_switch::work","hdl\state_switch.v","FALSE","FALSE"
+ENDLIST
+LIST "ten_choice_one::work","hdl\ten_choice_one.v","FALSE","FALSE"
+ENDLIST
+LIST "timer::work","hdl\timer.v","FALSE","FALSE"
+SUBBLOCK "Timer_Cmp::work","smartgen\Timer_Cmp\Timer_Cmp.v","TRUE","FALSE"
+ENDLIST
+LIST "Timer_Cmp::work","smartgen\Timer_Cmp\Timer_Cmp.v","TRUE","FALSE"
+ENDLIST
+LIST "timer_top::work","component\work\timer_top\timer_top.v","TRUE","FALSE"
+SUBBLOCK "state_switch::work","hdl\state_switch.v","FALSE","FALSE"
+SUBBLOCK "timer::work","hdl\timer.v","FALSE","FALSE"
+ENDLIST
+LIST "top_code::work","hdl\top_code.v","FALSE","FALSE"
+ENDLIST
+LIST "topctrlchange::work","hdl\topctrlchange.v","FALSE","FALSE"
+ENDLIST
+LIST "tri_state::work","hdl\tri_state.v","FALSE","FALSE"
+ENDLIST
+LIST "xwe_xzcs2_syn::work","hdl\xwe_xzcs2_syn.v","FALSE","FALSE"
+ENDLIST
+LIST "dump_sustain_timer_tb::work","stimulus\dump_sustain_timer_tb.v","FALSE","TRUE"
+SUBBLOCK "dump_sustain_timer::work","hdl\dump_sustain_timer.v","FALSE","FALSE"
+ENDLIST
+LIST "testbench::work","component\work\CAL\testbench.v","FALSE","TRUE"
+SUBBLOCK "CAL::work","component\work\CAL\CAL.v","TRUE","FALSE"
+ENDLIST
+LIST "testbench::work","component\work\ClockManagement\testbench.v","FALSE","TRUE"
+SUBBLOCK "ClockManagement::work","component\work\ClockManagement\ClockManagement.v","TRUE","FALSE"
+ENDLIST
+LIST "testbench::work","component\work\DDS\testbench.v","FALSE","TRUE"
+SUBBLOCK "DDS::work","component\work\DDS\DDS.v","TRUE","FALSE"
+ENDLIST
+LIST "testbench::work","component\work\DSTimer\testbench.v","FALSE","TRUE"
+SUBBLOCK "DSTimer::work","component\work\DSTimer\DSTimer.v","TRUE","FALSE"
+ENDLIST
+LIST "testbench::work","component\work\DUMP\testbench.v","FALSE","TRUE"
+SUBBLOCK "DUMP::work","component\work\DUMP\DUMP.v","TRUE","FALSE"
+ENDLIST
+LIST "testbench::work","component\work\DUMP_OFF\testbench.v","FALSE","TRUE"
+SUBBLOCK "DUMP_OFF::work","component\work\DUMP_OFF\DUMP_OFF.v","TRUE","FALSE"
+ENDLIST
+LIST "testbench::work","component\work\DUMP_ON\testbench.v","FALSE","TRUE"
+SUBBLOCK "DUMP_ON::work","component\work\DUMP_ON\DUMP_ON.v","TRUE","FALSE"
+ENDLIST
+LIST "testbench::work","component\work\GPMI\testbench.v","FALSE","TRUE"
+SUBBLOCK "GPMI::work","component\work\GPMI\GPMI.v","TRUE","FALSE"
+ENDLIST
+LIST "testbench::work","component\work\NMR_TOP\testbench.v","FALSE","TRUE"
+SUBBLOCK "NMR_TOP::work","component\work\NMR_TOP\NMR_TOP.v","TRUE","FALSE"
+ENDLIST
+LIST "testbench::work","component\work\PLUSE\testbench.v","FALSE","TRUE"
+SUBBLOCK "PLUSE::work","component\work\PLUSE\PLUSE.v","TRUE","FALSE"
+ENDLIST
+LIST "testbench::work","component\work\Signal_Noise_Acq\testbench.v","FALSE","TRUE"
+SUBBLOCK "Signal_Noise_Acq::work","component\work\Signal_Noise_Acq\Signal_Noise_Acq.v","TRUE","FALSE"
+ENDLIST
+LIST "testbench::work","component\work\noise_acq\testbench.v","FALSE","TRUE"
+SUBBLOCK "noise_acq::work","component\work\noise_acq\noise_acq.v","TRUE","FALSE"
+ENDLIST
+LIST "testbench::work","component\work\pd_pluse_top\testbench.v","FALSE","TRUE"
+SUBBLOCK "pd_pluse_top::work","component\work\pd_pluse_top\pd_pluse_top.v","TRUE","FALSE"
+ENDLIST
+LIST "testbench::work","component\work\sd_acq_top\testbench.v","FALSE","TRUE"
+SUBBLOCK "sd_acq_top::work","component\work\sd_acq_top\sd_acq_top.v","TRUE","FALSE"
+ENDLIST
+LIST "testbench::work","component\work\signal_acq\testbench.v","FALSE","TRUE"
+SUBBLOCK "signal_acq::work","component\work\signal_acq\signal_acq.v","TRUE","FALSE"
+ENDLIST
+LIST "testbench::work","component\work\timer_top\testbench.v","FALSE","TRUE"
+SUBBLOCK "timer_top::work","component\work\timer_top\timer_top.v","TRUE","FALSE"
+ENDLIST
+LIST "testbench::work","stimulus\NMR_TOP_DE-test_tb.v","FALSE","TRUE"
+SUBBLOCK "NMR_TOP::work","component\work\NMR_TOP\NMR_TOP.v","TRUE","FALSE"
+ENDLIST
+LIST "testbench::work","stimulus\NMR_TOP_DEI90_tb.v","FALSE","TRUE"
+SUBBLOCK "NMR_TOP::work","component\work\NMR_TOP\NMR_TOP.v","TRUE","FALSE"
+ENDLIST
+LIST "testbench::work","stimulus\Scan_Testbench.v","FALSE","TRUE"
+SUBBLOCK "NMR_TOP::work","component\work\NMR_TOP\NMR_TOP.v","TRUE","FALSE"
+ENDLIST
+LIST "testbench::work","stimulus\State1ms_Tbench.v","FALSE","TRUE"
+SUBBLOCK "NMR_TOP::work","component\work\NMR_TOP\NMR_TOP.v","TRUE","FALSE"
+ENDLIST
+LIST "testbench::work","stimulus\TestBench_NoiseAcq.v","FALSE","TRUE"
+SUBBLOCK "NMR_TOP::work","component\work\NMR_TOP\NMR_TOP.v","TRUE","FALSE"
+ENDLIST
+LIST "testbench::work","stimulus\TestBench_SignalAcq.v","FALSE","TRUE"
+SUBBLOCK "NMR_TOP::work","component\work\NMR_TOP\NMR_TOP.v","TRUE","FALSE"
+ENDLIST
+LIST "testbench::work","stimulus\TestBench_pulse.v","FALSE","TRUE"
+SUBBLOCK "NMR_TOP::work","component\work\NMR_TOP\NMR_TOP.v","TRUE","FALSE"
+ENDLIST
+LIST "testbench::work","stimulus\noise_acq_tb.v","FALSE","TRUE"
+ENDLIST
+LIST "testbench::work","stimulus\scale_scan_tb.v","FALSE","TRUE"
+SUBBLOCK "NMR_TOP::work","component\work\NMR_TOP\NMR_TOP.v","TRUE","FALSE"
+ENDLIST
+LIST "testbench::work","stimulus\sustaintb.v","FALSE","TRUE"
+SUBBLOCK "dump_sustain_timer::work","hdl\dump_sustain_timer.v","FALSE","FALSE"
+ENDLIST
+ENDLIST
+LIST ActiveTestBenchList
+ENDLIST
+LIST IOTabList
+ENDLIST
+LIST FPTabList
+ENDLIST
+LIST TimingTabList
+ENDLIST
+LIST FDCTabList
+ENDLIST

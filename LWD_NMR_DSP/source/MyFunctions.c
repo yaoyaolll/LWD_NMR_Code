@@ -101,7 +101,7 @@ void CalNoise(void)
     for(NoiseAcqCnt=0;NoiseAcqCnt<NoiseAcqNum;NoiseAcqCnt++)
     {
     	if (NoiseAcqCnt > 511)        // 防止数组越界
-    		NoiseAcqCnt = 511;
+    		break;
 		NoiseDataAry[NoiseAcqCnt]	= READ_NOISE;
     }
     
@@ -194,40 +194,65 @@ void ScanFreqOnce()            //扫频子函
 void CalSignal(Uint16 SignalNum)    
 {
 //-------------读取8路加法器结果数据--------------------------------------------// 
-	for(AdderCnt=1;AdderCnt<11;AdderCnt++)
-	{
-		DATACHOICE			= 2*AdderCnt-1;
-		asm(" NOP");
-		AdderLowAry[AdderCnt]	= RDDATA;
-		DATACHOICE			= 2*AdderCnt;
-		asm(" NOP");
-		AdderResAry[AdderCnt]	= RDDATA;
-	}
+    for(AdderCnt=1;AdderCnt<11;AdderCnt++)
+    {
+        DATACHOICE          = 2*AdderCnt-1;
+        asm(" NOP");
+        AdderLowAry[AdderCnt]   = RDDATA;
+        DATACHOICE          = 2*AdderCnt;
+        asm(" NOP");
+        AdderResAry[AdderCnt]   = RDDATA;
+    }
 //-------------计算8路加法器结果数据----------------------------------------//       
-	for(AdderCnt=1;AdderCnt<11;AdderCnt++)
-	{
-		AdderResAry[AdderCnt]	= (AdderResAry[AdderCnt]<<16) + AdderLowAry[AdderCnt];
-	}
+    for(AdderCnt=1;AdderCnt<11;AdderCnt++)
+    {
+        AdderResAry[AdderCnt]   = (AdderResAry[AdderCnt]<<16) + AdderLowAry[AdderCnt];
+    }
 //-------------计算----------------------------------------------------//  
-	SignalCalNum = SignalNum-SiglAcqFreqTim;
+    SignalCalNum = SignalNum-SiglAcqFreqTim;
 
+//-------------采样率位每个周期10个点---------------------------------//
+    if(SiglAcqFreqTim==10)
+    {
+        SinOne      = AdderResAry[2]-AdderResAry[7]+AdderResAry[5]-AdderResAry[10];
+        SinTwo      = AdderResAry[3]-AdderResAry[8]+AdderResAry[4]-AdderResAry[9];
+        CosOne      = AdderResAry[1]-AdderResAry[6];
+        CosTwo      = AdderResAry[2]-AdderResAry[5]+AdderResAry[10]-AdderResAry[7];
+        CosThree    = AdderResAry[3]-AdderResAry[4]+AdderResAry[9]-AdderResAry[8];
 
+        SinSumIQ    = _IQmpy(_IQ(0.5878),_IQ(SinOne))+_IQmpy(_IQ(0.9511),_IQ(SinTwo));
+        CosSumIQ    = _IQmpy(_IQ(1),_IQ(CosOne))+_IQmpy(_IQ(0.809),_IQ(CosTwo))+_IQmpy(_IQ(0.309),_IQ(CosThree));
+    }
+
+//-------------采样率位每个周期6个点---------------------------------//
+    else if(SiglAcqFreqTim==6)
+    {
+        SinOne      = AdderResAry[2]+AdderResAry[3]-AdderResAry[5]-AdderResAry[6];
+        CosOne      = AdderResAry[1]-AdderResAry[4];
+        CosTwo      = AdderResAry[2]+AdderResAry[6]-AdderResAry[3]-AdderResAry[5];
+
+        SinSumIQ    = _IQmpy(_IQ(0.866),_IQ(SinOne));
+        CosSumIQ    = _IQmpy(_IQ(1),_IQ(CosOne))+_IQmpy(_IQ(0.5),_IQ(CosTwo));
+    }
 //-------------当采样率位每个周期不为6或10个点时，默认选择成8个点---------------------------------//
-	SinOne		= AdderResAry[3]-AdderResAry[7];
-	SinTwo		= AdderResAry[2]-AdderResAry[6]+AdderResAry[4]-AdderResAry[8];
-	CosOne		= AdderResAry[1]-AdderResAry[5];
-	CosTwo		= AdderResAry[2]-AdderResAry[4]+AdderResAry[8]-AdderResAry[6];
-   
-	SinSumIQ	= _IQmpy(_IQ(1),_IQ(SinOne))+_IQmpy(_IQ(0.7071),_IQ(SinTwo));
-	CosSumIQ	= _IQmpy(_IQ(1),_IQ(CosOne))+_IQmpy(_IQ(0.7071),_IQ(CosTwo));
+    else
+    {
+        SinOne      = AdderResAry[3]-AdderResAry[7];
+        SinTwo      = AdderResAry[2]-AdderResAry[6]+AdderResAry[4]-AdderResAry[8];
+        CosOne      = AdderResAry[1]-AdderResAry[5];
+        CosTwo      = AdderResAry[2]-AdderResAry[4]+AdderResAry[8]-AdderResAry[6];
+
+        SinSumIQ    = _IQmpy(_IQ(1),_IQ(SinOne))+_IQmpy(_IQ(0.7071),_IQ(SinTwo));
+        CosSumIQ    = _IQmpy(_IQ(1),_IQ(CosOne))+_IQmpy(_IQ(0.7071),_IQ(CosTwo));
+    }
 
 //-------------计算幅值相位---------------------------------//  
-	SinAveIQ	= _IQdiv(SinSumIQ,_IQ(SignalCalNum));    //正弦信号卷积求平均
-	CosAveIQ 	= _IQdiv(CosSumIQ,_IQ(SignalCalNum));    //余弦信号卷积求平均   
+    SinAveIQ    = _IQdiv(SinSumIQ,_IQ(SignalCalNum));    //正弦信号卷积求平均
+    CosAveIQ    = _IQdiv(CosSumIQ,_IQ(SignalCalNum));    //余弦信号卷积求平均
        
-	SignalAmpIQ	= 2*_IQmag(SinAveIQ,CosAveIQ);
-	SignalPhaIQ	= _IQatan2(CosAveIQ,SinAveIQ);  //求输入信号相位                 
-	return;
+    SignalAmpIQ = 2*_IQmag(SinAveIQ,CosAveIQ);
+    SignalPhaIQ = _IQatan2(CosAveIQ,SinAveIQ);  //求输入信号相位
+    return;
 }
 
 void SaveSignal(Uint32 AddrStr)   
@@ -390,7 +415,7 @@ void DCWorkOnce(Uint16 FreqCode)
 	PLUSE_SCALE_EN	= USER_ENABLE; //选择刻度激励通路，控制信号PLUSE_SCALE_EN选择刻度通路，控制信号PLUSE_SCALE_DIS选择激励检测通路，复用刻度模块的内外桥
 	//Reset Scale Module
     SCALE_START_DIS	= USER_DISABLE;
-    SCALE_RST_EN	= USER_ENABLE;
+    SCALE_RST_EN	= USER_ENABLE;      // 复位ScaleState状态机
     SCALE_RST_DIS	= USER_DISABLE;
 
 	DCWorkFreq	= FreqAry[FreqCode];
@@ -404,7 +429,7 @@ void DCWorkOnce(Uint16 FreqCode)
     //90度激励时间计数值 
 	Pulse90Width	= Width90Pulse * FPGA_COUNT;      // Width90Pulse在CheckTable()中获取值
 	//180度激励时间计数值
-	PulseMid1	= HegtWidth*1.0;
+	PulseMid1	= Width90Pulse*1.0;
 	PulseMid2	= PulseMid1/180;
 	PulseMid3	= PulseMid2*Pulse90Width;
 	Pulse180WidthHalf	= (Uint32)PulseMid3;

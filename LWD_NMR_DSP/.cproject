@@ -59,7 +59,7 @@
 								<option id="com.ti.ccstudio.buildDefinitions.C2000_6.2.linkerID.LIBRARY.523232618" name="Include library file or command file as input (--library, -l)" superClass="com.ti.ccstudio.buildDefinitions.C2000_6.2.linkerID.LIBRARY" valueType="libs">
 									<listOptionValue builtIn="false" value="&quot;libc.a&quot;"/>
 								</option>
-								<option id="com.ti.ccstudio.buildDefinitions.C2000_6.2.linkerID.DIAG_SUPPRESS.301710205" superClass="com.ti.ccstudio.buildDefinitions.C2000_6.2.linkerID.DIAG_SUPPRESS" valueType="stringList">
+								<option id="com.ti.ccstudio.buildDefinitions.C2000_6.2.linkerID.DIAG_SUPPRESS.301710205" name="Suppress diagnostic &lt;id&gt; (--diag_suppress)" superClass="com.ti.ccstudio.buildDefinitions.C2000_6.2.linkerID.DIAG_SUPPRESS" valueType="stringList">
 									<listOptionValue builtIn="false" value="16002"/>
 								</option>
 								<inputType id="com.ti.ccstudio.buildDefinitions.C2000_6.2.exeLinker.inputType__CMD_SRCS.423223915" name="Linker Command Files" superClass="com.ti.ccstudio.buildDefinitions.C2000_6.2.exeLinker.inputType__CMD_SRCS"/>
@@ -70,7 +70,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="source/DSP281x_usDelay.asm|si_lwd_nmr.si4project|source/DSP281x_SectionCopy.asm|source/DSP281x_CodeStartBranch.asm|cmd/F2812_EzDSP_FLASH_lnk_new.cmd|source/DSP281x_DBGIER.asm|source/DSP281x_CSMPasswords.asm|source/DSP281x_XintfBootReset.asm|cmd/F2812_EzDSP_FLASH_lnk.cmd" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="config.asm/DSP281x_usDelay.asm|config.asm/DSP281x_SectionCopy.asm|config.asm/DSP281x_CodeStartBranch.asm|cmd/F2812_EzDSP_FLASH_lnk_new.cmd|config.asm/DSP281x_DBGIER.asm|config.asm/DSP281x_XintfBootReset.asm|config.asm/DSP281x_CSMPasswords.asm|source/DSP281x_usDelay.asm|si_lwd_nmr.si4project|source/DSP281x_SectionCopy.asm|source/DSP281x_CodeStartBranch.asm|source/DSP281x_DBGIER.asm|source/DSP281x_CSMPasswords.asm|source/DSP281x_XintfBootReset.asm|cmd/F2812_EzDSP_FLASH_lnk.cmd" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>

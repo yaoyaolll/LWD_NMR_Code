@@ -61,7 +61,7 @@ void InitSysCtrl(void)
 	DisableDog();
    
    // Initialize the PLLCR to 0xA
-	InitPll(0x2);
+	InitPll(2);   // OSCCLKIN*val/2=30MHz
 	DisableDog();
    // Initialize the peripheral clocks
 	InitPeripheralClocks();
@@ -286,14 +286,14 @@ void InitPeripheralClocks(void)
    EALLOW;
 // HISPCP/LOSPCP prescale register settings, normally it will be set to default values
    SysCtrlRegs.HISPCP.all = 0x0001;
-   SysCtrlRegs.LOSPCP.all = 0x0003;
+   SysCtrlRegs.LOSPCP.all = 0x0000;
    	
 // Peripheral clock enables set for the selected peripherals.   
    SysCtrlRegs.PCLKCR.bit.EVAENCLK=0;
    SysCtrlRegs.PCLKCR.bit.EVBENCLK=0;
-   SysCtrlRegs.PCLKCR.bit.SCIAENCLK=0;
+   SysCtrlRegs.PCLKCR.bit.SCIAENCLK=1;
    SysCtrlRegs.PCLKCR.bit.SCIBENCLK=0;
-   SysCtrlRegs.PCLKCR.bit.MCBSPENCLK=1;
+   SysCtrlRegs.PCLKCR.bit.MCBSPENCLK=0;
    SysCtrlRegs.PCLKCR.bit.SPIENCLK=0;
    SysCtrlRegs.PCLKCR.bit.ECANENCLK=0;
    SysCtrlRegs.PCLKCR.bit.ADCENCLK=0;

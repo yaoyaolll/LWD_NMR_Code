@@ -1,0 +1,52 @@
+FlashPro
+Version: 9.1.0.18
+Release: v9.1
+
+Software Version: 9.1.0.18
+PDB file 'F:\Project\tmp\2DNMRECBP\Final_One\2D_NMR_EC_FPGA_150114\designer\impl3\NMR_TOP.pdb'
+has been loaded successfully.
+DESIGN : NMR_TOP;  CHECKSUM : BDD2;  PDB_VERSION : 1.6
+Warning: The programmer with id '09700' in the project file cannot be detected and connected.
+Opened
+'F:\Project\tmp\2DNMRECBP\Final_One\2D_NMR_EC_FPGA_150114\designer\impl3\NMR_TOP_fp\NMR_TOP.pro'
+Rescanning for Programmers...
+Rescanning for Programmers DONE.
+Rescanning for Programmers...
+Rescanning for Programmers DONE.
+Rescanning for Programmers...
+Rescanning for Programmers DONE.
+Rescanning for Programmers...
+Rescanning for Programmers DONE.
+Rescanning for Programmers...
+Rescanning for Programmers DONE.
+Rescanning for Programmers...
+Rescanning for Programmers DONE.
+Rescanning for Programmers...
+Rescanning for Programmers DONE.
+Rescanning for Programmers...
+Rescanning for Programmers DONE.
+Error: Failed to run Action.
+Rescanning for Programmers...
+Driver : 3.0.0 build 1
+programmer '09700' : FlashPro3
+Rescanning for Programmers DONE.
+Rescanning for Programmers...
+programmer '09700' : FlashPro3
+Rescanning for Programmers DONE.
+programmer '09700' : Scan Chain...
+Warning: programmer '09700' : Vpump has been selected on programmer AND an externally provided
+         Vpump has also been detected. Using externally provided Vpump voltage source.
+programmer '09700' : Scan Chain PASSED.
+programmer '09700' : Executing action PROGRAM
+programmer '09700' : EXPORT FSN[48] = 80ec41383074
+programmer '09700' : Erase ...
+programmer '09700' : Completed erase
+programmer '09700' : Programming FPGA Array
+programmer '09700' : Verifying FPGA Array
+programmer '09700' :         Verifying FPGA Array -- pass
+programmer '09700' : Finished: Thu Jan 22 10:11:40 2015 (Elapsed time 00:01:22)
+programmer '09700' : Executing action PROGRAM PASSED.
+
+                        o - o - o - o - o - o
+
+Warning: Project 'NMR_TOP' has been modified. Do you want to save it? [YES]

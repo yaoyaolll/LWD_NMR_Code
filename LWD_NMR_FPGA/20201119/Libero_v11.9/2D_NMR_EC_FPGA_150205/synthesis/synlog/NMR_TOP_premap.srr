@@ -1,0 +1,254 @@
+# Thu Jan 21 15:00:50 2021
+
+Synopsys Microsemi Technology Pre-mapping, Version mapact, Build 2172R, Built Oct 30 2017 10:54:39
+Copyright (C) 1994-2017 Synopsys, Inc. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
+Product Version L-2016.09M-SP1-5
+
+Mapper Startup Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 99MB peak: 99MB)
+
+Reading constraint file: E:\LWD_NMR\Code\20201119\Libero_v11.9\2D_NMR_EC_FPGA_150205\constraint\NMR_TOP_syn.sdc
+Adding property syn_global_buffer, value 9 to view:work.NMR_TOP(verilog)
+@L: E:\LWD_NMR\Code\20201119\Libero_v11.9\2D_NMR_EC_FPGA_150205\synthesis\NMR_TOP_scck.rpt 
+Printing clock  summary report in "E:\LWD_NMR\Code\20201119\Libero_v11.9\2D_NMR_EC_FPGA_150205\synthesis\NMR_TOP_scck.rpt" file 
+@N: MF248 |Running in 64-bit mode.
+@N: MF667 |Clock conversion disabled. (Command "set_option -fix_gated_and_generated_clocks 0" in the project file.)
+
+Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 112MB peak: 117MB)
+
+
+Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 112MB peak: 117MB)
+
+Adding property syn_allow_retiming, value 1, to instance top_code_0.noise_start
+Adding property syn_allow_retiming, value 1, to instance top_code_0.pluse_str
+Adding property syn_allow_retiming, value 1, to instance top_code_0.scale_start
+Adding property syn_allow_retiming, value 1, to instance top_code_0.scan_start
+Adding property syn_allow_retiming, value 1, to instance top_code_0.state_1ms_start
+Adding property syn_allow_retiming, value 1, to port top_code_0.scan_start
+Adding property syn_allow_retiming, value 1, to port top_code_0.noise_start
+Adding property syn_allow_retiming, value 1, to port top_code_0.scale_start
+Adding property syn_allow_retiming, value 1, to port top_code_0.pluse_str
+Adding property syn_allow_retiming, value 1, to port top_code_0.state_1ms_start
+Adding property syn_allow_retiming, value 1, to instance scalestate_0.timecount[21:0]
+Adding property syn_allow_retiming, value 1, to port scalestate_0.timecount[21:0]
+Adding property syn_allow_retiming, value 1, to instance GPMI_0.xwe_xzcs2_syn_0.code_en
+@N: BN362 :"e:\lwd_nmr\code\20201119\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\scanstate.v":127:0:127:5|Removing sequential instance resetout (in view: work.scanstate(verilog)) of type view:PrimLib.sdffre(prim) because it does not drive other instances.
+
+Finished netlist restructuring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 120MB peak: 121MB)
+
+
+
+Clock Summary
+*****************
+
+Start                                                       Requested     Requested     Clock        Clock                   Clock
+Clock                                                       Frequency     Period        Type         Group                   Load 
+----------------------------------------------------------------------------------------------------------------------------------
+ClockManagement_0.clk_10k_0.clock_10khz                     1.0 MHz       1000.000      declared     1MHz                    6    
+ClockManagement_0.pllclk_0.GLA                              110.0 MHz     9.091         declared     100MHz                  1789 
+NMR_TOP|dds_clk_out                                         105.0 MHz     9.524         inferred     Inferred_clkgroup_0     140  
+Signal_Noise_Acq_0.noise_acq_0.n_rdclk_syn_0.n_rdclk        20.0 MHz      50.000        declared     DSP                     32   
+Signal_Noise_Acq_0.noise_acq_0.noiseclk_0.clkout            20.0 MHz      50.000        declared     50MHz                   42   
+Signal_Noise_Acq_0.signal_acq_0.s_clk_div4_0.clkout         20.0 MHz      50.000        declared     8MHz                    20   
+Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.clk_add     10.0 MHz      100.000       declared     8MHz                    164  
+ddsclkout                                                   40.0 MHz      25.000        declared     32MHz                   0    
+==================================================================================================================================
+
+@W: MT530 :"e:\lwd_nmr\code\20201119\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\bridge_div.v":48:0:48:5|Found inferred clock NMR_TOP|dds_clk_out which controls 140 sequential elements including bridge_div_0.count[5:0]. This clock has no specified timing constraint which may adversely impact design performance. 
+
+Finished Pre Mapping Phase.
+@N: BN225 |Writing default property annotation file E:\LWD_NMR\Code\20201119\Libero_v11.9\2D_NMR_EC_FPGA_150205\synthesis\NMR_TOP.sap.
+
+Starting constraint checker (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 119MB peak: 121MB)
+
+Encoding state machine cs[8:0] (in view: work.dds_state(verilog))
+original code -> new code
+   00000000 -> 000000000
+   00000001 -> 000000011
+   00000010 -> 000000101
+   00000100 -> 000001001
+   00001000 -> 000010001
+   00010000 -> 000100001
+   00100000 -> 001000001
+   01000000 -> 010000001
+   10000000 -> 100000001
+Encoding state machine cs[7:0] (in view: work.dump_state(verilog))
+original code -> new code
+   0000000 -> 00000000
+   0000001 -> 00000011
+   0000010 -> 00000101
+   0000100 -> 00001001
+   0001000 -> 00010001
+   0010000 -> 00100001
+   0100000 -> 01000001
+   1000000 -> 10000001
+Encoding state machine cs[2:0] (in view: work.off_on_state_1(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+Encoding state machine cs[2:0] (in view: work.off_on_state_0(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+Encoding state machine cs[2:0] (in view: work.off_on_state_2(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+Encoding state machine cs[2:0] (in view: work.off_on_state_3_0(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+Encoding state machine cs[2:0] (in view: work.off_on_state_3_1(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+Encoding state machine CS[7:0] (in view: work.noisestate(verilog))
+original code -> new code
+   00000001 -> 00000000
+   00000010 -> 00000011
+   00000100 -> 00000101
+   00001000 -> 00001001
+   00010000 -> 00010001
+   00100000 -> 00100001
+   01000000 -> 01000001
+   10000000 -> 10000001
+Encoding state machine cs[12:0] (in view: work.pd_pluse_state(verilog))
+original code -> new code
+   0000000000001 -> 0000000000000
+   0000000000010 -> 0000000000011
+   0000000000100 -> 0000000000101
+   0000000001000 -> 0000000001001
+   0000000010000 -> 0000000010001
+   0000000100000 -> 0000000100001
+   0000001000000 -> 0000001000001
+   0000010000000 -> 0000010000001
+   0000100000000 -> 0000100000001
+   0001000000000 -> 0001000000001
+   0010000000000 -> 0010000000001
+   0100000000000 -> 0100000000001
+   1000000000000 -> 1000000000001
+Encoding state machine cs[4:0] (in view: work.qq_state_1(verilog))
+original code -> new code
+   0000 -> 00000
+   0001 -> 00011
+   0010 -> 00101
+   0100 -> 01001
+   1000 -> 10001
+Encoding state machine cs[4:0] (in view: work.qq_state_0(verilog))
+original code -> new code
+   0000 -> 00000
+   0001 -> 00011
+   0010 -> 00101
+   0100 -> 01001
+   1000 -> 10001
+Encoding state machine cs[14:0] (in view: work.bri_state(verilog))
+original code -> new code
+   00000000000000 -> 000000000000001
+   00000000000001 -> 000000000000010
+   00000000000010 -> 000000000000100
+   00000000000100 -> 000000000001000
+   00000000001000 -> 000000000010000
+   00000000010000 -> 000000000100000
+   00000000100000 -> 000000001000000
+   00000001000000 -> 000000010000000
+   00000010000000 -> 000000100000000
+   00000100000000 -> 000001000000000
+   00001000000000 -> 000010000000000
+   00010000000000 -> 000100000000000
+   00100000000000 -> 001000000000000
+   01000000000000 -> 010000000000000
+   10000000000000 -> 100000000000000
+Encoding state machine CS[9:0] (in view: work.plusestate(verilog))
+original code -> new code
+   0000000001 -> 0000000000
+   0000000010 -> 0000000011
+   0000000100 -> 0000000101
+   0000001000 -> 0000001001
+   0000010000 -> 0000010001
+   0000100000 -> 0000100001
+   0001000000 -> 0001000001
+   0010000000 -> 0010000001
+   0100000000 -> 0100000001
+   1000000000 -> 1000000001
+Encoding state machine CS[21:0] (in view: work.scalestate(verilog))
+original code -> new code
+   000000000000000000000 -> 0000000000000000000000
+   000000000000000000001 -> 0000000000000000000011
+   000000000000000000010 -> 0000000000000000000101
+   000000000000000000100 -> 0000000000000000001001
+   000000000000000001000 -> 0000000000000000010001
+   000000000000000010000 -> 0000000000000000100001
+   000000000000000100000 -> 0000000000000001000001
+   000000000000001000000 -> 0000000000000010000001
+   000000000000010000000 -> 0000000000000100000001
+   000000000000100000000 -> 0000000000001000000001
+   000000000001000000000 -> 0000000000010000000001
+   000000000010000000000 -> 0000000000100000000001
+   000000000100000000000 -> 0000000001000000000001
+   000000001000000000000 -> 0000000010000000000001
+   000000010000000000000 -> 0000000100000000000001
+   000000100000000000000 -> 0000001000000000000001
+   000001000000000000000 -> 0000010000000000000001
+   000010000000000000000 -> 0000100000000000000001
+   000100000000000000000 -> 0001000000000000000001
+   001000000000000000000 -> 0010000000000000000001
+   010000000000000000000 -> 0100000000000000000001
+   100000000000000000000 -> 1000000000000000000001
+Encoding state machine CS[7:0] (in view: work.scanstate(verilog))
+original code -> new code
+   00000001 -> 00000000
+   00000010 -> 00000011
+   00000100 -> 00000101
+   00001000 -> 00001001
+   00010000 -> 00010001
+   00100000 -> 00100001
+   01000000 -> 01000001
+   10000000 -> 10000001
+Encoding state machine cs[15:0] (in view: work.sd_sacq_state(verilog))
+original code -> new code
+   000000000000000 -> 0000000000000000
+   000000000000001 -> 0000000000000011
+   000000000000010 -> 0000000000000101
+   000000000000100 -> 0000000000001001
+   000000000001000 -> 0000000000010001
+   000000000010000 -> 0000000000100001
+   000000000100000 -> 0000000001000001
+   000000001000000 -> 0000000010000001
+   000000010000000 -> 0000000100000001
+   000000100000000 -> 0000001000000001
+   000001000000000 -> 0000010000000001
+   000010000000000 -> 0000100000000001
+   000100000000000 -> 0001000000000001
+   001000000000000 -> 0010000000000001
+   010000000000000 -> 0100000000000001
+   100000000000000 -> 1000000000000001
+Encoding state machine CS[9:0] (in view: work.state_1ms(verilog))
+original code -> new code
+   0000000001 -> 0000000000
+   0000000010 -> 0000000011
+   0000000100 -> 0000000101
+   0000001000 -> 0000001001
+   0000010000 -> 0000010001
+   0000100000 -> 0000100001
+   0001000000 -> 0001000001
+   0010000000 -> 0010000001
+   0100000000 -> 0100000001
+   1000000000 -> 1000000001
+None
+None
+@W: MF511 |Found issues with constraints. Please check constraint checker report "E:\LWD_NMR\Code\20201119\Libero_v11.9\2D_NMR_EC_FPGA_150205\synthesis\NMR_TOP_cck.rpt" .
+
+Finished constraint checker (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 123MB peak: 125MB)
+
+Pre-mapping successful!
+
+At Mapper Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 36MB peak: 125MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+# Thu Jan 21 15:00:51 2021
+
+###########################################################]

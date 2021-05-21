@@ -35,12 +35,12 @@ void DeCpmgTop(void)       //单TE单TW主函数
 	Delay(120);                       
 	RELAY_ON_CLOSE = 0x0000; 
 		
-	StartS1msModule(10000); //延时10000+ms
+	StartS1msModule(10000); //延时10000+ms    并不是1ms，而是200us
 
 	//存储
 	SaveNTempPt	= (int *)(DECPMGTABLE_START);//数据存储指针指向单TETW表首地址
 	*SaveNTempPt++= 0x9995;               	// 数据头
-	*SaveNTempPt++= 2*Ne+23;				// 长度
+	*SaveNTempPt++= 2*Ne+25;				// 长度
 	*SaveNTempPt++= 0x0001; 	     		// 工作模式
 	*SaveNTempPt= CenterFreq*10;      		// 工作频率
 
@@ -48,19 +48,23 @@ void DeCpmgTop(void)       //单TE单TW主函数
 	*SaveNTempPt++ = 0;          		// Q值
 	*SaveNTempPt++ = 0x294;				// 参考幅值
 	*SaveNTempPt++ = Width90Pulse;      // 90度脉冲宽度
-	SavePhaseWord();					//存储发射脉冲相位
+	SavePhaseWord();					// 存储发射脉冲相位
 
+	SaveNTempPt = (int *)(DECPMGTABLE_START + 2*Ne + 23);
+	*SaveNTempPt++ = getCenterFreq();					// 中心频率
+	*SaveNTempPt   = getCenterFreqAmp();				// 中心频率幅值
+	
 	Uint16 CheckSum = 0;
 	SaveNTempPt = (int *)(DECPMGTABLE_START);
 	int i=0;
-	for (i=0;i<2*Ne+23;++i)
+	for (i=0;i<2*Ne+25;++i)
 	{
 		CheckSum += *SaveNTempPt;
 		SaveNTempPt++;
 	}
 	*SaveNTempPt = CheckSum;
 
-	modeDataSendLen = 2*Ne+24;
+	modeDataSendLen = 2*Ne+26;
 		
 	//上传数据
 	//SciaSendDataNWords(DECPMGTABLE_START, 2*Ne+24);

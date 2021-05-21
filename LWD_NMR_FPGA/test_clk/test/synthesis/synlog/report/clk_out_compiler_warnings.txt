@@ -1,0 +1,2 @@
+@W: CL279 :"E:\LWD_NMR\Code\test_clk\test\hdl\clk_out.v":27:0:27:5|Pruning register bits 5 to 4 of count[5:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+

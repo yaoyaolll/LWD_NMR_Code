@@ -1,0 +1,146 @@
+@P:  Worst Slack : -0.535
+@P:  ClockManagement_0.clk_10k_0.clock_10khz - Estimated Frequency : 186.0 MHz
+@P:  ClockManagement_0.clk_10k_0.clock_10khz - Requested Frequency : 1.0 MHz
+@P:  ClockManagement_0.clk_10k_0.clock_10khz - Estimated Period : 5.377
+@P:  ClockManagement_0.clk_10k_0.clock_10khz - Requested Period : 1000.000
+@P:  ClockManagement_0.clk_10k_0.clock_10khz - Slack : 994.623
+@P:  ClockManagement_0.pllclk_0.GLA - Estimated Frequency : 103.9 MHz
+@P:  ClockManagement_0.pllclk_0.GLA - Requested Frequency : 110.0 MHz
+@P:  ClockManagement_0.pllclk_0.GLA - Estimated Period : 9.626
+@P:  ClockManagement_0.pllclk_0.GLA - Requested Period : 9.091
+@P:  ClockManagement_0.pllclk_0.GLA - Slack : -0.535
+@P:  Signal_Noise_Acq_0.noise_acq_0.n_rdclk_syn_0.n_rdclk - Estimated Frequency : 113.3 MHz
+@P:  Signal_Noise_Acq_0.noise_acq_0.n_rdclk_syn_0.n_rdclk - Requested Frequency : 20.0 MHz
+@P:  Signal_Noise_Acq_0.noise_acq_0.n_rdclk_syn_0.n_rdclk - Estimated Period : 8.828
+@P:  Signal_Noise_Acq_0.noise_acq_0.n_rdclk_syn_0.n_rdclk - Requested Period : 50.000
+@P:  Signal_Noise_Acq_0.noise_acq_0.n_rdclk_syn_0.n_rdclk - Slack : 20.586
+@P:  Signal_Noise_Acq_0.noise_acq_0.noiseclk_0.clkout - Estimated Frequency : 118.6 MHz
+@P:  Signal_Noise_Acq_0.noise_acq_0.noiseclk_0.clkout - Requested Frequency : 20.0 MHz
+@P:  Signal_Noise_Acq_0.noise_acq_0.noiseclk_0.clkout - Estimated Period : 8.429
+@P:  Signal_Noise_Acq_0.noise_acq_0.noiseclk_0.clkout - Requested Period : 50.000
+@P:  Signal_Noise_Acq_0.noise_acq_0.noiseclk_0.clkout - Slack : 20.786
+@P:  Signal_Noise_Acq_0.signal_acq_0.s_clk_div4_0.clkout - Estimated Frequency : 102.6 MHz
+@P:  Signal_Noise_Acq_0.signal_acq_0.s_clk_div4_0.clkout - Requested Frequency : 20.0 MHz
+@P:  Signal_Noise_Acq_0.signal_acq_0.s_clk_div4_0.clkout - Estimated Period : 9.747
+@P:  Signal_Noise_Acq_0.signal_acq_0.s_clk_div4_0.clkout - Requested Period : 50.000
+@P:  Signal_Noise_Acq_0.signal_acq_0.s_clk_div4_0.clkout - Slack : 40.253
+@P:  Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.clk_add - Estimated Frequency : 25.0 MHz
+@P:  Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.clk_add - Requested Frequency : 10.0 MHz
+@P:  Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.clk_add - Estimated Period : 39.933
+@P:  Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.clk_add - Requested Period : 100.000
+@P:  Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.clk_add - Slack : 30.034
+@P:  ddsclkout - Estimated Frequency : 107.9 MHz
+@P:  ddsclkout - Requested Frequency : 40.0 MHz
+@P:  ddsclkout - Estimated Period : 9.265
+@P:  ddsclkout - Requested Period : 25.000
+@P:  ddsclkout - Slack : 15.735
+@P:  Total Area : 6942.0
+@P:  Total Area : 32.0
+@P:  Total Area : 2.0
+@P:  Total Area : 22.0
+@P:  Total Area : 7.0
+@P:  Total Area : 1214.0
+@P:  Total Area : 39.0
+@P:  Total Area : 39.0
+@P:  Total Area : 24.0
+@P:  Total Area : 1668.0
+@P:  Total Area : 41.0
+@P:  Total Area : 499.0
+@P:  Total Area : 29.0
+@P:  Total Area : 285.0
+@P:  Total Area : 86.0
+@P:  Total Area : 63.0
+@P:  Total Area : 29.0
+@P:  Total Area : 7.0
+@P:  Total Area : 1128.0
+@P:  Total Area : 108.0
+@P:  Total Area : 55.0
+@P:  Total Area : 55.0
+@P:  Total Area : 55.0
+@P:  Total Area : 22.0
+@P:  Total Area : 55.0
+@P:  Total Area : 55.0
+@P:  Total Area : 55.0
+@P:  Total Area : 55.0
+@P:  Total Area : 307.0
+@P:  Total Area : 242.0
+@P:  Total Area : 5.0
+@P:  Total Area : 55.0
+@P:  Total Area : 179.0
+@P:  Total Area : 52.0
+@P:  Total Area : 0.0
+@P:  Total Area : 46.0
+@P:  Total Area : 81.0
+@P:  Total Area : 369.0
+@P:  Total Area : 6.0
+@P:  Total Area : 14.0
+@P:  Total Area : 36.0
+@P:  Total Area : 234.0
+@P:  Total Area : 9.0
+@P:  Total Area : 9.0
+@P:  Total Area : 6.0
+@P:  Total Area : 41.0
+@P:  Total Area : 14.0
+@P:  Total Area : 29.0
+@P:  Total Area : 14.0
+@P:  Total Area : 6.0
+@P:  Total Area : 9.0
+@P:  Total Area : 12.0
+@P:  Total Area : 39.0
+@P:  Total Area : 33.0
+@P:  Total Area : 6.0
+@P:  Total Area : 29.0
+@P:  Total Area : 14.0
+@P:  Total Area : 6.0
+@P:  Total Area : 9.0
+@P:  Total Area : 247.0
+@P:  Total Area : 72.0
+@P:  Total Area : 40.0
+@P:  Total Area : 49.0
+@P:  Total Area : 126.0
+@P:  Total Area : 62.0
+@P:  Total Area : 130.0
+@P:  Total Area : 306.0
+@P:  Total Area : 131.0
+@P:  Total Area : 121.0
+@P:  Total Area : 4.0
+@P:  Total Area : 24.0
+@P:  Total Area : 36.0
+@P:  Total Area : 33.0
+@P:  Total Area : 4.0
+@P:  Total Area : 358.0
+@P:  Total Area : 160.0
+@P:  Total Area : 198.0
+@P:  Total Area : 93.0
+@P:  Total Area : 527.0
+@P:  Total Area : 104.0
+@P:  Total Area : 60.0
+@P:  Total Area : 63.0
+@P:  Total Area : 360.0
+@P:  Total Area : 29.0
+@P:  Total Area : 14.0
+@P:  Total Area : 6.0
+@P:  Total Area : 9.0
+@P:  Total Area : 16.0
+@P:  Total Area : 18.0
+@P:  Total Area : 608.0
+@P:  Total Area : 327.0
+@P:  Total Area : 16.0
+@P:  Total Area : 286.0
+@P:  Total Area : 25.0
+@P:  Total Area : 258.0
+@P:  Total Area : 24.0
+@P:  Total Area : 59.0
+@P:  Total Area : 26.0
+@P:  Total Area : 14.0
+@P:  Total Area : 14.0
+@P:  Total Area : 21.0
+@P:  Total Area : 32.0
+@P:  Total Area : 21.0
+@P:  Total Area : 26.0
+@P:  Total Area : 21.0
+@P:  Total Area : 15.0
+@P:  Total Area : 142.0
+@P:  Total Area : 7.0
+@P:  Total Area : 6942.0
+@P:  CPU Time : 0h:00m:07s

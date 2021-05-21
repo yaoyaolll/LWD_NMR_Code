@@ -1,0 +1,60 @@
+(DELAYFILE
+(SDFVERSION "OVI 2.1")
+(DESIGN "clk_out")
+(DATE "123")
+(VENDOR "ProASIC3")
+(PROGRAM "Synplify")
+(VERSION "mapact, Build 2172R")
+(DIVIDER /)
+(VOLTAGE 2.500000:2.500000:2.500000)
+(PROCESS "TYPICAL")
+(TEMPERATURE 70.000000:70.000000:70.000000)
+(TIMESCALE 1ns)
+(CELL
+  (CELLTYPE "clk_out")
+  (INSTANCE)
+  (TIMINGCHECK
+
+    (PATHCONSTRAINT count\[0\]/CLK  count\[0\]/Q  count_RNIM2F5\[2\]/C  count_RNIM2F5\[2\]/Y  clk_out_RNO/A  clk_out_RNO/Y  clk_out/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT count\[0\]/CLK  count\[0\]/Q  count_RNIM2F5\[2\]/C  count_RNIM2F5\[2\]/Y  count_RNO\[3\]/B  count_RNO\[3\]/Y  count\[3\]/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT count\[0\]/CLK  count\[0\]/Q  count_RNIM2F5\[2\]/C  count_RNIM2F5\[2\]/Y  count_RNO\[1\]/B  count_RNO\[1\]/Y  count\[1\]/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT count\[1\]/CLK  count\[1\]/Q  count_RNIM2F5\[2\]/A  count_RNIM2F5\[2\]/Y  clk_out_RNO/A  clk_out_RNO/Y  clk_out/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT count\[2\]/CLK  count\[2\]/Q  count_RNIM2F5\[2\]/B  count_RNIM2F5\[2\]/Y  clk_out_RNO/A  clk_out_RNO/Y  clk_out/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT count\[1\]/CLK  count\[1\]/Q  un3_count_I_8/B  un3_count_I_8/Y  un3_count_I_9/A  un3_count_I_9/Y  count_RNO\[3\]/C  count_RNO\[3\]/Y  count\[3\]/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT count\[0\]/CLK  count\[0\]/Q  un3_count_I_8/A  un3_count_I_8/Y  un3_count_I_9/A  un3_count_I_9/Y  count_RNO\[3\]/C  count_RNO\[3\]/Y  count\[3\]/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT count\[2\]/CLK  count\[2\]/Q  un3_count_I_8/C  un3_count_I_8/Y  un3_count_I_9/A  un3_count_I_9/Y  count_RNO\[3\]/C  count_RNO\[3\]/Y  count\[3\]/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT count\[3\]/CLK  count\[3\]/Q  un3_count_I_9/B  un3_count_I_9/Y  count_RNO\[3\]/C  count_RNO\[3\]/Y  count\[3\]/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT count\[1\]/CLK  count\[1\]/Q  un3_count_I_5/B  un3_count_I_5/Y  count_RNO\[1\]/C  count_RNO\[1\]/Y  count\[1\]/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT count\[0\]/CLK  count\[0\]/Q  un3_count_I_6/B  un3_count_I_6/Y  un3_count_I_7/A  un3_count_I_7/Y  count\[2\]/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT count\[1\]/CLK  count\[1\]/Q  un3_count_I_6/A  un3_count_I_6/Y  un3_count_I_7/A  un3_count_I_7/Y  count\[2\]/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT count\[0\]/CLK  count\[0\]/Q  un3_count_I_5/A  un3_count_I_5/Y  count_RNO\[1\]/C  count_RNO\[1\]/Y  count\[1\]/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT count\[3\]/CLK  count\[3\]/Q  clk_out_RNO/B  clk_out_RNO/Y  clk_out/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT count\[3\]/CLK  count\[3\]/Q  count_RNO\[1\]/A  count_RNO\[1\]/Y  count\[1\]/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT count\[3\]/CLK  count\[3\]/Q  count_RNO\[3\]/A  count_RNO\[3\]/Y  count\[3\]/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT count\[0\]/CLK  count\[0\]/Q  un3_count_I_4/A  un3_count_I_4/Y  count\[0\]/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT count\[2\]/CLK  count\[2\]/Q  un3_count_I_7/B  un3_count_I_7/Y  count\[2\]/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT clk_out/CLK  clk_out/Q  clk_out_RNO/C  clk_out_RNO/Y  clk_out/D  	(9.5:9.5:9.5) )
+
+    (PATHCONSTRAINT clk_out/CLK  clk_out/Q  clk_out_pad/D  clk_out_pad/PAD  	(10.0:10.0:10.0) )
+
+  )
+)
+)

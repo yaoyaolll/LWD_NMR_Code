@@ -1,0 +1,4 @@
+[library]
+presynth = presynth
+proasic3 = C:/Actel/Libero_v9.1/Designer/lib/modelsim/precompiled/vlog/proasic3
+postsynth = postsynth

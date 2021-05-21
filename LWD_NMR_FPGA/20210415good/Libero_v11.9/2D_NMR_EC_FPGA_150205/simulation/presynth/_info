@@ -1,0 +1,1602 @@
+m255
+K3
+z0
+13
+cModel Technology
+dG:\cai_zhifang\project\FPGAproject\updata\NMR_FPGA_RVB_nodumpoff_high\NMR_FPGA_RVB_100m_dft_OK\simulation
+vAcq_clk_Generate
+!s100 jmDn4U[OYJA3_62XS05Kj1
+IWCh]929<1>o?hFV`;jCIk0
+VP;Uz;eAAFZ0gb`]FodcUU0
+Z0 dD:\E\Documents\2D_FPGA_DSP_prjs\2D_NMR_EC_FPGA\2D_NMR_EC_FPGA_PQFP208_0414\simulation
+w1369012105
+8D:/E/Documents/2D_FPGA_DSP_prjs/2D_NMR_EC_FPGA/2D_NMR_EC_FPGA_PQFP208_0414/component/work/Acq_clk_Generate/Acq_clk_Generate.v
+FD:/E/Documents/2D_FPGA_DSP_prjs/2D_NMR_EC_FPGA/2D_NMR_EC_FPGA_PQFP208_0414/component/work/Acq_clk_Generate/Acq_clk_Generate.v
+L0 5
+Z1 OW;L;6.6d;45
+r1
+31
+Z2 o-work presynth -O0
+n@acq_clk_@generate
+!s85 0
+!s101 -O0
+vAcq_clk_noise
+!s100 Mf4C>Ez]WXb8LV>_c6Wea1
+IR1km28]N6fn;o4Dl>ajl03
+VFb5Uki]JI<7<5L48D51ec1
+R0
+w1368083557
+8D:/E/Documents/2D_FPGA_DSP_prjs/2D_NMR_EC_FPGA/2D_NMR_EC_FPGA_PQFP208_0414/component/work/Acq_clk_noise/Acq_clk_noise.v
+FD:/E/Documents/2D_FPGA_DSP_prjs/2D_NMR_EC_FPGA/2D_NMR_EC_FPGA_PQFP208_0414/component/work/Acq_clk_noise/Acq_clk_noise.v
+L0 5
+R1
+r1
+31
+R2
+n@acq_clk_noise
+!s85 0
+!s101 -O0
+vAcq_clk_signal
+!s100 g62WNEP<HMkYQUe[6ZB`^0
+IO83_KSgnX=Q]G:GCW=8:61
+VgF:Yf2@gUNm:=GONF62gX0
+R0
+w1369127747
+8D:/E/Documents/2D_FPGA_DSP_prjs/2D_NMR_EC_FPGA/2D_NMR_EC_FPGA_PQFP208_0414/component/work/Acq_clk_signal/Acq_clk_signal.v
+FD:/E/Documents/2D_FPGA_DSP_prjs/2D_NMR_EC_FPGA/2D_NMR_EC_FPGA_PQFP208_0414/component/work/Acq_clk_signal/Acq_clk_signal.v
+L0 5
+R1
+r1
+31
+R2
+n@acq_clk_signal
+!s85 0
+!s101 -O0
+vAcqClk_mux
+!s100 XYSOb1OjdTGGDfJH2j0IM1
+IGTTI:5jDfcoL454G18h`R0
+VN@SkY74oWfkf07CECF3HJ1
+R0
+w1368003543
+8D:/E/Documents/2D_FPGA_DSP_prjs/2D_NMR_EC_FPGA/2D_NMR_EC_FPGA_PQFP208_0414/smartgen/AcqClk_mux/AcqClk_mux.v
+FD:/E/Documents/2D_FPGA_DSP_prjs/2D_NMR_EC_FPGA/2D_NMR_EC_FPGA_PQFP208_0414/smartgen/AcqClk_mux/AcqClk_mux.v
+L0 5
+R1
+r1
+31
+R2
+n@acq@clk_mux
+!s85 0
+!s101 -O0
+vadd_reg
+!s100 :cf6nkd1mF`i>^V`Z4UC_0
+I2nK=B8]f7coa<@W2>;j]V2
+VYz;YN[9WlX@ODa^mTR8VO1
+Z3 dC:\Users\dell\Desktop\WorkFolder\2D_NMR_EC_FPGA_150131\simulation
+Z4 w1400489338
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/add_reg.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/add_reg.v
+L0 3
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vbri_coder
+!s100 ei[PUW=L33C^d?C3d242P1
+IQm2NWI0[VA2HA?l39c@MC0
+VM2OeZdgdJdIM_`edA8RbB2
+R3
+w1422713572
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/bri_coder.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/bri_coder.v
+L0 2
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vbri_dump_sw
+!s100 OK@k_z]?HVe<:lhl6APWJ0
+I3eT6UTD;T36`0QD9eM`C[3
+V0=[LKWIhL@;f7];2n8?O80
+R3
+w1422713940
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/bri_dump_sw.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/bri_dump_sw.v
+L0 1
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vbri_qq_load
+!s100 f@OTZ2^j:d2VE][bee>fQ2
+ILc1<B11R6J?9VE@GS;?V]3
+VJ?XB94dbY3306SN]amSko3
+R3
+R4
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/para_load.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/para_load.v
+L0 2
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vbri_state
+!s100 a7Z>g^K9MEE4n@ma^>6I`3
+Im6bd;U4UJL>:GGL^>JBgE0
+V>E2jM7jM4z`zgX:]LL2;a2
+R3
+w1422715294
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/bri_state.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/bri_state.v
+L0 2
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vbri_timer
+!s100 ]I:1klK][hi9e[0YmZH>X0
+IM42Ik`Q`m6UPGIUXUZZ]c3
+VI@DRlnJl4Cd^IW1fL2;O`2
+R3
+R4
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/bri_timer.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/bri_timer.v
+L0 2
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vbridge_div
+!s100 TCnASUaQhKm42__Ohb2KT2
+IR0J[ZL[LHdjfaS^U5`<1m2
+Vf[Hk1HM0IQL>7[gUWVD??2
+R3
+R4
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/bridge_div.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/bridge_div.v
+L0 4
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vCAL
+!s100 Yo8;akIOW]zz3TdkjgTSK0
+IhHVa3B5<IiIfm@G8TkbL01
+V5DFYcD1k8iiGAlWV@PdR00
+R3
+R4
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/component/work/CAL/CAL.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/component/work/CAL/CAL.v
+L0 5
+R1
+r1
+31
+R2
+n@c@a@l
+!s85 0
+!s101 -O0
+vcal_div
+!s100 ^Z<nY1Ha><;a=mfezIY]H1
+Ik6o_;E:Z_i352zb6h1S5V0
+Vlf;[DmmX5KOzS?3@M]_5m3
+R3
+R4
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/cal_div.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/cal_div.v
+L0 2
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vcal_load
+!s100 aQBeEn9^09CHG7lN2i^5H1
+IZl66H[AgDS0GMYRB7fHXW3
+V?<2Qde>O5XPJ>Vn2>o[he1
+R3
+R4
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/cal_load.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/cal_load.v
+L0 2
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vclk_10k
+!s100 [K:055[@mD[IkLO8c2ace2
+IlXGC9>nZakMjI^SicOj[L3
+V<IXzE]Y@[>h?f42D8UjzA0
+R3
+w1420803882
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/clk_10k.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/clk_10k.v
+L0 3
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vclk_div500
+!s100 ;`20B4>IYmPW>?[0H32Yi0
+IkkTTZ5B`ZjfTS7GNJnIUl2
+V2QNiDZ08Q?eA1Dgm_1:2<3
+R3
+w1401072708
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/clk_div500.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/clk_div500.v
+L0 2
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vClockManagement
+!s100 elhbfN8KgQUU<jo:I0Z:92
+IR_bAc]N[cUUGM=IJ?`ERX0
+VOi[Dea5o7YWc[K:Nk`]R^3
+R3
+w1421111344
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/component/work/ClockManagement/ClockManagement.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/component/work/ClockManagement/ClockManagement.v
+L0 5
+R1
+r1
+31
+R2
+n@clock@management
+!s85 0
+!s101 -O0
+vcmp_constant_4b
+!s100 E@6o1T[>ZJHIC4e;?dE2h3
+IJXYlFjFIA8>ai^Um_5]BE0
+VB]eb1gaRD@^XZzA0kJJ@R2
+R3
+w1421815056
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/smartgen/cmp_constant_4b/cmp_constant_4b.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/smartgen/cmp_constant_4b/cmp_constant_4b.v
+L0 5
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vctrl_addr
+!s100 P6?1KY?jH8[j:LHCjgd[;1
+IEaz4b9Bnd@lPLZZR0a05V1
+VhHd:H9:j>^g=nV@m`gNI43
+R3
+R4
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/ctrl_addr.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/ctrl_addr.v
+L0 3
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vDDS
+!s100 T?IRiOU01zM`1Qa0iMNe02
+Inj5?6fXYC@Z<ZSz`H0@AF1
+V_FfP^G[4h7j<=KkPdJQTJ1
+R3
+R4
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/component/work/DDS/DDS.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/component/work/DDS/DDS.v
+L0 5
+R1
+r1
+31
+R2
+n@d@d@s
+!s85 0
+!s101 -O0
+vdds_change
+!s100 D:T;P=D`@E`Bb^YnzNXQ12
+ImaU?c6K<Zlf?4=2UmRV<R1
+VFaAC7obL=I:]I28ia=gof1
+R3
+R4
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/dds_change.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/dds_change.v
+L0 3
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vdds_coder
+!s100 c7fHbz0hAB>g99PN[2h9Y0
+Im`o96Add9AXj>d6n0AfH32
+Vj6jl]d?53B:=VzoIDjR[`1
+R3
+R4
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/dds_coder.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/dds_coder.v
+L0 2
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vdds_state
+!s100 Tc?NjCff;UY6Gnj<=V4?P2
+IXK]gFm?3Wd=elIA1kT?Nj2
+VP@:CPg;?O[eT^D>Lh2_R`3
+R3
+R4
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/dds_state.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/dds_state.v
+L0 2
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vdds_timer
+!s100 W;;VWhNUFdLU6^o5mE3aT0
+I@<0@clc2?Zhj3FP;=WnjL3
+ViaViYVlM0CW<i^ac:gW2n3
+R3
+R4
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/dds_timer.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/dds_timer.v
+L0 2
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vDSTimer
+!s100 n6XaMlA_o6b9RDZJOH[:Q3
+IcbNB8l:@S8^iQFjQM;[Q33
+VDzYTDlI;5=kbd4RXRK2zG0
+R3
+w1421858316
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/component/work/DSTimer/DSTimer.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/component/work/DSTimer/DSTimer.v
+L0 5
+R1
+r1
+31
+R2
+n@d@s@timer
+!s85 0
+!s101 -O0
+vDUMP
+!s100 L516oW_Dgh0S9^N8J?hee2
+IR?W6`c5ji2@_ioihcBG`>3
+V2Of1ec@RMf1e>@o>5h;;j3
+R3
+R4
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/component/work/DUMP/DUMP.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/component/work/DUMP/DUMP.v
+L0 5
+R1
+r1
+31
+R2
+n@d@u@m@p
+!s85 0
+!s101 -O0
+vdump_coder
+!s100 PmobX8aVWdD^`C8ZH@@E20
+ICY;A0_mMWSf_7W>IDbRkn0
+VHeLS<GC<2KaLCaY4Q<Y1h0
+R3
+R4
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/dump_coder.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/dump_coder.v
+L0 2
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vDUMP_OFF
+!s100 NoUjgdB_1^X_gi6?GX4jE3
+IbWn176[:GOf?2K4T:OEAj0
+VfZ3RhTIGVmmGPjWzf:<mU3
+R3
+R4
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/component/work/DUMP_OFF/DUMP_OFF.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/component/work/DUMP_OFF/DUMP_OFF.v
+L0 5
+R1
+r1
+31
+R2
+n@d@u@m@p_@o@f@f
+!s85 0
+!s101 -O0
+vDUMP_ON
+!s100 8S[63lTIQkGbIU_4RF1[d0
+ISQR^?W[lb<Dd8O<nJT8@I0
+VjbU@G0ZdOnnP@C1Wb:zL80
+R3
+R4
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/component/work/DUMP_ON/DUMP_ON.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/component/work/DUMP_ON/DUMP_ON.v
+L0 5
+R1
+r1
+31
+R2
+n@d@u@m@p_@o@n
+!s85 0
+!s101 -O0
+vdump_state
+!s100 17=bPWP`9^ig;X7BhN7ae2
+I6C:c;I]1gJonzJAIUQSQ]3
+V7L]VA]KHXHlOC9]gaJ^IR0
+R3
+R4
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/dump_state.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/dump_state.v
+L0 2
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vdump_sustain_timer
+!s100 lO;j`k7MMGQIdOa]@D<;M3
+I2`Km^8eNk;:_MW=Q;@@8F2
+VA3VAeX@3eDRDL^UUePSYW1
+R3
+w1421851852
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/dump_sustain_timer.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/dump_sustain_timer.v
+L0 2
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vdump_sustain_timer_tb
+!s100 aI]VIdK5RE`Gh`MZi=VKZ2
+IaaRXKX2SK<RmoNKPM@R=03
+VR>mjk8mg<<AAR2n7j>_@P1
+dF:\Project\tmp\2DNMRECBP\Final_One\2D_NMR_EC_FPGA_0922\simulation
+w1412585498
+8F:/Project/tmp/2DNMRECBP/Final_One/2D_NMR_EC_FPGA_0922/stimulus/dump_sustain_timer_tb.v
+FF:/Project/tmp/2DNMRECBP/Final_One/2D_NMR_EC_FPGA_0922/stimulus/dump_sustain_timer_tb.v
+L0 3
+R1
+r1
+31
+R2
+!s92 +incdir+F:/Project/tmp/2DNMRECBP/Final_One/2D_NMR_EC_FPGA_0922/stimulus -work presynth -O0
+!s85 0
+!s101 -O0
+vdump_timer
+!s100 fbgPj]NT;BcTYPg:GVe]H0
+IDE6U1nFo3i@gGVRlEN:YY3
+V=_6e7FTTnJ_nZbJn?iZfI3
+R3
+R4
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/dump_timer.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/dump_timer.v
+L0 2
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vGPMI
+!s100 @HZ9aD1R[RZg[6kDcLEl]1
+IdHRB>0iYDNMPJ6MDz^`ol0
+VT94UVDcA4k2FkO9b`@BOM2
+R3
+R4
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/component/work/GPMI/GPMI.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/component/work/GPMI/GPMI.v
+L0 5
+R1
+r1
+31
+R2
+n@g@p@m@i
+!s85 0
+!s101 -O0
+vlink
+!s100 TW]B<;d14jIj8OWPmdaoU2
+IQTaKmmTgE[aGXS?ko7coh3
+VDb1<L6aMjLab9KoK^82d[0
+R3
+R4
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/link.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/link.v
+L0 3
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vlong_timer
+!s100 >KHcPL]H0]ML5OTH<9<a[1
+Io[AoGEk6]PH[?`bJK<Rn80
+Vz8dVNS45P@KF7UDFBTz_X1
+R3
+w1400586418
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/long_timer.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/long_timer.v
+L0 3
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vn_pluse_acq
+!s100 CaAT]E95o6LQTOlBz?NTY2
+IHIKo_;5]JBK98IF4CBniI0
+V1WbeYTb0]i6bCYCUU3@Fn0
+R3
+R4
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/n_pluse_acq.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/n_pluse_acq.v
+L0 3
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vn_rdclk_syn
+!s100 ejQzYQlzYEc>4O_;KX1X23
+IW_:JX6GQjbhh52F8Qm05O3
+VlhRGaW22`[J0zWHo_W^8N1
+R3
+R4
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/n_rdclk_syn.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/n_rdclk_syn.v
+L0 2
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vn_s_change
+!s100 41N1ION@nV]0T=jedhkE33
+I<2K<0?X<_aR>liUm83:iA3
+V3dNMm6nJK9Rl_i=znU3A93
+R3
+R4
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/n_s_change.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/n_s_change.v
+L0 3
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vnecount_cmp
+!s100 d9hB;_Wz1emmm^8d=OzYk2
+I^:NWl]E8=a>e06D]@m0E?3
+VZQ4Tkz75zCb2jk56PNP=P0
+R3
+w1422702108
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/smartgen/necount_cmp/necount_cmp.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/smartgen/necount_cmp/necount_cmp.v
+L0 5
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vnecount_equal
+Ic5o4oY6j`BAeKH]<=ZghO1
+V=4XBMAV8^`ggg4GlnFME20
+R0
+w1395061074
+8D:/E/Documents/2D_FPGA_DSP_prjs/2D_NMR_EC_FPGA/2D_NMR_EC_FPGA_PQFP208_0414/smartgen/necount_equal/necount_equal.v
+FD:/E/Documents/2D_FPGA_DSP_prjs/2D_NMR_EC_FPGA/2D_NMR_EC_FPGA_PQFP208_0414/smartgen/necount_equal/necount_equal.v
+L0 5
+R1
+r1
+31
+R2
+!s100 1CKh4Bh[i_7MiffXzozcY2
+!s85 0
+!s101 -O0
+vnecount_inc
+!s100 ABdhCiNg57X[kUBW`eb?i1
+IeeSND`R^MOEg15U;PS4U83
+V=dc@;8`9H`DS0FKD1SK7l3
+R3
+Z5 w1400489340
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/smartgen/necount_inc/necount_inc.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/smartgen/necount_inc/necount_inc.v
+L0 5
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vNMR_TOP
+!s100 5RK`cb`H9YS<1XiDAVD^H2
+INRbQe_ei`AS0S5B5`Nhl?0
+VYZIMF<=BA;@WBLIDTeCW:2
+R3
+w1423127185
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/component/work/NMR_TOP/NMR_TOP.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/component/work/NMR_TOP/NMR_TOP.v
+L0 5
+R1
+r1
+31
+R2
+n@n@m@r_@t@o@p
+!s85 0
+!s101 -O0
+vnoise_acq
+!s100 5ckLjd`6J<hzE0jQ_8Bez0
+IMW8RWk>BZ:aGheAR_@;>T1
+VlSSKe[dY<;Xe8nh7IOcg?1
+R3
+R4
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/component/work/noise_acq/noise_acq.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/component/work/noise_acq/noise_acq.v
+L0 5
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vnoise_addr
+!s100 Rm;ze<23418lUUP0?a=jm2
+I3fJnHX[_gT1<m:?mGnZ[C0
+Vj9kTTEYfLYzK_E]kkhV[>3
+R3
+R4
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/noise_addr.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/noise_addr.v
+L0 3
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vnoiseclk
+!s100 enmnX:_:dX1h=;_hmEUWk0
+IKU67FLMJ8R?f]B8KUm2L13
+VRanOZf9=K1ZKb9dZdQVmG2
+R3
+R4
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/noiseclk.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/noiseclk.v
+L0 3
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vnoiseclkctrl
+!s100 2d3kD26ROk?dOoBT7[nJn0
+IgCCJcjIM;S2?<=1f3T`WQ3
+VlP4C^j>UX`zheMf6<=OQ?0
+R3
+R4
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/noiseclkctrl.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/noiseclkctrl.v
+L0 3
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vnoisestate
+!s100 2`U=BVCH>B@hF5OQ[SjB>3
+In]z9PfMmWN9IUJn`im^jZ1
+VcX2Sd:<D1f3hWAHib<i=R2
+R3
+R4
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/noisestate.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/noisestate.v
+L0 3
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vnsctrl_choice
+!s100 zAmW[:_95UmfU3_=C69ea3
+Im3TL4O@UQ=Xk0kIH>cPl=3
+Viob0G[E6lRZGaBBA[<WX^2
+R3
+R4
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/nsctrl_choice.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/nsctrl_choice.v
+L0 3
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+voff_on_coder
+!s100 >ZS^8IhMn0O2RI7Ngid9Z2
+I`_hI:nT@0T87TYPAI@Ud43
+VGgU7?R`9OhYP?a3^2RGVH3
+R3
+R4
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/off_on_coder.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/off_on_coder.v
+L0 2
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+voff_on_state
+!s100 ERk2b43lOK2=20E3XidSk3
+I5I:DHnK1:Ti0UzV<ePZ5i2
+V15XgFfnFScUh9m5YL57el0
+R3
+R4
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/off_on_state.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/off_on_state.v
+L0 2
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+voff_on_timer
+!s100 eC7=_mlmK:djLl?6dZWZj3
+IG5`VJUjz>2:H2m[S?1A]00
+VoWbbOMci;SDhF=n4d]MeN1
+R3
+R4
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/off_on_timer.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/off_on_timer.v
+L0 2
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vpd_pluse_coder
+!s100 lgR]_l_SWQzJSBNaafb;V3
+I;E^4`M@@R3dH[Eob=d30_0
+V0P3h1JZ29TLj8SocM`TGf2
+R3
+w1422710734
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/pd_pluse_coder.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/pd_pluse_coder.v
+L0 1
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vpd_pluse_inc
+!s100 34OnPm<?OELh:]aGkXTN40
+InYBV]5cF?@>0k0H>[VPik3
+VJ5ba>Gd?E8<zENXWNn@R60
+R3
+R5
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/smartgen/pd_pluse_inc/pd_pluse_inc.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/smartgen/pd_pluse_inc/pd_pluse_inc.v
+L0 5
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vpd_pluse_state
+!s100 d]<oJi?4B;K]MDgd?F^=>2
+I:Uj]6C:G83mdSbkW]Mzf53
+VAGG;;>2flMRh1_dU5IHCc2
+R3
+w1422710752
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/pd_pluse_state.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/pd_pluse_state.v
+L0 1
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vpd_pluse_timer
+!s100 m4Cncdj<=51k5Og0f0h=<1
+I^iemQmnHX7d`0B2jNW3nb1
+V`:HaU>:l2Uh2dS=g=59ma2
+R3
+R4
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/pd_pluse_timer.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/pd_pluse_timer.v
+L0 2
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vpd_pluse_top
+!s100 @i<6cMNJjBE94TF5?]zKW3
+IZnZCRG`EgH9jDng]WYQXL2
+ViVmEH;Fh<`R=m[;ToVo]l1
+R3
+w1422710844
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/component/work/pd_pluse_top/pd_pluse_top.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/component/work/pd_pluse_top/pd_pluse_top.v
+L0 5
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vpllclk
+!s100 2>?OengZJCC^WOK:dWcl53
+IkF<H>b_9N@O5FLZ=R?BTH1
+V:m5XcQjaTIhWVbn_;07GF2
+R3
+R5
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/smartgen/pllclk/pllclk.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/smartgen/pllclk/pllclk.v
+L0 5
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vPLUSE
+!s100 2Z024g4Ui98e;::eSf9<E3
+IlO9XaWL0=cd7`hATC@=Be2
+V72aT@:iT4=BVDAY]UdILY1
+R3
+w1422713636
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/component/work/PLUSE/PLUSE.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/component/work/PLUSE/PLUSE.v
+L0 5
+R1
+r1
+31
+R2
+n@p@l@u@s@e
+!s85 0
+!s101 -O0
+vplusestate
+!s100 5[_iBc[^_bEhe581<Q<TW0
+IOcUAHMbm=AJH4zeofSBVc0
+Vz[_FeN1:B:U434KG0`>FU2
+R3
+R4
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/plusestate.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/plusestate.v
+L0 1
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vppheavy_on_timer_md
+!s100 de^oO?eoUn<4jfS84DnX:1
+IL5JSU`;>bOSSf6na8Uc;91
+Vh8bBZzT>5]:1?2Z^J4ZcG3
+R0
+w1397809963
+8D:/E/Documents/2D_FPGA_DSP_prjs/2D_NMR_EC_FPGA/2D_NMR_EC_FPGA_PQFP208_0414/hdl/ppheavy_on_timer.v
+FD:/E/Documents/2D_FPGA_DSP_prjs/2D_NMR_EC_FPGA/2D_NMR_EC_FPGA_PQFP208_0414/hdl/ppheavy_on_timer.v
+Z6 L0 19
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vppheavy_ontimer
+!s100 4Ca4KUBld?c^jFHzzTEdT3
+IY5d]SDmO8cEOVUg0dMZKV3
+V?iVLUEo<F:EXAfVHAROE40
+R0
+w1369040878
+8D:/E/Documents/2D_FPGA_DSP_prjs/2D_NMR_EC_FPGA/2D_NMR_EC_FPGA_PQFP208_0414/component/work/ppheavy_ontimer/ppheavy_ontimer.v
+FD:/E/Documents/2D_FPGA_DSP_prjs/2D_NMR_EC_FPGA/2D_NMR_EC_FPGA_PQFP208_0414/component/work/ppheavy_ontimer/ppheavy_ontimer.v
+L0 5
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vqq_coder
+!s100 zTSI]]=AKb=c=g@MJ2V`n0
+IH23Tg9U<gl>DoIdD2iHG71
+VfRD>FnK]EH7Tc>KgCoMfO0
+R3
+R4
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/qq_coder.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/qq_coder.v
+L0 2
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vqq_state
+!s100 MdU[:7he`4P:01i8cDH@h3
+INehD^Gi1mG4fR^?MQ[ZE81
+V^HPff9o7z5TKWA^`aWCi:3
+R3
+R4
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/qq_state.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/qq_state.v
+L0 2
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vqq_timer
+!s100 KCY2V5jZWAQ<^z4iNz6743
+IUBGS1J5?L_Yh5J]fzPcNQ3
+V7]Vb<RVJ^@MFkCCU1ElkT3
+R3
+R4
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/qq_timer.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/qq_timer.v
+L0 2
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vRAM
+!s100 ZacA`1F@O1AP60g7k:60=3
+I3CLcgkQz5n^R7So5Q3AD11
+VTQdhjZ7eEW5_c2TCVMHN_1
+R3
+R5
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/smartgen/RAM/RAM.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/smartgen/RAM/RAM.v
+L0 5
+R1
+r1
+31
+R2
+n@r@a@m
+!s85 0
+!s101 -O0
+vrdata_choice
+!s100 BV[De>zMIA?X^AOKSlXC81
+I<:7XRoRcVl_a0HneO^@P70
+V<`ZGn]_TFaJ=h<ZYEm6Q>3
+R3
+R4
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/readata_choice.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/readata_choice.v
+L0 3
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vrst_n_module
+!s100 a;5]SXKE>BP^YiGNMNT<j1
+Ii?4O>z8fS=KlCLck9QEb<2
+V7`X1LA@cnIPWnk0aaP34<3
+R3
+R4
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/reset_module.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/reset_module.v
+L0 22
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vs_acq_change
+!s100 dRVm@o=2WZi<S2oH:^<g71
+I=ZhN]KHXILG5JjD@XNlAA0
+VET_hA7WNXXAbUFn8kV?lz0
+R3
+R4
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/s_acq_change.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/s_acq_change.v
+L0 3
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vs_clk_div4
+!s100 TA5fR^W40jS3Po6VYGI8@1
+IHYTQK]fT[;nzYYS2fJ_:V1
+VE@Imcc>SGNLaGn6MHoD;G0
+R3
+R4
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/s_clk_div.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/s_clk_div.v
+L0 3
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vscalestate
+I?ZlDCejU;oT1Mmhe7`bEU1
+VN;B5E1=X06j1lKjMMJS`81
+R3
+w1423127179
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/scalestate.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/scalestate.v
+R6
+R1
+r1
+31
+R2
+!s100 YYY@@=Z46Qe7=OGMXBJi_3
+!s85 0
+!s101 -O0
+vscan_scale_sw
+!s100 koY3I[hCSEblWo874g6972
+Ioe];:@WYbR[7@Bf;TTSJE1
+VJCFYG;<^PDXYBRgD_ZIRP1
+R3
+R4
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/scan_scale_sw.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/scan_scale_sw.v
+L0 2
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vscanstate
+!s100 A96clQom?GLbGaM>XV?nZ0
+I03hiC7:eFK@l4Gl1?IkgR1
+Vh1=3l4c=R18<jVHl@DJe>3
+R3
+R4
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/scanstate.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/scanstate.v
+L0 3
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vsd_acq_top
+!s100 X:R:LickiN900=R41<U_^2
+IQoSL0dhm8[COB[eO>P@:21
+V`R[i;IKGCgXbK>:]SngSQ3
+R3
+w1411371284
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/component/work/sd_acq_top/sd_acq_top.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/component/work/sd_acq_top/sd_acq_top.v
+L0 5
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vsd_sacq_coder
+!s100 IL81=l`kEAACO;n1Q@3Ub2
+IIQePHghG<F_I]0Af7_Zc00
+VNYF^Vl@<oG7Lh1^N7>A4L2
+R3
+w1411351040
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/sd_acq_coder.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/sd_acq_coder.v
+L0 2
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vsd_sacq_inc
+!s100 dA1hM6C^bfRgICK`j?_V:2
+I2WTX;_;37VlHTiX[fV8LT2
+VYH`hSHDiVnhz5NA6^RWF20
+R3
+R5
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/smartgen/sd_sacq_inc/sd_sacq_inc.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/smartgen/sd_sacq_inc/sd_sacq_inc.v
+L0 5
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vsd_sacq_state
+!s100 aGhM3<TAg023]Sa6MAoBz2
+I^bHcn9KVd8]n8B=h]@KP?0
+VVDj5MY8RK]CFC?M8XAK_h3
+R3
+w1413028962
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/sd_acq_state.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/sd_acq_state.v
+L0 2
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vsd_sacq_timer
+!s100 >PSGNonXoZIU:gHI6mcP>3
+IgbAR05Z;dlzK0A9YO9VIY2
+VaOTC9mFRhFD;WAE]UNY_;3
+R3
+R4
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/sd_acq_timer.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/sd_acq_timer.v
+L0 2
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vsignal_acq
+!s100 Z<HS9f35BkF:nn81]Zg_T0
+Ic@Kl5E8d[AnAg3[>9mWe@2
+VNLi1HUYI8b3kn88m;gVP72
+R3
+R4
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/component/work/signal_acq/signal_acq.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/component/work/signal_acq/signal_acq.v
+L0 5
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vSignal_Noise_Acq
+!s100 oQRHXkQL;BhoojkWfM<jR3
+I2BiDLPZiJ_NOQJnC0KS`U0
+VaJ?FHLQHS1;jkYYchZgF@0
+R3
+R4
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/component/work/Signal_Noise_Acq/Signal_Noise_Acq.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/component/work/Signal_Noise_Acq/Signal_Noise_Acq.v
+L0 5
+R1
+r1
+31
+R2
+n@signal_@noise_@acq
+!s85 0
+!s101 -O0
+vsignalclkctrl
+!s100 ;>=Z;ooOfBAQRY4hiX21m3
+I5FnKV[oahkfhK1DGWkdBa0
+V1jV5TbjEdaLzk;[Mle4b;3
+R3
+R4
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/signalclkctrl.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/signalclkctrl.v
+L0 3
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vstate1ms_choice
+!s100 QZ7GOBkgRVIO?3ARnBmfD1
+INYFKGQf8eK?^_UNgOidLM1
+VlZ2PcJoAO^X74;VbdcbG62
+R3
+R4
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/1ms_dump_choice.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/1ms_dump_choice.v
+L0 2
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vstate_1ms
+!s100 ^f?:VO36DmEG;9oCmBJNG3
+IFacBJl0Pib3DUX0WoiBBF1
+VUAHoia86S:VEV>Oi9P2[V0
+R3
+R4
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/state_1ms.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/state_1ms.v
+L0 3
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vSTATE_1MS_TOP
+IXl926^:L<C;ZjOVd9W[AO0
+VX6Y8B=[4_henWG27`EkmE1
+Z7 dG:\cai_zhifang\project\1MS_TEST\NMR_FPGA_RVB_mine_008_03\NMR_FPGA_RVB_100m_dft_OK\simulation
+w1301558796
+8G:/cai_zhifang/project/1MS_TEST/NMR_FPGA_RVB_mine_008_03/NMR_FPGA_RVB_100m_dft_OK/component/work/STATE_1MS_TOP/STATE_1MS_TOP.v
+FG:/cai_zhifang/project/1MS_TEST/NMR_FPGA_RVB_mine_008_03/NMR_FPGA_RVB_100m_dft_OK/component/work/STATE_1MS_TOP/STATE_1MS_TOP.v
+L0 5
+Z8 OW;L;6.5d;42
+r1
+31
+R2
+n@s@t@a@t@e_1@m@s_@t@o@p
+!s100 j[om>>m`QdBC^NZnn7mWX2
+!s85 0
+!s101 -O0
+vstate_switch
+!s100 j_j;<6djjJ?@6i@R4YU3B2
+I7J3cJO6@fATgL?=4EgI3]1
+VXT@ga>98mHNYd^JYNI=cA2
+R3
+R4
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/state_switch.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/state_switch.v
+L0 3
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vstimulus
+IQhR_h;FBdB^mDiO;6EddF3
+VMicz[kTRiF?^1;=lejkKS0
+R7
+Z9 w1301558873
+Z10 8G:/cai_zhifang/project/1MS_TEST/NMR_FPGA_RVB_mine_008_03/NMR_FPGA_RVB_100m_dft_OK/stimulus/STATE_1MS_TOP_tbench.v
+Z11 FG:/cai_zhifang/project/1MS_TEST/NMR_FPGA_RVB_mine_008_03/NMR_FPGA_RVB_100m_dft_OK/stimulus/STATE_1MS_TOP_tbench.v
+L0 25
+R8
+r1
+31
+R2
+Z12 !s92 +incdir+G:/cai_zhifang/project/1MS_TEST/NMR_FPGA_RVB_mine_008_03/NMR_FPGA_RVB_100m_dft_OK/stimulus -work presynth -O0
+!s100 m[Xn4^ZV]?D?4dFo;oZ>20
+!s85 0
+!s101 -O0
+vsyn_md
+Z13 !s110 1621242171
+!i10b 1
+!s100 X2:>R4X5Je16[Nde2;1_g1
+IJc<A6gNnL5BbIQ5Xm>oeD0
+Z14 VDg1SIo80bB@j0V0VzS_@n1
+Z15 dE:/LWD_NMR/Code/LWD_NMR_FPGA/20210415good/Libero_v11.9/2D_NMR_EC_FPGA_150205/simulation
+w1621240306
+8E:/LWD_NMR/Code/LWD_NMR_FPGA/20210415good/Libero_v11.9/2D_NMR_EC_FPGA_150205/hdl/syn_md.v
+FE:/LWD_NMR/Code/LWD_NMR_FPGA/20210415good/Libero_v11.9/2D_NMR_EC_FPGA_150205/hdl/syn_md.v
+Z16 L0 21
+Z17 OW;L;10.5c;63
+r1
+!s85 0
+31
+Z18 !s108 1621242171.000000
+!s107 E:/LWD_NMR/Code/LWD_NMR_FPGA/20210415good/Libero_v11.9/2D_NMR_EC_FPGA_150205/hdl/syn_md.v|
+!s90 -reportprogress|300|-vlog01compat|-work|presynth|E:/LWD_NMR/Code/LWD_NMR_FPGA/20210415good/Libero_v11.9/2D_NMR_EC_FPGA_150205/hdl/syn_md.v|
+!s101 -O0
+!i113 1
+Z19 o-vlog01compat -work presynth -O0
+Z20 tCvgOpt 0
+vsyn_md_combine
+R13
+!i10b 1
+!s100 NL>abF@9P=`COMimSETHo1
+IlHiWhUzomAa3m;:A4gNIF2
+R14
+R15
+w1621233896
+8E:/LWD_NMR/Code/LWD_NMR_FPGA/20210415good/Libero_v11.9/2D_NMR_EC_FPGA_150205/hdl/syn_md_combine.v
+FE:/LWD_NMR/Code/LWD_NMR_FPGA/20210415good/Libero_v11.9/2D_NMR_EC_FPGA_150205/hdl/syn_md_combine.v
+R16
+R17
+r1
+!s85 0
+31
+R18
+!s107 E:/LWD_NMR/Code/LWD_NMR_FPGA/20210415good/Libero_v11.9/2D_NMR_EC_FPGA_150205/hdl/syn_md_combine.v|
+!s90 -reportprogress|300|-vlog01compat|-work|presynth|E:/LWD_NMR/Code/LWD_NMR_FPGA/20210415good/Libero_v11.9/2D_NMR_EC_FPGA_150205/hdl/syn_md_combine.v|
+!s101 -O0
+!i113 1
+R19
+R20
+vsyn_md_edge_detect
+R13
+!i10b 1
+!s100 2>OQb1Bj81X?AZn[7P>j=0
+I=Y3;76G5JaXfG2koF<YVz1
+R14
+R15
+w1621223387
+8E:/LWD_NMR/Code/LWD_NMR_FPGA/20210415good/Libero_v11.9/2D_NMR_EC_FPGA_150205/hdl/syn_md_edge_detect.v
+FE:/LWD_NMR/Code/LWD_NMR_FPGA/20210415good/Libero_v11.9/2D_NMR_EC_FPGA_150205/hdl/syn_md_edge_detect.v
+R16
+R17
+r1
+!s85 0
+31
+R18
+!s107 E:/LWD_NMR/Code/LWD_NMR_FPGA/20210415good/Libero_v11.9/2D_NMR_EC_FPGA_150205/hdl/syn_md_edge_detect.v|
+!s90 -reportprogress|300|-vlog01compat|-work|presynth|E:/LWD_NMR/Code/LWD_NMR_FPGA/20210415good/Libero_v11.9/2D_NMR_EC_FPGA_150205/hdl/syn_md_edge_detect.v|
+!s101 -O0
+!i113 1
+R19
+R20
+vsyn_md_module
+R13
+!i10b 1
+!s100 hb<MCjlQR2HDbbJDHfRcd1
+I^TCQ@?D1EFWa;gT6Zn]:Q3
+R14
+R15
+w1621239562
+8E:/LWD_NMR/Code/LWD_NMR_FPGA/20210415good/Libero_v11.9/2D_NMR_EC_FPGA_150205/component/work/syn_md_module/syn_md_module.v
+FE:/LWD_NMR/Code/LWD_NMR_FPGA/20210415good/Libero_v11.9/2D_NMR_EC_FPGA_150205/component/work/syn_md_module/syn_md_module.v
+L0 9
+R17
+r1
+!s85 0
+31
+R18
+!s107 E:/LWD_NMR/Code/LWD_NMR_FPGA/20210415good/Libero_v11.9/2D_NMR_EC_FPGA_150205/component/work/syn_md_module/syn_md_module.v|
+!s90 -reportprogress|300|-vlog01compat|-work|presynth|E:/LWD_NMR/Code/LWD_NMR_FPGA/20210415good/Libero_v11.9/2D_NMR_EC_FPGA_150205/component/work/syn_md_module/syn_md_module.v|
+!s101 -O0
+!i113 1
+R19
+R20
+vsyn_md_module_tb
+R13
+!i10b 1
+!s100 6J9Q?I:;C5z:?=U^<Qf503
+ILh0=_nmzd42=<5_2I=gHn3
+R14
+R15
+w1621236552
+8E:/LWD_NMR/Code/LWD_NMR_FPGA/20210415good/Libero_v11.9/2D_NMR_EC_FPGA_150205/stimulus/syn_md_module_tb.v
+FE:/LWD_NMR/Code/LWD_NMR_FPGA/20210415good/Libero_v11.9/2D_NMR_EC_FPGA_150205/stimulus/syn_md_module_tb.v
+R16
+R17
+r1
+!s85 0
+31
+R18
+!s107 E:/LWD_NMR/Code/LWD_NMR_FPGA/20210415good/Libero_v11.9/2D_NMR_EC_FPGA_150205/stimulus/syn_md_module_tb.v|
+!s90 -reportprogress|300|+incdir+E:/LWD_NMR/Code/LWD_NMR_FPGA/20210415good/Libero_v11.9/2D_NMR_EC_FPGA_150205/stimulus|-vlog01compat|-work|presynth|E:/LWD_NMR/Code/LWD_NMR_FPGA/20210415good/Libero_v11.9/2D_NMR_EC_FPGA_150205/stimulus/syn_md_module_tb.v|
+!s101 -O0
+!i113 1
+R19
+Z21 !s92 +incdir+E:/LWD_NMR/Code/LWD_NMR_FPGA/20210415good/Libero_v11.9/2D_NMR_EC_FPGA_150205/stimulus -vlog01compat -work presynth -O0
+R20
+vtb_clock_minmax
+IboPKl=RnUhJkT9kKAi5Lb1
+V]<miNJ_R^N1gLiJ7V>ii92
+R7
+R9
+R10
+R11
+L0 135
+R8
+r1
+31
+R2
+R12
+!s100 _2U=WGzfA2JhhPS1CoF?l3
+!s85 0
+!s101 -O0
+vten_choice_one
+!s100 UoE]j;F5Xnc>ml[@zWV@52
+IkTGS7AEO:=@oTGdKkI0oM2
+V4F=N6MNOGIJ7[EWnigBLB3
+R3
+R4
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/ten_choice_one.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/ten_choice_one.v
+L0 3
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vtest_bench
+!s110 1621235349
+!i10b 1
+!s100 KNO3=cX59`>eVAQiFhR`B1
+IKh1cAjjzlimg^XSMViWUk2
+R14
+R15
+w1621235328
+8E:/LWD_NMR/Code/LWD_NMR_FPGA/20210415good/Libero_v11.9/2D_NMR_EC_FPGA_150205/stimulus/test_bench.v
+FE:/LWD_NMR/Code/LWD_NMR_FPGA/20210415good/Libero_v11.9/2D_NMR_EC_FPGA_150205/stimulus/test_bench.v
+L0 30
+R17
+r1
+!s85 0
+31
+!s108 1621235349.000000
+!s107 E:/LWD_NMR/Code/LWD_NMR_FPGA/20210415good/Libero_v11.9/2D_NMR_EC_FPGA_150205/stimulus/test_bench.v|
+!s90 -reportprogress|300|+incdir+E:/LWD_NMR/Code/LWD_NMR_FPGA/20210415good/Libero_v11.9/2D_NMR_EC_FPGA_150205/stimulus|-vlog01compat|-work|presynth|E:/LWD_NMR/Code/LWD_NMR_FPGA/20210415good/Libero_v11.9/2D_NMR_EC_FPGA_150205/stimulus/test_bench.v|
+!s101 -O0
+!i113 1
+R19
+R21
+R20
+vtestbench
+!s100 1B]=XI:<SKkQnAW_UE2KZ2
+I1eCQ=c1o7IQ5Q`MGH[N4[2
+VhGfW:390DM[oDMzegDH9`2
+R3
+w1423121615
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/stimulus/NMR_TOP_DEI90_tb.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/stimulus/NMR_TOP_DEI90_tb.v
+L0 11
+R1
+r1
+!s85 0
+31
+!s101 -O0
+R2
+!s92 +incdir+C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/stimulus -work presynth -O0
+vtimer
+!s100 T[hchL4HQZe@6@8Bl?PJj0
+IE9EVna=aYXnFb8moCLeoE3
+VS3QQR8kamgFWTinnhkl162
+R3
+R4
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/timer.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/timer.v
+R16
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vTimer_Cmp
+!s100 4FE@RY_S;7ml[bj0ZBKm81
+I>=Y@gV;O;dTZ?901D`87o1
+VM@RSWG8c^c>fc2zgTXSoD0
+R3
+R5
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/smartgen/Timer_Cmp/Timer_Cmp.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/smartgen/Timer_Cmp/Timer_Cmp.v
+L0 5
+R1
+r1
+31
+R2
+n@timer_@cmp
+!s85 0
+!s101 -O0
+vtimer_top
+!s100 =K]8eZg7VA?0Wn6TmdkEQ1
+I[G2VOLVBO[kW^Gg:nZIfh3
+VeEnoXHmR2]Tz9j00TOciO1
+R3
+R4
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/component/work/timer_top/timer_top.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/component/work/timer_top/timer_top.v
+L0 5
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vtop_code
+!s100 f8k`P4FAnz3EZgid34j<A1
+I>6dRH_20]jR?]XG9^2d6^1
+V7C=aJ_<Nkjb_FHBm=m?VL0
+R3
+w1422698458
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/top_code.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/top_code.v
+L0 1
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vtopctrlchange
+!s100 ;ge8^K67`[a8GknV9W>Z81
+I5zaBkVE_>^blH9WdMfoW<3
+Vf^P?AD<Qe=K_8naoj>Fb53
+R3
+R4
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/topctrlchange.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/topctrlchange.v
+L0 3
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vtri_state
+!s100 dDW2MZT=:_nd<3N<ZE5Ai0
+I3]m530QEJQ3_z?[9oTfVc3
+VMEB[ndOWN<Rm^B2Ga_Y[<3
+R3
+R4
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/tri_state.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/tri_state.v
+L0 3
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0
+vxwe_xzcs2_syn
+!s100 P3NT3<AAPZJ;c8`bTb0MZ3
+I3TkdP:KB;o^;j1CK]58Z63
+V8QCXo^KliD9ok1=b;;GN>3
+R3
+w1422760792
+8C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/xwe_xzcs2_syn.v
+FC:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/xwe_xzcs2_syn.v
+L0 2
+R1
+r1
+31
+R2
+!s85 0
+!s101 -O0

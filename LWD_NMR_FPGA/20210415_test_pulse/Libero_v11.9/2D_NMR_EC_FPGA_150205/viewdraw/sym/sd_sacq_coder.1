@@ -1,0 +1,47 @@
+V 50
+K _ sd_sacq_coder
+Y 1
+D 0 0 320 260
+Z 10
+i 9
+P 1 0 220 20 220 0 2 0
+L 20 220 10 0 2 0 1 0 clk_sys
+A 0 230 10 0 2 0 PINTYPE=IN
+P 2 0 200 20 200 0 2 0
+L 20 200 10 0 2 0 1 0 dds
+A 0 210 10 0 2 0 PINTYPE=IN
+P 3 0 180 20 180 0 2 0
+L 20 180 10 0 2 0 1 0 rst_n
+A 0 190 10 0 2 0 PINTYPE=IN
+P 4 0 160 20 160 0 2 0
+L 20 160 10 0 2 0 1 0 count[15:0]
+A 0 170 10 0 2 0 PINTYPE=IN
+P 5 0 140 20 140 0 2 0
+L 20 140 10 0 2 0 1 0 sd_sacq_load
+A 0 150 10 0 2 0 PINTYPE=IN
+P 6 0 120 20 120 0 2 0
+L 20 120 10 0 2 0 1 0 sd_sacq_choice[3:0]
+A 0 130 10 0 2 0 PINTYPE=IN
+P 7 0 100 20 100 0 2 0
+L 20 100 10 0 2 0 1 0 sd_sacq_data[15:0]
+A 0 110 10 0 2 0 PINTYPE=IN
+P 8 0 80 20 80 0 2 0
+L 20 80 10 0 2 0 1 0 state_start
+A 0 90 10 0 2 0 PINTYPE=IN
+P 10 0 60 20 60 0 2 0
+L 20 60 10 0 2 0 1 0 bb_ch
+A 0 70 10 0 2 0 PINTYPE=IN
+P 11 0 40 20 40 0 2 0
+L 20 40 10 0 2 0 1 0 s_acq180
+A 0 50 10 0 2 0 PINTYPE=IN
+P 9 320 220 300 220 0 3 0
+L 240 220 10 0 2 0 1 0 i[8:0]
+A 300 230 10 0 2 0 PINTYPE=OUT
+U 20 10 10 0 2 3 DEVICE=sd_sacq_coder
+U 20 0 10 0 3 0 VFILE=D:/12_8/12_8_dds_pluse/NMR_EC_FPGA_RVB_0601/NMR_EC_FPGA_RVB/hdl/sd_acq_coder.v
+U 20 -10 10 0 3 0 ACCEL=VCS
+U 20 -20 10 0 3 0 LEVEL=VERILOG
+U 20 -30 10 0 3 0 VERILOG=sd_sacq_coder
+U 20 -40 10 0 3 0 PINORDER=clk_sys dds rst_n count[15:0] sd_sacq_load sd_sacq_choice[3:0] sd_sacq_data[15:0] state_start i[8:0] bb_ch s_acq180 
+b 20 20 300 240
+E

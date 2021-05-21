@@ -1,0 +1,22 @@
+
+Starting:    D:\Libero_Soc11.9\SynplifyPro\bin64\mbin\synplify.exe
+Install:     D:\Libero_Soc11.9\SynplifyPro
+Hostname:    DESKTOP-KQJC81O
+Date:        Thu Apr 15 10:53:27 2021
+Version:     L-2016.09M-SP1-5
+
+Arguments:   -product synplify_pro NMR_TOP_syn.tcl
+ProductType: synplify_pro
+
+License checkout: synplifypro_actel
+License: synplifypro_actel node-locked 
+Licensed Vendor: actel
+License Option: actel_oem
+
+
+
+auto_infer_blackbox is not supported in current product.
+TCL script complete: "NMR_TOP_syn.tcl"
+New HDL Analyst: enabled
+exit status=0
+License checkin: synplifypro_actel

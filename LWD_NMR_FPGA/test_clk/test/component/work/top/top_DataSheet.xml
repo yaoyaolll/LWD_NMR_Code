@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml-stylesheet type="text/xsl" href="datasheet.xsl"?>
+<datasheet>
+  <header>top</header>
+  <project-settings>
+    <fam>ProASIC3</fam>
+    <die>A3P1000</die>
+    <package>208 PQFP</package>
+    <speed-grade>STD</speed-grade>
+    <voltage>1.5</voltage>
+    <hdl-type>Verilog</hdl-type>
+    <project-description>
+    </project-description>
+    <location>E:/LWD_NMR/Code/test_clk/test/component/work/top</location>
+    <state>GENERATED ( Fri Jan 22 17:08:03 2021 )</state>
+    <swide-toolchain>SoftConsole workspace has not been generated</swide-toolchain>
+  </project-settings>
+  <site-map>
+  </site-map>
+  <fileset>
+    <name>HDL File(s)</name>
+    <file>E:\LWD_NMR\Code\test_clk\test\component\work\top\top.v</file>
+    <file>E:\LWD_NMR\Code\test_clk\test\hdl\div_fre.v</file>
+    <file>E:\LWD_NMR\Code\test_clk\test\smartgen\pll_clk\pll_clk.v</file>
+  </fileset>
+  <io>
+    <port-name>clk1k</port-name>
+    <direction>OUT</direction>
+    <pin-number>-</pin-number>
+    <io-standard>LVTTL</io-standard>
+  </io>
+  <io>
+    <port-name>clk5MHz</port-name>
+    <direction>OUT</direction>
+    <pin-number>-</pin-number>
+    <io-standard>LVTTL</io-standard>
+  </io>
+  <io>
+    <port-name>clk100MHz</port-name>
+    <direction>IN</direction>
+    <pin-number>-</pin-number>
+    <io-standard>LVTTL</io-standard>
+  </io>
+  <core type="HdlModule">
+    <core-type>HdlModule</core-type>
+    <core-exttype>div_fre</core-exttype>
+    <core-location>hdl\div_fre.v</core-location>
+    <core-name>div_fre_0</core-name>
+  </core>
+  <core type="ComponentModule">
+    <core-type>ComponentModule</core-type>
+    <core-exttype>SmartGen</core-exttype>
+    <core-location>E:/LWD_NMR/Code/test_clk/test/smartgen/pll_clk</core-location>
+    <core-name>pll_clk_0</core-name>
+  </core>
+  <memorysystem>
+    <title>Memory Map for top</title>
+    <description>The project does not contain any subsystems.</description>
+  </memorysystem>
+</datasheet>

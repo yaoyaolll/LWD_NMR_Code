@@ -1,0 +1,168 @@
+# Actel Physical design constraints file
+# Generated file
+
+# Version: 9.1 9.1.0.18
+# Family: ProASIC3 , Die: A3P1000 , Package: 208 PQFP
+# Date generated: Thu Feb 05 17:06:25 2015 
+
+
+# 
+# IO banks setting
+# 
+
+
+# 
+# User Groups
+# 
+
+define_group -name QQ
+
+define_group -name ctrout
+
+define_group -name test
+
+define_group -name dds_config
+
+define_group -name Dump_ctrl
+
+define_group -name TimerCode
+
+
+# 
+# I/O constraints
+# 
+
+# User Group Dump_ctrl
+
+set_io dumpoff             \
+    -GROUP_NAME Dump_ctrl  \
+    -DIRECTION Output
+
+
+set_io dumpon              \
+    -GROUP_NAME Dump_ctrl  \
+    -DIRECTION Output
+
+
+# User Group QQ
+
+set_io Q1Q8            \
+    -GROUP_NAME QQ     \
+    -DIRECTION Output
+
+
+set_io Q2Q7            \
+    -GROUP_NAME QQ     \
+    -DIRECTION Output
+
+
+set_io Q3Q6            \
+    -GROUP_NAME QQ     \
+    -DIRECTION Output
+
+
+set_io Q4Q5            \
+    -GROUP_NAME QQ     \
+    -DIRECTION Output
+
+
+# User Group ctrout
+
+set_io rt_sw            \
+    -GROUP_NAME ctrout  \
+    -DIRECTION Output
+
+
+set_io soft_dump        \
+    -GROUP_NAME ctrout  \
+    -DIRECTION Output
+
+
+set_io sw_acq1          \
+    -GROUP_NAME ctrout  \
+    -DIRECTION Output
+
+
+set_io sw_acq2          \
+    -GROUP_NAME ctrout  \
+    -DIRECTION Output
+
+
+# User Group dds_config
+
+set_io GLA                  \
+    -GROUP_NAME dds_config  \
+    -DIRECTION Output
+
+
+set_io ddsdata              \
+    -GROUP_NAME dds_config  \
+    -DIRECTION Output
+
+
+set_io ddsfqud              \
+    -GROUP_NAME dds_config  \
+    -DIRECTION Output
+
+
+set_io ddsreset             \
+    -GROUP_NAME dds_config  \
+    -DIRECTION Output
+
+
+set_io ddswclk              \
+    -GROUP_NAME dds_config  \
+    -DIRECTION Output
+
+
+# User Group test
+
+set_io pd_pulse_en     \
+    -GROUP_NAME test   \
+    -DIRECTION Output
+
+
+set_io pulse_start     \
+    -GROUP_NAME test   \
+    -DIRECTION Output
+
+
+set_io s_acq180        \
+    -GROUP_NAME test   \
+    -DIRECTION Output
+
+
+set_io sd_acq_en       \
+    -GROUP_NAME test   \
+    -DIRECTION Output
+
+
+
+#
+# Non IO constraints
+#
+
+
+#
+# Old IO constraints, commented out for reference
+#
+
+# set_io dumpoff -GROUP_NAME Dump_ctrl -DIRECTION Output 
+# set_io dumpon -GROUP_NAME Dump_ctrl -DIRECTION Output 
+# set_io Q1Q8 -GROUP_NAME QQ -DIRECTION Output 
+# set_io Q2Q7 -GROUP_NAME QQ -DIRECTION Output 
+# set_io Q3Q6 -GROUP_NAME QQ -DIRECTION Output 
+# set_io Q4Q5 -GROUP_NAME QQ -DIRECTION Output 
+# set_io rt_sw -GROUP_NAME ctrout -DIRECTION Output 
+# set_io soft_dump -GROUP_NAME ctrout -DIRECTION Output 
+# set_io sw_acq1 -GROUP_NAME ctrout -DIRECTION Output 
+# set_io sw_acq2 -GROUP_NAME ctrout -DIRECTION Output 
+# set_io GLA -GROUP_NAME dds_config -DIRECTION Output 
+# set_io ddsdata -GROUP_NAME dds_config -DIRECTION Output 
+# set_io ddsfqud -GROUP_NAME dds_config -DIRECTION Output 
+# set_io ddsreset -GROUP_NAME dds_config -DIRECTION Output 
+# set_io ddswclk -GROUP_NAME dds_config -DIRECTION Output 
+# set_io pd_pulse_en -GROUP_NAME test -DIRECTION Output 
+# set_io pulse_start -GROUP_NAME test -DIRECTION Output 
+# set_io s_acq180 -GROUP_NAME test -DIRECTION Output 
+# set_io sd_acq_en -GROUP_NAME test -DIRECTION Output 

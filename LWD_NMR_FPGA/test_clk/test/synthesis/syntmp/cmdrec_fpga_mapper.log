@@ -1,0 +1,16 @@
+D:\Libero_Soc11.9\SynplifyPro\bin64\m_proasic.exe  -prodtype  synplify_pro   -encrypt  -pro  -rundir  E:\LWD_NMR\Code\test_clk\test\synthesis   -part A3P1000  -package FBGA144  -grade STD    -maxfan 24 -globalthreshold 50 -opcond COMWC -report_path 4000 -RWCheckOnRam 0 -summaryfile E:\LWD_NMR\Code\test_clk\test\synthesis\synlog\report\top_fpga_mapper.xml  -top_level_module  top  -licensetype  synplifypro_actel  -flow mapping  -mp  4  -prjfile  E:\LWD_NMR\Code\test_clk\test\synthesis\scratchproject.prs  -implementation  synthesis  -multisrs  -oedif  E:\LWD_NMR\Code\test_clk\test\synthesis\top.edn   -freq 100.000   E:\LWD_NMR\Code\test_clk\test\synthesis\synwork\top_prem.srd  -sap  E:\LWD_NMR\Code\test_clk\test\synthesis\top.sap  -otap  E:\LWD_NMR\Code\test_clk\test\synthesis\top.tap  -omap  E:\LWD_NMR\Code\test_clk\test\synthesis\top.map  -devicelib  D:\Libero_Soc11.9\SynplifyPro\lib\proasic\proasic3.v  -sap  E:\LWD_NMR\Code\test_clk\test\synthesis\top.sap  -ologparam  E:\LWD_NMR\Code\test_clk\test\synthesis\syntmp\top.plg  -osyn  E:\LWD_NMR\Code\test_clk\test\synthesis\top.srm  -prjdir  E:\LWD_NMR\Code\test_clk\test\synthesis\  -prjname  top_syn  -log  E:\LWD_NMR\Code\test_clk\test\synthesis\synlog\top_fpga_mapper.srr 
+relcom:D:\Libero_Soc11.9\SynplifyPro\bin64\m_proasic.exe -prodtype synplify_pro -encrypt -pro -rundir ..\..\synthesis -part A3P1000 -package FBGA144 -grade STD -maxfan 24 -globalthreshold 50 -opcond COMWC -report_path 4000 -RWCheckOnRam 0 -summaryfile ..\synlog\report\top_fpga_mapper.xml -top_level_module top -licensetype synplifypro_actel -flow mapping -mp 4 -prjfile ..\scratchproject.prs -implementation synthesis -multisrs -oedif ..\top.edn -freq 100.000 ..\synwork\top_prem.srd -sap ..\top.sap -otap ..\top.tap -omap ..\top.map -devicelib D:\Libero_Soc11.9\SynplifyPro\lib\proasic\proasic3.v -sap ..\top.sap -ologparam top.plg -osyn ..\top.srm -prjdir ..\ -prjname top_syn -log ..\synlog\top_fpga_mapper.srr
+rc:1 success:1 runtime:0
+file:..\scratchproject.prs|io:o|time:1611305624|size:1863|exec:0|csum:
+file:..\top.edn|io:o|time:1611306500|size:32659|exec:0|csum:
+file:..\synwork\top_prem.srd|io:i|time:1611306500|size:4780|exec:0|csum:769A81F722E3C4115F40070519E05458
+file:..\top.sap|io:o|time:1611306500|size:405|exec:0|csum:
+file:..\top.tap|io:o|time:0|size:0|exec:0|csum:
+file:..\top.map|io:o|time:1611306500|size:28|exec:0|csum:
+file:D:\Libero_Soc11.9\SynplifyPro\lib\proasic\proasic3.v|io:i|time:1508984288|size:49355|exec:0|csum:8134F444E2143EC94271A46B5CC33DA2
+file:..\top.sap|io:o|time:1611306500|size:405|exec:0|csum:
+file:top.plg|io:o|time:1611306500|size:453|exec:0|csum:
+file:..\top.srm|io:o|time:1611306500|size:64490|exec:0|csum:
+file:..\synlog\top_fpga_mapper.srr|io:o|time:1611306500|size:16211|exec:0|csum:
+file:D:\Libero_Soc11.9\SynplifyPro\bin\m_proasic.exe|io:i|time:1509330672|size:11119104|exec:1|csum:6BD6E9876645BB1B346C655471A0D71C
+file:D:\Libero_Soc11.9\SynplifyPro\bin64\m_proasic.exe|io:i|time:1509332086|size:14301696|exec:1|csum:CA7B630F1194A591FA1E520688EE75E2

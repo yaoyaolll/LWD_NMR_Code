@@ -26,12 +26,19 @@
 #include "IQmathlib.h"
 #include "MyDefine.h"
 
+// 高斯拟合变量
+extern float x[9];
+extern float y[9];
+extern float a;
+extern float b;
+extern float c;
+
 #define STATE_NUM   4
 
 // 事件板状态字
 enum EB_STATE
 {
-	IDLE_STAT = 0, OPERATION_STAT, CASING_DETECT_STAT, ACQ_FIN_STAT
+	IDLE_STAT = 1, OPERATION_STAT, CASING_DETECT_STAT, ACQ_FIN_STAT
 };
 extern enum EB_STATE EventBoardState;
 
@@ -40,6 +47,8 @@ extern void (* eventFunc[])(void);
 extern Uint16 _caseingDetectFlag;
 extern Uint16 _operationFlag;
 extern Uint16 _modeDataSendFlag;
+extern Uint16 _casingDetectErrFlag;
+extern Uint16 _casingOrOperaFlag;
 
 extern Uint16 modeDataSendLen;
 
@@ -56,7 +65,6 @@ extern Uint16 CenterFreq;         // 发射频率
 extern Uint16 ScanDeltaFreq;      // 扫描步进频率
 extern Uint16 NoiseAcqTime;       // 噪声采集时间
 extern Uint16 NoiseAcqFreq;       // 噪声采样率
-extern Uint16 HegtWidth;          // 180度脉冲角度，仪器根据此角度计算出脉冲宽度
 extern Uint16 SiglAcqPrdNum;	   //signal acquisition period number:回波信号采集周期数
 extern Uint16 SiglAcqFreqTim;     // 回波采样率相对于回波信号频率的倍数，signal acquisition freqency times
 extern Uint16 EchoAcqWindowShift; // 回波采集时间窗偏移
@@ -264,7 +272,6 @@ extern Uint16 PulseReadBuf;
 extern Uint16 SingleModeFlag;
 extern Uint16 DEMn;
 extern Uint16 WidthCnt;
-extern Uint16 HegtWidth;   //回波发射脉冲宽度寄存器数值
 extern Uint16 SftWinWidth;  //采集窗时间滑动寄存器;
 extern Uint16 DCFreqSel;
 extern Uint16 DCPulseWidth;

@@ -1,0 +1,49 @@
+ ** Message System Log
+ ** Database: 
+ ** Date:   Mon Apr 14 16:53:39 2014
+
+
+****************
+Macro Parameters
+****************
+
+Name                            : Timer_Cmp
+Family                          : ProASIC3
+Output Format                   : VERILOG
+Type                            : Magnitude Comparator
+Ageb                            : None
+Agb                             : Active High
+Aleb                            : None
+Alb                             : None
+Aeb                             : None
+Aneb                            : None
+Width                           : 22
+Representation                  : Unsigned
+Insert Regs                     : No
+Insert Pads                     : No
+Clock Edge                      : Rise
+
+**************
+Compile Report
+**************
+
+
+Netlist Resource Report
+=======================
+
+    CORE                       Used:     90  Total:  24576   (0.37%)
+    IO (W/ clocks)             Used:      0  Total:    154   (0.00%)
+    Differential IO            Used:      0  Total:     35   (0.00%)
+    GLOBAL (Chip+Quadrant)     Used:      0  Total:     18   (0.00%)
+    PLL                        Used:      0  Total:      1   (0.00%)
+    RAM/FIFO                   Used:      0  Total:     32   (0.00%)
+    Low Static ICC             Used:      0  Total:      1   (0.00%)
+    FlashROM                   Used:      0  Total:      1   (0.00%)
+    User JTAG                  Used:      0  Total:      1   (0.00%)
+
+Wrote Verilog netlist to
+D:/E/2D_FPGA_DSP_prjs/2D_NMR_EC_FPGA/2D_NMR_EC_FPGA_PQFP208_0414/smartgen\Tim\
+er_Cmp\Timer_Cmp.v.
+
+ ** Log Ended:   Mon Apr 14 16:53:41 2014
+

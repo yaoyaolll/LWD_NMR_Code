@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml-stylesheet type="text/xsl" href="drcss.xsl"?>
+<drcreport>
+  <header>NMR_TOP</header>
+  <drc>
+    <status>D:\Libero_Soc11.9\Designer/data/drcreport\error.png</status>
+    <StatusMessage>Error</StatusMessage>
+    <message>Unused Instance</message>
+    <detail>syn_md_module_0 output pins are not being used.  Connect or mark them unused</detail>
+    <crossprobe>liberoaction://cross_probe/smartdesign/NMR_TOP/instances/syn_md_module_0</crossprobe>
+  </drc>
+  <drc>
+    <status>D:\Libero_Soc11.9\Designer/data/drcreport\error.png</status>
+    <StatusMessage>Error</StatusMessage>
+    <message>Undriven Pin</message>
+    <detail>Unconnected input pin syn_md_module_0:soft_d</detail>
+    <crossprobe>liberoaction://cross_probe/smartdesign/NMR_TOP/pins/syn_md_module_0:soft_d</crossprobe>
+  </drc>
+  <drc>
+    <status>D:\Libero_Soc11.9\Designer/data/drcreport\error.png</status>
+    <StatusMessage>Error</StatusMessage>
+    <message>Undriven Pin</message>
+    <detail>Unconnected input pin syn_md_module_0:rt_sw</detail>
+    <crossprobe>liberoaction://cross_probe/smartdesign/NMR_TOP/pins/syn_md_module_0:rt_sw</crossprobe>
+  </drc>
+  <drc>
+    <status>D:\Libero_Soc11.9\Designer/data/drcreport\error.png</status>
+    <StatusMessage>Error</StatusMessage>
+    <message>Undriven Pin</message>
+    <detail>Unconnected input pin syn_md_module_0:sw1</detail>
+    <crossprobe>liberoaction://cross_probe/smartdesign/NMR_TOP/pins/syn_md_module_0:sw1</crossprobe>
+  </drc>
+  <drc>
+    <status>D:\Libero_Soc11.9\Designer/data/drcreport\error.png</status>
+    <StatusMessage>Error</StatusMessage>
+    <message>Undriven Pin</message>
+    <detail>Unconnected input pin syn_md_module_0:sw2</detail>
+    <crossprobe>liberoaction://cross_probe/smartdesign/NMR_TOP/pins/syn_md_module_0:sw2</crossprobe>
+  </drc>
+  <drc>
+    <status>D:\Libero_Soc11.9\Designer/data/drcreport\error.png</status>
+    <StatusMessage>Error</StatusMessage>
+    <message>Undriven Pin</message>
+    <detail>Unconnected input pin syn_md_module_0:rst_n</detail>
+    <crossprobe>liberoaction://cross_probe/smartdesign/NMR_TOP/pins/syn_md_module_0:rst_n</crossprobe>
+  </drc>
+  <drc>
+    <status>D:\Libero_Soc11.9\Designer/data/drcreport\error.png</status>
+    <StatusMessage>Error</StatusMessage>
+    <message>Undriven Pin</message>
+    <detail>Unconnected input pin syn_md_module_0:clkin</detail>
+    <crossprobe>liberoaction://cross_probe/smartdesign/NMR_TOP/pins/syn_md_module_0:clkin</crossprobe>
+  </drc>
+  <drc>
+    <status>D:\Libero_Soc11.9\Designer/data/drcreport\warn.png</status>
+    <StatusMessage>Warning</StatusMessage>
+    <message>Floating Driver</message>
+    <detail>Floating output pin syn_md_module_0:syn_md_out</detail>
+    <crossprobe>liberoaction://cross_probe/smartdesign/NMR_TOP/pins/syn_md_module_0:syn_md_out</crossprobe>
+  </drc>
+</drcreport>

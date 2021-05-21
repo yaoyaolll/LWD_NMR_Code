@@ -19,17 +19,19 @@ void InitFPGA(void);
 void InitPulseGain(void);
 void InitVariables(void);
 void LoadParaDis(void);
+void InitSci(void);
 
 //Functions defined in SCIA_interrupt.c
 unsigned int SciaTx_Ready(void);
 unsigned int SciaRx_Ready(void);
-void SciaSendData(Uint16 data);
+void SciaSendOneWord(Uint16 data);
 interrupt void SCIRXINTA_ISR(void);
 void ReplySingleVarFrame(Uint16 frameHead, Uint16 var);
 void ReplyStateFrame(Uint16 state);
 void ReplyDownTableFrame(Uint16 lastCheckSum);
 void ReplyUpTableFrame(Uint16 tableID);
 void ReplyModeDataFrame(Uint32 startAddr, Uint32 dataLen);
+void ReplyCasingErrFrame();
 
 //Functions defined in MyFPGAFunctions.c
 void ShutdownHV(void);
@@ -105,6 +107,10 @@ void CasDctStateCtl(void);
 void AcqFinStateCtl(void);
 
 // Functions defined in CasingDetectTop.c
-void CasingDetectOnce();
-void CasingDetectTwice();
+Uint16 getCenterFreq();
+Uint16 getCenterFreqAmp();
+int CasingDetectOnce();
+void CasingDetectTop();
 
+// Functions defined in GuassFitAlgorithm.c
+void guassFit_C(const float x[9], const float y[9], float* a, float* b, float* c);

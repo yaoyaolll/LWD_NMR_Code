@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<SynplifyOutput>
+	<result>Success</result>
+	<design>clk_out</design>
+	<target_edif>E:\LWD_NMR\Code\test_clk\test\synthesis\clk_out.edn</target_edif>
+</SynplifyOutput>

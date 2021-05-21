@@ -1,0 +1,45 @@
+Actel Designer Software
+Version: 9.1.0.18
+Release: v9.1
+
+Created a new design.
+'BA_NAME' set to 'NMR_TOP_ba'
+'IDE_DESIGNERVIEW_NAME' set to 'Impl3'
+'IDE_DESIGNERVIEW_COUNT' set to '1'
+'IDE_DESIGNERVIEW_REV0' set to 'Impl3'
+'IDE_DESIGNERVIEW_REVNUM0' set to '3'
+'IDE_DESIGNERVIEW_ROOTDIR' set to
+'E:\Documents\2D_FPGA_DSP_prjs\2D_NMR_EC_FPGA\1011\2D_NMR_EC_FPGA_1010\designer'
+'IDE_DESIGNERVIEW_LASTREV' set to '3'
+'DESDIR' set to
+'E:/Documents/2D_FPGA_DSP_prjs/2D_NMR_EC_FPGA/1011/2D_NMR_EC_FPGA_1010/designer/impl3'
+'BA_DIR' set to
+'E:/Documents/2D_FPGA_DSP_prjs/2D_NMR_EC_FPGA/1011/2D_NMR_EC_FPGA_1010/designer/impl3'
+'BA_NETLIST_ALSO' set to '1'
+'EDNINFLAVOR' set to 'GENERIC'
+'NETLIST_NAMING_STYLE' set to 'VERILOG'
+'EXPORT_STATUS_REPORT' set to '1'
+'EXPORT_STATUS_REPORT_FILENAME' set to 'NMR_TOP.rpt'
+'AUDIT_NETLIST_FILE' set to '1'
+'AUDIT_DCF_FILE' set to '1'
+'AUDIT_PIN_FILE' set to '1'
+'AUDIT_ADL_FILE' set to '1'
+
+ Netlist Reading Time = 1.0 seconds
+Imported the files:
+   E:\Documents\2D_FPGA_DSP_prjs\2D_NMR_EC_FPGA\1011\2D_NMR_EC_FPGA_1010\synthesis\NMR_TOP.edn
+
+E:\Documents\2D_FPGA_DSP_prjs\2D_NMR_EC_FPGA\1011\2D_NMR_EC_FPGA_1010\component\work\NMR_TOP\NM\
+R_TOP.pdc
+
+E:\Documents\2D_FPGA_DSP_prjs\2D_NMR_EC_FPGA\1011\2D_NMR_EC_FPGA_1010\synthesis\NMR_TOP_sdc.sdc
+
+The Import command succeeded ( 00:00:08 )
+Wrote to the file: ..\..\synthesis\NMR_TOP.v
+
+The Export command succeeded ( 00:00:01 )
+
+The Execute Script command succeeded ( 00:00:16 )
+Warning: The database was closed without a save, modifications are lost
+Design closed.
+

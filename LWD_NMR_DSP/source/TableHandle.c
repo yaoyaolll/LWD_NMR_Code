@@ -30,49 +30,6 @@
 #pragma CODE_SECTION(CheckReadTable,"Datatable");
 #pragma CODE_SECTION(CheckWorkMode,"Datatable");
 
-/*void SendTable(void)
-{
-	TableTempPt = (Uint16 *)0x8000;
-	*TableTempPt= 0x9921;
-	for(SendCnt=0;SendCnt<TABLE_TOTAL_NUM+1;SendCnt++)      
-	{
-		while(McbspaRegs.SPCR2.bit.XRDY==0)              //如果不能发送，等待
-		{ ; }
-		McbspaRegs.DXR1.all=*TableTempPt;     //发送表数据
-		TableTempPt++;
-		//Delay(2);                        //指针指向下一个数据
-	}
-	while(McbspaRegs.SPCR2.bit.XRDY==0)         //如果不能发送，等待
-	{;}
-	McbspaRegs.DXR1.all=0xAA55;     //发送数据尾
-	return;
-
-	Uint16 CheckSum = 0;
-	Uint16 i=0;
-	if (SendTableID == 0x2)
-	{
-		TableTempPt = (Uint16 *)0x8002;
-		Uint16 CheckSum = 0;
-		Uint16 i=0;
-		for (;i<20;++i)
-		{
-			CheckSum += (*TableTempPt);
-			TableTempPt++;
-		}
-		TableTempPt = CheckSum;
-	}
-	else if (SendTableID == 0x3)
-	{
-		TableTempPt = (Uint16 *)0x8017;
-		for (;i<58;++i)
-		{
-			CheckSum += (*TableTempPt);
-			TableTempPt++;
-		}
-		TableTempPt = CheckSum;
-	}
-	
-}*/
 
 void CheckWorkMode(void)
 {
@@ -86,12 +43,18 @@ void CheckWorkMode(void)
 	return;
 }
 
-
+#define DEBUG_LIUYAO
 
 void CheckReadTable(void)
 {
 	//common parameters     
 	CheckWorkMode();
+
+#ifdef DEBUG_LIUYAO
+	WorkMode = 1;
+	CheckTablePt = (Uint16*)0x8000;
+	*CheckTablePt = 3;
+#endif
 
 	// 刻度模式与测井模式共用同一个90度脉冲宽度
 	CheckTablePt = (Uint16*)0x800D;
@@ -323,7 +286,7 @@ void CheckReadTable(void)
 			if (STWTE_NE < 1 || STWTE_NE > 3000)         // number
 			{
 				STWTE_NE = 1000;
-				*CheckTablePt = 23;
+				*CheckTablePt = 1000;
 			}
 		}
 
@@ -709,6 +672,7 @@ void CheckReadTable(void)
 
 Uint16 DownloadTableCnt = 0;
 Uint16 ParamTableLen = 0;
+Uint16* tempSaveTablePt;
 #define CAL_TABLE_LEN  19   // 刻度模式参数表长度
 #define WELL_TABLE_LEN 57	// 测井模式参数表长度
 
@@ -730,26 +694,30 @@ void DownloadTable(Uint16 DownDataBuf)
 		{
 			SaveTablePt = (Uint16 *)0x8017;
 		}
-		*SaveTablePt	= ParamTableLen;
+		tempSaveTablePt = SaveTablePt;
+		*SaveTablePt++	= ParamTableLen;
 		DownloadTableCnt = 2;		
 	}
 	else if (DownloadTableCnt == 2 && DownTableFlag == SET)   // 参数表ID
 	{
 		*SaveTablePt++	= DownDataBuf;
 		*(Uint16 *)0x8000 = DownDataBuf;
+		DownloadTableCnt++;
 	}
 	else if (DownloadTableCnt == ParamTableLen && DownTableFlag == SET)   // 最后一个数据为CheckSum
 	{
 		// CheckSum校验
-		Uint16 check_sum = 0;
-		int i=1;
-		for (;i<=ParamTableLen-1;++i)
+		Uint16 CheckSum = DATA_DOWN_TABLE_F;
+		int i=0;
+		SaveTablePt = tempSaveTablePt;
+		for (i=0;i<ParamTableLen-1;++i)
 		{
-			check_sum += (*(SaveTablePt-i));
+		    CheckSum += *SaveTablePt;
+		    SaveTablePt++;
 		}
-		check_sum += DATA_DOWN_TABLE_F;
+		*SaveTablePt = CheckSum;
 		
-		if (check_sum == DownDataBuf)                   // success
+		if (CheckSum == DownDataBuf)                   // success
 		{
 			*SaveTablePt = DownDataBuf;
 

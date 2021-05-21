@@ -1,0 +1,42 @@
+----------------------------------------------------------------------
+Report for cell top.verilog
+                                          Cell usage:
+                               cell       count     area    count*area
+                                GND         1       0.0        0.0
+                              INBUF         1       0.0        0.0
+                             OUTBUF         2       0.0        0.0
+                                VCC         1       0.0        0.0
+                            div_fre         1      40.0       40.0
+                            pll_clk         1       0.0        0.0
+                            
+                         TOTAL              7                 40.0
+----------------------------------------------------------------------
+Report for cell pll_clk.netlist
+     Instance path:  pll_clk_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                                GND         1       0.0        0.0
+                                PLL         1       0.0        0.0
+                                VCC         1       0.0        0.0
+                            
+                         TOTAL              3                  0.0
+----------------------------------------------------------------------
+Report for cell div_fre.netlist
+     Instance path:  div_fre_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               AND2         2       1.0        2.0
+                               AND3         7       1.0        7.0
+                               AX1B         1       1.0        1.0
+                               DFN1        10       1.0       10.0
+                                GND         1       0.0        0.0
+                                INV         1       1.0        1.0
+                               NOR2         1       1.0        1.0
+                              NOR2B         2       1.0        2.0
+                                OA1         6       1.0        6.0
+                               OR3B         1       1.0        1.0
+                               OR3C         1       1.0        1.0
+                                VCC         1       0.0        0.0
+                               XOR2         8       1.0        8.0
+                            
+                         TOTAL             42                 40.0

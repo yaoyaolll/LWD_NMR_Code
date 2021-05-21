@@ -1,0 +1,12 @@
+Synopsys Netlist Linker, version comp2016q4p1, Build 512R, built Oct 26 2017
+@N|Running in 64-bit mode
+File E:\LWD_NMR\Code\20201119\Libero_v11.9\2D_NMR_EC_FPGA_150205\synthesis\synwork\NMR_TOP_comp.srs changed - recompiling
+
+At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 77MB peak: 78MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+
+Process completed successfully.
+# Thu Jan 21 15:00:49 2021
+
+###########################################################]

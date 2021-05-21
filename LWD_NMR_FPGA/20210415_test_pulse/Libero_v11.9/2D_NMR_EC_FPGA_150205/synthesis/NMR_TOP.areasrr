@@ -1,0 +1,1956 @@
+----------------------------------------------------------------------
+Report for cell NMR_TOP.verilog
+                                          Cell usage:
+                               cell       count     area    count*area
+                               AND2         1       1.0        1.0
+                              BIBUF        16       0.0        0.0
+                                CAL         1      39.0       39.0
+                             CLKBUF         1       0.0        0.0
+                    ClockManagement         1     179.0      179.0
+                                DDS         1     327.0      327.0
+                            DSTimer         1      36.0       36.0
+                               DUMP         1     369.0      369.0
+                         DUMP_OFF_1         1      29.0       29.0
+                       DUMP_OFF_1_0         1      29.0       29.0
+                            DUMP_ON         1      29.0       29.0
+                                GND         1       0.0        0.0
+                               GPMI         1      32.0       32.0
+                              INBUF        37       0.0        0.0
+                                OR2         3       1.0        3.0
+                                OR3         1       1.0        1.0
+                             OUTBUF        42       0.0        0.0
+                              PLUSE         1     258.0      258.0
+                   Signal_Noise_Acq         1    1668.0     1668.0
+                                VCC         1       0.0        0.0
+                        bri_dump_sw         1      24.0       24.0
+                         bridge_div         1      62.0       62.0
+                         dds_change         1      15.0       15.0
+                        n_pluse_acq         1       7.0        7.0
+                         noisestate         1     130.0      130.0
+                      nsctrl_choice         1      18.0       18.0
+                       pd_pluse_top         1     247.0      247.0
+                         plusestate         1     142.0      142.0
+                       s_acq_change         1     121.0      121.0
+                         scalestate         1    1214.0     1214.0
+                      scan_scale_sw         1       4.0        4.0
+                          scanstate         1     131.0      131.0
+                         sd_acq_top         1     527.0      527.0
+                    state1ms_choice         1      16.0       16.0
+                          state_1ms         1     306.0      306.0
+                          timer_top         1     358.0      358.0
+                           top_code         1     608.0      608.0
+                      topctrlchange         1      12.0       12.0
+                            
+                         TOTAL            132               6942.0
+----------------------------------------------------------------------
+Report for cell GPMI.netlist
+     Instance path:  GPMI_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                                GND         1       0.0        0.0
+                                INV         1       1.0        1.0
+                                VCC         1       0.0        0.0
+                       rst_n_module         1       2.0        2.0
+                          tri_state         1      22.0       22.0
+                      xwe_xzcs2_syn         1       7.0        7.0
+                            
+                         TOTAL              6                 32.0
+----------------------------------------------------------------------
+Report for cell rst_n_module.netlist
+     Instance path:  GPMI_0.rst_n_module_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                             CLKINT         1       0.0        0.0
+                             DFN1C0         2       1.0        2.0
+                                GND         1       0.0        0.0
+                                VCC         1       0.0        0.0
+                            
+                         TOTAL              5                  2.0
+----------------------------------------------------------------------
+Report for cell tri_state.netlist
+     Instance path:  GPMI_0.tri_state_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                                GND         1       0.0        0.0
+                              NOR2A        22       1.0       22.0
+                                VCC         1       0.0        0.0
+                            
+                         TOTAL             24                 22.0
+----------------------------------------------------------------------
+Report for cell xwe_xzcs2_syn.netlist
+     Instance path:  GPMI_0.xwe_xzcs2_syn_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               DFN1         3       1.0        3.0
+                                GND         1       0.0        0.0
+                               NOR2         1       1.0        1.0
+                              NOR2B         2       1.0        2.0
+                              NOR3C         1       1.0        1.0
+                                VCC         1       0.0        0.0
+                            
+                         TOTAL              9                  7.0
+----------------------------------------------------------------------
+Report for cell scalestate.netlist
+     Instance path:  scalestate_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                                AO1        46       1.0       46.0
+                               AO1A        37       1.0       37.0
+                               AO1B         6       1.0        6.0
+                               AO1C         4       1.0        4.0
+                               AOI1         4       1.0        4.0
+                               DFN1        79       1.0       79.0
+                             DFN1E1       372       1.0      372.0
+                                GND         1       0.0        0.0
+                                MX2        95       1.0       95.0
+                               MX2A         7       1.0        7.0
+                               MX2B         2       1.0        2.0
+                               MX2C         1       1.0        1.0
+                               NOR2         8       1.0        8.0
+                              NOR2A        92       1.0       92.0
+                              NOR2B       156       1.0      156.0
+                               NOR3         2       1.0        2.0
+                              NOR3A         8       1.0        8.0
+                              NOR3B        22       1.0       22.0
+                              NOR3C        17       1.0       17.0
+                                OA1         2       1.0        2.0
+                               OA1A         3       1.0        3.0
+                               OA1B         1       1.0        1.0
+                               OA1C         5       1.0        5.0
+                               OAI1         4       1.0        4.0
+                                OR2         9       1.0        9.0
+                               OR2A        14       1.0       14.0
+                               OR2B        11       1.0       11.0
+                                OR3        73       1.0       73.0
+                               OR3A         5       1.0        5.0
+                               OR3B         4       1.0        4.0
+                                VCC         1       0.0        0.0
+                              XNOR2         1       1.0        1.0
+                                XO1         8       1.0        8.0
+                               XOR2        14       1.0       14.0
+                        necount_cmp         1      39.0       39.0
+                      necount_cmp_0         1      39.0       39.0
+                        necount_inc         1      24.0       24.0
+                            
+                         TOTAL           1117               1214.0
+----------------------------------------------------------------------
+Report for cell necount_cmp_0.netlist
+  Original Cell name necount_cmp
+     Instance path:  scalestate_0.necount_cmp_1
+                                          Cell usage:
+                               cell       count     area    count*area
+                               AND2         1       1.0        1.0
+                              AND2A         1       1.0        1.0
+                               AND3         3       1.0        3.0
+                                AO1         2       1.0        2.0
+                               AO1C         3       1.0        3.0
+                               AOI1         1       1.0        1.0
+                                GND         1       0.0        0.0
+                             NAND3A         6       1.0        6.0
+                               NOR3         1       1.0        1.0
+                              NOR3A         3       1.0        3.0
+                               OA1A         1       1.0        1.0
+                               OA1C         1       1.0        1.0
+                               OR2A         6       1.0        6.0
+                                VCC         1       0.0        0.0
+                              XNOR2        10       1.0       10.0
+                            
+                         TOTAL             41                 39.0
+----------------------------------------------------------------------
+Report for cell necount_cmp.netlist
+  Original Cell name necount_cmp
+     Instance path:  scalestate_0.necount_cmp_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               AND2         1       1.0        1.0
+                              AND2A         1       1.0        1.0
+                               AND3         3       1.0        3.0
+                                AO1         2       1.0        2.0
+                               AO1C         3       1.0        3.0
+                               AOI1         1       1.0        1.0
+                                GND         1       0.0        0.0
+                             NAND3A         6       1.0        6.0
+                               NOR3         1       1.0        1.0
+                              NOR3A         3       1.0        3.0
+                               OA1A         1       1.0        1.0
+                               OA1C         1       1.0        1.0
+                               OR2A         6       1.0        6.0
+                                VCC         1       0.0        0.0
+                              XNOR2        10       1.0       10.0
+                            
+                         TOTAL             41                 39.0
+----------------------------------------------------------------------
+Report for cell necount_inc.netlist
+     Instance path:  scalestate_0.necount_inc_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               AND2         5       1.0        5.0
+                               AND3         9       1.0        9.0
+                                GND         1       0.0        0.0
+                                VCC         1       0.0        0.0
+                               XOR2        10       1.0       10.0
+                            
+                         TOTAL             26                 24.0
+----------------------------------------------------------------------
+Report for cell Signal_Noise_Acq.netlist
+     Instance path:  Signal_Noise_Acq_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                                GND         1       0.0        0.0
+                                VCC         1       0.0        0.0
+                         n_s_change         1      41.0       41.0
+                          noise_acq         1     499.0      499.0
+                         signal_acq         1    1128.0     1128.0
+                            
+                         TOTAL              5               1668.0
+----------------------------------------------------------------------
+Report for cell n_s_change.netlist
+     Instance path:  Signal_Noise_Acq_0.n_s_change_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                                GND         1       0.0        0.0
+                                MX2        13       1.0       13.0
+                              NOR2A        16       1.0       16.0
+                              NOR2B        12       1.0       12.0
+                                VCC         1       0.0        0.0
+                            
+                         TOTAL             43                 41.0
+----------------------------------------------------------------------
+Report for cell noise_acq.netlist
+     Instance path:  Signal_Noise_Acq_0.noise_acq_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                                GND         1       0.0        0.0
+                                RAM         1     285.0      285.0
+                                VCC         1       0.0        0.0
+                        n_rdclk_syn         1       7.0        7.0
+                       noise_addr_0         1      29.0       29.0
+                       noise_addr_1         1      29.0       29.0
+                           noiseclk         1      63.0       63.0
+                       noiseclkctrl         1      86.0       86.0
+                            
+                         TOTAL              8                499.0
+----------------------------------------------------------------------
+Report for cell noise_addr_0.netlist
+  Original Cell name noise_addr
+     Instance path:  Signal_Noise_Acq_0.noise_acq_0.noise_addr_1
+                                          Cell usage:
+                               cell       count     area    count*area
+                               AX1C         5       1.0        5.0
+                             DFN0C0        12       1.0       12.0
+                                GND         1       0.0        0.0
+                                INV         1       1.0        1.0
+                              NOR3C         5       1.0        5.0
+                                VCC         1       0.0        0.0
+                               XOR2         6       1.0        6.0
+                            
+                         TOTAL             31                 29.0
+----------------------------------------------------------------------
+Report for cell RAM.netlist
+     Instance path:  Signal_Noise_Acq_0.noise_acq_0.RAM_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               AND2         4       1.0        4.0
+                              AND2A         8       1.0        8.0
+                               BUFF        19       1.0       19.0
+                               DFN1         4       1.0        4.0
+                                GND         1       0.0        0.0
+                                INV         2       1.0        2.0
+                                MX2       180       1.0      180.0
+                              NAND2        32       1.0       32.0
+                               NOR2         4       1.0        4.0
+                                OR2        32       1.0       32.0
+                          RAM512X18        16       0.0        0.0
+                                VCC         1       0.0        0.0
+                            
+                         TOTAL            303                285.0
+----------------------------------------------------------------------
+Report for cell noiseclkctrl.netlist
+     Instance path:  Signal_Noise_Acq_0.noise_acq_0.noiseclkctrl_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               AND2         2       1.0        2.0
+                              AND2A         3       1.0        3.0
+                               AND3         2       1.0        2.0
+                                AO1         2       1.0        2.0
+                               AO1C         3       1.0        3.0
+                              AOI1A         5       1.0        5.0
+                               AX1C         5       1.0        5.0
+                             DFN1E1        12       1.0       12.0
+                           DFN1E1C0        11       1.0       11.0
+                             DFN1P0         2       1.0        2.0
+                                GND         1       0.0        0.0
+                              NOR2A         6       1.0        6.0
+                              NOR2B         2       1.0        2.0
+                              NOR3C         4       1.0        4.0
+                                OA1         1       1.0        1.0
+                               OA1A         2       1.0        2.0
+                               OR2A         9       1.0        9.0
+                                VCC         1       0.0        0.0
+                              XNOR2         8       1.0        8.0
+                               XOR2         7       1.0        7.0
+                            
+                         TOTAL             88                 86.0
+----------------------------------------------------------------------
+Report for cell noiseclk.netlist
+     Instance path:  Signal_Noise_Acq_0.noise_acq_0.noiseclk_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               AND3         2       1.0        2.0
+                               AO18         2       1.0        2.0
+                               AO1C         3       1.0        3.0
+                               DFN1         6       1.0        6.0
+                             DFN1E1        10       1.0       10.0
+                                GND         1       0.0        0.0
+                               MIN3         1       1.0        1.0
+                                MX2         1       1.0        1.0
+                              NOR2A         3       1.0        3.0
+                              NOR2B         6       1.0        6.0
+                              NOR3B         4       1.0        4.0
+                              NOR3C         1       1.0        1.0
+                                OA1         1       1.0        1.0
+                               OA1A         2       1.0        2.0
+                                OR2         1       1.0        1.0
+                               OR2A         4       1.0        4.0
+                                OR3         1       1.0        1.0
+                               OR3B         1       1.0        1.0
+                                VCC         1       0.0        0.0
+                              XNOR3         3       1.0        3.0
+                                XO1         1       1.0        1.0
+                               XOR2         9       1.0        9.0
+                               XOR3         1       1.0        1.0
+                            
+                         TOTAL             65                 63.0
+----------------------------------------------------------------------
+Report for cell noise_addr_1.netlist
+  Original Cell name noise_addr
+     Instance path:  Signal_Noise_Acq_0.noise_acq_0.noise_addr_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               AX1C         5       1.0        5.0
+                             DFN0C0        12       1.0       12.0
+                                GND         1       0.0        0.0
+                                INV         1       1.0        1.0
+                              NOR3C         5       1.0        5.0
+                                VCC         1       0.0        0.0
+                               XOR2         6       1.0        6.0
+                            
+                         TOTAL             31                 29.0
+----------------------------------------------------------------------
+Report for cell n_rdclk_syn.netlist
+     Instance path:  Signal_Noise_Acq_0.noise_acq_0.n_rdclk_syn_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               DFN1         3       1.0        3.0
+                                GND         1       0.0        0.0
+                              NOR2A         1       1.0        1.0
+                              NOR2B         2       1.0        2.0
+                              NOR3B         1       1.0        1.0
+                                VCC         1       0.0        0.0
+                            
+                         TOTAL              9                  7.0
+----------------------------------------------------------------------
+Report for cell signal_acq.netlist
+     Instance path:  Signal_Noise_Acq_0.signal_acq_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                                GND         1       0.0        0.0
+                              NOR2B         4       1.0        4.0
+                                VCC         1       0.0        0.0
+                          add_reg_7         1      55.0       55.0
+                        add_reg_7_0         1      55.0       55.0
+                        add_reg_7_1         1      55.0       55.0
+                        add_reg_7_2         1      55.0       55.0
+                        add_reg_7_3         1      55.0       55.0
+                        add_reg_7_4         1      55.0       55.0
+                        add_reg_7_5         1      55.0       55.0
+                        add_reg_7_6         1      55.0       55.0
+                          ctrl_addr         1      22.0       22.0
+                       rdata_choice         1     307.0      307.0
+                         s_clk_div4         1       5.0        5.0
+                      signalclkctrl         1     242.0      242.0
+                     ten_choice_one         1     108.0      108.0
+                            
+                         TOTAL             19               1128.0
+----------------------------------------------------------------------
+Report for cell ten_choice_one.netlist
+     Instance path:  Signal_Noise_Acq_0.signal_acq_0.ten_choice_one_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                                GND         1       0.0        0.0
+                               NOR2         4       1.0        4.0
+                              NOR2A         6       1.0        6.0
+                              NOR2B        26       1.0       26.0
+                              NOR3C        72       1.0       72.0
+                                VCC         1       0.0        0.0
+                            
+                         TOTAL            110                108.0
+----------------------------------------------------------------------
+Report for cell add_reg_7_6.netlist
+  Original Cell name add_reg_7
+     Instance path:  Signal_Noise_Acq_0.signal_acq_0.add_reg_4
+                                          Cell usage:
+                               cell       count     area    count*area
+                               AO18        10       1.0       10.0
+                                AX1         1       1.0        1.0
+                               AX1C         3       1.0        3.0
+                             DFN1C0        20       1.0       20.0
+                                GND         1       0.0        0.0
+                               MIN3         1       1.0        1.0
+                              NOR2B         1       1.0        1.0
+                              NOR3B         1       1.0        1.0
+                              NOR3C         2       1.0        2.0
+                                VCC         1       0.0        0.0
+                              XNOR2         1       1.0        1.0
+                              XNOR3        10       1.0       10.0
+                               XOR2         4       1.0        4.0
+                               XOR3         1       1.0        1.0
+                            
+                         TOTAL             57                 55.0
+----------------------------------------------------------------------
+Report for cell add_reg_7_5.netlist
+  Original Cell name add_reg_7
+     Instance path:  Signal_Noise_Acq_0.signal_acq_0.add_reg_6
+                                          Cell usage:
+                               cell       count     area    count*area
+                               AO18        10       1.0       10.0
+                                AX1         1       1.0        1.0
+                               AX1C         3       1.0        3.0
+                             DFN1C0        20       1.0       20.0
+                                GND         1       0.0        0.0
+                               MIN3         1       1.0        1.0
+                              NOR2B         1       1.0        1.0
+                              NOR3B         1       1.0        1.0
+                              NOR3C         2       1.0        2.0
+                                VCC         1       0.0        0.0
+                              XNOR2         1       1.0        1.0
+                              XNOR3        10       1.0       10.0
+                               XOR2         4       1.0        4.0
+                               XOR3         1       1.0        1.0
+                            
+                         TOTAL             57                 55.0
+----------------------------------------------------------------------
+Report for cell add_reg_7_4.netlist
+  Original Cell name add_reg_7
+     Instance path:  Signal_Noise_Acq_0.signal_acq_0.add_reg_7
+                                          Cell usage:
+                               cell       count     area    count*area
+                               AO18        10       1.0       10.0
+                                AX1         1       1.0        1.0
+                               AX1C         3       1.0        3.0
+                             DFN1C0        20       1.0       20.0
+                                GND         1       0.0        0.0
+                               MIN3         1       1.0        1.0
+                              NOR2B         1       1.0        1.0
+                              NOR3B         1       1.0        1.0
+                              NOR3C         2       1.0        2.0
+                                VCC         1       0.0        0.0
+                              XNOR2         1       1.0        1.0
+                              XNOR3        10       1.0       10.0
+                               XOR2         4       1.0        4.0
+                               XOR3         1       1.0        1.0
+                            
+                         TOTAL             57                 55.0
+----------------------------------------------------------------------
+Report for cell ctrl_addr.netlist
+     Instance path:  Signal_Noise_Acq_0.signal_acq_0.ctrl_addr_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               AND3         1       1.0        1.0
+                             DFN0C0         3       1.0        3.0
+                             DFN0P0         1       1.0        1.0
+                             DFN1E1         4       1.0        4.0
+                                GND         1       0.0        0.0
+                                INV         1       1.0        1.0
+                              NOR2B         1       1.0        1.0
+                                OA1         4       1.0        4.0
+                                VCC         1       0.0        0.0
+                                XO1         2       1.0        2.0
+                               XOR2         5       1.0        5.0
+                            
+                         TOTAL             24                 22.0
+----------------------------------------------------------------------
+Report for cell add_reg_7_3.netlist
+  Original Cell name add_reg_7
+     Instance path:  Signal_Noise_Acq_0.signal_acq_0.add_reg_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               AO18        10       1.0       10.0
+                                AX1         1       1.0        1.0
+                               AX1C         3       1.0        3.0
+                             DFN1C0        20       1.0       20.0
+                                GND         1       0.0        0.0
+                               MIN3         1       1.0        1.0
+                              NOR2B         1       1.0        1.0
+                              NOR3B         1       1.0        1.0
+                              NOR3C         2       1.0        2.0
+                                VCC         1       0.0        0.0
+                              XNOR2         1       1.0        1.0
+                              XNOR3        10       1.0       10.0
+                               XOR2         4       1.0        4.0
+                               XOR3         1       1.0        1.0
+                            
+                         TOTAL             57                 55.0
+----------------------------------------------------------------------
+Report for cell add_reg_7_2.netlist
+  Original Cell name add_reg_7
+     Instance path:  Signal_Noise_Acq_0.signal_acq_0.add_reg_1
+                                          Cell usage:
+                               cell       count     area    count*area
+                               AO18        10       1.0       10.0
+                                AX1         1       1.0        1.0
+                               AX1C         3       1.0        3.0
+                             DFN1C0        20       1.0       20.0
+                                GND         1       0.0        0.0
+                               MIN3         1       1.0        1.0
+                              NOR2B         1       1.0        1.0
+                              NOR3B         1       1.0        1.0
+                              NOR3C         2       1.0        2.0
+                                VCC         1       0.0        0.0
+                              XNOR2         1       1.0        1.0
+                              XNOR3        10       1.0       10.0
+                               XOR2         4       1.0        4.0
+                               XOR3         1       1.0        1.0
+                            
+                         TOTAL             57                 55.0
+----------------------------------------------------------------------
+Report for cell add_reg_7_1.netlist
+  Original Cell name add_reg_7
+     Instance path:  Signal_Noise_Acq_0.signal_acq_0.add_reg_3
+                                          Cell usage:
+                               cell       count     area    count*area
+                               AO18        10       1.0       10.0
+                                AX1         1       1.0        1.0
+                               AX1C         3       1.0        3.0
+                             DFN1C0        20       1.0       20.0
+                                GND         1       0.0        0.0
+                               MIN3         1       1.0        1.0
+                              NOR2B         1       1.0        1.0
+                              NOR3B         1       1.0        1.0
+                              NOR3C         2       1.0        2.0
+                                VCC         1       0.0        0.0
+                              XNOR2         1       1.0        1.0
+                              XNOR3        10       1.0       10.0
+                               XOR2         4       1.0        4.0
+                               XOR3         1       1.0        1.0
+                            
+                         TOTAL             57                 55.0
+----------------------------------------------------------------------
+Report for cell add_reg_7_0.netlist
+  Original Cell name add_reg_7
+     Instance path:  Signal_Noise_Acq_0.signal_acq_0.add_reg_5
+                                          Cell usage:
+                               cell       count     area    count*area
+                               AO18        10       1.0       10.0
+                                AX1         1       1.0        1.0
+                               AX1C         4       1.0        4.0
+                             DFN1C0        20       1.0       20.0
+                                GND         1       0.0        0.0
+                               MIN3         1       1.0        1.0
+                              NOR3B         1       1.0        1.0
+                              NOR3C         3       1.0        3.0
+                                VCC         1       0.0        0.0
+                              XNOR2         1       1.0        1.0
+                              XNOR3        10       1.0       10.0
+                               XOR2         3       1.0        3.0
+                               XOR3         1       1.0        1.0
+                            
+                         TOTAL             57                 55.0
+----------------------------------------------------------------------
+Report for cell rdata_choice.netlist
+     Instance path:  Signal_Noise_Acq_0.signal_acq_0.rdata_choice_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               AX1A         1       1.0        1.0
+                                GND         1       0.0        0.0
+                                MX2       144       1.0      144.0
+                              NOR2A        61       1.0       61.0
+                              NOR2B         4       1.0        4.0
+                               NOR3         1       1.0        1.0
+                              NOR3B        96       1.0       96.0
+                                VCC         1       0.0        0.0
+                            
+                         TOTAL            309                307.0
+----------------------------------------------------------------------
+Report for cell signalclkctrl.netlist
+     Instance path:  Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               AND2         3       1.0        3.0
+                              AND2A         4       1.0        4.0
+                               AND3        18       1.0       18.0
+                                AO1         3       1.0        3.0
+                               AO18        10       1.0       10.0
+                               AO1A         1       1.0        1.0
+                               AO1C         3       1.0        3.0
+                              AOI1A         8       1.0        8.0
+                                AX1         1       1.0        1.0
+                               AX1C        12       1.0       12.0
+                             CLKINT         1       0.0        0.0
+                             DFN1C0         2       1.0        2.0
+                           DFN1E0C0        15       1.0       15.0
+                             DFN1E1        20       1.0       20.0
+                             DFN1P0         2       1.0        2.0
+                                GND         1       0.0        0.0
+                               MAJ3         3       1.0        3.0
+                               MIN3         1       1.0        1.0
+                              NOR2A        11       1.0       11.0
+                              NOR2B         9       1.0        9.0
+                              NOR3B         2       1.0        2.0
+                              NOR3C         9       1.0        9.0
+                                OA1         1       1.0        1.0
+                               OA1A         2       1.0        2.0
+                                OR2         3       1.0        3.0
+                               OR2A        13       1.0       13.0
+                                OR3         8       1.0        8.0
+                               OR3A         1       1.0        1.0
+                                VCC         1       0.0        0.0
+                              XNOR2        17       1.0       17.0
+                              XNOR3        10       1.0       10.0
+                                XO1         9       1.0        9.0
+                               XOR2        32       1.0       32.0
+                               XOR3         9       1.0        9.0
+                            
+                         TOTAL            245                242.0
+----------------------------------------------------------------------
+Report for cell s_clk_div4.netlist
+     Instance path:  Signal_Noise_Acq_0.signal_acq_0.s_clk_div4_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               AX1C         1       1.0        1.0
+                             DFN1C0         1       1.0        1.0
+                           DFN1E0C0         1       1.0        1.0
+                                GND         1       0.0        0.0
+                              NOR3B         2       1.0        2.0
+                                VCC         1       0.0        0.0
+                            
+                         TOTAL              7                  5.0
+----------------------------------------------------------------------
+Report for cell add_reg_7.netlist
+  Original Cell name add_reg
+     Instance path:  Signal_Noise_Acq_0.signal_acq_0.add_reg_2
+                                          Cell usage:
+                               cell       count     area    count*area
+                               AO18        10       1.0       10.0
+                                AX1         1       1.0        1.0
+                               AX1C         4       1.0        4.0
+                             DFN1C0        20       1.0       20.0
+                                GND         1       0.0        0.0
+                               MIN3         1       1.0        1.0
+                              NOR3B         1       1.0        1.0
+                              NOR3C         3       1.0        3.0
+                                VCC         1       0.0        0.0
+                              XNOR2         1       1.0        1.0
+                              XNOR3        10       1.0       10.0
+                               XOR2         3       1.0        3.0
+                               XOR3         1       1.0        1.0
+                            
+                         TOTAL             57                 55.0
+----------------------------------------------------------------------
+Report for cell ClockManagement.netlist
+     Instance path:  ClockManagement_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                                GND         1       0.0        0.0
+                                VCC         1       0.0        0.0
+                            clk_10k         1      52.0       52.0
+                         clk_div500         1      46.0       46.0
+                         long_timer         1      81.0       81.0
+                             pllclk         1       0.0        0.0
+                            
+                         TOTAL              6                179.0
+----------------------------------------------------------------------
+Report for cell clk_10k.netlist
+     Instance path:  ClockManagement_0.clk_10k_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               AND2         5       1.0        5.0
+                               DFN1        12       1.0       12.0
+                                GND         1       0.0        0.0
+                               MX2B         1       1.0        1.0
+                              NOR2A         2       1.0        2.0
+                              NOR2B        10       1.0       10.0
+                              NOR3A         1       1.0        1.0
+                              NOR3B         8       1.0        8.0
+                              NOR3C         3       1.0        3.0
+                               OR3A         1       1.0        1.0
+                                VCC         1       0.0        0.0
+                               XOR2         9       1.0        9.0
+                            
+                         TOTAL             54                 52.0
+----------------------------------------------------------------------
+Report for cell pllclk.netlist
+     Instance path:  ClockManagement_0.pllclk_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                                GND         1       0.0        0.0
+                                PLL         1       0.0        0.0
+                                VCC         1       0.0        0.0
+                            
+                         TOTAL              3                  0.0
+----------------------------------------------------------------------
+Report for cell clk_div500.netlist
+     Instance path:  ClockManagement_0.clk_div500_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               AND2         5       1.0        5.0
+                               DFN1        10       1.0       10.0
+                                GND         1       0.0        0.0
+                              NOR2A         1       1.0        1.0
+                              NOR2B         7       1.0        7.0
+                              NOR3B        10       1.0       10.0
+                              NOR3C         2       1.0        2.0
+                               OR3A         1       1.0        1.0
+                                VCC         1       0.0        0.0
+                                XA1         1       1.0        1.0
+                               XOR2         9       1.0        9.0
+                            
+                         TOTAL             48                 46.0
+----------------------------------------------------------------------
+Report for cell long_timer.netlist
+     Instance path:  ClockManagement_0.long_timer_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               AO1C         1       1.0        1.0
+                               DFN1         3       1.0        3.0
+                             DFN1E1        16       1.0       16.0
+                                GND         1       0.0        0.0
+                              NOR2A         2       1.0        2.0
+                              NOR2B        19       1.0       19.0
+                              NOR3A         2       1.0        2.0
+                              NOR3B         1       1.0        1.0
+                              NOR3C         5       1.0        5.0
+                                OA1         1       1.0        1.0
+                                VCC         1       0.0        0.0
+                                XA1        15       1.0       15.0
+                               XA1A         1       1.0        1.0
+                               XA1C         5       1.0        5.0
+                               XOR2        10       1.0       10.0
+                            
+                         TOTAL             83                 81.0
+----------------------------------------------------------------------
+Report for cell DUMP.netlist
+     Instance path:  DUMP_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                                GND         1       0.0        0.0
+                                VCC         1       0.0        0.0
+                         dump_coder         1     234.0      234.0
+                         dump_state         1      41.0       41.0
+                         dump_timer         1      36.0       36.0
+                     off_on_coder_2         1       6.0        6.0
+                     off_on_coder_3         1       6.0        6.0
+                 off_on_state_3_2_2         1       9.0        9.0
+                 off_on_state_3_2_3         1       9.0        9.0
+                 off_on_timer_3_2_2         1      14.0       14.0
+                 off_on_timer_3_2_3         1      14.0       14.0
+                            
+                         TOTAL             11                369.0
+----------------------------------------------------------------------
+Report for cell off_on_coder_3.netlist
+  Original Cell name off_on_coder
+     Instance path:  DUMP_0.off_on_coder_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               DFN1         2       1.0        2.0
+                                GND         1       0.0        0.0
+                               NOR2         1       1.0        1.0
+                              NOR2B         1       1.0        1.0
+                              NOR3B         1       1.0        1.0
+                              NOR3C         1       1.0        1.0
+                                VCC         1       0.0        0.0
+                            
+                         TOTAL              8                  6.0
+----------------------------------------------------------------------
+Report for cell off_on_timer_3_2_3.netlist
+  Original Cell name off_on_timer_3_2
+     Instance path:  DUMP_0.off_on_timer_1
+                                          Cell usage:
+                               cell       count     area    count*area
+                               DFN1         5       1.0        5.0
+                                GND         1       0.0        0.0
+                              NOR2A         1       1.0        1.0
+                              NOR2B         3       1.0        3.0
+                              NOR3C         1       1.0        1.0
+                                VCC         1       0.0        0.0
+                                XA1         4       1.0        4.0
+                            
+                         TOTAL             16                 14.0
+----------------------------------------------------------------------
+Report for cell dump_timer.netlist
+     Instance path:  DUMP_0.dump_timer_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               AX1C         1       1.0        1.0
+                               DFN1        12       1.0       12.0
+                                GND         1       0.0        0.0
+                              NOR2A         1       1.0        1.0
+                              NOR2B        11       1.0       11.0
+                              NOR3C         1       1.0        1.0
+                                VCC         1       0.0        0.0
+                                XA1        10       1.0       10.0
+                            
+                         TOTAL             38                 36.0
+----------------------------------------------------------------------
+Report for cell dump_coder.netlist
+     Instance path:  DUMP_0.dump_coder_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               AO1C         5       1.0        5.0
+                               DFN1         9       1.0        9.0
+                             DFN1E0        72       1.0       72.0
+                                GND         1       0.0        0.0
+                              NOR2A        28       1.0       28.0
+                              NOR2B        13       1.0       13.0
+                               NOR3         1       1.0        1.0
+                              NOR3A         5       1.0        5.0
+                              NOR3B         2       1.0        2.0
+                              NOR3C         5       1.0        5.0
+                               OR2B         1       1.0        1.0
+                                OR3        20       1.0       20.0
+                               OR3B         1       1.0        1.0
+                                VCC         1       0.0        0.0
+                               XA1C         3       1.0        3.0
+                                XO1        15       1.0       15.0
+                               XOR2        54       1.0       54.0
+                            
+                         TOTAL            236                234.0
+----------------------------------------------------------------------
+Report for cell off_on_state_3_2_3.netlist
+  Original Cell name off_on_state_3_2
+     Instance path:  DUMP_0.off_on_state_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               AOI1         1       1.0        1.0
+                              AOI1B         1       1.0        1.0
+                               DFN1         3       1.0        3.0
+                                GND         1       0.0        0.0
+                               MX2C         1       1.0        1.0
+                              NOR3B         1       1.0        1.0
+                              NOR3C         1       1.0        1.0
+                               OR2B         1       1.0        1.0
+                                VCC         1       0.0        0.0
+                            
+                         TOTAL             11                  9.0
+----------------------------------------------------------------------
+Report for cell off_on_state_3_2_2.netlist
+  Original Cell name off_on_state_3_2
+     Instance path:  DUMP_0.off_on_state_1
+                                          Cell usage:
+                               cell       count     area    count*area
+                               AOI1         1       1.0        1.0
+                              AOI1B         1       1.0        1.0
+                               DFN1         3       1.0        3.0
+                                GND         1       0.0        0.0
+                               MX2C         1       1.0        1.0
+                              NOR3B         1       1.0        1.0
+                              NOR3C         1       1.0        1.0
+                               OR2B         1       1.0        1.0
+                                VCC         1       0.0        0.0
+                            
+                         TOTAL             11                  9.0
+----------------------------------------------------------------------
+Report for cell off_on_coder_2.netlist
+  Original Cell name off_on_coder
+     Instance path:  DUMP_0.off_on_coder_1
+                                          Cell usage:
+                               cell       count     area    count*area
+                               DFN1         2       1.0        2.0
+                                GND         1       0.0        0.0
+                               NOR2         1       1.0        1.0
+                              NOR2B         1       1.0        1.0
+                              NOR3B         1       1.0        1.0
+                              NOR3C         1       1.0        1.0
+                                VCC         1       0.0        0.0
+                            
+                         TOTAL              8                  6.0
+----------------------------------------------------------------------
+Report for cell dump_state.netlist
+     Instance path:  DUMP_0.dump_state_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                                AO1         3       1.0        3.0
+                               AO1A         1       1.0        1.0
+                               AO1C         2       1.0        2.0
+                               AOI1         1       1.0        1.0
+                               DFN1        10       1.0       10.0
+                                GND         1       0.0        0.0
+                               NOR2         1       1.0        1.0
+                              NOR2A         3       1.0        3.0
+                              NOR2B         7       1.0        7.0
+                              NOR3A         5       1.0        5.0
+                              NOR3B         1       1.0        1.0
+                              NOR3C         1       1.0        1.0
+                                OA1         1       1.0        1.0
+                               OR2A         1       1.0        1.0
+                               OR2B         1       1.0        1.0
+                                OR3         2       1.0        2.0
+                                VCC         1       0.0        0.0
+                               XA1B         1       1.0        1.0
+                            
+                         TOTAL             43                 41.0
+----------------------------------------------------------------------
+Report for cell off_on_timer_3_2_2.netlist
+  Original Cell name off_on_timer_3_2
+     Instance path:  DUMP_0.off_on_timer_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               DFN1         5       1.0        5.0
+                                GND         1       0.0        0.0
+                              NOR2A         1       1.0        1.0
+                              NOR2B         3       1.0        3.0
+                              NOR3C         1       1.0        1.0
+                                VCC         1       0.0        0.0
+                                XA1         4       1.0        4.0
+                            
+                         TOTAL             16                 14.0
+----------------------------------------------------------------------
+Report for cell DUMP_OFF_1_0.netlist
+  Original Cell name DUMP_OFF_1
+     Instance path:  DUMP_OFF_1
+                                          Cell usage:
+                               cell       count     area    count*area
+                                GND         1       0.0        0.0
+                                VCC         1       0.0        0.0
+                     off_on_coder_1         1       6.0        6.0
+                 off_on_state_3_2_1         1       9.0        9.0
+                 off_on_timer_3_2_1         1      14.0       14.0
+                            
+                         TOTAL              5                 29.0
+----------------------------------------------------------------------
+Report for cell off_on_timer_3_2_1.netlist
+  Original Cell name off_on_timer_3_2
+     Instance path:  DUMP_OFF_1.off_on_timer_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               DFN1         5       1.0        5.0
+                                GND         1       0.0        0.0
+                              NOR2A         1       1.0        1.0
+                              NOR2B         3       1.0        3.0
+                              NOR3C         1       1.0        1.0
+                                VCC         1       0.0        0.0
+                                XA1         4       1.0        4.0
+                            
+                         TOTAL             16                 14.0
+----------------------------------------------------------------------
+Report for cell off_on_coder_1.netlist
+  Original Cell name off_on_coder
+     Instance path:  DUMP_OFF_1.off_on_coder_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               DFN1         2       1.0        2.0
+                                GND         1       0.0        0.0
+                               NOR2         1       1.0        1.0
+                              NOR2B         1       1.0        1.0
+                              NOR3B         1       1.0        1.0
+                              NOR3C         1       1.0        1.0
+                                VCC         1       0.0        0.0
+                            
+                         TOTAL              8                  6.0
+----------------------------------------------------------------------
+Report for cell off_on_state_3_2_1.netlist
+  Original Cell name off_on_state_3_2
+     Instance path:  DUMP_OFF_1.off_on_state_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               AOI1         1       1.0        1.0
+                              AOI1B         1       1.0        1.0
+                               DFN1         3       1.0        3.0
+                                GND         1       0.0        0.0
+                               MX2C         1       1.0        1.0
+                              NOR3B         1       1.0        1.0
+                              NOR3C         1       1.0        1.0
+                               OR2B         1       1.0        1.0
+                                VCC         1       0.0        0.0
+                            
+                         TOTAL             11                  9.0
+----------------------------------------------------------------------
+Report for cell topctrlchange.netlist
+     Instance path:  topctrlchange_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                                AO1         1       1.0        1.0
+                               DFN1         3       1.0        3.0
+                                GND         1       0.0        0.0
+                                MX2         2       1.0        2.0
+                               MX2B         1       1.0        1.0
+                              NOR2B         3       1.0        3.0
+                                OR3         2       1.0        2.0
+                                VCC         1       0.0        0.0
+                            
+                         TOTAL             14                 12.0
+----------------------------------------------------------------------
+Report for cell CAL.netlist
+     Instance path:  CAL_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                                GND         1       0.0        0.0
+                                VCC         1       0.0        0.0
+                            cal_div         1      33.0       33.0
+                           cal_load         1       6.0        6.0
+                            
+                         TOTAL              4                 39.0
+----------------------------------------------------------------------
+Report for cell cal_div.netlist
+     Instance path:  CAL_0.cal_div_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               AND3         3       1.0        3.0
+                              AXOI7         1       1.0        1.0
+                               DFN1         7       1.0        7.0
+                                GND         1       0.0        0.0
+                              NOR2B         3       1.0        3.0
+                              NOR3C         5       1.0        5.0
+                                OA1         1       1.0        1.0
+                                OR3         1       1.0        1.0
+                               OR3C         1       1.0        1.0
+                                VCC         1       0.0        0.0
+                                XO1         2       1.0        2.0
+                               XOR2         9       1.0        9.0
+                            
+                         TOTAL             35                 33.0
+----------------------------------------------------------------------
+Report for cell cal_load.netlist
+     Instance path:  CAL_0.cal_load_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                             DFN1E1         6       1.0        6.0
+                                GND         1       0.0        0.0
+                                VCC         1       0.0        0.0
+                            
+                         TOTAL              8                  6.0
+----------------------------------------------------------------------
+Report for cell DUMP_ON.netlist
+     Instance path:  DUMP_ON_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                                GND         1       0.0        0.0
+                                VCC         1       0.0        0.0
+                     off_on_coder_0         1       6.0        6.0
+                 off_on_state_3_2_0         1       9.0        9.0
+                 off_on_timer_3_2_0         1      14.0       14.0
+                            
+                         TOTAL              5                 29.0
+----------------------------------------------------------------------
+Report for cell off_on_timer_3_2_0.netlist
+  Original Cell name off_on_timer_3_2
+     Instance path:  DUMP_ON_0.off_on_timer_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               DFN1         5       1.0        5.0
+                                GND         1       0.0        0.0
+                              NOR2A         1       1.0        1.0
+                              NOR2B         3       1.0        3.0
+                              NOR3C         1       1.0        1.0
+                                VCC         1       0.0        0.0
+                                XA1         4       1.0        4.0
+                            
+                         TOTAL             16                 14.0
+----------------------------------------------------------------------
+Report for cell off_on_coder_0.netlist
+  Original Cell name off_on_coder
+     Instance path:  DUMP_ON_0.off_on_coder_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               DFN1         2       1.0        2.0
+                                GND         1       0.0        0.0
+                               NOR2         1       1.0        1.0
+                              NOR2B         1       1.0        1.0
+                              NOR3B         1       1.0        1.0
+                              NOR3C         1       1.0        1.0
+                                VCC         1       0.0        0.0
+                            
+                         TOTAL              8                  6.0
+----------------------------------------------------------------------
+Report for cell off_on_state_3_2_0.netlist
+  Original Cell name off_on_state_3_2
+     Instance path:  DUMP_ON_0.off_on_state_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               AOI1         1       1.0        1.0
+                              AOI1B         1       1.0        1.0
+                               DFN1         3       1.0        3.0
+                                GND         1       0.0        0.0
+                               MX2C         1       1.0        1.0
+                              NOR3B         1       1.0        1.0
+                              NOR3C         1       1.0        1.0
+                               OR2B         1       1.0        1.0
+                                VCC         1       0.0        0.0
+                            
+                         TOTAL             11                  9.0
+----------------------------------------------------------------------
+Report for cell pd_pluse_top.netlist
+     Instance path:  pd_pluse_top_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                                GND         1       0.0        0.0
+                                VCC         1       0.0        0.0
+                     pd_pluse_coder         1     126.0      126.0
+                     pd_pluse_state         1      49.0       49.0
+                     pd_pluse_timer         1      72.0       72.0
+                            
+                         TOTAL              5                247.0
+----------------------------------------------------------------------
+Report for cell pd_pluse_timer.netlist
+     Instance path:  pd_pluse_top_0.pd_pluse_timer_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                             DFN1C0        16       1.0       16.0
+                                GND         1       0.0        0.0
+                              NOR3B         1       1.0        1.0
+                              NOR3C        15       1.0       15.0
+                                VCC         1       0.0        0.0
+                       pd_pluse_inc         1      40.0       40.0
+                            
+                         TOTAL             35                 72.0
+----------------------------------------------------------------------
+Report for cell pd_pluse_inc.netlist
+     Instance path:  pd_pluse_top_0.pd_pluse_timer_0.pd_pluse_inc_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               AND2         7       1.0        7.0
+                               AND3        18       1.0       18.0
+                                GND         1       0.0        0.0
+                                VCC         1       0.0        0.0
+                               XOR2        15       1.0       15.0
+                            
+                         TOTAL             42                 40.0
+----------------------------------------------------------------------
+Report for cell pd_pluse_state.netlist
+     Instance path:  pd_pluse_top_0.pd_pluse_state_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               AO1B         1       1.0        1.0
+                               AOI1         2       1.0        2.0
+                               DFN1        16       1.0       16.0
+                                GND         1       0.0        0.0
+                               MX2A         1       1.0        1.0
+                               NOR2         4       1.0        4.0
+                              NOR2A         4       1.0        4.0
+                              NOR2B         3       1.0        3.0
+                               NOR3         1       1.0        1.0
+                              NOR3A         7       1.0        7.0
+                              NOR3B         1       1.0        1.0
+                              NOR3C         3       1.0        3.0
+                                OA1         1       1.0        1.0
+                               OA1A         1       1.0        1.0
+                               OA1C         3       1.0        3.0
+                                OR2         1       1.0        1.0
+                                VCC         1       0.0        0.0
+                            
+                         TOTAL             51                 49.0
+----------------------------------------------------------------------
+Report for cell pd_pluse_coder.netlist
+     Instance path:  pd_pluse_top_0.pd_pluse_coder_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               DFN1         5       1.0        5.0
+                             DFN1E1        48       1.0       48.0
+                                GND         1       0.0        0.0
+                              NOR2A         1       1.0        1.0
+                              NOR2B         3       1.0        3.0
+                              NOR3A         4       1.0        4.0
+                              NOR3B         3       1.0        3.0
+                              NOR3C         4       1.0        4.0
+                                OR2         1       1.0        1.0
+                                OR3         9       1.0        9.0
+                                VCC         1       0.0        0.0
+                               XA1A         2       1.0        2.0
+                               XA1C         4       1.0        4.0
+                                XO1        11       1.0       11.0
+                               XOR2        31       1.0       31.0
+                            
+                         TOTAL            128                126.0
+----------------------------------------------------------------------
+Report for cell bridge_div.netlist
+     Instance path:  bridge_div_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               AND2         3       1.0        3.0
+                               AND3         3       1.0        3.0
+                                AO1         2       1.0        2.0
+                             DFN1C0         6       1.0        6.0
+                           DFN1E0C0         1       1.0        1.0
+                             DFN1E1         7       1.0        7.0
+                             DFN1P0         2       1.0        2.0
+                                GND         1       0.0        0.0
+                                INV         2       1.0        2.0
+                              NOR2A         2       1.0        2.0
+                              NOR2B         4       1.0        4.0
+                              NOR3B         6       1.0        6.0
+                              NOR3C         1       1.0        1.0
+                                OR2         2       1.0        2.0
+                                OR3         2       1.0        2.0
+                                VCC         1       0.0        0.0
+                                XO1         3       1.0        3.0
+                               XOR2        16       1.0       16.0
+                            
+                         TOTAL             64                 62.0
+----------------------------------------------------------------------
+Report for cell noisestate.netlist
+     Instance path:  noisestate_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                                AO1         1       1.0        1.0
+                               AO1A         1       1.0        1.0
+                               AO1B         2       1.0        2.0
+                               AO1C         5       1.0        5.0
+                               DFN1        14       1.0       14.0
+                             DFN1E1        48       1.0       48.0
+                                GND         1       0.0        0.0
+                                MX2        23       1.0       23.0
+                               MX2A         1       1.0        1.0
+                               MX2B         5       1.0        5.0
+                               NOR2         2       1.0        2.0
+                              NOR2A         8       1.0        8.0
+                              NOR2B         7       1.0        7.0
+                              NOR3B         1       1.0        1.0
+                                OA1         1       1.0        1.0
+                               OA1B         7       1.0        7.0
+                               OAI1         1       1.0        1.0
+                               OR2A         1       1.0        1.0
+                               OR2B         2       1.0        2.0
+                                VCC         1       0.0        0.0
+                            
+                         TOTAL            132                130.0
+----------------------------------------------------------------------
+Report for cell state_1ms.netlist
+     Instance path:  state_1ms_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                                AO1        26       1.0       26.0
+                               AO1A         6       1.0        6.0
+                               AO1B         3       1.0        3.0
+                               AO1C        11       1.0       11.0
+                               AOI1         1       1.0        1.0
+                               DFN1        36       1.0       36.0
+                             DFN1E1        84       1.0       84.0
+                                GND         1       0.0        0.0
+                                MX2        21       1.0       21.0
+                               MX2A         3       1.0        3.0
+                               MX2B         2       1.0        2.0
+                               NOR2         2       1.0        2.0
+                              NOR2A        11       1.0       11.0
+                              NOR2B        66       1.0       66.0
+                              NOR3A         2       1.0        2.0
+                              NOR3B         3       1.0        3.0
+                              NOR3C         2       1.0        2.0
+                               OA1B         9       1.0        9.0
+                               OAI1         1       1.0        1.0
+                               OR2A         1       1.0        1.0
+                                OR3        16       1.0       16.0
+                                VCC         1       0.0        0.0
+                            
+                         TOTAL            308                306.0
+----------------------------------------------------------------------
+Report for cell scanstate.netlist
+     Instance path:  scanstate_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                                AO1         1       1.0        1.0
+                               AO1A         2       1.0        2.0
+                               AO1B         2       1.0        2.0
+                               AO1C         5       1.0        5.0
+                               DFN1        15       1.0       15.0
+                             DFN1E1        48       1.0       48.0
+                                GND         1       0.0        0.0
+                                MX2        23       1.0       23.0
+                               MX2B         5       1.0        5.0
+                               NOR2         1       1.0        1.0
+                              NOR2A         8       1.0        8.0
+                              NOR2B         7       1.0        7.0
+                              NOR3B         1       1.0        1.0
+                                OA1         2       1.0        2.0
+                               OA1B         7       1.0        7.0
+                               OAI1         1       1.0        1.0
+                               OR2A         1       1.0        1.0
+                               OR2B         2       1.0        2.0
+                                VCC         1       0.0        0.0
+                            
+                         TOTAL            133                131.0
+----------------------------------------------------------------------
+Report for cell s_acq_change.netlist
+     Instance path:  s_acq_change_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                             CLKINT         1       0.0        0.0
+                               DFN1        31       1.0       31.0
+                                GND         1       0.0        0.0
+                                MX2        44       1.0       44.0
+                              NOR2A         4       1.0        4.0
+                              NOR2B        42       1.0       42.0
+                                VCC         1       0.0        0.0
+                            
+                         TOTAL            124                121.0
+----------------------------------------------------------------------
+Report for cell scan_scale_sw.netlist
+     Instance path:  scan_scale_sw_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               DFN1         1       1.0        1.0
+                                GND         1       0.0        0.0
+                                MX2         2       1.0        2.0
+                              NOR2B         1       1.0        1.0
+                                VCC         1       0.0        0.0
+                            
+                         TOTAL              6                  4.0
+----------------------------------------------------------------------
+Report for cell bri_dump_sw.netlist
+     Instance path:  bri_dump_sw_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               DFN1         8       1.0        8.0
+                             DFN1E1         1       1.0        1.0
+                                GND         1       0.0        0.0
+                                MX2         7       1.0        7.0
+                              NOR2B         7       1.0        7.0
+                               OR2A         1       1.0        1.0
+                                VCC         1       0.0        0.0
+                            
+                         TOTAL             26                 24.0
+----------------------------------------------------------------------
+Report for cell DSTimer.netlist
+     Instance path:  DSTimer_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               AND2         1       1.0        1.0
+                               DFI0         1       1.0        1.0
+                               DFN0         1       1.0        1.0
+                                GND         1       0.0        0.0
+                                VCC         1       0.0        0.0
+                 dump_sustain_timer         1      33.0       33.0
+                            
+                         TOTAL              6                 36.0
+----------------------------------------------------------------------
+Report for cell dump_sustain_timer.netlist
+     Instance path:  DSTimer_0.dump_sustain_timer_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               DFN1         9       1.0        9.0
+                                GND         1       0.0        0.0
+                                MX2         4       1.0        4.0
+                              NOR2A         1       1.0        1.0
+                              NOR2B         6       1.0        6.0
+                              NOR3B         2       1.0        2.0
+                                VCC         1       0.0        0.0
+                                XA1         3       1.0        3.0
+                               XA1C         1       1.0        1.0
+                               XOR2         3       1.0        3.0
+                    cmp_constant_4b         1       4.0        4.0
+                            
+                         TOTAL             32                 33.0
+----------------------------------------------------------------------
+Report for cell cmp_constant_4b.netlist
+     Instance path:  DSTimer_0.dump_sustain_timer_0.cmp_constant_4b_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               AND2         1       1.0        1.0
+                              AND3B         1       1.0        1.0
+                                GND         1       0.0        0.0
+                              NAND2         1       1.0        1.0
+                              NOR3C         1       1.0        1.0
+                                VCC         1       0.0        0.0
+                            
+                         TOTAL              6                  4.0
+----------------------------------------------------------------------
+Report for cell timer_top.netlist
+     Instance path:  timer_top_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                                GND         1       0.0        0.0
+                                VCC         1       0.0        0.0
+                       state_switch         1     160.0      160.0
+                              timer         1     198.0      198.0
+                            
+                         TOTAL              4                358.0
+----------------------------------------------------------------------
+Report for cell state_switch.netlist
+     Instance path:  timer_top_0.state_switch_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                                AO1        36       1.0       36.0
+                               AO1A         1       1.0        1.0
+                               DFN1        30       1.0       30.0
+                                GND         1       0.0        0.0
+                              NOR2A         6       1.0        6.0
+                              NOR2B        57       1.0       57.0
+                               NOR3         2       1.0        2.0
+                              NOR3A         2       1.0        2.0
+                              NOR3B         3       1.0        3.0
+                              NOR3C         5       1.0        5.0
+                                OR3        18       1.0       18.0
+                                VCC         1       0.0        0.0
+                            
+                         TOTAL            162                160.0
+----------------------------------------------------------------------
+Report for cell timer.netlist
+     Instance path:  timer_top_0.timer_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               AND2         6       1.0        6.0
+                               AND3        27       1.0       27.0
+                               DFN1        23       1.0       23.0
+                                GND         1       0.0        0.0
+                              NOR2B         4       1.0        4.0
+                              NOR3B         1       1.0        1.0
+                              NOR3C        22       1.0       22.0
+                               OR3C         1       1.0        1.0
+                          Timer_Cmp         1      93.0       93.0
+                                VCC         1       0.0        0.0
+                               XOR2        21       1.0       21.0
+                            
+                         TOTAL            108                198.0
+----------------------------------------------------------------------
+Report for cell Timer_Cmp.netlist
+     Instance path:  timer_top_0.timer_0.Timer_Cmp_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               AND2         3       1.0        3.0
+                               AND3        10       1.0       10.0
+                                AO1         6       1.0        6.0
+                               AO1C        11       1.0       11.0
+                               AO1D         1       1.0        1.0
+                                GND         1       0.0        0.0
+                             NAND3A        12       1.0       12.0
+                              NOR2A         1       1.0        1.0
+                              NOR3A         6       1.0        6.0
+                               OR2A        14       1.0       14.0
+                                VCC         1       0.0        0.0
+                              XNOR2        29       1.0       29.0
+                            
+                         TOTAL             95                 93.0
+----------------------------------------------------------------------
+Report for cell sd_acq_top.netlist
+     Instance path:  sd_acq_top_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                                GND         1       0.0        0.0
+                                VCC         1       0.0        0.0
+                      sd_sacq_coder         1     360.0      360.0
+                      sd_sacq_state         1      63.0       63.0
+                      sd_sacq_timer         1     104.0      104.0
+                            
+                         TOTAL              5                527.0
+----------------------------------------------------------------------
+Report for cell sd_sacq_timer.netlist
+     Instance path:  sd_acq_top_0.sd_sacq_timer_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                             DFN1C0        22       1.0       22.0
+                                GND         1       0.0        0.0
+                              NOR3B         1       1.0        1.0
+                              NOR3C        21       1.0       21.0
+                                VCC         1       0.0        0.0
+                        sd_sacq_inc         1      60.0       60.0
+                            
+                         TOTAL             47                104.0
+----------------------------------------------------------------------
+Report for cell sd_sacq_inc.netlist
+     Instance path:  sd_acq_top_0.sd_sacq_timer_0.sd_sacq_inc_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               AND2        10       1.0       10.0
+                               AND3        29       1.0       29.0
+                                GND         1       0.0        0.0
+                                VCC         1       0.0        0.0
+                               XOR2        21       1.0       21.0
+                            
+                         TOTAL             62                 60.0
+----------------------------------------------------------------------
+Report for cell sd_sacq_state.netlist
+     Instance path:  sd_acq_top_0.sd_sacq_state_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               AO1B         1       1.0        1.0
+                               AO1C         2       1.0        2.0
+                               AOI1         2       1.0        2.0
+                               DFN1        18       1.0       18.0
+                                GND         1       0.0        0.0
+                               NOR2         5       1.0        5.0
+                              NOR2A         7       1.0        7.0
+                              NOR2B         7       1.0        7.0
+                              NOR3A         5       1.0        5.0
+                              NOR3C         3       1.0        3.0
+                                OA1         2       1.0        2.0
+                               OA1C         5       1.0        5.0
+                                OR2         3       1.0        3.0
+                                OR3         1       1.0        1.0
+                               OR3A         1       1.0        1.0
+                               OR3B         1       1.0        1.0
+                                VCC         1       0.0        0.0
+                            
+                         TOTAL             65                 63.0
+----------------------------------------------------------------------
+Report for cell sd_sacq_coder.netlist
+     Instance path:  sd_acq_top_0.sd_sacq_coder_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               DFN1        11       1.0       11.0
+                             DFN1E1       136       1.0      136.0
+                                GND         1       0.0        0.0
+                               NOR2         1       1.0        1.0
+                              NOR2A         6       1.0        6.0
+                              NOR2B         5       1.0        5.0
+                              NOR3A         4       1.0        4.0
+                              NOR3B         8       1.0        8.0
+                              NOR3C        11       1.0       11.0
+                                OR2        10       1.0       10.0
+                                OR3        30       1.0       30.0
+                               OR3B         1       1.0        1.0
+                               OR3C         1       1.0        1.0
+                                VCC         1       0.0        0.0
+                               XA1A         2       1.0        2.0
+                               XA1C         8       1.0        8.0
+                                XO1        46       1.0       46.0
+                               XOR2        80       1.0       80.0
+                            
+                         TOTAL            362                360.0
+----------------------------------------------------------------------
+Report for cell DUMP_OFF_1.netlist
+  Original Cell name DUMP_OFF
+     Instance path:  DUMP_OFF_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                                GND         1       0.0        0.0
+                                VCC         1       0.0        0.0
+                       off_on_coder         1       6.0        6.0
+                   off_on_state_3_2         1       9.0        9.0
+                   off_on_timer_3_2         1      14.0       14.0
+                            
+                         TOTAL              5                 29.0
+----------------------------------------------------------------------
+Report for cell off_on_timer_3_2.netlist
+  Original Cell name off_on_timer
+     Instance path:  DUMP_OFF_0.off_on_timer_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               DFN1         5       1.0        5.0
+                                GND         1       0.0        0.0
+                              NOR2A         1       1.0        1.0
+                              NOR2B         3       1.0        3.0
+                              NOR3C         1       1.0        1.0
+                                VCC         1       0.0        0.0
+                                XA1         4       1.0        4.0
+                            
+                         TOTAL             16                 14.0
+----------------------------------------------------------------------
+Report for cell off_on_coder.netlist
+  Original Cell name off_on_coder
+     Instance path:  DUMP_OFF_0.off_on_coder_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               DFN1         2       1.0        2.0
+                                GND         1       0.0        0.0
+                               NOR2         1       1.0        1.0
+                              NOR2B         1       1.0        1.0
+                              NOR3B         1       1.0        1.0
+                              NOR3C         1       1.0        1.0
+                                VCC         1       0.0        0.0
+                            
+                         TOTAL              8                  6.0
+----------------------------------------------------------------------
+Report for cell off_on_state_3_2.netlist
+  Original Cell name off_on_state
+     Instance path:  DUMP_OFF_0.off_on_state_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               AOI1         1       1.0        1.0
+                              AOI1B         1       1.0        1.0
+                               DFN1         3       1.0        3.0
+                                GND         1       0.0        0.0
+                               MX2C         1       1.0        1.0
+                              NOR3B         1       1.0        1.0
+                              NOR3C         1       1.0        1.0
+                               OR2B         1       1.0        1.0
+                                VCC         1       0.0        0.0
+                            
+                         TOTAL             11                  9.0
+----------------------------------------------------------------------
+Report for cell state1ms_choice.netlist
+     Instance path:  state1ms_choice_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               DFN1         4       1.0        4.0
+                             DFN1E1         2       1.0        2.0
+                                GND         1       0.0        0.0
+                                MX2         6       1.0        6.0
+                              NOR2B         4       1.0        4.0
+                                VCC         1       0.0        0.0
+                            
+                         TOTAL             18                 16.0
+----------------------------------------------------------------------
+Report for cell nsctrl_choice.netlist
+     Instance path:  nsctrl_choice_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               DFN1         6       1.0        6.0
+                                GND         1       0.0        0.0
+                                MX2         6       1.0        6.0
+                              NOR2B         6       1.0        6.0
+                                VCC         1       0.0        0.0
+                            
+                         TOTAL             20                 18.0
+----------------------------------------------------------------------
+Report for cell top_code.netlist
+     Instance path:  top_code_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                                AO1        12       1.0       12.0
+                               AO1A        11       1.0       11.0
+                               AO1D         8       1.0        8.0
+                               DFN1        49       1.0       49.0
+                             DFN1E1       316       1.0      316.0
+                                GND         1       0.0        0.0
+                                MX2        27       1.0       27.0
+                               MX2B         3       1.0        3.0
+                               NOR2        11       1.0       11.0
+                              NOR2A        17       1.0       17.0
+                              NOR2B        32       1.0       32.0
+                               NOR3        10       1.0       10.0
+                              NOR3A        39       1.0       39.0
+                              NOR3B         6       1.0        6.0
+                                OA1        16       1.0       16.0
+                                OR2        13       1.0       13.0
+                               OR2A        11       1.0       11.0
+                               OR2B         1       1.0        1.0
+                                OR3        15       1.0       15.0
+                               OR3A         6       1.0        6.0
+                               OR3B         3       1.0        3.0
+                               OR3C         1       1.0        1.0
+                                VCC         1       0.0        0.0
+                               XOR2         1       1.0        1.0
+                            
+                         TOTAL            610                608.0
+----------------------------------------------------------------------
+Report for cell DDS.netlist
+     Instance path:  DDS_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                                GND         1       0.0        0.0
+                                VCC         1       0.0        0.0
+                          dds_coder         1      16.0       16.0
+                          dds_state         1     286.0      286.0
+                          dds_timer         1      25.0       25.0
+                            
+                         TOTAL              5                327.0
+----------------------------------------------------------------------
+Report for cell dds_coder.netlist
+     Instance path:  DDS_0.dds_coder_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               DFN1         6       1.0        6.0
+                                GND         1       0.0        0.0
+                               NOR2         2       1.0        2.0
+                              NOR2B         2       1.0        2.0
+                               NOR3         1       1.0        1.0
+                              NOR3B         2       1.0        2.0
+                              NOR3C         3       1.0        3.0
+                                VCC         1       0.0        0.0
+                            
+                         TOTAL             18                 16.0
+----------------------------------------------------------------------
+Report for cell dds_state.netlist
+     Instance path:  DDS_0.dds_state_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                                AO1         5       1.0        5.0
+                               AO1A        31       1.0       31.0
+                               AO1B         1       1.0        1.0
+                              AOI1B         2       1.0        2.0
+                               DFN1        16       1.0       16.0
+                             DFN1E0        37       1.0       37.0
+                             DFN1E1        32       1.0       32.0
+                                GND         1       0.0        0.0
+                               NOR2         1       1.0        1.0
+                              NOR2A        37       1.0       37.0
+                              NOR2B        11       1.0       11.0
+                               NOR3        62       1.0       62.0
+                              NOR3A        35       1.0       35.0
+                              NOR3B         6       1.0        6.0
+                               OA1A         3       1.0        3.0
+                               OR2A         3       1.0        3.0
+                               OR2B         3       1.0        3.0
+                                OR3         1       1.0        1.0
+                                VCC         1       0.0        0.0
+                            
+                         TOTAL            288                286.0
+----------------------------------------------------------------------
+Report for cell dds_timer.netlist
+     Instance path:  DDS_0.dds_timer_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               AX1C         3       1.0        3.0
+                               DFN1         8       1.0        8.0
+                                GND         1       0.0        0.0
+                              NOR2A         1       1.0        1.0
+                              NOR2B         6       1.0        6.0
+                              NOR3C         3       1.0        3.0
+                                VCC         1       0.0        0.0
+                                XA1         3       1.0        3.0
+                               XOR2         1       1.0        1.0
+                            
+                         TOTAL             27                 25.0
+----------------------------------------------------------------------
+Report for cell PLUSE.netlist
+     Instance path:  PLUSE_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                                GND         1       0.0        0.0
+                                VCC         1       0.0        0.0
+                          bri_coder         1      32.0       32.0
+                        bri_qq_load         1      24.0       24.0
+                          bri_state         1      59.0       59.0
+                          bri_timer         1      21.0       21.0
+                         qq_coder_1         1      26.0       26.0
+                       qq_coder_1_0         1      26.0       26.0
+                         qq_state_1         1      21.0       21.0
+                       qq_state_1_0         1      21.0       21.0
+                         qq_timer_1         1      14.0       14.0
+                       qq_timer_1_0         1      14.0       14.0
+                            
+                         TOTAL             12                258.0
+----------------------------------------------------------------------
+Report for cell bri_qq_load.netlist
+     Instance path:  PLUSE_0.bri_qq_load_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                             DFN1E1        24       1.0       24.0
+                                GND         1       0.0        0.0
+                                VCC         1       0.0        0.0
+                            
+                         TOTAL             26                 24.0
+----------------------------------------------------------------------
+Report for cell bri_state.netlist
+     Instance path:  PLUSE_0.bri_state_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                                AO1         4       1.0        4.0
+                               AO1A         1       1.0        1.0
+                             DFN1C0        10       1.0       10.0
+                           DFN1E1C0         2       1.0        2.0
+                             DFN1P0         5       1.0        5.0
+                                GND         1       0.0        0.0
+                                MX2        10       1.0       10.0
+                               MX2B         3       1.0        3.0
+                               NOR2         2       1.0        2.0
+                              NOR2A         5       1.0        5.0
+                              NOR2B         2       1.0        2.0
+                               NOR3         1       1.0        1.0
+                              NOR3A         2       1.0        2.0
+                              NOR3B         1       1.0        1.0
+                              NOR3C         3       1.0        3.0
+                                OA1         2       1.0        2.0
+                               OA1B         1       1.0        1.0
+                                OR2         3       1.0        3.0
+                               OR2A         1       1.0        1.0
+                                OR3         1       1.0        1.0
+                                VCC         1       0.0        0.0
+                            
+                         TOTAL             61                 59.0
+----------------------------------------------------------------------
+Report for cell qq_coder_1_0.netlist
+  Original Cell name qq_coder_1
+     Instance path:  PLUSE_0.qq_coder_1
+                                          Cell usage:
+                               cell       count     area    count*area
+                               DFN1         4       1.0        4.0
+                                GND         1       0.0        0.0
+                              NOR2A         1       1.0        1.0
+                              NOR2B         1       1.0        1.0
+                              NOR3B         1       1.0        1.0
+                              NOR3C         2       1.0        2.0
+                                OR2         1       1.0        1.0
+                                OR3         2       1.0        2.0
+                                VCC         1       0.0        0.0
+                               XA1A         1       1.0        1.0
+                               XA1C         2       1.0        2.0
+                                XO1         5       1.0        5.0
+                               XOR2         6       1.0        6.0
+                            
+                         TOTAL             28                 26.0
+----------------------------------------------------------------------
+Report for cell qq_timer_1_0.netlist
+  Original Cell name qq_timer_1
+     Instance path:  PLUSE_0.qq_timer_1
+                                          Cell usage:
+                               cell       count     area    count*area
+                               DFN1         5       1.0        5.0
+                                GND         1       0.0        0.0
+                              NOR2A         1       1.0        1.0
+                              NOR2B         3       1.0        3.0
+                              NOR3C         1       1.0        1.0
+                                VCC         1       0.0        0.0
+                                XA1         4       1.0        4.0
+                            
+                         TOTAL             16                 14.0
+----------------------------------------------------------------------
+Report for cell qq_timer_1.netlist
+  Original Cell name qq_timer
+     Instance path:  PLUSE_0.qq_timer_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               DFN1         5       1.0        5.0
+                                GND         1       0.0        0.0
+                              NOR2A         1       1.0        1.0
+                              NOR2B         3       1.0        3.0
+                              NOR3C         1       1.0        1.0
+                                VCC         1       0.0        0.0
+                                XA1         4       1.0        4.0
+                            
+                         TOTAL             16                 14.0
+----------------------------------------------------------------------
+Report for cell qq_state_1_0.netlist
+  Original Cell name qq_state_1
+     Instance path:  PLUSE_0.qq_state_1
+                                          Cell usage:
+                               cell       count     area    count*area
+                               AO1B         1       1.0        1.0
+                              AOI1B         1       1.0        1.0
+                               DFN1         7       1.0        7.0
+                                GND         1       0.0        0.0
+                               NOR2         2       1.0        2.0
+                              NOR2A         2       1.0        2.0
+                              NOR2B         1       1.0        1.0
+                              NOR3A         2       1.0        2.0
+                              NOR3B         1       1.0        1.0
+                               OA1C         2       1.0        2.0
+                               OR2A         1       1.0        1.0
+                               OR2B         1       1.0        1.0
+                                VCC         1       0.0        0.0
+                            
+                         TOTAL             23                 21.0
+----------------------------------------------------------------------
+Report for cell bri_coder.netlist
+     Instance path:  PLUSE_0.bri_coder_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                              AND2A         2       1.0        2.0
+                               AND3         1       1.0        1.0
+                                AO1         2       1.0        2.0
+                               AO1C         3       1.0        3.0
+                              AOI1A         2       1.0        2.0
+                           DFN1E1C0         5       1.0        5.0
+                                GND         1       0.0        0.0
+                              NOR2A         2       1.0        2.0
+                                OA1         1       1.0        1.0
+                               OA1A         2       1.0        2.0
+                               OA1B         1       1.0        1.0
+                                OR2         1       1.0        1.0
+                               OR2A         6       1.0        6.0
+                                OR3         1       1.0        1.0
+                                VCC         1       0.0        0.0
+                              XNOR2         3       1.0        3.0
+                            
+                         TOTAL             34                 32.0
+----------------------------------------------------------------------
+Report for cell bri_timer.netlist
+     Instance path:  PLUSE_0.bri_timer_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               AX1C         3       1.0        3.0
+                             DFN1C0         1       1.0        1.0
+                           DFN1E1C0         7       1.0        7.0
+                                GND         1       0.0        0.0
+                              NOR2B         1       1.0        1.0
+                              NOR3A         1       1.0        1.0
+                              NOR3B         1       1.0        1.0
+                              NOR3C         2       1.0        2.0
+                                VCC         1       0.0        0.0
+                               XOR2         5       1.0        5.0
+                            
+                         TOTAL             23                 21.0
+----------------------------------------------------------------------
+Report for cell qq_coder_1.netlist
+  Original Cell name qq_coder
+     Instance path:  PLUSE_0.qq_coder_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               DFN1         4       1.0        4.0
+                                GND         1       0.0        0.0
+                              NOR2A         1       1.0        1.0
+                              NOR2B         1       1.0        1.0
+                              NOR3B         1       1.0        1.0
+                              NOR3C         2       1.0        2.0
+                                OR2         1       1.0        1.0
+                                OR3         2       1.0        2.0
+                                VCC         1       0.0        0.0
+                               XA1A         1       1.0        1.0
+                               XA1C         2       1.0        2.0
+                                XO1         5       1.0        5.0
+                               XOR2         6       1.0        6.0
+                            
+                         TOTAL             28                 26.0
+----------------------------------------------------------------------
+Report for cell qq_state_1.netlist
+  Original Cell name qq_state
+     Instance path:  PLUSE_0.qq_state_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               AO1B         1       1.0        1.0
+                              AOI1B         1       1.0        1.0
+                               DFN1         7       1.0        7.0
+                                GND         1       0.0        0.0
+                               NOR2         2       1.0        2.0
+                              NOR2A         2       1.0        2.0
+                              NOR2B         1       1.0        1.0
+                              NOR3A         2       1.0        2.0
+                              NOR3B         1       1.0        1.0
+                               OA1C         2       1.0        2.0
+                               OR2A         1       1.0        1.0
+                               OR2B         1       1.0        1.0
+                                VCC         1       0.0        0.0
+                            
+                         TOTAL             23                 21.0
+----------------------------------------------------------------------
+Report for cell dds_change.netlist
+     Instance path:  dds_change_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               DFN1         2       1.0        2.0
+                                GND         1       0.0        0.0
+                                MX2         2       1.0        2.0
+                              NOR2B         6       1.0        6.0
+                              NOR3A         2       1.0        2.0
+                               OR2B         1       1.0        1.0
+                                OR3         2       1.0        2.0
+                                VCC         1       0.0        0.0
+                            
+                         TOTAL             17                 15.0
+----------------------------------------------------------------------
+Report for cell plusestate.netlist
+     Instance path:  plusestate_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               AO1A         1       1.0        1.0
+                               AO1B         3       1.0        3.0
+                               AO1C        11       1.0       11.0
+                               DFN1        16       1.0       16.0
+                             DFN1E1        48       1.0       48.0
+                                GND         1       0.0        0.0
+                                MX2        18       1.0       18.0
+                               MX2B         8       1.0        8.0
+                               NOR2         3       1.0        3.0
+                              NOR2A         9       1.0        9.0
+                              NOR2B         5       1.0        5.0
+                              NOR3B         2       1.0        2.0
+                                OA1         1       1.0        1.0
+                               OA1A         1       1.0        1.0
+                               OA1B         9       1.0        9.0
+                               OAI1         3       1.0        3.0
+                               OR2A         2       1.0        2.0
+                               OR2B         2       1.0        2.0
+                                VCC         1       0.0        0.0
+                            
+                         TOTAL            144                142.0
+----------------------------------------------------------------------
+Report for cell n_pluse_acq.netlist
+     Instance path:  n_acq_change_0
+                                          Cell usage:
+                               cell       count     area    count*area
+                               DFN1         3       1.0        3.0
+                                GND         1       0.0        0.0
+                                MX2         2       1.0        2.0
+                              NOR2B         2       1.0        2.0
+                                VCC         1       0.0        0.0
+                            
+                         TOTAL              9                  7.0

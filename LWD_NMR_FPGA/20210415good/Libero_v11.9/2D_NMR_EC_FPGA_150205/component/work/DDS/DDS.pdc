@@ -1,0 +1,172 @@
+# Actel Physical design constraints file
+# Generated file
+
+# Version: 9.1 9.1.0.18
+# Family: ProASIC3 , Die: A3P1000 , Package: 208 PQFP
+# Date generated: Tue Mar 18 09:51:29 2014 
+
+
+# 
+# IO banks setting
+# 
+
+
+# 
+# User Groups
+# 
+
+define_group -name dds_para_load
+
+define_group -name dds_config
+
+
+# 
+# I/O constraints
+# 
+
+# User Group dds_config
+
+set_io data                 \
+    -GROUP_NAME dds_config  \
+    -DIRECTION Output
+
+
+set_io fq_ud                \
+    -GROUP_NAME dds_config  \
+    -DIRECTION Output
+
+
+set_io reset                \
+    -GROUP_NAME dds_config  \
+    -DIRECTION Output
+
+
+set_io w_clk                \
+    -GROUP_NAME dds_config  \
+    -DIRECTION Output
+
+
+# User Group dds_para_load
+
+set_io dds_choice              \
+    -GROUP_NAME dds_para_load  \
+    -DIRECTION Input
+
+
+set_io dds_load                \
+    -GROUP_NAME dds_para_load  \
+    -DIRECTION Input
+
+
+set_io {dds_para[0]}           \
+    -GROUP_NAME dds_para_load  \
+    -DIRECTION Input
+
+
+set_io {dds_para[1]}           \
+    -GROUP_NAME dds_para_load  \
+    -DIRECTION Input
+
+
+set_io {dds_para[2]}           \
+    -GROUP_NAME dds_para_load  \
+    -DIRECTION Input
+
+
+set_io {dds_para[3]}           \
+    -GROUP_NAME dds_para_load  \
+    -DIRECTION Input
+
+
+set_io {dds_para[4]}           \
+    -GROUP_NAME dds_para_load  \
+    -DIRECTION Input
+
+
+set_io {dds_para[5]}           \
+    -GROUP_NAME dds_para_load  \
+    -DIRECTION Input
+
+
+set_io {dds_para[6]}           \
+    -GROUP_NAME dds_para_load  \
+    -DIRECTION Input
+
+
+set_io {dds_para[7]}           \
+    -GROUP_NAME dds_para_load  \
+    -DIRECTION Input
+
+
+set_io {dds_para[8]}           \
+    -GROUP_NAME dds_para_load  \
+    -DIRECTION Input
+
+
+set_io {dds_para[9]}           \
+    -GROUP_NAME dds_para_load  \
+    -DIRECTION Input
+
+
+set_io {dds_para[10]}          \
+    -GROUP_NAME dds_para_load  \
+    -DIRECTION Input
+
+
+set_io {dds_para[11]}          \
+    -GROUP_NAME dds_para_load  \
+    -DIRECTION Input
+
+
+set_io {dds_para[12]}          \
+    -GROUP_NAME dds_para_load  \
+    -DIRECTION Input
+
+
+set_io {dds_para[13]}          \
+    -GROUP_NAME dds_para_load  \
+    -DIRECTION Input
+
+
+set_io {dds_para[14]}          \
+    -GROUP_NAME dds_para_load  \
+    -DIRECTION Input
+
+
+set_io {dds_para[15]}          \
+    -GROUP_NAME dds_para_load  \
+    -DIRECTION Input
+
+
+
+#
+# Non IO constraints
+#
+
+
+#
+# Old IO constraints, commented out for reference
+#
+
+# set_io data -GROUP_NAME dds_config -DIRECTION Output 
+# set_io fq_ud -GROUP_NAME dds_config -DIRECTION Output 
+# set_io reset -GROUP_NAME dds_config -DIRECTION Output 
+# set_io w_clk -GROUP_NAME dds_config -DIRECTION Output 
+# set_io dds_choice -GROUP_NAME dds_para_load -DIRECTION Input 
+# set_io dds_load -GROUP_NAME dds_para_load -DIRECTION Input 
+# set_io {dds_para[0]} -GROUP_NAME dds_para_load -DIRECTION Input 
+# set_io {dds_para[1]} -GROUP_NAME dds_para_load -DIRECTION Input 
+# set_io {dds_para[2]} -GROUP_NAME dds_para_load -DIRECTION Input 
+# set_io {dds_para[3]} -GROUP_NAME dds_para_load -DIRECTION Input 
+# set_io {dds_para[4]} -GROUP_NAME dds_para_load -DIRECTION Input 
+# set_io {dds_para[5]} -GROUP_NAME dds_para_load -DIRECTION Input 
+# set_io {dds_para[6]} -GROUP_NAME dds_para_load -DIRECTION Input 
+# set_io {dds_para[7]} -GROUP_NAME dds_para_load -DIRECTION Input 
+# set_io {dds_para[8]} -GROUP_NAME dds_para_load -DIRECTION Input 
+# set_io {dds_para[9]} -GROUP_NAME dds_para_load -DIRECTION Input 
+# set_io {dds_para[10]} -GROUP_NAME dds_para_load -DIRECTION Input 
+# set_io {dds_para[11]} -GROUP_NAME dds_para_load -DIRECTION Input 
+# set_io {dds_para[12]} -GROUP_NAME dds_para_load -DIRECTION Input 
+# set_io {dds_para[13]} -GROUP_NAME dds_para_load -DIRECTION Input 
+# set_io {dds_para[14]} -GROUP_NAME dds_para_load -DIRECTION Input 
+# set_io {dds_para[15]} -GROUP_NAME dds_para_load -DIRECTION Input 

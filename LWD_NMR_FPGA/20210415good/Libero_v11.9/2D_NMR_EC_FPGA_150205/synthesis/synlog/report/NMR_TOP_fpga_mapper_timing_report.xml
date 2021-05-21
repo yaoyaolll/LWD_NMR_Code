@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- *************************************************************************************
+FILE DESCRIPTION
+Max Top 5 critical clocks will be reported. For rest user needs to refer to Detailed report
+*******************************************************************************************-->
+<report_table display_priority="2" name="Timing Summary">
+<report_link name="Detailed report">
+<data>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210415good\Libero_v11.9\2D_NMR_EC_FPGA_150205\synthesis\synlog\NMR_TOP_fpga_mapper.srr</data>
+<title>START OF TIMING REPORT</title>
+</report_link>
+<row>
+<data tcl_name="clock_name">Clock Name</data>
+<data tcl_name="req_freq">Req Freq</data>
+<data tcl_name="est_freq">Est Freq</data>
+<data tcl_name="slack">Slack</data>
+</row>
+<row>
+<data>ClockManagement_0.clk_10k_0.clock_10khz</data>
+<data>1.0 MHz</data>
+<data>189.3 MHz</data>
+<data>994.718</data>
+</row>
+<row>
+<data>ClockManagement_0.pllclk_0.GLA</data>
+<data>110.0 MHz</data>
+<data>99.9 MHz</data>
+<data>-0.916</data>
+</row>
+<row>
+<data>Signal_Noise_Acq_0.noise_acq_0.n_rdclk_syn_0.n_rdclk</data>
+<data>20.0 MHz</data>
+<data>113.3 MHz</data>
+<data>20.586</data>
+</row>
+<row>
+<data>Signal_Noise_Acq_0.noise_acq_0.noiseclk_0.clkout</data>
+<data>20.0 MHz</data>
+<data>118.6 MHz</data>
+<data>20.786</data>
+</row>
+<row>
+<data>Signal_Noise_Acq_0.signal_acq_0.s_clk_div4_0.clkout</data>
+<data>20.0 MHz</data>
+<data>102.6 MHz</data>
+<data>40.253</data>
+</row>
+<row>
+<data>Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.clk_add</data>
+<data>10.0 MHz</data>
+<data>25.0 MHz</data>
+<data>30.034</data>
+</row>
+<row>
+<data>ddsclkout</data>
+<data>40.0 MHz</data>
+<data>107.9 MHz</data>
+<data>15.735</data>
+</row>
+</report_table>

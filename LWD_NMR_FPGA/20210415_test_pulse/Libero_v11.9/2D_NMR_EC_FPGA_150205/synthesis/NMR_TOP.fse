@@ -1,0 +1,331 @@
+
+fsm_encoding {68109010912} onehot
+
+fsm_state_encoding {68109010912} IDLE {0000000000}
+
+fsm_state_encoding {68109010912} INIT {0000000011}
+
+fsm_state_encoding {68109010912} INIT2 {0000000101}
+
+fsm_state_encoding {68109010912} CONFIG {0000001001}
+
+fsm_state_encoding {68109010912} START {0000010001}
+
+fsm_state_encoding {68109010912} PLUSE {0000100001}
+
+fsm_state_encoding {68109010912} DUMP {0001000001}
+
+fsm_state_encoding {68109010912} STOP {0010000001}
+
+fsm_state_encoding {68109010912} INI_TEST {0100000001}
+
+fsm_state_encoding {68109010912} START_test {1000000001}
+
+fsm_registers {68109010912} {CS[9]}  {CS[8]}  {CS[7]}  {CS[6]}  {CS[5]}  {CS[4]}  {CS[3]}  {CS[2]}  {CS[1]}  {CS_i[0]} 
+
+fsm_encoding {383903911} onehot
+
+fsm_state_encoding {383903911} IDLE {00000}
+
+fsm_state_encoding {383903911} S1 {00011}
+
+fsm_state_encoding {383903911} S2 {00101}
+
+fsm_state_encoding {383903911} S3 {01001}
+
+fsm_state_encoding {383903911} S4 {10001}
+
+fsm_registers {383903911} {cs[4]}  {cs[3]}  {cs[2]}  {cs[1]}  {cs_i[0]} 
+
+fsm_encoding {354704710} onehot
+
+fsm_state_encoding {354704710} IDLE {000000000000001}
+
+fsm_state_encoding {354704710} S0 {000000000000010}
+
+fsm_state_encoding {354704710} S00 {000000000000100}
+
+fsm_state_encoding {354704710} S1 {000000000001000}
+
+fsm_state_encoding {354704710} S10 {000000000010000}
+
+fsm_state_encoding {354704710} S2 {000000000100000}
+
+fsm_state_encoding {354704710} S20 {000000001000000}
+
+fsm_state_encoding {354704710} S3 {000000010000000}
+
+fsm_state_encoding {354704710} S30 {000000100000000}
+
+fsm_state_encoding {354704710} S4 {000001000000000}
+
+fsm_state_encoding {354704710} S40 {000010000000000}
+
+fsm_state_encoding {354704710} S5 {000100000000000}
+
+fsm_state_encoding {354704710} S50 {001000000000000}
+
+fsm_state_encoding {354704710} S6 {010000000000000}
+
+fsm_state_encoding {354704710} S60 {100000000000000}
+
+fsm_registers {354704710} {cs[14]}  {cs[13]}  {cs[12]}  {cs[11]}  {cs[10]}  {cs[9]}  {cs[8]}  {cs[7]}  {cs[6]}  {cs[5]}  {cs[4]}  {cs[3]}  {cs[2]}  {cs[1]}  {cs[0]} 
+
+fsm_encoding {14900909} onehot
+
+fsm_state_encoding {14900909} IDLE {000000000}
+
+fsm_state_encoding {14900909} RST1 {000000011}
+
+fsm_state_encoding {14900909} RST2 {000000101}
+
+fsm_state_encoding {14900909} MODE_SEL1 {000001001}
+
+fsm_state_encoding {14900909} MODE_SEL2 {000010001}
+
+fsm_state_encoding {14900909} PARA_LOAD1 {000100001}
+
+fsm_state_encoding {14900909} PARA_LOAD2 {001000001}
+
+fsm_state_encoding {14900909} UPDATE {010000001}
+
+fsm_state_encoding {14900909} OVER {100000001}
+
+fsm_registers {14900909} {cs[8]}  {cs[7]}  {cs[6]}  {cs[5]}  {cs[4]}  {cs[3]}  {cs[2]}  {cs[1]}  {cs_i[0]} 
+
+fsm_encoding {24310318} sequential
+
+fsm_state_encoding {24310318} IDLE {00}
+
+fsm_state_encoding {24310318} S1 {01}
+
+fsm_state_encoding {24310318} S2 {10}
+
+fsm_registers {24310318} {cs[1]}  {cs[0]} 
+
+fsm_encoding {76530537} onehot
+
+fsm_state_encoding {76530537} IDLE {0000000000000000}
+
+fsm_state_encoding {76530537} S1 {0000000000000011}
+
+fsm_state_encoding {76530537} S2 {0000000000000101}
+
+fsm_state_encoding {76530537} S3 {0000000000001001}
+
+fsm_state_encoding {76530537} S4 {0000000000010001}
+
+fsm_state_encoding {76530537} S20 {0000000000100001}
+
+fsm_state_encoding {76530537} S30 {0000000001000001}
+
+fsm_state_encoding {76530537} S31 {0000000010000001}
+
+fsm_state_encoding {76530537} S32 {0000000100000001}
+
+fsm_state_encoding {76530537} S40 {0000001000000001}
+
+fsm_state_encoding {76530537} S41 {0000010000000001}
+
+fsm_state_encoding {76530537} S42 {0000100000000001}
+
+fsm_state_encoding {76530537} S50 {0001000000000001}
+
+fsm_state_encoding {76530537} S51 {0010000000000001}
+
+fsm_state_encoding {76530537} S52 {0100000000000001}
+
+fsm_state_encoding {76530537} S10 {1000000000000001}
+
+fsm_registers {76530537} {cs[15]}  {cs[14]}  {cs[13]}  {cs[12]}  {cs[11]}  {cs[10]}  {cs[9]}  {cs[8]}  {cs[7]}  {cs[6]}  {cs[5]}  {cs[4]}  {cs[3]}  {cs[2]}  {cs[1]}  {cs_i[0]} 
+
+fsm_encoding {74960966} onehot
+
+fsm_state_encoding {74960966} IDLE {00000000}
+
+fsm_state_encoding {74960966} INIT {00000011}
+
+fsm_state_encoding {74960966} S_SOFTDUMP {00000101}
+
+fsm_state_encoding {74960966} S_DECOPEN {00001001}
+
+fsm_state_encoding {74960966} S_SWICHOPEN {00010001}
+
+fsm_state_encoding {74960966} S_ACQUITION {00100001}
+
+fsm_state_encoding {74960966} CUT_DECO {01000001}
+
+fsm_state_encoding {74960966} STOP {10000001}
+
+fsm_registers {74960966} {CS[7]}  {CS[6]}  {CS[5]}  {CS[4]}  {CS[3]}  {CS[2]}  {CS[1]}  {CS_i_0[0]} 
+
+fsm_encoding {8111101115} onehot
+
+fsm_state_encoding {8111101115} IDLE {0000000000}
+
+fsm_state_encoding {8111101115} INIT {0000000011}
+
+fsm_state_encoding {8111101115} INIT2 {0000000101}
+
+fsm_state_encoding {8111101115} RESET {0000001001}
+
+fsm_state_encoding {8111101115} S1 {0000010001}
+
+fsm_state_encoding {8111101115} S2 {0000100001}
+
+fsm_state_encoding {8111101115} S3 {0001000001}
+
+fsm_state_encoding {8111101115} S4 {0010000001}
+
+fsm_state_encoding {8111101115} S5 {0100000001}
+
+fsm_state_encoding {8111101115} S6 {1000000001}
+
+fsm_registers {8111101115} {CS[9]}  {CS[8]}  {CS[7]}  {CS[6]}  {CS[5]}  {CS[4]}  {CS[3]}  {CS[2]}  {CS[1]}  {CS_i[0]} 
+
+fsm_encoding {61900904} onehot
+
+fsm_state_encoding {61900904} IDLE {00000000}
+
+fsm_state_encoding {61900904} INIT {00000011}
+
+fsm_state_encoding {61900904} N_SOFTDUMP {00000101}
+
+fsm_state_encoding {61900904} N_DECOPEN {00001001}
+
+fsm_state_encoding {61900904} N_SWICHOPEN {00010001}
+
+fsm_state_encoding {61900904} N_ACQUITION {00100001}
+
+fsm_state_encoding {61900904} CUT_DECO {01000001}
+
+fsm_state_encoding {61900904} STOP {10000001}
+
+fsm_registers {61900904} {CS[7]}  {CS[6]}  {CS[5]}  {CS[4]}  {CS[3]}  {CS[2]}  {CS[1]}  {CS_i_0[0]} 
+
+fsm_encoding {64510513} onehot
+
+fsm_state_encoding {64510513} IDLE {0000000000000}
+
+fsm_state_encoding {64510513} S1 {0000000000011}
+
+fsm_state_encoding {64510513} S2 {0000000000101}
+
+fsm_state_encoding {64510513} S3 {0000000001001}
+
+fsm_state_encoding {64510513} S4 {0000000010001}
+
+fsm_state_encoding {64510513} S20 {0000000100001}
+
+fsm_state_encoding {64510513} S21 {0000001000001}
+
+fsm_state_encoding {64510513} S22 {0000010000001}
+
+fsm_state_encoding {64510513} S50 {0000100000001}
+
+fsm_state_encoding {64510513} S51 {0001000000001}
+
+fsm_state_encoding {64510513} S52 {0010000000001}
+
+fsm_state_encoding {64510513} S53 {0100000000001}
+
+fsm_state_encoding {64510513} S10 {1000000000001}
+
+fsm_registers {64510513} {cs[12]}  {cs[11]}  {cs[10]}  {cs[9]}  {cs[8]}  {cs[7]}  {cs[6]}  {cs[5]}  {cs[4]}  {cs[3]}  {cs[2]}  {cs[1]}  {cs_i[0]} 
+
+fsm_encoding {21390392} onehot
+
+fsm_state_encoding {21390392} IDLE {00000000}
+
+fsm_state_encoding {21390392} S1 {00000011}
+
+fsm_state_encoding {21390392} S2 {00000101}
+
+fsm_state_encoding {21390392} S3 {00001001}
+
+fsm_state_encoding {21390392} S4 {00010001}
+
+fsm_state_encoding {21390392} S5 {00100001}
+
+fsm_state_encoding {21390392} S6 {01000001}
+
+fsm_state_encoding {21390392} S7 {10000001}
+
+fsm_registers {21390392} {cs[7]}  {cs[6]}  {cs[5]}  {cs[4]}  {cs[3]}  {cs[2]}  {cs[1]}  {cs_i_0[0]} 
+
+fsm_encoding {7231603161} onehot
+
+fsm_state_encoding {7231603161} IDLE {0000000000000000000000}
+
+fsm_state_encoding {7231603161} INI_RST1 {0000000000000000000011}
+
+fsm_state_encoding {7231603161} INI_RST2 {0000000000000000000101}
+
+fsm_state_encoding {7231603161} START {0000000000000000001001}
+
+fsm_state_encoding {7231603161} PLUSE90 {0000000000000000010001}
+
+fsm_state_encoding {7231603161} DUMP90 {0000000000000000100001}
+
+fsm_state_encoding {7231603161} SOFT_DUMP90 {0000000000000001000001}
+
+fsm_state_encoding {7231603161} CUT_DEC90 {0000000000000010000001}
+
+fsm_state_encoding {7231603161} RESET {0000000000000100000001}
+
+fsm_state_encoding {7231603161} DDSCONF {0000000000001000000001}
+
+fsm_state_encoding {7231603161} PLUSE180 {0000000000010000000001}
+
+fsm_state_encoding {7231603161} DUMP180 {0000000000100000000001}
+
+fsm_state_encoding {7231603161} SOFT_DUMP180 {0000000001000000000001}
+
+fsm_state_encoding {7231603161} OPEN_DEC {0000000010000000000001}
+
+fsm_state_encoding {7231603161} OPEN_SWITCH {0000000100000000000001}
+
+fsm_state_encoding {7231603161} ECHO_ACQ {0000001000000000000001}
+
+fsm_state_encoding {7231603161} CUT_DEC180 {0000010000000000000001}
+
+fsm_state_encoding {7231603161} JUMP {0000100000000000000001}
+
+fsm_state_encoding {7231603161} STOP {0001000000000000000001}
+
+fsm_state_encoding {7231603161} START_TEST {0010000000000000000001}
+
+fsm_state_encoding {7231603161} DDSCONF_TEST {0100000000000000000001}
+
+fsm_state_encoding {7231603161} CUT_DECI90 {1000000000000000000001}
+
+fsm_registers {7231603161} {CS[21]}  {CS[20]}  {CS[19]}  {CS[18]}  {CS[17]}  {CS[16]}  {CS[15]}  {CS[14]}  {CS[13]}  {CS[12]}  {CS[11]}  {CS[10]}  {CS[9]}  {CS[8]}  {CS[7]}  {CS[6]}  {CS[5]}  {CS[4]}  {CS[3]}  {CS[2]}  {CS[1]}  {CS_i[0]} 
+0000000000100000001}
+
+fsm_state_encoding {7231603161} DDSCONF {0000000000001000000001}
+
+fsm_state_encoding {7231603161} PLUSE180 {0000000000010000000001}
+
+fsm_state_encoding {7231603161} DUMP180 {0000000000100000000001}
+
+fsm_state_encoding {7231603161} SOFT_DUMP180 {0000000001000000000001}
+
+fsm_state_encoding {7231603161} OPEN_DEC {0000000010000000000001}
+
+fsm_state_encoding {7231603161} OPEN_SWITCH {0000000100000000000001}
+
+fsm_state_encoding {7231603161} ECHO_ACQ {0000001000000000000001}
+
+fsm_state_encoding {7231603161} CUT_DEC180 {0000010000000000000001}
+
+fsm_state_encoding {7231603161} JUMP {0000100000000000000001}
+
+fsm_state_encoding {7231603161} STOP {0001000000000000000001}
+
+fsm_state_encoding {7231603161} START_TEST {0010000000000000000001}
+
+fsm_state_encoding {7231603161} DDSCONF_TEST {0100000000000000000001}
+
+fsm_state_encoding {7231603161} CUT_DECI90 {1000000000000000000001}
+
+fsm_registers {7231603161} {CS[21]}  {CS[20]}  {CS[19]}  {CS[18]}  {CS[17]}  {CS[16]}  {CS[15]}  {CS[14]}  {CS[13]}  {CS[12]}  {CS[11]}  {CS[10]}  {CS[9]}  {CS[8]}  {CS[7]}  {CS[6]}  {CS[5]}  {CS[4]}  {CS[3]}  {CS[2]}  {CS[1]}  {CS_i[0]} 

@@ -1,0 +1,25 @@
+Microsemi Libero Software
+Version: 11.9.6.7
+Release: v11.9 SP6
+
+Info: The design
+      E:/LWD_NMR/Code/LWD_NMR_FPGA/20210415good/Libero_v11.9/2D_NMR_EC_FPGA_150205/designer/imp\
+      l3/NMR_TOP_1.adb was last modified by software version 11.9.6.7.
+Opened an existing Libero design
+E:/LWD_NMR/Code/LWD_NMR_FPGA/20210415good/Libero_v11.9/2D_NMR_EC_FPGA_150205/designer/impl3/NMR\
+_TOP_1.adb.
+
+The Export-map command succeeded ( 00:00:17 )
+Wrote to the file:
+E:\LWD_NMR\Code\LWD_NMR_FPGA\20210415good\Libero_v11.9\2D_NMR_EC_FPGA_150205\designer\impl3\NMR\
+_TOP_1.pdb
+CHECKSUM: B154
+
+The Generate programming file command succeeded ( 00:00:18 )
+Design saved to file
+E:/LWD_NMR/Code/LWD_NMR_FPGA/20210415good/Libero_v11.9/2D_NMR_EC_FPGA_150205/designer/impl3/NMR\
+_TOP_1.adb.
+
+The Execute Script command succeeded ( 00:00:22 )
+Design closed.
+

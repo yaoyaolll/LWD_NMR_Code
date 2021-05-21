@@ -1,0 +1,16 @@
+Project Name: test
+Location: E:\LWD_NMR\Code\test_clk\test
+Description: 
+Preferred HDL Type: Verilog
+
+#-----------------------------------------------------
+                  Device Details
+#-----------------------------------------------------
+
+Part Number    : A3P1000-PQ208M
+Family         : ProASIC3
+Die            : A3P1000
+Package        : 208 PQFP
+Speed          : STD
+Core Voltage   : 1.5
+Range          : MIL

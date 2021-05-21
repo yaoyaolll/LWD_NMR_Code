@@ -1,0 +1,293 @@
+# Mon Dec 21 14:14:33 2020
+
+Synopsys Microsemi Technology Mapper, Version mapact, Build 2172R, Built Oct 30 2017 10:54:39
+Copyright (C) 1994-2017 Synopsys, Inc. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
+Product Version L-2016.09M-SP1-5
+
+Mapper Startup Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 98MB peak: 99MB)
+
+@N: MF248 |Running in 64-bit mode.
+@N: MF667 |Clock conversion disabled. (Command "set_option -fix_gated_and_generated_clocks 0" in the project file.)
+
+Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 99MB peak: 100MB)
+
+
+Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 99MB peak: 100MB)
+
+
+
+Starting Optimization and Mapping (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 107MB peak: 109MB)
+
+
+Available hyper_sources - for debug and ip models
+	None Found
+
+
+Finished RTL optimizations (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 107MB peak: 109MB)
+
+@N: MF238 :"e:\lwd_nmr\code\test_clk\test\hdl\clk_out.v":32:11:32:20|Found 4-bit incrementor, 'un3_count[3:0]'
+
+Starting factoring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 107MB peak: 109MB)
+
+
+Finished factoring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 107MB peak: 109MB)
+
+
+Starting gated-clock and generated-clock conversion (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 107MB peak: 109MB)
+
+
+Finished gated-clock and generated-clock conversion (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 107MB peak: 109MB)
+
+
+Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 107MB peak: 109MB)
+
+
+Starting Early Timing Optimization (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 107MB peak: 109MB)
+
+
+Finished Early Timing Optimization (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 107MB peak: 109MB)
+
+
+Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 107MB peak: 109MB)
+
+
+Finished preparing to map (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 107MB peak: 109MB)
+
+
+Finished technology mapping (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 107MB peak: 109MB)
+
+@N: FP130 |Promoting Net clk_in_c on CLKBUF  clk_in_pad 
+
+Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 107MB peak: 109MB)
+
+
+Added 0 Buffers
+Added 0 Cells via replication
+	Added 0 Sequential Cells via replication
+	Added 0 Combinational Cells via replication
+
+Finished restoring hierarchy (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 107MB peak: 109MB)
+
+
+
+@S |Clock Optimization Summary
+
+
+#### START OF CLOCK OPTIMIZATION REPORT #####[
+
+Clock optimization not enabled
+1 non-gated/non-generated clock tree(s) driving 5 clock pin(s) of sequential element(s)
+0 gated/generated clock tree(s) driving 0 clock pin(s) of sequential element(s)
+0 instances converted, 0 sequential instances remain driven by gated/generated clocks
+
+=========================== Non-Gated/Non-Generated Clocks ============================
+Clock Tree ID     Driving Element     Drive Element Type     Fanout     Sample Instance
+---------------------------------------------------------------------------------------
+@K:CKID0001       clk_in              port                   5          clk_out        
+=======================================================================================
+
+
+##### END OF CLOCK OPTIMIZATION REPORT ######]
+
+
+Start Writing Netlists (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 107MB peak: 109MB)
+
+Writing Analyst data base E:\LWD_NMR\Code\test_clk\test\synthesis\synwork\clk_out_m.srm
+
+Finished Writing Netlist Databases (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 107MB peak: 109MB)
+
+Writing EDIF Netlist and constraint files
+L-2016.09M-SP1-5
+
+Finished Writing EDIF Netlist and constraint files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 108MB peak: 109MB)
+
+
+Start final timing analysis (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 107MB peak: 109MB)
+
+@W: MT420 |Found inferred clock clk_out|clk_in with period 10.00ns. Please declare a user-defined clock on object "p:clk_in"
+
+
+##### START OF TIMING REPORT #####[
+# Timing Report written on Mon Dec 21 14:14:34 2020
+#
+
+
+Top view:               clk_out
+Library name:           PA3
+Operating conditions:   COMWCSTD ( T = 70.0, V = 1.42, P = 1.74, tree_type = balanced_tree )
+Requested Frequency:    100.0 MHz
+Wire load mode:         top
+Wire load model:        proasic3
+Paths requested:        5
+Constraint File(s):    
+@N: MT320 |This timing report is an estimate of place and route data. For final timing results, use the FPGA vendor place and route report.
+
+@N: MT322 |Clock constraints include only register-to-register paths associated with each individual clock.
+
+
+
+Performance Summary
+*******************
+
+
+Worst slack in design: 4.539
+
+                   Requested     Estimated     Requested     Estimated               Clock        Clock              
+Starting Clock     Frequency     Frequency     Period        Period        Slack     Type         Group              
+---------------------------------------------------------------------------------------------------------------------
+clk_out|clk_in     100.0 MHz     183.1 MHz     10.000        5.461         4.539     inferred     Inferred_clkgroup_0
+=====================================================================================================================
+
+
+
+
+
+Clock Relationships
+*******************
+
+Clocks                          |    rise  to  rise   |    fall  to  fall   |    rise  to  fall   |    fall  to  rise 
+----------------------------------------------------------------------------------------------------------------------
+Starting        Ending          |  constraint  slack  |  constraint  slack  |  constraint  slack  |  constraint  slack
+----------------------------------------------------------------------------------------------------------------------
+clk_out|clk_in  clk_out|clk_in  |  10.000      4.539  |  No paths    -      |  No paths    -      |  No paths    -    
+======================================================================================================================
+ Note: 'No paths' indicates there are no paths in the design for that pair of clock edges.
+       'Diff grp' indicates that paths exist but the starting clock and ending clock are in different clock groups.
+
+
+
+Interface Information 
+*********************
+
+No IO constraint found
+
+
+
+====================================
+Detailed Report for Clock: clk_out|clk_in
+====================================
+
+
+
+Starting Points with Worst Slack
+********************************
+
+             Starting                                          Arrival          
+Instance     Reference          Type     Pin     Net           Time        Slack
+             Clock                                                              
+--------------------------------------------------------------------------------
+count[0]     clk_out|clk_in     DFN1     Q       count[0]      0.737       4.539
+count[1]     clk_out|clk_in     DFN1     Q       count[1]      0.737       4.898
+count[2]     clk_out|clk_in     DFN1     Q       count[2]      0.737       5.049
+count[3]     clk_out|clk_in     DFN1     Q       count[3]      0.737       5.563
+clk_out      clk_out|clk_in     DFN1     Q       clk_out_c     0.737       7.529
+================================================================================
+
+
+Ending Points with Worst Slack
+******************************
+
+             Starting                                            Required          
+Instance     Reference          Type     Pin     Net             Time         Slack
+             Clock                                                                 
+-----------------------------------------------------------------------------------
+clk_out      clk_out|clk_in     DFN1     D       clk_out_RNO     9.427        4.539
+count[1]     clk_out|clk_in     DFN1     D       count_3[1]      9.461        4.665
+count[3]     clk_out|clk_in     DFN1     D       count_3[3]      9.461        4.665
+count[2]     clk_out|clk_in     DFN1     D       I_7             9.461        5.686
+count[0]     clk_out|clk_in     DFN1     D       I_4             9.461        6.616
+===================================================================================
+
+
+
+Worst Path Information
+***********************
+
+
+Path information for path number 1: 
+      Requested Period:                      10.000
+    - Setup time:                            0.573
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         9.427
+
+    - Propagation time:                      4.887
+    - Clock delay at starting point:         0.000 (ideal)
+    = Slack (critical) :                     4.539
+
+    Number of logic level(s):                2
+    Starting point:                          count[0] / Q
+    Ending point:                            clk_out / D
+    The start point is clocked by            clk_out|clk_in [rising] on pin CLK
+    The end   point is clocked by            clk_out|clk_in [rising] on pin CLK
+
+Instance / Net                Pin      Pin               Arrival     No. of    
+Name                 Type     Name     Dir     Delay     Time        Fan Out(s)
+-------------------------------------------------------------------------------
+count[0]             DFN1     Q        Out     0.737     0.737       -         
+count[0]             Net      -        -       1.279     -           5         
+count_RNIM2F5[2]     NOR3     C        In      -         2.016       -         
+count_RNIM2F5[2]     NOR3     Y        Out     0.751     2.767       -         
+un1_countlt3         Net      -        -       0.806     -           3         
+clk_out_RNO          AX1      A        In      -         3.573       -         
+clk_out_RNO          AX1      Y        Out     0.992     4.566       -         
+clk_out_RNO          Net      -        -       0.322     -           1         
+clk_out              DFN1     D        In      -         4.887       -         
+===============================================================================
+Total path delay (propagation time + setup) of 5.461 is 3.053(55.9%) logic and 2.407(44.1%) route.
+Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
+
+
+
+##### END OF TIMING REPORT #####]
+
+Timing exceptions that could not be applied
+None
+
+Finished final timing analysis (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 107MB peak: 109MB)
+
+
+Finished timing report (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 107MB peak: 109MB)
+
+--------------------------------------------------------------------------------
+Target Part: A3P1000_FBGA144_STD
+Report for cell clk_out.verilog
+  Core Cell usage:
+              cell count     area count*area
+              AND3     1      1.0        1.0
+               AX1     1      1.0        1.0
+               GND     1      0.0        0.0
+               INV     1      1.0        1.0
+             NOR2B     1      1.0        1.0
+              NOR3     1      1.0        1.0
+              OA1A     2      1.0        2.0
+               VCC     1      0.0        0.0
+              XOR2     3      1.0        3.0
+
+
+              DFN1     5      1.0        5.0
+                   -----          ----------
+             TOTAL    17                15.0
+
+
+  IO Cell usage:
+              cell count
+            CLKBUF     1
+            OUTBUF     1
+                   -----
+             TOTAL     2
+
+
+Core Cells         : 15 of 24576 (0%)
+IO Cells           : 2
+
+  RAM/ROM Usage Summary
+Block Rams : 0 of 32 (0%)
+
+Mapper successful!
+
+At Mapper Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 23MB peak: 109MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+# Mon Dec 21 14:14:34 2020
+
+###########################################################]

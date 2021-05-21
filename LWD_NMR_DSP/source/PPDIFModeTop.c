@@ -97,7 +97,7 @@ void PPDIFModeTop(void)
 	//相关存储
 	SaveNTempPt	= (int *)PPDIF_TABLE_START;
 	*SaveNTempPt++ = 0x9995;       						// 数据头
-	*SaveNTempPt++ = 3*EchoNum + DataTotalNum + 20;		// 长度
+	*SaveNTempPt++ = 3*EchoNum + DataTotalNum + 22;		// 长度
 	*SaveNTempPt++ = 0x0003;       						// 工作模式
 	*SaveNTempPt++ = CenterFreq*10;   					// 工作频率
 
@@ -107,6 +107,10 @@ void PPDIFModeTop(void)
 	*SaveNTempPt++ = Width90Pulse;      // 90度脉冲宽度
 	SavePhaseWord();
 
+	SaveNTempPt = (int *)(PPM_TABLE_START + 3*EchoNum + DataTotalNum + 20);
+	*SaveNTempPt++ = getCenterFreq();					// 中心频率
+	*SaveNTempPt   = getCenterFreqAmp();				// 中心频率幅值
+
 	SaveNTempPt	= (int *)(PPDIF_TABLE_START+4);
 	SaveSTempPt	= (Uint16 *)(PPDIF_TABLE_START+7);
 	StoreMiniAryPt	= &PPDIFMiniNumAry;
@@ -114,14 +118,14 @@ void PPDIFModeTop(void)
 
 	Uint16 CheckSum = 0;
 	SaveNTempPt = (int *)(PPDIF_TABLE_START);
-	for (i=0;i<3*EchoNum+DataTotalNum+20;++i)
+	for (i=0;i<3*EchoNum+DataTotalNum+22;++i)
 	{
 		CheckSum += *SaveNTempPt;
 		SaveNTempPt++;
 	}
 	*SaveNTempPt = CheckSum;
 
-	modeDataSendLen = 3*EchoNum+DataTotalNum+21;
+	modeDataSendLen = 3*EchoNum+DataTotalNum+23;
 	
 	//SciaSendDataNWords(PPDIF_TABLE_START, 3*EchoNum+DataTotalNum+21);
 	ChangePhase();

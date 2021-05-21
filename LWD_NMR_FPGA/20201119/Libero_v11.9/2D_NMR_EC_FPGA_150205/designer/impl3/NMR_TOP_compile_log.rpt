@@ -1,0 +1,209 @@
+Microsemi Libero Software
+Version: 11.9.6.7
+Release: v11.9 SP6
+
+Info: The design NMR_TOP_1.adb was last modified by software version 11.9.6.7.
+Opened an existing Libero design NMR_TOP_1.adb.
+'BA_NAME' set to 'NMR_TOP_ba'
+'IDE_DESIGNERVIEW_NAME' set to 'Impl3'
+'IDE_DESIGNERVIEW_COUNT' set to '1'
+'IDE_DESIGNERVIEW_REV0' set to 'Impl3'
+'IDE_DESIGNERVIEW_REVNUM0' set to '3'
+'IDE_DESIGNERVIEW_ROOTDIR' set to
+'E:\LWD_NMR\Code\20201119\Libero_v11.9\2D_NMR_EC_FPGA_150205\designer'
+'IDE_DESIGNERVIEW_LASTREV' set to '3'
+The earlier timing information will be removed because of the new SDC file import.
+
+ Netlist Reading Time = 0.0 seconds
+Imported the files:
+   E:\LWD_NMR\Code\20201119\Libero_v11.9\2D_NMR_EC_FPGA_150205\synthesis\NMR_TOP.edn
+
+E:\LWD_NMR\Code\20201119\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\NMR_TOP\NMR_TOP.pdc
+   E:\LWD_NMR\Code\20201119\Libero_v11.9\2D_NMR_EC_FPGA_150205\synthesis\NMR_TOP_sdc.sdc
+   E:\LWD_NMR\Code\20201119\Libero_v11.9\2D_NMR_EC_FPGA_150205\constraint\NMR_TOP_PIN_LOCKED.pdc
+
+The Import command succeeded ( 00:00:09 )
+=====================================================================
+Parameters used to run compile:
+===============================
+
+Family      : ProASIC3
+Device      : A3P1000
+Package     : 208 PQFP
+Source      : E:\LWD_NMR\Code\20201119\Libero_v11.9\2D_NMR_EC_FPGA_150205\synthesis\NMR_TOP.edn
+
+E:\LWD_NMR\Code\20201119\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\NMR_TOP\NMR_TOP.pdc
+
+E:\LWD_NMR\Code\20201119\Libero_v11.9\2D_NMR_EC_FPGA_150205\synthesis\NMR_TOP_sdc.sdc
+
+E:\LWD_NMR\Code\20201119\Libero_v11.9\2D_NMR_EC_FPGA_150205\constraint\NMR_TOP_PIN_LOCKED.pdc
+Format      : EDIF
+Topcell     : NMR_TOP
+Speed grade : -2
+Temp        : 0:25:70
+Voltage     : 1.58:1.50:1.42
+
+Keep Existing Physical Constraints : Yes
+Keep Existing Timing Constraints   : No
+
+pdc_abort_on_error                 : Yes
+pdc_eco_display_unmatched_objects  : No
+pdc_eco_max_warnings               : 10000
+
+demote_globals                     : No
+promote_globals                    : No
+localclock_max_shared_instances    : 12
+localclock_buffer_tree_max_fanout  : 12
+
+combine_register                   : Yes
+delete_buffer_tree                 : No
+
+report_high_fanout_nets_limit      : 10
+
+=====================================================================
+Compile starts ...
+
+Warning: CMP201: Net ClockManagement_0/pllclk_0/Core_GLC drives no load.
+Warning: CMP201: Net ClockManagement_0/pllclk_0/LOCK drives no load.
+Warning: CMP201: Net ClockManagement_0/pllclk_0/Core_YB drives no load.
+Warning: CMP201: Net ClockManagement_0/pllclk_0/Core_YC drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R7C0_RD12 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R7C0_RD13 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R7C0_RD14 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R7C0_RD15 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R7C0_RD16 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R7C0_RD17 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R10C0_RD12 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R10C0_RD13 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R10C0_RD14 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R10C0_RD15 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R10C0_RD16 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R10C0_RD17 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R3C0_RD12 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R3C0_RD13 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R3C0_RD14 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R3C0_RD15 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R3C0_RD16 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R3C0_RD17 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R6C0_RD12 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R6C0_RD13 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R6C0_RD14 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R6C0_RD15 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R6C0_RD16 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R6C0_RD17 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R1C0_RD12 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R1C0_RD13 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R1C0_RD14 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R1C0_RD15 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R1C0_RD16 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R1C0_RD17 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R15C0_RD12 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R15C0_RD13 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R15C0_RD14 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R15C0_RD15 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R15C0_RD16 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R15C0_RD17 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R11C0_RD12 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R11C0_RD13 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R11C0_RD14 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R11C0_RD15 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R11C0_RD16 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R11C0_RD17 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R13C0_RD12 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R13C0_RD13 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R13C0_RD14 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R13C0_RD15 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R13C0_RD16 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R13C0_RD17 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R8C0_RD12 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R8C0_RD13 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R8C0_RD14 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R8C0_RD15 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R8C0_RD16 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R8C0_RD17 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R14C0_RD12 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R14C0_RD13 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R14C0_RD14 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R14C0_RD15 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R14C0_RD16 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R14C0_RD17 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R2C0_RD12 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R2C0_RD13 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R2C0_RD14 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R2C0_RD15 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R2C0_RD16 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R2C0_RD17 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R9C0_RD12 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R9C0_RD13 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R9C0_RD14 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R9C0_RD15 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R9C0_RD16 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R9C0_RD17 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R4C0_RD12 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R4C0_RD13 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R4C0_RD14 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R4C0_RD15 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R4C0_RD16 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R4C0_RD17 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R12C0_RD12 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R12C0_RD13 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R12C0_RD14 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R12C0_RD15 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R12C0_RD16 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R12C0_RD17 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R0C0_RD12 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R0C0_RD13 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R0C0_RD14 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R0C0_RD15 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R0C0_RD16 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R0C0_RD17 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R5C0_RD12 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R5C0_RD13 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R5C0_RD14 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R5C0_RD15 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R5C0_RD16 drives no load.
+Warning: CMP201: Net Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R5C0_RD17 drives no load.
+
+Netlist Optimization Report
+===========================
+
+Optimized macros:
+  - Dangling net drivers:   0
+  - Buffers:                0
+  - Inverters:              0
+  - Tieoff:                 0
+  - Logic combining:        117
+
+    Total macros optimized  117
+
+Warning: CMP503: Remapped 26 enable flip-flop(s) to a 2-tile implementation because the CLR/PRE
+         pin on the enable flip-flop is not being driven by a global net.
+
+There were 0 error(s) and 101 warning(s) in this design.
+=====================================================================
+
+Reading previous post-compile physical placement constraints.
+
+
+There were 0 error(s) and 0 warning(s).
+
+=====================================================================
+
+Reading user pdc (Physical Design Constraints) file(s) postcompile
+
+Error: PDC-86: This port is already placed and locked in another position. Ignore this
+       placement. at PDC Line : set_io relayclose_on[11] -iostd LVCMOS33 -REGISTER No -OUT_DRIVE
+       12 -SLEW High -RES_PULL None -SKEW Off -OUT_LOAD 35 -pinname 149 -fixed yes
+
+There were 1 error(s) and 0 warning(s) in reading the user pdc.
+
+Info: There were errors found due to conflicting constraints in the user PDC and previous
+      post-compile physical constraints.
+
+The Compile command failed ( 00:00:01 )
+Error: Failure when executing Tcl script. [ Line 24 ]
+
+The Execute Script command failed ( 00:00:13 )
+Warning: The database was closed without a save, modifications are lost
+Design closed.
+

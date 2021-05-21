@@ -1,0 +1,108 @@
+*****************************************************************
+Pin Report - Date: Thu Apr 15 11:22:11 2021 Pinchecksum: NOT-AVAILABLE
+Product: Designer
+Release: v11.9 SP6
+Version: 11.9.6.7
+Design Name: NMR_TOP
+Family: ProASIC3
+Die: A3P1000
+Package: 208 PQFP
+*****************************************************************
+Port              |Pin |Fixed |Function       |I/O Std  |Output Drive (mA) |Slew |Resistor Pull |Skew |Output Load (pF) |Use I/O Reg |Hot Swappable |
+------------------|----|------|---------------|---------|------------------|-----|--------------|-----|-----------------|------------|--------------|
+Acq_clk            132  Yes    GCA1/IO93PDB1   LVCMOS33  12                 High  None           No    35                No           No
+ADC[0]             127  Yes    IO96NDB1        LVCMOS33  ---                ---   None           ---   ---               No           No
+ADC[1]             125  Yes    IO99PDB1        LVCMOS33  ---                ---   None           ---   ---               No           No
+ADC[2]             124  Yes    IO99NDB1        LVCMOS33  ---                ---   None           ---   ---               No           No
+ADC[3]             121  Yes    IO104PSB1       LVCMOS33  ---                ---   None           ---   ---               No           No
+ADC[4]             120  Yes    IO106PDB1       LVCMOS33  ---                ---   None           ---   ---               No           No
+ADC[5]             119  Yes    IO106NDB1       LVCMOS33  ---                ---   None           ---   ---               No           No
+ADC[6]             117  Yes    IO109NDB1       LVCMOS33  ---                ---   None           ---   ---               No           No
+ADC[7]             116  Yes    GDC1/IO111PDB1  LVCMOS33  ---                ---   None           ---   ---               No           No
+ADC[8]             115  Yes    GDC0/IO111NDB1  LVCMOS33  ---                ---   None           ---   ---               No           No
+ADC[9]             113  Yes    GDB0/IO112NDB1  LVCMOS33  ---                ---   None           ---   ---               No           No
+ADC[10]            112  Yes    GDA1/IO113PDB1  LVCMOS33  ---                ---   None           ---   ---               No           No
+ADC[11]            111  Yes    GDA0/IO113NDB1  LVCMOS33  ---                ---   None           ---   ---               No           No
+cal_out            134  Yes    GCB0/IO92NDB1   LVCMOS33  12                 High  None           No    35                No           No
+calcuinter         185  Yes    IO25RSB0        LVCMOS33  12                 High  None           No    35                No           No
+ddsclkout          54   Yes    GEA2/IO187RSB2  LVCMOS33  ---                ---   None           ---   ---               No           No
+ddsdata            63   Yes    IO178RSB2       LVCMOS33  12                 High  None           No    35                Yes          No
+ddsfqud            58   Yes    IO183RSB2       LVCMOS33  12                 High  None           No    35                Yes          No
+ddsreset           61   Yes    IO180RSB2       LVCMOS33  12                 High  None           No    35                Yes          No
+ddswclk            59   Yes    IO182RSB2       LVCMOS33  12                 High  None           No    35                Yes          No
+dumpoff            160  Yes    GBB1/IO75RSB0   LVCMOS33  12                 High  None           No    35                No           No
+dumpon             165  Yes    IO70RSB0        LVCMOS33  12                 High  None           No    35                No           No
+GLA                56   Yes    GEC2/IO185RSB2  LVCMOS33  12                 High  None           No    35                No           No
+gpio               37   Yes    IO199PDB3       LVCMOS33  ---                ---   None           ---   ---               No           No
+interupt           189  Yes    IO20RSB0        LVCMOS33  12                 High  None           No    35                No           No
+k1                 174  Yes    IO48RSB0        LVCMOS33  12                 High  None           No    35                No           No
+k2                 179  Yes    IO38RSB0        LVCMOS33  12                 High  None           No    35                No           No
+OCX40MHz           26   Yes    GFA0/IO207NPB3  LVCMOS33  ---                ---   None           ---   ---               No           No
+pd_pulse_en        79   Yes    IO150RSB2       LVCMOS33  12                 High  None           No    35                No           No
+pulse_start        82   Yes    IO143RSB2       LVCMOS33  12                 High  None           No    35                No           No
+Q1Q8               181  Yes    IO33RSB0        LVCMOS33  12                 High  None           No    35                Yes          No
+Q2Q7               172  Yes    IO54RSB0        LVCMOS33  12                 High  None           No    35                Yes          No
+Q3Q6               169  Yes    IO57RSB0        LVCMOS33  12                 High  None           No    35                No           No
+Q4Q5               176  Yes    IO42RSB0        LVCMOS33  12                 High  None           No    35                No           No
+relayclose_on[0]   135  Yes    GCB1/IO92PDB1   LVCMOS33  12                 High  None           No    35                No           No
+relayclose_on[1]   136  Yes    GCC0/IO91NDB1   LVCMOS33  12                 High  None           No    35                No           No
+relayclose_on[2]   137  Yes    GCC1/IO91PDB1   LVCMOS33  12                 High  None           No    35                No           No
+relayclose_on[3]   138  Yes    IO88NDB1        LVCMOS33  12                 High  None           No    35                No           No
+relayclose_on[4]   139  Yes    IO88PDB1        LVCMOS33  12                 High  None           No    35                No           No
+relayclose_on[5]   143  Yes    IO86PSB1        LVCMOS33  12                 High  None           No    35                No           No
+relayclose_on[6]   144  Yes    IO84NDB1        LVCMOS33  12                 High  None           No    35                No           No
+relayclose_on[7]   145  Yes    IO84PDB1        LVCMOS33  12                 High  None           No    35                No           No
+relayclose_on[8]   148  Yes    IO80NDB1        LVCMOS33  12                 High  None           No    35                No           No
+relayclose_on[9]   150  Yes    IO79NDB1        LVCMOS33  12                 High  None           No    35                No           No
+relayclose_on[10]  151  Yes    GBB2/IO79PDB1   LVCMOS33  12                 High  None           No    35                No           No
+relayclose_on[11]  152  Yes    IO78NDB1        LVCMOS33  12                 High  None           No    35                No           No
+relayclose_on[12]  153  Yes    GBA2/IO78PDB1   LVCMOS33  12                 High  None           No    35                No           No
+relayclose_on[13]  114  Yes    GDB1/IO112PDB1  LVCMOS33  12                 High  None           No    35                No           No
+relayclose_on[14]  118  Yes    IO109PDB1       LVCMOS33  12                 High  None           No    35                No           No
+relayclose_on[15]  128  Yes    GCC2/IO96PDB1   LVCMOS33  12                 High  None           No    35                No           No
+rt_sw              167  Yes    IO63RSB0        LVCMOS33  12                 High  None           No    35                Yes          No
+s_acq180           84   Yes    IO139RSB2       LVCMOS33  12                 High  None           No    35                No           No
+sd_acq_en          86   Yes    IO135RSB2       LVCMOS33  12                 High  None           No    35                No           No
+sigtimeup          15   Yes    IO216NDB3       LVCMOS33  12                 High  None           No    35                No           No
+soft_dump          163  Yes    GBC1/IO73RSB0   LVCMOS33  12                 High  None           No    35                Yes          No
+sw_acq1            96   Yes    GDC2/IO116RSB2  LVCMOS33  12                 High  None           No    35                No           No
+sw_acq2            99   Yes    GDA2/IO114RSB2  LVCMOS33  12                 High  None           No    35                No           No
+tri_ctrl           77   Yes    IO154RSB2       LVCMOS33  ---                ---   None           ---   ---               No           No
+xa[0]              8    Yes    IO222PDB3       LVCMOS33  ---                ---   None           ---   ---               No           No
+xa[1]              44   Yes    GEC1/IO190PDB3  LVCMOS33  ---                ---   None           ---   ---               No           No
+xa[2]              73   Yes    IO162RSB2       LVCMOS33  ---                ---   None           ---   ---               No           No
+xa[3]              74   Yes    IO160RSB2       LVCMOS33  ---                ---   None           ---   ---               No           No
+xa[4]              23   Yes    GFB1/IO208PDB3  LVCMOS33  ---                ---   None           ---   ---               No           No
+xa[5]              13   Yes    IO218NDB3       LVCMOS33  ---                ---   None           ---   ---               No           No
+xa[6]              11   Yes    IO220NDB3       LVCMOS33  ---                ---   None           ---   ---               No           No
+xa[7]              7    Yes    IO223NDB3       LVCMOS33  ---                ---   None           ---   ---               No           No
+xa[8]              6    Yes    GAC2/IO223PDB3  LVCMOS33  ---                ---   None           ---   ---               No           No
+xa[9]              4    Yes    GAB2/IO224PDB3  LVCMOS33  ---                ---   None           ---   ---               No           No
+xa[10]             3    Yes    IO225NDB3       LVCMOS33  ---                ---   None           ---   ---               No           No
+xa[11]             2    Yes    GAA2/IO225PDB3  LVCMOS33  ---                ---   None           ---   ---               No           No
+xa[12]             194  Yes    IO13RSB0        LVCMOS33  ---                ---   None           ---   ---               No           No
+xa[13]             198  Yes    IO10RSB0        LVCMOS33  ---                ---   None           ---   ---               No           No
+xa[14]             199  Yes    IO09RSB0        LVCMOS33  ---                ---   None           ---   ---               No           No
+xa[15]             205  Yes    GAA1/IO01RSB0   LVCMOS33  ---                ---   None           ---   ---               No           No
+xa[16]             203  Yes    GAB1/IO03RSB0   LVCMOS33  ---                ---   None           ---   ---               No           No
+xa[17]             202  Yes    GAC0/IO04RSB0   LVCMOS33  ---                ---   None           ---   ---               No           No
+xa[18]             201  Yes    GAC1/IO05RSB0   LVCMOS33  ---                ---   None           ---   ---               No           No
+xd[0]              9    Yes    IO222NDB3       LVCMOS33  12                 High  None           No    35                No           No
+xd[1]              12   Yes    IO218PDB3       LVCMOS33  12                 High  None           No    35                No           No
+xd[2]              22   Yes    GFC0/IO209NDB3  LVCMOS33  12                 High  None           No    35                No           No
+xd[3]              24   Yes    GFB0/IO208NDB3  LVCMOS33  12                 High  None           No    35                No           No
+xd[4]              28   Yes    GFA1/IO207PPB3  LVCMOS33  12                 High  None           No    35                No           No
+xd[5]              33   Yes    IO205NDB3       LVCMOS33  12                 High  None           No    35                No           No
+xd[6]              35   Yes    IO204NDB3       LVCMOS33  12                 High  None           No    35                No           No
+xd[7]              66   Yes    IO174RSB2       LVCMOS33  12                 High  None           No    35                No           No
+xd[8]              67   Yes    IO172RSB2       LVCMOS33  12                 High  None           No    35                No           No
+xd[9]              68   Yes    IO170RSB2       LVCMOS33  12                 High  None           No    35                No           No
+xd[10]             70   Yes    IO166RSB2       LVCMOS33  12                 High  None           No    35                No           No
+xd[11]             76   Yes    IO156RSB2       LVCMOS33  12                 High  None           No    35                No           No
+xd[12]             34   Yes    GFC2/IO204PDB3  LVCMOS33  12                 High  None           No    35                No           No
+xd[13]             31   Yes    IO206NDB3       LVCMOS33  12                 High  None           No    35                No           No
+xd[14]             197  Yes    IO11RSB0        LVCMOS33  12                 High  None           No    35                No           No
+xd[15]             206  Yes    GAA0/IO00RSB0   LVCMOS33  12                 High  None           No    35                No           No
+XRD                48   Yes    GEA1/IO188PDB3  LVCMOS33  ---                ---   None           ---   ---               No           No
+xwe                47   Yes    GEB0/IO189NDB3  LVCMOS33  ---                ---   None           ---   ---               No           No
+zcs2               46   Yes    GEB1/IO189PDB3  LVCMOS33  ---                ---   None           ---   ---               No           No

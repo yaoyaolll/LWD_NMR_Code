@@ -1,0 +1,53 @@
+m255
+K3
+13
+cModel Technology
+dE:\Documents\2D_FPGA_DSP_prjs\2D_NMR_EC_FPGA\1011\2D_NMR_EC_FPGA_1010\simulation
+vNMR_TOP
+I;5IgP3SV29necX82FQ]1<3
+VYZIMF<=BA;@WBLIDTeCW:2
+Z0 dF:\Project\tmp\2DNMRECBP\Final_One\2D_NMR_EC_FPGA_1013\simulation
+Z1 w1413189465
+Z2 8F:/Project/tmp/2DNMRECBP/Final_One/2D_NMR_EC_FPGA_1013/designer/impl3/NMR_TOP_ba.v
+Z3 FF:/Project/tmp/2DNMRECBP/Final_One/2D_NMR_EC_FPGA_1013/designer/impl3/NMR_TOP_ba.v
+L0 217
+Z4 OW;L;6.6d;45
+r1
+31
+Z5 o-work postlayout -O0
+n@n@m@r_@t@o@p
+!s100 U?e?8kS8ES1g@bznX6flR1
+!s85 0
+!s101 -O0
+vPLLBA
+IAGX;dLcP?[ggokEBY73=:0
+VVd>UmaK:G3zf;9AM=`PGo1
+Z6 dF:\Project\tmp\2DNMRECBP\Final_One\2D_NMR_EC_FPGA_1013\simulation
+R1
+R2
+R3
+L0 6
+R4
+r1
+31
+R5
+n@p@l@l@b@a
+!s100 =]:no2LKH=Id03;hI44:O1
+!s85 0
+!s101 -O0
+vtestbench
+!s100 LJ>3dP8aWFd6Q[PC_ik493
+InNR<N39Xm;OkkNEDjUA]_0
+VhGfW:390DM[oDMzegDH9`2
+R6
+w1412584755
+8F:/Project/tmp/2DNMRECBP/Final_One/2D_NMR_EC_FPGA_1013/stimulus/TestBench_SignalAcq.v
+FF:/Project/tmp/2DNMRECBP/Final_One/2D_NMR_EC_FPGA_1013/stimulus/TestBench_SignalAcq.v
+L0 5
+R4
+r1
+!s85 0
+31
+!s101 -O0
+R5
+!s92 +incdir+F:/Project/tmp/2DNMRECBP/Final_One/2D_NMR_EC_FPGA_1013/stimulus -work postlayout -O0

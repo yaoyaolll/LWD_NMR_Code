@@ -1,0 +1,1832 @@
+# Reading D:/Actel/Libero_v9.1/Model/tcl/vsim/pref.tcl 
+# do run.do 
+# INFO: Simulation library presynth already exists 
+# Modifying modelsim.ini
+# Modifying modelsim.ini
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module n_pluse_acq
+# 
+# Top level modules:
+# 	n_pluse_acq
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module plusestate
+# 
+# Top level modules:
+# 	plusestate
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module dds_change
+# 
+# Top level modules:
+# 	dds_change
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module qq_state
+# 
+# Top level modules:
+# 	qq_state
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module qq_coder
+# 
+# Top level modules:
+# 	qq_coder
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module bri_timer
+# 
+# Top level modules:
+# 	bri_timer
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module bri_coder
+# 
+# Top level modules:
+# 	bri_coder
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module qq_timer
+# 
+# Top level modules:
+# 	qq_timer
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module bri_state
+# 
+# Top level modules:
+# 	bri_state
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module bri_qq_load
+# 
+# Top level modules:
+# 	bri_qq_load
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module PLUSE
+# 
+# Top level modules:
+# 	PLUSE
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module dds_timer
+# 
+# Top level modules:
+# 	dds_timer
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module dds_state
+# 
+# Top level modules:
+# 	dds_state
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module dds_coder
+# 
+# Top level modules:
+# 	dds_coder
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module DDS
+# 
+# Top level modules:
+# 	DDS
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module top_code
+# 
+# Top level modules:
+# 	top_code
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module nsctrl_choice
+# 
+# Top level modules:
+# 	nsctrl_choice
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module state1ms_choice
+# 
+# Top level modules:
+# 	state1ms_choice
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module off_on_state
+# 
+# Top level modules:
+# 	off_on_state
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module off_on_coder
+# 
+# Top level modules:
+# 	off_on_coder
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module off_on_timer
+# 
+# Top level modules:
+# 	off_on_timer
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module DUMP_OFF
+# 
+# Top level modules:
+# 	DUMP_OFF
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module sd_sacq_coder
+# 
+# Top level modules:
+# 	sd_sacq_coder
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module sd_sacq_state
+# 
+# Top level modules:
+# 	sd_sacq_state
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module sd_sacq_inc
+# 
+# Top level modules:
+# 	sd_sacq_inc
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module sd_sacq_timer
+# 
+# Top level modules:
+# 	sd_sacq_timer
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module sd_acq_top
+# 
+# Top level modules:
+# 	sd_acq_top
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module Timer_Cmp
+# 
+# Top level modules:
+# 	Timer_Cmp
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module timer
+# 
+# Top level modules:
+# 	timer
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module state_switch
+# 
+# Top level modules:
+# 	state_switch
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module timer_top
+# 
+# Top level modules:
+# 	timer_top
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module cmp_constant_4b
+# 
+# Top level modules:
+# 	cmp_constant_4b
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module dump_sustain_timer
+# 
+# Top level modules:
+# 	dump_sustain_timer
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module DSTimer
+# 
+# Top level modules:
+# 	DSTimer
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module bri_dump_sw
+# 
+# Top level modules:
+# 	bri_dump_sw
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module scan_scale_sw
+# 
+# Top level modules:
+# 	scan_scale_sw
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module s_acq_change
+# 
+# Top level modules:
+# 	s_acq_change
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module scanstate
+# 
+# Top level modules:
+# 	scanstate
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module state_1ms
+# 
+# Top level modules:
+# 	state_1ms
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module noisestate
+# 
+# Top level modules:
+# 	noisestate
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module bridge_div
+# 
+# Top level modules:
+# 	bridge_div
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module pd_pluse_coder
+# 
+# Top level modules:
+# 	pd_pluse_coder
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module pd_pluse_state
+# 
+# Top level modules:
+# 	pd_pluse_state
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module pd_pluse_inc
+# 
+# Top level modules:
+# 	pd_pluse_inc
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module pd_pluse_timer
+# 
+# Top level modules:
+# 	pd_pluse_timer
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module pd_pluse_top
+# 
+# Top level modules:
+# 	pd_pluse_top
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module DUMP_ON
+# 
+# Top level modules:
+# 	DUMP_ON
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module cal_load
+# 
+# Top level modules:
+# 	cal_load
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module cal_div
+# 
+# Top level modules:
+# 	cal_div
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module CAL
+# 
+# Top level modules:
+# 	CAL
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module topctrlchange
+# 
+# Top level modules:
+# 	topctrlchange
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module dump_state
+# 
+# Top level modules:
+# 	dump_state
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module dump_coder
+# 
+# Top level modules:
+# 	dump_coder
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module dump_timer
+# 
+# Top level modules:
+# 	dump_timer
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module DUMP
+# 
+# Top level modules:
+# 	DUMP
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module long_timer
+# 
+# Top level modules:
+# 	long_timer
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module clk_div500
+# 
+# Top level modules:
+# 	clk_div500
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module pllclk
+# 
+# Top level modules:
+# 	pllclk
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module clk_10k
+# 
+# Top level modules:
+# 	clk_10k
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module ClockManagement
+# 
+# Top level modules:
+# 	ClockManagement
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module add_reg
+# 
+# Top level modules:
+# 	add_reg
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module s_clk_div4
+# 
+# Top level modules:
+# 	s_clk_div4
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module signalclkctrl
+# 
+# Top level modules:
+# 	signalclkctrl
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module rdata_choice
+# 
+# Top level modules:
+# 	rdata_choice
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module ctrl_addr
+# 
+# Top level modules:
+# 	ctrl_addr
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module ten_choice_one
+# 
+# Top level modules:
+# 	ten_choice_one
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module signal_acq
+# 
+# Top level modules:
+# 	signal_acq
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module n_rdclk_syn
+# 
+# Top level modules:
+# 	n_rdclk_syn
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module noise_addr
+# 
+# Top level modules:
+# 	noise_addr
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module noiseclk
+# 
+# Top level modules:
+# 	noiseclk
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module noiseclkctrl
+# 
+# Top level modules:
+# 	noiseclkctrl
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module RAM
+# 
+# Top level modules:
+# 	RAM
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module link
+# 
+# Top level modules:
+# 	link
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module noise_acq
+# 
+# Top level modules:
+# 	noise_acq
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module n_s_change
+# 
+# Top level modules:
+# 	n_s_change
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module Signal_Noise_Acq
+# 
+# Top level modules:
+# 	Signal_Noise_Acq
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module necount_inc
+# 
+# Top level modules:
+# 	necount_inc
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module necount_cmp
+# 
+# Top level modules:
+# 	necount_cmp
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module scalestate
+# 
+# Top level modules:
+# 	scalestate
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module xwe_xzcs2_syn
+# 
+# Top level modules:
+# 	xwe_xzcs2_syn
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module tri_state
+# 
+# Top level modules:
+# 	tri_state
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module rst_n_module
+# 
+# Top level modules:
+# 	rst_n_module
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module GPMI
+# 
+# Top level modules:
+# 	GPMI
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module NMR_TOP
+# 
+# Top level modules:
+# 	NMR_TOP
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module testbench
+# 
+# Top level modules:
+# 	testbench
+# vsim -L proasic3 -L presynth -t 1ps presynth.testbench 
+# //  ModelSim ACTEL 6.6d Nov  2 2010 
+# //
+# //  Copyright 1991-2010 Mentor Graphics Corporation
+# //              All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND 
+# //  PROPRIETARY INFORMATION WHICH IS THE PROPERTY
+# //  OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS
+# //  AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading presynth.testbench
+# Loading presynth.NMR_TOP
+# Loading presynth.n_pluse_acq
+# Loading presynth.plusestate
+# Loading presynth.dds_change
+# Loading presynth.PLUSE
+# Loading presynth.qq_state
+# Loading presynth.qq_coder
+# Loading proasic3.GND
+# Loading presynth.bri_timer
+# Loading presynth.bri_coder
+# Loading proasic3.VCC
+# Loading presynth.qq_timer
+# Loading presynth.bri_state
+# Loading presynth.bri_qq_load
+# Loading presynth.DDS
+# Loading presynth.dds_timer
+# Loading presynth.dds_state
+# Loading presynth.dds_coder
+# Loading proasic3.AND2
+# Loading presynth.top_code
+# Loading presynth.nsctrl_choice
+# Loading proasic3.OR2
+# Loading presynth.state1ms_choice
+# Loading presynth.DUMP_OFF
+# Loading presynth.off_on_state
+# Loading presynth.off_on_coder
+# Loading presynth.off_on_timer
+# Loading presynth.sd_acq_top
+# Loading presynth.sd_sacq_coder
+# Loading presynth.sd_sacq_state
+# Loading presynth.sd_sacq_timer
+# Loading presynth.sd_sacq_inc
+# Loading proasic3.XOR2
+# Loading proasic3.AND3
+# Loading proasic3.INV
+# Loading presynth.timer_top
+# Loading presynth.timer
+# Loading presynth.Timer_Cmp
+# Loading proasic3.OR2A
+# Loading proasic3.XNOR2
+# Loading proasic3.NAND3A
+# Loading proasic3.NOR3A
+# Loading proasic3.AO1C
+# Loading proasic3.AO1
+# Loading proasic3.AO1D
+# Loading proasic3.NOR2A
+# Loading presynth.state_switch
+# Loading presynth.DSTimer
+# Loading presynth.dump_sustain_timer
+# Loading presynth.cmp_constant_4b
+# Loading proasic3.AND3B
+# Loading proasic3.NAND2
+# Loading proasic3.DFN0
+# Loading proasic3.DFI0
+# Loading presynth.bri_dump_sw
+# Loading presynth.scan_scale_sw
+# Loading presynth.s_acq_change
+# Loading presynth.scanstate
+# Loading presynth.state_1ms
+# Loading presynth.noisestate
+# Loading presynth.bridge_div
+# Loading presynth.pd_pluse_top
+# Loading presynth.pd_pluse_coder
+# Loading presynth.pd_pluse_state
+# Loading presynth.pd_pluse_timer
+# Loading presynth.pd_pluse_inc
+# Loading proasic3.OR3
+# Loading presynth.DUMP_ON
+# Loading presynth.CAL
+# Loading presynth.cal_load
+# Loading presynth.cal_div
+# Loading presynth.topctrlchange
+# Loading presynth.DUMP
+# Loading presynth.dump_state
+# Loading presynth.dump_coder
+# Loading presynth.dump_timer
+# Loading presynth.ClockManagement
+# Loading presynth.long_timer
+# Loading presynth.clk_div500
+# Loading presynth.pllclk
+# Loading proasic3.PLL
+# Loading proasic3.PLLPRIM
+# Loading presynth.clk_10k
+# Loading presynth.Signal_Noise_Acq
+# Loading presynth.signal_acq
+# Loading presynth.add_reg
+# Loading presynth.s_clk_div4
+# Loading presynth.signalclkctrl
+# Loading presynth.rdata_choice
+# Loading presynth.ctrl_addr
+# Loading presynth.ten_choice_one
+# Loading presynth.noise_acq
+# Loading presynth.n_rdclk_syn
+# Loading presynth.noise_addr
+# Loading presynth.noiseclk
+# Loading presynth.noiseclkctrl
+# Loading presynth.RAM
+# Loading proasic3.MX2
+# Loading proasic3.NOR2
+# Loading proasic3.RAM512X18
+# Loading proasic3.BUFF
+# Loading proasic3.AND2A
+# Loading proasic3.DFN1
+# Loading presynth.link
+# Loading presynth.n_s_change
+# Loading presynth.scalestate
+# Loading presynth.necount_inc
+# Loading presynth.necount_cmp
+# Loading proasic3.NOR3
+# Loading proasic3.AOI1
+# Loading proasic3.OA1C
+# Loading proasic3.OA1A
+# Loading presynth.GPMI
+# Loading presynth.xwe_xzcs2_syn
+# Loading presynth.tri_state
+# Loading presynth.rst_n_module
+# Loading proasic3.UDP_MUX2
+# Loading proasic3.UDPN_MUX2
+# Loading proasic3.Dffpf
+# Loading proasic3.Dffpr
+# ** Warning: (vsim-3015) C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/scalestate.v(701): [PCDPC] - Port size (12 or 12) does not match connection size (11) for port 'DataA'. The port definition is at: C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/smartgen/necount_inc/necount_inc.v(5).
+#         Region: /testbench/NMR_TOP_0/scalestate_0/necount_inc_0
+# ** Warning: (vsim-3015) C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/scalestate.v(701): [PCDPC] - Port size (12 or 12) does not match connection size (11) for port 'Sum'. The port definition is at: C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/smartgen/necount_inc/necount_inc.v(5).
+#         Region: /testbench/NMR_TOP_0/scalestate_0/necount_inc_0
+# ** Warning: (vsim-7) Failed to open readmem file "RAM_R5C0.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : d:/Actel/Libero_v9.1/Model/win32acoem/../../Designer/lib/modelsim/precompiled/vlog/src/proasic3.v(35522)
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/NMR_TOP_0/Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R5C0
+# ** Warning: (vsim-7) Failed to open readmem file "RAM_R12C0.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : d:/Actel/Libero_v9.1/Model/win32acoem/../../Designer/lib/modelsim/precompiled/vlog/src/proasic3.v(35522)
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/NMR_TOP_0/Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R12C0
+# ** Warning: (vsim-7) Failed to open readmem file "RAM_R4C0.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : d:/Actel/Libero_v9.1/Model/win32acoem/../../Designer/lib/modelsim/precompiled/vlog/src/proasic3.v(35522)
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/NMR_TOP_0/Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R4C0
+# ** Warning: (vsim-7) Failed to open readmem file "RAM_R9C0.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : d:/Actel/Libero_v9.1/Model/win32acoem/../../Designer/lib/modelsim/precompiled/vlog/src/proasic3.v(35522)
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/NMR_TOP_0/Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R9C0
+# ** Warning: (vsim-7) Failed to open readmem file "RAM_R2C0.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : d:/Actel/Libero_v9.1/Model/win32acoem/../../Designer/lib/modelsim/precompiled/vlog/src/proasic3.v(35522)
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/NMR_TOP_0/Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R2C0
+# ** Warning: (vsim-7) Failed to open readmem file "RAM_R14C0.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : d:/Actel/Libero_v9.1/Model/win32acoem/../../Designer/lib/modelsim/precompiled/vlog/src/proasic3.v(35522)
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/NMR_TOP_0/Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R14C0
+# ** Warning: (vsim-7) Failed to open readmem file "RAM_R8C0.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : d:/Actel/Libero_v9.1/Model/win32acoem/../../Designer/lib/modelsim/precompiled/vlog/src/proasic3.v(35522)
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/NMR_TOP_0/Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R8C0
+# ** Warning: (vsim-7) Failed to open readmem file "RAM_R13C0.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : d:/Actel/Libero_v9.1/Model/win32acoem/../../Designer/lib/modelsim/precompiled/vlog/src/proasic3.v(35522)
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/NMR_TOP_0/Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R13C0
+# ** Warning: (vsim-7) Failed to open readmem file "RAM_R11C0.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : d:/Actel/Libero_v9.1/Model/win32acoem/../../Designer/lib/modelsim/precompiled/vlog/src/proasic3.v(35522)
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/NMR_TOP_0/Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R11C0
+# ** Warning: (vsim-7) Failed to open readmem file "RAM_R15C0.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : d:/Actel/Libero_v9.1/Model/win32acoem/../../Designer/lib/modelsim/precompiled/vlog/src/proasic3.v(35522)
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/NMR_TOP_0/Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R15C0
+# ** Warning: (vsim-7) Failed to open readmem file "RAM_R1C0.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : d:/Actel/Libero_v9.1/Model/win32acoem/../../Designer/lib/modelsim/precompiled/vlog/src/proasic3.v(35522)
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/NMR_TOP_0/Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R1C0
+# ** Warning: (vsim-7) Failed to open readmem file "RAM_R6C0.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : d:/Actel/Libero_v9.1/Model/win32acoem/../../Designer/lib/modelsim/precompiled/vlog/src/proasic3.v(35522)
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/NMR_TOP_0/Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R6C0
+# ** Warning: (vsim-7) Failed to open readmem file "RAM_R3C0.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : d:/Actel/Libero_v9.1/Model/win32acoem/../../Designer/lib/modelsim/precompiled/vlog/src/proasic3.v(35522)
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/NMR_TOP_0/Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R3C0
+# ** Warning: (vsim-7) Failed to open readmem file "RAM_R10C0.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : d:/Actel/Libero_v9.1/Model/win32acoem/../../Designer/lib/modelsim/precompiled/vlog/src/proasic3.v(35522)
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/NMR_TOP_0/Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R10C0
+# ** Warning: (vsim-7) Failed to open readmem file "RAM_R7C0.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : d:/Actel/Libero_v9.1/Model/win32acoem/../../Designer/lib/modelsim/precompiled/vlog/src/proasic3.v(35522)
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/NMR_TOP_0/Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R7C0
+#  ** Warning: FBSEL is unknown.
+#  Time: 0.0 Instance: testbench.NMR_TOP_0.ClockManagement_0.pllclk_0.Core.P1 
+add wave \
+{sim:/testbench/NMR_TOP_0/OR3_0/B } 
+run
+add wave \
+{sim:/testbench/NMR_TOP_0/OR3_0/C } 
+add wave \
+{sim:/testbench/NMR_TOP_0/OR3_0/A } 
+do C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/simulation/run.do
+# INFO: Simulation library presynth already exists 
+# Modifying modelsim.ini
+# Modifying modelsim.ini
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module n_pluse_acq
+# 
+# Top level modules:
+# 	n_pluse_acq
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module plusestate
+# 
+# Top level modules:
+# 	plusestate
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module dds_change
+# 
+# Top level modules:
+# 	dds_change
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module qq_state
+# 
+# Top level modules:
+# 	qq_state
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module qq_coder
+# 
+# Top level modules:
+# 	qq_coder
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module bri_timer
+# 
+# Top level modules:
+# 	bri_timer
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module bri_coder
+# 
+# Top level modules:
+# 	bri_coder
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module qq_timer
+# 
+# Top level modules:
+# 	qq_timer
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module bri_state
+# 
+# Top level modules:
+# 	bri_state
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module bri_qq_load
+# 
+# Top level modules:
+# 	bri_qq_load
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module PLUSE
+# 
+# Top level modules:
+# 	PLUSE
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module dds_timer
+# 
+# Top level modules:
+# 	dds_timer
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module dds_state
+# 
+# Top level modules:
+# 	dds_state
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module dds_coder
+# 
+# Top level modules:
+# 	dds_coder
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module DDS
+# 
+# Top level modules:
+# 	DDS
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module top_code
+# 
+# Top level modules:
+# 	top_code
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module nsctrl_choice
+# 
+# Top level modules:
+# 	nsctrl_choice
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module state1ms_choice
+# 
+# Top level modules:
+# 	state1ms_choice
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module off_on_state
+# 
+# Top level modules:
+# 	off_on_state
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module off_on_coder
+# 
+# Top level modules:
+# 	off_on_coder
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module off_on_timer
+# 
+# Top level modules:
+# 	off_on_timer
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module DUMP_OFF
+# 
+# Top level modules:
+# 	DUMP_OFF
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module sd_sacq_coder
+# 
+# Top level modules:
+# 	sd_sacq_coder
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module sd_sacq_state
+# 
+# Top level modules:
+# 	sd_sacq_state
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module sd_sacq_inc
+# 
+# Top level modules:
+# 	sd_sacq_inc
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module sd_sacq_timer
+# 
+# Top level modules:
+# 	sd_sacq_timer
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module sd_acq_top
+# 
+# Top level modules:
+# 	sd_acq_top
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module Timer_Cmp
+# 
+# Top level modules:
+# 	Timer_Cmp
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module timer
+# 
+# Top level modules:
+# 	timer
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module state_switch
+# 
+# Top level modules:
+# 	state_switch
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module timer_top
+# 
+# Top level modules:
+# 	timer_top
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module cmp_constant_4b
+# 
+# Top level modules:
+# 	cmp_constant_4b
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module dump_sustain_timer
+# 
+# Top level modules:
+# 	dump_sustain_timer
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module DSTimer
+# 
+# Top level modules:
+# 	DSTimer
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module bri_dump_sw
+# 
+# Top level modules:
+# 	bri_dump_sw
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module scan_scale_sw
+# 
+# Top level modules:
+# 	scan_scale_sw
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module s_acq_change
+# 
+# Top level modules:
+# 	s_acq_change
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module scanstate
+# 
+# Top level modules:
+# 	scanstate
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module state_1ms
+# 
+# Top level modules:
+# 	state_1ms
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module noisestate
+# 
+# Top level modules:
+# 	noisestate
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module bridge_div
+# 
+# Top level modules:
+# 	bridge_div
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module pd_pluse_coder
+# 
+# Top level modules:
+# 	pd_pluse_coder
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module pd_pluse_state
+# 
+# Top level modules:
+# 	pd_pluse_state
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module pd_pluse_inc
+# 
+# Top level modules:
+# 	pd_pluse_inc
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module pd_pluse_timer
+# 
+# Top level modules:
+# 	pd_pluse_timer
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module pd_pluse_top
+# 
+# Top level modules:
+# 	pd_pluse_top
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module DUMP_ON
+# 
+# Top level modules:
+# 	DUMP_ON
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module cal_load
+# 
+# Top level modules:
+# 	cal_load
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module cal_div
+# 
+# Top level modules:
+# 	cal_div
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module CAL
+# 
+# Top level modules:
+# 	CAL
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module topctrlchange
+# 
+# Top level modules:
+# 	topctrlchange
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module dump_state
+# 
+# Top level modules:
+# 	dump_state
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module dump_coder
+# 
+# Top level modules:
+# 	dump_coder
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module dump_timer
+# 
+# Top level modules:
+# 	dump_timer
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module DUMP
+# 
+# Top level modules:
+# 	DUMP
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module long_timer
+# 
+# Top level modules:
+# 	long_timer
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module clk_div500
+# 
+# Top level modules:
+# 	clk_div500
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module pllclk
+# 
+# Top level modules:
+# 	pllclk
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module clk_10k
+# 
+# Top level modules:
+# 	clk_10k
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module ClockManagement
+# 
+# Top level modules:
+# 	ClockManagement
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module add_reg
+# 
+# Top level modules:
+# 	add_reg
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module s_clk_div4
+# 
+# Top level modules:
+# 	s_clk_div4
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module signalclkctrl
+# 
+# Top level modules:
+# 	signalclkctrl
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module rdata_choice
+# 
+# Top level modules:
+# 	rdata_choice
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module ctrl_addr
+# 
+# Top level modules:
+# 	ctrl_addr
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module ten_choice_one
+# 
+# Top level modules:
+# 	ten_choice_one
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module signal_acq
+# 
+# Top level modules:
+# 	signal_acq
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module n_rdclk_syn
+# 
+# Top level modules:
+# 	n_rdclk_syn
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module noise_addr
+# 
+# Top level modules:
+# 	noise_addr
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module noiseclk
+# 
+# Top level modules:
+# 	noiseclk
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module noiseclkctrl
+# 
+# Top level modules:
+# 	noiseclkctrl
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module RAM
+# 
+# Top level modules:
+# 	RAM
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module link
+# 
+# Top level modules:
+# 	link
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module noise_acq
+# 
+# Top level modules:
+# 	noise_acq
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module n_s_change
+# 
+# Top level modules:
+# 	n_s_change
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module Signal_Noise_Acq
+# 
+# Top level modules:
+# 	Signal_Noise_Acq
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module necount_inc
+# 
+# Top level modules:
+# 	necount_inc
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module necount_cmp
+# 
+# Top level modules:
+# 	necount_cmp
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module scalestate
+# 
+# Top level modules:
+# 	scalestate
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module xwe_xzcs2_syn
+# 
+# Top level modules:
+# 	xwe_xzcs2_syn
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module tri_state
+# 
+# Top level modules:
+# 	tri_state
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module rst_n_module
+# 
+# Top level modules:
+# 	rst_n_module
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module GPMI
+# 
+# Top level modules:
+# 	GPMI
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module NMR_TOP
+# 
+# Top level modules:
+# 	NMR_TOP
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module testbench
+# 
+# Top level modules:
+# 	testbench
+# vsim -L proasic3 -L presynth -t 1ps presynth.testbench 
+# Loading presynth.testbench
+# Loading presynth.NMR_TOP
+# Loading presynth.n_pluse_acq
+# Loading presynth.plusestate
+# Loading presynth.dds_change
+# Loading presynth.PLUSE
+# Loading presynth.qq_state
+# Loading presynth.qq_coder
+# Loading proasic3.GND
+# Loading presynth.bri_timer
+# Loading presynth.bri_coder
+# Loading proasic3.VCC
+# Loading presynth.qq_timer
+# Loading presynth.bri_state
+# Loading presynth.bri_qq_load
+# Loading presynth.DDS
+# Loading presynth.dds_timer
+# Loading presynth.dds_state
+# Loading presynth.dds_coder
+# Loading proasic3.AND2
+# Loading presynth.top_code
+# Loading presynth.nsctrl_choice
+# Loading proasic3.OR2
+# Loading presynth.state1ms_choice
+# Loading presynth.DUMP_OFF
+# Loading presynth.off_on_state
+# Loading presynth.off_on_coder
+# Loading presynth.off_on_timer
+# Loading presynth.sd_acq_top
+# Loading presynth.sd_sacq_coder
+# Loading presynth.sd_sacq_state
+# Loading presynth.sd_sacq_timer
+# Loading presynth.sd_sacq_inc
+# Loading proasic3.XOR2
+# Loading proasic3.AND3
+# Loading proasic3.INV
+# Loading presynth.timer_top
+# Loading presynth.timer
+# Loading presynth.Timer_Cmp
+# Loading proasic3.OR2A
+# Loading proasic3.XNOR2
+# Loading proasic3.NAND3A
+# Loading proasic3.NOR3A
+# Loading proasic3.AO1C
+# Loading proasic3.AO1
+# Loading proasic3.AO1D
+# Loading proasic3.NOR2A
+# Loading presynth.state_switch
+# Loading presynth.DSTimer
+# Loading presynth.dump_sustain_timer
+# Loading presynth.cmp_constant_4b
+# Loading proasic3.AND3B
+# Loading proasic3.NAND2
+# Loading proasic3.DFN0
+# Loading proasic3.DFI0
+# Loading presynth.bri_dump_sw
+# Loading presynth.scan_scale_sw
+# Loading presynth.s_acq_change
+# Loading presynth.scanstate
+# Loading presynth.state_1ms
+# Loading presynth.noisestate
+# Loading presynth.bridge_div
+# Loading presynth.pd_pluse_top
+# Loading presynth.pd_pluse_coder
+# Loading presynth.pd_pluse_state
+# Loading presynth.pd_pluse_timer
+# Loading presynth.pd_pluse_inc
+# Loading proasic3.OR3
+# Loading presynth.DUMP_ON
+# Loading presynth.CAL
+# Loading presynth.cal_load
+# Loading presynth.cal_div
+# Loading presynth.topctrlchange
+# Loading presynth.DUMP
+# Loading presynth.dump_state
+# Loading presynth.dump_coder
+# Loading presynth.dump_timer
+# Loading presynth.ClockManagement
+# Loading presynth.long_timer
+# Loading presynth.clk_div500
+# Loading presynth.pllclk
+# Loading proasic3.PLL
+# Loading proasic3.PLLPRIM
+# Loading presynth.clk_10k
+# Loading presynth.Signal_Noise_Acq
+# Loading presynth.signal_acq
+# Loading presynth.add_reg
+# Loading presynth.s_clk_div4
+# Loading presynth.signalclkctrl
+# Loading presynth.rdata_choice
+# Loading presynth.ctrl_addr
+# Loading presynth.ten_choice_one
+# Loading presynth.noise_acq
+# Loading presynth.n_rdclk_syn
+# Loading presynth.noise_addr
+# Loading presynth.noiseclk
+# Loading presynth.noiseclkctrl
+# Loading presynth.RAM
+# Loading proasic3.MX2
+# Loading proasic3.NOR2
+# Loading proasic3.RAM512X18
+# Loading proasic3.BUFF
+# Loading proasic3.AND2A
+# Loading proasic3.DFN1
+# Loading presynth.link
+# Loading presynth.n_s_change
+# Loading presynth.scalestate
+# Loading presynth.necount_inc
+# Loading presynth.necount_cmp
+# Loading proasic3.NOR3
+# Loading proasic3.AOI1
+# Loading proasic3.OA1C
+# Loading proasic3.OA1A
+# Loading presynth.GPMI
+# Loading presynth.xwe_xzcs2_syn
+# Loading presynth.tri_state
+# Loading presynth.rst_n_module
+# Loading proasic3.UDP_MUX2
+# Loading proasic3.UDPN_MUX2
+# Loading proasic3.Dffpf
+# Loading proasic3.Dffpr
+# ** Warning: (vsim-3015) C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/scalestate.v(701): [PCDPC] - Port size (12 or 12) does not match connection size (11) for port 'DataA'. The port definition is at: C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/smartgen/necount_inc/necount_inc.v(5).
+#         Region: /testbench/NMR_TOP_0/scalestate_0/necount_inc_0
+# ** Warning: (vsim-3015) C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/scalestate.v(701): [PCDPC] - Port size (12 or 12) does not match connection size (11) for port 'Sum'. The port definition is at: C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/smartgen/necount_inc/necount_inc.v(5).
+#         Region: /testbench/NMR_TOP_0/scalestate_0/necount_inc_0
+# ** Warning: (vsim-7) Failed to open readmem file "RAM_R5C0.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : d:/Actel/Libero_v9.1/Model/win32acoem/../../Designer/lib/modelsim/precompiled/vlog/src/proasic3.v(35522)
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/NMR_TOP_0/Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R5C0
+# ** Warning: (vsim-7) Failed to open readmem file "RAM_R12C0.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : d:/Actel/Libero_v9.1/Model/win32acoem/../../Designer/lib/modelsim/precompiled/vlog/src/proasic3.v(35522)
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/NMR_TOP_0/Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R12C0
+# ** Warning: (vsim-7) Failed to open readmem file "RAM_R4C0.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : d:/Actel/Libero_v9.1/Model/win32acoem/../../Designer/lib/modelsim/precompiled/vlog/src/proasic3.v(35522)
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/NMR_TOP_0/Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R4C0
+# ** Warning: (vsim-7) Failed to open readmem file "RAM_R9C0.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : d:/Actel/Libero_v9.1/Model/win32acoem/../../Designer/lib/modelsim/precompiled/vlog/src/proasic3.v(35522)
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/NMR_TOP_0/Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R9C0
+# ** Warning: (vsim-7) Failed to open readmem file "RAM_R2C0.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : d:/Actel/Libero_v9.1/Model/win32acoem/../../Designer/lib/modelsim/precompiled/vlog/src/proasic3.v(35522)
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/NMR_TOP_0/Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R2C0
+# ** Warning: (vsim-7) Failed to open readmem file "RAM_R14C0.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : d:/Actel/Libero_v9.1/Model/win32acoem/../../Designer/lib/modelsim/precompiled/vlog/src/proasic3.v(35522)
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/NMR_TOP_0/Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R14C0
+# ** Warning: (vsim-7) Failed to open readmem file "RAM_R8C0.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : d:/Actel/Libero_v9.1/Model/win32acoem/../../Designer/lib/modelsim/precompiled/vlog/src/proasic3.v(35522)
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/NMR_TOP_0/Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R8C0
+# ** Warning: (vsim-7) Failed to open readmem file "RAM_R13C0.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : d:/Actel/Libero_v9.1/Model/win32acoem/../../Designer/lib/modelsim/precompiled/vlog/src/proasic3.v(35522)
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/NMR_TOP_0/Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R13C0
+# ** Warning: (vsim-7) Failed to open readmem file "RAM_R11C0.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : d:/Actel/Libero_v9.1/Model/win32acoem/../../Designer/lib/modelsim/precompiled/vlog/src/proasic3.v(35522)
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/NMR_TOP_0/Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R11C0
+# ** Warning: (vsim-7) Failed to open readmem file "RAM_R15C0.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : d:/Actel/Libero_v9.1/Model/win32acoem/../../Designer/lib/modelsim/precompiled/vlog/src/proasic3.v(35522)
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/NMR_TOP_0/Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R15C0
+# ** Warning: (vsim-7) Failed to open readmem file "RAM_R1C0.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : d:/Actel/Libero_v9.1/Model/win32acoem/../../Designer/lib/modelsim/precompiled/vlog/src/proasic3.v(35522)
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/NMR_TOP_0/Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R1C0
+# ** Warning: (vsim-7) Failed to open readmem file "RAM_R6C0.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : d:/Actel/Libero_v9.1/Model/win32acoem/../../Designer/lib/modelsim/precompiled/vlog/src/proasic3.v(35522)
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/NMR_TOP_0/Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R6C0
+# ** Warning: (vsim-7) Failed to open readmem file "RAM_R3C0.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : d:/Actel/Libero_v9.1/Model/win32acoem/../../Designer/lib/modelsim/precompiled/vlog/src/proasic3.v(35522)
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/NMR_TOP_0/Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R3C0
+# ** Warning: (vsim-7) Failed to open readmem file "RAM_R10C0.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : d:/Actel/Libero_v9.1/Model/win32acoem/../../Designer/lib/modelsim/precompiled/vlog/src/proasic3.v(35522)
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/NMR_TOP_0/Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R10C0
+# ** Warning: (vsim-7) Failed to open readmem file "RAM_R7C0.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : d:/Actel/Libero_v9.1/Model/win32acoem/../../Designer/lib/modelsim/precompiled/vlog/src/proasic3.v(35522)
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/NMR_TOP_0/Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R7C0
+#  ** Warning: FBSEL is unknown.
+#  Time: 0.0 Instance: testbench.NMR_TOP_0.ClockManagement_0.pllclk_0.Core.P1 
+add wave \
+{sim:/testbench/NMR_TOP_0/OR3_0/A } 
+add wave \
+{sim:/testbench/NMR_TOP_0/OR3_0/B } 
+add wave \
+{sim:/testbench/NMR_TOP_0/OR3_0/C } 
+run
+do C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/simulation/run.do
+# INFO: Simulation library presynth already exists 
+# Modifying modelsim.ini
+# Modifying modelsim.ini
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module n_pluse_acq
+# 
+# Top level modules:
+# 	n_pluse_acq
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module plusestate
+# 
+# Top level modules:
+# 	plusestate
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module dds_change
+# 
+# Top level modules:
+# 	dds_change
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module qq_state
+# 
+# Top level modules:
+# 	qq_state
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module qq_coder
+# 
+# Top level modules:
+# 	qq_coder
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module bri_timer
+# 
+# Top level modules:
+# 	bri_timer
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module bri_coder
+# 
+# Top level modules:
+# 	bri_coder
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module qq_timer
+# 
+# Top level modules:
+# 	qq_timer
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module bri_state
+# 
+# Top level modules:
+# 	bri_state
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module bri_qq_load
+# 
+# Top level modules:
+# 	bri_qq_load
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module PLUSE
+# 
+# Top level modules:
+# 	PLUSE
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module dds_timer
+# 
+# Top level modules:
+# 	dds_timer
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module dds_state
+# 
+# Top level modules:
+# 	dds_state
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module dds_coder
+# 
+# Top level modules:
+# 	dds_coder
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module DDS
+# 
+# Top level modules:
+# 	DDS
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module top_code
+# 
+# Top level modules:
+# 	top_code
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module nsctrl_choice
+# 
+# Top level modules:
+# 	nsctrl_choice
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module state1ms_choice
+# 
+# Top level modules:
+# 	state1ms_choice
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module off_on_state
+# 
+# Top level modules:
+# 	off_on_state
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module off_on_coder
+# 
+# Top level modules:
+# 	off_on_coder
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module off_on_timer
+# 
+# Top level modules:
+# 	off_on_timer
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module DUMP_OFF
+# 
+# Top level modules:
+# 	DUMP_OFF
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module sd_sacq_coder
+# 
+# Top level modules:
+# 	sd_sacq_coder
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module sd_sacq_state
+# 
+# Top level modules:
+# 	sd_sacq_state
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module sd_sacq_inc
+# 
+# Top level modules:
+# 	sd_sacq_inc
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module sd_sacq_timer
+# 
+# Top level modules:
+# 	sd_sacq_timer
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module sd_acq_top
+# 
+# Top level modules:
+# 	sd_acq_top
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module Timer_Cmp
+# 
+# Top level modules:
+# 	Timer_Cmp
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module timer
+# 
+# Top level modules:
+# 	timer
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module state_switch
+# 
+# Top level modules:
+# 	state_switch
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module timer_top
+# 
+# Top level modules:
+# 	timer_top
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module cmp_constant_4b
+# 
+# Top level modules:
+# 	cmp_constant_4b
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module dump_sustain_timer
+# 
+# Top level modules:
+# 	dump_sustain_timer
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module DSTimer
+# 
+# Top level modules:
+# 	DSTimer
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module bri_dump_sw
+# 
+# Top level modules:
+# 	bri_dump_sw
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module scan_scale_sw
+# 
+# Top level modules:
+# 	scan_scale_sw
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module s_acq_change
+# 
+# Top level modules:
+# 	s_acq_change
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module scanstate
+# 
+# Top level modules:
+# 	scanstate
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module state_1ms
+# 
+# Top level modules:
+# 	state_1ms
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module noisestate
+# 
+# Top level modules:
+# 	noisestate
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module bridge_div
+# 
+# Top level modules:
+# 	bridge_div
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module pd_pluse_coder
+# 
+# Top level modules:
+# 	pd_pluse_coder
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module pd_pluse_state
+# 
+# Top level modules:
+# 	pd_pluse_state
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module pd_pluse_inc
+# 
+# Top level modules:
+# 	pd_pluse_inc
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module pd_pluse_timer
+# 
+# Top level modules:
+# 	pd_pluse_timer
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module pd_pluse_top
+# 
+# Top level modules:
+# 	pd_pluse_top
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module DUMP_ON
+# 
+# Top level modules:
+# 	DUMP_ON
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module cal_load
+# 
+# Top level modules:
+# 	cal_load
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module cal_div
+# 
+# Top level modules:
+# 	cal_div
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module CAL
+# 
+# Top level modules:
+# 	CAL
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module topctrlchange
+# 
+# Top level modules:
+# 	topctrlchange
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module dump_state
+# 
+# Top level modules:
+# 	dump_state
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module dump_coder
+# 
+# Top level modules:
+# 	dump_coder
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module dump_timer
+# 
+# Top level modules:
+# 	dump_timer
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module DUMP
+# 
+# Top level modules:
+# 	DUMP
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module long_timer
+# 
+# Top level modules:
+# 	long_timer
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module clk_div500
+# 
+# Top level modules:
+# 	clk_div500
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module pllclk
+# 
+# Top level modules:
+# 	pllclk
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module clk_10k
+# 
+# Top level modules:
+# 	clk_10k
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module ClockManagement
+# 
+# Top level modules:
+# 	ClockManagement
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module add_reg
+# 
+# Top level modules:
+# 	add_reg
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module s_clk_div4
+# 
+# Top level modules:
+# 	s_clk_div4
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module signalclkctrl
+# 
+# Top level modules:
+# 	signalclkctrl
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module rdata_choice
+# 
+# Top level modules:
+# 	rdata_choice
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module ctrl_addr
+# 
+# Top level modules:
+# 	ctrl_addr
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module ten_choice_one
+# 
+# Top level modules:
+# 	ten_choice_one
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module signal_acq
+# 
+# Top level modules:
+# 	signal_acq
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module n_rdclk_syn
+# 
+# Top level modules:
+# 	n_rdclk_syn
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module noise_addr
+# 
+# Top level modules:
+# 	noise_addr
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module noiseclk
+# 
+# Top level modules:
+# 	noiseclk
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module noiseclkctrl
+# 
+# Top level modules:
+# 	noiseclkctrl
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module RAM
+# 
+# Top level modules:
+# 	RAM
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module link
+# 
+# Top level modules:
+# 	link
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module noise_acq
+# 
+# Top level modules:
+# 	noise_acq
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module n_s_change
+# 
+# Top level modules:
+# 	n_s_change
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module Signal_Noise_Acq
+# 
+# Top level modules:
+# 	Signal_Noise_Acq
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module necount_inc
+# 
+# Top level modules:
+# 	necount_inc
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module necount_cmp
+# 
+# Top level modules:
+# 	necount_cmp
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module scalestate
+# 
+# Top level modules:
+# 	scalestate
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module xwe_xzcs2_syn
+# 
+# Top level modules:
+# 	xwe_xzcs2_syn
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module tri_state
+# 
+# Top level modules:
+# 	tri_state
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module rst_n_module
+# 
+# Top level modules:
+# 	rst_n_module
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module GPMI
+# 
+# Top level modules:
+# 	GPMI
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module NMR_TOP
+# 
+# Top level modules:
+# 	NMR_TOP
+# Model Technology ModelSim ACTEL vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module testbench
+# 
+# Top level modules:
+# 	testbench
+# vsim -L proasic3 -L presynth -t 1ps presynth.testbench 
+# Loading presynth.testbench
+# Loading presynth.NMR_TOP
+# Loading presynth.n_pluse_acq
+# Loading presynth.plusestate
+# Loading presynth.dds_change
+# Loading presynth.PLUSE
+# Loading presynth.qq_state
+# Loading presynth.qq_coder
+# Loading proasic3.GND
+# Loading presynth.bri_timer
+# Loading presynth.bri_coder
+# Loading proasic3.VCC
+# Loading presynth.qq_timer
+# Loading presynth.bri_state
+# Loading presynth.bri_qq_load
+# Loading presynth.DDS
+# Loading presynth.dds_timer
+# Loading presynth.dds_state
+# Loading presynth.dds_coder
+# Loading proasic3.AND2
+# Loading presynth.top_code
+# Loading presynth.nsctrl_choice
+# Loading proasic3.OR2
+# Loading presynth.state1ms_choice
+# Loading presynth.DUMP_OFF
+# Loading presynth.off_on_state
+# Loading presynth.off_on_coder
+# Loading presynth.off_on_timer
+# Loading presynth.sd_acq_top
+# Loading presynth.sd_sacq_coder
+# Loading presynth.sd_sacq_state
+# Loading presynth.sd_sacq_timer
+# Loading presynth.sd_sacq_inc
+# Loading proasic3.XOR2
+# Loading proasic3.AND3
+# Loading proasic3.INV
+# Loading presynth.timer_top
+# Loading presynth.timer
+# Loading presynth.Timer_Cmp
+# Loading proasic3.OR2A
+# Loading proasic3.XNOR2
+# Loading proasic3.NAND3A
+# Loading proasic3.NOR3A
+# Loading proasic3.AO1C
+# Loading proasic3.AO1
+# Loading proasic3.AO1D
+# Loading proasic3.NOR2A
+# Loading presynth.state_switch
+# Loading presynth.DSTimer
+# Loading presynth.dump_sustain_timer
+# Loading presynth.cmp_constant_4b
+# Loading proasic3.AND3B
+# Loading proasic3.NAND2
+# Loading proasic3.DFN0
+# Loading proasic3.DFI0
+# Loading presynth.bri_dump_sw
+# Loading presynth.scan_scale_sw
+# Loading presynth.s_acq_change
+# Loading presynth.scanstate
+# Loading presynth.state_1ms
+# Loading presynth.noisestate
+# Loading presynth.bridge_div
+# Loading presynth.pd_pluse_top
+# Loading presynth.pd_pluse_coder
+# Loading presynth.pd_pluse_state
+# Loading presynth.pd_pluse_timer
+# Loading presynth.pd_pluse_inc
+# Loading proasic3.OR3
+# Loading presynth.DUMP_ON
+# Loading presynth.CAL
+# Loading presynth.cal_load
+# Loading presynth.cal_div
+# Loading presynth.topctrlchange
+# Loading presynth.DUMP
+# Loading presynth.dump_state
+# Loading presynth.dump_coder
+# Loading presynth.dump_timer
+# Loading presynth.ClockManagement
+# Loading presynth.long_timer
+# Loading presynth.clk_div500
+# Loading presynth.pllclk
+# Loading proasic3.PLL
+# Loading proasic3.PLLPRIM
+# Loading presynth.clk_10k
+# Loading presynth.Signal_Noise_Acq
+# Loading presynth.signal_acq
+# Loading presynth.add_reg
+# Loading presynth.s_clk_div4
+# Loading presynth.signalclkctrl
+# Loading presynth.rdata_choice
+# Loading presynth.ctrl_addr
+# Loading presynth.ten_choice_one
+# Loading presynth.noise_acq
+# Loading presynth.n_rdclk_syn
+# Loading presynth.noise_addr
+# Loading presynth.noiseclk
+# Loading presynth.noiseclkctrl
+# Loading presynth.RAM
+# Loading proasic3.MX2
+# Loading proasic3.NOR2
+# Loading proasic3.RAM512X18
+# Loading proasic3.BUFF
+# Loading proasic3.AND2A
+# Loading proasic3.DFN1
+# Loading presynth.link
+# Loading presynth.n_s_change
+# Loading presynth.scalestate
+# Loading presynth.necount_inc
+# Loading presynth.necount_cmp
+# Loading proasic3.NOR3
+# Loading proasic3.AOI1
+# Loading proasic3.OA1C
+# Loading proasic3.OA1A
+# Loading presynth.GPMI
+# Loading presynth.xwe_xzcs2_syn
+# Loading presynth.tri_state
+# Loading presynth.rst_n_module
+# Loading proasic3.UDP_MUX2
+# Loading proasic3.UDPN_MUX2
+# Loading proasic3.Dffpf
+# Loading proasic3.Dffpr
+# ** Warning: (vsim-3015) C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/scalestate.v(701): [PCDPC] - Port size (12 or 12) does not match connection size (11) for port 'DataA'. The port definition is at: C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/smartgen/necount_inc/necount_inc.v(5).
+#         Region: /testbench/NMR_TOP_0/scalestate_0/necount_inc_0
+# ** Warning: (vsim-3015) C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/hdl/scalestate.v(701): [PCDPC] - Port size (12 or 12) does not match connection size (11) for port 'Sum'. The port definition is at: C:/Users/dell/Desktop/WorkFolder/2D_NMR_EC_FPGA_150131/smartgen/necount_inc/necount_inc.v(5).
+#         Region: /testbench/NMR_TOP_0/scalestate_0/necount_inc_0
+# ** Warning: (vsim-7) Failed to open readmem file "RAM_R5C0.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : d:/Actel/Libero_v9.1/Model/win32acoem/../../Designer/lib/modelsim/precompiled/vlog/src/proasic3.v(35522)
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/NMR_TOP_0/Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R5C0
+# ** Warning: (vsim-7) Failed to open readmem file "RAM_R12C0.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : d:/Actel/Libero_v9.1/Model/win32acoem/../../Designer/lib/modelsim/precompiled/vlog/src/proasic3.v(35522)
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/NMR_TOP_0/Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R12C0
+# ** Warning: (vsim-7) Failed to open readmem file "RAM_R4C0.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : d:/Actel/Libero_v9.1/Model/win32acoem/../../Designer/lib/modelsim/precompiled/vlog/src/proasic3.v(35522)
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/NMR_TOP_0/Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R4C0
+# ** Warning: (vsim-7) Failed to open readmem file "RAM_R9C0.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : d:/Actel/Libero_v9.1/Model/win32acoem/../../Designer/lib/modelsim/precompiled/vlog/src/proasic3.v(35522)
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/NMR_TOP_0/Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R9C0
+# ** Warning: (vsim-7) Failed to open readmem file "RAM_R2C0.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : d:/Actel/Libero_v9.1/Model/win32acoem/../../Designer/lib/modelsim/precompiled/vlog/src/proasic3.v(35522)
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/NMR_TOP_0/Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R2C0
+# ** Warning: (vsim-7) Failed to open readmem file "RAM_R14C0.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : d:/Actel/Libero_v9.1/Model/win32acoem/../../Designer/lib/modelsim/precompiled/vlog/src/proasic3.v(35522)
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/NMR_TOP_0/Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R14C0
+# ** Warning: (vsim-7) Failed to open readmem file "RAM_R8C0.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : d:/Actel/Libero_v9.1/Model/win32acoem/../../Designer/lib/modelsim/precompiled/vlog/src/proasic3.v(35522)
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/NMR_TOP_0/Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R8C0
+# ** Warning: (vsim-7) Failed to open readmem file "RAM_R13C0.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : d:/Actel/Libero_v9.1/Model/win32acoem/../../Designer/lib/modelsim/precompiled/vlog/src/proasic3.v(35522)
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/NMR_TOP_0/Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R13C0
+# ** Warning: (vsim-7) Failed to open readmem file "RAM_R11C0.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : d:/Actel/Libero_v9.1/Model/win32acoem/../../Designer/lib/modelsim/precompiled/vlog/src/proasic3.v(35522)
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/NMR_TOP_0/Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R11C0
+# ** Warning: (vsim-7) Failed to open readmem file "RAM_R15C0.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : d:/Actel/Libero_v9.1/Model/win32acoem/../../Designer/lib/modelsim/precompiled/vlog/src/proasic3.v(35522)
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/NMR_TOP_0/Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R15C0
+# ** Warning: (vsim-7) Failed to open readmem file "RAM_R1C0.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : d:/Actel/Libero_v9.1/Model/win32acoem/../../Designer/lib/modelsim/precompiled/vlog/src/proasic3.v(35522)
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/NMR_TOP_0/Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R1C0
+# ** Warning: (vsim-7) Failed to open readmem file "RAM_R6C0.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : d:/Actel/Libero_v9.1/Model/win32acoem/../../Designer/lib/modelsim/precompiled/vlog/src/proasic3.v(35522)
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/NMR_TOP_0/Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R6C0
+# ** Warning: (vsim-7) Failed to open readmem file "RAM_R3C0.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : d:/Actel/Libero_v9.1/Model/win32acoem/../../Designer/lib/modelsim/precompiled/vlog/src/proasic3.v(35522)
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/NMR_TOP_0/Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R3C0
+# ** Warning: (vsim-7) Failed to open readmem file "RAM_R10C0.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : d:/Actel/Libero_v9.1/Model/win32acoem/../../Designer/lib/modelsim/precompiled/vlog/src/proasic3.v(35522)
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/NMR_TOP_0/Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R10C0
+# ** Warning: (vsim-7) Failed to open readmem file "RAM_R7C0.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : d:/Actel/Libero_v9.1/Model/win32acoem/../../Designer/lib/modelsim/precompiled/vlog/src/proasic3.v(35522)
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/NMR_TOP_0/Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R7C0
+#  ** Warning: FBSEL is unknown.
+#  Time: 0.0 Instance: testbench.NMR_TOP_0.ClockManagement_0.pllclk_0.Core.P1 
+run

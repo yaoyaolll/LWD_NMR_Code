@@ -1,0 +1,41 @@
+ ** Message System Log
+ ** Database: 
+ ** Date:   Tue May 21 16:51:19 2013
+
+
+****************
+Macro Parameters
+****************
+
+Name                            : inc_20bit
+Family                          : ProASIC3
+Output Format                   : VERILOG
+Type                            : Incrementer
+Variation                       : High Speed
+Carry Out                       : None
+Width                           : 20
+
+**************
+Compile Report
+**************
+
+
+Netlist Resource Report
+=======================
+
+    CORE                       Used:     50  Total:  24576   (0.20%)
+    IO (W/ clocks)             Used:      0  Total:    154   (0.00%)
+    Differential IO            Used:      0  Total:     35   (0.00%)
+    GLOBAL (Chip+Quadrant)     Used:      0  Total:     18   (0.00%)
+    PLL                        Used:      0  Total:      1   (0.00%)
+    RAM/FIFO                   Used:      0  Total:     32   (0.00%)
+    Low Static ICC             Used:      0  Total:      1   (0.00%)
+    FlashROM                   Used:      0  Total:      1   (0.00%)
+    User JTAG                  Used:      0  Total:      1   (0.00%)
+
+Wrote Verilog netlist to G:/hust_study/N613/BeiJing/files/Program_Debug for 2D
+byMD20130414begin/nmr2_controllerBoard_Debug_20130426begin/FPGA/nmr2A3P1000PQ\
+208modify_20130521/smartgen\inc_20bit\inc_20bit.v.
+
+ ** Log Ended:   Tue May 21 16:51:20 2013
+

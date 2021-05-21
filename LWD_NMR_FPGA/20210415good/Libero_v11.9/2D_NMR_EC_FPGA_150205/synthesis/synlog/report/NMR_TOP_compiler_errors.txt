@@ -1,0 +1,2 @@
+@E: CL172 :"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210415good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\syn_md.v":27:11:27:20|Only one always block can assign a given variable syn_md_out
+

@@ -1,0 +1,13 @@
+FlashPro
+Version: 11.9.6.7
+Release: v11.9 SP6
+
+Software Version: 11.9.6.7
+PDB file 'E:\LWD_NMR\Code\test_clk\test\designer\impl1\top.pdb' has been loaded successfully.
+DESIGN : top;  CHECKSUM : 78A0;  PDB_VERSION : 1.9
+Driver : 3.0.0 build 1
+programmer '94515' : FlashPro4
+Opened 'E:\LWD_NMR\Code\test_clk\test\designer\impl1\top_fp\top.pro'
+Checking for software updates...
+This software version is up to date.
+Project closed.

@@ -1,0 +1,11 @@
+Microsemi Corporation - Microsemi Libero Software Release v11.9 SP6 (Version 11.9.6.7)
+
+Date      :  Fri Jan 22 17:08:04 2021
+Project   :  E:\LWD_NMR\Code\test_clk\test
+Component :  top
+Family    :  ProASIC3
+
+
+HDL source files for all Synthesis and Simulation tools:
+    E:/LWD_NMR/Code/test_clk/test/component/work/top/top.v
+

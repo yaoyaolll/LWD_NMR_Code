@@ -1,0 +1,12 @@
+HelpInfo,D:\Libero_Soc11.9\SynplifyPro\lib\html,fpgahelp.qhc,errormessages.mp,D:\Libero_Soc11.9\SynplifyPro\bin\mbin\assistant
+Implementation;Synthesis;RootName:top
+Implementation;Synthesis|| CL279 ||@W:Pruning register bits 31 to 9 of count[31:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.||top.srr(64);liberoaction://cross_probe/hdl/file/'E:\LWD_NMR\Code\test_clk\test\synthesis\top.srr'/linenumber/64||div_fre.v(28);liberoaction://cross_probe/hdl/file/'E:\LWD_NMR\Code\test_clk\test\hdl\div_fre.v'/linenumber/28
+Implementation;Synthesis|| MT530 ||@W:Found inferred clock pll_clk|GLA_inferred_clock which controls 10 sequential elements including div_fre_0.count[8:0]. This clock has no specified timing constraint which may adversely impact design performance. ||top.srr(140);liberoaction://cross_probe/hdl/file/'E:\LWD_NMR\Code\test_clk\test\synthesis\top.srr'/linenumber/140||div_fre.v(28);liberoaction://cross_probe/hdl/file/'e:\lwd_nmr\code\test_clk\test\hdl\div_fre.v'/linenumber/28
+Implementation;Synthesis|| MT420 ||@W:Found inferred clock pll_clk|GLA_inferred_clock with period 10.00ns. Please declare a user-defined clock on object "n:pll_clk_0.GLA"||top.srr(265);liberoaction://cross_probe/hdl/file/'E:\LWD_NMR\Code\test_clk\test\synthesis\top.srr'/linenumber/265||null;null
+Implementation;Synthesis|| MT320 ||@N: This timing report is an estimate of place and route data. For final timing results, use the FPGA vendor place and route report.||top.srr(281);liberoaction://cross_probe/hdl/file/'E:\LWD_NMR\Code\test_clk\test\synthesis\top.srr'/linenumber/281||null;null
+Implementation;Synthesis|| MT322 ||@N: Clock constraints include only register-to-register paths associated with each individual clock.||top.srr(283);liberoaction://cross_probe/hdl/file/'E:\LWD_NMR\Code\test_clk\test\synthesis\top.srr'/linenumber/283||null;null
+Implementation;Compile;RootName:top
+Implementation;Compile||(null)||Please refer to the log file for details about 5 Warning(s) , 1 Info(s)||top_compile_log.rpt;liberoaction://open_report/file/top_compile_log.rpt||(null);(null)
+Implementation;Place and Route;RootName:top
+Implementation;Place and Route||(null)||Please refer to the log file for details about 1 Info(s)||top_placeroute_log.rpt;liberoaction://open_report/file/top_placeroute_log.rpt||(null);(null)
+Implementation;Generate Bitstream;RootName:top

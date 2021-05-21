@@ -4,7 +4,7 @@
 #include "MyHeaderFiles.h"
 
 // SCIA_interrupt.c
-Uint16 SciaDataEven;
+Uint16 SciaDataEven = 0;
 Uint16 BufferSciaDataH;
 Uint16 BufferSciaDataL;
 Uint16 BufferSciaDataAll;
@@ -28,67 +28,65 @@ unsigned int SciaRx_Ready(void)
 		return(0);
 }
 
+// 此函数需要与GPIOF11配合使用
+void SciaSendOneWord(Uint16 data)
+{
+	while (SciaTx_Ready() == 0) {}
+	SciaRegs.SCITXBUF = data >> 8;              // 发送高8位
+	while (SciaTx_Ready() == 0) {}
+	SciaRegs.SCITXBUF = data;					// 发送低8位
+}
+
 // 刻度/测井模式数据回复帧
 void ReplyModeDataFrame(Uint32 startAddr, Uint32 dataLen)
 {
 	SendTempPt = (Uint16*)(startAddr);
-	GpioDataRegs.GPFDAT.bit.GPIOF9 = 1;    // SCIA设置为发送状态
-	for (SendCnt=0;SaveCnt<dataLen;SendCnt++)
+	GpioDataRegs.GPFDAT.bit.GPIOF11 = 1;    // SCIA设置为发送状态
+	for (SendCnt=0;SendCnt<dataLen;SendCnt++)
 	{
-		while (SciaTx_Ready() == 0) {}
-			SciaRegs.SCITXBUF = *SendTempPt++;
+	    SciaSendOneWord(*SendTempPt);
+		SendTempPt++;
 	}
-	GpioDataRegs.GPFDAT.bit.GPIOF9 = 0;
+	// 此处要加一定延时避免最后一个数据发不出去
+	Delay(25);
+	GpioDataRegs.GPFDAT.bit.GPIOF11 = 0;
 }
 
 // 查询状态指令的回复帧
 void ReplyStateFrame(Uint16 state)
 {
 	Uint16 CheckSum = 0;
-	GpioDataRegs.GPFDAT.bit.GPIOF9 = 1;    // SCIA设置为发送状态
-	
-	while (SciaTx_Ready() == 0) {}
-	SciaRegs.SCITXBUF = REPLY_STATE_F;            
-	
-	while (SciaTx_Ready() == 0) {}
-	SciaRegs.SCITXBUF = 3;              
-
-	while (SciaTx_Ready() == 0) {}
-	SciaRegs.SCITXBUF = state;      		// 发送状态
 	
 	CheckSum += REPLY_STATE_F;
 	CheckSum += 3;
 	CheckSum += state;
 	
-	while (SciaTx_Ready() == 0) {}
-	SciaRegs.SCITXBUF = CheckSum;          // 发送CheckSum
-	
-	GpioDataRegs.GPFDAT.bit.GPIOF9 = 0;    // SCIA设置为接收状态
+	GpioDataRegs.GPFDAT.bit.GPIOF11 = 1;    // SCIA设置为发送状态
+	SciaSendOneWord(REPLY_STATE_F);
+	SciaSendOneWord(3);
+	SciaSendOneWord(state);
+	SciaSendOneWord(CheckSum);	
+	// 此处要加一定延时避免最后一个数据发不出去
+	Delay(25);
+	GpioDataRegs.GPFDAT.bit.GPIOF11 = 0;    // SCIA设置为接收状态
 }
 
 // 参数表下载指令的回复帧
 void ReplyDownTableFrame(Uint16 lastCheckSum)
 {
 	Uint16 CheckSum = 0;
-	GpioDataRegs.GPFDAT.bit.GPIOF9 = 1;    // SCIA设置为发送状态
-	
-	while (SciaTx_Ready() == 0) {}
-	SciaRegs.SCITXBUF = REPLY_DOWN_TABLE_F;            
-	
-	while (SciaTx_Ready() == 0) {}
-	SciaRegs.SCITXBUF = 3;              
+    CheckSum += REPLY_STATE_F;
+    CheckSum += 3;
+    CheckSum += lastCheckSum;
 
-	while (SciaTx_Ready() == 0) {}
-	SciaRegs.SCITXBUF = lastCheckSum;      		// 指令的CheckSum
-	
-	CheckSum += REPLY_STATE_F;
-	CheckSum += 3;
-	CheckSum += lastCheckSum;
-	
-	while (SciaTx_Ready() == 0) {}
-	SciaRegs.SCITXBUF = CheckSum;          // 发送CheckSum
-	
-	GpioDataRegs.GPFDAT.bit.GPIOF9 = 0;    // SCIA设置为接收状态
+	GpioDataRegs.GPFDAT.bit.GPIOF11 = 1;    // SCIA设置为发送状态
+	SciaSendOneWord(REPLY_DOWN_TABLE_F);
+	SciaSendOneWord(3);
+	SciaSendOneWord(lastCheckSum);
+	SciaSendOneWord(CheckSum);
+	// 此处要加一定延时避免最后一个数据发不出去
+    Delay(25);
+	GpioDataRegs.GPFDAT.bit.GPIOF11 = 0;    // SCIA设置为接收状态
 }
 
 // 参数表上传指令的回复帧
@@ -108,18 +106,20 @@ void ReplyUpTableFrame(Uint16 tableID)
 	}
 	len = *addr;
 
-	while (SciaTx_Ready() == 0) {}
-		SciaRegs.SCITXBUF = REPLY_UP_TABLE_F;
-	for (i=0;i<len-1;++i)
+    GpioDataRegs.GPFDAT.bit.GPIOF11 = 1;    // SCIA设置为发送状态
+	SciaSendOneWord(REPLY_UP_TABLE_F);  // 帧头
+	CheckSum = REPLY_UP_TABLE_F;
+	for (i=0;i<len-1;++i)               // 参数表，不发送本地参数表末尾存储的CheckSum
 	{
-		while (SciaTx_Ready() == 0) {}
-			SciaRegs.SCITXBUF = *addr;
+	    SciaSendOneWord(*addr);
 		CheckSum += *addr;
 		addr++;
 	}
-	while (SciaTx_Ready() == 0) {}
-		SciaRegs.SCITXBUF = CheckSum;
-	*addr = CheckSum;
+
+	SciaSendOneWord(CheckSum);          // 数据包的CheckSum
+    // 此处要加一定延时避免最后一个数据发不出去
+    Delay(25);
+    GpioDataRegs.GPFDAT.bit.GPIOF11 = 0;    // SCIA设置为接收状态
 }
 
 // 套管检测数据正常时的回复帧
@@ -131,45 +131,37 @@ void ReplyCasingFrame()
 // 套管检测数据异常时的回复帧
 void ReplyCasingErrFrame()
 {
-
+	GpioDataRegs.GPFDAT.bit.GPIOF11 = 1;    // SCIA设置为发送状态
+	SciaSendOneWord(REPLY_CASING_ERR_F);
+	// 此处要加一定延时避免最后一个数据发不出去
+	Delay(25);
+	GpioDataRegs.GPFDAT.bit.GPIOF11 = 0;
 }
 
 // 单个变量的回复帧，可用于储能短节判断和系统自检测指令中
 void ReplySingleVarFrame(Uint16 frameHead, Uint16 var)
 {
-	Uint16 CheckSum = 0;
-	GpioDataRegs.GPFDAT.bit.GPIOF9 = 1;    // SCIA设置为发送状态
-	
-	while (SciaTx_Ready() == 0) {}
-	SciaRegs.SCITXBUF = frameHead;            
-	
-	while (SciaTx_Ready() == 0) {}
-	SciaRegs.SCITXBUF = 3;              
+    Uint16 CheckSum = 0;
 
-	while (SciaTx_Ready() == 0) {}
-	SciaRegs.SCITXBUF = var;      			// 发送状态
-	
-	CheckSum += frameHead;
-	CheckSum += 3;
-	CheckSum += var;
-	
-	while (SciaTx_Ready() == 0) {}
-	SciaRegs.SCITXBUF = CheckSum;          // 发送CheckSum
-	
-	GpioDataRegs.GPFDAT.bit.GPIOF9 = 0;    // SCIA设置为接收状态
+    CheckSum += frameHead;
+    CheckSum += 3;
+    CheckSum += var;
+
+    GpioDataRegs.GPFDAT.bit.GPIOF11 = 1;    // SCIA设置为发送状态
+    SciaSendOneWord(frameHead);
+    SciaSendOneWord(3);
+    SciaSendOneWord(var);
+    SciaSendOneWord(CheckSum);
+    // 此处要加一定延时避免最后一个数据发不出去
+    Delay(25);
+    GpioDataRegs.GPFDAT.bit.GPIOF11 = 0;    // SCIA设置为接收状态
 }
 
-void SciaSendData(Uint16 data)
-{
-	GpioDataRegs.GPFDAT.bit.GPIOF9 = 1;    // SCIA设置为发送状态
-	while (SciaTx_Ready() == 0) {}
-	SciaRegs.SCITXBUF = data;              // 发送数据
-	GpioDataRegs.GPFDAT.bit.GPIOF9 = 0;    // SCIA设置为接收状态
-}
-
+int dddddd = 0;
+// RS485中断处理函数
 interrupt void SCIRXINTA_ISR(void)     // SCI-A接收中断函数
 {
-	//BufferSciaDate=SciaRegs.SCIRXBUF.all;	//读8位数据
+    dddddd++;
 	if(SciaDataEven == 0)
 	{
 		SciaDataEven = 1;
@@ -206,6 +198,8 @@ interrupt void SCIRXINTA_ISR(void)     // SCI-A接收中断函数
 		{
 			if (EventBoardState == IDLE_STAT)
 			{
+				// 温度计算中心频率
+
 				CheckWorkMode();
 				switch(WorkMode)
 				{
@@ -270,7 +264,12 @@ interrupt void SCIRXINTA_ISR(void)     // SCI-A接收中断函数
 			K1_EN = USER_ENABLE;	// K1闭合（输出高）
 			K2_EN = USER_ENABLE;	// K2闭合
 			HVState = HV_ON;		// 表明开通状态
-			SciaSendData(DATA_K1K2_EN_F);
+
+		    GpioDataRegs.GPFDAT.bit.GPIOF11 = 1;    // SCIA设置为发送状态
+		    SciaSendOneWord(DATA_K1K2_EN_F);
+		    // 此处要加一定延时避免最后一个数据发不出去
+		    Delay(25);
+		    GpioDataRegs.GPFDAT.bit.GPIOF11 = 0;    // SCIA设置为接收状态
 		}
 		
 		else if (BufferSciaDataAll == DATA_K1K2_DIS_F)		// 储能短节断开指令
@@ -278,7 +277,11 @@ interrupt void SCIRXINTA_ISR(void)     // SCI-A接收中断函数
 		    K1_DIS = USER_DISABLE;
 		    K2_DIS = USER_DISABLE;
 		    HVState = HV_OFF;
-			SciaSendData(DATA_K1K2_DIS_F);
+            GpioDataRegs.GPFDAT.bit.GPIOF11 = 1;    // SCIA设置为发送状态
+            SciaSendOneWord(DATA_K1K2_DIS_F);
+            // 此处要加一定延时避免最后一个数据发不出去
+            Delay(25);
+            GpioDataRegs.GPFDAT.bit.GPIOF11 = 0;    // SCIA设置为接收状态
 		}
 		
 		else if (BufferSciaDataAll == DATA_HVState_F)		// 储能短节状态判断指令
@@ -301,13 +304,13 @@ interrupt void SCIRXINTA_ISR(void)     // SCI-A接收中断函数
 		}
 	}
 
+	/*
     SciaRegs.SCIFFRX.bit.RXFIFORESET=0;
     SciaRegs.SCIFFRX.bit.RXFIFORESET=1;
-	SciaRegs.SCIFFRX.bit.RXFFINTCLR=1;
+	SciaRegs.SCIFFRX.bit.RXFFINTCLR=1;*/
 
 	PieCtrlRegs.PIEACK.all = PIEACK_GROUP9;
 
-//	GpioDataRegs.GPFDAT.bit.GPIOF11=1;
 	EINT;
 //		SciaRegs.SCICTL1.bit.SLEEP = 1;			//更改完成，结束 485 总线上 地址
 	return;

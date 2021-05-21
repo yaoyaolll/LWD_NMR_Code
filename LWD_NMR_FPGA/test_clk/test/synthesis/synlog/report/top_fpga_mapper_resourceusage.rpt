@@ -1,0 +1,38 @@
+Target Part: A3P1000_FBGA144_STD
+Report for cell top.verilog
+  Core Cell usage:
+              cell count     area count*area
+              AND2     2      1.0        2.0
+              AND3     7      1.0        7.0
+              AX1B     1      1.0        1.0
+               GND     3      0.0        0.0
+               INV     1      1.0        1.0
+              NOR2     1      1.0        1.0
+             NOR2B     2      1.0        2.0
+               OA1     6      1.0        6.0
+              OR3B     1      1.0        1.0
+              OR3C     1      1.0        1.0
+               PLL     1      0.0        0.0
+               VCC     3      0.0        0.0
+              XOR2     8      1.0        8.0
+
+
+              DFN1    10      1.0       10.0
+                   -----          ----------
+             TOTAL    47                40.0
+
+
+  IO Cell usage:
+              cell count
+             INBUF     1
+            OUTBUF     2
+                   -----
+             TOTAL     3
+
+
+Core Cells         : 40 of 24576 (0%)
+IO Cells           : 3
+
+  RAM/ROM Usage Summary
+Block Rams : 0 of 32 (0%)
+

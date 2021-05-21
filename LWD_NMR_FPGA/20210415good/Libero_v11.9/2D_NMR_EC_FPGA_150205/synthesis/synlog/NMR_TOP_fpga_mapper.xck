@@ -1,0 +1,8 @@
+CKID0001:@|S:ClockManagement_0@|E:topctrlchange_0.interupt@|F:@syn_sample_clock_path==CKID0001@|M:ClockId0001 
+CKID0002:@|S:Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.enadd_RNIH9JE_0@|E:Signal_Noise_Acq_0.signal_acq_0.add_reg_4.addresult[19]@|F:@syn_sample_clock_path==CKID0002@|M:ClockId0002 
+CKID0003:@|S:ddsclkout@|E:scan_scale_sw_0.s_start@|F:@syn_sample_clock_path==CKID0003@|M:ClockId0003 
+CKID0004:@|S:ClockManagement_0.pllclk_0.GLA_keep@|E:ClockManagement_0.clk_10k_0.count[8]@|F:@syn_sample_clock_path==CKID0004@|M:ClockId0004 
+CKID0005:@|S:Signal_Noise_Acq_0.noise_acq_0.noiseclk_0.clkout_keep@|E:Signal_Noise_Acq_0.noise_acq_0.noiseclkctrl_0.en@|F:@syn_sample_clock_path==CKID0005@|M:ClockId0005 
+CKID0006:@|S:Signal_Noise_Acq_0.noise_acq_0.n_rdclk_syn_0@|E:Signal_Noise_Acq_0.noise_acq_0.noise_addr_1.addr[11]@|F:@syn_sample_clock_path==CKID0006@|M:ClockId0006 
+CKID0007:@|S:Signal_Noise_Acq_0.signal_acq_0.s_clk_div4_0@|E:Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.enclk@|F:@syn_sample_clock_path==CKID0007@|M:ClockId0007 
+CKID0008:@|S:ClockManagement_0@|E:DSTimer_0.dump_sustain_timer_0.count[3]@|F:@syn_sample_clock_path1==CKID0008@|M:ClockId0008 

@@ -1,0 +1,11 @@
+#-- Synopsys, Inc.
+#-- Version E-2010.09A-1
+#-- Project file C:\Users\dell\Desktop\WorkFolder\2D_NMR_EC_FPGA_150131\synthesis\NMR_TOP_syn.prd
+#
+### Watch Implementation type ###
+#
+watch_impl -all
+#
+### Watch Implementation properties ###
+#
+watch_prop -clear

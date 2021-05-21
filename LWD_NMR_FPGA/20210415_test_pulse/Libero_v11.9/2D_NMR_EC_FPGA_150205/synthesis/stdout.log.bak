@@ -1,0 +1,44 @@
+
+Starting:    d:\Actel\Libero_v9.1\Synopsys\synplify_E201009A-1\bin\mbin\synplify.exe
+Install:     d:\Actel\Libero_v9.1\Synopsys\synplify_E201009A-1
+Date:        Thu Feb 05 17:06:32 2015
+Version:     E-2010.09A-1
+
+Arguments:   -product synplify_pro NMR_TOP_syn.prj
+ProductType: synplify_pro
+
+License checkout: synplifypro_actel
+License: synplifypro_actel node-locked 
+Licensed Vendor: actel
+License Feature: actel_oem
+
+
+
+"maxfan_hard3" is unrecognized option for current device
+
+Running synthesis on NMR_TOP_syn:synthesis
+
+log file: "C:\Users\dell\Desktop\WorkFolder\2D_NMR_EC_FPGA_150131\synthesis\NMR_TOP.srr"
+
+
+
+Running HDL Compiler...
+
+
+Compiler Completed with warnings
+Return Code: 1
+Run Time:00:00:02
+
+
+Running ProASIC3 Mapper...
+
+
+ProASIC3 Mapper Completed with warnings
+Return Code: 1
+Run Time:00:00:21
+
+exit status=0
+
+
+License checkin: synplifypro_actel
+

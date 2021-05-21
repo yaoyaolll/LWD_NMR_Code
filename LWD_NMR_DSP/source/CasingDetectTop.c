@@ -4,7 +4,18 @@
 #include "MyHeaderFiles.h"
 
 Uint16 CasingMiniNumAry = 5;
+Uint16 _centerFreq;		// 由插值得到的中心频率，需要与工作频率区分开来
+Uint16 _centerFreqAmp;	// 中心频率幅值
 
+Uint16 getCenterFreq()
+{
+	return _centerFreq;
+}
+
+Uint16 getCenterFreqAmp()
+{
+	return _centerFreqAmp;
+}
 
 void CasingDetectTop()
 {
@@ -29,8 +40,15 @@ void CasingDetectTop()
 	StoreMiniAryPt	= &CasingMiniNumAry;
 	StoreMini(1,SaveNTempPt,SaveSTempPt);
 	
-	// 插值计算中心频率及其幅值
-	
+    // 插值计算中心频率及其幅值，中心频率为b，幅值为a
+    MiniFreq -= ScanDeltaFreq*4;
+    for (cnt=0;cnt<9;cnt++)
+    {
+        x[cnt] = MiniFreq + MiniFreqCnt*cnt;
+        y[cnt] = *SaveSTempPt++;
+    }
+
+    guassFit_C(x, y, &a, &b, &c);
 	
 	// 存储数据
 	SaveNTempPt 	= (int *)CASING_TABLE_START;
@@ -42,8 +60,8 @@ void CasingDetectTop()
 	SaveNTempPt = (int *)(CASING_TABLE_START + 28);
 	*SaveNTempPt++ = 0;          		// Q值
 	*SaveNTempPt++ = 0x294;				// 参考幅值
-	*SaveNTempPt++ = 0;					// 中心频率
-	*SaveNTempPt   = 0;					// 中心频率幅值
+	*SaveNTempPt++ = b;					// 中心频率
+	*SaveNTempPt   = a;					// 中心频率幅值
 	
 	Uint16 CheckSum = 0;
 	SaveNTempPt = (int *)(CASING_TABLE_START);
@@ -59,10 +77,10 @@ void CasingDetectTop()
 }
 
 // 启动测井模式之前需要通过扫频来判断仪器是否处于套管中
-void CasingDetectOnce()
+int CasingDetectOnce()
 {
 	// 五次Mini扫频
-	int cnt = 0;
+/*	int cnt = 0;
 	for (cnt=0;cnt<5;++cnt)
 	{
 		MiniScan(CenterFreq, MINITABLE_START+10+12*cnt, MINITABLE_START+1+12*cnt);
@@ -74,7 +92,16 @@ void CasingDetectOnce()
 	StoreMini(1,SaveNTempPt,SaveSTempPt);
 
 	// 插值计算中心频率及其幅值
+	MiniFreq -= ScanDeltaFreq*4;
+	for (cnt=0;cnt<9;cnt++)
+	{
+	    x[cnt] = MiniFreq + MiniFreqCnt*cnt;
+	    y[cnt] = *SaveSTempPt++;
+	}
+	guassFit_C(x, y, &a, &b, &c);*/
 
-	
+	// 根据中心频率及其幅值进行频率优选
+
+	return 1;
 }
 

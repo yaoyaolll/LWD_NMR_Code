@@ -28,7 +28,7 @@ void PPShortModeTop(void)
 	//StartS1msModule(1800);      // 1800+ms
 	MiniScan(CenterFreq, MINITABLE_START+10, MINITABLE_START+1);
 
-	Tes	= (Uint32)100 *PPShort_TE_1A *  FPGA_COUNT;
+	Tes	= (Uint32)100 * PPShort_TE_1A * FPGA_COUNT;
 	Tel	= Tes;
 	Ne	= PPShort_NE_1A;
 	Pulse90StoreAddr	= PPShort_TABLE_START+(Uint32)DataTotalNum+20;
@@ -67,7 +67,7 @@ void PPShortModeTop(void)
 	//相关存储
 	SaveNTempPt	= (int *)PPShort_TABLE_START;
 	*SaveNTempPt++ = 0x9995;       						// 数据头
-	*SaveNTempPt++ = 3*EchoNum + DataTotalNum + 20;		// 长度
+	*SaveNTempPt++ = 3*EchoNum + DataTotalNum + 22;		// 长度
 	*SaveNTempPt++ = 0x0006;       						// 工作模式
 	*SaveNTempPt = CenterFreq * 10;   					// 工作频率
 
@@ -77,21 +77,25 @@ void PPShortModeTop(void)
 	*SaveNTempPt++ = Width90Pulse;      // 90度脉冲宽度
 	SavePhaseWord();
 
+	SaveNTempPt = (int *)(PPOFTW_TABLE_START + 3*EchoNum + DataTotalNum + 20);
+	*SaveNTempPt++ = getCenterFreq();					// 中心频率
+	*SaveNTempPt   = getCenterFreqAmp();				// 中心频率幅值
+	
+	SaveNTempPt	= (int *)(PPShort_TABLE_START+4);
+	SaveSTempPt	= (Uint16 *)(PPShort_TABLE_START+7);
+	StoreMiniAryPt	= &PPShortMiniNumAry;
+	StoreMini(1,SaveNTempPt,SaveSTempPt);
+
 	Uint16 CheckSum = 0;
 	SaveNTempPt = (int *)(PPShort_TABLE_START);
-	for (i=0;i<3*EchoNum+DataTotalNum+20;++i)
+	for (i=0;i<3*EchoNum+DataTotalNum+22;++i)
 	{
 		CheckSum += *SaveNTempPt;
 		SaveNTempPt++;
 	}
 	*SaveNTempPt = CheckSum;
 
-	SaveNTempPt	= (int *)(PPShort_TABLE_START+4);
-	SaveSTempPt	= (Uint16 *)(PPShort_TABLE_START+7);
-	StoreMiniAryPt	= &PPShortMiniNumAry;
-	StoreMini(1,SaveNTempPt,SaveSTempPt);
-
-	modeDataSendLen = 3*EchoNum+DataTotalNum+21;
+	modeDataSendLen = 3*EchoNum+DataTotalNum+23;
 	
 	//SciaSendDataNWords(PPShort_TABLE_START, 3*EchoNum+DataTotalNum+21);
 	ChangePhase();
