@@ -1,0 +1,452 @@
+#OPTIONS:"|-layerid|0|-orig_srs|E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\synthesis\\synwork\\NMR_TOP_comp.srs|-top|NMR_TOP|-prodtype|synplify_pro|-nram|-fixsmult|-divnmod|-I|E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\synthesis\\|-I|D:\\Libero_Soc11.9\\SynplifyPro\\lib|-v2001|-devicelib|D:\\Libero_Soc11.9\\SynplifyPro\\lib\\proasic\\proasic3.v|-encrypt|-pro|-ui|-fid2|-ram|-sharing|on|-ll|2000|-autosm|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work"
+#CUR:"D:\\Libero_Soc11.9\\SynplifyPro\\bin64\\c_ver.exe":1509315136
+#CUR:"D:\\Libero_Soc11.9\\SynplifyPro\\lib\\proasic\\proasic3.v":1508984288
+#CUR:"D:\\Libero_Soc11.9\\SynplifyPro\\lib\\vlog\\hypermods.v":1508986328
+#CUR:"D:\\Libero_Soc11.9\\SynplifyPro\\lib\\vlog\\umr_capim.v":1508986328
+#CUR:"D:\\Libero_Soc11.9\\SynplifyPro\\lib\\vlog\\scemi_objects.v":1508986328
+#CUR:"D:\\Libero_Soc11.9\\SynplifyPro\\lib\\vlog\\scemi_pipes.svh":1508986328
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\cal_div.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\cal_load.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\component\\work\\CAL\\CAL.v":1604369354
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\clk_10k.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\clk_div500.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\long_timer.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\smartgen\\pllclk\\pllclk.v":1611213014
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\component\\work\\ClockManagement\\ClockManagement.v":1604369354
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\dds_coder.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\dds_state.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\dds_timer.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\component\\work\\DDS\\DDS.v":1604369354
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\smartgen\\cmp_constant_4b\\cmp_constant_4b.v":1604369363
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\dump_sustain_timer.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\component\\work\\DSTimer\\DSTimer.v":1604369354
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\dump_coder.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\dump_state.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\dump_timer.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\off_on_coder.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\off_on_state.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\off_on_timer.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\component\\work\\DUMP\\DUMP.v":1604369354
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\component\\work\\DUMP_OFF\\DUMP_OFF.v":1604369354
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\component\\work\\DUMP_ON\\DUMP_ON.v":1604369354
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\reset_module.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\tri_state.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\xwe_xzcs2_syn.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\component\\work\\GPMI\\GPMI.v":1604369354
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\bri_coder.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\para_load.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\bri_state.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\bri_timer.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\qq_coder.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\qq_state.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\qq_timer.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\component\\work\\PLUSE\\PLUSE.v":1604369354
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\n_s_change.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\smartgen\\RAM\\RAM.v":1604369363
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\link.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\n_rdclk_syn.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\noise_addr.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\noiseclk.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\noiseclkctrl.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\component\\work\\noise_acq\\noise_acq.v":1604369354
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\add_reg.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\ctrl_addr.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\readata_choice.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\s_clk_div.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\signalclkctrl.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\ten_choice_one.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\component\\work\\signal_acq\\signal_acq.v":1604369354
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\component\\work\\Signal_Noise_Acq\\Signal_Noise_Acq.v":1604369354
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\bri_dump_sw.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\bridge_div.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\dds_change.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\n_pluse_acq.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\noisestate.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\nsctrl_choice.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\pd_pluse_coder.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\pd_pluse_state.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\smartgen\\pd_pluse_inc\\pd_pluse_inc.v":1604369363
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\pd_pluse_timer.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\component\\work\\pd_pluse_top\\pd_pluse_top.v":1604369354
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\plusestate.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\s_acq_change.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\smartgen\\necount_cmp\\necount_cmp.v":1604369363
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\smartgen\\necount_inc\\necount_inc.v":1604369363
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\scalestate.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\scan_scale_sw.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\scanstate.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\sd_acq_coder.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\sd_acq_state.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\smartgen\\sd_sacq_inc\\sd_sacq_inc.v":1604369363
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\sd_acq_timer.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\component\\work\\sd_acq_top\\sd_acq_top.v":1604369354
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\1ms_dump_choice.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\state_1ms.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\syn_md.v":1621240306
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\syn_md_combine.v":1621233896
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\syn_md_edge_detect.v":1621223387
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\component\\work\\syn_md_module\\syn_md_module.v":1621307366
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\state_switch.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\smartgen\\Timer_Cmp\\Timer_Cmp.v":1604369363
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\timer.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\component\\work\\timer_top\\timer_top.v":1604369354
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\top_code.v":1622712200
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\hdl\\topctrlchange.v":1604369357
+#CUR:"E:\\LWD_NMR\\Code\\LWD_NMR_FPGA\\20210603good\\Libero_v11.9\\2D_NMR_EC_FPGA_150205\\component\\work\\NMR_TOP\\NMR_TOP.v":1622769851
+#numinternalfiles:5
+#defaultlanguage:verilog
+0			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\cal_div.v" verilog
+1			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\cal_load.v" verilog
+2			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\CAL\CAL.v" verilog
+3			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\clk_10k.v" verilog
+4			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\clk_div500.v" verilog
+5			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\long_timer.v" verilog
+6			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\smartgen\pllclk\pllclk.v" verilog
+7			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\ClockManagement\ClockManagement.v" verilog
+8			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\dds_coder.v" verilog
+9			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\dds_state.v" verilog
+10			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\dds_timer.v" verilog
+11			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\DDS\DDS.v" verilog
+12			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\smartgen\cmp_constant_4b\cmp_constant_4b.v" verilog
+13			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\dump_sustain_timer.v" verilog
+14			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\DSTimer\DSTimer.v" verilog
+15			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\dump_coder.v" verilog
+16			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\dump_state.v" verilog
+17			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\dump_timer.v" verilog
+18			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\off_on_coder.v" verilog
+19			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\off_on_state.v" verilog
+20			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\off_on_timer.v" verilog
+21			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\DUMP\DUMP.v" verilog
+22			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\DUMP_OFF\DUMP_OFF.v" verilog
+23			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\DUMP_ON\DUMP_ON.v" verilog
+24			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\reset_module.v" verilog
+25			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\tri_state.v" verilog
+26			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\xwe_xzcs2_syn.v" verilog
+27			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\GPMI\GPMI.v" verilog
+28			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\bri_coder.v" verilog
+29			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\para_load.v" verilog
+30			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\bri_state.v" verilog
+31			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\bri_timer.v" verilog
+32			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\qq_coder.v" verilog
+33			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\qq_state.v" verilog
+34			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\qq_timer.v" verilog
+35			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\PLUSE\PLUSE.v" verilog
+36			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\n_s_change.v" verilog
+37			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\smartgen\RAM\RAM.v" verilog
+38			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\link.v" verilog
+39			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\n_rdclk_syn.v" verilog
+40			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\noise_addr.v" verilog
+41			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\noiseclk.v" verilog
+42			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\noiseclkctrl.v" verilog
+43			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\noise_acq\noise_acq.v" verilog
+44			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\add_reg.v" verilog
+45			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\ctrl_addr.v" verilog
+46			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\readata_choice.v" verilog
+47			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\s_clk_div.v" verilog
+48			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\signalclkctrl.v" verilog
+49			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\ten_choice_one.v" verilog
+50			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\signal_acq\signal_acq.v" verilog
+51			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\Signal_Noise_Acq\Signal_Noise_Acq.v" verilog
+52			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\bri_dump_sw.v" verilog
+53			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\bridge_div.v" verilog
+54			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\dds_change.v" verilog
+55			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\n_pluse_acq.v" verilog
+56			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\noisestate.v" verilog
+57			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\nsctrl_choice.v" verilog
+58			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\pd_pluse_coder.v" verilog
+59			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\pd_pluse_state.v" verilog
+60			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\smartgen\pd_pluse_inc\pd_pluse_inc.v" verilog
+61			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\pd_pluse_timer.v" verilog
+62			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\pd_pluse_top\pd_pluse_top.v" verilog
+63			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\plusestate.v" verilog
+64			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\s_acq_change.v" verilog
+65			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\smartgen\necount_cmp\necount_cmp.v" verilog
+66			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\smartgen\necount_inc\necount_inc.v" verilog
+67			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\scalestate.v" verilog
+68			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\scan_scale_sw.v" verilog
+69			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\scanstate.v" verilog
+70			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\sd_acq_coder.v" verilog
+71			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\sd_acq_state.v" verilog
+72			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\smartgen\sd_sacq_inc\sd_sacq_inc.v" verilog
+73			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\sd_acq_timer.v" verilog
+74			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\sd_acq_top\sd_acq_top.v" verilog
+75			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\1ms_dump_choice.v" verilog
+76			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\state_1ms.v" verilog
+77			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\syn_md.v" verilog
+78			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\syn_md_combine.v" verilog
+79			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\syn_md_edge_detect.v" verilog
+80			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\syn_md_module\syn_md_module.v" verilog
+81			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\state_switch.v" verilog
+82			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\smartgen\Timer_Cmp\Timer_Cmp.v" verilog
+83			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\timer.v" verilog
+84			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\timer_top\timer_top.v" verilog
+85			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\top_code.v" verilog
+86			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\topctrlchange.v" verilog
+87			"E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\NMR_TOP\NMR_TOP.v" verilog
+#Dependency Lists(Uses List)
+0 -1
+1 -1
+2 1 0
+3 -1
+4 -1
+5 -1
+6 -1
+7 5 4 6 3
+8 -1
+9 -1
+10 -1
+11 10 9 8
+12 -1
+13 12
+14 13
+15 -1
+16 -1
+17 -1
+18 -1
+19 -1
+20 -1
+21 20 16 18 19 15 17
+22 19 18 20
+23 19 18 20
+24 -1
+25 -1
+26 -1
+27 26 25 24
+28 -1
+29 -1
+30 -1
+31 -1
+32 -1
+33 -1
+34 -1
+35 33 32 31 28 34 30 29
+36 -1
+37 -1
+38 -1
+39 -1
+40 -1
+41 -1
+42 -1
+43 39 40 41 42 37 38
+44 -1
+45 -1
+46 -1
+47 -1
+48 -1
+49 -1
+50 44 47 48 46 45 49
+51 50 43 36
+52 -1
+53 -1
+54 -1
+55 -1
+56 -1
+57 -1
+58 -1
+59 -1
+60 -1
+61 60
+62 58 59 61
+63 -1
+64 -1
+65 -1
+66 -1
+67 66 65
+68 -1
+69 -1
+70 -1
+71 -1
+72 -1
+73 72
+74 70 71 73
+75 -1
+76 -1
+77 -1
+78 -1
+79 -1
+80 77 78 79
+81 -1
+82 -1
+83 82
+84 83 81
+85 -1
+86 -1
+87 52 53 2 7 11 54 14 21 22 23 27 55 56 57 62 35 63 64 67 68 69 74 51 75 76 80 84 85 86
+#Dependency Lists(Users Of)
+0 2
+1 2
+2 87
+3 7
+4 7
+5 7
+6 7
+7 87
+8 11
+9 11
+10 11
+11 87
+12 13
+13 14
+14 87
+15 21
+16 21
+17 21
+18 21 22 23
+19 21 22 23
+20 21 22 23
+21 87
+22 87
+23 87
+24 27
+25 27
+26 27
+27 87
+28 35
+29 35
+30 35
+31 35
+32 35
+33 35
+34 35
+35 87
+36 51
+37 43
+38 43
+39 43
+40 43
+41 43
+42 43
+43 51
+44 50
+45 50
+46 50
+47 50
+48 50
+49 50
+50 51
+51 87
+52 87
+53 87
+54 87
+55 87
+56 87
+57 87
+58 62
+59 62
+60 61
+61 62
+62 87
+63 87
+64 87
+65 67
+66 67
+67 87
+68 87
+69 87
+70 74
+71 74
+72 73
+73 74
+74 87
+75 87
+76 87
+77 80
+78 80
+79 80
+80 87
+81 84
+82 83
+83 84
+84 87
+85 87
+86 87
+87 -1
+#Design Unit to File Association
+module work cal_div 0
+module work cal_load 1
+module work CAL 2
+module work clk_10k 3
+module work clk_div500 4
+module work long_timer 5
+module work pllclk 6
+module work ClockManagement 7
+module work dds_coder 8
+module work dds_state 9
+module work dds_timer 10
+module work DDS 11
+module work cmp_constant_4b 12
+module work dump_sustain_timer 13
+module work DSTimer 14
+module work dump_coder 15
+module work dump_state 16
+module work dump_timer 17
+module work off_on_coder 18
+module work off_on_state 19
+module work off_on_timer 20
+module work DUMP 21
+module work DUMP_OFF 22
+module work DUMP_ON 23
+module work rst_n_module 24
+module work tri_state 25
+module work xwe_xzcs2_syn 26
+module work GPMI 27
+module work bri_coder 28
+module work bri_qq_load 29
+module work bri_state 30
+module work bri_timer 31
+module work qq_coder 32
+module work qq_state 33
+module work qq_timer 34
+module work PLUSE 35
+module work n_s_change 36
+module work RAM 37
+module work link 38
+module work n_rdclk_syn 39
+module work noise_addr 40
+module work noiseclk 41
+module work noiseclkctrl 42
+module work noise_acq 43
+module work add_reg 44
+module work ctrl_addr 45
+module work rdata_choice 46
+module work s_clk_div4 47
+module work signalclkctrl 48
+module work ten_choice_one 49
+module work signal_acq 50
+module work Signal_Noise_Acq 51
+module work bri_dump_sw 52
+module work bridge_div 53
+module work dds_change 54
+module work n_pluse_acq 55
+module work noisestate 56
+module work nsctrl_choice 57
+module work pd_pluse_coder 58
+module work pd_pluse_state 59
+module work pd_pluse_inc 60
+module work pd_pluse_timer 61
+module work pd_pluse_top 62
+module work plusestate 63
+module work s_acq_change 64
+module work necount_cmp 65
+module work necount_inc 66
+module work scalestate 67
+module work scan_scale_sw 68
+module work scanstate 69
+module work sd_sacq_coder 70
+module work sd_sacq_state 71
+module work sd_sacq_inc 72
+module work sd_sacq_timer 73
+module work sd_acq_top 74
+module work state1ms_choice 75
+module work state_1ms 76
+module work syn_md 77
+module work syn_md_combine 78
+module work syn_md_edge_detect 79
+module work syn_md_module 80
+module work state_switch 81
+module work Timer_Cmp 82
+module work timer 83
+module work timer_top 84
+module work top_code 85
+module work topctrlchange 86
+module work NMR_TOP 87

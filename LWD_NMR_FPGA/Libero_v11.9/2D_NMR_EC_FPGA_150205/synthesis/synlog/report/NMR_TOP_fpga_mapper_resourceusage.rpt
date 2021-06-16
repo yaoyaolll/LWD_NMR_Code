@@ -1,0 +1,97 @@
+Target Part: A3P1000_FBGA144_-2
+Report for cell NMR_TOP.verilog
+  Core Cell usage:
+              cell count     area count*area
+              AND2    58      1.0       58.0
+             AND2A    19      1.0       19.0
+              AND3   129      1.0      129.0
+             AND3B     1      1.0        1.0
+               AO1   110      1.0      110.0
+              AO18    92      1.0       92.0
+              AO1A    90      1.0       90.0
+              AO1B    23      1.0       23.0
+              AO1C    75      1.0       75.0
+              AO1D     2      1.0        2.0
+              AOI1    17      1.0       17.0
+             AOI1A    15      1.0       15.0
+             AOI1B     9      1.0        9.0
+               AX1     9      1.0        9.0
+              AX1A     1      1.0        1.0
+              AX1C    57      1.0       57.0
+              BUFF    19      1.0       19.0
+            CLKINT     3      0.0        0.0
+               GND   112      0.0        0.0
+               INV     9      1.0        9.0
+              MAJ3     3      1.0        3.0
+              MIN3    10      1.0       10.0
+               MX2   637      1.0      637.0
+              MX2A    15      1.0       15.0
+              MX2B    33      1.0       33.0
+              MX2C     7      1.0        7.0
+             NAND2    33      1.0       33.0
+            NAND3A    24      1.0       24.0
+              NOR2    71      1.0       71.0
+             NOR2A   444      1.0      444.0
+             NOR2B   708      1.0      708.0
+              NOR3    58      1.0       58.0
+             NOR3A    93      1.0       93.0
+             NOR3B   234      1.0      234.0
+             NOR3C   303      1.0      303.0
+               OA1    25      1.0       25.0
+              OA1A    17      1.0       17.0
+              OA1B    45      1.0       45.0
+              OA1C    37      1.0       37.0
+              OAI1    11      1.0       11.0
+               OR2   106      1.0      106.0
+              OR2A   108      1.0      108.0
+              OR2B    29      1.0       29.0
+               OR3   225      1.0      225.0
+              OR3A    18      1.0       18.0
+              OR3B     8      1.0        8.0
+              OR3C     3      1.0        3.0
+               PLL     1      0.0        0.0
+               VCC   112      0.0        0.0
+               XA1    61      1.0       61.0
+              XA1A    11      1.0       11.0
+              XA1B     1      1.0        1.0
+              XA1C    25      1.0       25.0
+             XNOR2    85      1.0       85.0
+             XNOR3    94      1.0       94.0
+               XO1   104      1.0      104.0
+              XO1A     1      1.0        1.0
+              XOR2   417      1.0      417.0
+              XOR3    19      1.0       19.0
+
+
+              DFI0     1      1.0        1.0
+              DFN0     1      1.0        1.0
+            DFN0C0    27      1.0       27.0
+            DFN0P0     1      1.0        1.0
+              DFN1   585      1.0      585.0
+            DFN1C0   221      1.0      221.0
+            DFN1E0   109      1.0      109.0
+          DFN1E0C0    17      1.0       17.0
+            DFN1E1  1247      1.0     1247.0
+          DFN1E1C0    25      1.0       25.0
+            DFN1P0    12      1.0       12.0
+         RAM512X18    16      0.0        0.0
+                   -----          ----------
+             TOTAL  7348              7104.0
+
+
+  IO Cell usage:
+              cell count
+             BIBUF    16
+            CLKBUF     1
+             INBUF    37
+            OUTBUF    48
+                   -----
+             TOTAL   102
+
+
+Core Cells         : 7104 of 24576 (29%)
+IO Cells           : 102
+
+  RAM/ROM Usage Summary
+Block Rams : 16 of 32 (50%)
+

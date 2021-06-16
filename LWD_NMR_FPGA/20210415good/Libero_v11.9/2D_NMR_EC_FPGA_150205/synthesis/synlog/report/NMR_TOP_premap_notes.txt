@@ -1,4 +1,0 @@
-@N: MF248 |Running in 64-bit mode.
-@N: MF667 |Clock conversion disabled. (Command "set_option -fix_gated_and_generated_clocks 0" in the project file.)
-@N: BN362 :"e:\lwd_nmr\code\lwd_nmr_fpga\20210415good\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\scanstate.v":127:0:127:5|Removing sequential instance resetout (in view: work.scanstate(verilog)) of type view:PrimLib.sdffre(prim) because it does not drive other instances.
-@N: BN225 |Writing default property annotation file E:\LWD_NMR\Code\LWD_NMR_FPGA\20210415good\Libero_v11.9\2D_NMR_EC_FPGA_150205\synthesis\NMR_TOP.sap.

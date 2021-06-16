@@ -15,6 +15,7 @@
 #ifndef DSP281x_GLOBALPROTOTYPES_H
 #define DSP281x_GLOBALPROTOTYPES_H
 
+extern void InitFlash(void);
 
 #ifdef __cplusplus
 extern "C" {

@@ -1,0 +1,106 @@
+Microsemi Libero Software
+Version: 11.9.6.7
+Release: v11.9 SP6
+
+'IDE_DESIGNERVIEW_ROOTDIR' set to
+'E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\designer'
+Info: The design NMR_TOP_1.adb was last modified by software version 11.9.6.7.
+Opened an existing Libero design NMR_TOP_1.adb.
+
+The Execute Script command succeeded ( 00:00:22 )
+Checking for software updates...
+This software version is up to date.
+***** Layout Variables *********************************************
+
+Mode: TIMING_DRIVEN
+Power-driven Layout: OFF
+Incremental Placement: OFF
+Incremental Route: OFF
+
+
+
+Running I/O Bank Assigner.
+
+I/O Bank Assigner completed successfully.
+ 
+
+Planning global net placement...
+
+
+
+Global net placement completed successfully.
+
+                        o - o - o - o - o - o
+
+Timing-driven Placer Started: Fri Jun 04 09:37:13 2021
+
+Placer Finished: Fri Jun 04 09:38:21 2021
+Total Placer CPU Time:     00:01:08
+
+                        o - o - o - o - o - o
+
+
+Timing-driven Router 
+Design: NMR_TOP_1                       Started: Fri Jun 04 09:38:29 2021
+
+ 
+Iterative improvement...
+
+Timing-driven Router completed successfully.
+
+Design: NMR_TOP_1                       
+Finished: Fri Jun 04 09:39:56 2021
+Total CPU Time:     00:01:26            Total Elapsed Time: 00:01:27
+Total Memory Usage: 480.6 Mbytes
+                        o - o - o - o - o - o
+
+Loading the Timing data for the design.
+Finished loading the Timing data.
+TIMER: Max delay timing requirements have been met.
+TIMER: Min delay timing requirements have NOT been met.
+
+The Layout command succeeded ( 00:02:58 )
+Warning: File
+         E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\designer\\
+         impl3\NMR_TOP_ba.sdf
+         already exists.
+         Do you want to replace the file? [YES]
+Back-annotated to the file(s):
+   .\NMR_TOP_ba.sdf
+   .\NMR_TOP_ba.v
+
+The Back-Annotate command succeeded ( 00:00:02 )
+Warning: The following files already exist:
+         
+         E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\designer\\
+         impl3\NMR_TOP_1.pdb
+         
+         Do you want to replace the files? [YES]
+
+The Export-map command succeeded ( 00:00:17 )
+Warning: Overwriting the existing file:
+         E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\designer\\
+         impl3\NMR_TOP_1.pdb.
+Wrote to the file:
+E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\designer\impl3\NMR\
+_TOP_1.pdb
+CHECKSUM: 4D8C
+
+The Generate programming file command succeeded ( 00:00:18 )
+Design saved to file
+E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\designer\impl3\NMR\
+_TOP_1.adb.
+Wrote pin report to file:
+E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\designer\impl1\NMR\
+_TOP_report_pin_byname.txt
+
+The Report command succeeded ( 00:00:01 )
+Wrote pin report to file:
+E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\designer\impl1\NMR\
+_TOP_report_pin_bynumber.txt
+
+The Report command succeeded ( 00:00:00 )
+
+The Execute Script command succeeded ( 00:00:01 )
+Design closed.
+

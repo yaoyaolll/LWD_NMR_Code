@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#pragma CODE_SECTION(guassFit_C, "secureRamFuncs");
+
 /*
  * GUASSFIT_C 此处显示有关此函数的摘要
  *    此处显示详细说明

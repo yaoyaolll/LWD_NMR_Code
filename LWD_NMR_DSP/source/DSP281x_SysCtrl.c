@@ -32,7 +32,7 @@
 // a different section.  This section will then be mapped to a load and 
 // run address using the linker cmd file.
 
-//#pragma CODE_SECTION(InitFlash, "ramfuncs");
+#pragma CODE_SECTION(InitFlash, "secureRamFuncs");
 
 //---------------------------------------------------------------------------
 // InitSysCtrl: 
@@ -158,42 +158,58 @@ void InitSysCtrl(void)
 // This function MUST be executed out of RAM. Executing it
 // out of OTP/Flash will yield unpredictable results
 
+//void InitFlash(void)
+//{
+//   EALLOW;
+//   //Enable Flash Pipeline mode to improve performance
+//   //of code executed from Flash.
+//   FlashRegs.FOPT.bit.ENPIPE = 1;
+//
+//   //                CAUTION
+//   //Minimum waitstates required for the flash operating
+//   //at a given CPU rate must be characterized by TI.
+//   //Refer to the datasheet for the latest information.
+//
+//   //Set the Random Waitstate for the Flash
+//   FlashRegs.FBANKWAIT.bit.RANDWAIT = 5;
+//
+//   //Set the Paged Waitstate for the Flash
+//   FlashRegs.FBANKWAIT.bit.PAGEWAIT = 5;
+//
+//   //                CAUTION
+//   //Minimum cycles required to move between power states
+//   //at a given CPU rate must be characterized by TI.
+//   //Refer to the datasheet for the latest information.
+//
+//   //For now use the default count
+//   //Set number of cycles to transition from sleep to standby
+//   FlashRegs.FSTDBYWAIT.bit.STDBYWAIT = 0x01FF;
+//
+//   //Set number of cycles to transition from standby to active
+//   FlashRegs.FACTIVEWAIT.bit.ACTIVEWAIT = 0x01FF;
+//   EDIS;
+//
+//   //Force a pipeline flush to ensure that the write to
+//   //the last register configured occurs before returning.
+//
+//   asm(" RPT #7 || NOP");
+//}
 void InitFlash(void)
 {
-   EALLOW;
-   //Enable Flash Pipeline mode to improve performance
-   //of code executed from Flash.
-   FlashRegs.FOPT.bit.ENPIPE = 1;
-   
-   //                CAUTION
-   //Minimum waitstates required for the flash operating
-   //at a given CPU rate must be characterized by TI. 
-   //Refer to the datasheet for the latest information.  
-
-   //Set the Random Waitstate for the Flash
-   FlashRegs.FBANKWAIT.bit.RANDWAIT = 5;
-   
-   //Set the Paged Waitstate for the Flash
-   FlashRegs.FBANKWAIT.bit.PAGEWAIT = 5;
-   
-   //                CAUTION
-   //Minimum cycles required to move between power states
-   //at a given CPU rate must be characterized by TI. 
-   //Refer to the datasheet for the latest information.
-     
-   //For now use the default count
-   //Set number of cycles to transition from sleep to standby
-   FlashRegs.FSTDBYWAIT.bit.STDBYWAIT = 0x01FF;       
-   
-   //Set number of cycles to transition from standby to active
-   FlashRegs.FACTIVEWAIT.bit.ACTIVEWAIT = 0x01FF;   
-   EDIS;
-
-   //Force a pipeline flush to ensure that the write to 
-   //the last register configured occurs before returning.  
-
-   asm(" RPT #7 || NOP");
-}	
+    asm(" EALLOW"); // Enable EALLOW protected register access
+    FlashRegs.FPWR.bit.PWR = 3; // Pump and bank set to active mode
+    FlashRegs.FSTATUS.bit.V3STAT = 1; // Clear the 3VSTAT bit
+    FlashRegs.FSTDBYWAIT.bit.STDBYWAIT = 0x01FF; // Sleep to standby transition cycles
+    FlashRegs.FACTIVEWAIT.bit.ACTIVEWAIT = 0x01FF; // Standby to active transition cycles
+    FlashRegs.FBANKWAIT.bit.RANDWAIT = 5; // Random access waitstates
+    FlashRegs.FBANKWAIT.bit.PAGEWAIT = 5; // Paged access waitstates
+    FlashRegs.FOTPWAIT.bit.OTPWAIT = 5; // Random access waitstates
+    FlashRegs.FOPT.bit.ENPIPE = 1; // Enable the flash pipeline
+    asm(" EDIS"); // Disable EALLOW protected register access
+    /*** Force a complete pipeline flush to ensure that the write to the last register
+    configured occurs before returning. Safest thing is to wait 8 full cycles. ***/
+    asm(" RPT #7 || NOP");
+}
 
 
 //---------------------------------------------------------------------------

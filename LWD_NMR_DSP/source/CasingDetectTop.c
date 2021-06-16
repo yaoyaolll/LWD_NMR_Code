@@ -1,11 +1,23 @@
+/*
+ * @Descripttion: 
+ * @version: 
+ * @Author: Yao Liu
+ * @Company: HUST.AIA
+ * @Date: 2021-04-26 14:28:14
+ * @LastEditors: Yao Liu
+ * @LastEditTime: 2021-06-06 23:20:50
+ */
 /*----------------------------头文件---------------------------------------------*/
-#include "DSP281x_Device.h"     // DSP281x Headerfile Include File
-#include "DSP281x_Examples.h"   // DSP281x Examples Include File
+#include "DSP281x_Device.h"	  // DSP281x Headerfile Include File
+#include "DSP281x_Examples.h" // DSP281x Examples Include File
 #include "MyHeaderFiles.h"
 
+
 Uint16 CasingMiniNumAry = 5;
-Uint16 _centerFreq;		// 由插值得到的中心频率，需要与工作频率区分开来
-Uint16 _centerFreqAmp;	// 中心频率幅值
+Uint16 _centerFreq;	   // 由插值得到的中心频率，需要与工作频率区分开来
+Uint16 _centerFreqAmp; // 中心频率幅值
+
+#define CASING_DATA_LEN 33
 
 Uint16 getCenterFreq()
 {
@@ -20,70 +32,84 @@ Uint16 getCenterFreqAmp()
 void CasingDetectTop()
 {
 	// 五次Mini扫频
-	int cnt = 0;
-	for (cnt=0;cnt<5;++cnt)
+    int cnt = 0;
+    // 继电器控制
+    RelayOpen(RelayCtrlCode);
+	for (cnt = 0; cnt < 5; ++cnt)
 	{
-		MiniScan(CenterFreq, MINITABLE_START+10+12*cnt, MINITABLE_START+1+12*cnt);
+		MiniScan(TransmitFre, MINITABLE_START + 10 + 12 * cnt, MINITABLE_START + 1 + 12 * cnt);
 	}
-	SaveNTempPt	= (int *)(CASING_TABLE_START+4);
-	SaveSTempPt	= (Uint16 *)(CASING_TABLE_START+10);
-	StoreMiniAryPt	= &CasingMiniNumAry;
-	StoreMini(1,SaveNTempPt,SaveSTempPt);
+	RelayClose(RelayCtrlCode);
+	SaveNTempPt = (int *)(CASING_TABLE_START + 5);
+	SaveSTempPt = (Uint16 *)(CASING_TABLE_START + 11);
+	StoreMiniAryPt = &CasingMiniNumAry;
+	StoreMini(1, SaveNTempPt, SaveSTempPt);
 
 	// 五次Mini扫频
-	for (cnt=0;cnt<5;++cnt)
+	RelayOpen(RelayCtrlCode);
+	for (cnt = 0; cnt < 5; ++cnt)
 	{
-		MiniScan(CenterFreq, MINITABLE_START+10+12*cnt, MINITABLE_START+1+12*cnt);
+		MiniScan(TransmitFre, MINITABLE_START + 10 + 12 * cnt, MINITABLE_START + 1 + 12 * cnt);
 	}
-	SaveNTempPt	= (int *)(CASING_TABLE_START+7);
-	SaveSTempPt	= (Uint16 *)(CASING_TABLE_START+19);
-	StoreMiniAryPt	= &CasingMiniNumAry;
-	StoreMini(1,SaveNTempPt,SaveSTempPt);
-	
-    // 插值计算中心频率及其幅值，中心频率为b，幅值为a
-    MiniFreq -= ScanDeltaFreq*4;
-    for (cnt=0;cnt<9;cnt++)
-    {
-        x[cnt] = MiniFreq + MiniFreqCnt*cnt;
-        y[cnt] = *SaveSTempPt++;
-    }
+	RelayClose(RelayCtrlCode);
+	SaveNTempPt = (int *)(CASING_TABLE_START + 8);
+	SaveSTempPt = (Uint16 *)(CASING_TABLE_START + 20);
+	StoreMiniAryPt = &CasingMiniNumAry;
+	StoreMini(1, SaveNTempPt, SaveSTempPt);
 
-    guassFit_C(x, y, &a, &b, &c);
-	
+	// 插值计算中心频率及其幅值，中心频率为b，幅值为a
+	MiniFreq = TransmitFre;
+	MiniFreq -= ScanDeltaFreq * 4;
+	for (cnt = 0; cnt < 9; cnt++)
+	{
+		x[cnt] = MiniFreq + ScanDeltaFreq * cnt;
+		y[cnt] = *SaveSTempPt++;
+	}
+
+	// 计算中心频率及其幅值
+	guassFit_C(x, y, &a, &b, &c);
+
+	_centerFreq = (Uint16)b;
+	_centerFreqAmp = (Uint16)a;
+
 	// 存储数据
-	SaveNTempPt 	= (int *)CASING_TABLE_START;
-	*SaveNTempPt++	= REPLY_CASING_F;   // 数据头部
-	*SaveNTempPt++	= 32;				// 长度
-	*SaveNTempPt++	= 0x0008;        	// 工作模式
-	*SaveNTempPt	= CenterFreq * 10;  // 工作频率，下发和上传的中心频率单位是0.1kHz
+	SaveNTempPt = (int *)CASING_TABLE_START;
+	*SaveNTempPt++ = REPLY_CASING_F;  // 数据头部
+	*SaveNTempPt++ = CASING_DATA_LEN; // 长度
+	*SaveNTempPt++ = EVENT_BOARD_ID;  // 从机标识
+	*SaveNTempPt++ = 0x0008;		  // 工作模式存储为主扫频模式
+	*SaveNTempPt = TransmitFre * 10;	  // 工作频率，下发和上传的中心频率单位是0.1kHz
 
-	SaveNTempPt = (int *)(CASING_TABLE_START + 28);
-	*SaveNTempPt++ = 0;          		// Q值
-	*SaveNTempPt++ = 0x294;				// 参考幅值
-	*SaveNTempPt++ = b;					// 中心频率
-	*SaveNTempPt   = a;					// 中心频率幅值
-	
+	SaveNTempPt = (int *)(CASING_TABLE_START + 29);
+	*SaveNTempPt++ = 0;			   // Q值
+	*SaveNTempPt++ = 0x294;		   // 参考幅值
+	*SaveNTempPt++ = _centerFreq;  // 中心频率
+	*SaveNTempPt = _centerFreqAmp; // 中心频率幅值
+
 	Uint16 CheckSum = 0;
 	SaveNTempPt = (int *)(CASING_TABLE_START);
-	int i=0;
-	for (;i<32;++i)  // CheckSum计算前面的数据时，除去CheckSum本身
+	int i = 0;
+	for (; i < CASING_DATA_LEN; ++i) // CheckSum计算前面的数据时，除去CheckSum本身
 	{
 		CheckSum += *SaveNTempPt;
 		SaveNTempPt++;
 	}
 	*SaveNTempPt = CheckSum;
 
-	modeDataSendLen = 33;
+	modeDataSendLen = CASING_DATA_LEN + 1;
 }
 
 // 启动测井模式之前需要通过扫频来判断仪器是否处于套管中
 int CasingDetectOnce()
 {
 	// 五次Mini扫频
-/*	int cnt = 0;
+    int cnt = 0;
 	for (cnt=0;cnt<5;++cnt)
 	{
-		MiniScan(CenterFreq, MINITABLE_START+10+12*cnt, MINITABLE_START+1+12*cnt);
+	    // 继电器控制
+	    RelayOpen(RelayCtrlCode);
+		MiniScan(TransmitFre, MINITABLE_START+10+12*cnt, MINITABLE_START+1+12*cnt);
+		RelayClose(RelayCtrlCode);
 	}
 	// 暂时将测量结果存放在此处
 	SaveNTempPt	= (int *)(CASING_TABLE_START+4);
@@ -92,16 +118,23 @@ int CasingDetectOnce()
 	StoreMini(1,SaveNTempPt,SaveSTempPt);
 
 	// 插值计算中心频率及其幅值
+	MiniFreq = TransmitFre;
 	MiniFreq -= ScanDeltaFreq*4;
 	for (cnt=0;cnt<9;cnt++)
 	{
-	    x[cnt] = MiniFreq + MiniFreqCnt*cnt;
+	    x[cnt] = MiniFreq + ScanDeltaFreq*cnt;
 	    y[cnt] = *SaveSTempPt++;
 	}
-	guassFit_C(x, y, &a, &b, &c);*/
+	guassFit_C(x, y, &a, &b, &c);
+
+    _centerFreq = (Uint16)b;    // b为中心频率
+    _centerFreqAmp = (Uint16)a; // a为幅值
+
+//    if (_centerFreqAmp <= ParamOrderData.data.AutoAmpThd)   // 幅值异常
+//        return 0;
 
 	// 根据中心频率及其幅值进行频率优选
 
-	return 1;
-}
 
+    return 1;
+}

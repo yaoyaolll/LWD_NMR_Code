@@ -27,6 +27,11 @@
 #include "MyHeaderFiles.h"
 #include "DSP281x_Device.h" 
 
+#pragma CODE_SECTION(LoadDDSPara, "secureRamFuncs");
+#pragma CODE_SECTION(LoadBriDumpPara, "secureRamFuncs");
+#pragma CODE_SECTION(LoadPdPara, "secureRamFuncs");
+#pragma CODE_SECTION(StartS1msModule, "secureRamFuncs");
+
 void ShutdownHV(void)
 {
     K1_DIS = USER_DISABLE;     

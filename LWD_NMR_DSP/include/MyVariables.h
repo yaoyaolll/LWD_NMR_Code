@@ -26,6 +26,37 @@
 #include "IQmathlib.h"
 #include "MyDefine.h"
 
+// 存储单个指令
+typedef struct SingleOrder
+{
+    Uint16 frameHead;   // 帧头
+    Uint16 len;         // 长度
+    Uint16 slaveID;     // 从机标识
+    Uint16 checkSum;    // Checksum
+}SingleOrder_t;
+
+// 存储特殊参数
+#define ParameterOrderLen 6
+struct ParameterOrder
+{
+    Uint16 frameHead;   // 帧头
+    Uint16 len;         // 长度
+    Uint16 slaveID;     // 从机标识
+    Uint16 Temperature; // 温度
+    Uint16 AutoAmpThd;  // 扫频幅值阈值，用作异常判断
+    Uint16 checkSum;    // Checksum
+};
+typedef union ParameterOrderUnion
+{
+    struct ParameterOrder data;
+    Uint16 dataAry[ParameterOrderLen];
+}ParameterOrder_u;
+
+extern float TransmitFre_f;         // 发射频率float型
+extern Uint16 TransmitFre;          // 发射频率Uint16型
+extern float RelayCtrlCode_f;       // 继电器控制码float型
+extern Uint16 RelayCtrlCode;        // 继电器控制码Uint16型
+
 // 高斯拟合变量
 extern float x[9];
 extern float y[9];
@@ -33,16 +64,18 @@ extern float a;
 extern float b;
 extern float c;
 
-#define STATE_NUM   4
-
 // 事件板状态字
 enum EB_STATE
 {
-	IDLE_STAT = 1, OPERATION_STAT, CASING_DETECT_STAT, ACQ_FIN_STAT
+	IDLE_STAT = 1, OPERATION_STAT, CASING_DETECT_STAT, TEST_STAT, SCALE_STAT, ACQ_FIN_STAT
 };
 extern enum EB_STATE EventBoardState;
 
 extern void (* eventFunc[])(void);
+
+extern SingleOrder_t SingleOrderData;
+extern Uint16 SingleOrderAryChoice;
+extern void (* singleOrderFunc[])(void);
 
 extern Uint16 _caseingDetectFlag;
 extern Uint16 _operationFlag;
@@ -438,4 +471,9 @@ extern Uint16 RecSendTableFlag;
 extern Uint16 SendTableID;	
 extern Uint16 RecSendTableCmdParaLen;
 
+extern Uint16 RecSingleOrderFlag;
+extern Uint16 SingleOrderAryChoice;    // 单个变量函数选择
 
+extern Uint16 RecParamOrderFlag;   // 接收重要参数指令标志位
+extern ParameterOrder_u ParamOrderData; // 存储重要参数指令
+extern Uint16 IsParamUpdateFlag;   // 重要参数更新标志位

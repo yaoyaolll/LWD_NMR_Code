@@ -1,3 +1,5 @@
+#define DEBUG       // 用来控制RAM和FALSH版本程序
+
 //Address macro definations
 #define TABLE_START			0x8000    //参数表0x8000+78
 #define WORK_MODE_ADDR		0x8001
@@ -41,25 +43,6 @@
 
 #define TABLE_TOTAL_NUM     83
 #define BAND_NUM			9
-
-/*
-#define RELAY_CTR_1			0x000D
-#define RELAY_CTR_2			0x000E
-#define RELAY_CTR_3			0x0005
-#define RELAY_CTR_4			0x0001
-#define RELAY_CTR_5			0x0002
-#define RELAY_CTR_6			0x0000
-*/
-
-#define RELAY_CTR_1 0x0029
-#define RELAY_CTR_2 0x0025
-#define RELAY_CTR_3 0x0009
-#define RELAY_CTR_4 0x0030
-#define RELAY_CTR_5 0x0018
-#define RELAY_CTR_6 0x0008
-#define RELAY_CTR_7 0x0002
-#define RELAY_CTR_8 0x0000
-
 
 #define SHIFT				10           //格式转换
 #define NOISE_STRIP			8           //噪声舍去点数
@@ -110,53 +93,6 @@
 
 #define MINI_TEST			53		//the time of mini scan is 7.6ms
 #define FPGA_BC				5
-
-#define OIL3_TE_1AB			21
-#define OIL3_TE_2AB			6
-#define OIL3_TE_3A			15 
-#define OIL3_NE_1AB			238
-#define OIL3_NE_2AB			833
-#define OIL3_NE_3A			333
-
-#define GAS6_TE_123456A		6
-#define GAS6_TE_1234B		6
-#define GAS6_NE_1234AB56A	700
-
-#define Gas6_2_NE_1234AB56A 700
-#define Gas6_2_TE_123456A 	6
-#define Gas6_2_TE_1234B 	6
-
-#define PPHOIL6F_TE_1B 100
-#define PPHOIL6F_TE_2B 50
-#define PPHOIL6F_TE_3B 70
-#define PPHOIL6F_TE_4B 8
-#define PPHOIL6F_TE_5B 36
-#define PPHOIL6F_TE_6B 12
-
-#define PPHOIL6FNe1B 	8
-#define PPHOIL6FNe2B 	16
-#define PPHOIL6FNe3B 	11
-#define PPHOIL6FNe4B 	220
-#define PPHOIL6FNe5B 	33
-#define PPHOIL6FNe6B 	100
-
-#define PPHOIL6F_2_TE_1B 100
-#define PPHOIL6F_2_TE_2B 50
-#define PPHOIL6F_2_TE_3B 70
-#define PPHOIL6F_2_TE_4B 8
-#define PPHOIL6F_2_TE_5B 36
-#define PPHOIL6F_2_TE_6B 15
-
-#define PPHOIL6F_2Ne1B 	8
-#define PPHOIL6F_2Ne2B 	16
-#define PPHOIL6F_2Ne3B 	11
-#define PPHOIL6F_2Ne4B 	250
-#define PPHOIL6F_2Ne5B 	33
-#define PPHOIL6F_2Ne6B 	100
-
-#define DFT1T2D_NREPT_A8B8 		2
-#define DFT1T2D_NREPT_A9B9 		2
-#define DFT1T2D_NREPT_A10B10 	2
 
 
 //Interface with FPGA macro definations
@@ -218,7 +154,8 @@
 #define  STATE1MS_CHOICE	*(Uint16 *) 0x80037         //1ms状态机参数选择
 #define  STATE1MS_DATA		*(Uint16 *) 0x80038        //1ms状态机参数
 
-#define  RELAY_ON_CLOSE		*(Uint16 *) 0x80040          //继电器低8位是闭合，高8位断开
+#define  RELAY_ON   		*(Uint16 *) 0x80040         // 开启继电器，写入低十位[9:0]来控制继电器端口高低电平输出     
+#define  RELAY_CLOSE        *(Uint16 *) 0x80041         // 关闭继电器，写入低十位[9:0]来控制继电器端口高低电平输出
 
 #define  CTRL_CHOICE		*(Uint16 *) 0x80060          //控制通路选择（为0扫频，噪声，为1刻度）
 
@@ -313,23 +250,43 @@
 #define  RDDATA *(Uint16 *) 0x2200
 */
 
+// 从机标识
+#define EVENT_BOARD_ID      0x55AA
+
+// RS485延时
+#define RS485_DELAY         25
+
 // 主控板下发数据帧帧头定义，F means Frame
-#define DATA_INQUIRE_F      0x999A  // 查询状态指令
 #define DATA_DOWN_TABLE_F   0x1328  // 参数表下载指令
 #define DATA_UP_TABLE_F     0x1428  // 参数表上传指令
-#define DATA_OPERATION_F    0x999B  // 启动工作指令
-#define DATA_CASING_F       0x999C  // 套管检测指令
-#define DATA_UP_MODE_F      0x999D  // 模式数据上传指令
-#define DATA_MODE_CONFIRM_F 0x999E  // 模式数据确认指令
-#define DATA_K1K2_EN_F      0x9922  // 储能短节连接指令
-#define DATA_K1K2_DIS_F     0x9923  // 储能短节断开指令
-#define DATA_HVState_F      0x9924  // 储能短节判断指令
-#define DATA_SysCheck_F     0x9901  // 系统自检测指令
+#define DATA_INQUIRE_F      0x9991  // 查询状态指令
+#define DATA_OPERATION_F    0x9992  // 启动工作指令
+#define DATA_CASING_F       0x9993  // 套管检测指令
+#define DATA_UP_MODE_F      0x9994  // 模式数据上传指令
+#define DATA_MODE_CONFIRM_F 0x9995  // 模式数据确认指令
+#define DATA_K1K2_EN_F      0x9996  // 储能短节连接指令
+#define DATA_K1K2_DIS_F     0x9997  // 储能短节断开指令
+#define DATA_HVState_F      0x9998  // 储能短节状态判断指令
+#define DATA_SysCheck_F     0x9999  // 系统自检测指令
+#define DATA_TEST_F         0x999A  // 启动测试指令
+#define DATA_SCALE_F        0x999B  // 启动刻度指令
+
+#define DATA_Parameter_F    0x99A0  // 重要参数下发指令
 
 // 事件板回复帧帧头定义，F means Frame
-#define REPLY_STATE_F       0x9991  // 查询状态指令回复
-#define REPLY_DOWN_TABLE_F  0x9992  // 参数表下载指令回复
-#define REPLY_UP_TABLE_F    0x9993  // 参数表上传指令回复
-#define REPLY_CASING_F      0x9994  // 套管检测数据
-#define REPLY_MODE_DATA_F   0x9995  // 刻度/测井模式数据回复
-#define REPLY_CASING_ERR_F  0x9996  // 套管检测异常帧
+#define REPLY_STATE_F       0x9981  // 查询状态指令回复
+#define REPLY_DOWN_TABLE_F  0x9982  // 参数表下载指令回复
+#define REPLY_UP_TABLE_F    0x9983  // 参数表上传指令回复
+#define REPLY_CASING_F      0x9984  // 套管检测数据
+#define REPLY_MODE_DATA_F   0x9985  // 刻度/测井模式数据回复
+#define REPLY_CASING_ERR_F  0x9986  // 套管检测异常帧
+#define REPLY_Parameter_F   0x9987  // 重要参数下发指令回复
+
+// 频率温度转换公式 f = -0.2516 * T + 568.0064 
+#define f_T_k -0.2516f          // 公式斜率
+#define f_T_b 568.0064f         // 公式截距
+
+// 继电器对应的频率转换公式，10个继电器则有十位，从0到1023，对应440kHz-580kHz
+#define RELAY_f_k -7.31f        // 公式斜率
+#define RELAY_f_b 4238.0f       // 公式截距
+

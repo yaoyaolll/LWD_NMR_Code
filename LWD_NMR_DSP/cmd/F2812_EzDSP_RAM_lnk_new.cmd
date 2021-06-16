@@ -75,8 +75,9 @@ PAGE 0 :
 
 
      BEGIN      	: origin = 0x3F7FF6, length = 0x000002
-     RAMM0_0    	: origin = 0x000040, length = 0x000330
+     RAMM0_0    	: origin = 0x000040, length = 0x000380
      PRAMH0      	: origin = 0x3f8000, length = 0x002000
+     RAML0_CODE_USE2: origin = 0x008200, length = 0x000390
      RAML1_RSV    	: origin = 0x009000, length = 0x001000		/* ÐÂÔö */
      RAMOUT_0     	: origin = 0x100000, length = 0x01FFFF
      FLASH_E     	: origin = 0x3D8000, length = 0x01F000
@@ -87,17 +88,16 @@ PAGE 0 :
 PAGE 1 : 
 
    /* For this example, H0 is split between PAGE 0 and PAGE 1 */
-   RAMM0_1  				: origin = 0x000370, length = 0x000090
+   RAMM0_1  				: origin = 0x0003C0, length = 0x000040
    RAMM1    				: origin = 0x000400, length = 0x000400
    RAML0_CODE_USE   		: origin = 0x008000, length = 0x000100   /*´æ´¢²ÎÊý±í*/
-   RAML0_CODE_USE1     		: origin = 0x008100, length = 0x000490	 /*´æ´¢ÔëÉù*/
+   RAML0_CODE_USE1     		: origin = 0x008100, length = 0x000100	 /*´æ´¢ÔëÉù*/
+
    myzone   				: origin = 0x008590, length = 0x000A70
    /*RAML1_RSV    			: origin = 0x009000, length = 0x001000*/
    RAMOUT_1_CODE_USE 		: origin = 0x120000, length = 0x01FFFF
    RAMOUT_2_RSV 			: origin = 0x140000, length = 0x03FFFF
    FPGA_RSV 				: origin = 0x080000, length = 0x080000
-
-
 
 
    DEV_EMU     : origin = 0x000880, length = 0x000180     /* device emulation registers */
@@ -165,9 +165,9 @@ SECTIONS
 
 /*	ramfuncs	    : > PRAMH0,  	    PAGE = 0*/
 
-	.text		    : {*(.text)} >> PRAMH0 | RAML1_RSV,  	    PAGE = 0
+	.text		    : {*(.text)} >> PRAMH0 | RAML1_RSV | RAML0_CODE_USE2,  	    PAGE = 0
 
-	Datatable 	    : > RAMOUT_0,       PAGE = 0
+	secureRamFuncs 	    : > RAMOUT_0,       PAGE = 0
 
    IQmathTables : load = BOOTROM,type = NOLOAD,PAGE = 0
 

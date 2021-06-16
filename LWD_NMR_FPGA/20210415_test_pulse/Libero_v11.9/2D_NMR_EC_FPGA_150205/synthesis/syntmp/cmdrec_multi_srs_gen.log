@@ -1,8 +1,0 @@
-D:\Libero_Soc11.9\SynplifyPro\bin64\syn_nfilter.exe  -link  -top  NMR_TOP  -multisrs  E:\LWD_NMR\Code\LWD_NMR_FPGA\20210415_test_pulse\Libero_v11.9\2D_NMR_EC_FPGA_150205\synthesis\synwork\NMR_TOP_comp.srs  -osyn  E:\LWD_NMR\Code\LWD_NMR_FPGA\20210415_test_pulse\Libero_v11.9\2D_NMR_EC_FPGA_150205\synthesis\synwork\NMR_TOP_mult.srs  -log  E:\LWD_NMR\Code\LWD_NMR_FPGA\20210415_test_pulse\Libero_v11.9\2D_NMR_EC_FPGA_150205\synthesis\synlog\NMR_TOP_multi_srs_gen.srr 
-relcom:D:\Libero_Soc11.9\SynplifyPro\bin64\syn_nfilter.exe -link -top NMR_TOP -multisrs ..\synwork\NMR_TOP_comp.srs -osyn ..\synwork\NMR_TOP_mult.srs -log ..\synlog\NMR_TOP_multi_srs_gen.srr
-rc:0 success:1 runtime:0
-file:..\synwork\NMR_TOP_comp.srs|io:i|time:1618454764|size:187153|exec:0|csum:16420577CDC1D7D1749C92E3D24CBFDC
-file:..\synwork\NMR_TOP_mult.srs|io:o|time:1618454766|size:22152|exec:0|csum:
-file:..\synlog\NMR_TOP_multi_srs_gen.srr|io:o|time:1618454766|size:549|exec:0|csum:
-file:D:\Libero_Soc11.9\SynplifyPro\bin\syn_nfilter.exe|io:i|time:1508986612|size:3128832|exec:1|csum:962D613D77B03012E41E67FDFAA0D819
-file:D:\Libero_Soc11.9\SynplifyPro\bin64\syn_nfilter.exe|io:i|time:1508986884|size:3947520|exec:1|csum:17B0DA4185D3A16356E0044EDC31C9F0

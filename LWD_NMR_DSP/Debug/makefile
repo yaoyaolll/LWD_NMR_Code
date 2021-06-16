@@ -28,9 +28,12 @@ $(GEN_CMDS__FLAG) \
 "./source/PPShortModeTop.obj" \
 "./source/PPT1ModeTop.obj" \
 "./source/PulseTop.obj" \
+"./source/RelayCtrl.obj" \
 "./source/SCIA_interrupt.obj" \
 "./source/ScaleHoleTop.obj" \
 "./source/ScanTop.obj" \
+"./source/SingleOrderDeal.obj" \
+"./source/StateCtrl.obj" \
 "./source/TableHandle.obj" \
 "../lib/IQmath.lib" \
 "../lib/rts2800_ml.lib" \
@@ -171,8 +174,8 @@ LWD_NMR_ECB.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(EXE_OUTPUTS__QUOTED)$(BIN_OUTPUTS__QUOTED)
-	-$(RM) "main.pp" "source\CasingDetectTop.pp" "source\DE_CPMG_Top.pp" "source\DSP281x_CpuTimers.pp" "source\DSP281x_DefaultIsr.pp" "source\DSP281x_GlobalVariableDefs.pp" "source\DSP281x_PieCtrl.pp" "source\DSP281x_PieVect.pp" "source\DSP281x_SysCtrl.pp" "source\GuassFitAlogrithm.pp" "source\MainInitial.pp" "source\MyFPGAFunctions.pp" "source\MyFunctions.pp" "source\MyVariables.pp" "source\PPDIFModeTop.pp" "source\PPModeTop.pp" "source\PPOFTWModeTop.pp" "source\PPShortModeTop.pp" "source\PPT1ModeTop.pp" "source\PulseTop.pp" "source\SCIA_interrupt.pp" "source\ScaleHoleTop.pp" "source\ScanTop.pp" "source\TableHandle.pp" 
-	-$(RM) "main.obj" "source\CasingDetectTop.obj" "source\DE_CPMG_Top.obj" "source\DSP281x_CpuTimers.obj" "source\DSP281x_DefaultIsr.obj" "source\DSP281x_GlobalVariableDefs.obj" "source\DSP281x_PieCtrl.obj" "source\DSP281x_PieVect.obj" "source\DSP281x_SysCtrl.obj" "source\GuassFitAlogrithm.obj" "source\MainInitial.obj" "source\MyFPGAFunctions.obj" "source\MyFunctions.obj" "source\MyVariables.obj" "source\PPDIFModeTop.obj" "source\PPModeTop.obj" "source\PPOFTWModeTop.obj" "source\PPShortModeTop.obj" "source\PPT1ModeTop.obj" "source\PulseTop.obj" "source\SCIA_interrupt.obj" "source\ScaleHoleTop.obj" "source\ScanTop.obj" "source\TableHandle.obj" 
+	-$(RM) "main.pp" "source\CasingDetectTop.pp" "source\DE_CPMG_Top.pp" "source\DSP281x_CpuTimers.pp" "source\DSP281x_DefaultIsr.pp" "source\DSP281x_GlobalVariableDefs.pp" "source\DSP281x_PieCtrl.pp" "source\DSP281x_PieVect.pp" "source\DSP281x_SysCtrl.pp" "source\GuassFitAlogrithm.pp" "source\MainInitial.pp" "source\MyFPGAFunctions.pp" "source\MyFunctions.pp" "source\MyVariables.pp" "source\PPDIFModeTop.pp" "source\PPModeTop.pp" "source\PPOFTWModeTop.pp" "source\PPShortModeTop.pp" "source\PPT1ModeTop.pp" "source\PulseTop.pp" "source\RelayCtrl.pp" "source\SCIA_interrupt.pp" "source\ScaleHoleTop.pp" "source\ScanTop.pp" "source\SingleOrderDeal.pp" "source\StateCtrl.pp" "source\TableHandle.pp" 
+	-$(RM) "main.obj" "source\CasingDetectTop.obj" "source\DE_CPMG_Top.obj" "source\DSP281x_CpuTimers.obj" "source\DSP281x_DefaultIsr.obj" "source\DSP281x_GlobalVariableDefs.obj" "source\DSP281x_PieCtrl.obj" "source\DSP281x_PieVect.obj" "source\DSP281x_SysCtrl.obj" "source\GuassFitAlogrithm.obj" "source\MainInitial.obj" "source\MyFPGAFunctions.obj" "source\MyFunctions.obj" "source\MyVariables.obj" "source\PPDIFModeTop.obj" "source\PPModeTop.obj" "source\PPOFTWModeTop.obj" "source\PPShortModeTop.obj" "source\PPT1ModeTop.obj" "source\PulseTop.obj" "source\RelayCtrl.obj" "source\SCIA_interrupt.obj" "source\ScaleHoleTop.obj" "source\ScanTop.obj" "source\SingleOrderDeal.obj" "source\StateCtrl.obj" "source\TableHandle.obj" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

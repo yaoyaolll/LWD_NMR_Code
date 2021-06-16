@@ -1,1 +1,0 @@
-@W: MT530 :"e:\lwd_nmr\code\test_clk\test\hdl\clk_out.v":27:0:27:5|Found inferred clock clk_out|clk_in which controls 5 sequential elements including count[3:0]. This clock has no specified timing constraint which may adversely impact design performance. 

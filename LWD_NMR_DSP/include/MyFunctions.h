@@ -27,8 +27,9 @@ unsigned int SciaRx_Ready(void);
 void SciaSendOneWord(Uint16 data);
 interrupt void SCIRXINTA_ISR(void);
 void ReplySingleVarFrame(Uint16 frameHead, Uint16 var);
+void ReplyNoVarFrame(Uint16 frameHead);
 void ReplyStateFrame(Uint16 state);
-void ReplyDownTableFrame(Uint16 lastCheckSum);
+void ReplyLastCheckFrame(Uint16 frameHead, Uint16 lastCheckSum);
 void ReplyUpTableFrame(Uint16 tableID);
 void ReplyModeDataFrame(Uint32 startAddr, Uint32 dataLen);
 void ReplyCasingErrFrame();
@@ -50,14 +51,14 @@ void SaveNoise(Uint32);
 void ScanFreqOnce(void);
 void CalSignal(Uint16);
 void SaveSignal(Uint32);
-void Delay(unsigned int );	// 延时程序
-void MiniScan(Uint16,Uint32,Uint32);
+void Delay(unsigned int); // 延时程序
+void MiniScan(Uint16, Uint32, Uint32);
 interrupt void XINT1_STOP(void);
 void SavePulse(Uint32);
 void SaveEcho(Uint32);
 void SavePhaseWord(void);
 void SaveSixFreq(void);
-void StoreMini(Uint16,int *,Uint16 *);
+void StoreMini(Uint16, int *, Uint16 *);
 void DCWorkOnce(Uint16);
 void ChangePhase(void);
 
@@ -70,9 +71,10 @@ void PulseAcq(void);
 void PulseSave(void);
 
 //Functions defined in TableHandle.c
-void DownloadTable(Uint16);
+void RecDownTableCommand(Uint16);
 void RecUpTableCommand(Uint16 DownDataBuf);
-
+void RecParameterCommand(Uint16 DownDataBuf);
+void RecSingleOrderCommand(Uint16);
 interrupt void XINT2_DCStorData(void);
 void CheckWorkMode(void);
 void CheckReadTable(void);
@@ -104,6 +106,8 @@ void PPShortModeTop(void);
 void IdleStateCtl(void);
 void OperaStateCtl(void);
 void CasDctStateCtl(void);
+void TestStateCtl(void);
+void ScaleStateCtl(void);
 void AcqFinStateCtl(void);
 
 // Functions defined in CasingDetectTop.c
@@ -113,4 +117,24 @@ int CasingDetectOnce();
 void CasingDetectTop();
 
 // Functions defined in GuassFitAlgorithm.c
-void guassFit_C(const float x[9], const float y[9], float* a, float* b, float* c);
+void guassFit_C(const float x[9], const float y[9], float *a, float *b, float *c);
+
+// Functions defined in SingleOrderDeal.c
+Uint16 CheckSumCal();
+void EmptyDeal();
+void InquireDeal();
+void OperationDeal();
+void CasingDeal();
+void DataUpDeal();
+void ModeConfirmDeal();
+void K1K2EnDeal();
+void K1K2DisDeal();
+void HVStateDeal();
+void SysCheckDeal();
+void TestDeal();
+void ScaleDeal();
+
+// Functions defined in RelayCtrl.c
+void RelayClose(Uint16 _RelayCtrlCode);
+void RelayOpen(Uint16 _RelayCtrlCode);
+void ParamUpdate();

@@ -1,7 +1,0 @@
-@N|Running in 64-bit mode
-@N|Running in 64-bit mode
-@N: CG364 :"E:\LWD_NMR\Code\test_clk\test\hdl\clk_out.v":21:7:21:13|Synthesizing module clk_out in library work.
-@N: CL189 :"E:\LWD_NMR\Code\test_clk\test\hdl\clk_out.v":27:0:27:5|Register bit count[4] is always 0.
-@N: CL189 :"E:\LWD_NMR\Code\test_clk\test\hdl\clk_out.v":27:0:27:5|Register bit count[5] is always 0.
-@N|Running in 64-bit mode
-

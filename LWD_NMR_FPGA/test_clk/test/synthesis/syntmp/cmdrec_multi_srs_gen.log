@@ -1,8 +1,0 @@
-D:\Libero_Soc11.9\SynplifyPro\bin64\syn_nfilter.exe  -link  -top  top  -multisrs  E:\LWD_NMR\Code\test_clk\test\synthesis\synwork\top_comp.srs  -osyn  E:\LWD_NMR\Code\test_clk\test\synthesis\synwork\top_mult.srs  -log  E:\LWD_NMR\Code\test_clk\test\synthesis\synlog\top_multi_srs_gen.srr 
-relcom:D:\Libero_Soc11.9\SynplifyPro\bin64\syn_nfilter.exe -link -top top -multisrs ..\synwork\top_comp.srs -osyn ..\synwork\top_mult.srs -log ..\synlog\top_multi_srs_gen.srr
-rc:0 success:1 runtime:0
-file:..\synwork\top_comp.srs|io:i|time:1611306498|size:6053|exec:0|csum:A1FBC3C162910E602277F758C5808612
-file:..\synwork\top_mult.srs|io:o|time:1611306499|size:2033|exec:0|csum:
-file:..\synlog\top_multi_srs_gen.srr|io:o|time:1611306499|size:498|exec:0|csum:
-file:D:\Libero_Soc11.9\SynplifyPro\bin\syn_nfilter.exe|io:i|time:1508986612|size:3128832|exec:1|csum:962D613D77B03012E41E67FDFAA0D819
-file:D:\Libero_Soc11.9\SynplifyPro\bin64\syn_nfilter.exe|io:i|time:1508986884|size:3947520|exec:1|csum:17B0DA4185D3A16356E0044EDC31C9F0

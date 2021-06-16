@@ -30,24 +30,24 @@
 /* ======================================================
 // For Code Composer Studio V2.2 and later
 // ---------------------------------------
-// In addition to this memory linker command file, 
-// add the header linker command file directly to the project. 
+// In addition to this memory linker command file,
+// add the header linker command file directly to the project.
 // The header linker command file is required to link the
-// peripheral structures to the proper locations within 
+// peripheral structures to the proper locations within
 // the memory map.
 //
 // The header linker files are found in <base>\DSP281x_Headers\cmd
-//   
+//
 // For BIOS applications add:      DSP281x_Headers_nonBIOS.cmd
-// For nonBIOS applications add:   DSP281x_Headers_nonBIOS.cmd    
+// For nonBIOS applications add:   DSP281x_Headers_nonBIOS.cmd
 ========================================================= */
 
 /* ======================================================
 // For Code Composer Studio prior to V2.2
 // --------------------------------------
-// 1) Use one of the following -l statements to include the 
+// 1) Use one of the following -l statements to include the
 // header linker command file in the project. The header linker
-// file is required to link the peripheral structures to the proper 
+// file is required to link the peripheral structures to the proper
 // locations within the memory map                                    */
 
 /* Uncomment this line to include file only for non-BIOS applications */
@@ -57,7 +57,7 @@
 /* -l DSP281x_Headers_BIOS.cmd */
 
 /* 2) In your project add the path to <base>\DSP281x_headers\cmd to the
-   library search path under project->build options, linker tab, 
+   library search path under project->build options, linker tab,
    library search path (-i).
 /*========================================================= */
 -l rts2800_ml.lib
@@ -67,7 +67,7 @@
 MEMORY
 {
 PAGE 0 :
-   /* For this example, H0 is split between PAGE 0 and PAGE 1 */  
+   /* For this example, H0 is split between PAGE 0 and PAGE 1 */
    /* BEGIN is used for the "boot to HO" bootloader mode      */
    /* RESET is loaded with the reset vector only if           */
    /* the boot is from XINTF Zone 7.  Otherwise reset vector  */
@@ -75,24 +75,23 @@ PAGE 0 :
 
 
      BEGIN      	: origin = 0x3F7FF6, length = 0x000002
-     RAMM0_0    	: origin = 0x000040, length = 0x000330
+     RAMM0_0    	: origin = 0x000040, length = 0x000370
      PRAMH0      	: origin = 0x3f8000, length = 0x002000
-     RAML1_RSV    	: origin = 0x009000, length = 0x001000		/* 新增 */
      RAMOUT_0     	: origin = 0x100000, length = 0x01FFFF
      FLASH_E     	: origin = 0x3D8000, length = 0x01F000
      RESET       	: origin = 0x3FFFC0, length = 0x000002     /* part of boot ROM (MP/MCn=0) or XINTF zone 7 (MP/MCn=1) */
      VECTORS     	: origin = 0x3FFFC2, length = 0x00003E     /* part of boot ROM (MP/MCn=0) or XINTF zone 7 (MP/MCn=1) */
      BOOTROM (RW)   : origin = 0x3ff000, length = 0x000fc0
-           
-PAGE 1 : 
+
+PAGE 1 :
 
    /* For this example, H0 is split between PAGE 0 and PAGE 1 */
-   RAMM0_1  				: origin = 0x000370, length = 0x000090
+   RAMM0_1  				: origin = 0x0003B0, length = 0x000050
    RAMM1    				: origin = 0x000400, length = 0x000400
-   RAML0_CODE_USE   		: origin = 0x008000, length = 0x000100   /*存储参数表*/
-   RAML0_CODE_USE1     		: origin = 0x008100, length = 0x000490	 /*存储噪声*/
+   RAML0_CODE_USE   		: origin = 0x008000, length = 0x000100
+   RAML0_CODE_USE1     		: origin = 0x008100, length = 0x000490
    myzone   				: origin = 0x008590, length = 0x000A70
-   /*RAML1_RSV    			: origin = 0x009000, length = 0x001000*/
+   RAML1	    			: origin = 0x009000, length = 0x001000
    RAMOUT_1_CODE_USE 		: origin = 0x120000, length = 0x01FFFF
    RAMOUT_2_RSV 			: origin = 0x140000, length = 0x03FFFF
    FPGA_RSV 				: origin = 0x080000, length = 0x080000
@@ -107,7 +106,7 @@ PAGE 1 :
    XINTF       : origin = 0x000B20, length = 0x000020     /* external interface registers */
    CPU_TIMER0  : origin = 0x000C00, length = 0x000008     /* CPU Timer0 registers (CPU Timer1 and Timer2 are reserved for BIOS)*/
    PIE_CTRL    : origin = 0x000CE0, length = 0x000020     /* PIE control registers */
-   ECANA       : origin = 0x006000, length = 0x000040     /* eCAN control and status registers */ 
+   ECANA       : origin = 0x006000, length = 0x000040     /* eCAN control and status registers */
    ECANA_LAM   : origin = 0x006040, length = 0x000040     /* eCAN local acceptance masks */
    ECANA_MOTS  : origin = 0x006080, length = 0x000040     /* eCAN message object time stamps */
    ECANA_MOTO  : origin = 0x0060C0, length = 0x000040     /* eCAN object time-out registers */
@@ -123,103 +122,61 @@ PAGE 1 :
    EVB         : origin = 0x007500, length = 0x000040     /* Event Manager B registers */
    SCIB        : origin = 0x007750, length = 0x000010     /* SCI-B registers */
    MCBSPA      : origin = 0x007800, length = 0x000040     /* McBSP registers */
-   CSM_PWL     : origin = 0x3F7FF8, length = 0x000008     /* Part of FLASHA.  CSM password locations. */     
+   CSM_PWL     : origin = 0x3F7FF8, length = 0x000008     /* Part of FLASHA.  CSM password locations. */
 }
- 
- 
+
+
 SECTIONS
 {
-   /* Setup for "boot to H0" mode: 
+   /* Setup for "boot to H0" mode:
       The codestart section (found in DSP28_CodeStartBranch.asm)
-      re-directs execution to the start of user code.  
+      re-directs execution to the start of user code.
       Place this section at the start of H0  */
 
-  	    		
-/*** User Defined Sections ***/
-   	codestart       : > BEGIN,	PAGE = 0        /* Used by file CodeStartBranch.asm */
-   	wddisable		: > FLASH_E,		PAGE = 0		/* Used by file CodeStartBranch.asm */		
-  	copysections	: > FLASH_E,		PAGE = 0		/* Used by file SectionCopy.asm */       
 
-/* .reset is a standard section used by the compiler.  It contains the */ 
+/*** User Defined Sections ***/
+   	codestart       : > BEGIN,			PAGE = 0        /* Used by file CodeStartBranch.asm */
+   	wddisable		: > FLASH_E,		PAGE = 0		/* Used by file CodeStartBranch.asm */
+	copysections	: > FLASH_E,		PAGE = 0		/* Used by file SectionCopy.asm */
+
+/* .reset is a standard section used by the compiler.  It contains the */
 /* the address of the start of _c_int00 for C Code.   /*
 /* When using the boot ROM this section and the CPU vector */
 /* table is not needed.  Thus the default type is set here to  */
-/* DSECT  */ 
+/* DSECT  */
 	.reset         	: > RESET,      	PAGE = 0, TYPE = DSECT
-	vectors         : > VECTORS     	PAGE = 0, TYPE = DSECT
+	vectors 		: > VECTORS,     	PAGE = 0, TYPE = DSECT
 
 /*** Uninitialized Sections ***/
-   	.stack          : > RAMM1       	PAGE = 1
-   	.ebss           : > RAMM0_1       	PAGE = 1
-   	.bss            : > RAMM0_1       	PAGE = 1
-    .cio            : > RAMM0_1         PAGE = 1
-    
-/*** Initialized Sections ***/                                          
-  	.cinit			:	LOAD = FLASH_E,	PAGE = 0	/* Load section to Flash */ 
-                		RUN = RAMM0_0,  PAGE = 0    /* Run section from RAM */
-                		LOAD_START(_cinit_loadstart),
-                		RUN_START(_cinit_runstart),
-						SIZE(_cinit_size)
+   	.stack          : > RAMM1,       	PAGE = 1
+   	.ebss           : > RAML1,       	PAGE = 1
+   	.bss            : > RAML1,       	PAGE = 1
+    .cio            : > RAML1,         	PAGE = 1
+	.sysmem 		: > RAML1, 			PAGE = 1
+	.esysmem 		: > RAML1, 			PAGE = 1
 
-	.const			:   LOAD = FLASH_E,  	PAGE = 0    /* Load section to Flash */
-                		RUN = RAMM0_0, 		PAGE = 0    /* Run section from RAM */
-                		LOAD_START(_const_loadstart),
-                		RUN_START(_const_runstart),
-						SIZE(_const_size)
-
-	.econst			:   LOAD = FLASH_E,  	PAGE = 0   	/* Load section to Flash */ 
-                		RUN = RAMM0_0,  	PAGE = 0    /* Run section from RAM */
-                		LOAD_START(_econst_loadstart),
-                		RUN_START(_econst_runstart),
-						SIZE(_econst_size)
-
-	.pinit			:   LOAD = FLASH_E,  	PAGE = 0    /* Load section to Flash */
-                		RUN = RAMM0_0,   	PAGE = 0    /* Run section from RAM */
-                		LOAD_START(_pinit_loadstart),
-                		RUN_START(_pinit_runstart),
-						SIZE(_pinit_size)
-
-	.switch			:   LOAD = FLASH_E,  	PAGE = 0   	/* Load section to Flash */ 
-                		RUN = RAMM0_0,   	PAGE = 0    /* Run section from RAM */
-                		LOAD_START(_switch_loadstart),
-                		RUN_START(_switch_runstart),
-						SIZE(_switch_size)
-						
-	ramfuncs	    :   LOAD = FLASH_E,  	PAGE = 0   	/* Load section to Flash */
-                		RUN = PRAMH0,   	PAGE = 0    /* Run section from RAM */
-                		LOAD_START(_ramfuncs_loadstart),
-                		RUN_START(_ramfuncs_runstart),
-						SIZE(_ramfuncs_size)
-
-	.text		    :   {
-							*(.text)
-						}
-						LOAD = FLASH_E,  	PAGE = 0   	/* Load section to Flash */
-                		RUN >> PRAMH0|RAML1_RSV,   	PAGE = 0    /* Run section from RAM */
-                		LOAD_START(_text_loadstart),
-                		RUN_START(_text_runstart),
-						SIZE(_text_size)
+/*** Initialized Sections ***/
+  	.cinit 			: > FLASH_E,		PAGE = 0	/* Load section to Flash */
+  	.pinit 			: > FLASH_E,  		PAGE = 0    /* Load section to Flash */
+  	.text			: >	FLASH_E, 		PAGE = 0
+	.const 			: > FLASH_E,  		PAGE = 0    /* Load section to Flash */
+	.econst			: > FLASH_E,  		PAGE = 0   	/* Load section to Flash */
+	.switch			: > FLASH_E,  		PAGE = 0   	/* Load section to Flash */
 
 
-
-
-	Datatable 	    :
-						LOAD = FLASH_E,  	PAGE = 0   	/* Load section to Flash */
-                		RUN = RAMOUT_0,   	PAGE = 0    /* Run section from RAM */
-                		LOAD_START(_Datatable_loadstart),
-                		RUN_START(_Datatable_runstart),
-						SIZE(_Datatable_size)
-						Description	Resource	Path	Location	Type
+	secureRamFuncs	: LOAD = FLASH_E,
+					  RUN = PRAMH0,
+					  LOAD_START(_secureRamFuncs_loadstart),
+					  LOAD_END(_secureRamFuncs_loadend),
+					  RUN_START(_secureRamFuncs_runstart),
+					  PAGE=0
 
    IQmathTables : load = BOOTROM,type = NOLOAD,PAGE = 0
 
-   IQmath :    LOAD = FLASH_E,  	PAGE = 0
-               RUN = RAMM0_0, 		PAGE = 0
-               LOAD_START(_IQmath_loadstart),
-               RUN_START(_IQmath_runstart),
-			   SIZE(_IQmath_size)
+   IQmath 			: > FLASH_E,  		PAGE = 0
 
-   MyVariablesZone: > myzone,   PAGE = 1
+   MyVariablesZone	: > myzone,   		PAGE = 1
+
    PieVectTableFile : > PIE_VECT,   PAGE = 1
 
 /*** Peripheral Frame 0 Register Structures ***/
@@ -227,8 +184,8 @@ SECTIONS
    FlashRegsFile     : > FLASH_REGS,  PAGE = 1
    CsmRegsFile       : > CSM,         PAGE = 1
    XintfRegsFile     : > XINTF,       PAGE = 1
-   CpuTimer0RegsFile : > CPU_TIMER0,  PAGE = 1  
-   PieCtrlRegsFile   : > PIE_CTRL,    PAGE = 1      
+   CpuTimer0RegsFile : > CPU_TIMER0,  PAGE = 1
+   PieCtrlRegsFile   : > PIE_CTRL,    PAGE = 1
 
 /*** Peripheral Frame 1 Register Structures ***/
    SysCtrlRegsFile   : > SYSTEM,      PAGE = 1
@@ -245,13 +202,14 @@ SECTIONS
 
 /*** Peripheral Frame 2 Register Structures ***/
    ECanaRegsFile     : > ECANA,       PAGE = 1
-   ECanaLAMRegsFile  : > ECANA_LAM    PAGE = 1   
+   ECanaLAMRegsFile  : > ECANA_LAM    PAGE = 1
    ECanaMboxesFile   : > ECANA_MBOX   PAGE = 1
    ECanaMOTSRegsFile : > ECANA_MOTS   PAGE = 1
    ECanaMOTORegsFile : > ECANA_MOTO   PAGE = 1
 
 /*** Code Security Module Register Structures ***/
    CsmPwlFile        : > CSM_PWL,     PAGE = 1
+
 }
 
 

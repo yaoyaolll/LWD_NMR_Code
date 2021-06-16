@@ -4,33 +4,21 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 ASM_SRCS += \
-../config.asm/DSP281x_CodeStartBranch.asm \
-../config.asm/DSP281x_SectionCopy.asm \
-../config.asm/DSP281x_usDelay.asm 
+../config.asm/DSP281x_CodeStartBranch.asm 
 
 OBJS += \
-./config.asm/DSP281x_CodeStartBranch.obj \
-./config.asm/DSP281x_SectionCopy.obj \
-./config.asm/DSP281x_usDelay.obj 
+./config.asm/DSP281x_CodeStartBranch.obj 
 
 ASM_DEPS += \
-./config.asm/DSP281x_CodeStartBranch.pp \
-./config.asm/DSP281x_SectionCopy.pp \
-./config.asm/DSP281x_usDelay.pp 
+./config.asm/DSP281x_CodeStartBranch.pp 
 
 OBJS__QUOTED += \
-"config.asm\DSP281x_CodeStartBranch.obj" \
-"config.asm\DSP281x_SectionCopy.obj" \
-"config.asm\DSP281x_usDelay.obj" 
+"config.asm\DSP281x_CodeStartBranch.obj" 
 
 ASM_DEPS__QUOTED += \
-"config.asm\DSP281x_CodeStartBranch.pp" \
-"config.asm\DSP281x_SectionCopy.pp" \
-"config.asm\DSP281x_usDelay.pp" 
+"config.asm\DSP281x_CodeStartBranch.pp" 
 
 ASM_SRCS__QUOTED += \
-"../config.asm/DSP281x_CodeStartBranch.asm" \
-"../config.asm/DSP281x_SectionCopy.asm" \
-"../config.asm/DSP281x_usDelay.asm" 
+"../config.asm/DSP281x_CodeStartBranch.asm" 
 
 

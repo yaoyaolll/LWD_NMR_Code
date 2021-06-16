@@ -1,2 +1,0 @@
-@W: CL279 :"E:\LWD_NMR\Code\test_clk\test\hdl\div_fre.v":28:0:28:5|Pruning register bits 31 to 9 of count[31:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
-
