@@ -141,6 +141,19 @@ void TestDeal();
 void ScaleDeal();
 
 // Functions defined in RelayCtrl.c
-void RelayClose(Uint16 relay_code);
-void RelayOpen(Uint16 relay_code);
+inline
+void RelayClose(Uint16 relay_code)
+{
+    RELAY_CLOSE = relay_code;   // 继电器断开
+    Delay(120);
+    RELAY_CLOSE = 0;
+}
+inline
+void RelayOpen(Uint16 relay_code)
+{
+    RELAY_ON = relay_code;  // 继电器闭合
+    Delay(120);
+    RELAY_ON = 0;
+}
+
 void ParamUpdate();
