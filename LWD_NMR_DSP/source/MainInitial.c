@@ -14,15 +14,15 @@ void InitAll(void)
 	//System initial
 	InitSysCtrl(); //CPU初始化
 
-#ifndef DEBUG
-	// FLASH版本必须添加这两个函数:memcpy()和InitFlash
-	memcpy(&secureRamFuncs_runstart,
-	    &secureRamFuncs_loadstart,
-	    &secureRamFuncs_loadend - &secureRamFuncs_loadstart);
-
-    /*FLASH 初始化 */
-    InitFlash();
-#endif
+//#ifndef DEBUG
+//	/* FLASH版本必须添加这两个函数:memcpy()和InitFlash */
+//	memcpy(&secureRamFuncs_runstart,
+//	    &secureRamFuncs_loadstart,
+//	    &secureRamFuncs_loadend - &secureRamFuncs_loadstart);
+//
+//    /* FLASH 初始化 */
+//    InitFlash();
+//#endif
 
 	//Initial GPIO and FPGA chip
 	InitGpio(); //复位GPIO，SCIA配置在这里面
@@ -140,92 +140,99 @@ void InitTable(void)
 	*TableTempPt++ = 8; // 0x8001, WorkMode: 8, 模式选择仪器扫频模式
 
 	// 刻度模式参数表
-	*TableTempPt++ = 21;	 // 0x8002, Length: 21, 参数表长度+Length字段+CheckSum
+	*TableTempPt++ = 22;	 // 0x8002, Length: 22, 参数表长度+Length字段+CheckSum
 	*TableTempPt++ = 2;		 // 0x8003, TableID: 2, 刻度模式参数表ID
-	*TableTempPt++ = 19;	 // 0x8004, 刻度表Length: 21, 参数表长度
+	*TableTempPt++ = 20;	 // 0x8004, 刻度表Length: 20, 参数表长度
 	*TableTempPt++ = 0xFFFF; // 预留字
 	*TableTempPt++ = 0xFFFF; // 预留字
 	*TableTempPt++ = 8;		 // 0x8007, Mode: 8, 刻度模式选择仪器扫频模式
-	*TableTempPt++ = 4750;	 // 0x8008, CenterFreq: 4750, 0.1kHz, 发射频率
-	*TableTempPt++ = 50;	 // 0x8009, ScanDeltaFreq: 50, 0.1kHz, 扫描步进频率
-	*TableTempPt++ = 60;	 // 0x800A, NoiseAcqTime: 60, us, 噪声采集时间
-	*TableTempPt++ = 50;	 // 0x800B, NoiseAcqFreq: 50, 0.1MHz, 噪声采样率
-	*TableTempPt++ = 10;	 // 0x800C, Period: 10, s,  刻度采集指令时间间隔
-	*TableTempPt++ = 48;	 // 0x800D, Width90Pulse: 48, us, 90度宽度脉冲
-	*TableTempPt++ = 135;	 // 0x800E, Angle180Pulse: 135, deg, 180度脉冲角度
-	*TableTempPt++ = 16;	 // 0x800F, EchoAcqPeriodNum: 16, number, 回波周期数
-	*TableTempPt++ = 8;		 // 0x8010, EchoAcqFreqRate: 8, number, 回波采样率相对于回波信号频率的倍数
-	*TableTempPt++ = 23;	 // 0x8011, EchoAcqWindowShift: 23, us, 回波采集时间窗偏移
-	*TableTempPt++ = 10;	 // 0x8012, CalibTE: 10, 0.1ms, 刻度时的TE
-	*TableTempPt++ = 60;	 // 0x8013, CalibNE: 60, number, 刻度时的NE
-	*TableTempPt++ = 100;	 // 0x8014, PulseTestPulseTime: 100, us, 脉冲检测时的发射脉冲宽度
-	*TableTempPt++ = 80;	 // 0x8015, PulseTestAcqFreq: 80, 0.1MHz, 脉冲检测时的采样率
-							 // 0x8016, CheckSum
+	*TableTempPt++ = 512;	 // 0x8008, RelayCode: 512, num, 调谐码
+	*TableTempPt++ = 4750;	 // 0x8009, CenterFreq: 4750, 0.1kHz, 发射频率
+	*TableTempPt++ = 50;	 // 0x800A, ScanDeltaFreq: 50, 0.1kHz, 扫描步进频率
+	*TableTempPt++ = 60;	 // 0x800B, NoiseAcqTime: 60, us, 噪声采集时间
+	*TableTempPt++ = 50;	 // 0x800C, NoiseAcqFreq: 50, 0.1MHz, 噪声采样率
+	*TableTempPt++ = 10;	 // 0x800D, Period: 10, s,  刻度采集指令时间间隔
+	*TableTempPt++ = 48;	 // 0x800E, Width90Pulse: 48, us, 90度宽度脉冲
+	*TableTempPt++ = 135;	 // 0x800F, Angle180Pulse: 135, deg, 180度脉冲角度
+	*TableTempPt++ = 16;	 // 0x8010, EchoAcqPeriodNum: 16, number, 回波周期数
+	*TableTempPt++ = 8;		 // 0x8011, EchoAcqFreqRate: 8, number, 回波采样率相对于回波信号频率的倍数
+	*TableTempPt++ = 23;	 // 0x8012, EchoAcqWindowShift: 23, us, 回波采集时间窗偏移
+	*TableTempPt++ = 10;	 // 0x8013, CalibTE: 10, 0.1ms, 刻度时的TE
+	*TableTempPt++ = 60;	 // 0x8014, CalibNE: 60, number, 刻度时的NE
+	*TableTempPt++ = 100;	 // 0x8015, PulseTestPulseTime: 100, us, 脉冲检测时的发射脉冲宽度
+	*TableTempPt++ = 80;	 // 0x8016, PulseTestAcqFreq: 80, 0.1MHz, 脉冲检测时的采样率
+							 // 0x8017, CheckSum
 
-	// 测井模式参数表
-	TableTempPt = (Uint16 *)0x8017;
-	*TableTempPt++ = 59;	 // 0x8017, Length: 59, 参数表长度+Length字段+CheckSum
-	*TableTempPt++ = 3;		 // 0x8018, TableID: 3, 测井模式参数表ID
-	*TableTempPt++ = 57;	 // 0x8019, 测井表Length: 57, 参数表长度
+	// 测井模式参数表，common params
+	TableTempPt = (Uint16 *)0x8018;
+	*TableTempPt++ = 59;	 // 0x8018, Length: 59, 参数表长度+Length字段+CheckSum
+	*TableTempPt++ = 3;		 // 0x8019, TableID: 3, 测井模式参数表ID
+	*TableTempPt++ = 57;	 // 0x801A, 测井表Length: 57, 参数表长度
 	*TableTempPt++ = 0xFFFF; // 预留字
 	*TableTempPt++ = 0xFFFF; // 预留字
-	*TableTempPt++ = 0x0001; // 0x801C, Mode: 1, 单频模式
-	*TableTempPt++ = 4850;	 // 0x801D, CenterFreq: 4850, 0.1kHz, 发射频率
+	*TableTempPt++ = 0x0001; // 0x801D, Mode: 1, 单频模式
+	*TableTempPt++ = 4850;	 // 0x801E, CenterFreq: 4850, 0.1kHz, 发射频率
 
-	*TableTempPt++ = 50;  // 0x801E, ScanDeltaFreq: 50, 0.1kHz, 扫描步进频率
-	*TableTempPt++ = 60;  // 0x801F, NoiseAcqTime: 60, us, 噪声采集时间
-	*TableTempPt++ = 50;  // 0x8020, NoiseAcqFreq: 50, 0.1MHz, 噪声采样率
-	*TableTempPt++ = 135; // 0x8021, Angle180Pulse: 135, deg, 180度脉冲角度
-	*TableTempPt++ = 16;  // 0x8022, EchoAcqPeriodNum: 16, number, 回波周期数
-	*TableTempPt++ = 8;	  // 0x8023, EchoAcqFreqRate: 8, number, 回波采样率相对于回波信号频率的倍数
-	*TableTempPt++ = 23;  // 0x8024, EchoAcqWindowShift: 23, us, 回波采集时间窗偏移
+	*TableTempPt++ = 50;  	// 0x801F, ScanDeltaFreq: 50, 0.1kHz, 扫描步进频率
+	*TableTempPt++ = 60;  	// 0x8020, NoiseAcqTime: 60, us, 噪声采集时间
+	*TableTempPt++ = 50;  	// 0x8021, NoiseAcqFreq: 50, 0.1MHz, 噪声采样率
+	*TableTempPt++ = 135; 	// 0x8022, Angle180Pulse: 135, deg, 180度脉冲角度
+	*TableTempPt++ = 16;  	// 0x8023, EchoAcqPeriodNum: 16, number, 回波周期数
+	*TableTempPt++ = 8;	  	// 0x8024, EchoAcqFreqRate: 8, number, 回波采样率相对于回波信号频率的倍数
+	*TableTempPt++ = 23;  	// 0x8025, EchoAcqWindowShift: 23, us, 回波采集时间窗偏移
 
 	// 测井模式下属各个模式参数
-	*TableTempPt++ = 10;
-	*TableTempPt++ = 6;
-	*TableTempPt++ = 1000;
-	*TableTempPt++ = 17;
-	*TableTempPt++ = 30;
-	*TableTempPt++ = 6;
-	*TableTempPt++ = 6;
-	*TableTempPt++ = 1000;
-	*TableTempPt++ = 50;
-	*TableTempPt++ = 96;
-	*TableTempPt++ = 17;
-	*TableTempPt++ = 30;
-	*TableTempPt++ = 1800;
-	*TableTempPt++ = 6;
-	*TableTempPt++ = 6;
-	*TableTempPt++ = 1000;
-	*TableTempPt++ = 50;
-	*TableTempPt++ = 25;
-	*TableTempPt++ = 20;
-	*TableTempPt++ = 40;
-	*TableTempPt++ = 2;
-	*TableTempPt++ = 6;
-	*TableTempPt++ = 6;
-	*TableTempPt++ = 1000;
-	*TableTempPt++ = 50;
-	*TableTempPt++ = 16;
-	*TableTempPt++ = 50;
-	*TableTempPt++ = 71;
-	*TableTempPt++ = 40;
-	*TableTempPt++ = 13000;
-	*TableTempPt++ = 11000;
-	*TableTempPt++ = 10000;
-	*TableTempPt++ = 8000;
-	*TableTempPt++ = 6000;
-	*TableTempPt++ = 6;
-	*TableTempPt++ = 6;
-	*TableTempPt++ = 50;
-	*TableTempPt++ = 6;
-	*TableTempPt++ = 40;
-	*TableTempPt++ = 6;
-	*TableTempPt++ = 6;
-	*TableTempPt++ = 1000;
-	*TableTempPt++ = 50;
-	*TableTempPt++ = 50;
-	*TableTempPt++ = 0;
+	// STWTE
+	*TableTempPt++ = 10;	// 0x8026, 模式周期
+	*TableTempPt++ = 6;		// 0x8027, TE
+	*TableTempPt++ = 1000;	// 0x8028, NE
+	// PPMODE
+	*TableTempPt++ = 17;	// 0x8029, 模式周期
+	*TableTempPt++ = 30;	// 0x802A, 1C序列的TW
+	*TableTempPt++ = 6;		// 0x802B, 1A序列的TE
+	*TableTempPt++ = 6;		// 0x802C, 1C序列的TE
+	*TableTempPt++ = 1000;	// 0x802D, 1A序列的NE
+	*TableTempPt++ = 50;	// 0x802E, 1C序列的NE
+	*TableTempPt++ = 96;	// 0x802F, 1C序列的重复次数
+	// PPDIF
+	*TableTempPt++ = 17;	// 0x8030, 模式周期
+	*TableTempPt++ = 30;	// 0x8031, 1C序列的TW
+	*TableTempPt++ = 1800;	// 0x8032, 1B序列的TW
+	*TableTempPt++ = 6;		// 0x8033, 1A、1B序列的TE
+	*TableTempPt++ = 6;		// 0x8034, 1C序列的TE
+	*TableTempPt++ = 1000;	// 0x8035, 1A、1B序列的NE
+	*TableTempPt++ = 50;	// 0x8036, 1C序列的NE
+	*TableTempPt++ = 25;	// 0x8037, 1C序列的重复次数
+	// PPT1
+	*TableTempPt++ = 20;	// 0x8038, 模式周期
+	*TableTempPt++ = 40;	// 0x8039, 1C序列的TW
+	*TableTempPt++ = 2;		// 0x803A, 1D、1E、1F、1G、1H序列的TW选择码
+	*TableTempPt++ = 6;		// 0x803B, 1A序列的TE
+	*TableTempPt++ = 6;		// 0x803C, 1C、1D、1E、1F、1G、1H序列的TE
+	*TableTempPt++ = 1000;	// 0x803D, 1A序列的NE
+	*TableTempPt++ = 50;	// 0x803E, 1C序列的NE
+	*TableTempPt++ = 16;	// 0x803F, 1D&1E&1F&1G&1H序列的NE
+	*TableTempPt++ = 50;	// 0x8040, 1C序列的重复次数
+	// PPOFTW
+	*TableTempPt++ = 71;	// 0x8041, 模式周期
+	*TableTempPt++ = 40;	// 0x8042, 1C序列的TW
+	*TableTempPt++ = 13000;	// 0x8043, 1D序列的TW
+	*TableTempPt++ = 11000;	// 0x8044, 1E序列的TW
+	*TableTempPt++ = 10000;	// 0x8045, 1F序列的TW
+	*TableTempPt++ = 8000;	// 0x8046, 1G序列的TW
+	*TableTempPt++ = 6000;	// 0x8047, 1H序列的TW
+	*TableTempPt++ = 6;		// 0x8048, 1A&1D&1E&1F&1G&1H序列的TE
+	*TableTempPt++ = 6;		// 0x8049, 1C序列的TE
+	*TableTempPt++ = 50;	// 0x804A, 1C序列的重复次数
+	// PPShort
+	*TableTempPt++ = 6;		// 0x804B, 模式周期
+	*TableTempPt++ = 40;	// 0x804C, 1C序列的TW
+	*TableTempPt++ = 6;		// 0x804D, 1A序列的TE
+	*TableTempPt++ = 6;		// 0x804E, 1C序列的TE
+	*TableTempPt++ = 1000;	// 0x804F, 1A序列的NE
+	*TableTempPt++ = 50;	// 0x8050, 1C序列的NE
+	*TableTempPt++ = 50;	// 0x8051, 1C序列的重复次数
+	*TableTempPt++ = 0;		// CheckSum
 }
 
 void InitPulseGain(void) //表初始化函数
@@ -839,7 +846,7 @@ void InitVariables(void)
 	PPT1ModeFlag = CLEAR;
 	PPOFTWModeFlag = CLEAR;
 	PPShortModeFlag = CLEAR;
-
+	TuningModeFlag = CLEAR;
 	ScanModeFlag = CLEAR;
 	ScaleModeFlag = CLEAR;
 	HoleModeFlag = CLEAR;

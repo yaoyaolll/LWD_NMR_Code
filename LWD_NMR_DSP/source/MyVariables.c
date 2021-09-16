@@ -29,10 +29,10 @@
 #include "MyVariables.h"
 
 // 继电器控制变量和发射频率变量
-float TransmitFre_f;  // 发射频率float型
-Uint16 TransmitFre;       // 发射频率Uint16型
-float RelayCtrlCode_f;    // 继电器控制码float型
-Uint16 RelayCtrlCode; // 继电器控制码Uint16型
+float TransmitFre_f;  		// 发射频率float型
+Uint16 TransmitFre;       	// 发射频率Uint16型
+float RelayCtrlCode_f;   	// 继电器控制码float型
+Uint16 RelayCtrlCode; 		// 继电器控制码Uint16型
 #pragma DATA_SECTION(TransmitFre_f, "MyVariablesZone");
 #pragma DATA_SECTION(TransmitFre, "MyVariablesZone");
 #pragma DATA_SECTION(RelayCtrlCode_f, "MyVariablesZone");
@@ -62,12 +62,17 @@ Uint16 _casingDetectErrFlag = CLEAR; // 工作模式启动时，套管检测是否正常
 Uint16 _casingOrOperaFlag = CLEAR;	 // 用作流程判断，在ACQ_FIN状态时，上一个状态是Casing还是Operation
 
 // 模式标志位
-Uint16 ScanModeFlag; //scan mode flag：扫频模式标志，为1时要进入扫频模式
+Uint16 SingleModeFlag;
 Uint16 PPModeFlag;
 Uint16 PPDIFModeFlag;
 Uint16 PPT1ModeFlag;
 Uint16 PPOFTWModeFlag;
 Uint16 PPShortModeFlag;
+Uint16 TuningModeFlag;	// 调谐刻度模式
+Uint16 ScanModeFlag; 	// scan mode flag：扫频模式标志，为1时要进入扫频模式
+Uint16 ScaleModeFlag;
+Uint16 HoleModeFlag;
+Uint16 PulseAcqFlag;
 
 // 刻度模式参数表与测井模式参数表共有部分
 Uint16 CenterFreq;		   // 工作频率
@@ -80,6 +85,7 @@ Uint16 EchoAcqWindowShift; // 回波采集时间窗偏移
 Uint16 Width90Pulse;	   // 90度脉冲宽度
 
 // 刻度模式参数表私有部分
+Uint16 RelayCode;	// 调谐码
 Uint16 ScalePeriod; // 刻度采集指令时间间隔
 Uint16 Angle180Pulse;
 Uint16 Calib_TE;		   // 刻度时的TE
@@ -259,7 +265,6 @@ Uint16 BriMid;
 
 Uint16 MatFreqSel;
 Uint16 MatFreq;
-Uint16 PulseAcqFlag;
 Uint16 PulseTime;
 Uint16 PulseNum;
 Uint16 PulseDivNum;
@@ -286,7 +291,7 @@ _iq PulseRecIQ;
 Uint16 PulseCalNum;
 Uint16 PulseReadBuf;
 //Used in single frequency DE or CPMG sequence
-Uint16 SingleModeFlag;
+
 Uint16 DEMn;
 Uint16 WidthCnt;
 Uint16 SftWinWidth; //采集窗时间滑动寄存器
@@ -389,9 +394,6 @@ Uint32 EchoStorAddr;
 
 Uint16 DownTableFlag;
 Uint16 WorkMode;
-Uint16 PP6ModeFlag;
-Uint16 ScaleModeFlag;
-Uint16 HoleModeFlag;
 
 Uint16 ToMSFreq;	   //frequency transferred to miniscan() function
 Uint32 ToMSNoiseAddr;  //noise-store address transferred to miniscan() function
@@ -721,6 +723,7 @@ void (*singleOrderFunc[])(void) = {EmptyDeal, InquireDeal, OperationDeal, Casing
 #pragma DATA_SECTION(PPT1ModeFlag, "MyVariablesZone");
 #pragma DATA_SECTION(PPOFTWModeFlag, "MyVariablesZone");
 #pragma DATA_SECTION(PPShortModeFlag, "MyVariablesZone");
+#pragma DATA_SECTION(TuningModeFlag, "MyVariablesZone");
 
 #pragma DATA_SECTION(CenterFreq, "MyVariablesZone");
 #pragma DATA_SECTION(ScanDeltaFreq, "MyVariablesZone");
@@ -817,3 +820,5 @@ void (*singleOrderFunc[])(void) = {EmptyDeal, InquireDeal, OperationDeal, Casing
 #pragma DATA_SECTION(a, "MyVariablesZone");
 #pragma DATA_SECTION(b, "MyVariablesZone");
 #pragma DATA_SECTION(c, "MyVariablesZone");
+
+#pragma DATA_SECTION(RelayCode, "MyVariablesZone");

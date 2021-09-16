@@ -31,6 +31,19 @@
 #pragma CODE_SECTION(RecParameterCommand, "secureRamFuncs");
 #pragma CODE_SECTION(RecSingleOrderCommand, "secureRamFuncs");
 
+Uint16 DownloadTableCnt = 0;
+Uint16 ParamTableLen = 0;
+Uint16 *tempSaveTablePt;
+#define CAL_TABLE_LEN 	 	20  	// 刻度模式参数表长度
+#define WELL_TABLE_LEN 	 	57  	// 测井模式参数表长度
+#define TUNING_TABLE_LEN 	69	 	// 刻度参数表，主要用来调谐，使用参数并不多
+#define CONFIG_TABLE_LEN 	19  	// 仪器配置参数表
+
+#define ADDR_CAL_TABLE_START	(Uint16 *)0x8002
+#define ADDR_WELL_TABLE_START	(Uint16 *)0x8018
+#define ADDR_TUNING_TABLE_START	(Uint16 *)0x8057
+#define ADDR_CONFIG_TABLE_START	(Uint16 *)0x80A2
+
 void CheckWorkMode(void)
 {
 	WorkMode = *(Uint16 *)0x8001;
@@ -50,7 +63,7 @@ void CheckReadTable(void)
 	CheckWorkMode();
 
 	// 刻度模式与测井模式共用同一个90度脉冲宽度
-	CheckTablePt = (Uint16 *)0x800D;
+	CheckTablePt = (Uint16 *)0x800E;
 	Width90Pulse = *CheckTablePt;
 	if (Width90Pulse < 10 || Width90Pulse > 100) // us
 	{
@@ -63,6 +76,14 @@ void CheckReadTable(void)
 	if (*CheckTablePt == 0x0002)
 	{
 		CheckTablePt = (Uint16 *)0x8008;
+		RelayCode = *CheckTablePt;
+		if (RelayCode > 1023)					// 调谐码
+		{
+			RelayCode = 512;
+			*CheckTablePt = 512;
+		}
+
+		CheckTablePt = (Uint16 *)0x8009;
 		CenterFreq = *CheckTablePt;
 		if (CenterFreq < 4500 || CenterFreq > 5150) // unit 0.1kHz
 		{
@@ -71,16 +92,16 @@ void CheckReadTable(void)
 		}
 		CenterFreq /= 10;
 
-		CheckTablePt = (Uint16 *)0x8009;
+		CheckTablePt = (Uint16 *)0x800A;
 		ScanDeltaFreq = *CheckTablePt;
-		if (ScanDeltaFreq < 10 || ScanDeltaFreq > 100) // 0.1kHz
+		if (ScanDeltaFreq < 1 || ScanDeltaFreq > 200) // 0.1kHz
 		{
 			ScanDeltaFreq = 50;
 			*CheckTablePt = 50;
 		}
 		ScanDeltaFreq /= 10;
 
-		CheckTablePt = (Uint16 *)0x800A;
+		CheckTablePt = (Uint16 *)0x800B;
 		NoiseAcqTime = *CheckTablePt;
 		if (NoiseAcqTime < 10 || NoiseAcqTime > 100) // us
 		{
@@ -88,7 +109,7 @@ void CheckReadTable(void)
 			*CheckTablePt = 60;
 		}
 
-		CheckTablePt = (Uint16 *)0x800B;
+		CheckTablePt = (Uint16 *)0x800C;
 		NoiseAcqFreq = *CheckTablePt;
 		if (NoiseAcqFreq < 20 || NoiseAcqFreq > 80) // 0.1MHz
 		{
@@ -96,7 +117,7 @@ void CheckReadTable(void)
 			*CheckTablePt = 50;
 		}
 
-		CheckTablePt = (Uint16 *)0x800C;
+		CheckTablePt = (Uint16 *)0x800D;
 		ScalePeriod = *CheckTablePt;
 		if (ScalePeriod > 100) // s
 		{
@@ -104,7 +125,7 @@ void CheckReadTable(void)
 			*CheckTablePt = 10;
 		}
 
-		CheckTablePt = (Uint16 *)0x800E;
+		CheckTablePt = (Uint16 *)0x800F;
 		Angle180Pulse = *CheckTablePt;
 		if (Angle180Pulse < 90 || Angle180Pulse > 270) // deg
 		{
@@ -112,7 +133,7 @@ void CheckReadTable(void)
 			*CheckTablePt = 135;
 		}
 
-		CheckTablePt = (Uint16 *)0x800F;
+		CheckTablePt = (Uint16 *)0x8010;
 		SiglAcqPrdNum = *CheckTablePt;
 		if (SiglAcqPrdNum < 1 || SiglAcqPrdNum > 32) // number
 		{
@@ -120,7 +141,7 @@ void CheckReadTable(void)
 			*CheckTablePt = 16;
 		}
 
-		CheckTablePt = (Uint16 *)0x8010;
+		CheckTablePt = (Uint16 *)0x8011;
 		SiglAcqFreqTim = *CheckTablePt;
 		if (SiglAcqFreqTim != 4 || SiglAcqFreqTim != 8) // number
 		{
@@ -128,7 +149,7 @@ void CheckReadTable(void)
 			*CheckTablePt = 8;
 		}
 
-		CheckTablePt = (Uint16 *)0x8011;
+		CheckTablePt = (Uint16 *)0x8012;
 		EchoAcqWindowShift = *CheckTablePt;
 		if (EchoAcqWindowShift < 1 || EchoAcqWindowShift > 100) // us
 		{
@@ -136,7 +157,7 @@ void CheckReadTable(void)
 			*CheckTablePt = 23;
 		}
 
-		CheckTablePt = (Uint16 *)0x8012;
+		CheckTablePt = (Uint16 *)0x8013;
 		Calib_TE = *CheckTablePt;
 		if (Calib_TE < 6 || Calib_TE > 100) // 0.1ms
 		{
@@ -145,14 +166,14 @@ void CheckReadTable(void)
 				Calib_TE = 6;
 				*CheckTablePt = 6;
 			}
-			else // 磁场扫频和主刻度
+			else // 调谐刻度和主刻度
 			{
 				Calib_TE = 10;
 				*CheckTablePt = 10;
 			}
 		}
 
-		CheckTablePt = (Uint16 *)0x8013;
+		CheckTablePt = (Uint16 *)0x8014;
 		Calib_NE = *CheckTablePt;
 		if (Calib_NE < 10 || Calib_NE > 2000) // number
 		{
@@ -168,7 +189,7 @@ void CheckReadTable(void)
 			}
 		}
 
-		CheckTablePt = (Uint16 *)0x8014;
+		CheckTablePt = (Uint16 *)0x8015;
 		PulseTestPulseTime = *CheckTablePt;
 		if (PulseTestPulseTime < 50 || PulseTestPulseTime > 200) // us
 		{
@@ -176,7 +197,7 @@ void CheckReadTable(void)
 			*CheckTablePt = 100;
 		}
 
-		CheckTablePt = (Uint16 *)0x8015;
+		CheckTablePt = (Uint16 *)0x8016;
 		PulseTestAcqFreq = *CheckTablePt;
 		if (PulseTestAcqFreq < 50 || PulseTestAcqFreq > 100) // 0.1MHz
 		{
@@ -188,7 +209,7 @@ void CheckReadTable(void)
 	// well mode parameter table
 	else if (*CheckTablePt == 0x0003)
 	{
-		CheckTablePt = (Uint16 *)0x801D;
+		CheckTablePt = (Uint16 *)0x801E;
 		CenterFreq = *CheckTablePt;
 		if (CenterFreq < 4500 || CenterFreq > 5150) // unit 0.1kHz
 		{
@@ -197,7 +218,7 @@ void CheckReadTable(void)
 		}
 		CenterFreq /= 10;
 
-		CheckTablePt = (Uint16 *)0x801E;
+		CheckTablePt = (Uint16 *)0x801F;
 		ScanDeltaFreq = *CheckTablePt;
 		if (ScanDeltaFreq < 10 || ScanDeltaFreq > 100) // 0.1kHz
 		{
@@ -206,7 +227,7 @@ void CheckReadTable(void)
 		}
 		ScanDeltaFreq /= 10;
 
-		CheckTablePt = (Uint16 *)0x801F;
+		CheckTablePt = (Uint16 *)0x8020;
 		NoiseAcqTime = *CheckTablePt;
 		if (NoiseAcqTime < 10 || NoiseAcqTime > 100) // us
 		{
@@ -214,7 +235,7 @@ void CheckReadTable(void)
 			*CheckTablePt = 60;
 		}
 
-		CheckTablePt = (Uint16 *)0x8020;
+		CheckTablePt = (Uint16 *)0x8021;
 		NoiseAcqFreq = *CheckTablePt;
 		if (NoiseAcqFreq < 20 || NoiseAcqFreq > 80) // 0.1MHz
 		{
@@ -222,7 +243,7 @@ void CheckReadTable(void)
 			*CheckTablePt = 50;
 		}
 
-		CheckTablePt = (Uint16 *)0x8021;
+		CheckTablePt = (Uint16 *)0x8022;
 		Angle180Pulse = *CheckTablePt;
 		if (Angle180Pulse < 90 || Angle180Pulse > 270) // deg
 		{
@@ -230,7 +251,7 @@ void CheckReadTable(void)
 			*CheckTablePt = 135;
 		}
 
-		CheckTablePt = (Uint16 *)0x8022;
+		CheckTablePt = (Uint16 *)0x8023;
 		SiglAcqPrdNum = *CheckTablePt;
 		if (SiglAcqPrdNum < 1 || SiglAcqPrdNum > 32) // number
 		{
@@ -238,7 +259,7 @@ void CheckReadTable(void)
 			*CheckTablePt = 16;
 		}
 
-		CheckTablePt = (Uint16 *)0x8023;
+		CheckTablePt = (Uint16 *)0x8024;
 		SiglAcqFreqTim = *CheckTablePt;
 		if (SiglAcqFreqTim != 4 || SiglAcqFreqTim != 8) // number
 		{
@@ -246,7 +267,7 @@ void CheckReadTable(void)
 			*CheckTablePt = 8;
 		}
 
-		CheckTablePt = (Uint16 *)0x8024;
+		CheckTablePt = (Uint16 *)0x8025;
 		EchoAcqWindowShift = *CheckTablePt;
 		if (EchoAcqWindowShift < 1 || EchoAcqWindowShift > 100) // us
 		{
@@ -258,7 +279,7 @@ void CheckReadTable(void)
 		// STWTE
 		if (WorkMode == 1)
 		{
-			CheckTablePt = (Uint16 *)0x8025;
+			CheckTablePt = (Uint16 *)0x8026;
 			STWTE_Period = *CheckTablePt;
 			if (STWTE_Period < 8 || STWTE_Period > 50) // s
 			{
@@ -266,7 +287,7 @@ void CheckReadTable(void)
 				*CheckTablePt = 10;
 			}
 
-			CheckTablePt = (Uint16 *)0x8026;
+			CheckTablePt = (Uint16 *)0x8027;
 			STWTE_TE = *CheckTablePt;
 			if (STWTE_TE < 1 || STWTE_TE > 200) // 0.1ms
 			{
@@ -274,7 +295,7 @@ void CheckReadTable(void)
 				*CheckTablePt = 6;
 			}
 
-			CheckTablePt = (Uint16 *)0x8027;
+			CheckTablePt = (Uint16 *)0x8028;
 			STWTE_NE = *CheckTablePt;
 			if (STWTE_NE < 1 || STWTE_NE > 3000) // number
 			{
@@ -286,7 +307,7 @@ void CheckReadTable(void)
 		// PPMode
 		else if (WorkMode == 2)
 		{
-			CheckTablePt = (Uint16 *)0x8028;
+			CheckTablePt = (Uint16 *)0x8029;
 			PPM_Period = *CheckTablePt;
 			if (PPM_Period < 17 || PPM_Period > 50) // s
 			{
@@ -294,7 +315,7 @@ void CheckReadTable(void)
 				*CheckTablePt = 17;
 			}
 
-			CheckTablePt = (Uint16 *)0x8029;
+			CheckTablePt = (Uint16 *)0x802A;
 			PPM_TW_1C = *CheckTablePt;
 			if (PPM_TW_1C < 10 || PPM_TW_1C > 200) // 1ms
 			{
@@ -302,7 +323,7 @@ void CheckReadTable(void)
 				*CheckTablePt = 30;
 			}
 
-			CheckTablePt = (Uint16 *)0x802A;
+			CheckTablePt = (Uint16 *)0x802B;
 			PPM_TE_1A = *CheckTablePt;
 			if (PPM_TE_1A < 1 || PPM_TE_1A > 200) // 0.1ms
 			{
@@ -310,7 +331,7 @@ void CheckReadTable(void)
 				*CheckTablePt = 6;
 			}
 
-			CheckTablePt = (Uint16 *)0x802B;
+			CheckTablePt = (Uint16 *)0x802C;
 			PPM_TE_1C = *CheckTablePt;
 			if (PPM_TE_1C < 1 || PPM_TE_1C > 200) // 0.1ms
 			{
@@ -318,7 +339,7 @@ void CheckReadTable(void)
 				*CheckTablePt = 6;
 			}
 
-			CheckTablePt = (Uint16 *)0x802C;
+			CheckTablePt = (Uint16 *)0x802D;
 			PPM_NE_1A = *CheckTablePt;
 			if (PPM_NE_1A < 1 || PPM_NE_1A > 3000) // number
 			{
@@ -326,7 +347,7 @@ void CheckReadTable(void)
 				*CheckTablePt = 1000;
 			}
 
-			CheckTablePt = (Uint16 *)0x802D;
+			CheckTablePt = (Uint16 *)0x802E;
 			PPM_NE_1C = *CheckTablePt;
 			if (PPM_NE_1C < 1 || PPM_NE_1C > 300) // number
 			{
@@ -334,7 +355,7 @@ void CheckReadTable(void)
 				*CheckTablePt = 50;
 			}
 
-			CheckTablePt = (Uint16 *)0x802E;
+			CheckTablePt = (Uint16 *)0x802F;
 			PPM_Nrept_1C = *CheckTablePt;
 			if (PPM_Nrept_1C < 1 || PPM_Nrept_1C > 300) // number
 			{
@@ -346,7 +367,7 @@ void CheckReadTable(void)
 		// PPDIF
 		else if (WorkMode == 3)
 		{
-			CheckTablePt = (Uint16 *)0x802F;
+			CheckTablePt = (Uint16 *)0x8030;
 			PPDIF_Period = *CheckTablePt;
 			if (PPDIF_Period < 17 || PPDIF_Period > 50) // s
 			{
@@ -354,7 +375,7 @@ void CheckReadTable(void)
 				*CheckTablePt = 17;
 			}
 
-			CheckTablePt = (Uint16 *)0x8030;
+			CheckTablePt = (Uint16 *)0x8031;
 			PPDIF_TW_1C = *CheckTablePt;
 			if (PPDIF_TW_1C < 10 || PPDIF_TW_1C > 200) // ms
 			{
@@ -362,7 +383,7 @@ void CheckReadTable(void)
 				*CheckTablePt = 30;
 			}
 
-			CheckTablePt = (Uint16 *)0x8031;
+			CheckTablePt = (Uint16 *)0x8032;
 			PPDIF_TW_1B = *CheckTablePt;
 			if (PPDIF_TW_1B < 10 || PPDIF_TW_1B > 10000) // ms
 			{
@@ -370,7 +391,7 @@ void CheckReadTable(void)
 				*CheckTablePt = 1800;
 			}
 
-			CheckTablePt = (Uint16 *)0x8032;
+			CheckTablePt = (Uint16 *)0x8033;
 			PPDIF_TE_1A1B = *CheckTablePt;
 			if (PPDIF_TE_1A1B < 1 || PPDIF_TE_1A1B > 200) // 0.1ms
 			{
@@ -378,7 +399,7 @@ void CheckReadTable(void)
 				*CheckTablePt = 6;
 			}
 
-			CheckTablePt = (Uint16 *)0x8033;
+			CheckTablePt = (Uint16 *)0x8034;
 			PPDIF_TE_1C = *CheckTablePt;
 			if (PPDIF_TE_1C < 1 || PPDIF_TE_1C > 200) // 0.1ms
 			{
@@ -386,7 +407,7 @@ void CheckReadTable(void)
 				*CheckTablePt = 6;
 			}
 
-			CheckTablePt = (Uint16 *)0x8034;
+			CheckTablePt = (Uint16 *)0x8035;
 			PPDIF_NE_1A1B = *CheckTablePt;
 			if (PPDIF_NE_1A1B < 1 || PPDIF_NE_1A1B > 3000) // number
 			{
@@ -394,7 +415,7 @@ void CheckReadTable(void)
 				*CheckTablePt = 1000;
 			}
 
-			CheckTablePt = (Uint16 *)0x8035;
+			CheckTablePt = (Uint16 *)0x8036;
 			PPDIF_NE_1C = *CheckTablePt;
 			if (PPDIF_NE_1C < 1 || PPDIF_NE_1C > 300) // number
 			{
@@ -402,7 +423,7 @@ void CheckReadTable(void)
 				*CheckTablePt = 50;
 			}
 
-			CheckTablePt = (Uint16 *)0x8036;
+			CheckTablePt = (Uint16 *)0x8037;
 			PPDIF_Nrept_1C = *CheckTablePt;
 			if (PPDIF_Nrept_1C < 1 || PPDIF_Nrept_1C > 300) // number
 			{
@@ -415,16 +436,16 @@ void CheckReadTable(void)
 		else if (WorkMode == 4)
 		{
 			// TW CODE
-			CheckTablePt = (Uint16 *)0x8039;
+			CheckTablePt = (Uint16 *)0x803A;
 			PPT1_TW_Code = *CheckTablePt;
 			if (PPT1_TW_Code != 1 || PPT1_TW_Code != 2)
 			{
-				PPT1_TW_Code = 1; // 默认为1
-				*CheckTablePt = 1;
+				PPT1_TW_Code = 2; // 默认为1
+				*CheckTablePt = 2;
 			}
 			if (PPT1_TW_Code == 1)
 			{
-				PPT1_TW_1D = 3000; // 0.1ms
+				PPT1_TW_1D = 3000; // unit: 1ms
 				PPT1_TW_1E = 1000;
 				PPT1_TW_1F = 500;
 				PPT1_TW_1G = 300;
@@ -432,14 +453,14 @@ void CheckReadTable(void)
 			}
 			else
 			{
-				PPT1_TW_1D = 6000; // 0.1ms
+				PPT1_TW_1D = 6000; // unit: 1ms
 				PPT1_TW_1E = 3000;
 				PPT1_TW_1F = 1000;
 				PPT1_TW_1G = 300;
 				PPT1_TW_1H = 100;
 			}
 
-			CheckTablePt = (Uint16 *)0x8037;
+			CheckTablePt = (Uint16 *)0x8038;
 			PPT1_Period = *CheckTablePt;
 			if (PPT1_TW_Code == 1)
 			{
@@ -458,23 +479,23 @@ void CheckReadTable(void)
 				}
 			}
 
-			CheckTablePt = (Uint16 *)0x8038;
+			CheckTablePt = (Uint16 *)0x8039;
 			PPT1_TW_1C = *CheckTablePt;
 			if (PPT1_TW_1C < 10 || PPT1_TW_1C > 200) // ms
 			{
 				PPT1_TW_1C = 40;
-				*CheckTablePt = 30;
+				*CheckTablePt = 40;
 			}
 
-			CheckTablePt = (Uint16 *)0x803A;
+			CheckTablePt = (Uint16 *)0x803B;
 			PPT1_TE_1A = *CheckTablePt;
-			if (PPT1_TE_1A < 11 || PPT1_TE_1A > 200) // 0.1ms
+			if (PPT1_TE_1A < 1 || PPT1_TE_1A > 200) // 0.1ms
 			{
 				PPT1_TE_1A = 6;
 				*CheckTablePt = 6;
 			}
 
-			CheckTablePt = (Uint16 *)0x803B;
+			CheckTablePt = (Uint16 *)0x803C;
 			PPT1_TE_1CDEFGH = *CheckTablePt;
 			if (PPT1_TE_1CDEFGH < 1 || PPT1_TE_1CDEFGH > 200) // 0.1ms
 			{
@@ -482,7 +503,7 @@ void CheckReadTable(void)
 				*CheckTablePt = 6;
 			}
 
-			CheckTablePt = (Uint16 *)0x803C;
+			CheckTablePt = (Uint16 *)0x803D;
 			PPT1_NE_1A = *CheckTablePt;
 			if (PPT1_NE_1A < 1 || PPT1_NE_1A > 3000) // number
 			{
@@ -490,7 +511,7 @@ void CheckReadTable(void)
 				*CheckTablePt = 1000;
 			}
 
-			CheckTablePt = (Uint16 *)0x803D;
+			CheckTablePt = (Uint16 *)0x803E;
 			PPT1_NE_1C = *CheckTablePt;
 			if (PPT1_NE_1C < 1 || PPT1_NE_1C > 300) // number
 			{
@@ -498,7 +519,7 @@ void CheckReadTable(void)
 				*CheckTablePt = 50;
 			}
 
-			CheckTablePt = (Uint16 *)0x803E;
+			CheckTablePt = (Uint16 *)0x803F;
 			PPT1_NE_1DEFGH = *CheckTablePt;
 			if (PPT1_NE_1DEFGH < 1 || PPT1_NE_1DEFGH > 300) // number
 			{
@@ -506,7 +527,7 @@ void CheckReadTable(void)
 				*CheckTablePt = 16;
 			}
 
-			CheckTablePt = (Uint16 *)0x803F;
+			CheckTablePt = (Uint16 *)0x8040;
 			PPT1_Nrept_1C = *CheckTablePt;
 			if (PPT1_Nrept_1C < 1 || PPT1_Nrept_1C > 300) // number
 			{
@@ -518,7 +539,7 @@ void CheckReadTable(void)
 		// PPOFTW
 		else if (WorkMode == 5)
 		{
-			CheckTablePt = (Uint16 *)0x8040;
+			CheckTablePt = (Uint16 *)0x8041;
 			PPOFTW_Period = *CheckTablePt;
 			if (PPOFTW_Period < 71 || PPOFTW_Period > 80) // s
 			{
@@ -526,7 +547,7 @@ void CheckReadTable(void)
 				*CheckTablePt = 71;
 			}
 
-			CheckTablePt = (Uint16 *)0x8041;
+			CheckTablePt = (Uint16 *)0x8042;
 			PPOFTW_TW_1C = *CheckTablePt;
 			if (PPOFTW_TW_1C < 10 || PPOFTW_TW_1C > 200) // ms
 			{
@@ -534,47 +555,47 @@ void CheckReadTable(void)
 				*CheckTablePt = 40;
 			}
 
-			CheckTablePt = (Uint16 *)0x8042;
+			CheckTablePt = (Uint16 *)0x8043;
 			PPOFTW_TW_1D = *CheckTablePt;
-			if (PPOFTW_TW_1D < 10 || PPOFTW_TW_1D > 2000) // ms
+			if (PPOFTW_TW_1D < 10 || PPOFTW_TW_1D > 20000) // ms
 			{
 				PPOFTW_TW_1D = 13000;
 				*CheckTablePt = 13000;
 			}
 
-			CheckTablePt = (Uint16 *)0x8043;
+			CheckTablePt = (Uint16 *)0x8044;
 			PPOFTW_TW_1E = *CheckTablePt;
-			if (PPOFTW_TW_1E < 10 || PPOFTW_TW_1E > 2000) // ms
+			if (PPOFTW_TW_1E < 10 || PPOFTW_TW_1E > 20000) // ms
 			{
 				PPOFTW_TW_1E = 11000;
 				*CheckTablePt = 11000;
 			}
 
-			CheckTablePt = (Uint16 *)0x8044;
+			CheckTablePt = (Uint16 *)0x8045;
 			PPOFTW_TW_1F = *CheckTablePt;
-			if (PPOFTW_TW_1F < 10 || PPOFTW_TW_1F > 2000) // ms
+			if (PPOFTW_TW_1F < 10 || PPOFTW_TW_1F > 20000) // ms
 			{
 				PPOFTW_TW_1F = 10000;
 				*CheckTablePt = 10000;
 			}
 
-			CheckTablePt = (Uint16 *)0x8045;
+			CheckTablePt = (Uint16 *)0x8046;
 			PPOFTW_TW_1G = *CheckTablePt;
-			if (PPOFTW_TW_1G < 10 || PPOFTW_TW_1G > 2000) // ms
+			if (PPOFTW_TW_1G < 10 || PPOFTW_TW_1G > 20000) // ms
 			{
 				PPOFTW_TW_1G = 8000;
 				*CheckTablePt = 8000;
 			}
 
-			CheckTablePt = (Uint16 *)0x8046;
+			CheckTablePt = (Uint16 *)0x8047;
 			PPOFTW_TW_1H = *CheckTablePt;
-			if (PPOFTW_TW_1H < 10 || PPOFTW_TW_1H > 2000) // ms
+			if (PPOFTW_TW_1H < 10 || PPOFTW_TW_1H > 20000) // ms
 			{
 				PPOFTW_TW_1H = 6000;
 				*CheckTablePt = 6000;
 			}
 
-			CheckTablePt = (Uint16 *)0x8047;
+			CheckTablePt = (Uint16 *)0x8048;
 			PPOFTW_TE_1ADEFGH = *CheckTablePt;
 			if (PPOFTW_TE_1ADEFGH < 1 || PPOFTW_TE_1ADEFGH > 200) // 0.1ms
 			{
@@ -582,7 +603,7 @@ void CheckReadTable(void)
 				*CheckTablePt = 6;
 			}
 
-			CheckTablePt = (Uint16 *)0x8048;
+			CheckTablePt = (Uint16 *)0x8049;
 			PPOFTW_TE_1C = *CheckTablePt;
 			if (PPOFTW_TE_1C < 1 || PPOFTW_TE_1C > 200) // 0.1ms
 			{
@@ -590,7 +611,7 @@ void CheckReadTable(void)
 				*CheckTablePt = 6;
 			}
 
-			CheckTablePt = (Uint16 *)0x8049;
+			CheckTablePt = (Uint16 *)0x804A;
 			PPOFTW_Nrept_1C = *CheckTablePt;
 			if (PPOFTW_Nrept_1C < 1 || PPOFTW_Nrept_1C > 300) // 0.1ms
 			{
@@ -602,7 +623,7 @@ void CheckReadTable(void)
 		// PPShort
 		else if (WorkMode == 6)
 		{
-			CheckTablePt = (Uint16 *)0x804A;
+			CheckTablePt = (Uint16 *)0x804B;
 			PPShort_Period = *CheckTablePt;
 			if (PPShort_Period < 6 || PPShort_Period > 50) // s
 			{
@@ -610,7 +631,7 @@ void CheckReadTable(void)
 				*CheckTablePt = 6;
 			}
 
-			CheckTablePt = (Uint16 *)0x804B;
+			CheckTablePt = (Uint16 *)0x804C;
 			PPShort_TW_1C = *CheckTablePt;
 			if (PPShort_TW_1C < 10 || PPShort_TW_1C > 200) // ms
 			{
@@ -618,7 +639,7 @@ void CheckReadTable(void)
 				*CheckTablePt = 40;
 			}
 
-			CheckTablePt = (Uint16 *)0x804C;
+			CheckTablePt = (Uint16 *)0x804D;
 			PPShort_TE_1A = *CheckTablePt;
 			if (PPShort_TE_1A < 1 || PPShort_TE_1A > 200) // 0.1ms
 			{
@@ -626,7 +647,7 @@ void CheckReadTable(void)
 				*CheckTablePt = 6;
 			}
 
-			CheckTablePt = (Uint16 *)0x804D;
+			CheckTablePt = (Uint16 *)0x804E;
 			PPShort_TE_1C = *CheckTablePt;
 			if (PPShort_TE_1C < 1 || PPShort_TE_1C > 200) // 0.1ms
 			{
@@ -634,7 +655,7 @@ void CheckReadTable(void)
 				*CheckTablePt = 6;
 			}
 
-			CheckTablePt = (Uint16 *)0x804E;
+			CheckTablePt = (Uint16 *)0x804F;
 			PPShort_NE_1A = *CheckTablePt;
 			if (PPShort_NE_1A < 1 || PPShort_NE_1A > 3000) // number
 			{
@@ -642,7 +663,7 @@ void CheckReadTable(void)
 				*CheckTablePt = 1000;
 			}
 
-			CheckTablePt = (Uint16 *)0x804F;
+			CheckTablePt = (Uint16 *)0x8050;
 			PPShort_NE_1C = *CheckTablePt;
 			if (PPShort_NE_1C < 1 || PPShort_NE_1C > 300) // number
 			{
@@ -650,7 +671,7 @@ void CheckReadTable(void)
 				*CheckTablePt = 50;
 			}
 
-			CheckTablePt = (Uint16 *)0x8050;
+			CheckTablePt = (Uint16 *)0x8051;
 			PPShort_Nrept_1C = *CheckTablePt;
 			if (PPShort_Nrept_1C < 1 || PPShort_Nrept_1C > 300) // number
 			{
@@ -661,12 +682,6 @@ void CheckReadTable(void)
 	}
 	return;
 }
-
-Uint16 DownloadTableCnt = 0;
-Uint16 ParamTableLen = 0;
-Uint16 *tempSaveTablePt;
-#define CAL_TABLE_LEN 19  // 刻度模式参数表长度
-#define WELL_TABLE_LEN 57 // 测井模式参数表长度
 
 void RecDownTableCommand(Uint16 DownDataBuf)
 {
@@ -680,14 +695,23 @@ void RecDownTableCommand(Uint16 DownDataBuf)
 		ParamTableLen = DownDataBuf; // ParamTableLen = n+3，n为参数表长度
 		if (ParamTableLen == CAL_TABLE_LEN + 3)
 		{
-			SaveTablePt = (Uint16 *)0x8002; // Length
+			SaveTablePt = ADDR_CAL_TABLE_START; 	// Length
 		}
 		else if (ParamTableLen == WELL_TABLE_LEN + 3)
 		{
-			SaveTablePt = (Uint16 *)0x8017;
+			SaveTablePt = ADDR_WELL_TABLE_START;
 		}
+		else if (ParamTableLen == TUNING_TABLE_LEN + 3)
+		{
+			SaveTablePt = ADDR_TUNING_TABLE_START;
+		}
+		else if (ParamTableLen == CONFIG_TABLE_LEN + 3)
+		{
+			SaveTablePt = ADDR_CONFIG_TABLE_START;
+		}
+
 		*SaveTablePt++ = ParamTableLen - 1;
-		tempSaveTablePt = SaveTablePt; // 0x8003 tableID
+		tempSaveTablePt = SaveTablePt; 			// 0x8003/0x8019/0x8058/0x80A3 tableID
 		DownloadTableCnt = 2;
 	}
 	else if (DownloadTableCnt == 2 && DownTableFlag == SET) // DownDataBuf为从机标识
@@ -701,7 +725,13 @@ void RecDownTableCommand(Uint16 DownDataBuf)
 	else if (DownloadTableCnt == 3 && DownTableFlag == SET) // 参数表ID
 	{
 		*SaveTablePt++ = DownDataBuf;
-		*(Uint16 *)0x8000 = DownDataBuf;
+
+		// 当只有参数表是刻度模式参数表和测井模式参数表时才将表ID放入0x8000地址
+		if (DownDataBuf == 2 || DownDataBuf == 3)		
+		{
+			*(Uint16 *)0x8000 = DownDataBuf;		
+		}
+		
 		DownloadTableCnt++;
 	}
 	else if (DownloadTableCnt == ParamTableLen && DownTableFlag == SET) // 最后一个数据为CheckSum
@@ -712,7 +742,7 @@ void RecDownTableCommand(Uint16 DownDataBuf)
 		CheckSum += EVENT_BOARD_ID;			 // 从机标识
 
 		int i = 0;
-		SaveTablePt = tempSaveTablePt; // SaveTablePt指向0x8003或者0x8018
+		SaveTablePt = tempSaveTablePt; // SaveTablePt指向0x8003/0x8019/0x8058/0x80A3
 		for (i = 0; i < ParamTableLen - 3; ++i)
 		{
 			CheckSum += *SaveTablePt;
@@ -725,7 +755,7 @@ void RecDownTableCommand(Uint16 DownDataBuf)
 			if (*(Uint16 *)0x8000 == 0x0002) // 设置工作模式
 				*(Uint16 *)0x8001 = *(Uint16 *)0x8007;
 			else if (*(Uint16 *)0x8000 == 0x0003)
-				*(Uint16 *)0x8001 = *(Uint16 *)0x801C;
+				*(Uint16 *)0x8001 = *(Uint16 *)0x801D;
 		}
 
 		ReplyLastCheckFrame(REPLY_DOWN_TABLE_F, CheckSum); // 返回校验和

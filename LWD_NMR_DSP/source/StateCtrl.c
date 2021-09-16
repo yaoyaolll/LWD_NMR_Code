@@ -1,11 +1,11 @@
 /*
- * @Descripttion: 
+ * @Descripttion: 状态控制
  * @version: 
  * @Author: Yao Liu
  * @Company: HUST.AIA
  * @Date: 2021-06-01 09:25:44
  * @LastEditors: Yao Liu
- * @LastEditTime: 2021-06-06 23:17:04
+ * @LastEditTime: 2021-09-07 10:36:18
  */
 
 /*----------------------------头文件---------------------------------------------*/
@@ -107,14 +107,19 @@ void OperaStateCtl(void)
 				PPShortModeFlag = CLEAR;
 			}
 
-			// 磁场扫频模式，模式字0x0007
-
+			// 调谐刻度模式，模式字0x0007
+			else if (TuningModeFlag == SET)
+			{
+				CheckReadTable();
+				TuningModeTop();
+				TuningModeFlag = CLEAR;
+			}
 			// 仪器扫频模式，模式字0x0008
 			else if(ScanModeFlag==SET)
 			{
 				CheckReadTable();
  				ScanModeTop();
-				ScanModeFlag	=CLEAR;
+				ScanModeFlag	= CLEAR;
 			}
 
 			// 主刻度模式或孔隙度刻度模式，模式字0x0009|0x000A 
@@ -149,6 +154,7 @@ void TestStateCtl(void)
     CheckReadTable();
 
     // 计算继电器控制码
+	// 继电器控制码会从刻度参数表中拿到
     FreqAry[1] = CenterFreq;
     RelayCtrlCode_f = RELAY_f_k * CenterFreq + RELAY_f_b;
     // 限幅到0-1023

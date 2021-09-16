@@ -91,7 +91,7 @@ extern Uint16 PPDIFModeFlag;
 extern Uint16 PPT1ModeFlag;
 extern Uint16 PPOFTWModeFlag;
 extern Uint16 PPShortModeFlag;
-
+extern Uint16 TuningModeFlag;
 
 // 刻度模式参数表与测井模式参数表共有部分
 extern Uint16 CenterFreq;         // 发射频率
@@ -105,7 +105,8 @@ extern Uint16 Width90Pulse;       // 90度脉冲宽度
 
 
 // 刻度模式参数表私有部分
-extern Uint16 ScalePeriod;           // 刻度采集指令时间间隔
+extern Uint16 RelayCode;	      // 调谐码
+extern Uint16 ScalePeriod;        // 刻度采集指令时间间隔
 extern Uint16 Angle180Pulse;
 extern Uint16 Calib_TE;          // 刻度时的TE
 extern Uint16 Calib_NE;          // 刻度时的NE

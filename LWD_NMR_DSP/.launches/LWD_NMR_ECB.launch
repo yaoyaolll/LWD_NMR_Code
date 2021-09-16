@@ -5,7 +5,7 @@
 <stringAttribute key="com.ti.ccstudio.debug.debugModel.ATTR_PROGRAM.Texas Instruments XDS2xx USB Emulator_0/C28xx" value="${build_artifact:LWD_NMR_ECB}"/>
 <stringAttribute key="com.ti.ccstudio.debug.debugModel.ATTR_PROJECT.Texas Instruments XDS2xx USB Emulator_0/C28xx" value="LWD_NMR_ECB"/>
 <stringAttribute key="com.ti.ccstudio.debug.debugModel.ATTR_TARGET_CONFIG" value="${target_config_active_default:LWD_NMR_ECB}"/>
-<stringAttribute key="com.ti.ccstudio.debug.debugModel.MRU_PROGRAM.Texas Instruments XDS2xx USB Emulator_0/C28xx" value="E:/LWD_NMR\Code\LWD_NMR_DSP\Debug\LWD_NMR_ECB.out"/>
+<stringAttribute key="com.ti.ccstudio.debug.debugModel.MRU_PROGRAM.Texas Instruments XDS2xx USB Emulator_0/C28xx" value="E:/LWD_NMR\Code\20210906new_dsp\LWD_NMR_DSP\Debug\LWD_NMR_ECB.out"/>
 <mapAttribute key="com.ti.ccstudio.debug.ui.displayFormats">
 <mapEntry key="Texas Instruments XDS2xx USB Emulator_0/C28xx@##separator##@1" value="16-Bit Signed Int"/>
 </mapAttribute>

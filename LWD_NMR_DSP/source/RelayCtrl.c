@@ -5,7 +5,7 @@
  * @Company: HUST.AIA
  * @Date: 2021-06-03 17:49:32
  * @LastEditors: Yao Liu
- * @LastEditTime: 2021-06-06 22:50:57
+ * @LastEditTime: 2021-09-06 16:19:58
  */
 
 /*----------------------------头文件---------------------------------------------*/
@@ -42,17 +42,17 @@ void ParamUpdate()
 }
 
 // 产生使继电器闭合的正脉冲，脉冲宽度为970us
-void RelayOpen(Uint16 _RelayCtrlCode)
+void RelayOpen(Uint16 relay_code)
 {
-	RELAY_ON = _RelayCtrlCode;	// 继电器闭合
+	RELAY_ON = relay_code;	// 继电器闭合
 	Delay(120);
 	RELAY_ON = 0;
 }
 
 // 产生使继电器断开的正脉冲，，脉冲宽度为970us
-void RelayClose(Uint16 _RelayCtrlCode)
+void RelayClose(Uint16 relay_code)
 {
-	RELAY_CLOSE = _RelayCtrlCode;	// 继电器断开
+	RELAY_CLOSE = relay_code;	// 继电器断开
 	Delay(120);
 	RELAY_CLOSE = 0;
 }

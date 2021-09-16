@@ -102,6 +102,9 @@ void PPOFTWModeTop(void);
 //Functions defined in PPOFTWModeTop.c
 void PPShortModeTop(void);
 
+//Functions defined in TuningModeTop.c
+void TuningModeTop(void);
+
 //Functions defined in main.c
 void IdleStateCtl(void);
 void OperaStateCtl(void);
@@ -117,7 +120,10 @@ int CasingDetectOnce();
 void CasingDetectTop();
 
 // Functions defined in GuassFitAlgorithm.c
-void guassFit_C(const float x[9], const float y[9], float *a, float *b, float *c);
+void GaussFit(const float x[9], const float y[9], float *a, float *b, float *c);
+
+// Functions defined in CubicSplineAlgorithm.c
+float CublicSplineInterpolation(float x[9], float y[9], float fre);
 
 // Functions defined in SingleOrderDeal.c
 Uint16 CheckSumCal();
@@ -135,6 +141,6 @@ void TestDeal();
 void ScaleDeal();
 
 // Functions defined in RelayCtrl.c
-void RelayClose(Uint16 _RelayCtrlCode);
-void RelayOpen(Uint16 _RelayCtrlCode);
+void RelayClose(Uint16 relay_code);
+void RelayOpen(Uint16 relay_code);
 void ParamUpdate();

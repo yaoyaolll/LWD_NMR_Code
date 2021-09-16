@@ -1,4 +1,7 @@
-#define DEBUG       // 用来控制RAM和FALSH版本程序
+//#define DEBUG       // 用来控制RAM和FALSH版本程序
+
+// 计算Q值的系数，Q=2*c*sqrt(log(sqrt(2))) Q_factor=2*sqrt(log(sqrt(2)))
+#define Q_FACTOR		0.775925	
 
 //Address macro definations
 #define TABLE_START			0x8000    //参数表0x8000+78

@@ -1,10 +1,10 @@
 ******************************************************************************
              TMS320C2000 Linker PC v6.2.7                      
 ******************************************************************************
->> Linked Fri Jun 11 15:57:34 2021
+>> Linked Sun Jul 25 18:52:37 2021
 
 OUTPUT FILE NAME:   <LWD_NMR_ECB.out>
-ENTRY POINT SYMBOL: "_c_int00"  address: 003dc7d4
+ENTRY POINT SYMBOL: "_c_int00"  address: 003dc80d
 
 
 MEMORY CONFIGURATION
@@ -14,9 +14,9 @@ MEMORY CONFIGURATION
 PAGE 0:
   RAMM0_0               00000040   00000370  00000004  0000036c  RWIX
   RAMOUT_0              00100000   0001ffff  00000000  0001ffff  RWIX
-  FLASH_E               003d8000   0001f000  00004e46  0001a1ba  RWIX
+  FLASH_E               003d8000   0001f000  00004ea6  0001a15a  RWIX
   BEGIN                 003f7ff6   00000002  00000002  00000000  RWIX
-  PRAMH0                003f8000   00002000  000019b5  0000064b  RWIX
+  PRAMH0                003f8000   00002000  000019d4  0000062c  RWIX
   BOOTROM               003ff000   00000fc0  00000b50  00000470  RW  
   RESET                 003fffc0   00000002  00000000  00000002  RWIX
   VECTORS               003fffc2   0000003e  00000000  0000003e  RWIX
@@ -68,7 +68,7 @@ ramfuncs   0    00000040    00000004
                   00000040    00000004     DSP281x_usDelay.obj (ramfuncs)
 
 secureRamFuncs 
-*          0    003d8000    000019b5     RUN ADDR = 003f8000
+*          0    003d8000    000019d4     RUN ADDR = 003f8000
                   003d8000    00000d85     MyFunctions.obj (secureRamFuncs)
                   003d8d85    000003b2     GuassFitAlogrithm.obj (secureRamFuncs)
                   003d9137    00000251     MyFPGAFunctions.obj (secureRamFuncs)
@@ -76,91 +76,93 @@ secureRamFuncs
                   003d95a8    000001ce     TableHandle.obj (secureRamFuncs)
                   003d9776    000001ae     PulseTop.obj (secureRamFuncs)
                   003d9924    0000007b     SCIA_interrupt.obj (secureRamFuncs:retain)
-                  003d999f    00000016     SCIA_interrupt.obj (secureRamFuncs)
+                  003d999f    0000001f     DSP281x_SysCtrl.obj (secureRamFuncs)
+                  003d99be    00000016     SCIA_interrupt.obj (secureRamFuncs)
 
-.text      0    003d99b5    00003143     
-                  003d99b5    00000dad     MainInitial.obj (.text)
-                  003da762    0000069c     TableHandle.obj (.text)
-                  003dadfe    000002a9     PPT1ModeTop.obj (.text)
-                  003db0a7    00000228     PPOFTWModeTop.obj (.text)
-                  003db2cf    000001e5     PPDIFModeTop.obj (.text)
-                  003db4b4    000001c8     CasingDetectTop.obj (.text)
-                  003db67c    000001ae     SingleOrderDeal.obj (.text)
-                  003db82a    00000163     PPShortModeTop.obj (.text)
-                  003db98d    0000015f     PPModeTop.obj (.text)
-                  003dbaec    0000014c     SCIA_interrupt.obj (.text)
-                  003dbc38    0000014a     DSP281x_DefaultIsr.obj (.text:retain)
-                  003dbd82    00000136     ScaleHoleTop.obj (.text)
-                  003dbeb8    00000117     MyFunctions.obj (.text)
-                  003dbfcf    0000010c     DSP281x_SysCtrl.obj (.text)
-                  003dc0db    000000f7     ScanTop.obj (.text)
-                  003dc1d2    000000f3     DE_CPMG_Top.obj (.text)
-                  003dc2c5    000000ab     rts2800_ml.lib : log.obj (.text)
-                  003dc370    0000009f                    : exp.obj (.text)
-                  003dc40f    00000095     RelayCtrl.obj (.text)
-                  003dc4a4    00000086     PulseTop.obj (.text)
-                  003dc52a    00000083     rts2800_ml.lib : fd_mpy.obj (.text)
-                  003dc5ad    00000083                    : fs_div.obj (.text)
-                  003dc630    00000082     DE_CPMG_Top.obj (.text:retain)
-                  003dc6b2    00000078     rts2800_ml.lib : fs_add.obj (.text)
-                  003dc72a    0000005a                    : fs_mpy.obj (.text)
-                  003dc784    00000050                    : sqrt.obj (.text)
-                  003dc7d4    00000044                    : boot.obj (.text)
-                  003dc818    0000003f     MyFPGAFunctions.obj (.text)
-                  003dc857    00000033     rts2800_ml.lib : ldexp.obj (.text)
-                  003dc88a    0000002a                    : l_div.obj (.text)
-                  003dc8b4    00000029                    : fs_tol.obj (.text)
-                  003dc8dd    00000028     DSP281x_PieCtrl.obj (.text)
-                  003dc905    00000025     MyFunctions.obj (.text:retain)
-                  003dc92a    00000025     rts2800_ml.lib : fs_toi.obj (.text)
-                  003dc94f    00000021                    : fs_toul.obj (.text)
-                  003dc970    00000020     DSP281x_PieVect.obj (.text)
-                  003dc990    0000001f     rts2800_ml.lib : fd_tol.obj (.text)
-                  003dc9af    0000001d                    : fs_tou.obj (.text)
-                  003dc9cc    0000001c                    : fs_tofd.obj (.text)
-                  003dc9e8    0000001c                    : l_tofd.obj (.text)
-                  003dca04    0000001a                    : i_tofs.obj (.text)
-                  003dca1e    00000018                    : exit.obj (.text)
-                  003dca36    00000017                    : fs_cmp.obj (.text)
-                  003dca4d    00000017                    : u_tofd.obj (.text)
-                  003dca64    00000016                    : ul_tofd.obj (.text)
-                  003dca7a    00000015                    : args_main.obj (.text)
-                  003dca8f    00000013                    : frexp.obj (.text)
-                  003dcaa2    00000013                    : ul_tofs.obj (.text)
-                  003dcab5    00000012     main.obj (.text)
-                  003dcac7    00000010     rts2800_ml.lib : u_tofs.obj (.text)
-                  003dcad7    0000000b                    : u_div.obj (.text)
-                  003dcae2    00000009                    : _lock.obj (.text)
-                  003dcaeb    00000008     DSP281x_CodeStartBranch.obj (.text)
-                  003dcaf3    00000005     rts2800_ml.lib : fs_neg.obj (.text)
+.text      0    003d99d4    00003184     
+                  003d99d4    00000dbb     MainInitial.obj (.text)
+                  003da78f    0000069c     TableHandle.obj (.text)
+                  003dae2b    000002a9     PPT1ModeTop.obj (.text)
+                  003db0d4    00000228     PPOFTWModeTop.obj (.text)
+                  003db2fc    000001e5     PPDIFModeTop.obj (.text)
+                  003db4e1    000001c8     CasingDetectTop.obj (.text)
+                  003db6a9    000001ae     SingleOrderDeal.obj (.text)
+                  003db857    00000163     PPShortModeTop.obj (.text)
+                  003db9ba    0000015f     PPModeTop.obj (.text)
+                  003dbb19    0000014c     SCIA_interrupt.obj (.text)
+                  003dbc65    0000014a     DSP281x_DefaultIsr.obj (.text:retain)
+                  003dbdaf    00000136     ScaleHoleTop.obj (.text)
+                  003dbee5    00000117     MyFunctions.obj (.text)
+                  003dbffc    0000010c     DSP281x_SysCtrl.obj (.text)
+                  003dc108    000000ff     DE_CPMG_Top.obj (.text)
+                  003dc207    000000f7     ScanTop.obj (.text)
+                  003dc2fe    000000ab     rts2800_ml.lib : log.obj (.text)
+                  003dc3a9    0000009f                    : exp.obj (.text)
+                  003dc448    00000095     RelayCtrl.obj (.text)
+                  003dc4dd    00000086     PulseTop.obj (.text)
+                  003dc563    00000083     rts2800_ml.lib : fd_mpy.obj (.text)
+                  003dc5e6    00000083                    : fs_div.obj (.text)
+                  003dc669    00000082     DE_CPMG_Top.obj (.text:retain)
+                  003dc6eb    00000078     rts2800_ml.lib : fs_add.obj (.text)
+                  003dc763    0000005a                    : fs_mpy.obj (.text)
+                  003dc7bd    00000050                    : sqrt.obj (.text)
+                  003dc80d    00000044                    : boot.obj (.text)
+                  003dc851    0000003f     MyFPGAFunctions.obj (.text)
+                  003dc890    00000033     rts2800_ml.lib : ldexp.obj (.text)
+                  003dc8c3    0000002a                    : l_div.obj (.text)
+                  003dc8ed    00000029                    : fs_tol.obj (.text)
+                  003dc916    00000028     DSP281x_PieCtrl.obj (.text)
+                  003dc93e    00000025     MyFunctions.obj (.text:retain)
+                  003dc963    00000025     rts2800_ml.lib : fs_toi.obj (.text)
+                  003dc988    00000021                    : fs_toul.obj (.text)
+                  003dc9a9    00000021                    : memcpy_ff.obj (.text)
+                  003dc9ca    00000020     DSP281x_PieVect.obj (.text)
+                  003dc9ea    0000001f     rts2800_ml.lib : fd_tol.obj (.text)
+                  003dca09    0000001d                    : fs_tou.obj (.text)
+                  003dca26    0000001c                    : fs_tofd.obj (.text)
+                  003dca42    0000001c                    : l_tofd.obj (.text)
+                  003dca5e    0000001a                    : i_tofs.obj (.text)
+                  003dca78    00000018     main.obj (.text)
+                  003dca90    00000018     rts2800_ml.lib : exit.obj (.text)
+                  003dcaa8    00000017                    : fs_cmp.obj (.text)
+                  003dcabf    00000017                    : u_tofd.obj (.text)
+                  003dcad6    00000016                    : ul_tofd.obj (.text)
+                  003dcaec    00000015                    : args_main.obj (.text)
+                  003dcb01    00000013                    : frexp.obj (.text)
+                  003dcb14    00000013                    : ul_tofs.obj (.text)
+                  003dcb27    00000010                    : u_tofs.obj (.text)
+                  003dcb37    0000000b                    : u_div.obj (.text)
+                  003dcb42    00000009                    : _lock.obj (.text)
+                  003dcb4b    00000008     DSP281x_CodeStartBranch.obj (.text)
+                  003dcb53    00000005     rts2800_ml.lib : fs_neg.obj (.text)
 
-IQmath     0    003dcaf8    000001b8     
-                  003dcaf8    0000007f     IQmath.lib : IQ10atan2.obj (IQmath)
-                  003dcb77    00000060                : IQ10mag.obj (IQmath)
-                  003dcbd7    00000047                : IQ10div.obj (IQmath)
-                  003dcc1e    00000047                : IQ3div.obj (IQmath)
-                  003dcc65    00000042                : IQ10sqrt.obj (IQmath)
-                  003dcca7    00000009                : IQ10int.obj (IQmath)
+IQmath     0    003dcb58    000001b8     
+                  003dcb58    0000007f     IQmath.lib : IQ10atan2.obj (IQmath)
+                  003dcbd7    00000060                : IQ10mag.obj (IQmath)
+                  003dcc37    00000047                : IQ10div.obj (IQmath)
+                  003dcc7e    00000047                : IQ3div.obj (IQmath)
+                  003dccc5    00000042                : IQ10sqrt.obj (IQmath)
+                  003dcd07    00000009                : IQ10int.obj (IQmath)
 
-.econst    0    003dccb0    00000108     
-                  003dccb0    00000100     DSP281x_PieVect.obj (.econst)
-                  003dcdb0    00000004     MyFunctions.obj (.econst)
-                  003dcdb4    00000004     PulseTop.obj (.econst)
+.econst    0    003dcd10    00000108     
+                  003dcd10    00000100     DSP281x_PieVect.obj (.econst)
+                  003dce10    00000004     MyFunctions.obj (.econst)
+                  003dce14    00000004     PulseTop.obj (.econst)
 
-.cinit     0    003dcdb8    0000008e     
-                  003dcdb8    00000040     MyVariables.obj (.cinit)
-                  003dcdf8    00000014     TableHandle.obj (.cinit)
-                  003dce0c    0000000a     rts2800_ml.lib : _lock.obj (.cinit)
-                  003dce16    0000000a                    : exit.obj (.cinit)
-                  003dce20    00000008     SCIA_interrupt.obj (.cinit)
-                  003dce28    00000004     CasingDetectTop.obj (.cinit)
-                  003dce2c    00000004     PPDIFModeTop.obj (.cinit)
-                  003dce30    00000004     PPModeTop.obj (.cinit)
-                  003dce34    00000004     PPOFTWModeTop.obj (.cinit)
-                  003dce38    00000004     PPShortModeTop.obj (.cinit)
-                  003dce3c    00000004     PPT1ModeTop.obj (.cinit)
-                  003dce40    00000004     rts2800_ml.lib : errno.obj (.cinit)
-                  003dce44    00000002     --HOLE-- [fill = 0]
+.cinit     0    003dce18    0000008e     
+                  003dce18    00000040     MyVariables.obj (.cinit)
+                  003dce58    00000014     TableHandle.obj (.cinit)
+                  003dce6c    0000000a     rts2800_ml.lib : _lock.obj (.cinit)
+                  003dce76    0000000a                    : exit.obj (.cinit)
+                  003dce80    00000008     SCIA_interrupt.obj (.cinit)
+                  003dce88    00000004     CasingDetectTop.obj (.cinit)
+                  003dce8c    00000004     PPDIFModeTop.obj (.cinit)
+                  003dce90    00000004     PPModeTop.obj (.cinit)
+                  003dce94    00000004     PPOFTWModeTop.obj (.cinit)
+                  003dce98    00000004     PPShortModeTop.obj (.cinit)
+                  003dce9c    00000004     PPT1ModeTop.obj (.cinit)
+                  003dcea0    00000004     rts2800_ml.lib : errno.obj (.cinit)
+                  003dcea4    00000002     --HOLE-- [fill = 0]
 
 codestart 
 *          0    003f7ff6    00000002     
@@ -720,18 +722,18 @@ address     data page           name
 0000903c     240 (00009000)     _PPT1MiniNumAry
 0000903d     240 (00009000)     _errno
 
-003dcaf8    f72b (003dcac0)     __IQ10atan2
+003dcb58    f72d (003dcb40)     __IQ10atan2
 
-003dcb77    f72d (003dcb40)     __IQ10mag
+003dcbd7    f72f (003dcbc0)     __IQ10mag
 
-003dcbd7    f72f (003dcbc0)     __IQ10div
+003dcc37    f730 (003dcc00)     __IQ10div
 
-003dcc1e    f730 (003dcc00)     __IQ3div
+003dcc7e    f731 (003dcc40)     __IQ3div
 
-003dcc65    f731 (003dcc40)     __IQ10sqrt
+003dccc5    f733 (003dccc0)     __IQ10sqrt
 
-003dcca7    f732 (003dcc80)     __IQ10int
-003dccb0    f732 (003dcc80)     _PieVectTableInit
+003dcd07    f734 (003dcd00)     __IQ10int
+003dcd10    f734 (003dcd00)     _PieVectTableInit
 
 003f7ff8    fdff (003f7fc0)     _CsmPwl
 
@@ -803,34 +805,34 @@ GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name
 address    name
 --------   ----
 00009000   .bss
-003d99b5   .text
-003dca1e   C$$EXIT
-003dc52a   FD$$MPY
-003dc990   FD$$TOL
-003dc6b7   FS$$ADD
-003dca36   FS$$CMP
-003dc5ad   FS$$DIV
-003dc72a   FS$$MPY
-003dcaf3   FS$$NEG
-003dc6b2   FS$$SUB
-003dc9cc   FS$$TOFD
-003dc92a   FS$$TOI
-003dc8b4   FS$$TOL
-003dc9af   FS$$TOU
-003dc94f   FS$$TOUL
-003dca04   I$$TOFS
-003dc88a   L$$DIV
-003dc899   L$$MOD
-003dc9e8   L$$TOFD
-003dcad7   U$$DIV
-003dcadc   U$$MOD
-003dca4d   U$$TOFD
-003dcac7   U$$TOFS
-003dc8a7   UL$$DIV
-003dc8ae   UL$$MOD
-003dca64   UL$$TOFD
-003dcaa2   UL$$TOFS
-003dbcab   _ADCINT_ISR
+003d99d4   .text
+003dca90   C$$EXIT
+003dc563   FD$$MPY
+003dc9ea   FD$$TOL
+003dc6f0   FS$$ADD
+003dcaa8   FS$$CMP
+003dc5e6   FS$$DIV
+003dc763   FS$$MPY
+003dcb53   FS$$NEG
+003dc6eb   FS$$SUB
+003dca26   FS$$TOFD
+003dc963   FS$$TOI
+003dc8ed   FS$$TOL
+003dca09   FS$$TOU
+003dc988   FS$$TOUL
+003dca5e   I$$TOFS
+003dc8c3   L$$DIV
+003dc8d2   L$$MOD
+003dca42   L$$TOFD
+003dcb37   U$$DIV
+003dcb3c   U$$MOD
+003dcabf   U$$TOFD
+003dcb27   U$$TOFS
+003dc8e0   UL$$DIV
+003dc8e7   UL$$MOD
+003dcad6   UL$$TOFD
+003dcb14   UL$$TOFS
+003dbcd8   _ADCINT_ISR
 00008624   _Acq180Num
 000085fe   _Acq90Num
 003f957d   _AcqFinStateCtl
@@ -846,34 +848,34 @@ address    name
 00009028   _BufferSciaDataAll
 00009025   _BufferSciaDataH
 00009027   _BufferSciaDataL
-003dbcf1   _CAPINT1_ISR
-003dbcf6   _CAPINT2_ISR
-003dbcfb   _CAPINT3_ISR
-003dbd37   _CAPINT4_ISR
-003dbd3c   _CAPINT5_ISR
-003dbd41   _CAPINT6_ISR
-003dbcba   _CMP1INT_ISR
-003dbcbf   _CMP2INT_ISR
-003dbcc4   _CMP3INT_ISR
-003dbd00   _CMP4INT_ISR
-003dbd05   _CMP5INT_ISR
-003dbd0a   _CMP6INT_ISR
+003dbd1e   _CAPINT1_ISR
+003dbd23   _CAPINT2_ISR
+003dbd28   _CAPINT3_ISR
+003dbd64   _CAPINT4_ISR
+003dbd69   _CAPINT5_ISR
+003dbd6e   _CAPINT6_ISR
+003dbce7   _CMP1INT_ISR
+003dbcec   _CMP2INT_ISR
+003dbcf1   _CMP3INT_ISR
+003dbd2d   _CMP4INT_ISR
+003dbd32   _CMP5INT_ISR
+003dbd37   _CMP6INT_ISR
 00008618   _CalDivData
 003f8088   _CalNoise
 003f821d   _CalSignal
 00008632   _Calib_NE
 00008635   _Calib_TE
 003f9398   _CasDctStateCtl
-003db701   _CasingDeal
-003db5e7   _CasingDetectOnce
-003db4bc   _CasingDetectTop
+003db72e   _CasingDeal
+003db614   _CasingDetectOnce
+003db4e9   _CasingDetectTop
 00009038   _CasingMiniNumAry
 00008665   _CenterFreq
-003dbfc3   _ChangePhase
-003da770   _CheckReadTable
-003db67c   _CheckSumCal
+003dbff0   _ChangePhase
+003da79d   _CheckReadTable
+003db6a9   _CheckSumCal
 000086a0   _CheckTablePt
-003da762   _CheckWorkMode
+003da78f   _CheckWorkMode
 00008698   _ChgTablePt
 00008718   _Cmp180BHalf
 00008730   _Cmp180FHalf
@@ -892,7 +894,7 @@ address    name
 00000c00   _CpuTimer0Regs
 003f7ff8   _CsmPwl
 00000ae0   _CsmRegs
-003dc0aa   _CsmUnlock
+003dc0d7   _CsmUnlock
 0000869a   _Cut180LTime
 0000860b   _Cut180LTimeHi
 0000860c   _Cut180LTimeLow
@@ -909,7 +911,7 @@ address    name
 00008675   _CutTimeHi
 0000867c   _CutTimeLow
 000085e0   _CycleFlag
-003dbc42   _DATALOG_ISR
+003dbc6f   _DATALOG_ISR
 0000861d   _DCFreqSel
 000085fd   _DCMn
 00008620   _DCNe
@@ -936,11 +938,11 @@ address    name
 00000040   _DSP28x_usDelay
 000085dc   _DSTTimeOne
 000086f0   _DataTotalNum
-003db716   _DataUpDeal
-003dc1d2   _DeCpmgTop
+003db743   _DataUpDeal
+003dc108   _DeCpmgTop
 003f8000   _Delay
 00000880   _DevEmuRegs
-003dc068   _DisableDog
+003dc095   _DisableDog
 000085e9   _DownTableFlag
 00009020   _DownloadTableCnt
 000085c1   _DumpPara1
@@ -950,15 +952,15 @@ address    name
 000085d9   _DumpPara5
 000085d4   _DumpPara6
 000085db   _DumpSustainFlag
-003dbd69   _ECAN0INTA_ISR
-003dbd6e   _ECAN1INTA_ISR
+003dbd96   _ECAN0INTA_ISR
+003dbd9b   _ECAN1INTA_ISR
 00006040   _ECanaLAMRegs
 000060c0   _ECanaMOTORegs
 00006080   _ECanaMOTSRegs
 00006100   _ECanaMboxes
 00006000   _ECanaRegs
-003dbd73   _EMPTY_ISR
-003dbc4c   _EMUINT_ISR
+003dbda0   _EMPTY_ISR
+003dbc79   _EMUINT_ISR
 000085f9   _EchoAcqNum
 000085fa   _EchoAcqTime
 000085f8   _EchoAcqTimeBHalf
@@ -970,8 +972,8 @@ address    name
 00008716   _EchoMid4
 0000867b   _EchoNum
 000086ac   _EchoStorAddr
-003db68f   _EmptyDeal
-003dc8fc   _EnableInterrupts
+003db6bc   _EmptyDeal
+003dc935   _EnableInterrupts
 00007400   _EvaRegs
 00007500   _EvbRegs
 00008649   _EventBoardState
@@ -982,12 +984,12 @@ address    name
 000070e0   _GpioDataRegs
 000070c0   _GpioMuxRegs
 0000867d   _HVState
-003db75d   _HVStateDeal
+003db78a   _HVStateDeal
 000085d7   _HalfFreqNum
 000085f2   _HoleModeFlag
-003dbc56   _ILLEGAL_ISR
-003dbc38   _INT13_ISR
-003dbc3d   _INT14_ISR
+003dbc83   _ILLEGAL_ISR
+003dbc65   _INT13_ISR
+003dbc6a   _INT14_ISR
 003ffad8   _IQ10mpyRndSatTable
 003ffacc   _IQ11mpyRndSatTable
 003ffac0   _IQ12mpyRndSatTable
@@ -1037,31 +1039,32 @@ address    name
 003ff722   _IQsqrtTable
 003ff824   _IQsqrtTableEnd
 003f9388   _IdleStateCtl
-003d99b5   _InitAll
-003da6c0   _InitFPGA
-003da690   _InitGpio
-003dc091   _InitPeripheralClocks
-003dc8dd   _InitPieCtrl
-003dc970   _InitPieVectTable
-003dc070   _InitPll
-003d9caa   _InitPulseGain
-003da6a8   _InitSci
-003dbfcf   _InitSysCtrl
-003d9abc   _InitTable
-003da6da   _InitVariables
-003db690   _InquireDeal
+003d99d4   _InitAll
+003da6ed   _InitFPGA
+003f999f   _InitFlash
+003da6bd   _InitGpio
+003dc0be   _InitPeripheralClocks
+003dc916   _InitPieCtrl
+003dc9ca   _InitPieVectTable
+003dc09d   _InitPll
+003d9cd7   _InitPulseGain
+003da6d5   _InitSci
+003dbffc   _InitSysCtrl
+003d9ae9   _InitTable
+003da707   _InitVariables
+003db6bd   _InquireDeal
 0000860d   _InverseTurnFlag
 00008653   _IsParamUpdateFlag
-003db748   _K1K2DisDeal
-003db733   _K1K2EnDeal
-003dc05e   _KickDog
+003db775   _K1K2DisDeal
+003db760   _K1K2EnDeal
+003dc08b   _KickDog
 003f91de   _LoadBriDumpPara
 003f9137   _LoadDDSPara
-003da735   _LoadParaDis
+003da762   _LoadParaDis
 003f92cd   _LoadPdPara
 000086f4   _MDumpTime
-003dbd50   _MRINTA_ISR
-003dbd55   _MXINTA_ISR
+003dbd7d   _MRINTA_ISR
+003dbd82   _MXINTA_ISR
 000085d5   _MainDumpTime
 000085cd   _MatFreq
 000085d2   _MatFreqSel
@@ -1074,7 +1077,7 @@ address    name
 000085f0   _MiniFreq
 000085e2   _MiniFreqCnt
 0000867a   _MiniNoiseMax
-003dbedf   _MiniScan
+003dbf0c   _MiniScan
 0000900a   _MiniStorAddr1
 0000900e   _MiniStorAddr2
 0000900c   _MiniStorAddr3
@@ -1082,8 +1085,8 @@ address    name
 00009004   _MiniStorAddr5
 00009008   _MiniStorAddr6
 00008696   _MiniTablePt
-003db724   _ModeConfirmDeal
-003dbc51   _NMI_ISR
+003db751   _ModeConfirmDeal
+003dbc7e   _NMI_ISR
 000085e5   _NTimeDec
 000085fc   _Ne
 00008768   _NintyWidthAry
@@ -1113,16 +1116,16 @@ address    name
 000085f4   _Open180STimeHi
 00008608   _Open180STimeLow
 003f93ab   _OperaStateCtl
-003db69a   _OperationDeal
+003db6c7   _OperationDeal
 000085ff   _P180PrdNum
 000085f6   _P90PrdNum
-003dbc97   _PDPINTA_ISR
-003dbc9c   _PDPINTB_ISR
-003dbd78   _PIE_RESERVED
+003dbcc4   _PDPINTA_ISR
+003dbcc9   _PDPINTB_ISR
+003dbda5   _PIE_RESERVED
 00009000   _PP6ModeFlag
 00009029   _PPDIFMiniNumAry
 00008661   _PPDIFModeFlag
-003db2cf   _PPDIFModeTop
+003db2fc   _PPDIFModeTop
 00008648   _PPDIF_NE_1A1B
 0000865e   _PPDIF_NE_1C
 00008646   _PPDIF_Nrept_1C
@@ -1140,10 +1143,10 @@ address    name
 0000862d   _PPM_TW_1C
 00008664   _PPModeFlag
 00009039   _PPModeMiniNumAry
-003db98d   _PPModeTop
+003db9ba   _PPModeTop
 0000903a   _PPOFTWMiniNumAry
 00008667   _PPOFTWModeFlag
-003db0a7   _PPOFTWModeTop
+003db0d4   _PPOFTWModeTop
 00008688   _PPOFTW_Nrept_1C
 0000868b   _PPOFTW_Period
 00008682   _PPOFTW_TE_1ADEFGH
@@ -1156,7 +1159,7 @@ address    name
 0000867f   _PPOFTW_TW_1H
 0000903b   _PPShortMiniNumAry
 00008668   _PPShortModeFlag
-003db82a   _PPShortModeTop
+003db857   _PPShortModeTop
 00008671   _PPShort_NE_1A
 0000866a   _PPShort_NE_1C
 00008669   _PPShort_Nrept_1C
@@ -1166,7 +1169,7 @@ address    name
 0000866e   _PPShort_TW_1C
 0000903c   _PPT1MiniNumAry
 00008662   _PPT1ModeFlag
-003dadfe   _PPT1ModeTop
+003dae2b   _PPT1ModeTop
 00008689   _PPT1_NE_1A
 0000868a   _PPT1_NE_1C
 00008687   _PPT1_NE_1DEFGH
@@ -1183,7 +1186,7 @@ address    name
 0000863e   _PPT1_TW_Code
 00008762   _ParamOrderData
 0000901e   _ParamTableLen
-003dc40f   _ParamUpdate
+003dc448   _ParamUpdate
 00008614   _Pd180Time
 00008611   _Pd90Time
 00008625   _PdPara1
@@ -1192,7 +1195,7 @@ address    name
 00008677   _PhaseFlag
 00000ce0   _PieCtrlRegs
 00000d00   _PieVectTable
-003dccb0   _PieVectTableInit
+003dcd10   _PieVectTableInit
 00008720   _Pulse180Width
 0000871e   _Pulse180WidthHalf
 000086b8   _Pulse90StoreAddr
@@ -1216,7 +1219,7 @@ address    name
 00008760   _PulseMid3
 0000861b   _PulseMid4
 000085d0   _PulseNum
-003dbeb8   _PulseParamIncrement
+003dbee5   _PulseParamIncrement
 00008626   _PulseReadBuf
 00008754   _PulseRec
 0000875e   _PulseRecIQ
@@ -1225,8 +1228,8 @@ address    name
 00008638   _PulseTestAcqFreq
 00008633   _PulseTestPulseTime
 000085d3   _PulseTime
-003dc4a4   _PulseTop
-003dbc47   _RTOSINT_ISR
+003dc4dd   _PulseTop
+003dbc74   _RTOSINT_ISR
 000085ef   _ReadTableBuf
 003f95a8   _RecDownTableCommand
 00008651   _RecParamOrderFlag
@@ -1238,46 +1241,46 @@ address    name
 0000901d   _RecSingleOrderCnt
 003f9707   _RecSingleOrderCommand
 00008658   _RecSingleOrderFlag
-003dad8e   _RecUpTableCommand
+003dadbb   _RecUpTableCommand
 00008780   _RelayAry
-003dc497   _RelayClose
+003dc4d0   _RelayClose
 00008652   _RelayCtrlCode
 000086f8   _RelayCtrlCode_f
-003dc48a   _RelayOpen
-003dbbcc   _ReplyCasingErrFrame
-003dbb59   _ReplyLastCheckFrame
-003dbb05   _ReplyModeDataFrame
-003dbbef   _ReplyNoVarFrame
-003dbc10   _ReplySingleVarFrame
-003dbb31   _ReplyStateFrame
-003dbb81   _ReplyUpTableFrame
-003dc825   _RstNoiseModule
-003dc83e   _RstPulseModule
+003dc4c3   _RelayOpen
+003dbbf9   _ReplyCasingErrFrame
+003dbb86   _ReplyLastCheckFrame
+003dbb32   _ReplyModeDataFrame
+003dbc1c   _ReplyNoVarFrame
+003dbc3d   _ReplySingleVarFrame
+003dbb5e   _ReplyStateFrame
+003dbbae   _ReplyUpTableFrame
+003dc85e   _RstNoiseModule
+003dc877   _RstPulseModule
 003f9924   _SCIRXINTA_ISR
-003dbd5f   _SCIRXINTB_ISR
-003dbd5a   _SCITXINTA_ISR
-003dbd64   _SCITXINTB_ISR
+003dbd8c   _SCIRXINTB_ISR
+003dbd87   _SCITXINTA_ISR
+003dbd91   _SCITXINTB_ISR
 000086f2   _SDumpTime
-003dbd46   _SPIRXINTA_ISR
-003dbd4b   _SPITXINTA_ISR
+003dbd73   _SPIRXINTA_ISR
+003dbd78   _SPITXINTA_ISR
 00008637   _STWTE_NE
 00008639   _STWTE_Period
 00008636   _STWTE_TE
 000085e6   _STimeDec
 000085dd   _SaveCnt
-003dbf67   _SaveEcho
+003dbf94   _SaveEcho
 000086a4   _SaveNTempPt
 003f8171   _SaveNoise
-003dbf94   _SavePhaseWord
-003dbf27   _SavePulse
+003dbfc1   _SavePhaseWord
+003dbf54   _SavePulse
 00008694   _SaveSTempPt
-003dbec6   _SaveSignal
-003dbfa6   _SaveSixFreq
+003dbef3   _SaveSignal
+003dbfd3   _SaveSixFreq
 000086a2   _SaveTablePt
 000085e7   _ScaleCnt
 000085da   _ScaleDDSDiv
-003db7f1   _ScaleDeal
-003dbd82   _ScaleHoleModeTop
+003db81e   _ScaleDeal
+003dbdaf   _ScaleHoleModeTop
 000085fb   _ScaleM
 0000860a   _ScaleMn
 000085ea   _ScaleModeFlag
@@ -1286,14 +1289,14 @@ address    name
 00008666   _ScanDeltaFreq
 003f81b2   _ScanFreqOnce
 00008663   _ScanModeFlag
-003dc0db   _ScanModeTop
+003dc207   _ScanModeTop
 0000867e   _ScanSignalNum
 00009024   _SciaDataEven
 00009026   _SciaRecFlag
 00007050   _SciaRegs
-003f99aa   _SciaRx_Ready
-003dbaec   _SciaSendOneWord
-003f999f   _SciaTx_Ready
+003f99c9   _SciaRx_Ready
+003dbb19   _SciaSendOneWord
+003f99be   _SciaTx_Ready
 00007750   _ScibRegs
 00008612   _SdAcqNum1
 00008610   _SdAcqNum2
@@ -1318,7 +1321,7 @@ address    name
 00008656   _SendTableID
 00009002   _SendTempPt
 0000861c   _SftWinWidth
-003dc818   _ShutdownHV
+003dc851   _ShutdownHV
 0000865a   _SiglAcqFreqTim
 00008659   _SiglAcqPrdNum
 0000873e   _SignalAmpIQ
@@ -1341,25 +1344,25 @@ address    name
 00008613   _Strip180Num
 00008623   _Strip90Num
 00008615   _StripBuf
-003db769   _SysCheckDeal
+003db796   _SysCheckDeal
 00007010   _SysCtrlRegs
-003dbcce   _T1CINT_ISR
-003dbcd8   _T1OFINT_ISR
-003dbcc9   _T1PINT_ISR
-003dbcd3   _T1UFINT_ISR
-003dbce2   _T2CINT_ISR
-003dbcec   _T2OFINT_ISR
-003dbcdd   _T2PINT_ISR
-003dbce7   _T2UFINT_ISR
-003dbd14   _T3CINT_ISR
-003dbd1e   _T3OFINT_ISR
-003dbd0f   _T3PINT_ISR
-003dbd19   _T3UFINT_ISR
-003dbd28   _T4CINT_ISR
-003dbd32   _T4OFINT_ISR
-003dbd23   _T4PINT_ISR
-003dbd2d   _T4UFINT_ISR
-003dbcb0   _TINT0_ISR
+003dbcfb   _T1CINT_ISR
+003dbd05   _T1OFINT_ISR
+003dbcf6   _T1PINT_ISR
+003dbd00   _T1UFINT_ISR
+003dbd0f   _T2CINT_ISR
+003dbd19   _T2OFINT_ISR
+003dbd0a   _T2PINT_ISR
+003dbd14   _T2UFINT_ISR
+003dbd41   _T3CINT_ISR
+003dbd4b   _T3OFINT_ISR
+003dbd3c   _T3PINT_ISR
+003dbd46   _T3UFINT_ISR
+003dbd55   _T4CINT_ISR
+003dbd5f   _T4OFINT_ISR
+003dbd50   _T4PINT_ISR
+003dbd5a   _T4UFINT_ISR
+003dbcdd   _TINT0_ISR
 00008714   _TNMid1
 0000871c   _TNMid2
 00008734   _TNTime
@@ -1372,54 +1375,55 @@ address    name
 000086be   _TesCCheck
 00008736   _TesCmp
 0000902c   _TesN
-003db78e   _TestDeal
+003db7bb   _TestDeal
 003f944d   _TestStateCtl
 000085f1   _ToMSFreq
 000086c2   _ToMSNoiseAddr
 000086c0   _ToMSSignalAddr
 00008654   _TransmitFre
 000086fa   _TransmitFre_f
-003dbc88   _USER10_ISR
-003dbc8d   _USER11_ISR
-003dbc92   _USER12_ISR
-003dbc5b   _USER1_ISR
-003dbc60   _USER2_ISR
-003dbc65   _USER3_ISR
-003dbc6a   _USER4_ISR
-003dbc6f   _USER5_ISR
-003dbc74   _USER6_ISR
-003dbc79   _USER7_ISR
-003dbc7e   _USER8_ISR
-003dbc83   _USER9_ISR
-003dbcb5   _WAKEINT_ISR
+003dbcb5   _USER10_ISR
+003dbcba   _USER11_ISR
+003dbcbf   _USER12_ISR
+003dbc88   _USER1_ISR
+003dbc8d   _USER2_ISR
+003dbc92   _USER3_ISR
+003dbc97   _USER4_ISR
+003dbc9c   _USER5_ISR
+003dbca1   _USER6_ISR
+003dbca6   _USER7_ISR
+003dbcab   _USER8_ISR
+003dbcb0   _USER9_ISR
+003dbce2   _WAKEINT_ISR
 00008660   _Width90Pulse
 00008621   _WidthCnt
 000085e8   _WorkMode
-003dbca1   _XINT1_ISR
-003dc905   _XINT1_STOP
-003dc630   _XINT2_DCStorData
-003dbca6   _XINT2_ISR
+003dbcce   _XINT1_ISR
+003dc93e   _XINT1_STOP
+003dc669   _XINT2_DCStorData
+003dbcd3   _XINT2_ISR
 00007070   _XIntruptRegs
 00000b20   _XintfRegs
 00008676   _ZeroCnt
 000085ee   _ZeroOne
-003dcaf8   __IQ10atan2
-003dcbd7   __IQ10div
-003dcca7   __IQ10int
-003dcb77   __IQ10mag
-003dcc65   __IQ10sqrt
-003dcc1e   __IQ3div
+003dcb58   __IQ10atan2
+003dcc37   __IQ10div
+003dcd07   __IQ10int
+003dcbd7   __IQ10mag
+003dccc5   __IQ10sqrt
+003dcc7e   __IQ3div
 00000800   __STACK_END
 00000400   __STACK_SIZE
 ffffffff   ___binit__
 00009000   ___bss__
 ffffffff   ___c_args__
-003dcdb8   ___cinit__
+003dce18   ___cinit__
 00009000   ___end__
-003dcaf8   ___etext__
+003dcb58   ___etext__
+003dc9a9   ___memcpy_ff
 ffffffff   ___pinit__
-003d99b5   ___text__
-003dca7a   __args_main
+003d99d4   ___text__
+003dcaec   __args_main
 0000864a   __caseingDetectFlag
 0000864d   __casingDetectErrFlag
 0000864e   __casingOrOperaFlag
@@ -1429,42 +1433,42 @@ ffffffff   ___pinit__
 00009034   __dtors_ptr
 00009030   __lock
 00008650   __modeDataSendFlag
-003dcaea   __nop
+003dcb4a   __nop
 0000864f   __operationFlag
-003dcae6   __register_lock
-003dcae2   __register_unlock
+003dcb46   __register_lock
+003dcb42   __register_unlock
 00000400   __stack
 0000902e   __unlock
 000086fe   _a
-003dca1e   _abort
+003dca90   _abort
 000086fc   _b
 00008700   _c
-003dc7d4   _c_int00
+003dc80d   _c_int00
 0000903d   _errno
 00008794   _eventFunc
-003dca20   _exit
-003dc370   _exp
-003dca8f   _frexp
-003db4b4   _getCenterFreq
-003db4b8   _getCenterFreqAmp
-003f8d85   _guassFit_C
-003dc857   _ldexp
-003dc2c5   _log
-003dcab5   _main
+003dca92   _exit
+003dc3a9   _exp
+003dcb01   _frexp
+003db4e1   _getCenterFreq
+003db4e5   _getCenterFreqAmp
+003f8d85   _GaussFit
+003dc890   _ldexp
+003dc2fe   _log
+003dca78   _main
 0000864c   _modeDataSendLen
-003dbd7d   _rsvd_ISR
-003d99b5   _secureRamFuncs_loadend
+003dbdaa   _rsvd_ISR
+003d99d4   _secureRamFuncs_loadend
 003d8000   _secureRamFuncs_loadstart
 003f8000   _secureRamFuncs_runstart
 000087e8   _singleOrderFunc
-003dc784   _sqrt
+003dc7bd   _sqrt
 00009022   _tempSaveTablePt
 000087a2   _x
 000087c0   _y
 ffffffff   binit
-003dcdb8   cinit
+003dce18   cinit
 00009000   end
-003dcaf8   etext
+003dcb58   etext
 ffffffff   pinit
 
 
@@ -1865,195 +1869,196 @@ address    name
 0000903c   _PPT1MiniNumAry
 0000903d   _errno
 003d8000   _secureRamFuncs_loadstart
-003d99b5   .text
-003d99b5   _InitAll
-003d99b5   ___text__
-003d99b5   _secureRamFuncs_loadend
-003d9abc   _InitTable
-003d9caa   _InitPulseGain
-003da690   _InitGpio
-003da6a8   _InitSci
-003da6c0   _InitFPGA
-003da6da   _InitVariables
-003da735   _LoadParaDis
-003da762   _CheckWorkMode
-003da770   _CheckReadTable
-003dad8e   _RecUpTableCommand
-003dadfe   _PPT1ModeTop
-003db0a7   _PPOFTWModeTop
-003db2cf   _PPDIFModeTop
-003db4b4   _getCenterFreq
-003db4b8   _getCenterFreqAmp
-003db4bc   _CasingDetectTop
-003db5e7   _CasingDetectOnce
-003db67c   _CheckSumCal
-003db68f   _EmptyDeal
-003db690   _InquireDeal
-003db69a   _OperationDeal
-003db701   _CasingDeal
-003db716   _DataUpDeal
-003db724   _ModeConfirmDeal
-003db733   _K1K2EnDeal
-003db748   _K1K2DisDeal
-003db75d   _HVStateDeal
-003db769   _SysCheckDeal
-003db78e   _TestDeal
-003db7f1   _ScaleDeal
-003db82a   _PPShortModeTop
-003db98d   _PPModeTop
-003dbaec   _SciaSendOneWord
-003dbb05   _ReplyModeDataFrame
-003dbb31   _ReplyStateFrame
-003dbb59   _ReplyLastCheckFrame
-003dbb81   _ReplyUpTableFrame
-003dbbcc   _ReplyCasingErrFrame
-003dbbef   _ReplyNoVarFrame
-003dbc10   _ReplySingleVarFrame
-003dbc38   _INT13_ISR
-003dbc3d   _INT14_ISR
-003dbc42   _DATALOG_ISR
-003dbc47   _RTOSINT_ISR
-003dbc4c   _EMUINT_ISR
-003dbc51   _NMI_ISR
-003dbc56   _ILLEGAL_ISR
-003dbc5b   _USER1_ISR
-003dbc60   _USER2_ISR
-003dbc65   _USER3_ISR
-003dbc6a   _USER4_ISR
-003dbc6f   _USER5_ISR
-003dbc74   _USER6_ISR
-003dbc79   _USER7_ISR
-003dbc7e   _USER8_ISR
-003dbc83   _USER9_ISR
-003dbc88   _USER10_ISR
-003dbc8d   _USER11_ISR
-003dbc92   _USER12_ISR
-003dbc97   _PDPINTA_ISR
-003dbc9c   _PDPINTB_ISR
-003dbca1   _XINT1_ISR
-003dbca6   _XINT2_ISR
-003dbcab   _ADCINT_ISR
-003dbcb0   _TINT0_ISR
-003dbcb5   _WAKEINT_ISR
-003dbcba   _CMP1INT_ISR
-003dbcbf   _CMP2INT_ISR
-003dbcc4   _CMP3INT_ISR
-003dbcc9   _T1PINT_ISR
-003dbcce   _T1CINT_ISR
-003dbcd3   _T1UFINT_ISR
-003dbcd8   _T1OFINT_ISR
-003dbcdd   _T2PINT_ISR
-003dbce2   _T2CINT_ISR
-003dbce7   _T2UFINT_ISR
-003dbcec   _T2OFINT_ISR
-003dbcf1   _CAPINT1_ISR
-003dbcf6   _CAPINT2_ISR
-003dbcfb   _CAPINT3_ISR
-003dbd00   _CMP4INT_ISR
-003dbd05   _CMP5INT_ISR
-003dbd0a   _CMP6INT_ISR
-003dbd0f   _T3PINT_ISR
-003dbd14   _T3CINT_ISR
-003dbd19   _T3UFINT_ISR
-003dbd1e   _T3OFINT_ISR
-003dbd23   _T4PINT_ISR
-003dbd28   _T4CINT_ISR
-003dbd2d   _T4UFINT_ISR
-003dbd32   _T4OFINT_ISR
-003dbd37   _CAPINT4_ISR
-003dbd3c   _CAPINT5_ISR
-003dbd41   _CAPINT6_ISR
-003dbd46   _SPIRXINTA_ISR
-003dbd4b   _SPITXINTA_ISR
-003dbd50   _MRINTA_ISR
-003dbd55   _MXINTA_ISR
-003dbd5a   _SCITXINTA_ISR
-003dbd5f   _SCIRXINTB_ISR
-003dbd64   _SCITXINTB_ISR
-003dbd69   _ECAN0INTA_ISR
-003dbd6e   _ECAN1INTA_ISR
-003dbd73   _EMPTY_ISR
-003dbd78   _PIE_RESERVED
-003dbd7d   _rsvd_ISR
-003dbd82   _ScaleHoleModeTop
-003dbeb8   _PulseParamIncrement
-003dbec6   _SaveSignal
-003dbedf   _MiniScan
-003dbf27   _SavePulse
-003dbf67   _SaveEcho
-003dbf94   _SavePhaseWord
-003dbfa6   _SaveSixFreq
-003dbfc3   _ChangePhase
-003dbfcf   _InitSysCtrl
-003dc05e   _KickDog
-003dc068   _DisableDog
-003dc070   _InitPll
-003dc091   _InitPeripheralClocks
-003dc0aa   _CsmUnlock
-003dc0db   _ScanModeTop
-003dc1d2   _DeCpmgTop
-003dc2c5   _log
-003dc370   _exp
-003dc40f   _ParamUpdate
-003dc48a   _RelayOpen
-003dc497   _RelayClose
-003dc4a4   _PulseTop
-003dc52a   FD$$MPY
-003dc5ad   FS$$DIV
-003dc630   _XINT2_DCStorData
-003dc6b2   FS$$SUB
-003dc6b7   FS$$ADD
-003dc72a   FS$$MPY
-003dc784   _sqrt
-003dc7d4   _c_int00
-003dc818   _ShutdownHV
-003dc825   _RstNoiseModule
-003dc83e   _RstPulseModule
-003dc857   _ldexp
-003dc88a   L$$DIV
-003dc899   L$$MOD
-003dc8a7   UL$$DIV
-003dc8ae   UL$$MOD
-003dc8b4   FS$$TOL
-003dc8dd   _InitPieCtrl
-003dc8fc   _EnableInterrupts
-003dc905   _XINT1_STOP
-003dc92a   FS$$TOI
-003dc94f   FS$$TOUL
-003dc970   _InitPieVectTable
-003dc990   FD$$TOL
-003dc9af   FS$$TOU
-003dc9cc   FS$$TOFD
-003dc9e8   L$$TOFD
-003dca04   I$$TOFS
-003dca1e   C$$EXIT
-003dca1e   _abort
-003dca20   _exit
-003dca36   FS$$CMP
-003dca4d   U$$TOFD
-003dca64   UL$$TOFD
-003dca7a   __args_main
-003dca8f   _frexp
-003dcaa2   UL$$TOFS
-003dcab5   _main
-003dcac7   U$$TOFS
-003dcad7   U$$DIV
-003dcadc   U$$MOD
-003dcae2   __register_unlock
-003dcae6   __register_lock
-003dcaea   __nop
-003dcaf3   FS$$NEG
-003dcaf8   __IQ10atan2
-003dcaf8   ___etext__
-003dcaf8   etext
-003dcb77   __IQ10mag
-003dcbd7   __IQ10div
-003dcc1e   __IQ3div
-003dcc65   __IQ10sqrt
-003dcca7   __IQ10int
-003dccb0   _PieVectTableInit
-003dcdb8   ___cinit__
-003dcdb8   cinit
+003d99d4   .text
+003d99d4   _InitAll
+003d99d4   ___text__
+003d99d4   _secureRamFuncs_loadend
+003d9ae9   _InitTable
+003d9cd7   _InitPulseGain
+003da6bd   _InitGpio
+003da6d5   _InitSci
+003da6ed   _InitFPGA
+003da707   _InitVariables
+003da762   _LoadParaDis
+003da78f   _CheckWorkMode
+003da79d   _CheckReadTable
+003dadbb   _RecUpTableCommand
+003dae2b   _PPT1ModeTop
+003db0d4   _PPOFTWModeTop
+003db2fc   _PPDIFModeTop
+003db4e1   _getCenterFreq
+003db4e5   _getCenterFreqAmp
+003db4e9   _CasingDetectTop
+003db614   _CasingDetectOnce
+003db6a9   _CheckSumCal
+003db6bc   _EmptyDeal
+003db6bd   _InquireDeal
+003db6c7   _OperationDeal
+003db72e   _CasingDeal
+003db743   _DataUpDeal
+003db751   _ModeConfirmDeal
+003db760   _K1K2EnDeal
+003db775   _K1K2DisDeal
+003db78a   _HVStateDeal
+003db796   _SysCheckDeal
+003db7bb   _TestDeal
+003db81e   _ScaleDeal
+003db857   _PPShortModeTop
+003db9ba   _PPModeTop
+003dbb19   _SciaSendOneWord
+003dbb32   _ReplyModeDataFrame
+003dbb5e   _ReplyStateFrame
+003dbb86   _ReplyLastCheckFrame
+003dbbae   _ReplyUpTableFrame
+003dbbf9   _ReplyCasingErrFrame
+003dbc1c   _ReplyNoVarFrame
+003dbc3d   _ReplySingleVarFrame
+003dbc65   _INT13_ISR
+003dbc6a   _INT14_ISR
+003dbc6f   _DATALOG_ISR
+003dbc74   _RTOSINT_ISR
+003dbc79   _EMUINT_ISR
+003dbc7e   _NMI_ISR
+003dbc83   _ILLEGAL_ISR
+003dbc88   _USER1_ISR
+003dbc8d   _USER2_ISR
+003dbc92   _USER3_ISR
+003dbc97   _USER4_ISR
+003dbc9c   _USER5_ISR
+003dbca1   _USER6_ISR
+003dbca6   _USER7_ISR
+003dbcab   _USER8_ISR
+003dbcb0   _USER9_ISR
+003dbcb5   _USER10_ISR
+003dbcba   _USER11_ISR
+003dbcbf   _USER12_ISR
+003dbcc4   _PDPINTA_ISR
+003dbcc9   _PDPINTB_ISR
+003dbcce   _XINT1_ISR
+003dbcd3   _XINT2_ISR
+003dbcd8   _ADCINT_ISR
+003dbcdd   _TINT0_ISR
+003dbce2   _WAKEINT_ISR
+003dbce7   _CMP1INT_ISR
+003dbcec   _CMP2INT_ISR
+003dbcf1   _CMP3INT_ISR
+003dbcf6   _T1PINT_ISR
+003dbcfb   _T1CINT_ISR
+003dbd00   _T1UFINT_ISR
+003dbd05   _T1OFINT_ISR
+003dbd0a   _T2PINT_ISR
+003dbd0f   _T2CINT_ISR
+003dbd14   _T2UFINT_ISR
+003dbd19   _T2OFINT_ISR
+003dbd1e   _CAPINT1_ISR
+003dbd23   _CAPINT2_ISR
+003dbd28   _CAPINT3_ISR
+003dbd2d   _CMP4INT_ISR
+003dbd32   _CMP5INT_ISR
+003dbd37   _CMP6INT_ISR
+003dbd3c   _T3PINT_ISR
+003dbd41   _T3CINT_ISR
+003dbd46   _T3UFINT_ISR
+003dbd4b   _T3OFINT_ISR
+003dbd50   _T4PINT_ISR
+003dbd55   _T4CINT_ISR
+003dbd5a   _T4UFINT_ISR
+003dbd5f   _T4OFINT_ISR
+003dbd64   _CAPINT4_ISR
+003dbd69   _CAPINT5_ISR
+003dbd6e   _CAPINT6_ISR
+003dbd73   _SPIRXINTA_ISR
+003dbd78   _SPITXINTA_ISR
+003dbd7d   _MRINTA_ISR
+003dbd82   _MXINTA_ISR
+003dbd87   _SCITXINTA_ISR
+003dbd8c   _SCIRXINTB_ISR
+003dbd91   _SCITXINTB_ISR
+003dbd96   _ECAN0INTA_ISR
+003dbd9b   _ECAN1INTA_ISR
+003dbda0   _EMPTY_ISR
+003dbda5   _PIE_RESERVED
+003dbdaa   _rsvd_ISR
+003dbdaf   _ScaleHoleModeTop
+003dbee5   _PulseParamIncrement
+003dbef3   _SaveSignal
+003dbf0c   _MiniScan
+003dbf54   _SavePulse
+003dbf94   _SaveEcho
+003dbfc1   _SavePhaseWord
+003dbfd3   _SaveSixFreq
+003dbff0   _ChangePhase
+003dbffc   _InitSysCtrl
+003dc08b   _KickDog
+003dc095   _DisableDog
+003dc09d   _InitPll
+003dc0be   _InitPeripheralClocks
+003dc0d7   _CsmUnlock
+003dc108   _DeCpmgTop
+003dc207   _ScanModeTop
+003dc2fe   _log
+003dc3a9   _exp
+003dc448   _ParamUpdate
+003dc4c3   _RelayOpen
+003dc4d0   _RelayClose
+003dc4dd   _PulseTop
+003dc563   FD$$MPY
+003dc5e6   FS$$DIV
+003dc669   _XINT2_DCStorData
+003dc6eb   FS$$SUB
+003dc6f0   FS$$ADD
+003dc763   FS$$MPY
+003dc7bd   _sqrt
+003dc80d   _c_int00
+003dc851   _ShutdownHV
+003dc85e   _RstNoiseModule
+003dc877   _RstPulseModule
+003dc890   _ldexp
+003dc8c3   L$$DIV
+003dc8d2   L$$MOD
+003dc8e0   UL$$DIV
+003dc8e7   UL$$MOD
+003dc8ed   FS$$TOL
+003dc916   _InitPieCtrl
+003dc935   _EnableInterrupts
+003dc93e   _XINT1_STOP
+003dc963   FS$$TOI
+003dc988   FS$$TOUL
+003dc9a9   ___memcpy_ff
+003dc9ca   _InitPieVectTable
+003dc9ea   FD$$TOL
+003dca09   FS$$TOU
+003dca26   FS$$TOFD
+003dca42   L$$TOFD
+003dca5e   I$$TOFS
+003dca78   _main
+003dca90   C$$EXIT
+003dca90   _abort
+003dca92   _exit
+003dcaa8   FS$$CMP
+003dcabf   U$$TOFD
+003dcad6   UL$$TOFD
+003dcaec   __args_main
+003dcb01   _frexp
+003dcb14   UL$$TOFS
+003dcb27   U$$TOFS
+003dcb37   U$$DIV
+003dcb3c   U$$MOD
+003dcb42   __register_unlock
+003dcb46   __register_lock
+003dcb4a   __nop
+003dcb53   FS$$NEG
+003dcb58   __IQ10atan2
+003dcb58   ___etext__
+003dcb58   etext
+003dcbd7   __IQ10mag
+003dcc37   __IQ10div
+003dcc7e   __IQ3div
+003dccc5   __IQ10sqrt
+003dcd07   __IQ10int
+003dcd10   _PieVectTableInit
+003dce18   ___cinit__
+003dce18   cinit
 003f7ff8   _CsmPwl
 003f8000   _Delay
 003f8000   _secureRamFuncs_runstart
@@ -2064,7 +2069,7 @@ address    name
 003f821d   _CalSignal
 003f849c   _StoreMini
 003f856b   _DCWorkOnce
-003f8d85   _guassFit_C
+003f8d85   _GaussFit
 003f9137   _LoadDDSPara
 003f91de   _LoadBriDumpPara
 003f92cd   _LoadPdPara
@@ -2081,8 +2086,9 @@ address    name
 003f9776   _PulseAcq
 003f9835   _PulseSave
 003f9924   _SCIRXINTA_ISR
-003f999f   _SciaTx_Ready
-003f99aa   _SciaRx_Ready
+003f999f   _InitFlash
+003f99be   _SciaTx_Ready
+003f99c9   _SciaRx_Ready
 003ff000   _IQsinTable
 003ff100   _IQcosTable
 003ff400   _IQsinTableEnd
@@ -2137,4 +2143,4 @@ ffffffff   ___pinit__
 ffffffff   binit
 ffffffff   pinit
 
-[664 symbols]
+[666 symbols]

@@ -2,11 +2,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#pragma CODE_SECTION(guassFit_C, "secureRamFuncs");
+#pragma CODE_SECTION(GaussFit, "secureRamFuncs");
 
 /*
- * GUASSFIT_C 此处显示有关此函数的摘要
- *    此处显示详细说明
+ * GaussFit 高斯拟合函数
  * Arguments    : const float x[9]
  *                const float y[9]
  *                float *a
@@ -14,12 +13,12 @@
  *                float *c
  * Return Type  : void
  */
-void guassFit_C(const float x[9], const float y[9], float* a, float* b, float* c)
+void GaussFit(const float x[9], const float y[9], float* a, float* b, float* c)
 {
     int k;
     float X[27];
     int p2;
-    float Z[9];
+    float Y[9];
     float b_x[9];
     float b_c[9];
     int p3;
@@ -30,10 +29,10 @@ void guassFit_C(const float x[9], const float y[9], float* a, float* b, float* c
     float B[3];
     float b_y[27];
     for (k = 0; k < 9; k++) {
-        X[k] = 1.0F;
+        X[k] = x[k] * x[k];
         X[9 + k] = x[k];
-        X[18 + k] = x[k] * x[k];
-        Z[k] = (float)log(y[k]);
+        X[18 + k] = 1.0F;
+        Y[k] = (float)log(y[k]);
     }
 
     for (k = 0; k < 3; k++) {
@@ -126,16 +125,17 @@ void guassFit_C(const float x[9], const float y[9], float* a, float* b, float* c
                 b_y[k + 3 * p2] += b_c[k + 3 * p3] * X[p2 + 9 * p3];
             }
 
-            B[k] += b_y[k + 3 * p2] * Z[p2];
+            B[k] += b_y[k + 3 * p2] * Y[p2];
         }
     }
 
-    /*  拟合得到的参数a */
     *a = (float)exp(B[2] - B[1] * B[1] / (4.0F * B[0]));
 
-    /*  拟合得到的参数b */
+    /*  拟合得到的参数a */
     *b = -B[1] / (2.0F * B[0]);
 
-    /*  拟合得到的参数c */
+    /*  拟合得到的参数b */
     *c = 1.0F / (float)sqrt(-B[0]);
+
+    /*  拟合得到的参数c */
 }

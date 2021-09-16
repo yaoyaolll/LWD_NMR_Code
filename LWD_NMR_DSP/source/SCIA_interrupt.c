@@ -108,32 +108,32 @@ void ReplyUpTableFrame(Uint16 tableID)
 	Uint16 len = 0;
 	Uint16 CheckSum = 0;
 	int i = 0;
-	if (tableID == 2) // 刻度模式参数表
+	if (tableID == 2) 		// 刻度模式参数表
 	{
 		addr = (Uint16 *)0x8002;
 	}
-	else if (tableID == 3) // 测井模式参数表
+	else if (tableID == 3) 	// 测井模式参数表
 	{
-		addr = (Uint16 *)0x8017;
+		addr = (Uint16 *)0x8018;
 	}
 	len = *addr;
 
-	GpioDataRegs.GPFDAT.bit.GPIOF11 = 1; // SCIA设置为发送状态
-	SciaSendOneWord(REPLY_UP_TABLE_F);	 // 帧头
+	GpioDataRegs.GPFDAT.bit.GPIOF11 = 1; 	// SCIA设置为发送状态
+	SciaSendOneWord(REPLY_UP_TABLE_F);	 	// 帧头
 	SciaSendOneWord(len + 1);
-	SciaSendOneWord(EVENT_BOARD_ID); // 新增从机标识
+	SciaSendOneWord(EVENT_BOARD_ID); 		// 新增从机标识
 	addr++;
 	CheckSum = REPLY_UP_TABLE_F;
 	CheckSum += (len + 1);
 	CheckSum += EVENT_BOARD_ID;
-	for (i = 0; i < len - 2; ++i) // 参数表，不发送本地参数表末尾存储的CheckSum
+	for (i = 0; i < len - 2; ++i) 			// 参数表，不发送本地参数表末尾存储的CheckSum
 	{
 		SciaSendOneWord(*addr);
 		CheckSum += *addr;
 		addr++;
 	}
 
-	SciaSendOneWord(CheckSum); // 数据包的CheckSum
+	SciaSendOneWord(CheckSum); 				// 数据包的CheckSum
 	// 此处要加一定延时避免最后一个数据发不出去
 	Delay(RS485_DELAY);
 	GpioDataRegs.GPFDAT.bit.GPIOF11 = 0; // SCIA设置为接收状态
@@ -196,18 +196,10 @@ void ReplySingleVarFrame(Uint16 frameHead, Uint16 var)
 	GpioDataRegs.GPFDAT.bit.GPIOF11 = 0; // SCIA设置为接收状态
 }
 
-//#ifdef DEBUG
-//int dddddd = 0;
-//Uint16 dffasd;
-//#endif
 
 // RS485中断处理函数
 interrupt void SCIRXINTA_ISR(void) // SCI-A接收中断函数
 {
-//#ifdef DEBUG
-//	dddddd++;
-//#endif
-
 	if (SciaDataEven == 0)
 	{
 		SciaDataEven = 1;

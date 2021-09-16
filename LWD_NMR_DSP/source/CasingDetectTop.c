@@ -5,32 +5,33 @@
  * @Company: HUST.AIA
  * @Date: 2021-04-26 14:28:14
  * @LastEditors: Yao Liu
- * @LastEditTime: 2021-06-06 23:20:50
+ * @LastEditTime: 2021-09-14 14:49:39
  */
 /*----------------------------头文件---------------------------------------------*/
 #include "DSP281x_Device.h"	  // DSP281x Headerfile Include File
 #include "DSP281x_Examples.h" // DSP281x Examples Include File
 #include "MyHeaderFiles.h"
 
-
 Uint16 CasingMiniNumAry = 5;
-Uint16 _centerFreq;	   // 由插值得到的中心频率，需要与工作频率区分开来
-Uint16 _centerFreqAmp; // 中心频率幅值
+Uint16 center_fre;	   	// 由插值得到的中心频率，需要与工作频率区分开来
+Uint16 center_fre_amp; 	// 中心频率幅值
 
 #define CASING_DATA_LEN 33
 
 Uint16 getCenterFreq()
 {
-	return _centerFreq;
+	return center_fre;
 }
 
 Uint16 getCenterFreqAmp()
 {
-	return _centerFreqAmp;
+	return center_fre_amp;
 }
 
 void CasingDetectTop()
 {
+	Uint16 Q_value; 			// Q值
+	
 	// 五次Mini扫频
     int cnt = 0;
     // 继电器控制
@@ -67,10 +68,16 @@ void CasingDetectTop()
 	}
 
 	// 计算中心频率及其幅值
-	guassFit_C(x, y, &a, &b, &c);
+	// 高斯拟合公式为 y=a*e(-((x-b)/c)^2)
+	// b为拟合出的中心点
+	GaussFit(x, y, &a, &b, &c);
 
-	_centerFreq = (Uint16)b;
-	_centerFreqAmp = (Uint16)a;
+	// 计算中心频率和幅值
+	center_fre = (Uint16)b;
+	center_fre_amp = (Uint16)CublicSplineInterpolation(x, y, b);	// 强制类型转换
+
+	// 计算Q值
+	Q_value = (Uint16)(c*Q_FACTOR);
 
 	// 存储数据
 	SaveNTempPt = (int *)CASING_TABLE_START;
@@ -81,10 +88,10 @@ void CasingDetectTop()
 	*SaveNTempPt = TransmitFre * 10;	  // 工作频率，下发和上传的中心频率单位是0.1kHz
 
 	SaveNTempPt = (int *)(CASING_TABLE_START + 29);
-	*SaveNTempPt++ = 0;			   // Q值
-	*SaveNTempPt++ = 0x294;		   // 参考幅值
-	*SaveNTempPt++ = _centerFreq;  // 中心频率
-	*SaveNTempPt = _centerFreqAmp; // 中心频率幅值
+	*SaveNTempPt++ = Q_value;			   	// Q值
+	*SaveNTempPt++ = 0x294;		   	// 参考幅值
+	*SaveNTempPt++ = center_fre;  	// 中心频率
+	*SaveNTempPt = center_fre_amp; 	// 中心频率幅值
 
 	Uint16 CheckSum = 0;
 	SaveNTempPt = (int *)(CASING_TABLE_START);
@@ -125,16 +132,25 @@ int CasingDetectOnce()
 	    x[cnt] = MiniFreq + ScanDeltaFreq*cnt;
 	    y[cnt] = *SaveSTempPt++;
 	}
-	guassFit_C(x, y, &a, &b, &c);
 
-    _centerFreq = (Uint16)b;    // b为中心频率
-    _centerFreqAmp = (Uint16)a; // a为幅值
+	// 计算中心频率及其幅值
+	// 高斯拟合公式为 y=a*e(-((x-b)/c)^2)
+	// b为拟合出的中心点
+	GaussFit(x, y, &a, &b, &c);
 
-//    if (_centerFreqAmp <= ParamOrderData.data.AutoAmpThd)   // 幅值异常
+	// 计算中心频率和幅值
+	center_fre = (Uint16)b;
+	center_fre_amp = (Uint16)CublicSplineInterpolation(x, y, b);	// 强制类型转换
+
+	/*
+	// 计算Q值
+	Q_value = (Uint16)(c*Q_FACTOR);
+    */
+
+//    if (center_fre_amp <= ParamOrderData.data.AutoAmpThd)   // 幅值异常
 //        return 0;
 
-	// 根据中心频率及其幅值进行频率优选
-
+	// TODO: 根据中心频率及其幅值进行频率优选
 
     return 1;
 }

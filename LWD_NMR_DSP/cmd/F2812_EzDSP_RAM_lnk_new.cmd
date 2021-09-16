@@ -150,7 +150,7 @@ SECTIONS
    	.stack          : > RAMM1       	PAGE = 1
    	.ebss           : > RAMM0_1       	PAGE = 1
    	.bss            : > RAMM0_1       	PAGE = 1
-    .cio            : > RAMM0_1         PAGE = 1
+      .cio            : > RAMM0_1         PAGE = 1
 
 /*** Initialized Sections ***/
   	.cinit			: > RAMM0_0         PAGE = 0
