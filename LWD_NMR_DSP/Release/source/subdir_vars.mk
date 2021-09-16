@@ -5,6 +5,7 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../source/CasingDetectTop.c \
+../source/CublicSplineAlogrithm.c \
 ../source/DE_CPMG_Top.c \
 ../source/DSP281x_CpuTimers.c \
 ../source/DSP281x_DefaultIsr.c \
@@ -12,7 +13,7 @@ C_SRCS += \
 ../source/DSP281x_PieCtrl.c \
 ../source/DSP281x_PieVect.c \
 ../source/DSP281x_SysCtrl.c \
-../source/GuassFitAlogrithm.c \
+../source/GaussFitAlogrithm.c \
 ../source/MainInitial.c \
 ../source/MyFPGAFunctions.c \
 ../source/MyFunctions.c \
@@ -29,10 +30,12 @@ C_SRCS += \
 ../source/ScanTop.c \
 ../source/SingleOrderDeal.c \
 ../source/StateCtrl.c \
-../source/TableHandle.c 
+../source/TableHandle.c \
+../source/TuningModeTop.c 
 
 OBJS += \
 ./source/CasingDetectTop.obj \
+./source/CublicSplineAlogrithm.obj \
 ./source/DE_CPMG_Top.obj \
 ./source/DSP281x_CpuTimers.obj \
 ./source/DSP281x_DefaultIsr.obj \
@@ -40,7 +43,7 @@ OBJS += \
 ./source/DSP281x_PieCtrl.obj \
 ./source/DSP281x_PieVect.obj \
 ./source/DSP281x_SysCtrl.obj \
-./source/GuassFitAlogrithm.obj \
+./source/GaussFitAlogrithm.obj \
 ./source/MainInitial.obj \
 ./source/MyFPGAFunctions.obj \
 ./source/MyFunctions.obj \
@@ -57,10 +60,12 @@ OBJS += \
 ./source/ScanTop.obj \
 ./source/SingleOrderDeal.obj \
 ./source/StateCtrl.obj \
-./source/TableHandle.obj 
+./source/TableHandle.obj \
+./source/TuningModeTop.obj 
 
 C_DEPS += \
 ./source/CasingDetectTop.pp \
+./source/CublicSplineAlogrithm.pp \
 ./source/DE_CPMG_Top.pp \
 ./source/DSP281x_CpuTimers.pp \
 ./source/DSP281x_DefaultIsr.pp \
@@ -68,7 +73,7 @@ C_DEPS += \
 ./source/DSP281x_PieCtrl.pp \
 ./source/DSP281x_PieVect.pp \
 ./source/DSP281x_SysCtrl.pp \
-./source/GuassFitAlogrithm.pp \
+./source/GaussFitAlogrithm.pp \
 ./source/MainInitial.pp \
 ./source/MyFPGAFunctions.pp \
 ./source/MyFunctions.pp \
@@ -85,10 +90,12 @@ C_DEPS += \
 ./source/ScanTop.pp \
 ./source/SingleOrderDeal.pp \
 ./source/StateCtrl.pp \
-./source/TableHandle.pp 
+./source/TableHandle.pp \
+./source/TuningModeTop.pp 
 
 C_DEPS__QUOTED += \
 "source\CasingDetectTop.pp" \
+"source\CublicSplineAlogrithm.pp" \
 "source\DE_CPMG_Top.pp" \
 "source\DSP281x_CpuTimers.pp" \
 "source\DSP281x_DefaultIsr.pp" \
@@ -96,7 +103,7 @@ C_DEPS__QUOTED += \
 "source\DSP281x_PieCtrl.pp" \
 "source\DSP281x_PieVect.pp" \
 "source\DSP281x_SysCtrl.pp" \
-"source\GuassFitAlogrithm.pp" \
+"source\GaussFitAlogrithm.pp" \
 "source\MainInitial.pp" \
 "source\MyFPGAFunctions.pp" \
 "source\MyFunctions.pp" \
@@ -113,10 +120,12 @@ C_DEPS__QUOTED += \
 "source\ScanTop.pp" \
 "source\SingleOrderDeal.pp" \
 "source\StateCtrl.pp" \
-"source\TableHandle.pp" 
+"source\TableHandle.pp" \
+"source\TuningModeTop.pp" 
 
 OBJS__QUOTED += \
 "source\CasingDetectTop.obj" \
+"source\CublicSplineAlogrithm.obj" \
 "source\DE_CPMG_Top.obj" \
 "source\DSP281x_CpuTimers.obj" \
 "source\DSP281x_DefaultIsr.obj" \
@@ -124,7 +133,7 @@ OBJS__QUOTED += \
 "source\DSP281x_PieCtrl.obj" \
 "source\DSP281x_PieVect.obj" \
 "source\DSP281x_SysCtrl.obj" \
-"source\GuassFitAlogrithm.obj" \
+"source\GaussFitAlogrithm.obj" \
 "source\MainInitial.obj" \
 "source\MyFPGAFunctions.obj" \
 "source\MyFunctions.obj" \
@@ -141,10 +150,12 @@ OBJS__QUOTED += \
 "source\ScanTop.obj" \
 "source\SingleOrderDeal.obj" \
 "source\StateCtrl.obj" \
-"source\TableHandle.obj" 
+"source\TableHandle.obj" \
+"source\TuningModeTop.obj" 
 
 C_SRCS__QUOTED += \
 "../source/CasingDetectTop.c" \
+"../source/CublicSplineAlogrithm.c" \
 "../source/DE_CPMG_Top.c" \
 "../source/DSP281x_CpuTimers.c" \
 "../source/DSP281x_DefaultIsr.c" \
@@ -152,7 +163,7 @@ C_SRCS__QUOTED += \
 "../source/DSP281x_PieCtrl.c" \
 "../source/DSP281x_PieVect.c" \
 "../source/DSP281x_SysCtrl.c" \
-"../source/GuassFitAlogrithm.c" \
+"../source/GaussFitAlogrithm.c" \
 "../source/MainInitial.c" \
 "../source/MyFPGAFunctions.c" \
 "../source/MyFunctions.c" \
@@ -169,6 +180,7 @@ C_SRCS__QUOTED += \
 "../source/ScanTop.c" \
 "../source/SingleOrderDeal.c" \
 "../source/StateCtrl.c" \
-"../source/TableHandle.c" 
+"../source/TableHandle.c" \
+"../source/TuningModeTop.c" 
 
 

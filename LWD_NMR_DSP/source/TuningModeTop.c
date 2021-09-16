@@ -1,11 +1,11 @@
 /*
- * @Descripttion: 璋冭皭鍒诲害妯″紡
+ * @Descripttion: 调谐刻度模式
  * @version: 
  * @Author: Yao Liu
  * @Company: HUST.AIA
  * @Date: 2021-09-06 16:02:23
  * @LastEditors: Yao Liu
- * @LastEditTime: 2021-09-14 14:47:32
+ * @LastEditTime: 2021-09-16 16:21:38
  */
 
 /*----------------------------头文件---------------------------------------------*/
@@ -37,7 +37,7 @@ void TuningModeTop(void)
 
 	// TODO: RelayCode可能需要特殊处理
 	// 开启继电器
-    RelayOpen(RelayCode);
+	RelayOpen(RelayCode);
 
 	//Scan Band Once
 	MiniFreq = CenterFreq;
@@ -64,7 +64,7 @@ void TuningModeTop(void)
 	}
 
 	// 关闭继电器
-    RelayClose(RelayCode);
+	RelayClose(RelayCode);
 
 	// 计算Q值
 	int cnt = 0;

@@ -10,6 +10,7 @@ ORDERED_OBJS += \
 $(GEN_CMDS__FLAG) \
 "./main.obj" \
 "./source/CasingDetectTop.obj" \
+"./source/CublicSplineAlogrithm.obj" \
 "./source/DE_CPMG_Top.obj" \
 "./source/DSP281x_CpuTimers.obj" \
 "./source/DSP281x_DefaultIsr.obj" \
@@ -17,7 +18,7 @@ $(GEN_CMDS__FLAG) \
 "./source/DSP281x_PieCtrl.obj" \
 "./source/DSP281x_PieVect.obj" \
 "./source/DSP281x_SysCtrl.obj" \
-"./source/GuassFitAlogrithm.obj" \
+"./source/GaussFitAlogrithm.obj" \
 "./source/MainInitial.obj" \
 "./source/MyFPGAFunctions.obj" \
 "./source/MyFunctions.obj" \
@@ -35,6 +36,7 @@ $(GEN_CMDS__FLAG) \
 "./source/SingleOrderDeal.obj" \
 "./source/StateCtrl.obj" \
 "./source/TableHandle.obj" \
+"./source/TuningModeTop.obj" \
 "./config.asm/DSP281x_CodeStartBranch.obj" \
 "./config.asm/DSP281x_usDelay.obj" \
 "../lib/IQmath.lib" \
@@ -178,8 +180,8 @@ LWD_NMR_ECB.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(EXE_OUTPUTS__QUOTED)$(BIN_OUTPUTS__QUOTED)
-	-$(RM) "main.pp" "source\CasingDetectTop.pp" "source\DE_CPMG_Top.pp" "source\DSP281x_CpuTimers.pp" "source\DSP281x_DefaultIsr.pp" "source\DSP281x_GlobalVariableDefs.pp" "source\DSP281x_PieCtrl.pp" "source\DSP281x_PieVect.pp" "source\DSP281x_SysCtrl.pp" "source\GuassFitAlogrithm.pp" "source\MainInitial.pp" "source\MyFPGAFunctions.pp" "source\MyFunctions.pp" "source\MyVariables.pp" "source\PPDIFModeTop.pp" "source\PPModeTop.pp" "source\PPOFTWModeTop.pp" "source\PPShortModeTop.pp" "source\PPT1ModeTop.pp" "source\PulseTop.pp" "source\RelayCtrl.pp" "source\SCIA_interrupt.pp" "source\ScaleHoleTop.pp" "source\ScanTop.pp" "source\SingleOrderDeal.pp" "source\StateCtrl.pp" "source\TableHandle.pp" 
-	-$(RM) "main.obj" "source\CasingDetectTop.obj" "source\DE_CPMG_Top.obj" "source\DSP281x_CpuTimers.obj" "source\DSP281x_DefaultIsr.obj" "source\DSP281x_GlobalVariableDefs.obj" "source\DSP281x_PieCtrl.obj" "source\DSP281x_PieVect.obj" "source\DSP281x_SysCtrl.obj" "source\GuassFitAlogrithm.obj" "source\MainInitial.obj" "source\MyFPGAFunctions.obj" "source\MyFunctions.obj" "source\MyVariables.obj" "source\PPDIFModeTop.obj" "source\PPModeTop.obj" "source\PPOFTWModeTop.obj" "source\PPShortModeTop.obj" "source\PPT1ModeTop.obj" "source\PulseTop.obj" "source\RelayCtrl.obj" "source\SCIA_interrupt.obj" "source\ScaleHoleTop.obj" "source\ScanTop.obj" "source\SingleOrderDeal.obj" "source\StateCtrl.obj" "source\TableHandle.obj" "config.asm\DSP281x_CodeStartBranch.obj" "config.asm\DSP281x_usDelay.obj" 
+	-$(RM) "main.pp" "source\CasingDetectTop.pp" "source\CublicSplineAlogrithm.pp" "source\DE_CPMG_Top.pp" "source\DSP281x_CpuTimers.pp" "source\DSP281x_DefaultIsr.pp" "source\DSP281x_GlobalVariableDefs.pp" "source\DSP281x_PieCtrl.pp" "source\DSP281x_PieVect.pp" "source\DSP281x_SysCtrl.pp" "source\GaussFitAlogrithm.pp" "source\MainInitial.pp" "source\MyFPGAFunctions.pp" "source\MyFunctions.pp" "source\MyVariables.pp" "source\PPDIFModeTop.pp" "source\PPModeTop.pp" "source\PPOFTWModeTop.pp" "source\PPShortModeTop.pp" "source\PPT1ModeTop.pp" "source\PulseTop.pp" "source\RelayCtrl.pp" "source\SCIA_interrupt.pp" "source\ScaleHoleTop.pp" "source\ScanTop.pp" "source\SingleOrderDeal.pp" "source\StateCtrl.pp" "source\TableHandle.pp" "source\TuningModeTop.pp" 
+	-$(RM) "main.obj" "source\CasingDetectTop.obj" "source\CublicSplineAlogrithm.obj" "source\DE_CPMG_Top.obj" "source\DSP281x_CpuTimers.obj" "source\DSP281x_DefaultIsr.obj" "source\DSP281x_GlobalVariableDefs.obj" "source\DSP281x_PieCtrl.obj" "source\DSP281x_PieVect.obj" "source\DSP281x_SysCtrl.obj" "source\GaussFitAlogrithm.obj" "source\MainInitial.obj" "source\MyFPGAFunctions.obj" "source\MyFunctions.obj" "source\MyVariables.obj" "source\PPDIFModeTop.obj" "source\PPModeTop.obj" "source\PPOFTWModeTop.obj" "source\PPShortModeTop.obj" "source\PPT1ModeTop.obj" "source\PulseTop.obj" "source\RelayCtrl.obj" "source\SCIA_interrupt.obj" "source\ScaleHoleTop.obj" "source\ScanTop.obj" "source\SingleOrderDeal.obj" "source\StateCtrl.obj" "source\TableHandle.obj" "source\TuningModeTop.obj" "config.asm\DSP281x_CodeStartBranch.obj" "config.asm\DSP281x_usDelay.obj" 
 	-$(RM) "config.asm\DSP281x_CodeStartBranch.pp" "config.asm\DSP281x_usDelay.pp" 
 	-@echo 'Finished clean'
 	-@echo ' '
