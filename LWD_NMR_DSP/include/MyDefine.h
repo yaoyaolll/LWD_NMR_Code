@@ -1,5 +1,16 @@
 //#define DEBUG       // 用来控制RAM和FALSH版本程序
 
+// 参数表相关宏
+#define CAL_TABLE_LEN 	 	20  	// 刻度模式参数表长度
+#define WELL_TABLE_LEN 	 	57  	// 测井模式参数表长度
+#define TUNING_TABLE_LEN 	69	 	// 刻度参数表，主要用来调谐，使用参数并不多
+#define CONFIG_TABLE_LEN 	19  	// 仪器配置参数表
+
+#define ADDR_CAL_TABLE_START	(Uint16 *)0x8002
+#define ADDR_WELL_TABLE_START	(Uint16 *)0x8018
+#define ADDR_TUNING_TABLE_START	(Uint16 *)0x8057
+#define ADDR_CONFIG_TABLE_START	(Uint16 *)0x80A2
+
 // 计算Q值的系数，Q=2*c*sqrt(log(sqrt(2))) Q_factor=2*sqrt(log(sqrt(2)))
 #define Q_FACTOR		0.775925	
 
@@ -24,6 +35,7 @@
 #define HOLETABLE_START			0x120000		//孔隙度数据表首地址
 #define PLUSETABLE_START		0x120000		//发射信号波形采集检测表首地址
 #define DECPMGTABLE_START		0x120000		//DeCpmg表首地址
+#define PAPSTABLE_START	        0x140000
 
 // mode for LWD NMR
 #define PPM_TABLE_START         0x120000
@@ -271,25 +283,24 @@
 #define DATA_K1K2_DIS_F     0x9997  // 储能短节断开指令
 #define DATA_HVState_F      0x9998  // 储能短节状态判断指令
 #define DATA_SysCheck_F     0x9999  // 系统自检测指令
-#define DATA_TEST_F         0x999A  // 启动测试指令
-#define DATA_SCALE_F        0x999B  // 启动刻度指令
-
+#define DATA_PAPS_F         0x999A  // PAPS数据上传指令
 #define DATA_Parameter_F    0x99A0  // 重要参数下发指令
 
 // 事件板回复帧帧头定义，F means Frame
 #define REPLY_STATE_F       0x9981  // 查询状态指令回复
 #define REPLY_DOWN_TABLE_F  0x9982  // 参数表下载指令回复
 #define REPLY_UP_TABLE_F    0x9983  // 参数表上传指令回复
-#define REPLY_CASING_F      0x9984  // 套管检测数据
+#define REPLY_CASING_F      0x9984  // 套管检测数据回复
 #define REPLY_MODE_DATA_F   0x9985  // 刻度/测井模式数据回复
 #define REPLY_CASING_ERR_F  0x9986  // 套管检测异常帧
 #define REPLY_Parameter_F   0x9987  // 重要参数下发指令回复
+#define REPLY_PAPS_F        0x9988  // PAPS数据上传指令回复
 
-// 频率温度转换公式 f = -0.2516 * T + 568.0064 
+// 频率温度转换公式 f = -0.2516 * T + 568.0064
 #define f_T_k -0.2516f          // 公式斜率
 #define f_T_b 568.0064f         // 公式截距
 
-// 继电器对应的频率转换公式，10个继电器则有十位，从0到1023，对应440kHz-580kHz
-#define RELAY_f_k -7.31f        // 公式斜率
-#define RELAY_f_b 4238.0f       // 公式截距
+//// 继电器对应的频率转换公式，10个继电器则有十位，从0到1023，对应440kHz-580kHz
+//#define RELAY_f_k -7.31f        // 公式斜率
+//#define RELAY_f_b 4238.0f       // 公式截距
 

@@ -5,7 +5,7 @@
  * @Company: HUST.AIA
  * @Date: 2021-03-21 15:37:14
  * @LastEditors: Yao Liu
- * @LastEditTime: 2021-06-06 22:57:07
+ * @LastEditTime: 2021-09-23 15:54:48
  */
 /*----------------------------头文件---------------------------------------------*/
 #include "DSP281x_Device.h"	  // DSP281x Headerfile Include File
@@ -25,13 +25,13 @@ void PPModeTop(void)
 
 	// 暂时设置继电器端口为1
 	// DCFreqSel = 1;
-	// FreqAry[DCFreqSel] = CenterFreq;
+	// FreqAry[DCFreqSel] = TransmitFre;
 
 	RelayOpen(RelayCtrlCode);
 
 	// 1A
 	//StartS1msModule(10000);      // 10000+ms
-	MiniScan(CenterFreq, MINITABLE_START + 10, MINITABLE_START + 1);
+	MiniScan(TransmitFre, MINITABLE_START + 10, MINITABLE_START + 1);
 
 	Tes = (Uint32)100 * PPM_TE_1A * FPGA_COUNT;
 	Tel = Tes;
@@ -40,19 +40,19 @@ void PPModeTop(void)
 	PulseF180StoreAddr = Pulse90StoreAddr + EchoNum;
 	PulseL180StoreAddr = PulseF180StoreAddr + EchoNum;
 	EchoStorAddr = PPM_TABLE_START + (Uint32)21;
-	DCWorkOnce(1);
+	DCWorkOnce(TransmitFre);
 
 	// 1C
 	StartS1msModule(PPM_TW_1C);
 
-	MiniScan(CenterFreq, MINITABLE_START + 22, MINITABLE_START + 13);
+	MiniScan(TransmitFre, MINITABLE_START + 22, MINITABLE_START + 13);
 
 	Tes = (Uint32)100 * PPM_TE_1C * FPGA_COUNT;
 	Tel = Tes;
 	Ne = PPM_NE_1C;
 	PulseParamIncrement();
 	EchoStorAddr += 2 * PPM_NE_1A;
-	DCWorkOnce(1);
+	DCWorkOnce(TransmitFre);
 
 	int i = 0;
 	for (; i < PPM_Nrept_1C - 1; i++)
@@ -61,18 +61,18 @@ void PPModeTop(void)
 
 		PulseParamIncrement();
 		EchoStorAddr += 2 * PPM_NE_1C;
-		DCWorkOnce(1);
+		DCWorkOnce(TransmitFre);
 	}
 
 	RelayClose(RelayCtrlCode);
 
-	//相关存储
+	//模式数据存储
 	SaveNTempPt = (int *)PPM_TABLE_START;
 	*SaveNTempPt++ = REPLY_MODE_DATA_F;				  // 数据头
 	*SaveNTempPt++ = 3 * EchoNum + DataTotalNum + 23; // 长度
 	*SaveNTempPt++ = EVENT_BOARD_ID;				  // 从机标识
 	*SaveNTempPt++ = 0x0002;						  // 工作模式
-	*SaveNTempPt = FreqAry[1] * 10;					  // 工作频率
+	*SaveNTempPt = TransmitFre * 10;					  // 工作频率
 
 	SaveNTempPt = (int *)(PPM_TABLE_START + 17);
 	*SaveNTempPt++ = 0;			   // Q值
@@ -101,6 +101,17 @@ void PPModeTop(void)
 	modeDataSendLen = 3 * EchoNum + DataTotalNum + 24;
 
 	//SciaSendDataNWords(PPM_TABLE_START, 3*EchoNum+DataTotalNum+21);
+
+	// PAPS数据存储
+	PAPSEntry.current_well_mode = 0x0002;
+	PAPSEntry.echo_1A_num = PPM_NE_1A;
+	PAPSEntry.echo_1A_addr = PPM_TABLE_START + 21;
+	PAPSEntry.echo_1C_num = PPM_NE_1C;
+	PAPSEntry.echo_1C_addr1 = PPM_TABLE_START + 21 + 2 * PPM_NE_1A;
+	PAPSEntry.echo_1C_nrept = PPM_Nrept_1C;
+	StorgePAPSToFIFO(&PAPSEntry);
+
 	ChangePhase();
+	
 	return;
 }

@@ -73,7 +73,6 @@ PAGE 0 :
    /* the boot is from XINTF Zone 7.  Otherwise reset vector  */
    /* is fetched from boot ROM. See .reset section below      */
 
-
      BEGIN      	: origin = 0x3F7FF6, length = 0x000002
      RAMM0_0    	: origin = 0x000040, length = 0x000380
      PRAMH0      	: origin = 0x3f8000, length = 0x002000
@@ -95,8 +94,13 @@ PAGE 1 :
 
    myzone   				: origin = 0x008590, length = 0x000A70
    /*RAML1_RSV    			: origin = 0x009000, length = 0x001000*/
-   RAMOUT_1_CODE_USE 		: origin = 0x120000, length = 0x01FFFF
-   RAMOUT_2_RSV 			: origin = 0x140000, length = 0x03FFFF
+   /*RAMOUT_1_CODE_USE 		: origin = 0x120000, length = 0x01FFFF*/
+   /*RAMOUT_2_RSV 			: origin = 0x140000, length = 0x03FFFF*/
+   RAMOUT_1_CODE_USE 		: origin = 0x120000, length = 0x00FFFF		/* 存储回波数据 */
+   RAMOUT_2_CODE_USE 		: origin = 0x130000, length = 0x00FFFF		/* PAPS FIFO */
+   RAMOUT_3_CODE_USE		: origin = 0x140000, length = 0x00FFFF		/* 存储PAPS滑动平均后的数据 */
+   RAMOUT_4_CODE_RSV		: origin = 0x150000, length = 0x02FFFF
+
    FPGA_RSV 				: origin = 0x080000, length = 0x080000
 
 
@@ -165,7 +169,7 @@ SECTIONS
 
 /*	ramfuncs	    : > PRAMH0,  	    PAGE = 0*/
 
-	.text		    : {*(.text)} >> PRAMH0 | RAML1_RSV | RAML0_CODE_USE2,  	    PAGE = 0
+	.text		    : {*(.text)} >> PRAMH0 | RAML1_RSV | RAML0_CODE_USE2 ,  	    PAGE = 0
 
 	secureRamFuncs 	    : > RAMOUT_0,       PAGE = 0
 

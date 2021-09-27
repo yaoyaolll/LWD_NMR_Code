@@ -38,7 +38,7 @@ void CasingDetectTop()
     RelayOpen(RelayCtrlCode);
 	for (cnt = 0; cnt < 5; ++cnt)
 	{
-		MiniScan(TransmitFre, MINITABLE_START + 10 + 12 * cnt, MINITABLE_START + 1 + 12 * cnt);
+		MiniScan(CenterFreq, MINITABLE_START + 10 + 12 * cnt, MINITABLE_START + 1 + 12 * cnt);
 	}
 	RelayClose(RelayCtrlCode);
 	SaveNTempPt = (int *)(CASING_TABLE_START + 5);
@@ -50,7 +50,7 @@ void CasingDetectTop()
 	RelayOpen(RelayCtrlCode);
 	for (cnt = 0; cnt < 5; ++cnt)
 	{
-		MiniScan(TransmitFre, MINITABLE_START + 10 + 12 * cnt, MINITABLE_START + 1 + 12 * cnt);
+		MiniScan(CenterFreq, MINITABLE_START + 10 + 12 * cnt, MINITABLE_START + 1 + 12 * cnt);
 	}
 	RelayClose(RelayCtrlCode);
 	SaveNTempPt = (int *)(CASING_TABLE_START + 8);
@@ -58,40 +58,24 @@ void CasingDetectTop()
 	StoreMiniAryPt = &CasingMiniNumAry;
 	StoreMini(1, SaveNTempPt, SaveSTempPt);
 
-	// 插值计算中心频率及其幅值，中心频率为b，幅值为a
-	MiniFreq = TransmitFre;
-	MiniFreq -= ScanDeltaFreq * 4;
-	for (cnt = 0; cnt < 9; cnt++)
-	{
-		x[cnt] = MiniFreq + ScanDeltaFreq * cnt;
-		y[cnt] = *SaveSTempPt++;
-	}
-
-	// 计算中心频率及其幅值
-	// 高斯拟合公式为 y=a*e(-((x-b)/c)^2)
-	// b为拟合出的中心点
-	GaussFit(x, y, &a, &b, &c);
-
-	// 计算中心频率和幅值
-	center_fre = (Uint16)b;
-	center_fre_amp = (Uint16)CublicSplineInterpolation(x, y, b);	// 强制类型转换
-
 	// 计算Q值
-	Q_value = (Uint16)(c*Q_FACTOR);
+	Q_value = CalQValue(CenterFreq, CASING_TABLE_START + 20);
+	// 计算中心频率和赋值
+	CalFreAndAmp(&center_fre, &center_fre_amp);
 
 	// 存储数据
 	SaveNTempPt = (int *)CASING_TABLE_START;
-	*SaveNTempPt++ = REPLY_CASING_F;  // 数据头部
-	*SaveNTempPt++ = CASING_DATA_LEN; // 长度
-	*SaveNTempPt++ = EVENT_BOARD_ID;  // 从机标识
-	*SaveNTempPt++ = 0x0008;		  // 工作模式存储为主扫频模式
-	*SaveNTempPt = TransmitFre * 10;	  // 工作频率，下发和上传的中心频率单位是0.1kHz
+	*SaveNTempPt++ = REPLY_CASING_F;    // 数据头部
+	*SaveNTempPt++ = CASING_DATA_LEN;   // 长度
+	*SaveNTempPt++ = EVENT_BOARD_ID;    // 从机标识
+	*SaveNTempPt++ = 0x0008;		    // 工作模式存储为主扫频模式
+	*SaveNTempPt = CenterFreq * 10;	    // 工作频率，下发和上传的中心频率单位是0.1kHz
 
 	SaveNTempPt = (int *)(CASING_TABLE_START + 29);
-	*SaveNTempPt++ = Q_value;			   	// Q值
-	*SaveNTempPt++ = 0x294;		   	// 参考幅值
-	*SaveNTempPt++ = center_fre;  	// 中心频率
-	*SaveNTempPt = center_fre_amp; 	// 中心频率幅值
+	*SaveNTempPt++ = Q_value;			// Q值
+	*SaveNTempPt++ = 0x294;		   	    // 参考幅值
+	*SaveNTempPt++ = center_fre;  	    // 中心频率
+	*SaveNTempPt = center_fre_amp; 	    // 中心频率幅值
 
 	Uint16 CheckSum = 0;
 	SaveNTempPt = (int *)(CASING_TABLE_START);
@@ -115,7 +99,7 @@ int CasingDetectOnce()
 	{
 	    // 继电器控制
 	    RelayOpen(RelayCtrlCode);
-		MiniScan(TransmitFre, MINITABLE_START+10+12*cnt, MINITABLE_START+1+12*cnt);
+		MiniScan(CenterFreq, MINITABLE_START+10+12*cnt, MINITABLE_START+1+12*cnt);
 		RelayClose(RelayCtrlCode);
 	}
 	// 暂时将测量结果存放在此处
@@ -125,7 +109,7 @@ int CasingDetectOnce()
 	StoreMini(1,SaveNTempPt,SaveSTempPt);
 
 	// 插值计算中心频率及其幅值
-	MiniFreq = TransmitFre;
+	MiniFreq = CenterFreq;
 	MiniFreq -= ScanDeltaFreq*4;
 	for (cnt=0;cnt<9;cnt++)
 	{
@@ -153,4 +137,32 @@ int CasingDetectOnce()
 	// TODO: 根据中心频率及其幅值进行频率优选
 
     return 1;
+}
+
+// 为了方便使用，将两个函数拆开来写
+// 计算Q值
+Uint16 CalQValue(Uint16 CenterFre, Uint32 AmpAddr)
+{
+    // 初始化
+    int cnt = 0;
+    MiniFreq = CenterFre;
+    MiniFreq -= ScanDeltaFreq * 4;
+    SaveSTempPt = (Uint16 *)AmpAddr;
+    for (cnt = 0; cnt < 9; cnt++)
+    {
+        x[cnt] = MiniFreq + ScanDeltaFreq * cnt;
+        y[cnt] = *SaveSTempPt++;
+    }
+    // 计算中心频率及其幅值
+    // 高斯拟合公式为 y=a*e(-((x-b)/c)^2)
+    // b为拟合出的中心点，a为幅值
+    GaussFit(x, y, &a, &b, &c);
+    return (Uint16)(c*Q_FACTOR/b);
+}
+
+// 计算中心频率和幅值
+void CalFreAndAmp(Uint16 *fre, Uint16* amp)
+{
+    *fre = (Uint16)b;
+    *amp = (Uint16)CublicSplineInterpolation(x, y, b);
 }

@@ -28,5 +28,6 @@ c_int_0函数要在H0RAM中才行
 在写代码之前，编译器优化选项一定要关闭。否则FPGA和一些延时函数都无法正常工作。
 voliate关键字
 
-LWD_NMR_DSP RAM版和FALSH版本分别对应DEBUG和Release选项，需要在Mydefine.h中选择是否屏蔽#define DEBUG
+LWD_NMR_DSP RAM版和FALSH版本分别对应DEBUG和Release选项，需要在Mydefine.h中选择是否屏蔽#define DEBUG。
 
+PulseTop模式需要放在内部RAM中运行，否则会出错。

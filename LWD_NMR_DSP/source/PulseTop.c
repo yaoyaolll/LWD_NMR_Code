@@ -5,23 +5,28 @@
  * @Company: HUST.AIA
  * @Date: 2021-03-17 13:31:40
  * @LastEditors: Yao Liu
- * @LastEditTime: 2021-06-06 23:09:56
+ * @LastEditTime: 2021-09-23 16:11:37
  */
 /*----------------------------头文件---------------------------------------------*/
 #include "DSP281x_Device.h"	  // DSP281x Headerfile Include File
 #include "DSP281x_Examples.h" // DSP281x Examples Include File
 #include "MyHeaderFiles.h"
 
+#ifndef DEBUG
 #pragma CODE_SECTION(PulseAcq, "secureRamFuncs");
 #pragma CODE_SECTION(PulseSave, "secureRamFuncs");
+#endif
 
 //pluse波形采集检测主函数
 void PulseTop(void) //波形检测主函数
 {
-	MatFreq = FreqAry[1];		// 此处必须对MatFreq赋值
+	// 此模式下的继电器码根据下发的频率计算得到
+	RelayCode = CalRelayFromFre(CenterFreq);
+
+	MatFreq = CenterFreq;		// 此处必须对MatFreq赋值
 	PhaseFlag = POSITIVE;
 
-    RelayOpen(RelayCtrlCode);
+    RelayOpen(RelayCode);
 
 	//mini scan and pulse acquisition
 	MiniScan(MatFreq, PLUSETABLE_START + 4, PLUSETABLE_START + 7); //mini扫频
@@ -30,7 +35,7 @@ void PulseTop(void) //波形检测主函数
 	PulseAcq();
 	PulseSave();
 
-    RelayClose(RelayCtrlCode);
+    RelayClose(RelayCode);
 
 	//存储其他
 	SaveNTempPt = (int *)PLUSETABLE_START;
@@ -38,10 +43,10 @@ void PulseTop(void) //波形检测主函数
 	*SaveNTempPt++ = PulseCalNum + 20;	// 长度
 	*SaveNTempPt++ = EVENT_BOARD_ID;	// 从机标识
 	*SaveNTempPt++ = 0x000B;			// 工作模式
-	*SaveNTempPt = FreqAry[1] * 10;		// 中心频率
+	*SaveNTempPt = CenterFreq * 10;		// 中心频率
 
 	SaveNTempPt = (int *)PLUSETABLE_START + 17;
-	*SaveNTempPt++ = 0;			// Q值
+	*SaveNTempPt++ = CalQValue(CenterFreq, SCANTABLE_START + 8);			// Q值
 	*SaveNTempPt++ = 0x294;		// 参考幅值
 	*SaveNTempPt = PulseCalNum; // 脉冲采集数据量大小，有效激励点数
 

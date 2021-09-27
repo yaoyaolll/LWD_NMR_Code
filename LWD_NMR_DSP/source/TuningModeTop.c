@@ -5,7 +5,7 @@
  * @Company: HUST.AIA
  * @Date: 2021-09-06 16:02:23
  * @LastEditors: Yao Liu
- * @LastEditTime: 2021-09-16 16:21:38
+ * @LastEditTime: 2021-09-22 10:28:25
  */
 
 /*----------------------------头文件---------------------------------------------*/
@@ -26,8 +26,6 @@
 
 void TuningModeTop(void) 
 {
-	Uint16 Q_value; 			// Q值
-	
 	K1_DIS = USER_DISABLE; // 储能短接断开信号
 	K2_DIS = USER_DISABLE;
 	HVState = HV_OFF;
@@ -35,7 +33,8 @@ void TuningModeTop(void)
 	NTimeDec = (Calib_TE * 50 - 90) * FPGA_COUNT; //计算噪声采集状态机参数NTimeDec，NTimeDec为DECOUPLE板导通稳定所需时间的FPGA计数值
 	STimeDec = (Calib_TE * 50 - 90) * FPGA_COUNT;
 
-	// TODO: RelayCode可能需要特殊处理
+	// RelayCode需要特殊处理
+	RelayCode = RelayCode>255 ? 255:RelayCode;
 	// 开启继电器
 	RelayOpen(RelayCode);
 
@@ -66,33 +65,16 @@ void TuningModeTop(void)
 	// 关闭继电器
 	RelayClose(RelayCode);
 
-	// 计算Q值
-	int cnt = 0;
-	MiniFreq = CenterFreq;
-	MiniFreq -= ScanDeltaFreq * 4;
-	SaveSTempPt = (Uint16 *)SCANTABLE_START + 32;	// 迷你扫频数据存储区域
-	for (cnt = 0; cnt < 9; cnt++)
-	{
-		x[cnt] = MiniFreq + ScanDeltaFreq * cnt;
-		y[cnt] = *SaveSTempPt++;
-	}
-
-	// 计算中心频率
-	GaussFit(x,y , &a, &b, &c);
-
-	// 计算Q值
-	Q_value = (Uint16)(c*Q_FACTOR);
-
 	//存储数据
 	SaveNTempPt = (int *)SCANTABLE_START;
 	*SaveNTempPt++ = REPLY_MODE_DATA_F;		   // 数据头部
 	*SaveNTempPt++ = TUNING_MODE_DATA_LEN; // 长度
 	*SaveNTempPt++ = EVENT_BOARD_ID;		   // 从机标识
 	*SaveNTempPt++ = 0x0007;				   // 工作模式
-	*SaveNTempPt = CenterFreq * 10;			   // 中心频率，下发和上传的中心频率单位是0.1kHz
+	*SaveNTempPt = CenterFreq * 10;			   // 工作频率，下发和上传的中心频率单位是0.1kHz
 
 	SaveNTempPt = (int *)(SCANTABLE_START + 41);
-	*SaveNTempPt++ = Q_value;		// Q值
+	*SaveNTempPt++ = CalQValue(CenterFreq, SCANTABLE_START + 32);		// Q值
 	*SaveNTempPt++ = 0x294; // 参考幅值
 
 	Uint16 CheckSum = 0;

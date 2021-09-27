@@ -92,8 +92,10 @@ PAGE 1 :
    RAML0_CODE_USE1     		: origin = 0x008100, length = 0x000490
    myzone   				: origin = 0x008590, length = 0x000A70
    RAML1	    			: origin = 0x009000, length = 0x001000
-   RAMOUT_1_CODE_USE 		: origin = 0x120000, length = 0x01FFFF
-   RAMOUT_2_RSV 			: origin = 0x140000, length = 0x03FFFF
+   RAMOUT_1_CODE_USE 		: origin = 0x120000, length = 0x00FFFF		/* 存储回波数据 */
+   RAMOUT_2_CODE_USE 		: origin = 0x130000, length = 0x00FFFF		/* PAPS FIFO */
+   RAMOUT_3_CODE_USE		: origin = 0x140000, length = 0x00FFFF		/* 存储PAPS滑动平均后的数据 */
+   RAMOUT_4_CODE_RSV		: origin = 0x150000, length = 0x02FFFF
    FPGA_RSV 				: origin = 0x080000, length = 0x080000
 
 

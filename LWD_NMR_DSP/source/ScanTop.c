@@ -5,7 +5,7 @@
  * @Company: HUST.AIA
  * @Date: 2021-03-17 13:31:40
  * @LastEditors: Yao Liu
- * @LastEditTime: 2021-05-31 21:14:27
+ * @LastEditTime: 2021-09-23 16:11:00
  */
 
 /*----------------------------头文件---------------------------------------------*/
@@ -13,10 +13,17 @@
 #include "DSP281x_Examples.h" // DSP281x Examples Include File
 #include "MyHeaderFiles.h"
 
+#ifndef DEBUG
+#pragma CODE_SECTION(ScanModeTop, "secureRamFuncs");
+#endif
+
 #define SCAN_MODE_DATA_FRAME_LEN 43
 
 void ScanModeTop(void)
 {
+	// 此模式下的继电器码根据下发的频率计算得到
+	RelayCode = CalRelayFromFre(CenterFreq);
+	
 	K1_DIS = USER_DISABLE; // 储能短接断开信号
 	K2_DIS = USER_DISABLE;
 	HVState = HV_OFF;
@@ -24,10 +31,10 @@ void ScanModeTop(void)
 	NTimeDec = (Calib_TE * 50 - 90) * FPGA_COUNT; //计算噪声采集状态机参数NTimeDec，NTimeDec为DECOUPLE板导通稳定所需时间的FPGA计数值
 	STimeDec = (Calib_TE * 50 - 90) * FPGA_COUNT;
 
-    RelayOpen(RelayCtrlCode);
+    RelayOpen(RelayCode);
 
 	//Scan Band Once
-	MiniFreq = FreqAry[1];
+	MiniFreq = CenterFreq;
 	MiniFreq -= ScanDeltaFreq * 4;
 	for (MiniFreqCnt = 0; MiniFreqCnt < 9; MiniFreqCnt++) //某频带已扫频个数0-8
 	{
@@ -50,7 +57,7 @@ void ScanModeTop(void)
 		SaveSignal(SCANTABLE_START + MiniFreqCnt + 32);
 	}
 
-    RelayClose(RelayCtrlCode);
+    RelayClose(RelayCode);
 
 	//存储8个中心频率
 	SaveNTempPt = (int *)SCANTABLE_START;
@@ -58,10 +65,10 @@ void ScanModeTop(void)
 	*SaveNTempPt++ = SCAN_MODE_DATA_FRAME_LEN; // 长度
 	*SaveNTempPt++ = EVENT_BOARD_ID;		   // 从机标识
 	*SaveNTempPt++ = 0x0008;				   // 工作模式
-	*SaveNTempPt = FreqAry[1] * 10;			   // 中心频率，下发和上传的中心频率单位是0.1kHz
+	*SaveNTempPt = CenterFreq * 10;			   // 工作频率，下发和上传的中心频率单位是0.1kHz
 
 	SaveNTempPt = (int *)(SCANTABLE_START + 41);
-	*SaveNTempPt++ = 0;		// Q值
+	*SaveNTempPt++ = CalQValue(CenterFreq, SCANTABLE_START + 32);		// Q值
 	*SaveNTempPt++ = 0x294; // 参考幅值
 
 	Uint16 CheckSum = 0;
@@ -80,3 +87,4 @@ void ScanModeTop(void)
 	//SciaSendDataNWords(SCANTABLE_START, SCAN_MODE_DATA_FRAME_LEN);
 	return;
 }
+

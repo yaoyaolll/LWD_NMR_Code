@@ -34,15 +34,6 @@
 Uint16 DownloadTableCnt = 0;
 Uint16 ParamTableLen = 0;
 Uint16 *tempSaveTablePt;
-#define CAL_TABLE_LEN 	 	20  	// 刻度模式参数表长度
-#define WELL_TABLE_LEN 	 	57  	// 测井模式参数表长度
-#define TUNING_TABLE_LEN 	69	 	// 刻度参数表，主要用来调谐，使用参数并不多
-#define CONFIG_TABLE_LEN 	19  	// 仪器配置参数表
-
-#define ADDR_CAL_TABLE_START	(Uint16 *)0x8002
-#define ADDR_WELL_TABLE_START	(Uint16 *)0x8018
-#define ADDR_TUNING_TABLE_START	(Uint16 *)0x8057
-#define ADDR_CONFIG_TABLE_START	(Uint16 *)0x80A2
 
 void CheckWorkMode(void)
 {
@@ -408,7 +399,7 @@ void CheckReadTable(void)
 			}
 
 			CheckTablePt = (Uint16 *)0x8035;
-			PPDIF_NE_1A1B = *CheckTablePt;
+			PPDIF_TE_1C = *CheckTablePt;
 			if (PPDIF_NE_1A1B < 1 || PPDIF_NE_1A1B > 3000) // number
 			{
 				PPDIF_NE_1A1B = 1000;
@@ -868,7 +859,7 @@ Uint16 RecSingleOrderCnt = 0;
 // 接收主控板单个指令
 void RecSingleOrderCommand(Uint16 DownDataBuf)
 {
-	if (RecSingleOrderFlag == CLEAR && DownDataBuf >= DATA_INQUIRE_F && DownDataBuf <= DATA_SCALE_F)
+	if (RecSingleOrderFlag == CLEAR && DownDataBuf >= DATA_INQUIRE_F && DownDataBuf <= DATA_PAPS_F)
 	{
 	    SingleOrderData.frameHead = DownDataBuf;
 		RecSingleOrderFlag = SET;

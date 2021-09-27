@@ -2,6 +2,7 @@
 #include "DSP281x_Device.h"	  // DSP281x Headerfile Include File
 #include "DSP281x_Examples.h" // DSP281x Examples Include File
 #include "MyHeaderFiles.h"
+#include "TableStruct.h"
 
 #ifndef DEBUG
 extern Uint16 secureRamFuncs_runstart;
@@ -14,15 +15,15 @@ void InitAll(void)
 	//System initial
 	InitSysCtrl(); //CPU初始化
 
-//#ifndef DEBUG
-//	/* FLASH版本必须添加这两个函数:memcpy()和InitFlash */
-//	memcpy(&secureRamFuncs_runstart,
-//	    &secureRamFuncs_loadstart,
-//	    &secureRamFuncs_loadend - &secureRamFuncs_loadstart);
-//
-//    /* FLASH 初始化 */
-//    InitFlash();
-//#endif
+#ifndef DEBUG
+	/* FLASH版本必须添加这两个函数:memcpy()和InitFlash */
+	memcpy(&secureRamFuncs_runstart,
+	    &secureRamFuncs_loadstart,
+	    &secureRamFuncs_loadend - &secureRamFuncs_loadstart);
+
+    /* FLASH 初始化 */
+    InitFlash();
+#endif
 
 	//Initial GPIO and FPGA chip
 	InitGpio(); //复位GPIO，SCIA配置在这里面
@@ -233,6 +234,25 @@ void InitTable(void)
 	*TableTempPt++ = 50;	// 0x8050, 1C序列的NE
 	*TableTempPt++ = 50;	// 0x8051, 1C序列的重复次数
 	*TableTempPt++ = 0;		// CheckSum
+
+	// 刻度参数表
+	TuningTableEntry->length = 71;
+	TuningTableEntry->table_head.table_ID = 1;
+	TuningTableEntry->table_head.table_len = 69;
+	TuningTableEntry->table_head.rsv_word[0] = 0xFFFF;
+	TuningTableEntry->table_head.rsv_word[1] = 0xFFFF;
+	TuningTableEntry->instruct_info.tool_ID[0] = 0x6D72;	// "MR"
+	TuningTableEntry->instruct_info.tool_ID[1] = 0x7439;	// "T9"
+	TuningTableEntry->instruct_info.tool_ID[2] = 0x352D;	// "5-"
+	TuningTableEntry->instruct_info.tool_ID[3] = 0x3231;	// "21"
+	TuningTableEntry->instruct_info.tool_ID[4] = 0x3031;	// "01"
+	// 此表中实际上只需要拟合系数
+	TuningTableEntry->rca0 = 120.64f;
+	TuningTableEntry->rca1 = -1.2677f;
+	TuningTableEntry->rca2 = 0.0017;
+
+	// 配置参数表
+	// TODO: 目前还没有需要使用的参数
 }
 
 void InitPulseGain(void) //表初始化函数
@@ -828,6 +848,13 @@ void InitFPGA(void)
 
 void InitVariables(void)
 {
+	// 初始化表入口指针
+	ConfigTableEntry = (ConfigTableEntry_t*)ADDR_CONFIG_TABLE_START;
+	TuningTableEntry = (TuningTableEntry_t*)ADDR_TUNING_TABLE_START;
+
+	// PAPSEntry
+	PAPSEntry.last_well_mode = 0;
+
 	EventBoardState = IDLE_STAT;
 
 	DENum = 0;

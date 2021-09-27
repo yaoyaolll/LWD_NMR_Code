@@ -22,9 +22,21 @@
 //      |             |      | setup that are not available on this device
 //###########################################################################
 
+#ifndef _MYVARIABLES_H_
+#define _MYVARIABLES_H_
+
 #include "DSP281x_Device.h"
 #include "IQmathlib.h"
 #include "MyDefine.h"
+#include "TableStruct.h"
+#include "PAPSTop.h"
+
+// PAPS结构体
+extern PAPSEntry_t PAPSEntry;
+
+// 仪器参数表入口指针
+extern volatile TuningTableEntry_t* TuningTableEntry;	// 刻度参数表
+extern volatile ConfigTableEntry_t* ConfigTableEntry;	// 仪器配置参数表
 
 // 存储单个指令
 typedef struct SingleOrder
@@ -39,12 +51,12 @@ typedef struct SingleOrder
 #define ParameterOrderLen 6
 struct ParameterOrder
 {
-    Uint16 frameHead;   // 帧头
-    Uint16 len;         // 长度
-    Uint16 slaveID;     // 从机标识
-    Uint16 Temperature; // 温度
-    Uint16 AutoAmpThd;  // 扫频幅值阈值，用作异常判断
-    Uint16 checkSum;    // Checksum
+    Uint16 frameHead;       // 帧头
+    Uint16 len;             // 长度
+    Uint16 slaveID;         // 从机标识
+    Uint16 Temperature;     // 温度
+    Uint16 PAPS_STKLEV;     // PAPS叠加次数
+    Uint16 checkSum;        // Checksum
 };
 typedef union ParameterOrderUnion
 {
@@ -67,7 +79,8 @@ extern float c;
 // 事件板状态字
 enum EB_STATE
 {
-	IDLE_STAT = 1, OPERATION_STAT, CASING_DETECT_STAT, TEST_STAT, SCALE_STAT, ACQ_FIN_STAT
+	//IDLE_STAT = 1, OPERATION_STAT, CASING_DETECT_STAT, TEST_STAT, SCALE_STAT, ACQ_FIN_STAT
+    IDLE_STAT = 1, OPERATION_STAT, CASING_DETECT_STAT, ACQ_FIN_STAT, TEST_STAT, SCALE_STAT
 };
 extern enum EB_STATE EventBoardState;
 
@@ -82,6 +95,7 @@ extern Uint16 _operationFlag;
 extern Uint16 _modeDataSendFlag;
 extern Uint16 _casingDetectErrFlag;
 extern Uint16 _casingOrOperaFlag;
+extern Uint16 _PAPSUpDataFlag;
 
 extern Uint16 modeDataSendLen;
 
@@ -434,8 +448,6 @@ extern Uint16 MiniNoiseMax;
 extern Uint16 MiniBuf;
 
 
-
-
 extern Uint32 MiniStorAddr1;
 extern Uint32 MiniStorAddr2;
 extern Uint32 MiniStorAddr3;
@@ -478,3 +490,5 @@ extern Uint16 SingleOrderAryChoice;    // 单个变量函数选择
 extern Uint16 RecParamOrderFlag;   // 接收重要参数指令标志位
 extern ParameterOrder_u ParamOrderData; // 存储重要参数指令
 extern Uint16 IsParamUpdateFlag;   // 重要参数更新标志位
+
+#endif

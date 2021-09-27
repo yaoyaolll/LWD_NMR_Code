@@ -11,6 +11,8 @@
 //  1.00| 11 Sep 2003 | L.H. | No change since previous version (v.58 Alpha)
 //###########################################################################
 
+#include "PAPSTop.h"
+
 //Functions defined in MainInitial.c
 void InitAll(void);
 void InitTable(void);
@@ -57,7 +59,7 @@ interrupt void XINT1_STOP(void);
 void SavePulse(Uint32);
 void SaveEcho(Uint32);
 void SavePhaseWord(void);
-void SaveSixFreq(void);
+//void SaveSixFreq(void);
 void StoreMini(Uint16, int *, Uint16 *);
 void DCWorkOnce(Uint16);
 void ChangePhase(void);
@@ -109,8 +111,6 @@ void TuningModeTop(void);
 void IdleStateCtl(void);
 void OperaStateCtl(void);
 void CasDctStateCtl(void);
-void TestStateCtl(void);
-void ScaleStateCtl(void);
 void AcqFinStateCtl(void);
 
 // Functions defined in CasingDetectTop.c
@@ -118,6 +118,8 @@ Uint16 getCenterFreq();
 Uint16 getCenterFreqAmp();
 int CasingDetectOnce();
 void CasingDetectTop();
+void CalFreAndAmp(Uint16 *fre, Uint16* amp);
+Uint16 CalQValue(Uint16 CenterFre, Uint32 AmpAddr);
 
 // Functions defined in GuassFitAlgorithm.c
 void GaussFit(const float x[9], const float y[9], float *a, float *b, float *c);
@@ -137,23 +139,15 @@ void K1K2EnDeal();
 void K1K2DisDeal();
 void HVStateDeal();
 void SysCheckDeal();
-void TestDeal();
-void ScaleDeal();
+void PAPSDataUpDeal();
 
 // Functions defined in RelayCtrl.c
-inline
-void RelayClose(Uint16 relay_code)
-{
-    RELAY_CLOSE = relay_code;   // 继电器断开
-    Delay(120);
-    RELAY_CLOSE = 0;
-}
-inline
-void RelayOpen(Uint16 relay_code)
-{
-    RELAY_ON = relay_code;  // 继电器闭合
-    Delay(120);
-    RELAY_ON = 0;
-}
-
+Uint16 CalRelayFromFre(Uint16 TransmitFre);
+void RelayClose(Uint16 relay_code);
+void RelayOpen(Uint16 relay_code);
 void ParamUpdate();
+
+// Function defined in PAPS.c
+int PAPSDataGenerate(PAPSEntry_t* PAPSEntryPt);
+void StorgePAPSToFIFO(PAPSEntry_t* PAPSEntryPt);
+void PAPSTop(void);

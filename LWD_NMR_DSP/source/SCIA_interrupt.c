@@ -196,7 +196,6 @@ void ReplySingleVarFrame(Uint16 frameHead, Uint16 var)
 	GpioDataRegs.GPFDAT.bit.GPIOF11 = 0; // SCIA设置为接收状态
 }
 
-
 // RS485中断处理函数
 interrupt void SCIRXINTA_ISR(void) // SCI-A接收中断函数
 {
@@ -232,7 +231,7 @@ interrupt void SCIRXINTA_ISR(void) // SCI-A接收中断函数
 		    RecParameterCommand(BufferSciaDataAll);
 		}
 
-		else if (RecSingleOrderFlag == SET || (BufferSciaDataAll>=DATA_INQUIRE_F && BufferSciaDataAll<=DATA_SCALE_F))
+		else if (RecSingleOrderFlag == SET || (BufferSciaDataAll>=DATA_INQUIRE_F && BufferSciaDataAll<=DATA_PAPS_F))
 		{
 			RecSingleOrderCommand(BufferSciaDataAll);
 		}

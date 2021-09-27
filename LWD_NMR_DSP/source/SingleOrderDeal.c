@@ -5,7 +5,7 @@
  * @Company: HUST.AIA
  * @Date: 2021-05-31 15:53:25
  * @LastEditors: Yao Liu
- * @LastEditTime: 2021-05-31 17:25:18
+ * @LastEditTime: 2021-09-23 11:14:46
  */
 
 /*----------------------------头文件---------------------------------------------*/
@@ -67,6 +67,8 @@ void OperationDeal()
             case 0x0006:
                 PPShortModeFlag = SET;
                 break;
+            case 0x0007:
+                TuningModeFlag = SET;
             case 0x0008:
                 ScanModeFlag = SET;
                 break;
@@ -179,83 +181,14 @@ void SysCheckDeal()
     }
 }
 
-// SingleOrderAryChoice = 10，启动测试指令
-void TestDeal()
+// SingleOrderAryChoice = 10，PAPS数据上传指令
+void PAPSDataUpDeal()
 {
     if (CheckSumCal())
     {
-        if (EventBoardState == IDLE_STAT)
+        if (EventBoardState == ACQ_FIN_STAT)
         {
-            CheckWorkMode();
-            switch (WorkMode)
-            {
-            case 0x0001:
-                SingleModeFlag = SET;
-                break;
-            case 0x0002:
-                PPModeFlag = SET;
-                break;
-            case 0x0003:
-                PPDIFModeFlag = SET;
-                break;
-            case 0x0004:
-                PPT1ModeFlag = SET;
-                break;
-            case 0x0005:
-                PPOFTWModeFlag = SET;
-                break;
-            case 0x0006:
-                PPShortModeFlag = SET;
-                break;
-            case 0x0008:
-                ScanModeFlag = SET;
-                break;
-            case 0x0009:
-                ScaleModeFlag = SET;
-                break;
-            case 0x000A:
-                HoleModeFlag = SET;
-                break;
-            case 0x000B:
-                PulseAcqFlag = SET;
-                break;
-            default:
-                break;
-            }
-            EventBoardState = TEST_STAT;
+            _PAPSUpDataFlag = SET;
         }
-        ReplyStateFrame(EventBoardState); // 回复帧
-    }
-}
-
-// SingleOrderAryChoice = 11，启动刻度指令
-void ScaleDeal()
-{
-    if (CheckSumCal())
-    {
-        if (EventBoardState == IDLE_STAT)
-        {
-            CheckWorkMode();
-            switch (WorkMode)
-            {
-            case 0x0008:
-                ScanModeFlag = SET;
-                break;
-            case 0x0009:
-                ScaleModeFlag = SET;
-                break;
-            case 0x000A:
-                HoleModeFlag = SET;
-                break;
-            case 0x000B:
-                PulseAcqFlag = SET;
-                break;
-            default:                // 默认为扫频模式
-                ScanModeFlag = SET;
-                break;
-            }
-            EventBoardState = SCALE_STAT;
-        }
-        ReplyStateFrame(EventBoardState); // 回复帧
     }
 }

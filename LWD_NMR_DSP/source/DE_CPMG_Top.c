@@ -11,13 +11,9 @@ void DeCpmgTop(void) //单TE单TW主函数
 	ScaleM = DCm;
 	ScaleMn = DCMn;
 
-	// 暂时设置继电器端口为1，通过FreqAry[1]设置发射频率
-	// DCFreqSel = 1;
-	// FreqAry[DCFreqSel] = CenterFreq;
-
 	RelayOpen(RelayCtrlCode);
 
-	MiniScan(FreqAry[1], DECPMGTABLE_START + 5, DECPMGTABLE_START + 8);
+	MiniScan(TransmitFre, DECPMGTABLE_START + 5, DECPMGTABLE_START + 8);
 
 	Tes = (Uint32)100 * STWTE_TE * FPGA_COUNT;			  //短TE值 TE 0.1ms
 	Tel = Tes;											  //将SINGLE_TE转换为10ns 单位即FPGA计数值
@@ -27,19 +23,19 @@ void DeCpmgTop(void) //单TE单TW主函数
 	EchoStorAddr = DECPMGTABLE_START + 21;				  //计算回波数据的首地址echostoraddr
 	InverseTurnFlag = SET;								  // -90脉冲
 
-	DCWorkOnce(1); //工作一次
+	DCWorkOnce(TransmitFre); //工作一次
 
 	RelayClose(RelayCtrlCode);
 
 	StartS1msModule(10000); //延时10000+ms 并不是1ms为单位，而是200us
 
-	//存储
+	//模式数据存储
 	SaveNTempPt = (int *)(DECPMGTABLE_START); //数据存储指针指向单TETW表首地址
 	*SaveNTempPt++ = REPLY_MODE_DATA_F;		  // 数据头
 	*SaveNTempPt++ = 2 * Ne + 26;			  // 长度
 	*SaveNTempPt++ = EVENT_BOARD_ID;		  // 从机标识
 	*SaveNTempPt++ = 0x0001;				  // 工作模式
-	*SaveNTempPt = FreqAry[1] * 10;			  // 工作频率
+	*SaveNTempPt = TransmitFre * 10;			  // 工作频率
 
 	SaveNTempPt = (int *)(DECPMGTABLE_START + 17);
 	*SaveNTempPt++ = 0;			   // Q值
@@ -66,7 +62,15 @@ void DeCpmgTop(void) //单TE单TW主函数
 	//上传数据
 	//SciaSendDataNWords(DECPMGTABLE_START, 2*Ne+24);
 
+	// PAPS数据存储
+	PAPSEntry.current_well_mode = 0x0001;
+	PAPSEntry.echo_1A_num = STWTE_NE;
+	PAPSEntry.echo_1A_addr = DECPMGTABLE_START + 21;
+	PAPSEntry.echo_1C_num = 0;
+	StorgePAPSToFIFO(&PAPSEntry);
+
 	ChangePhase(); //取反发射脉冲相位
+
 	return;
 }
 

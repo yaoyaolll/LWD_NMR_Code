@@ -33,11 +33,13 @@ float TransmitFre_f;  		// 发射频率float型
 Uint16 TransmitFre;       	// 发射频率Uint16型
 float RelayCtrlCode_f;   	// 继电器控制码float型
 Uint16 RelayCtrlCode; 		// 继电器控制码Uint16型
-#pragma DATA_SECTION(TransmitFre_f, "MyVariablesZone");
-#pragma DATA_SECTION(TransmitFre, "MyVariablesZone");
-#pragma DATA_SECTION(RelayCtrlCode_f, "MyVariablesZone");
-#pragma DATA_SECTION(RelayCtrlCode, "MyVariablesZone");
 
+// PAPS结构体
+PAPSEntry_t PAPSEntry;
+
+// 参数表的入口指针
+volatile TuningTableEntry_t* TuningTableEntry;	// 刻度参数表
+volatile ConfigTableEntry_t* ConfigTableEntry;	// 仪器配置参数表
 
 // 高斯拟合变量
 float x[9];
@@ -52,14 +54,17 @@ Uint16 modeDataSendLen;
 // 事件板状态字
 enum EB_STATE EventBoardState;
 
-void (*eventFunc[])(void) = {0, IdleStateCtl, OperaStateCtl, CasDctStateCtl, TestStateCtl, ScaleStateCtl, AcqFinStateCtl};
+// TODO：改换了顺序，状态函数
+//void (*eventFunc[])(void) = {0, IdleStateCtl, OperaStateCtl, CasDctStateCtl, TestStateCtl, ScaleStateCtl, AcqFinStateCtl};
+void (*eventFunc[])(void) = {0, IdleStateCtl, OperaStateCtl, CasDctStateCtl, AcqFinStateCtl};
 
 // 下述标志位通知模式函数进行事件处理
-Uint16 _caseingDetectFlag = CLEAR;	 // 套管检测启动标志位
-Uint16 _operationFlag = CLEAR;		 // 工作模式启动标志位
-Uint16 _modeDataSendFlag = CLEAR;	 // 上传模式数据标志位
-Uint16 _casingDetectErrFlag = CLEAR; // 工作模式启动时，套管检测是否正常
-Uint16 _casingOrOperaFlag = CLEAR;	 // 用作流程判断，在ACQ_FIN状态时，上一个状态是Casing还是Operation
+Uint16 _caseingDetectFlag = CLEAR;	 	// 套管检测启动标志位
+Uint16 _operationFlag = CLEAR;		 	// 工作模式启动标志位
+Uint16 _modeDataSendFlag = CLEAR;	 	// 上传模式数据标志位
+Uint16 _casingDetectErrFlag = CLEAR; 	// 工作模式启动时，套管检测是否正常
+Uint16 _casingOrOperaFlag = CLEAR;	 	// 用作流程判断，在ACQ_FIN状态时，上一个状态是Casing还是Operation
+Uint16 _PAPSUpDataFlag = CLEAR;			// PAPS上传数据标志位
 
 // 模式标志位
 Uint16 SingleModeFlag;
@@ -411,8 +416,8 @@ Uint32 MiniStorAddr6;
 
 //Array variables defination
 float PulseGainAry[501];
-Uint16 FreqAry[BAND_NUM];
-Uint16 RelayAry[BAND_NUM];
+// Uint16 FreqAry[BAND_NUM];
+// Uint16 RelayAry[BAND_NUM];
 
 Uint16 AdderLowAry[11];
 Uint32 AdderResAry[11];
@@ -447,7 +452,7 @@ Uint16 RecParamOrderFlag;   // 接收重要参数指令标志位
 
 Uint16 IsParamUpdateFlag;   // 重要参数更新标志位
 
-void (*singleOrderFunc[])(void) = {EmptyDeal, InquireDeal, OperationDeal, CasingDeal, DataUpDeal, ModeConfirmDeal, K1K2EnDeal, K1K2DisDeal, HVStateDeal, SysCheckDeal, TestDeal, ScaleDeal};
+void (*singleOrderFunc[])(void) = {EmptyDeal, InquireDeal, OperationDeal, CasingDeal, DataUpDeal, ModeConfirmDeal, K1K2EnDeal, K1K2DisDeal, HVStateDeal, SysCheckDeal, PAPSDataUpDeal};
 
 #pragma DATA_SECTION(ParamOrderData, "MyVariablesZone");
 #pragma DATA_SECTION(RecParamOrderFlag, "MyVariablesZone");
@@ -698,8 +703,8 @@ void (*singleOrderFunc[])(void) = {EmptyDeal, InquireDeal, OperationDeal, Casing
 #pragma DATA_SECTION(ZeroOne, "MyVariablesZone");
 
 #pragma DATA_SECTION(PulseGainAry, "MyVariablesZone");
-#pragma DATA_SECTION(FreqAry, "MyVariablesZone");
-#pragma DATA_SECTION(RelayAry, "MyVariablesZone");
+//#pragma DATA_SECTION(FreqAry, "MyVariablesZone");
+//#pragma DATA_SECTION(RelayAry, "MyVariablesZone");
 
 #pragma DATA_SECTION(AdderLowAry, "MyVariablesZone");
 #pragma DATA_SECTION(AdderResAry, "MyVariablesZone");
@@ -814,6 +819,7 @@ void (*singleOrderFunc[])(void) = {EmptyDeal, InquireDeal, OperationDeal, Casing
 #pragma DATA_SECTION(modeDataSendLen, "MyVariablesZone");
 #pragma DATA_SECTION(_casingDetectErrFlag, "MyVariablesZone");
 #pragma DATA_SECTION(_casingOrOperaFlag, "MyVariablesZone");
+#pragma DATA_SECTION(_PAPSUpDataFlag, "MyVariablesZone");
 
 #pragma DATA_SECTION(x, "MyVariablesZone");
 #pragma DATA_SECTION(y, "MyVariablesZone");
@@ -822,3 +828,13 @@ void (*singleOrderFunc[])(void) = {EmptyDeal, InquireDeal, OperationDeal, Casing
 #pragma DATA_SECTION(c, "MyVariablesZone");
 
 #pragma DATA_SECTION(RelayCode, "MyVariablesZone");
+
+#pragma DATA_SECTION(TransmitFre_f, "MyVariablesZone");
+#pragma DATA_SECTION(TransmitFre, "MyVariablesZone");
+#pragma DATA_SECTION(RelayCtrlCode_f, "MyVariablesZone");
+#pragma DATA_SECTION(RelayCtrlCode, "MyVariablesZone");
+
+#pragma DATA_SECTION(ConfigTableEntry, "MyVariablesZone");
+#pragma DATA_SECTION(TuningTableEntry, "MyVariablesZone");
+
+#pragma DATA_SECTION(PAPSEntry, "MyVariablesZone");

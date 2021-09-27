@@ -5,14 +5,13 @@
  * @Company: HUST.AIA
  * @Date: 2021-09-14 19:40:19
  * @LastEditors: Yao Liu
- * @LastEditTime: 2021-09-14 22:14:35
+ * @LastEditTime: 2021-09-17 20:10:04
  */
 
 #ifndef _TABLESTRUCT_H_
 #define _TABLESTRUCT_H_
 
-typedef unsigned int    Uint16;
-
+#include "DSP281x_Device.h"
 
 /* 定义刻度参数表结构体 */
 // 表头
@@ -92,7 +91,7 @@ typedef struct
     // 参数
     Uint16 time_stamp[2]; 
     Uint16 auto_acq;
-    Uint16 auto_acq_Thd;
+    Uint16 auto_amp_Thd;
     Uint16 interval_case_det;
     Uint16 freq_offset_SThd;
     Uint16 log_mode;
@@ -109,9 +108,98 @@ typedef struct
 }ConfigTableEntry_t;
 
 // 定义刻度模式参数表
-
+typedef struct
+{
+    Uint16 length;      // length = table_len+2, addr is 0x8002
+    TableHead_t table_head;
+    // 刻度参数
+    Uint16 mode;
+    Uint16 relay_code; 
+    Uint16 center_freq;
+    Uint16 scan_delta_freq;
+    Uint16 noise_acq_time;
+    Uint16 noise_acq_freq;
+    Uint16 period;
+    Uint16 width_90pulse;
+    Uint16 angle_90pulse;
+    Uint16 echo_acq_period_num;
+    Uint16 echo_acq_freq_rate;
+    Uint16 echo_acq_window_shift;
+    Uint16 calib_TE;
+    Uint16 calib_NE;
+    Uint16 pulse_test_pulse_time;
+    Uint16 pulse_test_acq_freq;
+    // checksum
+    Uint16 checksum;
+}ScaleTableEntry_t;
 
 // 定义测井模式参数表
-
+typedef struct
+{
+    Uint16 length;      // length = table_len+2, addr is 0x8018
+    TableHead_t table_head;
+    // common parameters
+    Uint16 mode;
+    Uint16 center_freq;
+    Uint16 scan_delta_freq;
+    Uint16 noise_acq_time;
+    Uint16 noise_acq_freq;
+    Uint16 angle_180pulse;
+    Uint16 echo_acq_period_num;
+    Uint16 echo_acq_freq_rate;
+    Uint16 echo_acq_window_shift;
+    // STWTE
+    Uint16 STWTE_Period;
+    Uint16 STWTE_TE;
+    Uint16 STWTE_NE;
+    // PPMODE
+    Uint16 PPM_Period; 
+    Uint16 PPM_TW_1C;
+    Uint16 PPM_TE_1A;
+    Uint16 PPM_TE_1C;
+    Uint16 PPM_NE_1A;
+    Uint16 PPM_NE_1C;
+    Uint16 PPM_Nrept_1C;
+    // PPDIF
+    Uint16 PPDIF_Period;
+    Uint16 PPDIF_TW_1C;
+    Uint16 PPDIF_TW_1B;
+    Uint16 PPDIF_TE_1A1B;
+    Uint16 PPDIF_TE_1C;
+    Uint16 PPDIF_NE_1A1B;
+    Uint16 PPDIF_NE_1C;
+    Uint16 PPDIF_Nrept_1C;
+    // PPT1
+    Uint16 PPT1_Period;
+    Uint16 PPT1_TW_1C;
+    Uint16 PPT1_TW_Code;
+    Uint16 PPT1_TE_1A;
+    Uint16 PPT1_TE_1CDEFGH;
+    Uint16 PPT1_NE_1A;
+    Uint16 PPT1_NE_1C;
+    Uint16 PPT1_NE_1DEFGH;
+    Uint16 PPT1_Nrept_1C;
+    // PPOFTW
+    Uint16 PPOFTW_Period;
+    Uint16 PPOFTW_TW_1C;
+    Uint16 PPOFTW_TW_1D;
+    Uint16 PPOFTW_TW_1E;
+    Uint16 PPOFTW_TW_1F;
+    Uint16 PPOFTW_TW_1G;
+    Uint16 PPOFTW_TW_1H;
+    Uint16 PPOFTW_TE_1ADEFGH;
+    Uint16 PPOFTW_TE_1C;
+    Uint16 PPOFTW_Nrept_1C;
+    // PPShort
+    Uint16 PPShort_Period;
+    Uint16 PPShort_TW_1C;
+    Uint16 PPShort_TE_1A;
+    Uint16 PPShort_TE_1C;
+    Uint16 PPShort_NE_1A;
+    Uint16 PPShort_NE_1C;
+    Uint16 PPShort_Nrept_1C;
+    // checksum
+    Uint16 checksum;
+}WellTableEntry_t;
 
 #endif

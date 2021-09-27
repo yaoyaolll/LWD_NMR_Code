@@ -5,7 +5,7 @@
  * @Company: HUST.AIA
  * @Date: 2021-03-17 13:31:40
  * @LastEditors: Yao Liu
- * @LastEditTime: 2021-06-06 22:58:16
+ * @LastEditTime: 2021-09-23 16:11:20
  */
 /*----------------------------头文件---------------------------------------------*/
 #include "DSP281x_Device.h"	  // DSP281x Headerfile Include File
@@ -15,6 +15,10 @@
 //刻度主函数
 void ScaleHoleModeTop(void)
 {
+	// 此模式下的继电器码根据下发的频率计算得到
+	RelayCode = CalRelayFromFre(CenterFreq);
+
+    Uint16 QValue;
 	// 20201016屏蔽此处代码
 	/*if(ScaleModeFlag==SET)//主刻度
 	{
@@ -36,14 +40,17 @@ void ScaleHoleModeTop(void)
 	PulseF180StoreAddr = SCALETABLE_START + 2 * Ne + 22;
 	PulseL180StoreAddr = SCALETABLE_START + 2 * Ne + 23;
 
-    RelayOpen(RelayCtrlCode);
+    RelayOpen(RelayCode);
 
 	//StartS1msModule(25000);
-	MiniScan(FreqAry[1], ToMSNoiseAddr, ToMSSignalAddr); //mini扫频
+	MiniScan(CenterFreq, ToMSNoiseAddr, ToMSSignalAddr); //mini扫频
 
-	DCWorkOnce(1); //刻度
+	DCWorkOnce(CenterFreq); //刻度
 
-    RelayClose(RelayCtrlCode);
+    RelayClose(RelayCode);
+
+    // 计算Q值
+    QValue = CalQValue(CenterFreq, SCANTABLE_START + 8);
 
 	//存储
 	if (ScaleModeFlag == SET) //主刻度模式
@@ -53,10 +60,10 @@ void ScaleHoleModeTop(void)
 		*SaveNTempPt++ = 2 * Ne + 24;		// 长度
 		*SaveNTempPt++ = EVENT_BOARD_ID;	// 从机标识
 		*SaveNTempPt++ = 0x0009;			// 工作模式
-		*SaveNTempPt = FreqAry[1] * 10;		// 中心频率
+		*SaveNTempPt = CenterFreq * 10;		// 工作频率
 
 		SaveNTempPt = (int *)(SCALETABLE_START + 17);
-		*SaveNTempPt++ = 0;			   // Q值
+		*SaveNTempPt++ = QValue;			   // Q值
 		*SaveNTempPt++ = 0x294;		   // 参考幅值
 		*SaveNTempPt++ = Width90Pulse; // 90度脉冲宽度
 		SavePhaseWord();
@@ -80,10 +87,10 @@ void ScaleHoleModeTop(void)
 		*SaveNTempPt++ = 2 * Ne + 24;		// 长度
 		*SaveNTempPt++ = EVENT_BOARD_ID;	// 从机标识
 		*SaveNTempPt++ = 0x000A;			// 工作模式
-		*SaveNTempPt = FreqAry[1] * 10;		// 中心频率
+		*SaveNTempPt = CenterFreq * 10;		// 中心频率
 
 		SaveNTempPt = (int *)(HOLETABLE_START + 17);
-		*SaveNTempPt++ = 0;			   // Q值
+		*SaveNTempPt++ = QValue;			   // Q值
 		*SaveNTempPt++ = 0x294;		   // 参考幅值
 		*SaveNTempPt++ = Width90Pulse; // 90度脉冲宽度
 		SavePhaseWord();			   // 存储相位

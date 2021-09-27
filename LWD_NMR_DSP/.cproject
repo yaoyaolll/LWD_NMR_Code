@@ -70,7 +70,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="config.asm/DSP281x_CodeStartBranch.asm|cmd/F2812_EzDSP_FLASH_lnk_new.cmd|cmd/FLASH.cmd|config.asm/DSP281x_SectionCopy.asm|config.asm/DSP281x_usDelay.asm|config.asm/DSP281x_DBGIER.asm|config.asm/DSP281x_XintfBootReset.asm|config.asm/DSP281x_CSMPasswords.asm|source/DSP281x_usDelay.asm|si_lwd_nmr.si4project|source/DSP281x_SectionCopy.asm|source/DSP281x_CodeStartBranch.asm|source/DSP281x_DBGIER.asm|source/DSP281x_CSMPasswords.asm|source/DSP281x_XintfBootReset.asm|cmd/F2812_EzDSP_FLASH_lnk.cmd" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="cmd/F2812_EzDSP_RAM_lnk_new.cmd|config.asm/DSP281x_CodeStartBranch.asm|cmd/FLASH.cmd|config.asm/DSP281x_SectionCopy.asm|config.asm/DSP281x_usDelay.asm|config.asm/DSP281x_DBGIER.asm|config.asm/DSP281x_XintfBootReset.asm|config.asm/DSP281x_CSMPasswords.asm|source/DSP281x_usDelay.asm|si_lwd_nmr.si4project|source/DSP281x_SectionCopy.asm|source/DSP281x_CodeStartBranch.asm|source/DSP281x_DBGIER.asm|source/DSP281x_CSMPasswords.asm|source/DSP281x_XintfBootReset.asm|cmd/F2812_EzDSP_FLASH_lnk.cmd" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>

@@ -346,14 +346,14 @@ void SavePhaseWord(void)
 	}
 }
 
-void SaveSixFreq(void) //改为8个频率
-{
-	for (SaveCnt = 1; SaveCnt < BAND_NUM; SaveCnt++)
-	{
-		SaveNTempPt++;
-		*SaveNTempPt = FreqAry[SaveCnt];
-	}
-}
+//void SaveSixFreq(void) //改为8个频率
+//{
+//	for (SaveCnt = 1; SaveCnt < BAND_NUM; SaveCnt++)
+//	{
+//		SaveNTempPt++;
+//		*SaveNTempPt = FreqAry[SaveCnt];
+//	}
+//}
 
 void StoreMini(Uint16 FreqNum1, int *NoiseStoreAddr, Uint16 *SignalStoreAddr)
 {
@@ -419,7 +419,7 @@ void ChangePhase(void)
 	return;
 }
 
-void DCWorkOnce(Uint16 FreqCode)
+void DCWorkOnce(Uint16 Freq)
 {
 	//Select Scale Channel
 	CTRL_CHOICE = 0x1;				//控制通路选择
@@ -430,7 +430,7 @@ void DCWorkOnce(Uint16 FreqCode)
 	SCALE_RST_EN = USER_ENABLE; // 复位ScaleState状态机
 	SCALE_RST_DIS = USER_DISABLE;
 
-	DCWorkFreq = FreqAry[FreqCode];
+	DCWorkFreq = Freq;
 	LoadBriDumpPara();
 	*(Uint16 *)DDS_FREQ_ADDR = DCWorkFreq;
 	LoadDDSPara();
