@@ -35,17 +35,17 @@ void DeCpmgTop(void) //单TE单TW主函数
 	*SaveNTempPt++ = 2 * Ne + 26;			  // 长度
 	*SaveNTempPt++ = EVENT_BOARD_ID;		  // 从机标识
 	*SaveNTempPt++ = 0x0001;				  // 工作模式
-	*SaveNTempPt = TransmitFre * 10;			  // 工作频率
+	*SaveNTempPt = TransmitFre;			  // 工作频率
 
 	SaveNTempPt = (int *)(DECPMGTABLE_START + 17);
-	*SaveNTempPt++ = 0;			   // Q值
+	*SaveNTempPt++ = CalQValue(TransmitFre, DECPMGTABLE_START + 8);			   // Q值
 	*SaveNTempPt++ = 0x294;		   // 参考幅值
 	*SaveNTempPt++ = Width90Pulse; // 90度脉冲宽度
 	SavePhaseWord();			   // 存储发射脉冲相位
 
 	SaveNTempPt = (int *)(DECPMGTABLE_START + 2 * Ne + 24);
-	*SaveNTempPt++ = getCenterFreq();  // 中心频率
-	*SaveNTempPt = getCenterFreqAmp(); // 中心频率幅值
+	*SaveNTempPt++ = (Uint16)b;  // 拟合出来的中心频率
+	*SaveNTempPt = (Uint16)CublicSplineInterpolation(x, y, b); // 中心频率幅值
 
 	Uint16 CheckSum = 0;
 	SaveNTempPt = (int *)(DECPMGTABLE_START);

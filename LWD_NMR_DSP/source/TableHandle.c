@@ -81,7 +81,6 @@ void CheckReadTable(void)
 			CenterFreq = 4750;
 			*CheckTablePt = 4750;
 		}
-		CenterFreq /= 10;
 
 		CheckTablePt = (Uint16 *)0x800A;
 		ScanDeltaFreq = *CheckTablePt;
@@ -90,7 +89,6 @@ void CheckReadTable(void)
 			ScanDeltaFreq = 50;
 			*CheckTablePt = 50;
 		}
-		ScanDeltaFreq /= 10;
 
 		CheckTablePt = (Uint16 *)0x800B;
 		NoiseAcqTime = *CheckTablePt;
@@ -207,7 +205,6 @@ void CheckReadTable(void)
 			CenterFreq = 4850;
 			*CheckTablePt = 4850;
 		}
-		CenterFreq /= 10;
 
 		CheckTablePt = (Uint16 *)0x801F;
 		ScanDeltaFreq = *CheckTablePt;
@@ -216,7 +213,6 @@ void CheckReadTable(void)
 			ScanDeltaFreq = 50;
 			*CheckTablePt = 50;
 		}
-		ScanDeltaFreq /= 10;
 
 		CheckTablePt = (Uint16 *)0x8020;
 		NoiseAcqTime = *CheckTablePt;
@@ -747,9 +743,11 @@ void RecDownTableCommand(Uint16 DownDataBuf)
 				*(Uint16 *)0x8001 = *(Uint16 *)0x8007;
 			else if (*(Uint16 *)0x8000 == 0x0003)
 				*(Uint16 *)0x8001 = *(Uint16 *)0x801D;
+
+			// 当校验成功时返回校验和
+			ReplyLastCheckFrame(REPLY_DOWN_TABLE_F, CheckSum); // 返回校验和
 		}
 
-		ReplyLastCheckFrame(REPLY_DOWN_TABLE_F, CheckSum); // 返回校验和
 
 		//下载标志位清除
 		DownTableFlag = CLEAR;

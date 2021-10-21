@@ -65,7 +65,7 @@ void ScanModeTop(void)
 	*SaveNTempPt++ = SCAN_MODE_DATA_FRAME_LEN; // 长度
 	*SaveNTempPt++ = EVENT_BOARD_ID;		   // 从机标识
 	*SaveNTempPt++ = 0x0008;				   // 工作模式
-	*SaveNTempPt = CenterFreq * 10;			   // 工作频率，下发和上传的中心频率单位是0.1kHz
+	*SaveNTempPt = CenterFreq;			   // 工作频率，下发和上传的中心频率单位是0.1kHz
 
 	SaveNTempPt = (int *)(SCANTABLE_START + 41);
 	*SaveNTempPt++ = CalQValue(CenterFreq, SCANTABLE_START + 32);		// Q值

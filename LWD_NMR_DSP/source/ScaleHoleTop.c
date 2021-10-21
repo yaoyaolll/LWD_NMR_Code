@@ -60,7 +60,7 @@ void ScaleHoleModeTop(void)
 		*SaveNTempPt++ = 2 * Ne + 24;		// 长度
 		*SaveNTempPt++ = EVENT_BOARD_ID;	// 从机标识
 		*SaveNTempPt++ = 0x0009;			// 工作模式
-		*SaveNTempPt = CenterFreq * 10;		// 工作频率
+		*SaveNTempPt = CenterFreq;  		// 工作频率
 
 		SaveNTempPt = (int *)(SCALETABLE_START + 17);
 		*SaveNTempPt++ = QValue;			   // Q值
@@ -87,7 +87,7 @@ void ScaleHoleModeTop(void)
 		*SaveNTempPt++ = 2 * Ne + 24;		// 长度
 		*SaveNTempPt++ = EVENT_BOARD_ID;	// 从机标识
 		*SaveNTempPt++ = 0x000A;			// 工作模式
-		*SaveNTempPt = CenterFreq * 10;		// 中心频率
+		*SaveNTempPt = CenterFreq;  		// 中心频率
 
 		SaveNTempPt = (int *)(HOLETABLE_START + 17);
 		*SaveNTempPt++ = QValue;			   // Q值

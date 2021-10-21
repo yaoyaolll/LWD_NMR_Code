@@ -66,20 +66,27 @@ void RstPulseModule(void)
 
 void LoadDDSPara(void)
 {
-	DDSFreq		= *(Uint16 *)DDS_FREQ_ADDR;
-	DDSFreq		*=(Uint32)SiglAcqFreqTim*4;
-	DDSMid1		= DDSFreq<<15;             //1Khz对应频率字的整数部分
-	DDSMid2		= DDSFreq<<13;
-	DDSMid3		= DDSFreq<<10;
-	DDSMid4		= DDSFreq<<9;
-	DDSMid5		= DDSFreq<<8;
-	DDSRefItg	= 197.0;          
-	DDSRefDcm	= 0.67296;         //1Khz对应频率字的小数部分
-	DDSMid6		= (Uint32)(DDSFreq*DDSRefItg);
-	DDSMid7		= (Uint32)(DDSFreq*DDSRefDcm);
-	DDSCfgWords	= DDSMid1+DDSMid2+DDSMid3+DDSMid4+DDSMid5+DDSMid6+DDSMid7; 
-	DDSCfgHi	= DDSCfgWords/65536; 
-	DDSCfgLow	= DDSCfgWords%65536;
+//	DDSFreq		= *(Uint16 *)DDS_FREQ_ADDR;
+//	DDSFreq		*=(Uint32)SiglAcqFreqTim*4;
+//	DDSMid1		= DDSFreq<<15;             //1Khz对应频率字的整数部分
+//	DDSMid2		= DDSFreq<<13;
+//	DDSMid3		= DDSFreq<<10;
+//	DDSMid4		= DDSFreq<<9;
+//	DDSMid5		= DDSFreq<<8;
+//	DDSRefItg	= 197.0;
+//	DDSRefDcm	= 0.67296;         //1Khz对应频率字的小数部分
+//	DDSMid6		= (Uint32)(DDSFreq*DDSRefItg);
+//	DDSMid7		= (Uint32)(DDSFreq*DDSRefDcm);
+//	DDSCfgWords	= DDSMid1+DDSMid2+DDSMid3+DDSMid4+DDSMid5+DDSMid6+DDSMid7;
+//	DDSCfgHi	= DDSCfgWords/65536;
+//	DDSCfgLow	= DDSCfgWords%65536;
+
+    Uint16 DDSData = *(Uint16 *)DDS_FREQ_ADDR;
+    float DDSFreq = DDSData * 3200.0;    // 0.1kHz 变换为 Hz，32倍频
+    #define DDS_COE 42.94967296f
+    Uint32 DDSCfgWord = (Uint32)(DDSFreq * DDS_COE);
+    DDSCfgLow = DDSCfgWord & 0xFFFF;
+    DDSCfgHi = (DDSCfgWord >> 16) & 0xFFFF;
 
    	DDS_DATACHOICE_DIS	= USER_DISABLE;
 	DDS_CONFDATA		= DDSCfgLow;   //装载dds频率字低位  	    

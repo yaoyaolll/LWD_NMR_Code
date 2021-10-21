@@ -149,7 +149,7 @@ void AcqFinStateCtl(void)
 	// 模式数据上传
 	if (_modeDataSendFlag == SET)
 	{
-	    // TODO: 频率优选和套管检测之后的判断在主控板做，事件板仅仅采集数据
+//	    TODO: 频率优选和套管检测之后的判断在主控板做，事件板仅仅采集数据
 //		if (_casingOrOperaFlag == SET)		    // CASING_DETECT模式
 //		{
 //			ReplyModeDataFrame(SCANTABLE_START, modeDataSendLen);

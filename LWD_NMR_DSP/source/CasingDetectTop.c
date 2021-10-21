@@ -69,7 +69,7 @@ void CasingDetectTop()
 	*SaveNTempPt++ = CASING_DATA_LEN;   // 长度
 	*SaveNTempPt++ = EVENT_BOARD_ID;    // 从机标识
 	*SaveNTempPt++ = 0x0008;		    // 工作模式存储为主扫频模式
-	*SaveNTempPt = CenterFreq * 10;	    // 工作频率，下发和上传的中心频率单位是0.1kHz
+	*SaveNTempPt = CenterFreq;	    // 工作频率，下发和上传的中心频率单位是0.1kHz
 
 	SaveNTempPt = (int *)(CASING_TABLE_START + 29);
 	*SaveNTempPt++ = Q_value;			// Q值
@@ -90,7 +90,7 @@ void CasingDetectTop()
 	modeDataSendLen = CASING_DATA_LEN + 1;
 }
 
-// 启动测井模式之前需要通过扫频来判断仪器是否处于套管中
+// 启动测井模式之前需要通过扫频来判断仪器是否处于套管中，暂未使用
 int CasingDetectOnce()
 {
 	// 五次Mini扫频

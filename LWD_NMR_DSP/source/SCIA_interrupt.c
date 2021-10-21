@@ -108,14 +108,23 @@ void ReplyUpTableFrame(Uint16 tableID)
 	Uint16 len = 0;
 	Uint16 CheckSum = 0;
 	int i = 0;
-	if (tableID == 2) 		// 刻度模式参数表
+	if (tableID == 1)           // 刻度参数表
+	{
+	    addr = (Uint16 *)0x8057;
+	}
+	else if (tableID == 2) 		    // 刻度模式参数表
 	{
 		addr = (Uint16 *)0x8002;
 	}
-	else if (tableID == 3) 	// 测井模式参数表
+	else if (tableID == 3) 	    // 测井模式参数表
 	{
 		addr = (Uint16 *)0x8018;
 	}
+	else                        // 防止误发
+	{
+	    return;
+	}
+
 	len = *addr;
 
 	GpioDataRegs.GPFDAT.bit.GPIOF11 = 1; 	// SCIA设置为发送状态

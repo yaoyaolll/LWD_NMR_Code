@@ -20,10 +20,22 @@
 // } 
 
 // 由频率计算出继电器码值
+// TODO: 确定TransmitFre的单位
 Uint16 CalRelayFromFre(Uint16 TransmitFre)
 {
+    float frequency = TransmitFre / 10.0;
+    Float2Uint16_u rca0;
+    Float2Uint16_u rca1;
+    Float2Uint16_u rca2;
+    rca0.data[0] = TuningTableEntry->rca0[0];
+    rca0.data[1] = TuningTableEntry->rca0[1];
+    rca1.data[0] = TuningTableEntry->rca1[0];
+    rca1.data[1] = TuningTableEntry->rca1[1];
+    rca2.data[0] = TuningTableEntry->rca2[0];
+    rca2.data[1] = TuningTableEntry->rca2[1];
 	// 二次项拟合公式，根据刻度参数表下发参数来计算
-	RelayCtrlCode_f = TuningTableEntry->rca0 + TuningTableEntry->rca1*TransmitFre + TuningTableEntry->rca2*TransmitFre*TransmitFre;
+//    TransmitFre = TransmitFre / 10;
+    RelayCtrlCode_f = rca0.real_data + rca1.real_data*frequency + rca2.real_data*frequency*frequency;
 	// 目前只使用了8个继电器，需要时再扩增
 	// 限幅到0~255
 	if (RelayCtrlCode_f < 0)
@@ -37,12 +49,13 @@ Uint16 CalRelayFromFre(Uint16 TransmitFre)
 // 计算发射频率和继电器控制字，更新PAPS值
 void ParamUpdate()
 {
+    // 根据主控板发来的温度计算发射频率和继电器码
 	TransmitFre_f = f_T_k * ParamOrderData.data.Temperature + f_T_b;
 	// 频率限幅
-	if (TransmitFre_f < 440)
-	    TransmitFre = 440;
-	else if (TransmitFre_f > 580)
-	    TransmitFre = 580;
+	if (TransmitFre_f < 4400)   // 0.1kHz
+	    TransmitFre = 4400;
+	else if (TransmitFre_f > 5800)
+	    TransmitFre = 5800;
 	else
 	    TransmitFre = (Uint16)TransmitFre_f;
 

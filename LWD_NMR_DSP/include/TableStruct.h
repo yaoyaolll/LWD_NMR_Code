@@ -28,6 +28,12 @@ typedef struct
     Uint16 tool_ID[5];
 }InstuctmentInfo_t;
 
+typedef union
+{
+    Uint16 data[2];
+    float real_data;
+}Float2Uint16_u;
+
 typedef struct
 {
     Uint16 length;      // length = table_len+2, addr is 0x8057
@@ -36,9 +42,15 @@ typedef struct
     // 调谐刻度参数
     Uint16 relay_time[2];
     Uint16 probe_temp;
-    float rca0;
-    float rca1;
-    float rca2;
+    Uint16 rca0[2];
+    Uint16 rca1[2];
+    Uint16 rca2[2];
+    //float rca0;
+    //float rca1;
+    //float rca2;
+//    Float2Uint16_u rca0;
+//    Float2Uint16_u rca1;
+//    Float2Uint16_u rca2;
     Uint16 noise_amp;
     Uint16 noise_std;
     Uint16 noise_max_amp;

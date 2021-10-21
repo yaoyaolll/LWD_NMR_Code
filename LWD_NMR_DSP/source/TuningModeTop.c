@@ -68,10 +68,10 @@ void TuningModeTop(void)
 	//存储数据
 	SaveNTempPt = (int *)SCANTABLE_START;
 	*SaveNTempPt++ = REPLY_MODE_DATA_F;		   // 数据头部
-	*SaveNTempPt++ = TUNING_MODE_DATA_LEN; // 长度
+	*SaveNTempPt++ = TUNING_MODE_DATA_LEN;      // 长度
 	*SaveNTempPt++ = EVENT_BOARD_ID;		   // 从机标识
 	*SaveNTempPt++ = 0x0007;				   // 工作模式
-	*SaveNTempPt = CenterFreq * 10;			   // 工作频率，下发和上传的中心频率单位是0.1kHz
+	*SaveNTempPt = CenterFreq;			   // 工作频率，下发和上传的中心频率单位是0.1kHz
 
 	SaveNTempPt = (int *)(SCANTABLE_START + 41);
 	*SaveNTempPt++ = CalQValue(CenterFreq, SCANTABLE_START + 32);		// Q值

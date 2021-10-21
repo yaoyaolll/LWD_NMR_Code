@@ -236,6 +236,19 @@ void InitTable(void)
 	*TableTempPt++ = 0;		// CheckSum
 
 	// 刻度参数表
+
+    // 此表中实际上只需要拟合系数
+	Float2Uint16_u rca;
+	rca.real_data = 2604.9;
+    TuningTableEntry->rca0[0] = rca.data[0];
+    TuningTableEntry->rca0[1] = rca.data[1];
+    rca.real_data = -8.9288;
+    TuningTableEntry->rca1[0] = rca.data[0];
+    TuningTableEntry->rca1[1] = rca.data[1];
+    rca.real_data = 0.0074;
+    TuningTableEntry->rca2[0] = rca.data[0];
+    TuningTableEntry->rca2[1] = rca.data[1];
+
 	TuningTableEntry->length = 71;
 	TuningTableEntry->table_head.table_ID = 1;
 	TuningTableEntry->table_head.table_len = 69;
@@ -246,10 +259,7 @@ void InitTable(void)
 	TuningTableEntry->instruct_info.tool_ID[2] = 0x352D;	// "5-"
 	TuningTableEntry->instruct_info.tool_ID[3] = 0x3231;	// "21"
 	TuningTableEntry->instruct_info.tool_ID[4] = 0x3031;	// "01"
-	// 此表中实际上只需要拟合系数
-	TuningTableEntry->rca0 = 120.64f;
-	TuningTableEntry->rca1 = -1.2677f;
-	TuningTableEntry->rca2 = 0.0017;
+
 
 	// 配置参数表
 	// TODO: 目前还没有需要使用的参数

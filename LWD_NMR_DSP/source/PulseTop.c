@@ -23,7 +23,7 @@ void PulseTop(void) //波形检测主函数
 	// 此模式下的继电器码根据下发的频率计算得到
 	RelayCode = CalRelayFromFre(CenterFreq);
 
-	MatFreq = CenterFreq;		// 此处必须对MatFreq赋值
+	MatFreq = CenterFreq;		// 此处必须对MatFreq赋值，0.1kHz
 	PhaseFlag = POSITIVE;
 
     RelayOpen(RelayCode);
@@ -43,7 +43,7 @@ void PulseTop(void) //波形检测主函数
 	*SaveNTempPt++ = PulseCalNum + 20;	// 长度
 	*SaveNTempPt++ = EVENT_BOARD_ID;	// 从机标识
 	*SaveNTempPt++ = 0x000B;			// 工作模式
-	*SaveNTempPt = CenterFreq * 10;		// 中心频率
+	*SaveNTempPt = CenterFreq;  		// 中心频率
 
 	SaveNTempPt = (int *)PLUSETABLE_START + 17;
 	*SaveNTempPt++ = CalQValue(CenterFreq, SCANTABLE_START + 8);			// Q值
@@ -123,7 +123,7 @@ void PulseAcq(void)
 //发射信号波形采集检测激励存储函数
 void PulseSave(void) // 发射信号波形采集检测激励存储函数
 {
-	PulseGain = MatFreq - 500; //计算增益补偿参数gn，当前激励信号频率对应一个gn即gn = sfrq – gainstart，由gn查增益数组plusegain[gn]得到当前激励信号的衰减倍数，用于反推激励幅值
+	PulseGain = MatFreq/10 - 500; //计算增益补偿参数gn，当前激励信号频率对应一个gn即gn = sfrq – gainstart，由gn查增益数组plusegain[gn]得到当前激励信号的衰减倍数，用于反推激励幅值
 	if (PulseGain < 0)
 	{
 		PulseGain = 0;

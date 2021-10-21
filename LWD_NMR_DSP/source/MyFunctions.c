@@ -419,7 +419,7 @@ void ChangePhase(void)
 	return;
 }
 
-void DCWorkOnce(Uint16 Freq)
+void DCWorkOnce(Uint16 Freq)    // Freq，单位为0.1kHz
 {
 	//Select Scale Channel
 	CTRL_CHOICE = 0x1;				//控制通路选择
@@ -430,9 +430,9 @@ void DCWorkOnce(Uint16 Freq)
 	SCALE_RST_EN = USER_ENABLE; // 复位ScaleState状态机
 	SCALE_RST_DIS = USER_DISABLE;
 
-	DCWorkFreq = Freq;
+	DCWorkFreq = Freq / 10;     // 转换为kHz
 	LoadBriDumpPara();
-	*(Uint16 *)DDS_FREQ_ADDR = DCWorkFreq;
+	*(Uint16 *)DDS_FREQ_ADDR = Freq;
 	LoadDDSPara();
 
 	SIGNAL_PERIODNUM = SiglAcqFreqTim; //装载信号采样率SIGNAL_PERIODNUM，DSP向FPGA发送信号采样率SIGNAL_ACQFREQ

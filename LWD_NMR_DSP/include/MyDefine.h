@@ -15,20 +15,21 @@
 #define Q_FACTOR		0.775925	
 
 //Address macro definations
+// TODO
 #define TABLE_START			0x8000    //参数表0x8000+78
-#define WORK_MODE_ADDR		0x8001
-#define FREQ_STR_ADDR		0x8002
-#define FREQ_SEL_WORDS_ADDR	0x800A
-#define WIDTH_STR_ADDR		0x800C
-#define STEP_FREQ_ADDR		0x8015
-#define SIGNAL_ACQ_PERIOD_NUM_ADDR		0x8016
-#define SIGNAL_ACQ_FREQ_TIMES_ADDR		0x8017
-#define NOISE_ACQ_TIME_ADDR	0x8018
-#define NOISE_ACQ_FREQ_ADDR	0x8019
-#define MAT_PARA_STR_ADDR	0x801C
-#define SCALE_TE_ADDR		0x801F
+//#define WORK_MODE_ADDR		0x8001
+//#define FREQ_STR_ADDR		0x8002
+//#define FREQ_SEL_WORDS_ADDR	0x800A
+//#define WIDTH_STR_ADDR		0x800C
+//#define STEP_FREQ_ADDR		0x8015
+//#define SIGNAL_ACQ_PERIOD_NUM_ADDR		0x8016
+//#define SIGNAL_ACQ_FREQ_TIMES_ADDR		0x8017
+//#define NOISE_ACQ_TIME_ADDR	0x8018
+//#define NOISE_ACQ_FREQ_ADDR	0x8019
+//#define MAT_PARA_STR_ADDR	0x801C
+//#define SCALE_TE_ADDR		0x801F
 
-#define DDS_FREQ_ADDR		0x8062 //gai
+#define DDS_FREQ_ADDR		0x80B9 //gai
 
 #define SCANTABLE_START			0x120000		//扫频上传数据表首地址
 #define SCALETABLE_START		0x120000		//刻度数据表首地址
@@ -139,6 +140,7 @@
 #define  NRAM_RST_DIS		*(Uint16 *) 0x8001E 
 #define  NRAM_RD_EN			*(Uint16 *) 0x8001F          //noise_ram读使能（高有效）
 #define  NRAM_RD_DIS		*(Uint16 *) 0x80020
+
 /*
 #define  NRAM_RST_EN  *(Uint16 *) 0x2000         //noise_ram读复位（上升沿高有效）
 #define  NRAM_RST_DIS *(Uint16 *) 0x2001
