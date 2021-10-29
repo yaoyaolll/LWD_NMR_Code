@@ -743,11 +743,10 @@ void RecDownTableCommand(Uint16 DownDataBuf)
 				*(Uint16 *)0x8001 = *(Uint16 *)0x8007;
 			else if (*(Uint16 *)0x8000 == 0x0003)
 				*(Uint16 *)0x8001 = *(Uint16 *)0x801D;
-
-			// 当校验成功时返回校验和
-			ReplyLastCheckFrame(REPLY_DOWN_TABLE_F, CheckSum); // 返回校验和
 		}
 
+        // 当校验成功时返回校验和
+        ReplyLastCheckFrame(REPLY_DOWN_TABLE_F, CheckSum); // 返回校验和
 
 		//下载标志位清除
 		DownTableFlag = CLEAR;
@@ -790,7 +789,7 @@ void RecUpTableCommand(Uint16 DownDataBuf)
 	else if (RecSendTableCnt == 4 && RecSendTableFlag == SET)
 	{
 		Uint16 CheckSum = 0;
-		CheckSum += 0x1428;
+		CheckSum += DATA_UP_TABLE_F;
 		CheckSum += RecSendTableCmdParaLen;
 		CheckSum += EVENT_BOARD_ID;
 		CheckSum += SendTableID;
@@ -844,9 +843,9 @@ void RecParameterCommand(Uint16 DownDataBuf)
         if (ParamOrderData.data.checkSum == checkSum)
         {
             ParamUpdate();
+            // 回复帧
+            ReplyLastCheckFrame(REPLY_Parameter_F, checkSum);
         }
-        // 回复帧
-        ReplyLastCheckFrame(REPLY_Parameter_F, checkSum);
 
         RecParamOrderFlag = CLEAR;
         RecParameterCnt = 0;
@@ -867,6 +866,11 @@ void RecSingleOrderCommand(Uint16 DownDataBuf)
 	{
 	    SingleOrderData.len = DownDataBuf;
 		RecSingleOrderCnt = 2;
+		if (DownDataBuf != 3)
+		{
+		    RecSingleOrderCnt = 0;
+		    RecSingleOrderFlag = CLEAR;
+		}
 	}
 	else if (RecSingleOrderCnt == 2 && RecSingleOrderFlag == SET)
 	{
@@ -884,7 +888,7 @@ void RecSingleOrderCommand(Uint16 DownDataBuf)
 		SingleOrderAryChoice = SingleOrderData.frameHead & 0x000F;
 
 		// 接收到来自主控的数据延迟到此时处理
-		if (SingleOrderAryChoice <= 0xB) // 防止SingleOrderAryChoice越界
+		if (SingleOrderAryChoice <= 0xA) // 防止SingleOrderAryChoice越界
 		{
 			(*(singleOrderFunc[SingleOrderAryChoice]))(); // 单帧数据处理函数
 			SingleOrderAryChoice = 0;
@@ -893,4 +897,88 @@ void RecSingleOrderCommand(Uint16 DownDataBuf)
 		RecSingleOrderCnt = 0;
 		RecSingleOrderFlag = CLEAR;
 	}
+}
+
+Uint16 RecK1K2CtrlCnt = 0;
+Uint16 K1K2CtrlOrder = 0;
+// 接收储能短节K1K2控制指令
+void RecK1K2CtrlCommand(Uint16 DownDataBuf)
+{
+    if (DownDataBuf == DATA_K1K2_EN_F && RecK1K2CtrlFlag == CLEAR)
+    {
+        RecK1K2CtrlFlag = SET;
+        RecK1K2CtrlCnt = 1;
+    }
+    else if (RecK1K2CtrlCnt == 1 && RecK1K2CtrlFlag == SET)
+    {
+        RecK1K2CtrlCnt = 2;
+        if (DownDataBuf != 4)       // order length
+        {
+            RecK1K2CtrlFlag = CLEAR;
+            RecK1K2CtrlCnt = 0;
+        }
+    }
+    else if (RecK1K2CtrlCnt == 2 && RecK1K2CtrlFlag == SET)
+    {
+        if (EVENT_BOARD_ID != DownDataBuf)
+        {
+            RecK1K2CtrlFlag = CLEAR;
+        }
+        RecK1K2CtrlCnt = 3;
+    }
+    else if (RecK1K2CtrlCnt == 3 && RecK1K2CtrlFlag == SET)
+    {
+        K1K2CtrlOrder = DownDataBuf; // 保存需要上传的参数表的ID
+        RecK1K2CtrlCnt = 4;
+    }
+    else if (RecK1K2CtrlCnt == 4 && RecK1K2CtrlFlag == SET)
+    {
+        Uint16 CheckSum = 0;
+        CheckSum += DATA_K1K2_EN_F;
+        CheckSum += 4;
+        CheckSum += EVENT_BOARD_ID;
+        CheckSum += K1K2CtrlOrder;
+
+        /*
+         * K1K2: high level means close
+         *       low level means open
+         * FPGA code:
+                 *-----k1------*
+                 'h00A0:
+                            k1 <= 1;
+                 'h00A1:
+                            k1 <= 0;
+
+                 *-----k2------*
+                 'h00A2:
+                            k2 <= 1;
+                 'h00A3:
+                            k2 <= 0;
+         */
+        if (CheckSum == DownDataBuf)
+        {
+            // K2为高字节，K1为低字节
+            if (K1K2CtrlOrder == 0x0001)            // 打开K1，闭合K2
+            {
+                K1_DIS = USER_ENABLE;       // K1打开（输出低）
+                K2_EN  = USER_ENABLE;       // K2闭合（输出高）
+                HVState = HV_OFF;           // 表明高压未启用
+            }
+            else if (K1K2CtrlOrder == 0x0101)       // K1 K2均打开
+            {
+                K1_DIS = USER_ENABLE;       // K1打开（输出低）
+                K2_DIS = USER_ENABLE;       // K2打开（输出低）
+                HVState = HV_OFF;           // 表明高压未启用
+            }
+            else if (K1K2CtrlOrder == 0)            // K1 K2均闭合
+            {
+                K1_EN = USER_DISABLE;      // K1闭合（输出高）
+                K2_EN = USER_DISABLE;      // K2闭合
+                HVState = HV_ON;            // 表明开通状态
+            }
+            ReplyNoVarFrame(DATA_K1K2_EN_F);
+        }
+
+        RecK1K2CtrlFlag = CLEAR;
+    }
 }

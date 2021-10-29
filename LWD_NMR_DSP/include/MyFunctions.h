@@ -77,6 +77,7 @@ void RecDownTableCommand(Uint16);
 void RecUpTableCommand(Uint16 DownDataBuf);
 void RecParameterCommand(Uint16 DownDataBuf);
 void RecSingleOrderCommand(Uint16);
+void RecK1K2CtrlCommand(Uint16 DownDataBuf);
 interrupt void XINT2_DCStorData(void);
 void CheckWorkMode(void);
 void CheckReadTable(void);

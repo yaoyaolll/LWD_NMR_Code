@@ -81,6 +81,8 @@ void ScanModeTop(void)
 	}
 	*SaveNTempPt = CheckSum;
 
+	PAPSEntry.last_well_mode = 0x0008;
+
 	modeDataSendLen = SCAN_MODE_DATA_FRAME_LEN + 1;
 
 	//上传数据

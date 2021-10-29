@@ -3,13 +3,19 @@
 #include "DSP281x_Examples.h" // DSP281x Examples Include File
 #include "MyHeaderFiles.h"
 
+#pragma CODE_SECTION(DeCpmgTop, "secureRamFuncs");
+
 void DeCpmgTop(void) //单TE单TW主函数
 {
-    DCMn = 1;
+    // test
+    STWTE_NE = 5;
+    STWTE_TE = 10;
+    TransmitFre = 4750;
+
 
 	Ne = STWTE_NE;
-	ScaleM = DCm;
-	ScaleMn = DCMn;
+	ScaleM = 0;
+	ScaleMn = 1;
 
 	RelayOpen(RelayCtrlCode);
 
@@ -21,13 +27,13 @@ void DeCpmgTop(void) //单TE单TW主函数
 	PulseF180StoreAddr = DECPMGTABLE_START + 2 * Ne + 22; //计算首个180°脉冲的幅值地址pluse180addr1
 	PulseL180StoreAddr = DECPMGTABLE_START + 2 * Ne + 23; //计算末个180°脉冲的幅值地址pluse180addr2
 	EchoStorAddr = DECPMGTABLE_START + 21;				  //计算回波数据的首地址echostoraddr
-	InverseTurnFlag = SET;								  // -90脉冲
+//	InverseTurnFlag = SET;								  // -90脉冲
 
 	DCWorkOnce(TransmitFre); //工作一次
 
 	RelayClose(RelayCtrlCode);
 
-	StartS1msModule(10000); //延时10000+ms 并不是1ms为单位，而是200us
+//	StartS1msModule(10000); //延时10000+ms 并不是1ms为单位，而是200us
 
 	//模式数据存储
 	SaveNTempPt = (int *)(DECPMGTABLE_START); //数据存储指针指向单TETW表首地址
@@ -119,3 +125,6 @@ interrupt void XINT2_DCStorData(void)
 /*-----------------------------------------------------------------------------------------*/
 /*---------------------------------END-----------------------------------------------------*/
 /*-----------------------------------------------------------------------------------------*/
+
+
+

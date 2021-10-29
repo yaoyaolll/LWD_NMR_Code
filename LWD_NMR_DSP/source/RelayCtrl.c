@@ -65,18 +65,20 @@ void ParamUpdate()
 	PAPSEntry.STKLEV = ParamOrderData.data.PAPS_STKLEV;
 }
 
+
+/* 继电器为常开开关 */
 // 产生使继电器闭合的正脉冲，脉冲宽度为970us
 void RelayOpen(Uint16 relay_code)
 {
-	RELAY_ON = relay_code;	// 继电器闭合
-	Delay(120);
-	RELAY_ON = 0;
+    RELAY_CLOSE = relay_code;   // 继电器断开
+    Delay(120);
+    RELAY_CLOSE = 0;
 }
 
 // 产生使继电器断开的正脉冲，，脉冲宽度为970us
 void RelayClose(Uint16 relay_code)
 {
-	RELAY_CLOSE = relay_code;	// 继电器断开
-	Delay(120);
-	RELAY_CLOSE = 0;
+    RELAY_ON = relay_code;  // 继电器闭合
+    Delay(120);
+    RELAY_ON = 0;
 }

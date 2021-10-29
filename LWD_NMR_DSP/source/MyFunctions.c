@@ -277,7 +277,7 @@ void SaveSignal(Uint32 AddrStr)
 // 第二个参数为噪声地址，第三个参数为扫频数据存储地址
 void MiniScan(Uint16 MiniFreq, Uint32 NoiseStorAddr, Uint32 SiglStorAddr)
 {
-	//Acuire noise data once
+	//Acquire noise data once
 	NTimeDec = (Calib_TE * 50 - 90) * FPGA_COUNT;
 	STimeDec = (Calib_TE * 50 - 90) * FPGA_COUNT;
 	AcqNoise();
@@ -441,7 +441,7 @@ void DCWorkOnce(Uint16 Freq)    // Freq，单位为0.1kHz
 	//90度激励时间计数值
 	Pulse90Width = Width90Pulse * FPGA_COUNT; // Width90Pulse在CheckTable()中获取值
 	//180度激励时间计数值
-	PulseMid1 = Width90Pulse * 1.0;
+	PulseMid1 = Angle180Pulse * 1.0;
 	PulseMid2 = PulseMid1 / 180;
 	PulseMid3 = PulseMid2 * Pulse90Width;
 	Pulse180WidthHalf = (Uint32)PulseMid3;
@@ -466,8 +466,8 @@ void DCWorkOnce(Uint16 Freq)    // Freq，单位为0.1kHz
 	TelCmp = ((TelN * 200000 / DCWorkFreq + 1) / 2) * 2;
 
 	Cmp90 = Pulse90Width + MainDumpTime + SOFT_DUMP_TIME + SCALE_REPAIR1 + TNTime;
-	Cmp180FHalf = Pulse180WidthHalf + MainDumpTime + SOFT_DUMP_TIME + EchoAcqTimeFHalf + SWITCH_REPAIR - SftWinWidth * FPGA_COUNT;
-	Cmp180BHalf = Pulse180WidthHalf + EchoAcqTimeBHalf + SCALE_REPAIR2 + SftWinWidth * FPGA_COUNT;
+	Cmp180FHalf = Pulse180WidthHalf + MainDumpTime + SOFT_DUMP_TIME + EchoAcqTimeFHalf + SWITCH_REPAIR - EchoAcqWindowShift * FPGA_COUNT;
+	Cmp180BHalf = Pulse180WidthHalf + EchoAcqTimeBHalf + SCALE_REPAIR2 + EchoAcqWindowShift * FPGA_COUNT;
 	CmpTesHalf = TesCmp >> 1;
 	CmpTelHalf = TelCmp >> 1; //长TE下的隔离板的打开与隔离时间
 	//时间计算检查
@@ -571,7 +571,7 @@ void DCWorkOnce(Uint16 Freq)    // Freq，单位为0.1kHz
 	SdAcqNum2 = (Uint16)(((SD_SACQ_T2 - SD_SACQ_T1 + Pulse90Width) * DDSFreq) / 100000);
 	SdAcqNum3 = (Uint16)(((SD_SACQ_T2 - SD_SACQ_T1 + Pulse180Width) * DDSFreq) / 100000);
 
-	SdAcqTimeMid1 = (float)(CmpTesHalf + SftWinWidth * FPGA_COUNT + Pulse180WidthHalf + SCALE_REPAIR2 - EchoAcqTimeFHalf - SWITCH_REPAIR);
+	SdAcqTimeMid1 = (float)(CmpTesHalf + EchoAcqWindowShift * FPGA_COUNT + Pulse180WidthHalf + SCALE_REPAIR2 - EchoAcqTimeFHalf - SWITCH_REPAIR);
 	SdAcqTimeMid2 = SdAcqTimeMid1 - SD_SACQ_T1;
 	SdAcqTimeMid3 = SdAcqTimeMid1 - SD_SACQ_T1 + EchoAcqTime;
 	SdAcqNum4 = (Uint32)((SdAcqTimeMid2 * DDSFreq) / 100000);
@@ -581,7 +581,7 @@ void DCWorkOnce(Uint16 Freq)    // Freq，单位为0.1kHz
 	SdAcqNum5Hi = SdAcqNum5 / 65536;
 	SdAcqNum5Low = SdAcqNum5 % 65536;
 
-	SdAcqTimeMid1 = (float)(CmpTelHalf + SftWinWidth * FPGA_COUNT + Pulse180WidthHalf + SCALE_REPAIR2 - EchoAcqTimeFHalf - SWITCH_REPAIR);
+	SdAcqTimeMid1 = (float)(CmpTelHalf + EchoAcqWindowShift * FPGA_COUNT + Pulse180WidthHalf + SCALE_REPAIR2 - EchoAcqTimeFHalf - SWITCH_REPAIR);
 	SdAcqTimeMid2 = SdAcqTimeMid1 - SD_SACQ_T1;
 	SdAcqTimeMid3 = SdAcqTimeMid1 - SD_SACQ_T1 + EchoAcqTime;
 	SdAcqNum6 = (Uint32)((SdAcqTimeMid2 * DDSFreq) / 100000);
@@ -817,7 +817,7 @@ void DCWorkOnce(Uint16 Freq)    // Freq，单位为0.1kHz
 
 	InverseTurnFlag = CLEAR;
 	INV_TURN_DIS = USER_DISABLE;
-	/*		
+	/*
 	if (DumpSustainFlag==SET)
 	{
 		DUMP_SUSTAIN_DIS= USER_DISABLE;
@@ -826,3 +826,6 @@ void DCWorkOnce(Uint16 Freq)    // Freq，单位为0.1kHz
 */
 	return;
 }
+
+
+

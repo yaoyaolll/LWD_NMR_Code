@@ -130,7 +130,7 @@ void ModeConfirmDeal()
     }
 }
 
-// SingleOrderAryChoice = 6，储能短节连接指令
+// SingleOrderAryChoice = 6，储能短节连接指令，暂时未用
 void K1K2EnDeal()
 {
     if (CheckSumCal())
@@ -142,7 +142,7 @@ void K1K2EnDeal()
     }
 }
 
-// SingleOrderAryChoice = 7，储能短节断开指令
+// SingleOrderAryChoice = 7，储能短节断开指令，暂时未用
 void K1K2DisDeal()
 {
     if (CheckSumCal())

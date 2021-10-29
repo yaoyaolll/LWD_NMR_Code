@@ -903,6 +903,9 @@ void InitVariables(void)
 	INV_TURN_DIS = USER_DISABLE;
 	DumpSustainFlag = CLEAR;
 	InverseTurnFlag = CLEAR;
+
+	PAPSEntry.STKLEV  = 0;
+
 	return;
 }
 

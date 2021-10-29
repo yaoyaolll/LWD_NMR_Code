@@ -12,6 +12,8 @@
 #include "DSP281x_Examples.h" // DSP281x Examples Include File
 #include "MyHeaderFiles.h"
 
+#pragma CODE_SECTION(ScaleHoleModeTop, "secureRamFuncs");
+
 //刻度主函数
 void ScaleHoleModeTop(void)
 {
@@ -49,6 +51,7 @@ void ScaleHoleModeTop(void)
 
     RelayClose(RelayCode);
 
+
     // 计算Q值
     QValue = CalQValue(CenterFreq, SCANTABLE_START + 8);
 
@@ -78,6 +81,8 @@ void ScaleHoleModeTop(void)
 		}
 		*SaveNTempPt = CheckSum;
 
+		PAPSEntry.last_well_mode = 0x0009;
+
 		//SciaSendDataNWords(SCALETABLE_START, 2*Ne+24);    //上传刻度结果
 	}
 	else // 孔隙度刻度与校验模式
@@ -104,6 +109,8 @@ void ScaleHoleModeTop(void)
 			SaveNTempPt++;
 		}
 		*SaveNTempPt = CheckSum;
+
+		PAPSEntry.last_well_mode = 0x000A;
 
 		//SciaSendDataNWords(HOLETABLE_START, 2*Ne+24);    //上传刻度结果
 	}

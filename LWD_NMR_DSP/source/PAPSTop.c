@@ -73,7 +73,7 @@ void StorgePAPSToFIFO(PAPSEntry_t* PAPSEntryPt)
     Uint16 FIFO_element_size = 2 * (PAPSEntryPt->echo_1A_num + PAPSEntryPt->echo_1C_num);
     // 基地址
     Uint16* fifo_base_pt = (Uint16*)(PAPS_FIFO_ADDR + FIFO_element_size*(PAPSEntryPt->PAPSFIFO_end & PAPS_FIFO_MASK));
-    if (PAPSEntryPt->PAPSFIFO_end - PAPSEntryPt->PAPSFIFO_start >= PAPSEntryPt->STKLEV)    
+    if (PAPSEntryPt->PAPSFIFO_end - PAPSEntryPt->PAPSFIFO_start >= PAPSEntryPt->STKLEV && PAPSEntryPt->STKLEV != 0)
     {
         PAPSEntryPt->PAPSFIFO_start++;
     }
@@ -127,7 +127,7 @@ void PAPSTop(void)
     *(PAPS_data_frame_pt + 7) = PAPSEntry.echo_1C_num;		// 1C回波点数
 
     // 回波数据滑动平均计算
-    if (PAPSDataGenerate(&PAPSEntry))
+    if (PAPSEntry.current_well_mode <= 6 && PAPSDataGenerate(&PAPSEntry))
     {
         *(PAPS_data_frame_pt + 1) = 2*(PAPSEntry.echo_1A_num + PAPSEntry.echo_1C_num) + 8;	// 帧长度
         *(PAPS_data_frame_pt + 4) = 1;		// 数据有效位
@@ -143,7 +143,7 @@ void PAPSTop(void)
     // CheckSum
     Uint16 check_sum = 0;
     int i;
-    for (i=0;i<*(PAPS_data_frame_pt + 1);++i)
+    for (i=0;i<*(Uint16*)(PAPSTABLE_START + 1);++i)          // PAPSTABLE_START + 1存储着发送字数
     {
         check_sum += *PAPS_data_frame_pt++;
     }

@@ -60,6 +60,8 @@ void PulseTop(void) //波形检测主函数
 	}
 	*SaveNTempPt = CheckSum;
 
+	PAPSEntry.last_well_mode = 0x000B;
+
 	modeDataSendLen = PulseCalNum + 21;
 
 	//上传数据

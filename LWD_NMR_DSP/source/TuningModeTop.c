@@ -87,6 +87,8 @@ void TuningModeTop(void)
 	}
 	*SaveNTempPt = CheckSum;
 
+	PAPSEntry.last_well_mode = 0x0007;
+
 	modeDataSendLen = TUNING_MODE_DATA_LEN + 1;
 
 	//上传数据

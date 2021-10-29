@@ -1,5 +1,5 @@
 *****************************************************************
-Pin Report - Date: Fri Jun 04 09:35:09 2021 UNCOMPLETED LAYOUT
+Pin Report - Date: Sat Oct 23 19:22:22 2021 Pinchecksum: NOT-AVAILABLE
 Product: Designer
 Release: v11.9 SP6
 Version: 11.9.6.7
@@ -99,7 +99,7 @@ Number |Port           |Function       |State       |I/O Std  |Output Drive (mA)
 87                      IO133RSB2       Unassigned
 88                      VCC             Reserved
 89                      VCCIB2          Reserved
-90      syn_md_tmp      IO128RSB2       Assigned     LVTTL     12                 High  None           No    35                No           No
+90                      IO128RSB2       Unassigned
 91                      IO126RSB2       Unassigned
 92                      IO124RSB2       Unassigned
 93                      IO122RSB2       Unassigned
@@ -184,7 +184,7 @@ Number |Port           |Function       |State       |I/O Std  |Output Drive (mA)
 172     Q2Q7            IO54RSB0        Fixed        LVCMOS33  12                 High  None           No    35                Yes          No
 173                     IO51RSB0        Unassigned
 174     k1              IO48RSB0        Fixed        LVCMOS33  12                 High  None           No    35                No           No
-175                     IO45RSB0        Unassigned
+175     syn_md_tmp      IO45RSB0        Assigned     LVTTL     12                 High  None           No    35                No           No
 176     Q4Q5            IO42RSB0        Fixed        LVCMOS33  12                 High  None           No    35                No           No
 177                     IO40RSB0        Unassigned
 178                     GND             Reserved

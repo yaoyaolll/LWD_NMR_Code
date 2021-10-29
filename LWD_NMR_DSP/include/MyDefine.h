@@ -1,4 +1,4 @@
-//#define DEBUG       // 用来控制RAM和FALSH版本程序
+#define DEBUG       // 用来控制RAM和FALSH版本程序
 
 // 参数表相关宏
 #define CAL_TABLE_LEN 	 	20  	// 刻度模式参数表长度
@@ -171,8 +171,8 @@
 #define  STATE1MS_CHOICE	*(Uint16 *) 0x80037         //1ms状态机参数选择
 #define  STATE1MS_DATA		*(Uint16 *) 0x80038        //1ms状态机参数
 
-#define  RELAY_ON   		*(Uint16 *) 0x80040         // 开启继电器，写入低十位[9:0]来控制继电器端口高低电平输出     
-#define  RELAY_CLOSE        *(Uint16 *) 0x80041         // 关闭继电器，写入低十位[9:0]来控制继电器端口高低电平输出
+#define  RELAY_ON   		*((Uint16 *)0x80040)         // 开启继电器，写入低十位[9:0]来控制继电器端口高低电平输出
+#define  RELAY_CLOSE        *((Uint16 *)0x80041)        // 关闭继电器，写入低十位[9:0]来控制继电器端口高低电平输出
 
 #define  CTRL_CHOICE		*(Uint16 *) 0x80060          //控制通路选择（为0扫频，噪声，为1刻度）
 
@@ -281,8 +281,8 @@
 #define DATA_CASING_F       0x9993  // 套管检测指令
 #define DATA_UP_MODE_F      0x9994  // 模式数据上传指令
 #define DATA_MODE_CONFIRM_F 0x9995  // 模式数据确认指令
-#define DATA_K1K2_EN_F      0x9996  // 储能短节连接指令
-#define DATA_K1K2_DIS_F     0x9997  // 储能短节断开指令
+#define DATA_K1K2_EN_F      0x9996  // 储能短节K1K2控制指令
+#define DATA_K1K2_DIS_F     0x9997  // 储能短节断开指令（暂时未用）
 #define DATA_HVState_F      0x9998  // 储能短节状态判断指令
 #define DATA_SysCheck_F     0x9999  // 系统自检测指令
 #define DATA_PAPS_F         0x999A  // PAPS数据上传指令
@@ -299,8 +299,8 @@
 #define REPLY_PAPS_F        0x9988  // PAPS数据上传指令回复
 
 // 频率温度转换公式 f = -0.2516 * T + 568.0064
-#define f_T_k -0.2516f          // 公式斜率
-#define f_T_b 568.0064f         // 公式截距
+#define f_T_k -2.516f          // 公式斜率
+#define f_T_b 5680.064f         // 公式截距
 
 //// 继电器对应的频率转换公式，10个继电器则有十位，从0到1023，对应440kHz-580kHz
 //#define RELAY_f_k -7.31f        // 公式斜率

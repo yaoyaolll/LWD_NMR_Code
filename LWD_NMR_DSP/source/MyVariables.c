@@ -221,7 +221,7 @@ _iq3 NoiseOfsIQ3;
 _iq3 NoiseSquSumIQ3; //偏差平方和,即方差
 _iq3 NoiseSquAveIQ3; //方差均值
 					 //Used by DDS configuration
-Uint32 DDSFreq;		 //dds需要配置的频率
+float DDSFreq;		 //dds需要配置的频率
 Uint16 CalDivData;
 Uint32 DDSMid1;
 Uint32 DDSMid2;
@@ -299,7 +299,6 @@ Uint16 PulseReadBuf;
 
 Uint16 DEMn;
 Uint16 WidthCnt;
-Uint16 SftWinWidth; //采集窗时间滑动寄存器
 Uint16 DCFreqSel;
 Uint16 DCPulseWidth;
 Uint16 DCTes;
@@ -454,6 +453,10 @@ Uint16 IsParamUpdateFlag;   // 重要参数更新标志位
 
 void (*singleOrderFunc[])(void) = {EmptyDeal, InquireDeal, OperationDeal, CasingDeal, DataUpDeal, ModeConfirmDeal, K1K2EnDeal, K1K2DisDeal, HVStateDeal, SysCheckDeal, PAPSDataUpDeal};
 
+Uint16 RecK1K2CtrlFlag = CLEAR;
+
+#pragma DATA_SECTION(RecK1K2CtrlFlag, "MyVariablesZone");
+
 #pragma DATA_SECTION(ParamOrderData, "MyVariablesZone");
 #pragma DATA_SECTION(RecParamOrderFlag, "MyVariablesZone");
 #pragma DATA_SECTION(IsParamUpdateFlag, "MyVariablesZone");
@@ -592,7 +595,6 @@ void (*singleOrderFunc[])(void) = {EmptyDeal, InquireDeal, OperationDeal, Casing
 #pragma DATA_SECTION(SingleModeFlag, "MyVariablesZone");
 #pragma DATA_SECTION(DEMn, "MyVariablesZone");
 #pragma DATA_SECTION(WidthCnt, "MyVariablesZone");
-#pragma DATA_SECTION(SftWinWidth, "MyVariablesZone");
 #pragma DATA_SECTION(DCFreqSel, "MyVariablesZone");
 #pragma DATA_SECTION(DCPulseWidth, "MyVariablesZone");
 #pragma DATA_SECTION(DCTes, "MyVariablesZone");

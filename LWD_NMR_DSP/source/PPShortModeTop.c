@@ -61,7 +61,7 @@ void PPShortModeTop(void)
 		DCWorkOnce(TransmitFre);
 	}
 
-	InverseTurnFlag = SET; // -90¶ÈÂö³å
+//	InverseTurnFlag = SET; // -90¶ÈÂö³å
 
 	RelayClose(RelayCtrlCode);
 

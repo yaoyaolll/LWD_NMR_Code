@@ -241,7 +241,7 @@ extern _iq3 NoiseOfsIQ3;
 extern _iq3 NoiseSquSumIQ3; 
 extern _iq3 NoiseSquAveIQ3;  
 
-extern Uint32 DDSFreq;
+extern float DDSFreq;
 extern Uint16 CalDivData;
 
 extern Uint32 DDSMid1;
@@ -320,7 +320,6 @@ extern Uint16 PulseReadBuf;
 extern Uint16 SingleModeFlag;
 extern Uint16 DEMn;
 extern Uint16 WidthCnt;
-extern Uint16 SftWinWidth;  //采集窗时间滑动寄存器;
 extern Uint16 DCFreqSel;
 extern Uint16 DCPulseWidth;
 extern Uint16 DCTes;
@@ -490,5 +489,7 @@ extern Uint16 SingleOrderAryChoice;    // 单个变量函数选择
 extern Uint16 RecParamOrderFlag;   // 接收重要参数指令标志位
 extern ParameterOrder_u ParamOrderData; // 存储重要参数指令
 extern Uint16 IsParamUpdateFlag;   // 重要参数更新标志位
+
+extern Uint16 RecK1K2CtrlFlag;
 
 #endif

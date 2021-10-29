@@ -23,6 +23,7 @@ int main()
 	while (1)
 	{
 	    // ×´Ì¬»úÖ´ÐÐº¯Êý
-		(*(eventFunc[EventBoardState]))();
+		//(*(eventFunc[EventBoardState]))();
+	    DeCpmgTop();
 	}
 }

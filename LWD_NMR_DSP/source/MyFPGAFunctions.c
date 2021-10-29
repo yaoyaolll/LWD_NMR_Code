@@ -82,19 +82,20 @@ void LoadDDSPara(void)
 //	DDSCfgLow	= DDSCfgWords%65536;
 
     Uint16 DDSData = *(Uint16 *)DDS_FREQ_ADDR;
-    float DDSFreq = DDSData * 3200.0;    // 0.1kHz 变换为 Hz，32倍频
+    DDSFreq = DDSData / 10 * SiglAcqFreqTim * 4;            // 这里有点别扭，DDSFreq还要供外部变量使用
+    float _DDSFreq = DDSData * SiglAcqFreqTim * 400.0;    // 0.1kHz 变换为 Hz，32倍频，__DDSFreq临时使用
     #define DDS_COE 42.94967296f
-    Uint32 DDSCfgWord = (Uint32)(DDSFreq * DDS_COE);
+    Uint32 DDSCfgWord = (Uint32)(_DDSFreq * DDS_COE);
     DDSCfgLow = DDSCfgWord & 0xFFFF;
     DDSCfgHi = (DDSCfgWord >> 16) & 0xFFFF;
 
    	DDS_DATACHOICE_DIS	= USER_DISABLE;
-	DDS_CONFDATA		= DDSCfgLow;   //装载dds频率字低位  	    
+	DDS_CONFDATA		= DDSCfgLow;   //装载dds频率字低位
 	DDS_DATALOAD_EN		= USER_ENABLE;
 	DDS_DATALOAD_DIS	= USER_DISABLE;
 
 	DDS_DATACHOICE_EN	= USER_ENABLE;
-	DDS_CONFDATA		= DDSCfgHi;   //装载dds频率字高位   	 
+	DDS_CONFDATA		= DDSCfgHi;   //装载dds频率字高位
 	DDS_DATALOAD_EN		= USER_ENABLE;
 	DDS_DATALOAD_DIS	= USER_DISABLE;
 	return;
