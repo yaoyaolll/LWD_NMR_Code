@@ -36,7 +36,7 @@ int PAPSDataGenerate(PAPSEntry_t* PAPSEntryPt)
         {
             int index = j & PAPS_FIFO_MASK;
             Uint32 PAPS_index_addr = PAPS_FIFO_ADDR + index*FIFO_element_size + i;  // 数据点的地址
-            Uint16 PAPS_data = *((Uint16 *)PAPS_index_addr);
+            int PAPS_data = *((int *)PAPS_index_addr);
             // 滑动平均算法
             if (k==1 || k == PAPSEntryPt->STKLEV)    // 首或者尾
                 sum += PAPS_data;

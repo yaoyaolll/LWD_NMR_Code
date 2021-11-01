@@ -7,10 +7,10 @@
 
 void DeCpmgTop(void) //单TE单TW主函数
 {
-    // test
-    STWTE_NE = 5;
-    STWTE_TE = 10;
-    TransmitFre = 4750;
+    // test code
+//    STWTE_NE = 5;
+//    STWTE_TE = 10;
+//    TransmitFre = 4750;
 
 
 	Ne = STWTE_NE;
