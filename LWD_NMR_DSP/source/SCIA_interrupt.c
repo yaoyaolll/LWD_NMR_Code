@@ -242,7 +242,7 @@ interrupt void SCIRXINTA_ISR(void) // SCI-A接收中断函数
 
 		else if (RecK1K2CtrlFlag == SET || BufferSciaDataAll == DATA_K1K2_EN_F)
 		{
-		    RecK1K2CtrlCommand(BufferSciaDataAll);       // 20211027, K1K2 control cmd add a K1K2 member.
+		    RecK1K2CtrlCommand(BufferSciaDataAll);
 		}
 
 		else if (RecSingleOrderFlag == SET || (BufferSciaDataAll>=DATA_INQUIRE_F && BufferSciaDataAll<=DATA_PAPS_F))

@@ -973,7 +973,7 @@ void RecK1K2CtrlCommand(Uint16 DownDataBuf)
             else if (K1K2CtrlOrder == 0)            // K1 K2均闭合
             {
                 K1_EN = USER_DISABLE;      // K1闭合（输出高）
-                K2_EN = USER_DISABLE;      // K2闭合
+                K2_EN = USER_DISABLE;      // K2闭合（输出高）
                 HVState = HV_ON;            // 表明开通状态
             }
             ReplyNoVarFrame(DATA_K1K2_EN_F);

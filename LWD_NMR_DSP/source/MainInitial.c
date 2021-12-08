@@ -805,7 +805,10 @@ void InitSci(void)
 	SciaRegs.SCICTL1.bit.TXENA = 1; //SCIA模块的发送使能
 	SciaRegs.SCICTL1.bit.RXENA = 1; //SCIA模块的接收使能
 	SciaRegs.SCIHBAUD = 0x0;
-	SciaRegs.SCILBAUD = 32; //波特率为115200
+	SciaRegs.SCILBAUD = 32;
+	/*
+	 * SCILBAUD = 2, 1.25M; SCILBAUD = 32, 115200
+	*/
 	SciaRegs.SCICTL2.bit.RXBKINTENA = 1;
 	SciaRegs.SCICTL1.bit.SWRESET = 1;
 

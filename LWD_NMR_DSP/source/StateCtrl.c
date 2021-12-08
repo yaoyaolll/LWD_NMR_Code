@@ -168,8 +168,12 @@ void AcqFinStateCtl(void)
 	// PAPS数据上传
 	if (_PAPSUpDataFlag == SET)
 	{
+	    Uint16* PAPS_data_frame_pt = (Uint16*)(PAPSTABLE_START);
+	    Uint16 dataSendLen;
 		PAPSTop();
-		ReplyModeDataFrame(PAPSTABLE_START, modeDataSendLen);
+		// 从地址获取数据发送长度
+		dataSendLen = *(PAPS_data_frame_pt + 1) + 1;
+		ReplyModeDataFrame(PAPSTABLE_START, dataSendLen);
 		_PAPSUpDataFlag = CLEAR;
 	}
 }

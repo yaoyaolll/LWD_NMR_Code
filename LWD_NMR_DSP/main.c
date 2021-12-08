@@ -5,7 +5,7 @@
  * @Company: HUST.AIA
  * @Date: 2021-03-17 13:26:24
  * @LastEditors: Yao Liu
- * @LastEditTime: 2021-06-01 09:29:19
+ * @LastEditTime: 2021-11-02 20:22:21
  */
 
 /*----------------------------头文件---------------------------------------------*/
@@ -23,6 +23,7 @@ int main()
 	while (1)
 	{
 	    // 状态机执行函数
+//	    DeCpmgTop();
 		(*(eventFunc[EventBoardState]))();
 	}
 }

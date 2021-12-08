@@ -131,13 +131,13 @@ void PAPSTop(void)
     {
         *(PAPS_data_frame_pt + 1) = 2*(PAPSEntry.echo_1A_num + PAPSEntry.echo_1C_num) + 8;	// 帧长度
         *(PAPS_data_frame_pt + 4) = 1;		// 数据有效位
-        modeDataSendLen = *(PAPS_data_frame_pt + 1) + 1;
+//        modeDataSendLen = *(PAPS_data_frame_pt + 1) + 1;  直接从地址取发送长度
     }
     else
     {
         *(PAPS_data_frame_pt + 1) = 7;		// 帧长度
         *(PAPS_data_frame_pt + 4) = 0;		// 数据有效位
-        modeDataSendLen = 8;
+//        modeDataSendLen = 8;
     }
 
     // CheckSum

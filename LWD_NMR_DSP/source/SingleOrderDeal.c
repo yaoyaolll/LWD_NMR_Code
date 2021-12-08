@@ -142,6 +142,7 @@ void K1K2EnDeal()
     }
 }
 
+// TODO
 // SingleOrderAryChoice = 7，储能短节断开指令，暂时未用
 void K1K2DisDeal()
 {

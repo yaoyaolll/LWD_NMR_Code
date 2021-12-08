@@ -38,7 +38,7 @@ void CasingDetectTop()
     RelayOpen(RelayCtrlCode);
 	for (cnt = 0; cnt < 5; ++cnt)
 	{
-		MiniScan(CenterFreq, MINITABLE_START + 10 + 12 * cnt, MINITABLE_START + 1 + 12 * cnt);
+		MiniScan(TransmitFre, MINITABLE_START + 10 + 12 * cnt, MINITABLE_START + 1 + 12 * cnt);
 	}
 	RelayClose(RelayCtrlCode);
 	SaveNTempPt = (int *)(CASING_TABLE_START + 5);
@@ -50,7 +50,7 @@ void CasingDetectTop()
 	RelayOpen(RelayCtrlCode);
 	for (cnt = 0; cnt < 5; ++cnt)
 	{
-		MiniScan(CenterFreq, MINITABLE_START + 10 + 12 * cnt, MINITABLE_START + 1 + 12 * cnt);
+		MiniScan(TransmitFre, MINITABLE_START + 10 + 12 * cnt, MINITABLE_START + 1 + 12 * cnt);
 	}
 	RelayClose(RelayCtrlCode);
 	SaveNTempPt = (int *)(CASING_TABLE_START + 8);
@@ -59,7 +59,7 @@ void CasingDetectTop()
 	StoreMini(1, SaveNTempPt, SaveSTempPt);
 
 	// 计算Q值
-	Q_value = CalQValue(CenterFreq, CASING_TABLE_START + 20);
+	Q_value = CalQValue(TransmitFre, CASING_TABLE_START + 20);
 	// 计算中心频率和赋值
 	CalFreAndAmp(&center_fre, &center_fre_amp);
 
@@ -69,7 +69,7 @@ void CasingDetectTop()
 	*SaveNTempPt++ = CASING_DATA_LEN;   // 长度
 	*SaveNTempPt++ = EVENT_BOARD_ID;    // 从机标识
 	*SaveNTempPt++ = 0x0008;		    // 工作模式存储为主扫频模式
-	*SaveNTempPt = CenterFreq;	    // 工作频率，下发和上传的中心频率单位是0.1kHz
+	*SaveNTempPt = TransmitFre;	    // 工作频率，下发和上传的中心频率单位是0.1kHz
 
 	SaveNTempPt = (int *)(CASING_TABLE_START + 29);
 	*SaveNTempPt++ = Q_value;			// Q值
@@ -99,7 +99,7 @@ int CasingDetectOnce()
 	{
 	    // 继电器控制
 	    RelayOpen(RelayCtrlCode);
-		MiniScan(CenterFreq, MINITABLE_START+10+12*cnt, MINITABLE_START+1+12*cnt);
+		MiniScan(TransmitFre, MINITABLE_START+10+12*cnt, MINITABLE_START+1+12*cnt);
 		RelayClose(RelayCtrlCode);
 	}
 	// 暂时将测量结果存放在此处
@@ -109,7 +109,7 @@ int CasingDetectOnce()
 	StoreMini(1,SaveNTempPt,SaveSTempPt);
 
 	// 插值计算中心频率及其幅值
-	MiniFreq = CenterFreq;
+	MiniFreq = TransmitFre;
 	MiniFreq -= ScanDeltaFreq*4;
 	for (cnt=0;cnt<9;cnt++)
 	{

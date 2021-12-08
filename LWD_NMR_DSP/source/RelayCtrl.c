@@ -50,7 +50,8 @@ Uint16 CalRelayFromFre(Uint16 TransmitFre)
 void ParamUpdate()
 {
     // 根据主控板发来的温度计算发射频率和继电器码
-	TransmitFre_f = f_T_k * ParamOrderData.data.Temperature + f_T_b;
+    float temperature = ParamOrderData.data.Temperature / 10.0;
+	TransmitFre_f = f_T_k * temperature + f_T_b;
 	// 频率限幅
 	if (TransmitFre_f < 4400)   // 0.1kHz
 	    TransmitFre = 4400;
