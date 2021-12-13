@@ -13,17 +13,20 @@
 #include "DSP281x_Examples.h" // DSP281x Examples Include File
 #include "MyHeaderFiles.h"
 
+
 int main()
 {
 	DINT;
 	InitAll(); //初始化
 
 	CheckReadTable();
-
 	while (1)
 	{
 	    // 状态机执行函数
 //	    DeCpmgTop();
+//	    Delay(60000);
+//	    Delay(60000);
+//	    ScanModeTop();
 		(*(eventFunc[EventBoardState]))();
 	}
 }

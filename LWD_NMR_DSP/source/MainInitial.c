@@ -236,7 +236,6 @@ void InitTable(void)
 	*TableTempPt++ = 0;		// CheckSum
 
 	// 刻度参数表
-
     // 此表中实际上只需要拟合系数
 	Float2Uint16_u rca;
 	rca.real_data = 2604.9;

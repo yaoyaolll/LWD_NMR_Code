@@ -34,6 +34,7 @@
 Uint16 DownloadTableCnt = 0;
 Uint16 ParamTableLen = 0;
 Uint16 *tempSaveTablePt;
+extern Uint16 rec_complete_flag;
 
 void CheckWorkMode(void)
 {
@@ -670,6 +671,7 @@ void CheckReadTable(void)
 	return;
 }
 
+
 void RecDownTableCommand(Uint16 DownDataBuf)
 {
 	if (DownDataBuf == DATA_DOWN_TABLE_F && DownTableFlag == CLEAR) //表明为下载数据命令，DownDataBuf为帧头
@@ -743,13 +745,13 @@ void RecDownTableCommand(Uint16 DownDataBuf)
 				*(Uint16 *)0x8001 = *(Uint16 *)0x8007;
 			else if (*(Uint16 *)0x8000 == 0x0003)
 				*(Uint16 *)0x8001 = *(Uint16 *)0x801D;
+	        // 当校验成功时返回校验和
+	        ReplyLastCheckFrame(REPLY_DOWN_TABLE_F, CheckSum); // 返回校验和
 		}
-
-        // 当校验成功时返回校验和
-        ReplyLastCheckFrame(REPLY_DOWN_TABLE_F, CheckSum); // 返回校验和
 
 		//下载标志位清除
 		DownTableFlag = CLEAR;
+		rec_complete_flag = 1;
 	}
 	else if (DownTableFlag == SET)
 	{
@@ -798,6 +800,7 @@ void RecUpTableCommand(Uint16 DownDataBuf)
 			SendTableFlag = SET;
 
 		RecSendTableFlag = CLEAR;
+		rec_complete_flag = 1;
 	}
 }
 
@@ -848,6 +851,7 @@ void RecParameterCommand(Uint16 DownDataBuf)
         }
 
         RecParamOrderFlag = CLEAR;
+        rec_complete_flag = 1;
         RecParameterCnt = 0;
     }
 }
@@ -896,6 +900,7 @@ void RecSingleOrderCommand(Uint16 DownDataBuf)
 
 		RecSingleOrderCnt = 0;
 		RecSingleOrderFlag = CLEAR;
+		rec_complete_flag = 1;
 	}
 }
 
@@ -980,5 +985,6 @@ void RecK1K2CtrlCommand(Uint16 DownDataBuf)
         }
 
         RecK1K2CtrlFlag = CLEAR;
+        rec_complete_flag = 1;
     }
 }

@@ -21,12 +21,13 @@
 
 // 由频率计算出继电器码值
 // TODO: 确定TransmitFre的单位
+
 Uint16 CalRelayFromFre(Uint16 TransmitFre)
 {
-    float frequency = TransmitFre / 10.0;
     Float2Uint16_u rca0;
     Float2Uint16_u rca1;
     Float2Uint16_u rca2;
+    float frequency = TransmitFre / 10.0;
     rca0.data[0] = TuningTableEntry->rca0[0];
     rca0.data[1] = TuningTableEntry->rca0[1];
     rca1.data[0] = TuningTableEntry->rca1[0];

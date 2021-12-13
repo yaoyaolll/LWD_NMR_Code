@@ -205,21 +205,54 @@ void ReplySingleVarFrame(Uint16 frameHead, Uint16 var)
 	GpioDataRegs.GPFDAT.bit.GPIOF11 = 0; // SCIA设置为接收状态
 }
 
+
+//static Uint16 datda_rec[100];
+//static int index = 0;
+
+Uint16 rec_complete_flag = 1;   // 接收一帧数据完成
+Uint16 is_first_byte_ok;
 // RS485中断处理函数
 interrupt void SCIRXINTA_ISR(void) // SCI-A接收中断函数
 {
+    Uint16 sci_data;
+    sci_data = SciaRegs.SCIRXBUF.bit.RXDT;          // 从寄存器获取数据
+    if (rec_complete_flag)                          // 帧头
+    {
+        // 判断高字节是否符合要求，防止后续奇偶错位
+        if (sci_data == 0x99 || sci_data == 0x13 || sci_data == 0x14)
+        {
+            is_first_byte_ok = 1;
+            rec_complete_flag = 0;
+        }
+        else        // 丢弃此数据
+        {
+            is_first_byte_ok = 0;
+            goto clear_int;
+        }
+    }
+
 	if (SciaDataEven == 0)
 	{
 		SciaDataEven = 1;
-		BufferSciaDataH = SciaRegs.SCIRXBUF.bit.RXDT;
+		BufferSciaDataH = sci_data;
 		SciaRecFlag = 0;
+
+		// test code
+//		datda_rec[index++] = BufferSciaDataH;
+//		if (index >= 100)
+//		    index = 0;
 	}
-	else
+	else if (SciaDataEven == 1)
 	{
 		SciaDataEven = 0;
-		BufferSciaDataL = SciaRegs.SCIRXBUF.bit.RXDT;
+		BufferSciaDataL = sci_data;
 		BufferSciaDataAll = (BufferSciaDataH << 8) | BufferSciaDataL; // 读取主控板发送过来的16位数据
 		SciaRecFlag = 1;											  // 接收到16位数的标志
+
+        // test code
+//        datda_rec[index++] = BufferSciaDataL;
+//        if (index >= 100)
+//            index = 0;
 	}
 
 	// 接收到16位数据
@@ -251,6 +284,7 @@ interrupt void SCIRXINTA_ISR(void) // SCI-A接收中断函数
 		}
 	}
 
+clear_int:
 	PieCtrlRegs.PIEACK.all = PIEACK_GROUP9;
 
 	EINT;
