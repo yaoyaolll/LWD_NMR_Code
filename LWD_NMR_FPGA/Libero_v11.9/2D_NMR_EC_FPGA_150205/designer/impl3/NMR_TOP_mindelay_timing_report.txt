@@ -1,0 +1,2217 @@
+Timing Report Min Delay Analysis
+
+SmartTime Version v11.9 SP6
+Microsemi Corporation - Microsemi Libero Software Release v11.9 SP6 (Version 11.9.6.7)
+Date: Thu Dec 16 11:26:27 2021
+
+
+Design: NMR_TOP
+Family: ProASIC3
+Die: A3P1000
+Package: 208 PQFP
+Temperature Range: 0 - 70 C
+Voltage Range: 1.425 - 1.575 V
+Speed Grade: -2
+Design State: Post-Layout
+Data source: Silicon verified
+Min Operating Conditions: BEST - 1.575 V - 0 C
+Max Operating Conditions: WORST - 1.425 V - 70 C
+Using Enhanced Min Delay Analysis
+Scenario for Timing Analysis: Primary
+
+
+-----------------------------------------------------
+SUMMARY
+
+Clock Domain:               ClockManagement_0.clk_10k_0.clock_10khz
+Required Period (ns):       1000.000
+Required Frequency (MHz):   1.000
+External Hold (ns):         N/A
+Min Clock-To-Out (ns):      N/A
+
+Clock Domain:               ClockManagement_0.pllclk_0.GLA
+Required Period (ns):       9.091
+Required Frequency (MHz):   109.999
+External Hold (ns):         -1.342
+Min Clock-To-Out (ns):      1.496
+
+Clock Domain:               OCX40MHz
+Required Period (ns):       N/A
+Required Frequency (MHz):   N/A
+External Hold (ns):         N/A
+Min Clock-To-Out (ns):      3.007
+
+Clock Domain:               Signal_Noise_Acq_0.noise_acq_0.n_rdclk_syn_0.n_rdclk
+Required Period (ns):       50.000
+Required Frequency (MHz):   20.000
+External Hold (ns):         N/A
+Min Clock-To-Out (ns):      5.066
+
+Clock Domain:               Signal_Noise_Acq_0.noise_acq_0.noiseclk_0.clkout
+Required Period (ns):       50.000
+Required Frequency (MHz):   20.000
+External Hold (ns):         2.230
+Min Clock-To-Out (ns):      N/A
+
+Clock Domain:               ddsclkout
+Required Period (ns):       25.000
+Required Frequency (MHz):   40.000
+External Hold (ns):         N/A
+Min Clock-To-Out (ns):      2.884
+
+Clock Domain:               Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.clk_add
+Required Period (ns):       100.000
+Required Frequency (MHz):   10.000
+External Hold (ns):         -1.931
+Min Clock-To-Out (ns):      5.359
+
+Clock Domain:               Signal_Noise_Acq_0.signal_acq_0.s_clk_div4_0.clkout
+Required Period (ns):       50.000
+Required Frequency (MHz):   20.000
+External Hold (ns):         2.110
+Min Clock-To-Out (ns):      4.790
+
+                            Input to Output
+Min Delay (ns):             3.604
+
+END SUMMARY
+-----------------------------------------------------
+
+Clock Domain ClockManagement_0.clk_10k_0.clock_10khz
+
+SET Register to Register
+
+Path 1
+  From:                  DSTimer_0/dump_sustain_timer_0/count[2]:CLK
+  To:                    DSTimer_0/dump_sustain_timer_0/count[3]:D
+  Delay (ns):            0.860
+  Slack (ns):            0.538
+  Arrival (ns):          1.203
+  Required (ns):         0.665
+  Hold (ns):             0.000
+
+Path 2
+  From:                  DSTimer_0/dump_sustain_timer_0/count[1]:CLK
+  To:                    DSTimer_0/dump_sustain_timer_0/count[1]:D
+  Delay (ns):            0.602
+  Slack (ns):            0.602
+  Arrival (ns):          1.000
+  Required (ns):         0.398
+  Hold (ns):             0.000
+
+Path 3
+  From:                  DSTimer_0/dump_sustain_timer_0/count[0]:CLK
+  To:                    DSTimer_0/dump_sustain_timer_0/count[0]:D
+  Delay (ns):            0.645
+  Slack (ns):            0.645
+  Arrival (ns):          1.142
+  Required (ns):         0.497
+  Hold (ns):             0.000
+
+Path 4
+  From:                  DSTimer_0/dump_sustain_timer_0/count[2]:CLK
+  To:                    DSTimer_0/dump_sustain_timer_0/count[2]:D
+  Delay (ns):            0.661
+  Slack (ns):            0.661
+  Arrival (ns):          1.004
+  Required (ns):         0.343
+  Hold (ns):             0.000
+
+Path 5
+  From:                  DSTimer_0/dump_sustain_timer_0/count[0]:CLK
+  To:                    DSTimer_0/dump_sustain_timer_0/count[1]:D
+  Delay (ns):            0.684
+  Slack (ns):            0.682
+  Arrival (ns):          1.181
+  Required (ns):         0.499
+  Hold (ns):             0.000
+
+
+Expanded Path 1
+  From: DSTimer_0/dump_sustain_timer_0/count[2]:CLK
+  To: DSTimer_0/dump_sustain_timer_0/count[3]:D
+  data arrival time                              1.203
+  data required time                         -   0.665
+  slack                                          0.538
+  ________________________________________________________
+  Data arrival time calculation
+  0.000                        ClockManagement_0.clk_10k_0.clock_10khz
+               +     0.000          Clock source
+  0.000                        ClockManagement_0/clk_10k_0/clock_10khz:Q (r)
+               +     0.343          net: clock_10khz
+  0.343                        DSTimer_0/dump_sustain_timer_0/count[2]:CLK (r)
+               +     0.187          cell: ADLIB:DFN1
+  0.530                        DSTimer_0/dump_sustain_timer_0/count[2]:Q (r)
+               +     0.136          net: DSTimer_0/dump_sustain_timer_0/count[2]
+  0.666                        DSTimer_0/dump_sustain_timer_0/count_RNO_0[3]:A (r)
+               +     0.144          cell: ADLIB:NOR2B
+  0.810                        DSTimer_0/dump_sustain_timer_0/count_RNO_0[3]:Y (r)
+               +     0.114          net: DSTimer_0/dump_sustain_timer_0/count_7_0
+  0.924                        DSTimer_0/dump_sustain_timer_0/count_RNO[3]:A (r)
+               +     0.158          cell: ADLIB:XA1
+  1.082                        DSTimer_0/dump_sustain_timer_0/count_RNO[3]:Y (f)
+               +     0.121          net: DSTimer_0/dump_sustain_timer_0/count_n3
+  1.203                        DSTimer_0/dump_sustain_timer_0/count[3]:D (f)
+                                    
+  1.203                        data arrival time
+  ________________________________________________________
+  Data required time calculation
+  0.000                        ClockManagement_0.clk_10k_0.clock_10khz
+               +     0.000          Clock source
+  0.000                        ClockManagement_0/clk_10k_0/clock_10khz:Q (r)
+               +     0.665          net: clock_10khz
+  0.665                        DSTimer_0/dump_sustain_timer_0/count[3]:CLK (r)
+               +     0.000          Library hold time: ADLIB:DFN1
+  0.665                        DSTimer_0/dump_sustain_timer_0/count[3]:D
+                                    
+  0.665                        data required time
+
+
+END SET Register to Register
+
+----------------------------------------------------
+
+SET External Hold
+
+No Path
+
+END SET External Hold
+
+----------------------------------------------------
+
+SET Clock to Output
+
+No Path
+
+END SET Clock to Output
+
+----------------------------------------------------
+
+SET Register to Asynchronous
+
+No Path
+
+END SET Register to Asynchronous
+
+----------------------------------------------------
+
+SET External Removal
+
+No Path
+
+END SET External Removal
+
+----------------------------------------------------
+
+SET Asynchronous to Register
+
+No Path
+
+END SET Asynchronous to Register
+
+----------------------------------------------------
+
+Clock Domain ClockManagement_0.pllclk_0.GLA
+
+SET Register to Register
+
+Path 1
+  From:                  top_code_0/noisedata[2]:CLK
+  To:                    noisestate_0/acqtime[2]:D
+  Delay (ns):            0.325
+  Slack (ns):            0.289
+  Arrival (ns):          0.768
+  Required (ns):         0.479
+  Hold (ns):             0.000
+
+Path 2
+  From:                  top_code_0/noisedata[9]:CLK
+  To:                    noisestate_0/acqtime[9]:D
+  Delay (ns):            0.329
+  Slack (ns):            0.291
+  Arrival (ns):          0.782
+  Required (ns):         0.491
+  Hold (ns):             0.000
+
+Path 3
+  From:                  top_code_0/noisedata[12]:CLK
+  To:                    noisestate_0/acqtime[12]:D
+  Delay (ns):            0.329
+  Slack (ns):            0.291
+  Arrival (ns):          0.782
+  Required (ns):         0.491
+  Hold (ns):             0.000
+
+Path 4
+  From:                  top_code_0/noisedata[10]:CLK
+  To:                    noisestate_0/acqtime[10]:D
+  Delay (ns):            0.329
+  Slack (ns):            0.291
+  Arrival (ns):          0.782
+  Required (ns):         0.491
+  Hold (ns):             0.000
+
+Path 5
+  From:                  top_code_0/plusedata[6]:CLK
+  To:                    plusestate_0/DUMPTIME[6]:D
+  Delay (ns):            0.361
+  Slack (ns):            0.291
+  Arrival (ns):          0.752
+  Required (ns):         0.461
+  Hold (ns):             0.000
+
+
+Expanded Path 1
+  From: top_code_0/noisedata[2]:CLK
+  To: noisestate_0/acqtime[2]:D
+  data arrival time                              0.768
+  data required time                         -   0.479
+  slack                                          0.289
+  ________________________________________________________
+  Data arrival time calculation
+  0.000                        ClockManagement_0.pllclk_0.GLA
+               +     0.000          Clock source
+  0.000                        ClockManagement_0/pllclk_0/Core:GLA (r)
+               +     0.443          net: GLA
+  0.443                        top_code_0/noisedata[2]:CLK (r)
+               +     0.206          cell: ADLIB:DFN1E1
+  0.649                        top_code_0/noisedata[2]:Q (r)
+               +     0.119          net: top_code_0_noisedata[2]
+  0.768                        noisestate_0/acqtime[2]:D (r)
+                                    
+  0.768                        data arrival time
+  ________________________________________________________
+  Data required time calculation
+  0.000                        ClockManagement_0.pllclk_0.GLA
+               +     0.000          Clock source
+  0.000                        ClockManagement_0/pllclk_0/Core:GLA (r)
+               +     0.479          net: GLA
+  0.479                        noisestate_0/acqtime[2]:CLK (r)
+               +     0.000          Library hold time: ADLIB:DFN1E1
+  0.479                        noisestate_0/acqtime[2]:D
+                                    
+  0.479                        data required time
+
+
+END SET Register to Register
+
+----------------------------------------------------
+
+SET External Hold
+
+Path 1
+  From:                  xd[11]
+  To:                    top_code_0/pd_pluse_data[11]:D
+  Delay (ns):            1.801
+  Slack (ns):
+  Arrival (ns):          1.801
+  Required (ns):
+  Hold (ns):             0.000
+  External Hold (ns):    -1.342
+
+Path 2
+  From:                  tri_ctrl
+  To:                    top_code_0/dds_configdata[6]:D
+  Delay (ns):            2.027
+  Slack (ns):
+  Arrival (ns):          2.027
+  Required (ns):
+  Hold (ns):             0.000
+  External Hold (ns):    -1.544
+
+Path 3
+  From:                  tri_ctrl
+  To:                    top_code_0/pd_pluse_data[8]:D
+  Delay (ns):            2.048
+  Slack (ns):
+  Arrival (ns):          2.048
+  Required (ns):
+  Hold (ns):             0.000
+  External Hold (ns):    -1.549
+
+Path 4
+  From:                  xd[8]
+  To:                    top_code_0/pd_pluse_data[8]:D
+  Delay (ns):            2.087
+  Slack (ns):
+  Arrival (ns):          2.087
+  Required (ns):
+  Hold (ns):             0.000
+  External Hold (ns):    -1.588
+
+Path 5
+  From:                  tri_ctrl
+  To:                    top_code_0/pd_pluse_data[11]:D
+  Delay (ns):            2.056
+  Slack (ns):
+  Arrival (ns):          2.056
+  Required (ns):
+  Hold (ns):             0.000
+  External Hold (ns):    -1.597
+
+
+Expanded Path 1
+  From: xd[11]
+  To: top_code_0/pd_pluse_data[11]:D
+  data arrival time                              1.801
+  data required time                         -   N/C
+  slack                                          N/C
+  ________________________________________________________
+  Data arrival time calculation
+  0.000                        xd[11] (f)
+               +     0.000          net: xd[11]
+  0.000                        xd_pad[11]/U0/U0:PAD (f)
+               +     0.222          cell: ADLIB:IOPAD_BI
+  0.222                        xd_pad[11]/U0/U0:Y (f)
+               +     0.000          net: xd_pad[11]/U0/NET3
+  0.222                        xd_pad[11]/U0/U1:YIN (f)
+               +     0.014          cell: ADLIB:IOBI_IB_OB_EB
+  0.236                        xd_pad[11]/U0/U1:Y (f)
+               +     0.530          net: xd_in[11]
+  0.766                        GPMI_0/tri_state_0/dataout_1_3:A (f)
+               +     0.220          cell: ADLIB:NOR2A
+  0.986                        GPMI_0/tri_state_0/dataout_1_3:Y (f)
+               +     0.815          net: GPMI_0_dataout[11]
+  1.801                        top_code_0/pd_pluse_data[11]:D (f)
+                                    
+  1.801                        data arrival time
+  ________________________________________________________
+  Data required time calculation
+  N/C                          ClockManagement_0.pllclk_0.GLA
+               +     0.000          Clock source
+  N/C                          ClockManagement_0/pllclk_0/Core:GLA (r)
+               +     0.459          net: GLA
+  N/C                          top_code_0/pd_pluse_data[11]:CLK (r)
+               +     0.000          Library hold time: ADLIB:DFN1E1
+  N/C                          top_code_0/pd_pluse_data[11]:D
+
+
+END SET External Hold
+
+----------------------------------------------------
+
+SET Clock to Output
+
+Path 1
+  From:                  Q1Q8_pad/U0/U1:OCLK
+  To:                    Q1Q8
+  Delay (ns):            1.102
+  Slack (ns):
+  Arrival (ns):          1.496
+  Required (ns):
+  Clock to Out (ns):     1.496
+
+Path 2
+  From:                  Q2Q7_pad/U0/U1:OCLK
+  To:                    Q2Q7
+  Delay (ns):            1.102
+  Slack (ns):
+  Arrival (ns):          1.496
+  Required (ns):
+  Clock to Out (ns):     1.496
+
+Path 3
+  From:                  rt_sw_pad/U0/U1:OCLK
+  To:                    rt_sw
+  Delay (ns):            1.102
+  Slack (ns):
+  Arrival (ns):          1.496
+  Required (ns):
+  Clock to Out (ns):     1.496
+
+Path 4
+  From:                  soft_dump_pad/U0/U1:OCLK
+  To:                    soft_dump
+  Delay (ns):            1.102
+  Slack (ns):
+  Arrival (ns):          1.496
+  Required (ns):
+  Clock to Out (ns):     1.496
+
+Path 5
+  From:                  ddsdata_pad/U0/U1:OCLK
+  To:                    ddsdata
+  Delay (ns):            1.102
+  Slack (ns):
+  Arrival (ns):          1.504
+  Required (ns):
+  Clock to Out (ns):     1.504
+
+
+Expanded Path 1
+  From: Q1Q8_pad/U0/U1:OCLK
+  To: Q1Q8
+  data arrival time                              1.496
+  data required time                         -   N/C
+  slack                                          N/C
+  ________________________________________________________
+  Data arrival time calculation
+  0.000                        ClockManagement_0.pllclk_0.GLA
+               +     0.000          Clock source
+  0.000                        ClockManagement_0/pllclk_0/Core:GLA (r)
+               +     0.394          net: GLA
+  0.394                        Q1Q8_pad/U0/U1:OCLK (r)
+               +     0.279          cell: ADLIB:IOTRI_OR_EB
+  0.673                        Q1Q8_pad/U0/U1:DOUT (r)
+               +     0.000          net: Q1Q8_pad/U0/NET1
+  0.673                        Q1Q8_pad/U0/U0:D (r)
+               +     0.823          cell: ADLIB:IOPAD_TRI
+  1.496                        Q1Q8_pad/U0/U0:PAD (r)
+               +     0.000          net: Q1Q8
+  1.496                        Q1Q8 (r)
+                                    
+  1.496                        data arrival time
+  ________________________________________________________
+  Data required time calculation
+  N/C                          ClockManagement_0.pllclk_0.GLA
+               +     0.000          Clock source
+  N/C                          ClockManagement_0/pllclk_0/Core:GLA (r)
+                                    
+  N/C                          Q1Q8 (r)
+
+
+END SET Clock to Output
+
+----------------------------------------------------
+
+SET Register to Asynchronous
+
+Path 1
+  From:                  top_code_0/scale_rst_0_0:CLK
+  To:                    syn_md_module_1/syn_md_edge_detect_0/sig_r1:PRE
+  Delay (ns):            1.326
+  Slack (ns):            1.345
+  Arrival (ns):          1.730
+  Required (ns):         0.385
+  Removal (ns):          0.000
+  Skew (ns):             0.019
+
+Path 2
+  From:                  top_code_0/scale_rst_0_0:CLK
+  To:                    syn_md_module_1/syn_md_edge_detect_0/sig_r0:CLR
+  Delay (ns):            1.494
+  Slack (ns):            1.518
+  Arrival (ns):          1.898
+  Required (ns):         0.380
+  Removal (ns):          0.000
+  Skew (ns):             0.024
+
+
+Expanded Path 1
+  From: top_code_0/scale_rst_0_0:CLK
+  To: syn_md_module_1/syn_md_edge_detect_0/sig_r1:PRE
+  data arrival time                              1.730
+  data required time                         -   0.385
+  slack                                          1.345
+  ________________________________________________________
+  Data arrival time calculation
+  0.000                        ClockManagement_0.pllclk_0.GLA
+               +     0.000          Clock source
+  0.000                        ClockManagement_0/pllclk_0/Core:GLA (r)
+               +     0.404          net: GLA
+  0.404                        top_code_0/scale_rst_0_0:CLK (r)
+               +     0.206          cell: ADLIB:DFN1
+  0.610                        top_code_0/scale_rst_0_0:Q (r)
+               +     1.120          net: top_code_0_scale_rst_0
+  1.730                        syn_md_module_1/syn_md_edge_detect_0/sig_r1:PRE (r)
+                                    
+  1.730                        data arrival time
+  ________________________________________________________
+  Data required time calculation
+  0.000                        ClockManagement_0.pllclk_0.GLA
+               +     0.000          Clock source
+  0.000                        ClockManagement_0/pllclk_0/Core:GLA (r)
+               +     0.385          net: GLA
+  0.385                        syn_md_module_1/syn_md_edge_detect_0/sig_r1:CLK (r)
+               +     0.000          Library removal time: ADLIB:DFN1P0
+  0.385                        syn_md_module_1/syn_md_edge_detect_0/sig_r1:PRE
+                                    
+  0.385                        data required time
+
+
+END SET Register to Asynchronous
+
+----------------------------------------------------
+
+SET External Removal
+
+Path 1
+  From:                  gpio
+  To:                    GPMI_0/rst_n_module_0/rst_nr2:CLR
+  Delay (ns):            2.985
+  Slack (ns):
+  Arrival (ns):          2.985
+  Required (ns):
+  Removal (ns):          0.000
+  External Removal (ns): -2.498
+
+Path 2
+  From:                  gpio
+  To:                    GPMI_0/rst_n_module_0/rst_nr1:CLR
+  Delay (ns):            2.985
+  Slack (ns):
+  Arrival (ns):          2.985
+  Required (ns):
+  Removal (ns):          0.000
+  External Removal (ns): -2.498
+
+
+Expanded Path 1
+  From: gpio
+  To: GPMI_0/rst_n_module_0/rst_nr2:CLR
+  data arrival time                              2.985
+  data required time                         -   N/C
+  slack                                          N/C
+  ________________________________________________________
+  Data arrival time calculation
+  0.000                        gpio (f)
+               +     0.000          net: gpio
+  0.000                        gpio_pad/U0/U0:PAD (f)
+               +     0.222          cell: ADLIB:IOPAD_IN
+  0.222                        gpio_pad/U0/U0:Y (f)
+               +     0.000          net: gpio_pad/U0/NET1
+  0.222                        gpio_pad/U0/U1:YIN (f)
+               +     0.014          cell: ADLIB:IOIN_IB
+  0.236                        gpio_pad/U0/U1:Y (f)
+               +     1.091          net: gpio_c
+  1.327                        GPMI_0/INV_0:A (f)
+               +     0.190          cell: ADLIB:INV
+  1.517                        GPMI_0/INV_0:Y (r)
+               +     1.468          net: GPMI_0/INV_0_Y
+  2.985                        GPMI_0/rst_n_module_0/rst_nr2:CLR (r)
+                                    
+  2.985                        data arrival time
+  ________________________________________________________
+  Data required time calculation
+  N/C                          ClockManagement_0.pllclk_0.GLA
+               +     0.000          Clock source
+  N/C                          ClockManagement_0/pllclk_0/Core:GLA (r)
+               +     0.487          net: GLA
+  N/C                          GPMI_0/rst_n_module_0/rst_nr2:CLK (r)
+               +     0.000          Library removal time: ADLIB:DFN1C0
+  N/C                          GPMI_0/rst_n_module_0/rst_nr2:CLR
+
+
+END SET External Removal
+
+----------------------------------------------------
+
+SET Asynchronous to Register
+
+No Path
+
+END SET Asynchronous to Register
+
+----------------------------------------------------
+
+Clock Domain OCX40MHz
+
+Info: The maximum frequency of this clock domain is limited by the minimum pulse widths of pin OCX40MHz_pad/U0/U0:PAD
+
+SET Register to Register
+
+No Path
+
+END SET Register to Register
+
+----------------------------------------------------
+
+SET External Hold
+
+No Path
+
+END SET External Hold
+
+----------------------------------------------------
+
+SET Clock to Output
+
+Path 1
+  From:                  ClockManagement_0/pllclk_0/Core:CLKA
+  To:                    GLA
+  Delay (ns):            2.683
+  Slack (ns):
+  Arrival (ns):          3.007
+  Required (ns):
+  Clock to Out (ns):     3.007
+
+
+Expanded Path 1
+  From: ClockManagement_0/pllclk_0/Core:CLKA
+  To: GLA
+  data arrival time                              3.007
+  data required time                         -   N/C
+  slack                                          N/C
+  ________________________________________________________
+  Data arrival time calculation
+  0.000                        OCX40MHz
+               +     0.000          Clock source
+  0.000                        OCX40MHz (r)
+               +     0.000          net: OCX40MHz
+  0.000                        OCX40MHz_pad/U0/U0:PAD (r)
+               +     0.324          cell: ADLIB:IOPAD_IN
+  0.324                        OCX40MHz_pad/U0/U0:Y (r)
+               +     0.000          net: OCX40MHz_c
+  0.324                        ClockManagement_0/pllclk_0/Core:CLKA (r)
+               +     1.221          cell: ADLIB:PLL
+  1.545                        ClockManagement_0/pllclk_0/Core:GLA (r)
+               +     0.408          net: GLA
+  1.953                        GLA_pad/U0/U1:D (r)
+               +     0.231          cell: ADLIB:IOTRI_OB_EB
+  2.184                        GLA_pad/U0/U1:DOUT (r)
+               +     0.000          net: GLA_pad/U0/NET1
+  2.184                        GLA_pad/U0/U0:D (r)
+               +     0.823          cell: ADLIB:IOPAD_TRI
+  3.007                        GLA_pad/U0/U0:PAD (r)
+               +     0.000          net: GLA_c
+  3.007                        GLA (r)
+                                    
+  3.007                        data arrival time
+  ________________________________________________________
+  Data required time calculation
+  N/C                          OCX40MHz
+               +     0.000          Clock source
+  N/C                          OCX40MHz (r)
+                                    
+  N/C                          GLA (r)
+
+
+END SET Clock to Output
+
+----------------------------------------------------
+
+SET Register to Asynchronous
+
+No Path
+
+END SET Register to Asynchronous
+
+----------------------------------------------------
+
+SET External Removal
+
+No Path
+
+END SET External Removal
+
+----------------------------------------------------
+
+SET Asynchronous to Register
+
+No Path
+
+END SET Asynchronous to Register
+
+----------------------------------------------------
+
+Clock Domain Signal_Noise_Acq_0.noise_acq_0.n_rdclk_syn_0.n_rdclk
+
+SET Register to Register
+
+Path 1
+  From:                  Signal_Noise_Acq_0/noise_acq_0/noise_addr_1/addr[1]:CLK
+  To:                    Signal_Noise_Acq_0/noise_acq_0/noise_addr_1/addr[2]:D
+  Delay (ns):            1.035
+  Slack (ns):            0.355
+  Arrival (ns):          1.169
+  Required (ns):         0.814
+  Hold (ns):             0.000
+
+Path 2
+  From:                  Signal_Noise_Acq_0/noise_acq_0/noise_addr_1/addr[5]:CLK
+  To:                    Signal_Noise_Acq_0/noise_acq_0/noise_addr_1/addr[6]:D
+  Delay (ns):            0.717
+  Slack (ns):            0.485
+  Arrival (ns):          1.692
+  Required (ns):         1.207
+  Hold (ns):             0.000
+
+Path 3
+  From:                  Signal_Noise_Acq_0/noise_acq_0/noise_addr_1/addr[3]:CLK
+  To:                    Signal_Noise_Acq_0/noise_acq_0/noise_addr_1/addr[4]:D
+  Delay (ns):            0.693
+  Slack (ns):            0.548
+  Arrival (ns):          1.300
+  Required (ns):         0.752
+  Hold (ns):             0.000
+
+Path 4
+  From:                  Signal_Noise_Acq_0/noise_acq_0/noise_addr_1/addr[0]:CLK
+  To:                    Signal_Noise_Acq_0/noise_acq_0/noise_addr_1/addr[0]:D
+  Delay (ns):            0.568
+  Slack (ns):            0.568
+  Arrival (ns):          1.247
+  Required (ns):         0.679
+  Hold (ns):             0.000
+
+Path 5
+  From:                  Signal_Noise_Acq_0/noise_acq_0/noise_addr_1/addr[4]:CLK
+  To:                    Signal_Noise_Acq_0/noise_acq_0/noise_addr_1/addr[4]:D
+  Delay (ns):            0.571
+  Slack (ns):            0.571
+  Arrival (ns):          1.178
+  Required (ns):         0.607
+  Hold (ns):             0.000
+
+
+Expanded Path 1
+  From: Signal_Noise_Acq_0/noise_acq_0/noise_addr_1/addr[1]:CLK
+  To: Signal_Noise_Acq_0/noise_acq_0/noise_addr_1/addr[2]:D
+  data arrival time                              1.169
+  data required time                         -   0.814
+  slack                                          0.355
+  ________________________________________________________
+  Data arrival time calculation
+  0.000                        Signal_Noise_Acq_0.noise_acq_0.n_rdclk_syn_0.n_rdclk
+               +     0.000          Clock source
+  0.000                        Signal_Noise_Acq_0/noise_acq_0/n_rdclk_syn_0/n_rdclk:Q (f)
+               +     0.134          net: Signal_Noise_Acq_0/noise_acq_0/n_rdclk
+  0.134                        Signal_Noise_Acq_0/noise_acq_0/noise_addr_1/addr[1]:CLK (f)
+               +     0.206          cell: ADLIB:DFN0C0
+  0.340                        Signal_Noise_Acq_0/noise_acq_0/noise_addr_1/addr[1]:Q (r)
+               +     0.495          net: Signal_Noise_Acq_0/noise_acq_0/addr[1]
+  0.835                        Signal_Noise_Acq_0/noise_acq_0/noise_addr_1/addr_RNO[2]:A (r)
+               +     0.218          cell: ADLIB:AX1C
+  1.053                        Signal_Noise_Acq_0/noise_acq_0/noise_addr_1/addr_RNO[2]:Y (f)
+               +     0.116          net: Signal_Noise_Acq_0/noise_acq_0/noise_addr_1/addr_n2
+  1.169                        Signal_Noise_Acq_0/noise_acq_0/noise_addr_1/addr[2]:D (f)
+                                    
+  1.169                        data arrival time
+  ________________________________________________________
+  Data required time calculation
+  0.000                        Signal_Noise_Acq_0.noise_acq_0.n_rdclk_syn_0.n_rdclk
+               +     0.000          Clock source
+  0.000                        Signal_Noise_Acq_0/noise_acq_0/n_rdclk_syn_0/n_rdclk:Q (f)
+               +     0.814          net: Signal_Noise_Acq_0/noise_acq_0/n_rdclk
+  0.814                        Signal_Noise_Acq_0/noise_acq_0/noise_addr_1/addr[2]:CLK (f)
+               +     0.000          Library hold time: ADLIB:DFN0C0
+  0.814                        Signal_Noise_Acq_0/noise_acq_0/noise_addr_1/addr[2]:D
+                                    
+  0.814                        data required time
+
+
+END SET Register to Register
+
+----------------------------------------------------
+
+SET External Hold
+
+No Path
+
+END SET External Hold
+
+----------------------------------------------------
+
+SET Clock to Output
+
+Path 1
+  From:                  Signal_Noise_Acq_0/noise_acq_0/RAM_0/BFF1_2_inst:CLK
+  To:                    xd[1]
+  Delay (ns):            4.559
+  Slack (ns):
+  Arrival (ns):          5.066
+  Required (ns):
+  Clock to Out (ns):     5.066
+
+Path 2
+  From:                  Signal_Noise_Acq_0/noise_acq_0/RAM_0/BFF1_3_inst:CLK
+  To:                    xd[11]
+  Delay (ns):            3.995
+  Slack (ns):
+  Arrival (ns):          5.113
+  Required (ns):
+  Clock to Out (ns):     5.113
+
+Path 3
+  From:                  Signal_Noise_Acq_0/noise_acq_0/RAM_0/BFF1_2_inst:CLK
+  To:                    xd[11]
+  Delay (ns):            4.609
+  Slack (ns):
+  Arrival (ns):          5.116
+  Required (ns):
+  Clock to Out (ns):     5.116
+
+Path 4
+  From:                  Signal_Noise_Acq_0/noise_acq_0/RAM_0/BFF1_3_inst:CLK
+  To:                    xd[1]
+  Delay (ns):            4.224
+  Slack (ns):
+  Arrival (ns):          5.342
+  Required (ns):
+  Clock to Out (ns):     5.342
+
+Path 5
+  From:                  Signal_Noise_Acq_0/noise_acq_0/RAM_0/BFF1_3_inst:CLK
+  To:                    xd[10]
+  Delay (ns):            4.305
+  Slack (ns):
+  Arrival (ns):          5.423
+  Required (ns):
+  Clock to Out (ns):     5.423
+
+
+Expanded Path 1
+  From: Signal_Noise_Acq_0/noise_acq_0/RAM_0/BFF1_2_inst:CLK
+  To: xd[1]
+  data arrival time                              5.066
+  data required time                         -   N/C
+  slack                                          N/C
+  ________________________________________________________
+  Data arrival time calculation
+  0.000                        Signal_Noise_Acq_0.noise_acq_0.n_rdclk_syn_0.n_rdclk
+               +     0.000          Clock source
+  0.000                        Signal_Noise_Acq_0/noise_acq_0/n_rdclk_syn_0/n_rdclk:Q (r)
+               +     0.507          net: Signal_Noise_Acq_0/noise_acq_0/n_rdclk
+  0.507                        Signal_Noise_Acq_0/noise_acq_0/RAM_0/BFF1_2_inst:CLK (r)
+               +     0.187          cell: ADLIB:DFN1
+  0.694                        Signal_Noise_Acq_0/noise_acq_0/RAM_0/BFF1_2_inst:Q (r)
+               +     0.762          net: Signal_Noise_Acq_0/noise_acq_0/RAM_0/ADDRB_FF2_2_net
+  1.456                        Signal_Noise_Acq_0/noise_acq_0/RAM_0/BUFF_15:A (r)
+               +     0.165          cell: ADLIB:BUFF
+  1.621                        Signal_Noise_Acq_0/noise_acq_0/RAM_0/BUFF_15:Y (r)
+               +     0.135          net: Signal_Noise_Acq_0/noise_acq_0/RAM_0/BUFF_15_Y
+  1.756                        Signal_Noise_Acq_0/noise_acq_0/RAM_0/MX2_130:S (r)
+               +     0.180          cell: ADLIB:MX2
+  1.936                        Signal_Noise_Acq_0/noise_acq_0/RAM_0/MX2_130:Y (r)
+               +     0.124          net: Signal_Noise_Acq_0/noise_acq_0/RAM_0/MX2_130_Y
+  2.060                        Signal_Noise_Acq_0/noise_acq_0/RAM_0/MX2_RD_1_inst:A (r)
+               +     0.202          cell: ADLIB:MX2
+  2.262                        Signal_Noise_Acq_0/noise_acq_0/RAM_0/MX2_RD_1_inst:Y (r)
+               +     0.124          net: Signal_Noise_Acq_0/MX2_RD_1_inst
+  2.386                        Signal_Noise_Acq_0/n_s_change_0/dataout[1]:B (r)
+               +     0.207          cell: ADLIB:MX2
+  2.593                        Signal_Noise_Acq_0/n_s_change_0/dataout[1]:Y (r)
+               +     1.342          net: Signal_Noise_Acq_0_dataout[1]
+  3.935                        xd_pad[1]/U0/U1:D (r)
+               +     0.231          cell: ADLIB:IOBI_IB_OB_EB
+  4.166                        xd_pad[1]/U0/U1:DOUT (r)
+               +     0.000          net: xd_pad[1]/U0/NET1
+  4.166                        xd_pad[1]/U0/U0:D (r)
+               +     0.900          cell: ADLIB:IOPAD_BI
+  5.066                        xd_pad[1]/U0/U0:PAD (r)
+               +     0.000          net: xd[1]
+  5.066                        xd[1] (r)
+                                    
+  5.066                        data arrival time
+  ________________________________________________________
+  Data required time calculation
+  N/C                          Signal_Noise_Acq_0.noise_acq_0.n_rdclk_syn_0.n_rdclk
+               +     0.000          Clock source
+  N/C                          Signal_Noise_Acq_0/noise_acq_0/n_rdclk_syn_0/n_rdclk:Q (r)
+                                    
+  N/C                          xd[1] (r)
+
+
+END SET Clock to Output
+
+----------------------------------------------------
+
+SET Register to Asynchronous
+
+No Path
+
+END SET Register to Asynchronous
+
+----------------------------------------------------
+
+SET External Removal
+
+No Path
+
+END SET External Removal
+
+----------------------------------------------------
+
+SET Asynchronous to Register
+
+No Path
+
+END SET Asynchronous to Register
+
+----------------------------------------------------
+
+Clock Domain Signal_Noise_Acq_0.noise_acq_0.noiseclk_0.clkout
+
+SET Register to Register
+
+Path 1
+  From:                  Signal_Noise_Acq_0/noise_acq_0/noise_addr_0/addr[9]:CLK
+  To:                    Signal_Noise_Acq_0/noise_acq_0/noise_addr_0/addr[10]:D
+  Delay (ns):            0.691
+  Slack (ns):            0.231
+  Arrival (ns):          2.002
+  Required (ns):         1.771
+  Hold (ns):             0.000
+
+Path 2
+  From:                  Signal_Noise_Acq_0/noise_acq_0/noise_addr_0/addr[5]:CLK
+  To:                    Signal_Noise_Acq_0/noise_acq_0/noise_addr_0/addr[6]:D
+  Delay (ns):            0.717
+  Slack (ns):            0.276
+  Arrival (ns):          2.029
+  Required (ns):         1.753
+  Hold (ns):             0.000
+
+Path 3
+  From:                  Signal_Noise_Acq_0/noise_acq_0/noise_addr_0/addr[0]:CLK
+  To:                    Signal_Noise_Acq_0/noise_acq_0/noise_addr_0/addr[2]:D
+  Delay (ns):            1.523
+  Slack (ns):            0.548
+  Arrival (ns):          2.661
+  Required (ns):         2.113
+  Hold (ns):             0.000
+
+Path 4
+  From:                  Signal_Noise_Acq_0/noise_acq_0/noise_addr_0/addr[4]:CLK
+  To:                    Signal_Noise_Acq_0/noise_acq_0/noise_addr_0/addr[4]:D
+  Delay (ns):            0.571
+  Slack (ns):            0.571
+  Arrival (ns):          1.859
+  Required (ns):         1.288
+  Hold (ns):             0.000
+
+Path 5
+  From:                  Signal_Noise_Acq_0/noise_acq_0/noise_addr_0/addr[2]:CLK
+  To:                    Signal_Noise_Acq_0/noise_acq_0/noise_addr_0/addr[2]:D
+  Delay (ns):            0.571
+  Slack (ns):            0.571
+  Arrival (ns):          2.277
+  Required (ns):         1.706
+  Hold (ns):             0.000
+
+
+Expanded Path 1
+  From: Signal_Noise_Acq_0/noise_acq_0/noise_addr_0/addr[9]:CLK
+  To: Signal_Noise_Acq_0/noise_acq_0/noise_addr_0/addr[10]:D
+  data arrival time                              2.002
+  data required time                         -   1.771
+  slack                                          0.231
+  ________________________________________________________
+  Data arrival time calculation
+  0.000                        Signal_Noise_Acq_0.noise_acq_0.noiseclk_0.clkout
+               +     0.000          Clock source
+  0.000                        Signal_Noise_Acq_0/noise_acq_0/noiseclk_0/clkout:Q (f)
+               +     1.311          net: Signal_Noise_Acq_0/s_clk_div4_0_clkout
+  1.311                        Signal_Noise_Acq_0/noise_acq_0/noise_addr_0/addr[9]:CLK (f)
+               +     0.206          cell: ADLIB:DFN0C0
+  1.517                        Signal_Noise_Acq_0/noise_acq_0/noise_addr_0/addr[9]:Q (r)
+               +     0.151          net: Signal_Noise_Acq_0/noise_acq_0/addr_0[9]
+  1.668                        Signal_Noise_Acq_0/noise_acq_0/noise_addr_0/addr_RNO[10]:A (r)
+               +     0.218          cell: ADLIB:AX1C
+  1.886                        Signal_Noise_Acq_0/noise_acq_0/noise_addr_0/addr_RNO[10]:Y (f)
+               +     0.116          net: Signal_Noise_Acq_0/noise_acq_0/noise_addr_0/addr_n10
+  2.002                        Signal_Noise_Acq_0/noise_acq_0/noise_addr_0/addr[10]:D (f)
+                                    
+  2.002                        data arrival time
+  ________________________________________________________
+  Data required time calculation
+  0.000                        Signal_Noise_Acq_0.noise_acq_0.noiseclk_0.clkout
+               +     0.000          Clock source
+  0.000                        Signal_Noise_Acq_0/noise_acq_0/noiseclk_0/clkout:Q (f)
+               +     1.771          net: Signal_Noise_Acq_0/s_clk_div4_0_clkout
+  1.771                        Signal_Noise_Acq_0/noise_acq_0/noise_addr_0/addr[10]:CLK (f)
+               +     0.000          Library hold time: ADLIB:DFN0C0
+  1.771                        Signal_Noise_Acq_0/noise_acq_0/noise_addr_0/addr[10]:D
+                                    
+  1.771                        data required time
+
+
+END SET Register to Register
+
+----------------------------------------------------
+
+SET External Hold
+
+Path 1
+  From:                  ADC[10]
+  To:                    Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R2C0:WD10
+  Delay (ns):            1.752
+  Slack (ns):
+  Arrival (ns):          1.752
+  Required (ns):
+  Hold (ns):             0.000
+  External Hold (ns):    2.230
+
+Path 2
+  From:                  ADC[9]
+  To:                    Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R14C0:WD9
+  Delay (ns):            1.844
+  Slack (ns):
+  Arrival (ns):          1.844
+  Required (ns):
+  Hold (ns):             0.000
+  External Hold (ns):    2.002
+
+Path 3
+  From:                  ADC[9]
+  To:                    Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R2C0:WD9
+  Delay (ns):            2.034
+  Slack (ns):
+  Arrival (ns):          2.034
+  Required (ns):
+  Hold (ns):             0.000
+  External Hold (ns):    1.948
+
+Path 4
+  From:                  ADC[5]
+  To:                    Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R14C0:WD5
+  Delay (ns):            1.958
+  Slack (ns):
+  Arrival (ns):          1.958
+  Required (ns):
+  Hold (ns):             0.000
+  External Hold (ns):    1.888
+
+Path 5
+  From:                  ADC[10]
+  To:                    Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R14C0:WD10
+  Delay (ns):            2.016
+  Slack (ns):
+  Arrival (ns):          2.016
+  Required (ns):
+  Hold (ns):             0.000
+  External Hold (ns):    1.830
+
+
+Expanded Path 1
+  From: ADC[10]
+  To: Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R2C0:WD10
+  data arrival time                              1.752
+  data required time                         -   N/C
+  slack                                          N/C
+  ________________________________________________________
+  Data arrival time calculation
+  0.000                        ADC[10] (f)
+               +     0.000          net: ADC[10]
+  0.000                        ADC_pad[10]/U0/U0:PAD (f)
+               +     0.222          cell: ADLIB:IOPAD_IN
+  0.222                        ADC_pad[10]/U0/U0:Y (f)
+               +     0.000          net: ADC_pad[10]/U0/NET1
+  0.222                        ADC_pad[10]/U0/U1:YIN (f)
+               +     0.014          cell: ADLIB:IOIN_IB
+  0.236                        ADC_pad[10]/U0/U1:Y (f)
+               +     0.707          net: ADC_c[10]
+  0.943                        Signal_Noise_Acq_0/n_s_change_0/n_adc_1_0:A (f)
+               +     0.134          cell: ADLIB:NOR2B
+  1.077                        Signal_Noise_Acq_0/n_s_change_0/n_adc_1_0:Y (f)
+               +     0.675          net: Signal_Noise_Acq_0/n_adc_1_0
+  1.752                        Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R2C0:WD10 (f)
+                                    
+  1.752                        data arrival time
+  ________________________________________________________
+  Data required time calculation
+  N/C                          Signal_Noise_Acq_0.noise_acq_0.noiseclk_0.clkout
+               +     0.000          Clock source
+  N/C                          Signal_Noise_Acq_0/noise_acq_0/noiseclk_0/clkout:Q (r)
+               +     3.982          net: Signal_Noise_Acq_0/s_clk_div4_0_clkout
+  N/C                          Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R2C0:WCLK (r)
+               +     0.000          Library hold time: ADLIB:RAM512X18
+  N/C                          Signal_Noise_Acq_0/noise_acq_0/RAM_0/RAM_R2C0:WD10
+
+
+END SET External Hold
+
+----------------------------------------------------
+
+SET Clock to Output
+
+No Path
+
+END SET Clock to Output
+
+----------------------------------------------------
+
+SET Register to Asynchronous
+
+No Path
+
+END SET Register to Asynchronous
+
+----------------------------------------------------
+
+SET External Removal
+
+No Path
+
+END SET External Removal
+
+----------------------------------------------------
+
+SET Asynchronous to Register
+
+No Path
+
+END SET Asynchronous to Register
+
+----------------------------------------------------
+
+Clock Domain ddsclkout
+
+SET Register to Register
+
+Path 1
+  From:                  pd_pluse_top_0/pd_pluse_state_0/cs[8]:CLK
+  To:                    pd_pluse_top_0/pd_pluse_state_0/cs[1]:D
+  Delay (ns):            0.583
+  Slack (ns):            0.517
+  Arrival (ns):          1.301
+  Required (ns):         0.784
+  Hold (ns):             0.000
+
+Path 2
+  From:                  Signal_Noise_Acq_0/signal_acq_0/s_clk_div4_0/count:CLK
+  To:                    Signal_Noise_Acq_0/signal_acq_0/s_clk_div4_0/clkout:E
+  Delay (ns):            0.595
+  Slack (ns):            0.524
+  Arrival (ns):          1.336
+  Required (ns):         0.812
+  Hold (ns):             0.000
+
+Path 3
+  From:                  bridge_div_0/clk_4f_reg1:CLK
+  To:                    bridge_div_0/clk_4f_reg2:D
+  Delay (ns):            0.618
+  Slack (ns):            0.550
+  Arrival (ns):          1.344
+  Required (ns):         0.794
+  Hold (ns):             0.000
+
+Path 4
+  From:                  sd_acq_top_0/sd_sacq_state_0/cs_i[0]:CLK
+  To:                    sd_acq_top_0/sd_sacq_state_0/cs[1]:D
+  Delay (ns):            0.620
+  Slack (ns):            0.563
+  Arrival (ns):          1.341
+  Required (ns):         0.778
+  Hold (ns):             0.000
+
+Path 5
+  From:                  sd_acq_top_0/sd_sacq_state_0/cs[13]:CLK
+  To:                    sd_acq_top_0/sd_sacq_state_0/cs[14]:D
+  Delay (ns):            0.638
+  Slack (ns):            0.572
+  Arrival (ns):          1.356
+  Required (ns):         0.784
+  Hold (ns):             0.000
+
+
+Expanded Path 1
+  From: pd_pluse_top_0/pd_pluse_state_0/cs[8]:CLK
+  To: pd_pluse_top_0/pd_pluse_state_0/cs[1]:D
+  data arrival time                              1.301
+  data required time                         -   0.784
+  slack                                          0.517
+  ________________________________________________________
+  Data arrival time calculation
+  0.000                        ddsclkout
+               +     0.000          Clock source
+  0.000                        ddsclkout (r)
+               +     0.000          net: ddsclkout
+  0.000                        ddsclkout_pad/U0/U0:PAD (r)
+               +     0.319          cell: ADLIB:IOPAD_IN
+  0.319                        ddsclkout_pad/U0/U0:Y (r)
+               +     0.000          net: ddsclkout_pad/U0/NET1
+  0.319                        ddsclkout_pad/U0/U1:A (r)
+               +     0.123          cell: ADLIB:CLKIO
+  0.442                        ddsclkout_pad/U0/U1:Y (r)
+               +     0.276          net: ddsclkout_c
+  0.718                        pd_pluse_top_0/pd_pluse_state_0/cs[8]:CLK (r)
+               +     0.206          cell: ADLIB:DFN1
+  0.924                        pd_pluse_top_0/pd_pluse_state_0/cs[8]:Q (r)
+               +     0.114          net: pd_pluse_top_0/pd_pluse_state_0/cs[8]
+  1.038                        pd_pluse_top_0/pd_pluse_state_0/cs_RNO[1]:A (r)
+               +     0.144          cell: ADLIB:NOR2B
+  1.182                        pd_pluse_top_0/pd_pluse_state_0/cs_RNO[1]:Y (r)
+               +     0.119          net: pd_pluse_top_0/pd_pluse_state_0/cs_RNO_0[1]
+  1.301                        pd_pluse_top_0/pd_pluse_state_0/cs[1]:D (r)
+                                    
+  1.301                        data arrival time
+  ________________________________________________________
+  Data required time calculation
+  0.000                        ddsclkout
+               +     0.000          Clock source
+  0.000                        ddsclkout (r)
+               +     0.000          net: ddsclkout
+  0.000                        ddsclkout_pad/U0/U0:PAD (r)
+               +     0.319          cell: ADLIB:IOPAD_IN
+  0.319                        ddsclkout_pad/U0/U0:Y (r)
+               +     0.000          net: ddsclkout_pad/U0/NET1
+  0.319                        ddsclkout_pad/U0/U1:A (r)
+               +     0.123          cell: ADLIB:CLKIO
+  0.442                        ddsclkout_pad/U0/U1:Y (r)
+               +     0.342          net: ddsclkout_c
+  0.784                        pd_pluse_top_0/pd_pluse_state_0/cs[1]:CLK (r)
+               +     0.000          Library hold time: ADLIB:DFN1
+  0.784                        pd_pluse_top_0/pd_pluse_state_0/cs[1]:D
+                                    
+  0.784                        data required time
+
+
+END SET Register to Register
+
+----------------------------------------------------
+
+SET External Hold
+
+No Path
+
+END SET External Hold
+
+----------------------------------------------------
+
+SET Clock to Output
+
+Path 1
+  From:                  pd_pluse_top_0/pd_pluse_state_0/en:CLK
+  To:                    pd_pulse_en
+  Delay (ns):            2.160
+  Slack (ns):
+  Arrival (ns):          2.884
+  Required (ns):
+  Clock to Out (ns):     2.884
+
+Path 2
+  From:                  sd_acq_top_0/sd_sacq_state_0/en2:CLK
+  To:                    sd_acq_en
+  Delay (ns):            2.528
+  Slack (ns):
+  Arrival (ns):          3.242
+  Required (ns):
+  Clock to Out (ns):     3.242
+
+Path 3
+  From:                  sd_acq_top_0/sd_sacq_state_0/cs[3]:CLK
+  To:                    sd_acq_en
+  Delay (ns):            2.647
+  Slack (ns):
+  Arrival (ns):          3.368
+  Required (ns):
+  Clock to Out (ns):     3.368
+
+Path 4
+  From:                  CAL_0/cal_div_0/cal:CLK
+  To:                    cal_out
+  Delay (ns):            2.831
+  Slack (ns):
+  Arrival (ns):          3.552
+  Required (ns):
+  Clock to Out (ns):     3.552
+
+Path 5
+  From:                  Signal_Noise_Acq_0/signal_acq_0/s_clk_div4_0/clkout:CLK
+  To:                    Acq_clk
+  Delay (ns):            4.654
+  Slack (ns):
+  Arrival (ns):          5.395
+  Required (ns):
+  Clock to Out (ns):     5.395
+
+
+Expanded Path 1
+  From: pd_pluse_top_0/pd_pluse_state_0/en:CLK
+  To: pd_pulse_en
+  data arrival time                              2.884
+  data required time                         -   N/C
+  slack                                          N/C
+  ________________________________________________________
+  Data arrival time calculation
+  0.000                        ddsclkout
+               +     0.000          Clock source
+  0.000                        ddsclkout (r)
+               +     0.000          net: ddsclkout
+  0.000                        ddsclkout_pad/U0/U0:PAD (r)
+               +     0.319          cell: ADLIB:IOPAD_IN
+  0.319                        ddsclkout_pad/U0/U0:Y (r)
+               +     0.000          net: ddsclkout_pad/U0/NET1
+  0.319                        ddsclkout_pad/U0/U1:A (r)
+               +     0.123          cell: ADLIB:CLKIO
+  0.442                        ddsclkout_pad/U0/U1:Y (r)
+               +     0.282          net: ddsclkout_c
+  0.724                        pd_pluse_top_0/pd_pluse_state_0/en:CLK (r)
+               +     0.206          cell: ADLIB:DFN1
+  0.930                        pd_pluse_top_0/pd_pluse_state_0/en:Q (r)
+               +     0.918          net: pd_pulse_en_c
+  1.848                        pd_pulse_en_pad/U0/U1:D (r)
+               +     0.213          cell: ADLIB:IOTRI_OB_EB
+  2.061                        pd_pulse_en_pad/U0/U1:DOUT (r)
+               +     0.000          net: pd_pulse_en_pad/U0/NET1
+  2.061                        pd_pulse_en_pad/U0/U0:D (r)
+               +     0.823          cell: ADLIB:IOPAD_TRI
+  2.884                        pd_pulse_en_pad/U0/U0:PAD (r)
+               +     0.000          net: pd_pulse_en
+  2.884                        pd_pulse_en (r)
+                                    
+  2.884                        data arrival time
+  ________________________________________________________
+  Data required time calculation
+  N/C                          ddsclkout
+               +     0.000          Clock source
+  N/C                          ddsclkout (r)
+                                    
+  N/C                          pd_pulse_en (r)
+
+
+END SET Clock to Output
+
+----------------------------------------------------
+
+SET Register to Asynchronous
+
+Path 1
+  From:                  PLUSE_0/bri_coder_0/i[0]/U1:CLK
+  To:                    PLUSE_0/bri_state_0/down/U1:CLR
+  Delay (ns):            0.637
+  Slack (ns):            0.569
+  Arrival (ns):          1.363
+  Required (ns):         0.794
+  Removal (ns):          0.000
+  Skew (ns):             -0.068
+
+Path 2
+  From:                  PLUSE_0/bri_coder_0/i[0]/U1:CLK
+  To:                    PLUSE_0/bri_state_0/up/U1:CLR
+  Delay (ns):            0.873
+  Slack (ns):            0.805
+  Arrival (ns):          1.599
+  Required (ns):         0.794
+  Removal (ns):          0.000
+  Skew (ns):             -0.068
+
+Path 3
+  From:                  PLUSE_0/bri_coder_0/i[0]/U1:CLK
+  To:                    PLUSE_0/bri_state_0/cs[2]:CLR
+  Delay (ns):            1.094
+  Slack (ns):            1.008
+  Arrival (ns):          1.820
+  Required (ns):         0.812
+  Removal (ns):          0.000
+  Skew (ns):             -0.086
+
+Path 4
+  From:                  PLUSE_0/bri_coder_0/i[0]/U1:CLK
+  To:                    PLUSE_0/bri_state_0/cs[4]:CLR
+  Delay (ns):            1.074
+  Slack (ns):            1.020
+  Arrival (ns):          1.800
+  Required (ns):         0.780
+  Removal (ns):          0.000
+  Skew (ns):             -0.054
+
+Path 5
+  From:                  PLUSE_0/bri_coder_0/i[0]/U1:CLK
+  To:                    PLUSE_0/bri_state_0/cs[13]:PRE
+  Delay (ns):            1.108
+  Slack (ns):            1.044
+  Arrival (ns):          1.834
+  Required (ns):         0.790
+  Removal (ns):          0.000
+  Skew (ns):             -0.064
+
+
+Expanded Path 1
+  From: PLUSE_0/bri_coder_0/i[0]/U1:CLK
+  To: PLUSE_0/bri_state_0/down/U1:CLR
+  data arrival time                              1.363
+  data required time                         -   0.794
+  slack                                          0.569
+  ________________________________________________________
+  Data arrival time calculation
+  0.000                        ddsclkout
+               +     0.000          Clock source
+  0.000                        ddsclkout (r)
+               +     0.000          net: ddsclkout
+  0.000                        ddsclkout_pad/U0/U0:PAD (r)
+               +     0.319          cell: ADLIB:IOPAD_IN
+  0.319                        ddsclkout_pad/U0/U0:Y (r)
+               +     0.000          net: ddsclkout_pad/U0/NET1
+  0.319                        ddsclkout_pad/U0/U1:A (r)
+               +     0.123          cell: ADLIB:CLKIO
+  0.442                        ddsclkout_pad/U0/U1:Y (r)
+               +     0.284          net: ddsclkout_c
+  0.726                        PLUSE_0/bri_coder_0/i[0]/U1:CLK (r)
+               +     0.206          cell: ADLIB:DFN1C0
+  0.932                        PLUSE_0/bri_coder_0/i[0]/U1:Q (r)
+               +     0.144          net: PLUSE_0/i_9[0]
+  1.076                        PLUSE_0/bri_state_0/en:A (r)
+               +     0.173          cell: ADLIB:NOR2B
+  1.249                        PLUSE_0/bri_state_0/en:Y (r)
+               +     0.114          net: PLUSE_0/bri_state_0/en
+  1.363                        PLUSE_0/bri_state_0/down/U1:CLR (r)
+                                    
+  1.363                        data arrival time
+  ________________________________________________________
+  Data required time calculation
+  0.000                        ddsclkout
+               +     0.000          Clock source
+  0.000                        ddsclkout (r)
+               +     0.000          net: ddsclkout
+  0.000                        ddsclkout_pad/U0/U0:PAD (r)
+               +     0.319          cell: ADLIB:IOPAD_IN
+  0.319                        ddsclkout_pad/U0/U0:Y (r)
+               +     0.000          net: ddsclkout_pad/U0/NET1
+  0.319                        ddsclkout_pad/U0/U1:A (r)
+               +     0.123          cell: ADLIB:CLKIO
+  0.442                        ddsclkout_pad/U0/U1:Y (r)
+               +     0.352          net: ddsclkout_c
+  0.794                        PLUSE_0/bri_state_0/down/U1:CLK (r)
+               +     0.000          Library removal time: ADLIB:DFN1C0
+  0.794                        PLUSE_0/bri_state_0/down/U1:CLR
+                                    
+  0.794                        data required time
+
+
+END SET Register to Asynchronous
+
+----------------------------------------------------
+
+SET External Removal
+
+No Path
+
+END SET External Removal
+
+----------------------------------------------------
+
+SET Asynchronous to Register
+
+No Path
+
+END SET Asynchronous to Register
+
+----------------------------------------------------
+
+Clock Domain Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.clk_add
+
+SET Register to Register
+
+Path 1
+  From:                  Signal_Noise_Acq_0/signal_acq_0/add_reg_4/addresult[17]:CLK
+  To:                    Signal_Noise_Acq_0/signal_acq_0/add_reg_4/addresult[17]:D
+  Delay (ns):            0.571
+  Slack (ns):            0.571
+  Arrival (ns):          0.943
+  Required (ns):         0.372
+  Hold (ns):             0.000
+
+Path 2
+  From:                  Signal_Noise_Acq_0/signal_acq_0/add_reg_2/addresult[15]:CLK
+  To:                    Signal_Noise_Acq_0/signal_acq_0/add_reg_2/addresult[15]:D
+  Delay (ns):            0.571
+  Slack (ns):            0.571
+  Arrival (ns):          0.938
+  Required (ns):         0.367
+  Hold (ns):             0.000
+
+Path 3
+  From:                  Signal_Noise_Acq_0/signal_acq_0/add_reg_1/addresult[0]:CLK
+  To:                    Signal_Noise_Acq_0/signal_acq_0/add_reg_1/addresult[0]:D
+  Delay (ns):            0.571
+  Slack (ns):            0.571
+  Arrival (ns):          0.945
+  Required (ns):         0.374
+  Hold (ns):             0.000
+
+Path 4
+  From:                  Signal_Noise_Acq_0/signal_acq_0/add_reg_5/addresult[0]:CLK
+  To:                    Signal_Noise_Acq_0/signal_acq_0/add_reg_5/addresult[0]:D
+  Delay (ns):            0.571
+  Slack (ns):            0.571
+  Arrival (ns):          0.945
+  Required (ns):         0.374
+  Hold (ns):             0.000
+
+Path 5
+  From:                  Signal_Noise_Acq_0/signal_acq_0/add_reg_0/addresult[19]:CLK
+  To:                    Signal_Noise_Acq_0/signal_acq_0/add_reg_0/addresult[19]:D
+  Delay (ns):            0.571
+  Slack (ns):            0.571
+  Arrival (ns):          0.936
+  Required (ns):         0.365
+  Hold (ns):             0.000
+
+
+Expanded Path 1
+  From: Signal_Noise_Acq_0/signal_acq_0/add_reg_4/addresult[17]:CLK
+  To: Signal_Noise_Acq_0/signal_acq_0/add_reg_4/addresult[17]:D
+  data arrival time                              0.943
+  data required time                         -   0.372
+  slack                                          0.571
+  ________________________________________________________
+  Data arrival time calculation
+  0.000                        Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.clk_add
+               +     0.000          Clock source
+  0.000                        Signal_Noise_Acq_0/signal_acq_0/signalclkctrl_0/enadd_RNIH9JE_0:Y (r)
+               +     0.372          net: Signal_Noise_Acq_0/signal_acq_0/signalclkctrl_0_clk_add
+  0.372                        Signal_Noise_Acq_0/signal_acq_0/add_reg_4/addresult[17]:CLK (r)
+               +     0.206          cell: ADLIB:DFN1C0
+  0.578                        Signal_Noise_Acq_0/signal_acq_0/add_reg_4/addresult[17]:Q (r)
+               +     0.119          net: Signal_Noise_Acq_0/signal_acq_0/addresult_2[17]
+  0.697                        Signal_Noise_Acq_0/signal_acq_0/add_reg_4/un3_addresult_m42:C (r)
+               +     0.122          cell: ADLIB:AX1C
+  0.819                        Signal_Noise_Acq_0/signal_acq_0/add_reg_4/un3_addresult_m42:Y (r)
+               +     0.124          net: Signal_Noise_Acq_0/signal_acq_0/add_reg_4/m42_6
+  0.943                        Signal_Noise_Acq_0/signal_acq_0/add_reg_4/addresult[17]:D (r)
+                                    
+  0.943                        data arrival time
+  ________________________________________________________
+  Data required time calculation
+  0.000                        Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.clk_add
+               +     0.000          Clock source
+  0.000                        Signal_Noise_Acq_0/signal_acq_0/signalclkctrl_0/enadd_RNIH9JE_0:Y (r)
+               +     0.372          net: Signal_Noise_Acq_0/signal_acq_0/signalclkctrl_0_clk_add
+  0.372                        Signal_Noise_Acq_0/signal_acq_0/add_reg_4/addresult[17]:CLK (r)
+               +     0.000          Library hold time: ADLIB:DFN1C0
+  0.372                        Signal_Noise_Acq_0/signal_acq_0/add_reg_4/addresult[17]:D
+                                    
+  0.372                        data required time
+
+
+END SET Register to Register
+
+----------------------------------------------------
+
+SET External Hold
+
+Path 1
+  From:                  ADC[0]
+  To:                    Signal_Noise_Acq_0/signal_acq_0/add_reg_0/addresult[0]:D
+  Delay (ns):            2.396
+  Slack (ns):
+  Arrival (ns):          2.396
+  Required (ns):
+  Hold (ns):             0.000
+  External Hold (ns):    -1.931
+
+Path 2
+  From:                  ADC[1]
+  To:                    Signal_Noise_Acq_0/signal_acq_0/add_reg_3/addresult[1]:D
+  Delay (ns):            2.423
+  Slack (ns):
+  Arrival (ns):          2.423
+  Required (ns):
+  Hold (ns):             0.000
+  External Hold (ns):    -1.955
+
+Path 3
+  From:                  ADC[1]
+  To:                    Signal_Noise_Acq_0/signal_acq_0/add_reg_4/addresult[1]:D
+  Delay (ns):            2.425
+  Slack (ns):
+  Arrival (ns):          2.425
+  Required (ns):
+  Hold (ns):             0.000
+  External Hold (ns):    -1.963
+
+Path 4
+  From:                  ADC[1]
+  To:                    Signal_Noise_Acq_0/signal_acq_0/add_reg_0/addresult[1]:D
+  Delay (ns):            2.422
+  Slack (ns):
+  Arrival (ns):          2.422
+  Required (ns):
+  Hold (ns):             0.000
+  External Hold (ns):    -1.969
+
+Path 5
+  From:                  ADC[1]
+  To:                    Signal_Noise_Acq_0/signal_acq_0/add_reg_6/addresult[1]:D
+  Delay (ns):            2.509
+  Slack (ns):
+  Arrival (ns):          2.509
+  Required (ns):
+  Hold (ns):             0.000
+  External Hold (ns):    -2.041
+
+
+Expanded Path 1
+  From: ADC[0]
+  To: Signal_Noise_Acq_0/signal_acq_0/add_reg_0/addresult[0]:D
+  data arrival time                              2.396
+  data required time                         -   N/C
+  slack                                          N/C
+  ________________________________________________________
+  Data arrival time calculation
+  0.000                        ADC[0] (f)
+               +     0.000          net: ADC[0]
+  0.000                        ADC_pad[0]/U0/U0:PAD (f)
+               +     0.222          cell: ADLIB:IOPAD_IN
+  0.222                        ADC_pad[0]/U0/U0:Y (f)
+               +     0.000          net: ADC_pad[0]/U0/NET1
+  0.222                        ADC_pad[0]/U0/U1:YIN (f)
+               +     0.014          cell: ADLIB:IOIN_IB
+  0.236                        ADC_pad[0]/U0/U1:Y (f)
+               +     0.976          net: ADC_c[0]
+  1.212                        Signal_Noise_Acq_0/n_s_change_0/s_adc_1_10:A (f)
+               +     0.220          cell: ADLIB:NOR2A
+  1.432                        Signal_Noise_Acq_0/n_s_change_0/s_adc_1_10:Y (f)
+               +     0.598          net: Signal_Noise_Acq_0/un1_n_s_change_0_1[0]
+  2.030                        Signal_Noise_Acq_0/signal_acq_0/add_reg_0/un3_addresult_m70:B (f)
+               +     0.242          cell: ADLIB:AX1C
+  2.272                        Signal_Noise_Acq_0/signal_acq_0/add_reg_0/un3_addresult_m70:Y (r)
+               +     0.124          net: Signal_Noise_Acq_0/signal_acq_0/add_reg_0/m70_3
+  2.396                        Signal_Noise_Acq_0/signal_acq_0/add_reg_0/addresult[0]:D (r)
+                                    
+  2.396                        data arrival time
+  ________________________________________________________
+  Data required time calculation
+  N/C                          Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.clk_add
+               +     0.000          Clock source
+  N/C                          Signal_Noise_Acq_0/signal_acq_0/signalclkctrl_0/enadd_RNIH9JE_0:Y (r)
+               +     0.465          net: Signal_Noise_Acq_0/signal_acq_0/signalclkctrl_0_clk_add
+  N/C                          Signal_Noise_Acq_0/signal_acq_0/add_reg_0/addresult[0]:CLK (r)
+               +     0.000          Library hold time: ADLIB:DFN1C0
+  N/C                          Signal_Noise_Acq_0/signal_acq_0/add_reg_0/addresult[0]:D
+
+
+END SET External Hold
+
+----------------------------------------------------
+
+SET Clock to Output
+
+Path 1
+  From:                  Signal_Noise_Acq_0/signal_acq_0/add_reg_2/addresult[14]:CLK
+  To:                    xd[14]
+  Delay (ns):            4.992
+  Slack (ns):
+  Arrival (ns):          5.359
+  Required (ns):
+  Clock to Out (ns):     5.359
+
+Path 2
+  From:                  Signal_Noise_Acq_0/signal_acq_0/add_reg_0/addresult[6]:CLK
+  To:                    xd[6]
+  Delay (ns):            5.043
+  Slack (ns):
+  Arrival (ns):          5.410
+  Required (ns):
+  Clock to Out (ns):     5.410
+
+Path 3
+  From:                  Signal_Noise_Acq_0/signal_acq_0/add_reg_7/addresult[14]:CLK
+  To:                    xd[14]
+  Delay (ns):            5.042
+  Slack (ns):
+  Arrival (ns):          5.411
+  Required (ns):
+  Clock to Out (ns):     5.411
+
+Path 4
+  From:                  Signal_Noise_Acq_0/signal_acq_0/add_reg_1/addresult[11]:CLK
+  To:                    xd[11]
+  Delay (ns):            5.045
+  Slack (ns):
+  Arrival (ns):          5.419
+  Required (ns):
+  Clock to Out (ns):     5.419
+
+Path 5
+  From:                  Signal_Noise_Acq_0/signal_acq_0/add_reg_3/addresult[14]:CLK
+  To:                    xd[14]
+  Delay (ns):            5.041
+  Slack (ns):
+  Arrival (ns):          5.423
+  Required (ns):
+  Clock to Out (ns):     5.423
+
+
+Expanded Path 1
+  From: Signal_Noise_Acq_0/signal_acq_0/add_reg_2/addresult[14]:CLK
+  To: xd[14]
+  data arrival time                              5.359
+  data required time                         -   N/C
+  slack                                          N/C
+  ________________________________________________________
+  Data arrival time calculation
+  0.000                        Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.clk_add
+               +     0.000          Clock source
+  0.000                        Signal_Noise_Acq_0/signal_acq_0/signalclkctrl_0/enadd_RNIH9JE_0:Y (r)
+               +     0.367          net: Signal_Noise_Acq_0/signal_acq_0/signalclkctrl_0_clk_add
+  0.367                        Signal_Noise_Acq_0/signal_acq_0/add_reg_2/addresult[14]:CLK (r)
+               +     0.206          cell: ADLIB:DFN1C0
+  0.573                        Signal_Noise_Acq_0/signal_acq_0/add_reg_2/addresult[14]:Q (r)
+               +     0.415          net: Signal_Noise_Acq_0/signal_acq_0/addresult_6[14]
+  0.988                        Signal_Noise_Acq_0/signal_acq_0/rdata_choice_0/m268:B (r)
+               +     0.221          cell: ADLIB:NOR3B
+  1.209                        Signal_Noise_Acq_0/signal_acq_0/rdata_choice_0/m268:Y (r)
+               +     0.124          net: Signal_Noise_Acq_0/signal_acq_0/rdata_choice_0/N_269
+  1.333                        Signal_Noise_Acq_0/signal_acq_0/rdata_choice_0/m270:A (r)
+               +     0.202          cell: ADLIB:MX2
+  1.535                        Signal_Noise_Acq_0/signal_acq_0/rdata_choice_0/m270:Y (r)
+               +     0.124          net: Signal_Noise_Acq_0/signal_acq_0/rdata_choice_0/N_271
+  1.659                        Signal_Noise_Acq_0/signal_acq_0/rdata_choice_0/m271:B (r)
+               +     0.207          cell: ADLIB:MX2
+  1.866                        Signal_Noise_Acq_0/signal_acq_0/rdata_choice_0/m271:Y (r)
+               +     0.124          net: Signal_Noise_Acq_0/signal_acq_0/rdata_choice_0/N_272
+  1.990                        Signal_Noise_Acq_0/signal_acq_0/rdata_choice_0/m279:A (r)
+               +     0.202          cell: ADLIB:MX2
+  2.192                        Signal_Noise_Acq_0/signal_acq_0/rdata_choice_0/m279:Y (r)
+               +     0.672          net: Signal_Noise_Acq_0/signal_data_t[14]
+  2.864                        Signal_Noise_Acq_0/n_s_change_0/dataout[14]:A (r)
+               +     0.183          cell: ADLIB:NOR2A
+  3.047                        Signal_Noise_Acq_0/n_s_change_0/dataout[14]:Y (r)
+               +     1.276          net: Signal_Noise_Acq_0_dataout[14]
+  4.323                        xd_pad[14]/U0/U1:D (r)
+               +     0.213          cell: ADLIB:IOBI_IB_OB_EB
+  4.536                        xd_pad[14]/U0/U1:DOUT (r)
+               +     0.000          net: xd_pad[14]/U0/NET1
+  4.536                        xd_pad[14]/U0/U0:D (r)
+               +     0.823          cell: ADLIB:IOPAD_BI
+  5.359                        xd_pad[14]/U0/U0:PAD (r)
+               +     0.000          net: xd[14]
+  5.359                        xd[14] (r)
+                                    
+  5.359                        data arrival time
+  ________________________________________________________
+  Data required time calculation
+  N/C                          Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.clk_add
+               +     0.000          Clock source
+  N/C                          Signal_Noise_Acq_0/signal_acq_0/signalclkctrl_0/enadd_RNIH9JE_0:Y (r)
+                                    
+  N/C                          xd[14] (r)
+
+
+END SET Clock to Output
+
+----------------------------------------------------
+
+SET Register to Asynchronous
+
+No Path
+
+END SET Register to Asynchronous
+
+----------------------------------------------------
+
+SET External Removal
+
+No Path
+
+END SET External Removal
+
+----------------------------------------------------
+
+SET Asynchronous to Register
+
+No Path
+
+END SET Asynchronous to Register
+
+----------------------------------------------------
+
+Clock Domain Signal_Noise_Acq_0.signal_acq_0.s_clk_div4_0.clkout
+
+SET Register to Register
+
+Path 1
+  From:                  Signal_Noise_Acq_0/signal_acq_0/signalclkctrl_0/count[6]:CLK
+  To:                    Signal_Noise_Acq_0/signal_acq_0/signalclkctrl_0/count[7]:D
+  Delay (ns):            1.051
+  Slack (ns):            0.308
+  Arrival (ns):          2.585
+  Required (ns):         2.277
+  Hold (ns):             0.000
+
+Path 2
+  From:                  Signal_Noise_Acq_0/signal_acq_0/add_reg_4/addresult[17]:CLK
+  To:                    Signal_Noise_Acq_0/signal_acq_0/add_reg_4/addresult[17]:D
+  Delay (ns):            0.571
+  Slack (ns):            0.571
+  Arrival (ns):          4.163
+  Required (ns):         3.592
+  Hold (ns):             0.000
+
+Path 3
+  From:                  Signal_Noise_Acq_0/signal_acq_0/add_reg_2/addresult[15]:CLK
+  To:                    Signal_Noise_Acq_0/signal_acq_0/add_reg_2/addresult[15]:D
+  Delay (ns):            0.571
+  Slack (ns):            0.571
+  Arrival (ns):          4.158
+  Required (ns):         3.587
+  Hold (ns):             0.000
+
+Path 4
+  From:                  Signal_Noise_Acq_0/signal_acq_0/add_reg_1/addresult[0]:CLK
+  To:                    Signal_Noise_Acq_0/signal_acq_0/add_reg_1/addresult[0]:D
+  Delay (ns):            0.571
+  Slack (ns):            0.571
+  Arrival (ns):          4.165
+  Required (ns):         3.594
+  Hold (ns):             0.000
+
+Path 5
+  From:                  Signal_Noise_Acq_0/signal_acq_0/add_reg_5/addresult[0]:CLK
+  To:                    Signal_Noise_Acq_0/signal_acq_0/add_reg_5/addresult[0]:D
+  Delay (ns):            0.571
+  Slack (ns):            0.571
+  Arrival (ns):          4.165
+  Required (ns):         3.594
+  Hold (ns):             0.000
+
+
+Expanded Path 1
+  From: Signal_Noise_Acq_0/signal_acq_0/signalclkctrl_0/count[6]:CLK
+  To: Signal_Noise_Acq_0/signal_acq_0/signalclkctrl_0/count[7]:D
+  data arrival time                              2.585
+  data required time                         -   2.277
+  slack                                          0.308
+  ________________________________________________________
+  Data arrival time calculation
+  0.000                        Signal_Noise_Acq_0.signal_acq_0.s_clk_div4_0.clkout
+               +     0.000          Clock source
+  0.000                        Signal_Noise_Acq_0/signal_acq_0/s_clk_div4_0/clkout:Q (r)
+               +     1.534          net: Signal_Noise_Acq_0/signal_acq_0/clkout
+  1.534                        Signal_Noise_Acq_0/signal_acq_0/signalclkctrl_0/count[6]:CLK (r)
+               +     0.206          cell: ADLIB:DFN1E0C0
+  1.740                        Signal_Noise_Acq_0/signal_acq_0/signalclkctrl_0/count[6]:Q (r)
+               +     0.182          net: Signal_Noise_Acq_0/signal_acq_0/signalclkctrl_0/count[6]
+  1.922                        Signal_Noise_Acq_0/signal_acq_0/signalclkctrl_0/count_RNIFAIO1[5]:C (r)
+               +     0.236          cell: ADLIB:NOR3C
+  2.158                        Signal_Noise_Acq_0/signal_acq_0/signalclkctrl_0/count_RNIFAIO1[5]:Y (r)
+               +     0.175          net: Signal_Noise_Acq_0/signal_acq_0/signalclkctrl_0/count_c6
+  2.333                        Signal_Noise_Acq_0/signal_acq_0/signalclkctrl_0/count_RNO[7]:A (r)
+               +     0.122          cell: ADLIB:XOR2
+  2.455                        Signal_Noise_Acq_0/signal_acq_0/signalclkctrl_0/count_RNO[7]:Y (r)
+               +     0.130          net: Signal_Noise_Acq_0/signal_acq_0/signalclkctrl_0/count_n7
+  2.585                        Signal_Noise_Acq_0/signal_acq_0/signalclkctrl_0/count[7]:D (r)
+                                    
+  2.585                        data arrival time
+  ________________________________________________________
+  Data required time calculation
+  0.000                        Signal_Noise_Acq_0.signal_acq_0.s_clk_div4_0.clkout
+               +     0.000          Clock source
+  0.000                        Signal_Noise_Acq_0/signal_acq_0/s_clk_div4_0/clkout:Q (r)
+               +     2.277          net: Signal_Noise_Acq_0/signal_acq_0/clkout
+  2.277                        Signal_Noise_Acq_0/signal_acq_0/signalclkctrl_0/count[7]:CLK (r)
+               +     0.000          Library hold time: ADLIB:DFN1E0C0
+  2.277                        Signal_Noise_Acq_0/signal_acq_0/signalclkctrl_0/count[7]:D
+                                    
+  2.277                        data required time
+
+
+END SET Register to Register
+
+----------------------------------------------------
+
+SET External Hold
+
+Path 1
+  From:                  ADC[0]
+  To:                    Signal_Noise_Acq_0/signal_acq_0/add_reg_0/addresult[0]:D
+  Delay (ns):            2.396
+  Slack (ns):
+  Arrival (ns):          2.396
+  Required (ns):
+  Hold (ns):             0.000
+  External Hold (ns):    2.110
+
+Path 2
+  From:                  ADC[1]
+  To:                    Signal_Noise_Acq_0/signal_acq_0/add_reg_3/addresult[1]:D
+  Delay (ns):            2.423
+  Slack (ns):
+  Arrival (ns):          2.423
+  Required (ns):
+  Hold (ns):             0.000
+  External Hold (ns):    2.086
+
+Path 3
+  From:                  ADC[1]
+  To:                    Signal_Noise_Acq_0/signal_acq_0/add_reg_4/addresult[1]:D
+  Delay (ns):            2.425
+  Slack (ns):
+  Arrival (ns):          2.425
+  Required (ns):
+  Hold (ns):             0.000
+  External Hold (ns):    2.078
+
+Path 4
+  From:                  ADC[1]
+  To:                    Signal_Noise_Acq_0/signal_acq_0/add_reg_0/addresult[1]:D
+  Delay (ns):            2.422
+  Slack (ns):
+  Arrival (ns):          2.422
+  Required (ns):
+  Hold (ns):             0.000
+  External Hold (ns):    2.072
+
+Path 5
+  From:                  ADC[1]
+  To:                    Signal_Noise_Acq_0/signal_acq_0/add_reg_6/addresult[1]:D
+  Delay (ns):            2.509
+  Slack (ns):
+  Arrival (ns):          2.509
+  Required (ns):
+  Hold (ns):             0.000
+  External Hold (ns):    2.000
+
+
+Expanded Path 1
+  From: ADC[0]
+  To: Signal_Noise_Acq_0/signal_acq_0/add_reg_0/addresult[0]:D
+  data arrival time                              2.396
+  data required time                         -   N/C
+  slack                                          N/C
+  ________________________________________________________
+  Data arrival time calculation
+  0.000                        ADC[0] (f)
+               +     0.000          net: ADC[0]
+  0.000                        ADC_pad[0]/U0/U0:PAD (f)
+               +     0.222          cell: ADLIB:IOPAD_IN
+  0.222                        ADC_pad[0]/U0/U0:Y (f)
+               +     0.000          net: ADC_pad[0]/U0/NET1
+  0.222                        ADC_pad[0]/U0/U1:YIN (f)
+               +     0.014          cell: ADLIB:IOIN_IB
+  0.236                        ADC_pad[0]/U0/U1:Y (f)
+               +     0.976          net: ADC_c[0]
+  1.212                        Signal_Noise_Acq_0/n_s_change_0/s_adc_1_10:A (f)
+               +     0.220          cell: ADLIB:NOR2A
+  1.432                        Signal_Noise_Acq_0/n_s_change_0/s_adc_1_10:Y (f)
+               +     0.598          net: Signal_Noise_Acq_0/un1_n_s_change_0_1[0]
+  2.030                        Signal_Noise_Acq_0/signal_acq_0/add_reg_0/un3_addresult_m70:B (f)
+               +     0.242          cell: ADLIB:AX1C
+  2.272                        Signal_Noise_Acq_0/signal_acq_0/add_reg_0/un3_addresult_m70:Y (r)
+               +     0.124          net: Signal_Noise_Acq_0/signal_acq_0/add_reg_0/m70_3
+  2.396                        Signal_Noise_Acq_0/signal_acq_0/add_reg_0/addresult[0]:D (r)
+                                    
+  2.396                        data arrival time
+  ________________________________________________________
+  Data required time calculation
+  N/C                          Signal_Noise_Acq_0.signal_acq_0.s_clk_div4_0.clkout
+               +     0.000          Clock source
+  N/C                          Signal_Noise_Acq_0/signal_acq_0/s_clk_div4_0/clkout:Q (r)
+               +     2.786          net: Signal_Noise_Acq_0/signal_acq_0/clkout
+  N/C                          Signal_Noise_Acq_0/signal_acq_0/signalclkctrl_0/enadd_RNIH9JE:B (r)
+               +     0.230          cell: ADLIB:NOR2B
+  N/C                          Signal_Noise_Acq_0/signal_acq_0/signalclkctrl_0/enadd_RNIH9JE:Y (r)
+               +     0.693          net: Signal_Noise_Acq_0/signal_acq_0/signalclkctrl_0/clk_add_i
+  N/C                          Signal_Noise_Acq_0/signal_acq_0/signalclkctrl_0/enadd_RNIH9JE_0:A (r)
+               +     0.332          cell: ADLIB:CLKINT
+  N/C                          Signal_Noise_Acq_0/signal_acq_0/signalclkctrl_0/enadd_RNIH9JE_0:Y (r)
+               +     0.465          net: Signal_Noise_Acq_0/signal_acq_0/signalclkctrl_0_clk_add
+  N/C                          Signal_Noise_Acq_0/signal_acq_0/add_reg_0/addresult[0]:CLK (r)
+               +     0.000          Library hold time: ADLIB:DFN1C0
+  N/C                          Signal_Noise_Acq_0/signal_acq_0/add_reg_0/addresult[0]:D
+
+
+END SET External Hold
+
+----------------------------------------------------
+
+SET Clock to Output
+
+Path 1
+  From:                  Signal_Noise_Acq_0/signal_acq_0/signalclkctrl_0/enclk:CLK
+  To:                    Acq_clk
+  Delay (ns):            3.251
+  Slack (ns):
+  Arrival (ns):          4.790
+  Required (ns):
+  Clock to Out (ns):     4.790
+
+Path 2
+  From:                  Signal_Noise_Acq_0/signal_acq_0/add_reg_2/addresult[14]:CLK
+  To:                    xd[14]
+  Delay (ns):            4.992
+  Slack (ns):
+  Arrival (ns):          8.579
+  Required (ns):
+  Clock to Out (ns):     8.579
+
+Path 3
+  From:                  Signal_Noise_Acq_0/signal_acq_0/add_reg_0/addresult[6]:CLK
+  To:                    xd[6]
+  Delay (ns):            5.043
+  Slack (ns):
+  Arrival (ns):          8.630
+  Required (ns):
+  Clock to Out (ns):     8.630
+
+Path 4
+  From:                  Signal_Noise_Acq_0/signal_acq_0/add_reg_7/addresult[14]:CLK
+  To:                    xd[14]
+  Delay (ns):            5.042
+  Slack (ns):
+  Arrival (ns):          8.631
+  Required (ns):
+  Clock to Out (ns):     8.631
+
+Path 5
+  From:                  Signal_Noise_Acq_0/signal_acq_0/add_reg_1/addresult[11]:CLK
+  To:                    xd[11]
+  Delay (ns):            5.045
+  Slack (ns):
+  Arrival (ns):          8.639
+  Required (ns):
+  Clock to Out (ns):     8.639
+
+
+Expanded Path 1
+  From: Signal_Noise_Acq_0/signal_acq_0/signalclkctrl_0/enclk:CLK
+  To: Acq_clk
+  data arrival time                              4.790
+  data required time                         -   N/C
+  slack                                          N/C
+  ________________________________________________________
+  Data arrival time calculation
+  0.000                        Signal_Noise_Acq_0.signal_acq_0.s_clk_div4_0.clkout
+               +     0.000          Clock source
+  0.000                        Signal_Noise_Acq_0/signal_acq_0/s_clk_div4_0/clkout:Q (r)
+               +     1.539          net: Signal_Noise_Acq_0/signal_acq_0/clkout
+  1.539                        Signal_Noise_Acq_0/signal_acq_0/signalclkctrl_0/enclk:CLK (r)
+               +     0.206          cell: ADLIB:DFN1C0
+  1.745                        Signal_Noise_Acq_0/signal_acq_0/signalclkctrl_0/enclk:Q (r)
+               +     0.147          net: Signal_Noise_Acq_0/signal_acq_0/signalclkctrl_0/enclk
+  1.892                        Signal_Noise_Acq_0/signal_acq_0/signalclkctrl_0/enclk_RNI2MLE:A (r)
+               +     0.173          cell: ADLIB:NOR2B
+  2.065                        Signal_Noise_Acq_0/signal_acq_0/signalclkctrl_0/enclk_RNI2MLE:Y (r)
+               +     0.121          net: Signal_Noise_Acq_0/signal_acq_0_Signal_acq_clk
+  2.186                        Signal_Noise_Acq_0/n_s_change_0/acq_clk:A (r)
+               +     0.236          cell: ADLIB:MX2
+  2.422                        Signal_Noise_Acq_0/n_s_change_0/acq_clk:Y (r)
+               +     0.647          net: Signal_Noise_Acq_0_acq_clk
+  3.069                        AND2_0:A (r)
+               +     0.173          cell: ADLIB:AND2
+  3.242                        AND2_0:Y (r)
+               +     0.435          net: Acq_clk_c
+  3.677                        Acq_clk_pad/U0/U1:D (r)
+               +     0.213          cell: ADLIB:IOTRI_OB_EB
+  3.890                        Acq_clk_pad/U0/U1:DOUT (r)
+               +     0.000          net: Acq_clk_pad/U0/NET1
+  3.890                        Acq_clk_pad/U0/U0:D (r)
+               +     0.900          cell: ADLIB:IOPAD_TRI
+  4.790                        Acq_clk_pad/U0/U0:PAD (r)
+               +     0.000          net: Acq_clk
+  4.790                        Acq_clk (r)
+                                    
+  4.790                        data arrival time
+  ________________________________________________________
+  Data required time calculation
+  N/C                          Signal_Noise_Acq_0.signal_acq_0.s_clk_div4_0.clkout
+               +     0.000          Clock source
+  N/C                          Signal_Noise_Acq_0/signal_acq_0/s_clk_div4_0/clkout:Q (r)
+                                    
+  N/C                          Acq_clk (r)
+
+
+END SET Clock to Output
+
+----------------------------------------------------
+
+SET Register to Asynchronous
+
+No Path
+
+END SET Register to Asynchronous
+
+----------------------------------------------------
+
+SET External Removal
+
+No Path
+
+END SET External Removal
+
+----------------------------------------------------
+
+SET Asynchronous to Register
+
+No Path
+
+END SET Asynchronous to Register
+
+----------------------------------------------------
+
+Path set Pin to Pin
+
+SET Input to Output
+
+Path 1
+  From:                  tri_ctrl
+  To:                    xd[2]
+  Delay (ns):            3.604
+  Slack (ns):
+  Arrival (ns):          3.604
+  Required (ns):
+
+Path 2
+  From:                  tri_ctrl
+  To:                    xd[3]
+  Delay (ns):            3.629
+  Slack (ns):
+  Arrival (ns):          3.629
+  Required (ns):
+
+Path 3
+  From:                  tri_ctrl
+  To:                    xd[14]
+  Delay (ns):            3.701
+  Slack (ns):
+  Arrival (ns):          3.701
+  Required (ns):
+
+Path 4
+  From:                  tri_ctrl
+  To:                    xd[4]
+  Delay (ns):            3.760
+  Slack (ns):
+  Arrival (ns):          3.760
+  Required (ns):
+
+Path 5
+  From:                  tri_ctrl
+  To:                    xd[11]
+  Delay (ns):            3.774
+  Slack (ns):
+  Arrival (ns):          3.774
+  Required (ns):
+
+
+Expanded Path 1
+  From: tri_ctrl
+  To: xd[2]
+  data arrival time                              3.604
+  data required time                         -   N/C
+  slack                                          N/C
+  ________________________________________________________
+  Data arrival time calculation
+  0.000                        tri_ctrl (r)
+               +     0.000          net: tri_ctrl
+  0.000                        tri_ctrl_pad/U0/U0:PAD (r)
+               +     0.319          cell: ADLIB:IOPAD_IN
+  0.319                        tri_ctrl_pad/U0/U0:Y (r)
+               +     0.000          net: tri_ctrl_pad/U0/NET1
+  0.319                        tri_ctrl_pad/U0/U1:YIN (r)
+               +     0.015          cell: ADLIB:IOIN_IB
+  0.334                        tri_ctrl_pad/U0/U1:Y (r)
+               +     1.042          net: tri_ctrl_c
+  1.376                        GPMI_0/tri_state_0/xd_1:A (r)
+               +     0.209          cell: ADLIB:NOR2A
+  1.585                        GPMI_0/tri_state_0/xd_1:Y (r)
+               +     0.968          net: GPMI_0_tri_state_0_xd_1
+  2.553                        xd_pad[2]/U0/U1:E (r)
+               +     0.151          cell: ADLIB:IOBI_IB_OB_EB
+  2.704                        xd_pad[2]/U0/U1:EOUT (r)
+               +     0.000          net: xd_pad[2]/U0/NET2
+  2.704                        xd_pad[2]/U0/U0:E (r)
+               +     0.900          cell: ADLIB:IOPAD_BI
+  3.604                        xd_pad[2]/U0/U0:PAD (r)
+               +     0.000          net: xd[2]
+  3.604                        xd[2] (r)
+                                    
+  3.604                        data arrival time
+  ________________________________________________________
+  Data required time calculation
+  N/C                          tri_ctrl (r)
+                                    
+  N/C                          xd[2] (r)
+                                    
+  N/C                          data required time
+
+
+END SET Input to Output
+
+----------------------------------------------------
+
+Path set User Sets
+

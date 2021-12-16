@@ -23,10 +23,6 @@ int main()
 	while (1)
 	{
 	    // ×´Ì¬»úÖ´ÐÐº¯Êý
-//	    DeCpmgTop();
-//	    Delay(60000);
-//	    Delay(60000);
-//	    ScanModeTop();
 		(*(eventFunc[EventBoardState]))();
 	}
 }

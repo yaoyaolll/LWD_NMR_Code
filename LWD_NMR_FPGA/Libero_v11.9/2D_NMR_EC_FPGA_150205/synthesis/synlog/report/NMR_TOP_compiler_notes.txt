@@ -13,19 +13,19 @@
 @N: CG364 :"E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\cal_div.v":2:7:2:13|Synthesizing module cal_div in library work.
 @N: CG179 :"E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\cal_div.v":40:43:40:45|Removing redundant assignment.
 @N: CG364 :"E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\CAL\CAL.v":5:7:5:9|Synthesizing module CAL in library work.
-@N: CG364 :"E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\long_timer.v":3:7:3:16|Synthesizing module long_timer in library work.
-@N: CG179 :"E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\long_timer.v":63:41:63:46|Removing redundant assignment.
-@N: CG364 :"E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\clk_div500.v":2:7:2:16|Synthesizing module clk_div500 in library work.
-@N: CG179 :"E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\clk_div500.v":56:37:56:42|Removing redundant assignment.
-@N: CG179 :"E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\clk_div500.v":61:33:61:37|Removing redundant assignment.
-@N: CG179 :"E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\clk_div500.v":62:32:62:37|Removing redundant assignment.
-@N: CG364 :"D:\Libero_Soc11.9\SynplifyPro\lib\proasic\proasic3.v":2447:7:2447:9|Synthesizing module PLL in library work.
-@N: CG364 :"E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\smartgen\pllclk\pllclk.v":5:7:5:12|Synthesizing module pllclk in library work.
 @N: CG364 :"E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\clk_10k.v":3:7:3:13|Synthesizing module clk_10k in library work.
 @N: CG179 :"E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\clk_10k.v":57:42:57:52|Removing redundant assignment.
 @N: CG179 :"E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\clk_10k.v":62:33:62:37|Removing redundant assignment.
 @N: CG179 :"E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\clk_10k.v":63:37:63:47|Removing redundant assignment.
-@N: CG364 :"E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\ClockManagement\ClockManagement.v":5:7:5:21|Synthesizing module ClockManagement in library work.
+@N: CG364 :"E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\clk_div500.v":2:7:2:16|Synthesizing module clk_div500 in library work.
+@N: CG179 :"E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\clk_div500.v":56:37:56:42|Removing redundant assignment.
+@N: CG179 :"E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\clk_div500.v":61:33:61:37|Removing redundant assignment.
+@N: CG179 :"E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\clk_div500.v":62:32:62:37|Removing redundant assignment.
+@N: CG364 :"E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\long_timer.v":3:7:3:16|Synthesizing module long_timer in library work.
+@N: CG179 :"E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\long_timer.v":63:41:63:46|Removing redundant assignment.
+@N: CG364 :"D:\Libero_Soc11.9\SynplifyPro\lib\proasic\proasic3.v":2447:7:2447:9|Synthesizing module PLL in library work.
+@N: CG364 :"E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\smartgen\pllclk\pllclk.v":5:7:5:12|Synthesizing module pllclk in library work.
+@N: CG364 :"E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\ClockManagement\ClockManagement.v":9:7:9:21|Synthesizing module ClockManagement in library work.
 @N: CG364 :"E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\dds_timer.v":2:7:2:15|Synthesizing module dds_timer in library work.
 @N: CG364 :"E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\dds_state.v":2:7:2:15|Synthesizing module dds_state in library work.
 @N: CG179 :"E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\dds_state.v":83:39:83:42|Removing redundant assignment.

@@ -152,12 +152,12 @@ SECTIONS
 
 /*** Uninitialized Sections ***/
    	.stack          : > RAMM1       	PAGE = 1
-   	.ebss           : > RAMM0_1       	PAGE = 1
+   	.ebss           : > RAMM0_1 | myzone      	PAGE = 1
    	.bss            : > RAMM0_1       	PAGE = 1
       .cio            : > RAMM0_1         PAGE = 1
 
 /*** Initialized Sections ***/
-  	.cinit			: > RAMM0_0         PAGE = 0
+  	.cinit			: > RAMM0_0 | PRAMH0        PAGE = 0
 
 	.const			: > RAMM0_0,  	    PAGE = 0
 
@@ -169,7 +169,7 @@ SECTIONS
 
 /*	ramfuncs	    : > PRAMH0,  	    PAGE = 0*/
 
-	.text		    : {*(.text)} >> PRAMH0 | RAML1_RSV | RAML0_CODE_USE2 ,  	    PAGE = 0
+	.text		    : {*(.text)} >> PRAMH0 | RAML1_RSV | RAML0_CODE_USE2 | RAMOUT_0,  	    PAGE = 0
 
 	secureRamFuncs 	    : > RAMOUT_0,       PAGE = 0
 

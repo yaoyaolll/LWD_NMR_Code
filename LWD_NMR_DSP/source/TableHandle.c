@@ -77,7 +77,7 @@ void CheckReadTable(void)
 
 		CheckTablePt = (Uint16 *)0x8009;
 		CenterFreq = *CheckTablePt;
-		if (CenterFreq < 4500 || CenterFreq > 5150) // unit 0.1kHz
+		if (CenterFreq < 3000 || CenterFreq > 6000) // unit 0.1kHz
 		{
 			CenterFreq = 4750;
 			*CheckTablePt = 4750;

@@ -1,6 +1,6 @@
 <project name="NMR_TOP_1" version="1.1">
     <ProjectDirectory>
-        E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\designer\impl3\NMR_TOP_1_fp
+        E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\designer\impl3\NMR_TOP_1_fp
     </ProjectDirectory>
     <View>
         SingleSTAPLView
@@ -9,7 +9,7 @@
         
     </LiberoTargetDevice>
     <LogFile>
-        E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\designer\impl3\NMR_TOP_1_fp\NMR_TOP_1.log
+        E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\designer\impl3\NMR_TOP_1_fp\NMR_TOP_1.log
     </LogFile>
     <SerializationOption>
         Skip
@@ -73,7 +73,7 @@
         </Hardware>
         <Algo type="PDB">
             <filename>
-                E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\designer\impl3\NMR_TOP_1.pdb
+                E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\designer\impl3\NMR_TOP_1.pdb
             </filename>
             <local>
                 projectData\NMR_TOP_1.pdb

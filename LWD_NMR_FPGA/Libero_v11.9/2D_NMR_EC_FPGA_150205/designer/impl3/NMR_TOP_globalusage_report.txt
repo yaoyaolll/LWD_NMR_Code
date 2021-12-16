@@ -1,0 +1,37 @@
+********************************************************************
+                            Global Usage Report
+********************************************************************
+  
+Product: Designer
+Release: v11.9 SP6
+Version: 11.9.6.7
+Date: Thu Dec 16 11:25:08 2021
+Design Name: NMR_TOP  Family: ProASIC3  Die: A3P1000  Package: 208 PQFP
+Design State: Post-Layout
+
+The following nets have been routed to a chip global resource:
+
+    Fanout            Name
+    ----------------------
+    254               Net   : net_27
+                      Driver: GPMI_0/rst_n_module_0/rst_nr2_RNISUE8/U_GL
+    186               Net   : s_acq_change_0_s_rst
+                      Driver: s_acq_change_0/s_rst_RNIKACF/U_GL
+    1860              Net   : GLA
+                      Driver: ClockManagement_0/pllclk_0/Core/U_PLL
+    164               Net   : Signal_Noise_Acq_0/signal_acq_0/signalclkctrl_0_clk_add
+                      Driver: Signal_Noise_Acq_0/signal_acq_0/signalclkctrl_0/enadd_RNIH9JE_0/U_GL
+    1                 Net   : ClockManagement_0/pllclk_0_GLB
+                      Driver: ClockManagement_0/pllclk_0/Core/U_GLB
+
+
+The following nets have been routed to a quadrant global resource:
+
+    Fanout            Name
+    ----------------------
+    137               Net   : ddsclkout_c
+                      Driver: ddsclkout_pad/U0/U1/U_GL
+                      Region : quadrant_LL
+
+
+

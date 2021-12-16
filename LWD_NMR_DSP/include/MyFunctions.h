@@ -35,6 +35,7 @@ void ReplyLastCheckFrame(Uint16 frameHead, Uint16 lastCheckSum);
 void ReplyUpTableFrame(Uint16 tableID);
 void ReplyModeDataFrame(Uint32 startAddr, Uint32 dataLen);
 void ReplyCasingErrFrame();
+void software_handler(void);
 
 //Functions defined in MyFPGAFunctions.c
 void ShutdownHV(void);

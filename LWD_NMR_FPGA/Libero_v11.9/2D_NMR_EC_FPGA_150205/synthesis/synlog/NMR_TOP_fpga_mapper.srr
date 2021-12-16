@@ -1,4 +1,4 @@
-# Fri Jun 04 09:24:57 2021
+# Thu Dec 16 11:21:25 2021
 
 Synopsys Microsemi Technology Mapper, Version mapact, Build 2172R, Built Oct 30 2017 10:54:39
 Copyright (C) 1994-2017 Synopsys, Inc. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
@@ -9,31 +9,31 @@ Mapper Startup Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:0
 @N: MF248 |Running in 64-bit mode.
 @N: MF667 |Clock conversion disabled. (Command "set_option -fix_gated_and_generated_clocks 0" in the project file.)
 
-Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 100MB peak: 101MB)
+Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 99MB peak: 101MB)
 
 
-Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 100MB peak: 101MB)
+Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 99MB peak: 101MB)
 
 
 
-Starting Optimization and Mapping (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 115MB peak: 116MB)
+Starting Optimization and Mapping (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 115MB peak: 115MB)
 
 
 Available hyper_sources - for debug and ip models
 	None Found
 
-@W: BN132 :"e:\lwd_nmr\code\lwd_nmr_fpga\20210603good\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\plusestate.v":144:0:144:5|Removing sequential instance plusestate_0.pluse_start because it is equivalent to instance plusestate_0.off_test. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: BN132 :"e:\lwd_nmr\code\lwd_nmr_fpga\20210603good\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\plusestate.v":144:0:144:5|Removing sequential instance plusestate_0.dump_start because it is equivalent to instance plusestate_0.soft_d. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: BN132 :"e:\lwd_nmr\code\lwd_nmr_fpga\20210603good\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\plusestate.v":144:0:144:5|Removing sequential instance plusestate_0.dumpoff_ctr because it is equivalent to instance plusestate_0.tetw_pluse. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: BN132 :"e:\lwd_nmr\code\lwd_nmr_fpga\20210603good\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\scalestate.v":384:0:384:5|Removing sequential instance scalestate_0.state_over_n because it is equivalent to instance scalestate_0.tetw_pluse. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: BN132 :"e:\lwd_nmr\code\lwd_nmr_fpga\20210603good\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\scanstate.v":127:0:127:5|Removing sequential instance scanstate_0.dumpon_ctr because it is equivalent to instance scanstate_0.dds_conf. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"e:\lwd_nmr\code\20210907respository\lwd_nmr_fpga\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\plusestate.v":144:0:144:5|Removing sequential instance plusestate_0.pluse_start because it is equivalent to instance plusestate_0.off_test. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"e:\lwd_nmr\code\20210907respository\lwd_nmr_fpga\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\plusestate.v":144:0:144:5|Removing sequential instance plusestate_0.dump_start because it is equivalent to instance plusestate_0.soft_d. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"e:\lwd_nmr\code\20210907respository\lwd_nmr_fpga\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\plusestate.v":144:0:144:5|Removing sequential instance plusestate_0.dumpoff_ctr because it is equivalent to instance plusestate_0.tetw_pluse. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"e:\lwd_nmr\code\20210907respository\lwd_nmr_fpga\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\scalestate.v":384:0:384:5|Removing sequential instance scalestate_0.state_over_n because it is equivalent to instance scalestate_0.tetw_pluse. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"e:\lwd_nmr\code\20210907respository\lwd_nmr_fpga\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\scanstate.v":127:0:127:5|Removing sequential instance scanstate_0.dumpon_ctr because it is equivalent to instance scanstate_0.dds_conf. To keep the instance, apply constraint syn_preserve=1 on the instance.
 
 Finished RTL optimizations (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 118MB peak: 121MB)
 
-@N: MF238 :"e:\lwd_nmr\code\lwd_nmr_fpga\20210603good\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\bridge_div.v":57:15:57:16|Found 6-bit incrementor, 'count_5[5:0]'
-@N: MF238 :"e:\lwd_nmr\code\lwd_nmr_fpga\20210603good\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\cal_div.v":39:45:39:54|Found 6-bit incrementor, 'un3_count[5:0]'
-@N: MO231 :"e:\lwd_nmr\code\lwd_nmr_fpga\20210603good\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\long_timer.v":48:0:48:5|Found counter in view:work.long_timer(verilog) instance count[15:0] 
-@N: MO231 :"e:\lwd_nmr\code\lwd_nmr_fpga\20210603good\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\dds_timer.v":22:0:22:5|Found counter in view:work.dds_timer(verilog) instance count[7:0] 
+@N: MF238 :"e:\lwd_nmr\code\20210907respository\lwd_nmr_fpga\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\bridge_div.v":57:15:57:16|Found 6-bit incrementor, 'count_5[5:0]'
+@N: MF238 :"e:\lwd_nmr\code\20210907respository\lwd_nmr_fpga\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\cal_div.v":39:45:39:54|Found 6-bit incrementor, 'un3_count[5:0]'
+@N: MO231 :"e:\lwd_nmr\code\20210907respository\lwd_nmr_fpga\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\long_timer.v":48:0:48:5|Found counter in view:work.long_timer(verilog) instance count[15:0] 
+@N: MO231 :"e:\lwd_nmr\code\20210907respository\lwd_nmr_fpga\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\dds_timer.v":22:0:22:5|Found counter in view:work.dds_timer(verilog) instance count[7:0] 
 Encoding state machine cs[8:0] (in view: work.dds_state(verilog))
 original code -> new code
    00000000 -> 000000000
@@ -45,8 +45,8 @@ original code -> new code
    00100000 -> 001000001
    01000000 -> 010000001
    10000000 -> 100000001
-@N: MO231 :"e:\lwd_nmr\code\lwd_nmr_fpga\20210603good\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\dump_sustain_timer.v":44:0:44:5|Found counter in view:work.dump_sustain_timer(verilog) instance count[3:0] 
-@N: MO231 :"e:\lwd_nmr\code\lwd_nmr_fpga\20210603good\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\off_on_timer.v":23:0:23:5|Found counter in view:work.off_on_timer(verilog) instance count[4:0] 
+@N: MO231 :"e:\lwd_nmr\code\20210907respository\lwd_nmr_fpga\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\dump_sustain_timer.v":44:0:44:5|Found counter in view:work.dump_sustain_timer(verilog) instance count[3:0] 
+@N: MO231 :"e:\lwd_nmr\code\20210907respository\lwd_nmr_fpga\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\off_on_timer.v":23:0:23:5|Found counter in view:work.off_on_timer(verilog) instance count[4:0] 
 Encoding state machine cs[7:0] (in view: work.dump_state(verilog))
 original code -> new code
    0000000 -> 00000000
@@ -62,7 +62,7 @@ original code -> new code
    00 -> 00
    01 -> 01
    10 -> 10
-@N: MO231 :"e:\lwd_nmr\code\lwd_nmr_fpga\20210603good\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\dump_timer.v":23:0:23:5|Found counter in view:work.dump_timer(verilog) instance count[11:0] 
+@N: MO231 :"e:\lwd_nmr\code\20210907respository\lwd_nmr_fpga\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\dump_timer.v":23:0:23:5|Found counter in view:work.dump_timer(verilog) instance count[11:0] 
 Encoding state machine CS[7:0] (in view: work.noisestate(verilog))
 original code -> new code
    00000001 -> 00000000
@@ -95,9 +95,9 @@ original code -> new code
    0010 -> 00101
    0100 -> 01001
    1000 -> 10001
-@N: MO231 :"e:\lwd_nmr\code\lwd_nmr_fpga\20210603good\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\bri_timer.v":35:0:35:5|Found counter in view:work.bri_timer(verilog) instance count[7:0] 
-@N: MF179 :"e:\lwd_nmr\code\lwd_nmr_fpga\20210603good\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\bri_coder.v":37:13:37:30|Found 8 by 8 bit less-than operator ('<') half (in view: work.bri_coder(verilog))
-@N: MO231 :"e:\lwd_nmr\code\lwd_nmr_fpga\20210603good\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\qq_timer.v":22:0:22:5|Found counter in view:work.qq_timer(verilog) instance count[4:0] 
+@N: MO231 :"e:\lwd_nmr\code\20210907respository\lwd_nmr_fpga\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\bri_timer.v":35:0:35:5|Found counter in view:work.bri_timer(verilog) instance count[7:0] 
+@N: MF179 :"e:\lwd_nmr\code\20210907respository\lwd_nmr_fpga\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\bri_coder.v":37:13:37:30|Found 8 by 8 bit less-than operator ('<') half (in view: work.bri_coder(verilog))
+@N: MO231 :"e:\lwd_nmr\code\20210907respository\lwd_nmr_fpga\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\qq_timer.v":22:0:22:5|Found counter in view:work.qq_timer(verilog) instance count[4:0] 
 Encoding state machine cs[14:0] (in view: work.bri_state(verilog))
 original code -> new code
    00000000000000 -> 000000000000001
@@ -180,19 +180,19 @@ original code -> new code
    010000000000000 -> 0100000000000001
    100000000000000 -> 1000000000000001
 @N: MF176 |Default generator successful 
-@N: MO231 :"e:\lwd_nmr\code\lwd_nmr_fpga\20210603good\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\signalclkctrl.v":65:0:65:5|Found counter in view:work.signalclkctrl(verilog) instance count[15:0] 
+@N: MO231 :"e:\lwd_nmr\code\20210907respository\lwd_nmr_fpga\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\signalclkctrl.v":65:0:65:5|Found counter in view:work.signalclkctrl(verilog) instance count[15:0] 
 @N: MF176 |Default generator successful 
-@N: MF179 :"e:\lwd_nmr\code\lwd_nmr_fpga\20210603good\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\signalclkctrl.v":88:25:88:47|Found 16 by 16 bit less-than operator ('<') un1_count_1 (in view: work.signalclkctrl(verilog))
-@N: MF238 :"e:\lwd_nmr\code\lwd_nmr_fpga\20210603good\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\signalclkctrl.v":77:29:77:39|Found 12-bit incrementor, 'un1_stripnum[12:0]'
+@N: MF179 :"e:\lwd_nmr\code\20210907respository\lwd_nmr_fpga\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\signalclkctrl.v":88:25:88:47|Found 16 by 16 bit less-than operator ('<') un1_count_1 (in view: work.signalclkctrl(verilog))
+@N: MF238 :"e:\lwd_nmr\code\20210907respository\lwd_nmr_fpga\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\signalclkctrl.v":77:29:77:39|Found 12-bit incrementor, 'un1_stripnum[12:0]'
 @N: MF176 |Default generator successful 
-@N: MF238 :"e:\lwd_nmr\code\lwd_nmr_fpga\20210603good\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\ctrl_addr.v":38:17:38:18|Found 4-bit incrementor, 'addrout_3[3:0]'
-@N: MO231 :"e:\lwd_nmr\code\lwd_nmr_fpga\20210603good\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\noise_addr.v":16:0:16:5|Found counter in view:work.noise_addr_1(verilog) instance addr[11:0] 
-@N: MF179 :"e:\lwd_nmr\code\lwd_nmr_fpga\20210603good\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\noiseclk.v":63:26:63:40|Found 5 by 5 bit less-than operator ('<') un1_count (in view: work.noiseclk(verilog))
+@N: MF238 :"e:\lwd_nmr\code\20210907respository\lwd_nmr_fpga\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\ctrl_addr.v":38:17:38:18|Found 4-bit incrementor, 'addrout_3[3:0]'
+@N: MO231 :"e:\lwd_nmr\code\20210907respository\lwd_nmr_fpga\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\noise_addr.v":16:0:16:5|Found counter in view:work.noise_addr_1(verilog) instance addr[11:0] 
+@N: MF179 :"e:\lwd_nmr\code\20210907respository\lwd_nmr_fpga\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\noiseclk.v":63:26:63:40|Found 5 by 5 bit less-than operator ('<') un1_count (in view: work.noiseclk(verilog))
 @N: MF176 |Default generator successful 
-@N: MF238 :"e:\lwd_nmr\code\lwd_nmr_fpga\20210603good\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\noiseclk.v":61:36:61:45|Found 5-bit incrementor, 'un3_count[4:0]'
-@N: MO231 :"e:\lwd_nmr\code\lwd_nmr_fpga\20210603good\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\noiseclkctrl.v":32:0:32:5|Found counter in view:work.noiseclkctrl(verilog) instance count[11:0] 
-@N: MF179 :"e:\lwd_nmr\code\lwd_nmr_fpga\20210603good\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\noiseclkctrl.v":42:20:42:33|Found 12 by 12 bit less-than operator ('<') un1_count (in view: work.noiseclkctrl(verilog))
-@N: MO231 :"e:\lwd_nmr\code\lwd_nmr_fpga\20210603good\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\noise_addr.v":16:0:16:5|Found counter in view:work.noise_addr_0(verilog) instance addr[11:0] 
+@N: MF238 :"e:\lwd_nmr\code\20210907respository\lwd_nmr_fpga\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\noiseclk.v":61:36:61:45|Found 5-bit incrementor, 'un3_count[4:0]'
+@N: MO231 :"e:\lwd_nmr\code\20210907respository\lwd_nmr_fpga\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\noiseclkctrl.v":32:0:32:5|Found counter in view:work.noiseclkctrl(verilog) instance count[11:0] 
+@N: MF179 :"e:\lwd_nmr\code\20210907respository\lwd_nmr_fpga\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\noiseclkctrl.v":42:20:42:33|Found 12 by 12 bit less-than operator ('<') un1_count (in view: work.noiseclkctrl(verilog))
+@N: MO231 :"e:\lwd_nmr\code\20210907respository\lwd_nmr_fpga\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\noise_addr.v":16:0:16:5|Found counter in view:work.noise_addr_0(verilog) instance addr[11:0] 
 Encoding state machine CS[9:0] (in view: work.state_1ms(verilog))
 original code -> new code
    0000000001 -> 0000000000
@@ -205,48 +205,48 @@ original code -> new code
    0010000000 -> 0010000001
    0100000000 -> 0100000001
    1000000000 -> 1000000001
-@N: MO231 :"e:\lwd_nmr\code\lwd_nmr_fpga\20210603good\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\syn_md.v":31:0:31:5|Found counter in view:work.syn_md(verilog) instance count[3:0] 
-@N: MF238 :"e:\lwd_nmr\code\lwd_nmr_fpga\20210603good\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\timer.v":62:39:62:54|Found 22-bit incrementor, 'un2_timedata[21:0]'
+@N: MO231 :"e:\lwd_nmr\code\20210907respository\lwd_nmr_fpga\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\syn_md.v":31:0:31:5|Found counter in view:work.syn_md(verilog) instance count[3:0] 
+@N: MF238 :"e:\lwd_nmr\code\20210907respository\lwd_nmr_fpga\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\timer.v":62:39:62:54|Found 22-bit incrementor, 'un2_timedata[21:0]'
 
-Starting factoring (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 126MB peak: 127MB)
+Starting factoring (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:01s; Memory used current: 126MB peak: 127MB)
 
-@W: BN132 :"e:\lwd_nmr\code\lwd_nmr_fpga\20210603good\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\dds_state.v":144:0:144:5|Removing sequential instance DDS_0.dds_state_0.reset_reg because it is equivalent to instance DDS_0.dds_state_0.cs[1]. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: BN132 :"e:\lwd_nmr\code\lwd_nmr_fpga\20210603good\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\dump_state.v":107:0:107:5|Removing sequential instance DUMP_0.dump_state_0.on_start because it is equivalent to instance DUMP_0.dump_state_0.cs[5]. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: BN132 :"e:\lwd_nmr\code\lwd_nmr_fpga\20210603good\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\pd_pluse_state.v":153:0:153:5|Removing sequential instance pd_pluse_top_0.pd_pluse_state_0.en2 because it is equivalent to instance pd_pluse_top_0.pd_pluse_state_0.cs[6]. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: BN132 :"e:\lwd_nmr\code\lwd_nmr_fpga\20210603good\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\qq_state.v":88:0:88:5|Removing sequential instance PLUSE_0.qq_state_0.Q3Q6_Q4Q5 because it is equivalent to instance PLUSE_0.qq_state_0.cs[2]. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: BN132 :"e:\lwd_nmr\code\lwd_nmr_fpga\20210603good\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\qq_state.v":88:0:88:5|Removing sequential instance PLUSE_0.qq_state_1.Q3Q6_Q4Q5 because it is equivalent to instance PLUSE_0.qq_state_1.cs[2]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"e:\lwd_nmr\code\20210907respository\lwd_nmr_fpga\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\dds_state.v":144:0:144:5|Removing sequential instance DDS_0.dds_state_0.reset_reg because it is equivalent to instance DDS_0.dds_state_0.cs[1]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"e:\lwd_nmr\code\20210907respository\lwd_nmr_fpga\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\dump_state.v":107:0:107:5|Removing sequential instance DUMP_0.dump_state_0.on_start because it is equivalent to instance DUMP_0.dump_state_0.cs[5]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"e:\lwd_nmr\code\20210907respository\lwd_nmr_fpga\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\pd_pluse_state.v":153:0:153:5|Removing sequential instance pd_pluse_top_0.pd_pluse_state_0.en2 because it is equivalent to instance pd_pluse_top_0.pd_pluse_state_0.cs[6]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"e:\lwd_nmr\code\20210907respository\lwd_nmr_fpga\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\qq_state.v":88:0:88:5|Removing sequential instance PLUSE_0.qq_state_0.Q3Q6_Q4Q5 because it is equivalent to instance PLUSE_0.qq_state_0.cs[2]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"e:\lwd_nmr\code\20210907respository\lwd_nmr_fpga\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\qq_state.v":88:0:88:5|Removing sequential instance PLUSE_0.qq_state_1.Q3Q6_Q4Q5 because it is equivalent to instance PLUSE_0.qq_state_1.cs[2]. To keep the instance, apply constraint syn_preserve=1 on the instance.
 
-Finished factoring (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 141MB peak: 146MB)
-
-
-Starting gated-clock and generated-clock conversion (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 137MB peak: 146MB)
+Finished factoring (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 140MB peak: 146MB)
 
 
-Finished gated-clock and generated-clock conversion (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 137MB peak: 146MB)
+Starting gated-clock and generated-clock conversion (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 137MB peak: 146MB)
 
 
-Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:04s; Memory used current: 152MB peak: 181MB)
+Finished gated-clock and generated-clock conversion (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 137MB peak: 146MB)
 
 
-Starting Early Timing Optimization (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:04s; Memory used current: 154MB peak: 181MB)
+Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:04s; Memory used current: 152MB peak: 182MB)
 
 
-Finished Early Timing Optimization (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:05s; Memory used current: 154MB peak: 181MB)
+Starting Early Timing Optimization (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:04s; Memory used current: 154MB peak: 182MB)
 
 
-Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:05s; Memory used current: 152MB peak: 181MB)
+Finished Early Timing Optimization (Real Time elapsed 0h:00m:06s; CPU Time elapsed 0h:00m:05s; Memory used current: 154MB peak: 182MB)
 
 
-Finished preparing to map (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:05s; Memory used current: 148MB peak: 181MB)
+Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:06s; CPU Time elapsed 0h:00m:05s; Memory used current: 152MB peak: 182MB)
 
 
-Finished technology mapping (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:05s; Memory used current: 160MB peak: 181MB)
+Finished preparing to map (Real Time elapsed 0h:00m:06s; CPU Time elapsed 0h:00m:05s; Memory used current: 148MB peak: 182MB)
 
-@N: MF322 |Retiming summary: 24 registers retimed to 86 
+
+Finished technology mapping (Real Time elapsed 0h:00m:06s; CPU Time elapsed 0h:00m:05s; Memory used current: 158MB peak: 182MB)
+
+@N: MF322 |Retiming summary: 16 registers retimed to 49 
 
 		#####  BEGIN RETIMING REPORT  #####
 
-Retiming summary : 24 registers retimed to 86
+Retiming summary : 16 registers retimed to 49
 
 Original and Pipelined registers replaced by retiming :
 		scalestate_0.timecount[0]
@@ -265,55 +265,41 @@ Original and Pipelined registers replaced by retiming :
 		scalestate_0.timecount[13]
 		scalestate_0.timecount[14]
 		scalestate_0.timecount[15]
-		scalestate_0.timecount[16]
-		scalestate_0.timecount[17]
-		scalestate_0.timecount[18]
-		scalestate_0.timecount[19]
-		top_code_0.noise_start
-		top_code_0.scale_start
-		top_code_0.scan_start
-		top_code_0.state_1ms_start
 
 New registers created by retiming :
 		scalestate_0.timecount_ret
 		scalestate_0.timecount_ret_0
 		scalestate_0.timecount_ret_1
-		scalestate_0.timecount_ret_2
+		scalestate_0.timecount_ret_3
 		scalestate_0.timecount_ret_4
 		scalestate_0.timecount_ret_5
+		scalestate_0.timecount_ret_6
 		scalestate_0.timecount_ret_7
 		scalestate_0.timecount_ret_8
+		scalestate_0.timecount_ret_9
 		scalestate_0.timecount_ret_10
 		scalestate_0.timecount_ret_11
+		scalestate_0.timecount_ret_12
 		scalestate_0.timecount_ret_13
 		scalestate_0.timecount_ret_14
-		scalestate_0.timecount_ret_17
-		scalestate_0.timecount_ret_19
+		scalestate_0.timecount_ret_15
+		scalestate_0.timecount_ret_16
 		scalestate_0.timecount_ret_20
-		scalestate_0.timecount_ret_22
 		scalestate_0.timecount_ret_23
-		scalestate_0.timecount_ret_25
-		scalestate_0.timecount_ret_26
-		scalestate_0.timecount_ret_27
-		scalestate_0.timecount_ret_28
-		scalestate_0.timecount_ret_29
-		scalestate_0.timecount_ret_31
-		scalestate_0.timecount_ret_32
 		scalestate_0.timecount_ret_33
-		scalestate_0.timecount_ret_34
 		scalestate_0.timecount_ret_35
+		scalestate_0.timecount_ret_36
 		scalestate_0.timecount_ret_37
 		scalestate_0.timecount_ret_38
-		scalestate_0.timecount_ret_40
+		scalestate_0.timecount_ret_39
 		scalestate_0.timecount_ret_41
+		scalestate_0.timecount_ret_42
+		scalestate_0.timecount_ret_44
 		scalestate_0.timecount_ret_45
 		scalestate_0.timecount_ret_46
 		scalestate_0.timecount_ret_47
-		scalestate_0.timecount_ret_48
 		scalestate_0.timecount_ret_49
-		scalestate_0.timecount_ret_50
 		scalestate_0.timecount_ret_51
-		scalestate_0.timecount_ret_52
 		scalestate_0.timecount_ret_53
 		scalestate_0.timecount_ret_54
 		scalestate_0.timecount_ret_55
@@ -324,43 +310,12 @@ New registers created by retiming :
 		scalestate_0.timecount_ret_60
 		scalestate_0.timecount_ret_61
 		scalestate_0.timecount_ret_62
-		scalestate_0.timecount_ret_63
 		scalestate_0.timecount_ret_64
 		scalestate_0.timecount_ret_65
 		scalestate_0.timecount_ret_66
 		scalestate_0.timecount_ret_67
 		scalestate_0.timecount_ret_68
 		scalestate_0.timecount_ret_69
-		scalestate_0.timecount_ret_70
-		scalestate_0.timecount_ret_71
-		scalestate_0.timecount_ret_72
-		scalestate_0.timecount_ret_73
-		scalestate_0.timecount_ret_75
-		scalestate_0.timecount_ret_77
-		scalestate_0.timecount_ret_79
-		scalestate_0.timecount_ret_81
-		scalestate_0.timecount_ret_82
-		scalestate_0.timecount_ret_84
-		scalestate_0.timecount_ret_85
-		scalestate_0.timecount_ret_87
-		scalestate_0.timecount_ret_88
-		scalestate_0.timecount_ret_90
-		scalestate_0.timecount_ret_91
-		scalestate_0.timecount_ret_93
-		scalestate_0.timecount_ret_94
-		top_code_0.noise_start_ret
-		top_code_0.noise_start_ret_2
-		top_code_0.noise_start_ret_3
-		top_code_0.scale_start_ret
-		top_code_0.scale_start_ret_2
-		top_code_0.scale_start_ret_3
-		top_code_0.scan_start_ret
-		top_code_0.scan_start_ret_2
-		top_code_0.scan_start_ret_3
-		top_code_0.state_1ms_start_ret
-		top_code_0.state_1ms_start_ret_1
-		top_code_0.state_1ms_start_ret_2
-		top_code_0.state_1ms_start_ret_3
 
 
 		#####   END RETIMING REPORT  #####
@@ -371,20 +326,21 @@ High Fanout Net Report
 
 Driver Instance / Pin Name                          Fanout, notes                   
 ------------------------------------------------------------------------------------
-GPMI_0.rst_n_module_0.rst_nr2 / Q                   245 : 38 asynchronous set/reset 
+GPMI_0.rst_n_module_0.rst_nr2 / Q                   248 : 38 asynchronous set/reset 
 bri_dump_sw_0.reset_out / Q                         42 : 22 asynchronous set/reset  
 top_code_0.pluse_rst / Q                            32                              
 top_code_0.bridge_load / Q                          32                              
-top_code_0.scan_rst / Q                             34                              
-top_code_0.change[0] / Q                            45                              
-top_code_0.change[1] / Q                            43                              
+top_code_0.scan_rst / Q                             29                              
+top_code_0.dds_load / Q                             72                              
+top_code_0.change[0] / Q                            40                              
+top_code_0.change[1] / Q                            38                              
 top_code_0.noise_rst / Q                            25                              
 n_acq_change_0.n_rst_n / Q                          46 : 25 asynchronous set/reset  
 top_code_0.n_s_ctrl / Q                             49                              
 s_acq_change_0.s_load / Q                           25                              
 s_acq_change_0.s_rst / Q                            186 : 185 asynchronous set/reset
-timer_top_0.state_switch_0.clk_en_scale / Q         35                              
-top_code_0.scale_rst / Q                            162 : 2 asynchronous set/reset  
+timer_top_0.state_switch_0.clk_en_scale / Q         34                              
+top_code_0.scale_rst / Q                            142 : 2 asynchronous set/reset  
 top_code_0.scaledatain[0] / Q                       26                              
 top_code_0.scaledatain[1] / Q                       26                              
 top_code_0.scaledatain[2] / Q                       26                              
@@ -395,43 +351,41 @@ top_code_0.s_addchoice[1] / Q                       66
 top_code_0.s_addchoice[2] / Q                       33                              
 top_code_0.s_addchoice[4] / Q                       161                             
 top_code_0.state_1ms_rst_n / Q                      37                              
-scalestate_0.CS[11] / Q                             33                              
+scalestate_0.CS[11] / Q                             34                              
+DDS_0.dds_coder_0.i[0] / Q                          70                              
+scalestate_0.un1_CS6_33_0 / Y                       55                              
+scalestate_0.timecount_12_sqmuxa / Y                25                              
 GPMI_0.tri_state_0.dataout_1_14 / Y                 28                              
 GPMI_0.tri_state_0.dataout_1_13 / Y                 28                              
 GPMI_0.tri_state_0.dataout_1_12 / Y                 27                              
-GPMI_0.tri_state_0.dataout_1_11 / Y                 26                              
-scalestate_0.un1_CS6_33_0 / Y                       75                              
-scalestate_0.timecount_12_sqmuxa / Y                25                              
 scalestate_0.CS_srsts_i_o2[8] / Y                   27                              
+GPMI_0.tri_state_0.dataout_1_11 / Y                 26                              
 bridge_div_0.clk_4f_en / Y                          25                              
 DDS_0.dds_state_0.para_reg_100_e / Y                49                              
 DDS_0.dds_state_0.para_reg_69_e / Y                 52                              
-DDS_0.dds_state_0.para_9_i_0_a2_5[22] / Y           32                              
-DDS_0.dds_state_0.para_9_i_0_a2_4[22] / Y           37                              
 DDS_0.dds_state_0.para_1_sqmuxa_1_0_a2_0_a2 / Y     37                              
 ====================================================================================
 
+@N: FP130 |Promoting Net net_27 on CLKINT  I_98 
 @N: FP130 |Promoting Net Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0_clk_add on CLKINT  Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.clk_add_keep 
-@N: FP130 |Promoting Net net_27 on CLKINT  I_97 
 @N: FP130 |Promoting Net ddsclkout_c on CLKBUF  ddsclkout_pad 
-@N: FP130 |Promoting Net s_acq_change_0_s_rst on CLKINT  I_98 
+@N: FP130 |Promoting Net s_acq_change_0_s_rst on CLKINT  I_99 
 
-Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:06s; CPU Time elapsed 0h:00m:06s; Memory used current: 160MB peak: 181MB)
+Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:07s; CPU Time elapsed 0h:00m:06s; Memory used current: 159MB peak: 182MB)
 
 Replicating Combinational Instance DDS_0.dds_state_0.para_1_sqmuxa_1_0_a2_0_a2, fanout 37 segments 2
-Replicating Combinational Instance DDS_0.dds_state_0.para_9_i_0_a2_4[22], fanout 38 segments 2
-Replicating Combinational Instance DDS_0.dds_state_0.para_9_i_0_a2_5[22], fanout 32 segments 2
 Replicating Combinational Instance DDS_0.dds_state_0.para_reg_69_e, fanout 52 segments 3
 Replicating Combinational Instance DDS_0.dds_state_0.para_reg_100_e, fanout 49 segments 3
 Replicating Combinational Instance bridge_div_0.clk_4f_en, fanout 25 segments 2
-Replicating Combinational Instance scalestate_0.CS_srsts_i_o2[8], fanout 27 segments 2
-Replicating Combinational Instance scalestate_0.timecount_12_sqmuxa, fanout 25 segments 2
-Replicating Combinational Instance scalestate_0.un1_CS6_33_0, fanout 75 segments 4
 Replicating Combinational Instance GPMI_0.tri_state_0.dataout_1_11, fanout 26 segments 2
+Replicating Combinational Instance scalestate_0.CS_srsts_i_o2[8], fanout 27 segments 2
 Replicating Combinational Instance GPMI_0.tri_state_0.dataout_1_12, fanout 27 segments 2
 Replicating Combinational Instance GPMI_0.tri_state_0.dataout_1_13, fanout 28 segments 2
 Replicating Combinational Instance GPMI_0.tri_state_0.dataout_1_14, fanout 28 segments 2
-Replicating Sequential Instance scalestate_0.CS[11], fanout 33 segments 2
+Replicating Combinational Instance scalestate_0.timecount_12_sqmuxa, fanout 25 segments 2
+Replicating Combinational Instance scalestate_0.un1_CS6_33_0, fanout 55 segments 3
+Replicating Sequential Instance DDS_0.dds_coder_0.i[0], fanout 71 segments 3
+Replicating Sequential Instance scalestate_0.CS[11], fanout 34 segments 2
 Replicating Sequential Instance top_code_0.state_1ms_rst_n, fanout 37 segments 2
 Replicating Sequential Instance top_code_0.s_addchoice[4], fanout 161 segments 7
 Replicating Sequential Instance top_code_0.s_addchoice[2], fanout 33 segments 2
@@ -442,26 +396,27 @@ Replicating Sequential Instance top_code_0.scaledatain[3], fanout 26 segments 2
 Replicating Sequential Instance top_code_0.scaledatain[2], fanout 26 segments 2
 Replicating Sequential Instance top_code_0.scaledatain[1], fanout 26 segments 2
 Replicating Sequential Instance top_code_0.scaledatain[0], fanout 26 segments 2
-Replicating Sequential Instance top_code_0.scale_rst, fanout 166 segments 7
-Replicating Sequential Instance timer_top_0.state_switch_0.clk_en_scale, fanout 38 segments 2
+Replicating Sequential Instance top_code_0.scale_rst, fanout 145 segments 7
+Replicating Sequential Instance timer_top_0.state_switch_0.clk_en_scale, fanout 36 segments 2
 Replicating Sequential Instance s_acq_change_0.s_load, fanout 25 segments 2
 Replicating Sequential Instance top_code_0.n_s_ctrl, fanout 49 segments 3
 Replicating Sequential Instance n_acq_change_0.n_rst_n, fanout 46 segments 2
 Replicating Sequential Instance top_code_0.noise_rst, fanout 25 segments 2
-Replicating Sequential Instance top_code_0.change[1], fanout 43 segments 2
-Replicating Sequential Instance top_code_0.change[0], fanout 45 segments 2
-Replicating Sequential Instance top_code_0.scan_rst, fanout 34 segments 2
+Replicating Sequential Instance top_code_0.change[1], fanout 38 segments 2
+Replicating Sequential Instance top_code_0.change[0], fanout 40 segments 2
+Replicating Sequential Instance top_code_0.dds_load, fanout 77 segments 4
+Replicating Sequential Instance top_code_0.scan_rst, fanout 29 segments 2
 Replicating Sequential Instance top_code_0.bridge_load, fanout 32 segments 2
 Replicating Sequential Instance top_code_0.pluse_rst, fanout 32 segments 2
 Replicating Sequential Instance bri_dump_sw_0.reset_out, fanout 42 segments 2
 Replicating Combinational Instance GPMI_0.tri_state_0.dataout_1_10, fanout 27 segments 2
 
 Added 0 Buffers
-Added 57 Cells via replication
-	Added 39 Sequential Cells via replication
-	Added 18 Combinational Cells via replication
+Added 59 Cells via replication
+	Added 44 Sequential Cells via replication
+	Added 15 Combinational Cells via replication
 
-Finished restoring hierarchy (Real Time elapsed 0h:00m:06s; CPU Time elapsed 0h:00m:06s; Memory used current: 161MB peak: 181MB)
+Finished restoring hierarchy (Real Time elapsed 0h:00m:07s; CPU Time elapsed 0h:00m:06s; Memory used current: 159MB peak: 182MB)
 
 
 
@@ -471,17 +426,17 @@ Finished restoring hierarchy (Real Time elapsed 0h:00m:06s; CPU Time elapsed 0h:
 #### START OF CLOCK OPTIMIZATION REPORT #####[
 
 Clock optimization not enabled
-8 non-gated/non-generated clock tree(s) driving 2278 clock pin(s) of sequential element(s)
+8 non-gated/non-generated clock tree(s) driving 2257 clock pin(s) of sequential element(s)
 0 gated/generated clock tree(s) driving 0 clock pin(s) of sequential element(s)
 0 instances converted, 0 sequential instances remain driven by gated/generated clocks
 
 ============================================================================= Non-Gated/Non-Generated Clocks =============================================================================
 Clock Tree ID     Driving Element                                                     Drive Element Type                Fanout     Sample Instance                                        
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-@K:CKID0001       ClockManagement_0                                                   clock definition on hierarchy     1839       topctrlchange_0.interupt                               
+@K:CKID0001       ClockManagement_0                                                   clock definition on hierarchy     1815       topctrlchange_0.interupt                               
 @K:CKID0002       Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.enadd_RNIH9JE_0     clock definition on CLKINT        164        Signal_Noise_Acq_0.signal_acq_0.add_reg_4.addresult[19]
 @K:CKID0003       ddsclkout                                                           clock definition on port          137        scan_scale_sw_0.s_start                                
-@K:CKID0004       ClockManagement_0.pllclk_0.GLA_keep                                 clock definition on keepbuf       41         ClockManagement_0.clk_10k_0.count[8]                   
+@K:CKID0004       ClockManagement_0.pllclk_0.GLA_keep                                 clock definition on keepbuf       44         ClockManagement_0.long_timer_0.clk_5K_reg1             
 @K:CKID0005       Signal_Noise_Acq_0.noise_acq_0.noiseclk_0.clkout_keep               clock definition on keepbuf       41         Signal_Noise_Acq_0.noise_acq_0.noiseclkctrl_0.en       
 @K:CKID0006       Signal_Noise_Acq_0.noise_acq_0.n_rdclk_syn_0                        clock definition on hierarchy     32         Signal_Noise_Acq_0.noise_acq_0.noise_addr_1.addr[11]   
 @K:CKID0007       Signal_Noise_Acq_0.signal_acq_0.s_clk_div4_0                        clock definition on hierarchy     19         Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.enclk  
@@ -492,31 +447,31 @@ Clock Tree ID     Driving Element                                               
 ##### END OF CLOCK OPTIMIZATION REPORT ######]
 
 
-Start Writing Netlists (Real Time elapsed 0h:00m:06s; CPU Time elapsed 0h:00m:06s; Memory used current: 149MB peak: 181MB)
+Start Writing Netlists (Real Time elapsed 0h:00m:07s; CPU Time elapsed 0h:00m:06s; Memory used current: 146MB peak: 182MB)
 
-Writing Analyst data base E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\synthesis\synwork\NMR_TOP_m.srm
+Writing Analyst data base E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\synthesis\synwork\NMR_TOP_m.srm
 
-Finished Writing Netlist Databases (Real Time elapsed 0h:00m:07s; CPU Time elapsed 0h:00m:07s; Memory used current: 156MB peak: 181MB)
+Finished Writing Netlist Databases (Real Time elapsed 0h:00m:08s; CPU Time elapsed 0h:00m:07s; Memory used current: 153MB peak: 182MB)
 
 Writing EDIF Netlist and constraint files
 L-2016.09M-SP1-5
 
-Finished Writing EDIF Netlist and constraint files (Real Time elapsed 0h:00m:07s; CPU Time elapsed 0h:00m:07s; Memory used current: 158MB peak: 181MB)
+Finished Writing EDIF Netlist and constraint files (Real Time elapsed 0h:00m:08s; CPU Time elapsed 0h:00m:07s; Memory used current: 154MB peak: 182MB)
 
 
-Start final timing analysis (Real Time elapsed 0h:00m:07s; CPU Time elapsed 0h:00m:07s; Memory used current: 156MB peak: 181MB)
+Start final timing analysis (Real Time elapsed 0h:00m:08s; CPU Time elapsed 0h:00m:07s; Memory used current: 153MB peak: 182MB)
 
 @N: MT615 |Found clock ddsclkout with period 25.00ns 
 @N: MT615 |Found clock Signal_Noise_Acq_0.noise_acq_0.noiseclk_0.clkout with period 50.00ns 
 @N: MT615 |Found clock Signal_Noise_Acq_0.noise_acq_0.n_rdclk_syn_0.n_rdclk with period 50.00ns 
 @N: MT615 |Found clock Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.clk_add with period 100.00ns 
 @N: MT615 |Found clock Signal_Noise_Acq_0.signal_acq_0.s_clk_div4_0.clkout with period 50.00ns 
-@N: MT615 |Found clock ClockManagement_0.clk_10k_0.clock_10khz with period 1000.00ns 
 @N: MT615 |Found clock ClockManagement_0.pllclk_0.GLA with period 9.09ns 
+@N: MT615 |Found clock ClockManagement_0.clk_10k_0.clock_10khz with period 1000.00ns 
 
 
 ##### START OF TIMING REPORT #####[
-# Timing Report written on Fri Jun 04 09:25:05 2021
+# Timing Report written on Thu Dec 16 11:21:34 2021
 #
 
 
@@ -527,7 +482,7 @@ Requested Frequency:    1.0 MHz
 Wire load mode:         top
 Wire load model:        proasic3
 Paths requested:        5
-Constraint File(s):    E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\constraint\NMR_TOP_syn.sdc
+Constraint File(s):    E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\constraint\NMR_TOP_syn.sdc
                        
 @N: MT320 |This timing report is an estimate of place and route data. For final timing results, use the FPGA vendor place and route report.
 
@@ -539,17 +494,17 @@ Performance Summary
 *******************
 
 
-Worst slack in design: -0.475
+Worst slack in design: -0.622
 
                                                             Requested     Estimated     Requested     Estimated                 Clock        Clock 
 Starting Clock                                              Frequency     Frequency     Period        Period        Slack       Type         Group 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
-ClockManagement_0.clk_10k_0.clock_10khz                     1.0 MHz       189.3 MHz     1000.000      5.282         994.718     declared     1MHz  
-ClockManagement_0.pllclk_0.GLA                              110.0 MHz     104.5 MHz     9.091         9.566         -0.475      declared     100MHz
+ClockManagement_0.clk_10k_0.clock_10khz                     1.0 MHz       186.0 MHz     1000.000      5.377         994.623     declared     1MHz  
+ClockManagement_0.pllclk_0.GLA                              110.0 MHz     103.0 MHz     9.091         9.713         -0.622      declared     100MHz
 Signal_Noise_Acq_0.noise_acq_0.n_rdclk_syn_0.n_rdclk        20.0 MHz      113.3 MHz     50.000        8.828         20.586      declared     DSP   
 Signal_Noise_Acq_0.noise_acq_0.noiseclk_0.clkout            20.0 MHz      118.6 MHz     50.000        8.429         20.786      declared     50MHz 
-Signal_Noise_Acq_0.signal_acq_0.s_clk_div4_0.clkout         20.0 MHz      102.9 MHz     50.000        9.722         40.278      declared     8MHz  
-Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.clk_add     10.0 MHz      25.6 MHz      100.000       39.011        30.494      declared     8MHz  
+Signal_Noise_Acq_0.signal_acq_0.s_clk_div4_0.clkout         20.0 MHz      102.6 MHz     50.000        9.747         40.253      declared     8MHz  
+Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.clk_add     10.0 MHz      25.9 MHz      100.000       38.627        30.687      declared     8MHz  
 ddsclkout                                                   40.0 MHz      107.9 MHz     25.000        9.265         15.735      declared     32MHz 
 ===================================================================================================================================================
 
@@ -564,7 +519,7 @@ Clocks                                                                          
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Starting                                                 Ending                                                   |  constraint  slack    |  constraint  slack   |  constraint  slack  |  constraint  slack 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-ClockManagement_0.pllclk_0.GLA                           ClockManagement_0.pllclk_0.GLA                           |  9.091       -0.475   |  9.091       7.783   |  4.545       2.323  |  4.546       0.860 
+ClockManagement_0.pllclk_0.GLA                           ClockManagement_0.pllclk_0.GLA                           |  9.091       -0.622   |  9.091       7.783   |  4.545       2.239  |  4.546       0.860 
 ClockManagement_0.pllclk_0.GLA                           ddsclkout                                                |  Diff grp    -        |  No paths    -       |  No paths    -      |  No paths    -     
 ClockManagement_0.pllclk_0.GLA                           Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.clk_add  |  Diff grp    -        |  No paths    -       |  Diff grp    -      |  No paths    -     
 ClockManagement_0.pllclk_0.GLA                           Signal_Noise_Acq_0.signal_acq_0.s_clk_div4_0.clkout      |  Diff grp    -        |  No paths    -       |  No paths    -      |  No paths    -     
@@ -573,14 +528,14 @@ ClockManagement_0.pllclk_0.GLA                           Signal_Noise_Acq_0.nois
 ClockManagement_0.pllclk_0.GLA                           ClockManagement_0.clk_10k_0.clock_10khz                  |  Diff grp    -        |  No paths    -       |  No paths    -      |  No paths    -     
 ddsclkout                                                ClockManagement_0.pllclk_0.GLA                           |  Diff grp    -        |  No paths    -       |  No paths    -      |  No paths    -     
 ddsclkout                                                ddsclkout                                                |  25.000      15.735   |  No paths    -       |  No paths    -      |  No paths    -     
-Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.clk_add  Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.clk_add  |  100.000     84.246   |  100.000     92.881  |  No paths    -      |  50.000      30.494
+Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.clk_add  Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.clk_add  |  100.000     84.246   |  100.000     92.881  |  No paths    -      |  50.000      30.687
 Signal_Noise_Acq_0.signal_acq_0.s_clk_div4_0.clkout      ddsclkout                                                |  Diff grp    -        |  No paths    -       |  No paths    -      |  No paths    -     
-Signal_Noise_Acq_0.signal_acq_0.s_clk_div4_0.clkout      Signal_Noise_Acq_0.signal_acq_0.s_clk_div4_0.clkout      |  50.000      40.278   |  No paths    -       |  No paths    -      |  No paths    -     
+Signal_Noise_Acq_0.signal_acq_0.s_clk_div4_0.clkout      Signal_Noise_Acq_0.signal_acq_0.s_clk_div4_0.clkout      |  50.000      40.253   |  No paths    -       |  No paths    -      |  No paths    -     
 Signal_Noise_Acq_0.noise_acq_0.noiseclk_0.clkout         ClockManagement_0.pllclk_0.GLA                           |  Diff grp    -        |  No paths    -       |  No paths    -      |  No paths    -     
 Signal_Noise_Acq_0.noise_acq_0.noiseclk_0.clkout         Signal_Noise_Acq_0.noise_acq_0.noiseclk_0.clkout         |  50.000      41.800   |  50.000      41.703  |  No paths    -      |  25.000      20.786
 Signal_Noise_Acq_0.noise_acq_0.n_rdclk_syn_0.n_rdclk     Signal_Noise_Acq_0.noise_acq_0.n_rdclk_syn_0.n_rdclk     |  No paths    -        |  50.000      41.703  |  No paths    -      |  25.000      20.586
 ClockManagement_0.clk_10k_0.clock_10khz                  ClockManagement_0.pllclk_0.GLA                           |  Diff grp    -        |  No paths    -       |  No paths    -      |  No paths    -     
-ClockManagement_0.clk_10k_0.clock_10khz                  ClockManagement_0.clk_10k_0.clock_10khz                  |  1000.000    994.718  |  No paths    -       |  No paths    -      |  No paths    -     
+ClockManagement_0.clk_10k_0.clock_10khz                  ClockManagement_0.clk_10k_0.clock_10khz                  |  1000.000    994.623  |  No paths    -       |  No paths    -      |  No paths    -     
 ============================================================================================================================================================================================================
  Note: 'No paths' indicates there are no paths in the design for that pair of clock edges.
        'Diff grp' indicates that paths exist but the starting clock and ending clock are in different clock groups.
@@ -607,10 +562,10 @@ Starting Points with Worst Slack
 Instance                                    Reference                                   Type     Pin     Net          Time        Slack  
                                             Clock                                                                                        
 -----------------------------------------------------------------------------------------------------------------------------------------
-DSTimer_0.dump_sustain_timer_0.count[1]     ClockManagement_0.clk_10k_0.clock_10khz     DFN1     Q       count[1]     0.550       994.718
-DSTimer_0.dump_sustain_timer_0.count[0]     ClockManagement_0.clk_10k_0.clock_10khz     DFN1     Q       count[0]     0.550       994.779
-DSTimer_0.dump_sustain_timer_0.count[2]     ClockManagement_0.clk_10k_0.clock_10khz     DFN1     Q       count[2]     0.550       994.888
-DSTimer_0.dump_sustain_timer_0.count[3]     ClockManagement_0.clk_10k_0.clock_10khz     DFN1     Q       count[3]     0.550       995.058
+DSTimer_0.dump_sustain_timer_0.count[1]     ClockManagement_0.clk_10k_0.clock_10khz     DFN1     Q       count[1]     0.550       994.623
+DSTimer_0.dump_sustain_timer_0.count[0]     ClockManagement_0.clk_10k_0.clock_10khz     DFN1     Q       count[0]     0.550       994.646
+DSTimer_0.dump_sustain_timer_0.count[2]     ClockManagement_0.clk_10k_0.clock_10khz     DFN1     Q       count[2]     0.550       994.793
+DSTimer_0.dump_sustain_timer_0.count[3]     ClockManagement_0.clk_10k_0.clock_10khz     DFN1     Q       count[3]     0.550       994.925
 =========================================================================================================================================
 
 
@@ -621,10 +576,10 @@ Ending Points with Worst Slack
 Instance                                    Reference                                   Type     Pin     Net          Time         Slack  
                                             Clock                                                                                         
 ------------------------------------------------------------------------------------------------------------------------------------------
-DSTimer_0.dump_sustain_timer_0.count[1]     ClockManagement_0.clk_10k_0.clock_10khz     DFN1     D       count_n1     999.572      994.718
-DSTimer_0.dump_sustain_timer_0.count[2]     ClockManagement_0.clk_10k_0.clock_10khz     DFN1     D       count_n2     999.572      994.718
-DSTimer_0.dump_sustain_timer_0.count[3]     ClockManagement_0.clk_10k_0.clock_10khz     DFN1     D       count_n3     999.572      994.718
-DSTimer_0.dump_sustain_timer_0.count[0]     ClockManagement_0.clk_10k_0.clock_10khz     DFN1     D       count_n0     999.572      994.781
+DSTimer_0.dump_sustain_timer_0.count[1]     ClockManagement_0.clk_10k_0.clock_10khz     DFN1     D       count_n1     999.572      994.623
+DSTimer_0.dump_sustain_timer_0.count[2]     ClockManagement_0.clk_10k_0.clock_10khz     DFN1     D       count_n2     999.572      994.623
+DSTimer_0.dump_sustain_timer_0.count[3]     ClockManagement_0.clk_10k_0.clock_10khz     DFN1     D       count_n3     999.572      994.623
+DSTimer_0.dump_sustain_timer_0.count[0]     ClockManagement_0.clk_10k_0.clock_10khz     DFN1     D       count_n0     999.572      994.687
 DSTimer_0.dump_sustain_timer_0.start        ClockManagement_0.clk_10k_0.clock_10khz     DFN1     D       start11      999.572      996.008
 ==========================================================================================================================================
 
@@ -640,9 +595,9 @@ Path information for path number 1:
     + Clock delay at ending point:           0.000 (ideal)
     = Required time:                         999.572
 
-    - Propagation time:                      4.854
+    - Propagation time:                      4.949
     - Clock delay at starting point:         0.000 (ideal)
-    = Slack (non-critical) :                 994.718
+    = Slack (non-critical) :                 994.623
 
     Number of logic level(s):                4
     Starting point:                          DSTimer_0.dump_sustain_timer_0.count[1] / Q
@@ -661,15 +616,15 @@ Temp_0_net                                                             Net      
 DSTimer_0.dump_sustain_timer_0.cmp_constant_4b_0.NAND2_AEB             NAND2     A        In      -         2.209       -         
 DSTimer_0.dump_sustain_timer_0.cmp_constant_4b_0.NAND2_AEB             NAND2     Y        Out     0.365     2.574       -         
 clr_cnt_p                                                              Net       -        -       0.240     -           1         
-DSTimer_0.dump_sustain_timer_0.cmp_constant_4b_0.NAND2_AEB_RNIVFTG     NOR2B     A        In      -         2.814       -         
-DSTimer_0.dump_sustain_timer_0.cmp_constant_4b_0.NAND2_AEB_RNIVFTG     NOR2B     Y        Out     0.384     3.198       -         
+DSTimer_0.dump_sustain_timer_0.cmp_constant_4b_0.NAND2_AEB_RNIVFTG     NOR3C     C        In      -         2.814       -         
+DSTimer_0.dump_sustain_timer_0.cmp_constant_4b_0.NAND2_AEB_RNIVFTG     NOR3C     Y        Out     0.479     3.293       -         
 un1_clr_cnt_p                                                          Net       -        -       0.884     -           4         
-DSTimer_0.dump_sustain_timer_0.count_RNO[1]                            XA1       C        In      -         4.082       -         
-DSTimer_0.dump_sustain_timer_0.count_RNO[1]                            XA1       Y        Out     0.532     4.614       -         
+DSTimer_0.dump_sustain_timer_0.count_RNO[1]                            XA1       C        In      -         4.177       -         
+DSTimer_0.dump_sustain_timer_0.count_RNO[1]                            XA1       Y        Out     0.532     4.709       -         
 count_n1                                                               Net       -        -       0.240     -           1         
-DSTimer_0.dump_sustain_timer_0.count[1]                                DFN1      D        In      -         4.854       -         
+DSTimer_0.dump_sustain_timer_0.count[1]                                DFN1      D        In      -         4.949       -         
 ==================================================================================================================================
-Total path delay (propagation time + setup) of 5.282 is 2.794(52.9%) logic and 2.488(47.1%) route.
+Total path delay (propagation time + setup) of 5.377 is 2.889(53.7%) logic and 2.488(46.3%) route.
 Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
 
 
@@ -684,16 +639,16 @@ Detailed Report for Clock: ClockManagement_0.pllclk_0.GLA
 Starting Points with Worst Slack
 ********************************
 
-                                            Starting                                                                     Arrival           
-Instance                                    Reference                          Type       Pin     Net                    Time        Slack 
-                                            Clock                                                                                          
--------------------------------------------------------------------------------------------------------------------------------------------
-DUMP_0.dump_timer_0.count[0]                ClockManagement_0.pllclk_0.GLA     DFN1       Q       count_1[0]             0.550       -0.475
-ClockManagement_0.long_timer_0.count[0]     ClockManagement_0.pllclk_0.GLA     DFN1E1     Q       count[0]               0.550       -0.419
-DUMP_0.dump_timer_0.count[1]                ClockManagement_0.pllclk_0.GLA     DFN1       Q       count_1[1]             0.550       -0.369
-scalestate_0.CS[17]                         ClockManagement_0.pllclk_0.GLA     DFN1       Q       CS[17]                 0.550       -0.178
-scalestate_0.necount_LE_NE                  ClockManagement_0.pllclk_0.GLA     DFN1       Q       scalestate_0_ne_le     0.550       -0.130
-===========================================================================================================================================
+                                            Starting                                                              Arrival           
+Instance                                    Reference                          Type       Pin     Net             Time        Slack 
+                                            Clock                                                                                   
+------------------------------------------------------------------------------------------------------------------------------------
+ClockManagement_0.clk_10k_0.clk_5M_reg1     ClockManagement_0.pllclk_0.GLA     DFN1       Q       clk_5M_reg1     0.550       -0.622
+DUMP_0.dump_timer_0.count[0]                ClockManagement_0.pllclk_0.GLA     DFN1       Q       count_1[0]      0.550       -0.475
+ClockManagement_0.long_timer_0.count[0]     ClockManagement_0.pllclk_0.GLA     DFN1E1     Q       count[0]        0.550       -0.419
+DUMP_0.dump_timer_0.count[1]                ClockManagement_0.pllclk_0.GLA     DFN1       Q       count_1[1]      0.550       -0.369
+scalestate_0.CS[7]                          ClockManagement_0.pllclk_0.GLA     DFN1       Q       CS[7]           0.550       -0.352
+====================================================================================================================================
 
 
 Ending Points with Worst Slack
@@ -703,11 +658,11 @@ Ending Points with Worst Slack
 Instance                                     Reference                          Type       Pin     Net                   Time         Slack 
                                              Clock                                                                                          
 --------------------------------------------------------------------------------------------------------------------------------------------
+ClockManagement_0.clk_div500_0.count[11]     ClockManagement_0.pllclk_0.GLA     DFN1       D       count_5[11]           8.689        -0.622
 DUMP_0.dump_timer_0.count[10]                ClockManagement_0.pllclk_0.GLA     DFN1       D       count_n10             8.689        -0.475
 ClockManagement_0.long_timer_0.count[11]     ClockManagement_0.pllclk_0.GLA     DFN1E1     D       count_n11             8.689        -0.419
-DUMP_0.dump_timer_0.count[11]                ClockManagement_0.pllclk_0.GLA     DFN1       D       count_n11             8.689        -0.183
-scalestate_0.s_acqnum_1[0]                   ClockManagement_0.pllclk_0.GLA     DFN1       D       s_acqnum_1_RNO[0]     8.689        -0.178
-scalestate_0.s_acqnum_1[1]                   ClockManagement_0.pllclk_0.GLA     DFN1       D       s_acqnum_1_RNO[1]     8.689        -0.178
+scalestate_0.s_acqnum_1[0]                   ClockManagement_0.pllclk_0.GLA     DFN1       D       s_acqnum_1_RNO[0]     8.689        -0.352
+scalestate_0.s_acqnum_1[1]                   ClockManagement_0.pllclk_0.GLA     DFN1       D       s_acqnum_1_RNO[1]     8.689        -0.352
 ============================================================================================================================================
 
 
@@ -722,9 +677,63 @@ Path information for path number 1:
     + Clock delay at ending point:           0.000 (ideal)
     = Required time:                         8.689
 
+    - Propagation time:                      9.310
+    - Clock delay at starting point:         0.000 (ideal)
+    = Slack (critical) :                     -0.622
+
+    Number of logic level(s):                9
+    Starting point:                          ClockManagement_0.clk_10k_0.clk_5M_reg1 / Q
+    Ending point:                            ClockManagement_0.clk_div500_0.count[11] / D
+    The start point is clocked by            ClockManagement_0.pllclk_0.GLA [rising] on pin CLK
+    The end   point is clocked by            ClockManagement_0.pllclk_0.GLA [rising] on pin CLK
+
+Instance / Net                                                Pin      Pin               Arrival     No. of    
+Name                                                Type      Name     Dir     Delay     Time        Fan Out(s)
+---------------------------------------------------------------------------------------------------------------
+ClockManagement_0.clk_10k_0.clk_5M_reg1             DFN1      Q        Out     0.550     0.550       -         
+clk_5M_reg1                                         Net       -        -       0.288     -           2         
+ClockManagement_0.clk_10k_0.clk_5M_reg2_RNI337M     NOR2A     A        In      -         0.839       -         
+ClockManagement_0.clk_10k_0.clk_5M_reg2_RNI337M     NOR2A     Y        Out     0.469     1.307       -         
+clk_5M_en                                           Net       -        -       1.063     -           6         
+ClockManagement_0.clk_div500_0.un1_count_1.I_1      AND2      B        In      -         2.370       -         
+ClockManagement_0.clk_div500_0.un1_count_1.I_1      AND2      Y        Out     0.469     2.839       -         
+DWACT_ADD_CI_0_TMP[0]                               Net       -        -       0.288     -           2         
+ClockManagement_0.clk_div500_0.un1_count_1.I_51     NOR2B     A        In      -         3.127       -         
+ClockManagement_0.clk_div500_0.un1_count_1.I_51     NOR2B     Y        Out     0.384     3.511       -         
+DWACT_ADD_CI_0_g_array_1[0]                         Net       -        -       0.602     -           3         
+ClockManagement_0.clk_div500_0.un1_count_1.I_54     NOR2B     A        In      -         4.113       -         
+ClockManagement_0.clk_div500_0.un1_count_1.I_54     NOR2B     Y        Out     0.384     4.497       -         
+DWACT_ADD_CI_0_g_array_2[0]                         Net       -        -       0.884     -           4         
+ClockManagement_0.clk_div500_0.un1_count_1.I_61     NOR2B     A        In      -         5.381       -         
+ClockManagement_0.clk_div500_0.un1_count_1.I_61     NOR2B     Y        Out     0.384     5.766       -         
+DWACT_ADD_CI_0_g_array_3[0]                         Net       -        -       0.602     -           3         
+ClockManagement_0.clk_div500_0.un1_count_1.I_65     NOR2B     A        In      -         6.368       -         
+ClockManagement_0.clk_div500_0.un1_count_1.I_65     NOR2B     Y        Out     0.384     6.752       -         
+DWACT_ADD_CI_0_g_array_11_1[0]                      Net       -        -       0.288     -           2         
+ClockManagement_0.clk_div500_0.un1_count_1.I_55     NOR2B     A        In      -         7.040       -         
+ClockManagement_0.clk_div500_0.un1_count_1.I_55     NOR2B     Y        Out     0.384     7.425       -         
+DWACT_ADD_CI_0_g_array_12_4[0]                      Net       -        -       0.240     -           1         
+ClockManagement_0.clk_div500_0.un1_count_1.I_47     XOR2      B        In      -         7.665       -         
+ClockManagement_0.clk_div500_0.un1_count_1.I_47     XOR2      Y        Out     0.700     8.364       -         
+un1_count_1[11]                                     Net       -        -       0.240     -           1         
+ClockManagement_0.clk_div500_0.count_RNO[11]        NOR3B     B        In      -         8.604       -         
+ClockManagement_0.clk_div500_0.count_RNO[11]        NOR3B     Y        Out     0.466     9.070       -         
+count_5[11]                                         Net       -        -       0.240     -           1         
+ClockManagement_0.clk_div500_0.count[11]            DFN1      D        In      -         9.310       -         
+===============================================================================================================
+Total path delay (propagation time + setup) of 9.713 is 4.976(51.2%) logic and 4.737(48.8%) route.
+Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
+
+
+Path information for path number 2: 
+      Requested Period:                      9.091
+    - Setup time:                            0.402
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         8.689
+
     - Propagation time:                      9.164
     - Clock delay at starting point:         0.000 (ideal)
-    = Slack (critical) :                     -0.475
+    = Slack (non-critical) :                 -0.475
 
     Number of logic level(s):                10
     Starting point:                          DUMP_0.dump_timer_0.count[0] / Q
@@ -773,7 +782,7 @@ Total path delay (propagation time + setup) of 9.566 is 5.220(54.6%) logic and 4
 Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
 
 
-Path information for path number 2: 
+Path information for path number 3: 
       Requested Period:                      9.091
     - Setup time:                            0.402
     + Clock delay at ending point:           0.000 (ideal)
@@ -833,7 +842,7 @@ Total path delay (propagation time + setup) of 9.510 is 5.238(55.1%) logic and 4
 Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
 
 
-Path information for path number 3: 
+Path information for path number 4: 
       Requested Period:                      9.091
     - Setup time:                            0.402
     + Clock delay at ending point:           0.000 (ideal)
@@ -890,105 +899,48 @@ Total path delay (propagation time + setup) of 9.460 is 5.136(54.3%) logic and 4
 Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
 
 
-Path information for path number 4: 
-      Requested Period:                      9.091
-    - Setup time:                            0.402
-    + Clock delay at ending point:           0.000 (ideal)
-    = Required time:                         8.689
-
-    - Propagation time:                      8.872
-    - Clock delay at starting point:         0.000 (ideal)
-    = Slack (non-critical) :                 -0.183
-
-    Number of logic level(s):                10
-    Starting point:                          DUMP_0.dump_timer_0.count[0] / Q
-    Ending point:                            DUMP_0.dump_timer_0.count[11] / D
-    The start point is clocked by            ClockManagement_0.pllclk_0.GLA [rising] on pin CLK
-    The end   point is clocked by            ClockManagement_0.pllclk_0.GLA [rising] on pin CLK
-
-Instance / Net                                      Pin      Pin               Arrival     No. of    
-Name                                      Type      Name     Dir     Delay     Time        Fan Out(s)
------------------------------------------------------------------------------------------------------
-DUMP_0.dump_timer_0.count[0]              DFN1      Q        Out     0.550     0.550       -         
-count_1[0]                                Net       -        -       1.246     -           9         
-DUMP_0.dump_timer_0.count_RNIFG5N[1]      NOR2B     B        In      -         1.796       -         
-DUMP_0.dump_timer_0.count_RNIFG5N[1]      NOR2B     Y        Out     0.469     2.265       -         
-count_c1                                  Net       -        -       0.288     -           2         
-DUMP_0.dump_timer_0.count_RNI8AO21[2]     NOR2B     A        In      -         2.553       -         
-DUMP_0.dump_timer_0.count_RNI8AO21[2]     NOR2B     Y        Out     0.384     2.937       -         
-count_c2                                  Net       -        -       0.288     -           2         
-DUMP_0.dump_timer_0.count_RNI25BE1[3]     NOR2B     A        In      -         3.225       -         
-DUMP_0.dump_timer_0.count_RNI25BE1[3]     NOR2B     Y        Out     0.384     3.610       -         
-count_c3                                  Net       -        -       0.288     -           2         
-DUMP_0.dump_timer_0.count_RNIT0UP1[4]     NOR2B     A        In      -         3.898       -         
-DUMP_0.dump_timer_0.count_RNIT0UP1[4]     NOR2B     Y        Out     0.384     4.282       -         
-count_c4                                  Net       -        -       0.288     -           2         
-DUMP_0.dump_timer_0.count_RNIPTG52[5]     NOR2B     A        In      -         4.570       -         
-DUMP_0.dump_timer_0.count_RNIPTG52[5]     NOR2B     Y        Out     0.384     4.955       -         
-count_c5                                  Net       -        -       0.288     -           2         
-DUMP_0.dump_timer_0.count_RNIMR3H2[6]     NOR2B     A        In      -         5.243       -         
-DUMP_0.dump_timer_0.count_RNIMR3H2[6]     NOR2B     Y        Out     0.384     5.627       -         
-count_c6                                  Net       -        -       0.288     -           2         
-DUMP_0.dump_timer_0.count_RNIKQMS2[7]     NOR2B     A        In      -         5.915       -         
-DUMP_0.dump_timer_0.count_RNIKQMS2[7]     NOR2B     Y        Out     0.384     6.299       -         
-count_c7                                  Net       -        -       0.288     -           2         
-DUMP_0.dump_timer_0.count_RNIJQ983[8]     NOR2B     A        In      -         6.588       -         
-DUMP_0.dump_timer_0.count_RNIJQ983[8]     NOR2B     Y        Out     0.384     6.972       -         
-count_c8                                  Net       -        -       0.602     -           3         
-DUMP_0.dump_timer_0.count_RNO_0[11]       NOR3C     B        In      -         7.574       -         
-DUMP_0.dump_timer_0.count_RNO_0[11]       NOR3C     Y        Out     0.453     8.027       -         
-N_52                                      Net       -        -       0.240     -           1         
-DUMP_0.dump_timer_0.count_RNO[11]         AX1C      C        In      -         8.267       -         
-DUMP_0.dump_timer_0.count_RNO[11]         AX1C      Y        Out     0.365     8.632       -         
-count_n11                                 Net       -        -       0.240     -           1         
-DUMP_0.dump_timer_0.count[11]             DFN1      D        In      -         8.872       -         
-=====================================================================================================
-Total path delay (propagation time + setup) of 9.274 is 4.928(53.1%) logic and 4.346(46.9%) route.
-Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
-
-
 Path information for path number 5: 
       Requested Period:                      9.091
     - Setup time:                            0.402
     + Clock delay at ending point:           0.000 (ideal)
     = Required time:                         8.689
 
-    - Propagation time:                      8.866
+    - Propagation time:                      9.040
     - Clock delay at starting point:         0.000 (ideal)
-    = Slack (non-critical) :                 -0.178
+    = Slack (non-critical) :                 -0.352
 
     Number of logic level(s):                6
-    Starting point:                          scalestate_0.CS[17] / Q
+    Starting point:                          scalestate_0.CS[7] / Q
     Ending point:                            scalestate_0.s_acqnum_1[0] / D
     The start point is clocked by            ClockManagement_0.pllclk_0.GLA [rising] on pin CLK
     The end   point is clocked by            ClockManagement_0.pllclk_0.GLA [rising] on pin CLK
 
-Instance / Net                                 Pin      Pin               Arrival     No. of    
-Name                                 Type      Name     Dir     Delay     Time        Fan Out(s)
-------------------------------------------------------------------------------------------------
-scalestate_0.CS[17]                  DFN1      Q        Out     0.550     0.550       -         
-CS[17]                               Net       -        -       0.602     -           3         
-scalestate_0.CS_RNI75VB[17]          OR2       B        In      -         1.153       -         
-scalestate_0.CS_RNI75VB[17]          OR2       Y        Out     0.483     1.635       -         
-N_1194                               Net       -        -       0.955     -           5         
-scalestate_0.CS_RNI62781[17]         OR2A      A        In      -         2.591       -         
-scalestate_0.CS_RNI62781[17]         OR2A      Y        Out     0.348     2.938       -         
-N_1209                               Net       -        -       1.521     -           13        
-scalestate_0.CS_RNI2T6K1[21]         OR2A      A        In      -         4.460       -         
-scalestate_0.CS_RNI2T6K1[21]         OR2A      Y        Out     0.401     4.861       -         
-N_1153_1                             Net       -        -       0.602     -           3         
-scalestate_0.CS_0_RNIAQA34[11]       AO1D      A        In      -         5.463       -         
-scalestate_0.CS_0_RNIAQA34[11]       AO1D      Y        Out     0.358     5.821       -         
-un1_CS6_26                           Net       -        -       1.842     -           24        
-scalestate_0.s_acqnum_1_RNO_0[0]     MX2       S        In      -         7.663       -         
-scalestate_0.s_acqnum_1_RNO_0[0]     MX2       Y        Out     0.358     8.021       -         
-N_547                                Net       -        -       0.240     -           1         
-scalestate_0.s_acqnum_1_RNO[0]       NOR2B     A        In      -         8.261       -         
-scalestate_0.s_acqnum_1_RNO[0]       NOR2B     Y        Out     0.365     8.626       -         
-s_acqnum_1_RNO[0]                    Net       -        -       0.240     -           1         
-scalestate_0.s_acqnum_1[0]           DFN1      D        In      -         8.866       -         
-================================================================================================
-Total path delay (propagation time + setup) of 9.269 is 3.265(35.2%) logic and 6.003(64.8%) route.
+Instance / Net                                      Pin      Pin               Arrival     No. of    
+Name                                      Type      Name     Dir     Delay     Time        Fan Out(s)
+-----------------------------------------------------------------------------------------------------
+scalestate_0.CS[7]                        DFN1      Q        Out     0.550     0.550       -         
+CS[7]                                     Net       -        -       0.602     -           3         
+scalestate_0.CS_RNI75VB[17]               OR2       B        In      -         1.153       -         
+scalestate_0.CS_RNI75VB[17]               OR2       Y        Out     0.483     1.635       -         
+N_1194                                    Net       -        -       0.955     -           5         
+scalestate_0.necount_LE_NE_RNI62781_0     AO1C      C        In      -         2.591       -         
+scalestate_0.necount_LE_NE_RNI62781_0     AO1C      Y        Out     0.472     3.063       -         
+N_1209                                    Net       -        -       1.521     -           13        
+scalestate_0.CS_RNI2T6K1[21]              NOR2A     A        In      -         4.584       -         
+scalestate_0.CS_RNI2T6K1[21]              NOR2A     Y        Out     0.386     4.970       -         
+N_1258                                    Net       -        -       0.602     -           3         
+scalestate_0.CS_0_RNIAQA34[11]            AO1A      B        In      -         5.572       -         
+scalestate_0.CS_0_RNIAQA34[11]            AO1A      Y        Out     0.423     5.995       -         
+un1_CS6_26                                Net       -        -       1.842     -           24        
+scalestate_0.s_acqnum_1_RNO_0[0]          MX2       S        In      -         7.837       -         
+scalestate_0.s_acqnum_1_RNO_0[0]          MX2       Y        Out     0.358     8.195       -         
+N_547                                     Net       -        -       0.240     -           1         
+scalestate_0.s_acqnum_1_RNO[0]            NOR2B     A        In      -         8.435       -         
+scalestate_0.s_acqnum_1_RNO[0]            NOR2B     Y        Out     0.365     8.800       -         
+s_acqnum_1_RNO[0]                         Net       -        -       0.240     -           1         
+scalestate_0.s_acqnum_1[0]                DFN1      D        In      -         9.040       -         
+=====================================================================================================
+Total path delay (propagation time + setup) of 9.443 is 3.439(36.4%) logic and 6.003(63.6%) route.
 Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
 
 
@@ -1165,11 +1117,11 @@ Starting Points with Worst Slack
 Instance                                                      Reference                                               Type         Pin     Net           Time        Slack 
                                                               Clock                                                                                                        
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.count[1]      Signal_Noise_Acq_0.signal_acq_0.s_clk_div4_0.clkout     DFN1E0C0     Q       count[1]      0.550       40.278
-Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.count[2]      Signal_Noise_Acq_0.signal_acq_0.s_clk_div4_0.clkout     DFN1E0C0     Q       count[2]      0.550       40.329
-Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.count[0]      Signal_Noise_Acq_0.signal_acq_0.s_clk_div4_0.clkout     DFN1P0       Q       count[0]      0.434       40.379
-Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.count[14]     Signal_Noise_Acq_0.signal_acq_0.s_clk_div4_0.clkout     DFN1E0C0     Q       count[14]     0.550       40.929
-Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.count[7]      Signal_Noise_Acq_0.signal_acq_0.s_clk_div4_0.clkout     DFN1E0C0     Q       count[7]      0.550       40.989
+Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.count[1]      Signal_Noise_Acq_0.signal_acq_0.s_clk_div4_0.clkout     DFN1E0C0     Q       count[1]      0.550       40.253
+Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.count[2]      Signal_Noise_Acq_0.signal_acq_0.s_clk_div4_0.clkout     DFN1E0C0     Q       count[2]      0.550       40.304
+Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.count[0]      Signal_Noise_Acq_0.signal_acq_0.s_clk_div4_0.clkout     DFN1P0       Q       count[0]      0.550       40.360
+Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.count[14]     Signal_Noise_Acq_0.signal_acq_0.s_clk_div4_0.clkout     DFN1E0C0     Q       count[14]     0.550       41.013
+Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.count[6]      Signal_Noise_Acq_0.signal_acq_0.s_clk_div4_0.clkout     DFN1E0C0     Q       count[6]      0.550       41.080
 ===========================================================================================================================================================================
 
 
@@ -1180,11 +1132,11 @@ Ending Points with Worst Slack
 Instance                                                      Reference                                               Type         Pin     Net              Time         Slack 
                                                               Clock                                                                                                            
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.count[15]     Signal_Noise_Acq_0.signal_acq_0.s_clk_div4_0.clkout     DFN1E0C0     D       count_n15        49.598       40.278
+Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.count[15]     Signal_Noise_Acq_0.signal_acq_0.s_clk_div4_0.clkout     DFN1E0C0     D       count_n15        49.598       40.253
 Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.count[0]      Signal_Noise_Acq_0.signal_acq_0.s_clk_div4_0.clkout     DFN1P0       D       count_RNO[0]     49.598       40.393
-Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.count[14]     Signal_Noise_Acq_0.signal_acq_0.s_clk_div4_0.clkout     DFN1E0C0     D       count_n14        49.598       40.612
+Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.count[14]     Signal_Noise_Acq_0.signal_acq_0.s_clk_div4_0.clkout     DFN1E0C0     D       count_n14        49.598       40.613
 Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.entop         Signal_Noise_Acq_0.signal_acq_0.s_clk_div4_0.clkout     DFN1P0       D       entop_RNO        49.598       40.789
-Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.count[13]     Signal_Noise_Acq_0.signal_acq_0.s_clk_div4_0.clkout     DFN1E0C0     D       count_n13        49.598       40.971
+Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.count[1]      Signal_Noise_Acq_0.signal_acq_0.s_clk_div4_0.clkout     DFN1E0C0     E       enclk8           49.546       41.281
 ===============================================================================================================================================================================
 
 
@@ -1199,9 +1151,9 @@ Path information for path number 1:
     + Clock delay at ending point:           0.000 (ideal)
     = Required time:                         49.598
 
-    - Propagation time:                      9.320
+    - Propagation time:                      9.344
     - Clock delay at starting point:         0.000 (ideal)
-    = Slack (non-critical) :                 40.278
+    = Slack (non-critical) :                 40.253
 
     Number of logic level(s):                8
     Starting point:                          Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.count[1] / Q
@@ -1231,16 +1183,16 @@ Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.count_RNIGIDR2[9]      NOR3C    
 count_c10                                                              Net          -        -       0.602     -           3         
 Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.count_RNI1GJG3[12]     NOR3C        B        In      -         6.966       -         
 Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.count_RNI1GJG3[12]     NOR3C        Y        Out     0.453     7.419       -         
-count_c12                                                              Net          -        -       0.602     -           3         
-Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.count_RNO_0[15]        NOR3C        B        In      -         8.022       -         
-Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.count_RNO_0[15]        NOR3C        Y        Out     0.453     8.475       -         
-count_c14                                                              Net          -        -       0.240     -           1         
-Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.count_RNO[15]          XOR2         A        In      -         8.715       -         
-Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.count_RNO[15]          XOR2         Y        Out     0.365     9.079       -         
+count_c12                                                              Net          -        -       0.288     -           2         
+Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.count_RNIBG6R3[13]     NOR2B        A        In      -         7.708       -         
+Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.count_RNIBG6R3[13]     NOR2B        Y        Out     0.384     8.092       -         
+count_c13                                                              Net          -        -       0.288     -           2         
+Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.count_RNO[15]          AX1C         B        In      -         8.380       -         
+Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.count_RNO[15]          AX1C         Y        Out     0.724     9.104       -         
 count_n15                                                              Net          -        -       0.240     -           1         
-Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.count[15]              DFN1E0C0     D        In      -         9.320       -         
+Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.count[15]              DFN1E0C0     D        In      -         9.344       -         
 =====================================================================================================================================
-Total path delay (propagation time + setup) of 9.722 is 4.488(46.2%) logic and 5.234(53.8%) route.
+Total path delay (propagation time + setup) of 9.747 is 4.779(49.0%) logic and 4.968(51.0%) route.
 Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
 
 
@@ -1259,10 +1211,10 @@ Starting Points with Worst Slack
 Instance                                                   Reference                                                   Type       Pin     Net                Time        Slack 
                                                            Clock                                                                                                               
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Signal_Noise_Acq_0.signal_acq_0.ctrl_addr_0.addrout[0]     Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.clk_add     DFN0P0     Q       addrout[0]         0.393       30.494
-Signal_Noise_Acq_0.signal_acq_0.ctrl_addr_0.addrout[1]     Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.clk_add     DFN0C0     Q       addrout[1]         0.393       30.515
-Signal_Noise_Acq_0.signal_acq_0.ctrl_addr_0.addrout[2]     Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.clk_add     DFN0C0     Q       addrout[2]         0.488       30.767
-Signal_Noise_Acq_0.signal_acq_0.ctrl_addr_0.addrout[3]     Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.clk_add     DFN0C0     Q       addrout[3]         0.488       30.871
+Signal_Noise_Acq_0.signal_acq_0.ctrl_addr_0.addrout[2]     Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.clk_add     DFN0C0     Q       addrout[2]         0.488       30.687
+Signal_Noise_Acq_0.signal_acq_0.ctrl_addr_0.addrout[3]     Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.clk_add     DFN0C0     Q       addrout[3]         0.488       30.790
+Signal_Noise_Acq_0.signal_acq_0.ctrl_addr_0.addrout[1]     Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.clk_add     DFN0C0     Q       addrout[1]         0.488       30.997
+Signal_Noise_Acq_0.signal_acq_0.ctrl_addr_0.addrout[0]     Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.clk_add     DFN0P0     Q       addrout[0]         0.393       31.108
 Signal_Noise_Acq_0.signal_acq_0.add_reg_1.addresult[0]     Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.clk_add     DFN1C0     Q       addresult_4[0]     0.434       84.246
 ===============================================================================================================================================================================
 
@@ -1274,11 +1226,11 @@ Ending Points with Worst Slack
 Instance                                                    Reference                                                   Type       Pin     Net                        Time         Slack 
                                                             Clock                                                                                                                        
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Signal_Noise_Acq_0.signal_acq_0.add_reg_6.addresult[19]     Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.clk_add     DFN1C0     D       ADD_20x20_slow_I19_Y_5     49.598       30.494
-Signal_Noise_Acq_0.signal_acq_0.add_reg_1.addresult[19]     Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.clk_add     DFN1C0     D       ADD_20x20_slow_I19_Y_2     49.598       30.767
-Signal_Noise_Acq_0.signal_acq_0.add_reg_0.addresult[19]     Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.clk_add     DFN1C0     D       ADD_20x20_slow_I19_Y_3     49.598       30.767
-Signal_Noise_Acq_0.signal_acq_0.add_reg_6.addresult[18]     Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.clk_add     DFN1C0     D       m41_5                      49.598       30.854
-Signal_Noise_Acq_0.signal_acq_0.add_reg_4.addresult[19]     Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.clk_add     DFN1C0     D       ADD_20x20_slow_I19_Y_6     49.598       30.935
+Signal_Noise_Acq_0.signal_acq_0.add_reg_1.addresult[19]     Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.clk_add     DFN1C0     D       ADD_20x20_slow_I19_Y_2     49.598       30.687
+Signal_Noise_Acq_0.signal_acq_0.add_reg_0.addresult[19]     Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.clk_add     DFN1C0     D       ADD_20x20_slow_I19_Y_3     49.598       30.687
+Signal_Noise_Acq_0.signal_acq_0.add_reg_3.addresult[19]     Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.clk_add     DFN1C0     D       ADD_20x20_slow_I19_Y_1     49.598       30.997
+Signal_Noise_Acq_0.signal_acq_0.add_reg_2.addresult[19]     Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.clk_add     DFN1C0     D       ADD_20x20_slow_I19_Y       49.598       31.005
+Signal_Noise_Acq_0.signal_acq_0.add_reg_1.addresult[18]     Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.clk_add     DFN1C0     D       m41_2                      49.598       31.046
 =========================================================================================================================================================================================
 
 
@@ -1293,84 +1245,81 @@ Path information for path number 1:
     + Clock delay at ending point:           0.000 (ideal)
     = Required time:                         49.598
 
-    - Propagation time:                      19.103
+    - Propagation time:                      18.911
     - Clock delay at starting point:         0.000 (ideal)
-    = Slack (non-critical) :                 30.494
+    = Slack (non-critical) :                 30.687
 
-    Number of logic level(s):                20
-    Starting point:                          Signal_Noise_Acq_0.signal_acq_0.ctrl_addr_0.addrout[0] / Q
-    Ending point:                            Signal_Noise_Acq_0.signal_acq_0.add_reg_6.addresult[19] / D
+    Number of logic level(s):                19
+    Starting point:                          Signal_Noise_Acq_0.signal_acq_0.ctrl_addr_0.addrout[2] / Q
+    Ending point:                            Signal_Noise_Acq_0.signal_acq_0.add_reg_0.addresult[19] / D
     The start point is clocked by            Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.clk_add [falling] on pin CLK
     The end   point is clocked by            Signal_Noise_Acq_0.signal_acq_0.signalclkctrl_0.clk_add [rising] on pin CLK
 
 Instance / Net                                                                              Pin      Pin               Arrival     No. of    
 Name                                                                             Type       Name     Dir     Delay     Time        Fan Out(s)
 ---------------------------------------------------------------------------------------------------------------------------------------------
-Signal_Noise_Acq_0.signal_acq_0.ctrl_addr_0.addrout[0]                           DFN0P0     Q        Out     0.393     0.393       -         
-addrout[0]                                                                       Net        -        -       1.224     -           8         
-Signal_Noise_Acq_0.signal_acq_0.ten_choice_one_0.un2_dataseven_1                 NOR2B      B        In      -         1.617       -         
-Signal_Noise_Acq_0.signal_acq_0.ten_choice_one_0.un2_dataseven_1                 NOR2B      Y        Out     0.386     2.003       -         
-un2_dataseven_1                                                                  Net        -        -       0.288     -           2         
-Signal_Noise_Acq_0.signal_acq_0.ten_choice_one_0.un2_dataseven                   NOR3B      B        In      -         2.291       -         
-Signal_Noise_Acq_0.signal_acq_0.ten_choice_one_0.un2_dataseven                   NOR3B      Y        Out     0.466     2.757       -         
-un2_dataseven                                                                    Net        -        -       1.489     -           12        
-Signal_Noise_Acq_0.signal_acq_0.ten_choice_one_0.dataseven[0]                    NOR2B      B        In      -         4.246       -         
-Signal_Noise_Acq_0.signal_acq_0.ten_choice_one_0.dataseven[0]                    NOR2B      Y        Out     0.386     4.631       -         
-un1_ten_choice_one_0_6[0]                                                        Net        -        -       0.288     -           2         
-Signal_Noise_Acq_0.signal_acq_0.add_reg_6.un3_addresult.m1                       NOR2B      A        In      -         4.919       -         
-Signal_Noise_Acq_0.signal_acq_0.add_reg_6.un3_addresult.m1                       NOR2B      Y        Out     0.365     5.284       -         
+Signal_Noise_Acq_0.signal_acq_0.ctrl_addr_0.addrout[2]                           DFN0C0     Q        Out     0.488     0.488       -         
+addrout[2]                                                                       Net        -        -       1.140     -           7         
+Signal_Noise_Acq_0.signal_acq_0.ten_choice_one_0.un2_dataone_2                   NOR2       B        In      -         1.628       -         
+Signal_Noise_Acq_0.signal_acq_0.ten_choice_one_0.un2_dataone_2                   NOR2       Y        Out     0.483     2.110       -         
+un2_dataone_2                                                                    Net        -        -       0.602     -           3         
+Signal_Noise_Acq_0.signal_acq_0.ten_choice_one_0.un2_dataone                     NOR3B      B        In      -         2.713       -         
+Signal_Noise_Acq_0.signal_acq_0.ten_choice_one_0.un2_dataone                     NOR3B      Y        Out     0.466     3.179       -         
+un2_dataone                                                                      Net        -        -       1.521     -           13        
+Signal_Noise_Acq_0.signal_acq_0.add_reg_0.un3_addresult.m1                       NOR3C      A        In      -         4.700       -         
+Signal_Noise_Acq_0.signal_acq_0.add_reg_0.un3_addresult.m1                       NOR3C      Y        Out     0.392     5.092       -         
 N_2_i                                                                            Net        -        -       0.288     -           2         
-Signal_Noise_Acq_0.signal_acq_0.add_reg_6.un3_addresult.m4                       MIN3       B        In      -         5.572       -         
-Signal_Noise_Acq_0.signal_acq_0.add_reg_6.un3_addresult.m4                       MIN3       Y        Out     0.735     6.307       -         
+Signal_Noise_Acq_0.signal_acq_0.add_reg_0.un3_addresult.m4                       MIN3       B        In      -         5.380       -         
+Signal_Noise_Acq_0.signal_acq_0.add_reg_0.un3_addresult.m4                       MIN3       Y        Out     0.735     6.115       -         
 i2_mux                                                                           Net        -        -       0.288     -           2         
-Signal_Noise_Acq_0.signal_acq_0.add_reg_6.un3_addresult.m7                       AO18       B        In      -         6.595       -         
-Signal_Noise_Acq_0.signal_acq_0.add_reg_6.un3_addresult.m7                       AO18       Y        Out     0.532     7.127       -         
+Signal_Noise_Acq_0.signal_acq_0.add_reg_0.un3_addresult.m7                       AO18       B        In      -         6.403       -         
+Signal_Noise_Acq_0.signal_acq_0.add_reg_0.un3_addresult.m7                       AO18       Y        Out     0.532     6.935       -         
 i4_mux                                                                           Net        -        -       0.288     -           2         
-Signal_Noise_Acq_0.signal_acq_0.add_reg_6.un3_addresult.m10                      AO18       B        In      -         7.415       -         
-Signal_Noise_Acq_0.signal_acq_0.add_reg_6.un3_addresult.m10                      AO18       Y        Out     0.532     7.947       -         
+Signal_Noise_Acq_0.signal_acq_0.add_reg_0.un3_addresult.m10                      AO18       B        In      -         7.223       -         
+Signal_Noise_Acq_0.signal_acq_0.add_reg_0.un3_addresult.m10                      AO18       Y        Out     0.532     7.755       -         
 i6_mux                                                                           Net        -        -       0.288     -           2         
-Signal_Noise_Acq_0.signal_acq_0.add_reg_6.un3_addresult.m13                      AO18       B        In      -         8.236       -         
-Signal_Noise_Acq_0.signal_acq_0.add_reg_6.un3_addresult.m13                      AO18       Y        Out     0.532     8.768       -         
+Signal_Noise_Acq_0.signal_acq_0.add_reg_0.un3_addresult.m13                      AO18       B        In      -         8.043       -         
+Signal_Noise_Acq_0.signal_acq_0.add_reg_0.un3_addresult.m13                      AO18       Y        Out     0.532     8.575       -         
 i8_mux                                                                           Net        -        -       0.288     -           2         
-Signal_Noise_Acq_0.signal_acq_0.add_reg_6.un3_addresult.m16                      AO18       B        In      -         9.056       -         
-Signal_Noise_Acq_0.signal_acq_0.add_reg_6.un3_addresult.m16                      AO18       Y        Out     0.532     9.588       -         
+Signal_Noise_Acq_0.signal_acq_0.add_reg_0.un3_addresult.m16                      AO18       B        In      -         8.864       -         
+Signal_Noise_Acq_0.signal_acq_0.add_reg_0.un3_addresult.m16                      AO18       Y        Out     0.532     9.396       -         
 i10_mux                                                                          Net        -        -       0.288     -           2         
-Signal_Noise_Acq_0.signal_acq_0.add_reg_6.un3_addresult.m19                      AO18       B        In      -         9.876       -         
-Signal_Noise_Acq_0.signal_acq_0.add_reg_6.un3_addresult.m19                      AO18       Y        Out     0.532     10.408      -         
+Signal_Noise_Acq_0.signal_acq_0.add_reg_0.un3_addresult.m19                      AO18       B        In      -         9.684       -         
+Signal_Noise_Acq_0.signal_acq_0.add_reg_0.un3_addresult.m19                      AO18       Y        Out     0.532     10.216      -         
 i12_mux                                                                          Net        -        -       0.288     -           2         
-Signal_Noise_Acq_0.signal_acq_0.add_reg_6.un3_addresult.m22                      AO18       B        In      -         10.697      -         
-Signal_Noise_Acq_0.signal_acq_0.add_reg_6.un3_addresult.m22                      AO18       Y        Out     0.532     11.229      -         
+Signal_Noise_Acq_0.signal_acq_0.add_reg_0.un3_addresult.m22                      AO18       B        In      -         10.504      -         
+Signal_Noise_Acq_0.signal_acq_0.add_reg_0.un3_addresult.m22                      AO18       Y        Out     0.532     11.036      -         
 i14_mux                                                                          Net        -        -       0.288     -           2         
-Signal_Noise_Acq_0.signal_acq_0.add_reg_6.un3_addresult.m25                      AO18       B        In      -         11.517      -         
-Signal_Noise_Acq_0.signal_acq_0.add_reg_6.un3_addresult.m25                      AO18       Y        Out     0.532     12.049      -         
+Signal_Noise_Acq_0.signal_acq_0.add_reg_0.un3_addresult.m25                      AO18       B        In      -         11.325      -         
+Signal_Noise_Acq_0.signal_acq_0.add_reg_0.un3_addresult.m25                      AO18       Y        Out     0.532     11.857      -         
 i16_mux                                                                          Net        -        -       0.288     -           2         
-Signal_Noise_Acq_0.signal_acq_0.add_reg_6.un3_addresult.m28                      AO18       B        In      -         12.337      -         
-Signal_Noise_Acq_0.signal_acq_0.add_reg_6.un3_addresult.m28                      AO18       Y        Out     0.532     12.869      -         
+Signal_Noise_Acq_0.signal_acq_0.add_reg_0.un3_addresult.m28                      AO18       B        In      -         12.145      -         
+Signal_Noise_Acq_0.signal_acq_0.add_reg_0.un3_addresult.m28                      AO18       Y        Out     0.532     12.677      -         
 i18_mux                                                                          Net        -        -       0.288     -           2         
-Signal_Noise_Acq_0.signal_acq_0.add_reg_6.un3_addresult.m31                      AO18       B        In      -         13.157      -         
-Signal_Noise_Acq_0.signal_acq_0.add_reg_6.un3_addresult.m31                      AO18       Y        Out     0.532     13.690      -         
+Signal_Noise_Acq_0.signal_acq_0.add_reg_0.un3_addresult.m31                      AO18       B        In      -         12.965      -         
+Signal_Noise_Acq_0.signal_acq_0.add_reg_0.un3_addresult.m31                      AO18       Y        Out     0.532     13.497      -         
 i20_mux                                                                          Net        -        -       0.288     -           2         
-Signal_Noise_Acq_0.signal_acq_0.add_reg_6.un3_addresult.m34                      AO18       B        In      -         13.978      -         
-Signal_Noise_Acq_0.signal_acq_0.add_reg_6.un3_addresult.m34                      AO18       Y        Out     0.532     14.510      -         
+Signal_Noise_Acq_0.signal_acq_0.add_reg_0.un3_addresult.m34                      AO18       B        In      -         13.786      -         
+Signal_Noise_Acq_0.signal_acq_0.add_reg_0.un3_addresult.m34                      AO18       Y        Out     0.532     14.318      -         
 i22_mux                                                                          Net        -        -       0.602     -           3         
-Signal_Noise_Acq_0.signal_acq_0.add_reg_6.un3_addresult.m36                      NOR3B      C        In      -         15.112      -         
-Signal_Noise_Acq_0.signal_acq_0.add_reg_6.un3_addresult.m36                      NOR3B      Y        Out     0.365     15.477      -         
+Signal_Noise_Acq_0.signal_acq_0.add_reg_0.un3_addresult.m36                      NOR3B      C        In      -         14.920      -         
+Signal_Noise_Acq_0.signal_acq_0.add_reg_0.un3_addresult.m36                      NOR3B      Y        Out     0.365     15.285      -         
 N_37_i                                                                           Net        -        -       0.288     -           2         
-Signal_Noise_Acq_0.signal_acq_0.add_reg_6.un3_addresult.m37                      NOR2B      A        In      -         15.765      -         
-Signal_Noise_Acq_0.signal_acq_0.add_reg_6.un3_addresult.m37                      NOR2B      Y        Out     0.365     16.130      -         
-N_38_i                                                                           Net        -        -       0.602     -           3         
-Signal_Noise_Acq_0.signal_acq_0.add_reg_6.un3_addresult.m39                      NOR3C      B        In      -         16.732      -         
-Signal_Noise_Acq_0.signal_acq_0.add_reg_6.un3_addresult.m39                      NOR3C      Y        Out     0.466     17.198      -         
-N_40_i                                                                           Net        -        -       0.288     -           2         
-Signal_Noise_Acq_0.signal_acq_0.add_reg_6.un3_addresult.m40                      NOR2B      A        In      -         17.486      -         
-Signal_Noise_Acq_0.signal_acq_0.add_reg_6.un3_addresult.m40                      NOR2B      Y        Out     0.365     17.851      -         
+Signal_Noise_Acq_0.signal_acq_0.add_reg_0.un3_addresult.m37                      NOR2B      A        In      -         15.573      -         
+Signal_Noise_Acq_0.signal_acq_0.add_reg_0.un3_addresult.m37                      NOR2B      Y        Out     0.365     15.938      -         
+N_38_i                                                                           Net        -        -       0.288     -           2         
+Signal_Noise_Acq_0.signal_acq_0.add_reg_0.un3_addresult.m38                      NOR2B      A        In      -         16.226      -         
+Signal_Noise_Acq_0.signal_acq_0.add_reg_0.un3_addresult.m38                      NOR2B      Y        Out     0.365     16.590      -         
+N_39_i                                                                           Net        -        -       0.602     -           3         
+Signal_Noise_Acq_0.signal_acq_0.add_reg_0.un3_addresult.m40                      NOR3C      B        In      -         17.193      -         
+Signal_Noise_Acq_0.signal_acq_0.add_reg_0.un3_addresult.m40                      NOR3C      Y        Out     0.466     17.659      -         
 N_41_i                                                                           Net        -        -       0.288     -           2         
-Signal_Noise_Acq_0.signal_acq_0.add_reg_6.un3_addresult.ADD_20x20_slow_I19_Y     AX1C       B        In      -         18.139      -         
-Signal_Noise_Acq_0.signal_acq_0.add_reg_6.un3_addresult.ADD_20x20_slow_I19_Y     AX1C       Y        Out     0.724     18.863      -         
-ADD_20x20_slow_I19_Y_5                                                           Net        -        -       0.240     -           1         
-Signal_Noise_Acq_0.signal_acq_0.add_reg_6.addresult[19]                          DFN1C0     D        In      -         19.103      -         
+Signal_Noise_Acq_0.signal_acq_0.add_reg_0.un3_addresult.ADD_20x20_slow_I19_Y     AX1C       B        In      -         17.947      -         
+Signal_Noise_Acq_0.signal_acq_0.add_reg_0.un3_addresult.ADD_20x20_slow_I19_Y     AX1C       Y        Out     0.724     18.671      -         
+ADD_20x20_slow_I19_Y_3                                                           Net        -        -       0.240     -           1         
+Signal_Noise_Acq_0.signal_acq_0.add_reg_0.addresult[19]                          DFN1C0     D        In      -         18.911      -         
 =============================================================================================================================================
-Total path delay (propagation time + setup) of 19.506 is 10.737(55.0%) logic and 8.769(45.0%) route.
+Total path delay (propagation time + setup) of 19.313 is 10.571(54.7%) logic and 8.743(45.3%) route.
 Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
 
 
@@ -1406,7 +1355,7 @@ Instance                               Reference     Type       Pin     Net     
 ----------------------------------------------------------------------------------------------------------
 sd_acq_top_0.sd_sacq_coder_0.i[9]      ddsclkout     DFN1       D       i_RNO[9]       24.598       15.735
 sd_acq_top_0.sd_sacq_coder_0.i[10]     ddsclkout     DFN1       D       i_RNO[10]      24.598       15.905
-PLUSE_0.bri_timer_0.count[0]           ddsclkout     DFN1C0     D       count_e0       24.598       16.382
+PLUSE_0.bri_timer_0.count[0]           ddsclkout     DFN1C0     D       count_e0       24.598       16.401
 bridge_div_0.count[5]                  ddsclkout     DFN1C0     D       count_5[5]     24.598       16.510
 bridge_div_0.count[4]                  ddsclkout     DFN1C0     D       count_5[4]     24.598       16.517
 ==========================================================================================================
@@ -1474,91 +1423,90 @@ Path delay compensated for clock skew. Clock skew is added to clock-to-out value
 Timing exceptions that could not be applied
 None
 
-Finished final timing analysis (Real Time elapsed 0h:00m:07s; CPU Time elapsed 0h:00m:07s; Memory used current: 156MB peak: 181MB)
+Finished final timing analysis (Real Time elapsed 0h:00m:09s; CPU Time elapsed 0h:00m:07s; Memory used current: 153MB peak: 182MB)
 
 
-Finished timing report (Real Time elapsed 0h:00m:07s; CPU Time elapsed 0h:00m:07s; Memory used current: 156MB peak: 181MB)
+Finished timing report (Real Time elapsed 0h:00m:09s; CPU Time elapsed 0h:00m:07s; Memory used current: 153MB peak: 182MB)
 
 --------------------------------------------------------------------------------
 Target Part: A3P1000_FBGA144_-2
 Report for cell NMR_TOP.verilog
   Core Cell usage:
               cell count     area count*area
-              AND2    58      1.0       58.0
+              AND2    60      1.0       60.0
              AND2A    19      1.0       19.0
               AND3   129      1.0      129.0
              AND3B     1      1.0        1.0
-               AO1   110      1.0      110.0
-              AO18    92      1.0       92.0
-              AO1A    90      1.0       90.0
-              AO1B    23      1.0       23.0
-              AO1C    75      1.0       75.0
-              AO1D     2      1.0        2.0
-              AOI1    17      1.0       17.0
+               AO1   148      1.0      148.0
+              AO18    72      1.0       72.0
+              AO1A    88      1.0       88.0
+              AO1B    21      1.0       21.0
+              AO1C    79      1.0       79.0
+              AO1D     1      1.0        1.0
+              AOI1    14      1.0       14.0
              AOI1A    15      1.0       15.0
              AOI1B     9      1.0        9.0
                AX1     9      1.0        9.0
               AX1A     1      1.0        1.0
-              AX1C    57      1.0       57.0
+              AX1C    83      1.0       83.0
               BUFF    19      1.0       19.0
             CLKINT     3      0.0        0.0
                GND   112      0.0        0.0
                INV     9      1.0        9.0
               MAJ3     3      1.0        3.0
-              MIN3    10      1.0       10.0
+              MIN3     8      1.0        8.0
                MX2   637      1.0      637.0
-              MX2A    15      1.0       15.0
+              MX2A    35      1.0       35.0
               MX2B    33      1.0       33.0
-              MX2C     7      1.0        7.0
+              MX2C     9      1.0        9.0
              NAND2    33      1.0       33.0
             NAND3A    24      1.0       24.0
-              NOR2    71      1.0       71.0
-             NOR2A   444      1.0      444.0
-             NOR2B   708      1.0      708.0
-              NOR3    58      1.0       58.0
-             NOR3A    93      1.0       93.0
-             NOR3B   234      1.0      234.0
-             NOR3C   303      1.0      303.0
-               OA1    25      1.0       25.0
-              OA1A    17      1.0       17.0
-              OA1B    45      1.0       45.0
-              OA1C    37      1.0       37.0
-              OAI1    11      1.0       11.0
-               OR2   106      1.0      106.0
+              NOR2    65      1.0       65.0
+             NOR2A   379      1.0      379.0
+             NOR2B   681      1.0      681.0
+              NOR3    83      1.0       83.0
+             NOR3A   125      1.0      125.0
+             NOR3B   242      1.0      242.0
+             NOR3C   240      1.0      240.0
+               OA1    23      1.0       23.0
+              OA1A    18      1.0       18.0
+              OA1B    65      1.0       65.0
+              OA1C    31      1.0       31.0
+              OAI1    12      1.0       12.0
+               OR2   104      1.0      104.0
               OR2A   108      1.0      108.0
-              OR2B    29      1.0       29.0
-               OR3   225      1.0      225.0
-              OR3A    18      1.0       18.0
+              OR2B    33      1.0       33.0
+               OR3   202      1.0      202.0
+              OR3A    12      1.0       12.0
               OR3B     8      1.0        8.0
-              OR3C     3      1.0        3.0
+              OR3C     2      1.0        2.0
                PLL     1      0.0        0.0
                VCC   112      0.0        0.0
-               XA1    61      1.0       61.0
-              XA1A    11      1.0       11.0
-              XA1B     1      1.0        1.0
+               XA1    62      1.0       62.0
+              XA1A    10      1.0       10.0
+              XA1B     2      1.0        2.0
               XA1C    25      1.0       25.0
-             XNOR2    85      1.0       85.0
-             XNOR3    94      1.0       94.0
-               XO1   104      1.0      104.0
-              XO1A     1      1.0        1.0
+             XNOR2   106      1.0      106.0
+             XNOR3    73      1.0       73.0
+               XO1   107      1.0      107.0
               XOR2   417      1.0      417.0
-              XOR3    19      1.0       19.0
+              XOR3    17      1.0       17.0
 
 
               DFI0     1      1.0        1.0
               DFN0     1      1.0        1.0
             DFN0C0    27      1.0       27.0
             DFN0P0     1      1.0        1.0
-              DFN1   585      1.0      585.0
+              DFN1   581      1.0      581.0
             DFN1C0   221      1.0      221.0
             DFN1E0   109      1.0      109.0
           DFN1E0C0    17      1.0       17.0
-            DFN1E1  1247      1.0     1247.0
+            DFN1E1  1230      1.0     1230.0
           DFN1E1C0    25      1.0       25.0
             DFN1P0    12      1.0       12.0
          RAM512X18    16      0.0        0.0
                    -----          ----------
-             TOTAL  7348              7104.0
+             TOTAL  7280              7036.0
 
 
   IO Cell usage:
@@ -1571,7 +1519,7 @@ Report for cell NMR_TOP.verilog
              TOTAL   102
 
 
-Core Cells         : 7104 of 24576 (29%)
+Core Cells         : 7036 of 24576 (29%)
 IO Cells           : 102
 
   RAM/ROM Usage Summary
@@ -1579,9 +1527,9 @@ Block Rams : 16 of 32 (50%)
 
 Mapper successful!
 
-At Mapper Exit (Real Time elapsed 0h:00m:07s; CPU Time elapsed 0h:00m:07s; Memory used current: 39MB peak: 181MB)
+At Mapper Exit (Real Time elapsed 0h:00m:09s; CPU Time elapsed 0h:00m:07s; Memory used current: 38MB peak: 182MB)
 
-Process took 0h:00m:07s realtime, 0h:00m:07s cputime
-# Fri Jun 04 09:25:05 2021
+Process took 0h:00m:09s realtime, 0h:00m:07s cputime
+# Thu Dec 16 11:21:34 2021
 
 ###########################################################]

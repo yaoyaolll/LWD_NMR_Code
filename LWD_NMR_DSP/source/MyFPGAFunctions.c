@@ -212,13 +212,14 @@ void LoadPdPara(void)
 	return;
 }
 
+// FPGA中实现了1ms的定时器，由5M时钟分频而来
 void StartS1msModule(Uint16 TimeData)
 {
     STATE1MS_RST_EN		= USER_ENABLE;     
     STATE1MS_RST_DIS	= USER_ENABLE;
 
 	STATE1MS_START_EN	= USER_ENABLE;//1MS启动
-	TIMER_DATA			= TimeData;   //for test   
+	TIMER_DATA			= TimeData;   //for test
 	TIMER_START			= 0x1;	
 	do	
 	{;} while(!GpioDataRegs.GPADAT.bit.GPIOA9);

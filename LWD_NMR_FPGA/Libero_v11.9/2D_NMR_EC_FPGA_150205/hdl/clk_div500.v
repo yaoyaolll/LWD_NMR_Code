@@ -3,7 +3,7 @@ module clk_div500(
                   clk_5M,     
                   clk_sys,//时钟输入
                   rst_n,
-                  clk_5K     //时钟输出
+                  clk_5K     //时钟输出，修改为了1KHz
                  );
 
 input clk_5M;
@@ -13,7 +13,7 @@ output clk_5K;
 
 reg clk_5K;
 
-reg [8:0] count;
+reg [11:0] count;
 
 reg clk_5M_reg1;
 reg clk_5M_reg2;
@@ -38,7 +38,7 @@ always @ (posedge clk_sys)
     begin
          if (rst_n == 1'b0)
              begin
-                  count   <= 9'b1;
+                  count   <= 12'b1;
                   clk_5K <= 1'b0;
              end
          else
@@ -47,7 +47,7 @@ always @ (posedge clk_sys)
                     begin
                       if (clear_n == 1'b0)
                         begin
-                           count   <= 9'b1;
+                           count   <= 12'b1;
                            clk_5K <= ~clk_5K;
                         end        
                       else
@@ -66,7 +66,7 @@ always @ (posedge clk_sys)
 
 always @ (count)
     begin
-         if (count == 9'd500)
+         if (count == 12'd2500)
              clear_n = 1'b0;
          else
              clear_n = 1'b1;

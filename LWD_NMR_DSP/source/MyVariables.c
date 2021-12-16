@@ -54,7 +54,6 @@ Uint16 modeDataSendLen;
 // ÊÂ¼þ°å×´Ì¬×Ö
 enum EB_STATE EventBoardState;
 
-// TODO£º¸Ä»»ÁËË³Ðò£¬×´Ì¬º¯Êý
 //void (*eventFunc[])(void) = {0, IdleStateCtl, OperaStateCtl, CasDctStateCtl, TestStateCtl, ScaleStateCtl, AcqFinStateCtl};
 void (*eventFunc[])(void) = {0, IdleStateCtl, OperaStateCtl, CasDctStateCtl, AcqFinStateCtl};
 

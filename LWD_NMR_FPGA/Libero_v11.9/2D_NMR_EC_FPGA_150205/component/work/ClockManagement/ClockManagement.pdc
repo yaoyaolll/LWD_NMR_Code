@@ -1,14 +1,9 @@
-# Actel Physical design constraints file
-# Generated file
+# Microsemi I/O Physical Design Constraints file
+# Auto Generated User I/O Constraints file
 
-# Version: 9.1 9.1.0.18
+# Version: v11.9 SP6 11.9.6.7
 # Family: ProASIC3 , Die: A3P1000 , Package: 208 PQFP
-# Date generated: Tue Jan 13 09:09:02 2015 
-
-
-# 
-# IO banks setting
-# 
+# Date generated: Thu Dec 16 11:20:55 2021 
 
 
 # 
@@ -19,94 +14,118 @@ define_group -name TimerCode
 
 
 # 
-# I/O constraints
+# User Locked I/O Bank Settings
+# 
+
+
+# 
+# Unlocked I/O Bank Settings
+# The I/O Bank Settings can be locked by directly editing this file
+# or by making changes in the I/O Attribute Editor
+# 
+
+
+# 
+# User Locked I/O settings
+# 
+
+
+# 
+# Dedicated Peripheral I/O Settings
+# 
+
+
+# 
+# Unlocked I/O settings
+# The I/Os in this section are unplaced or placed but are not locked
+# the other listed attributes have been applied
 # 
 
 # User Group TimerCode
 
 set_io start               \
     -GROUP_NAME TimerCode  \
-    -DIRECTION Input
+    -DIRECTION INPUT
 
 
 set_io {timer_para[0]}     \
     -GROUP_NAME TimerCode  \
-    -DIRECTION Input
+    -DIRECTION INPUT
 
 
 set_io {timer_para[1]}     \
     -GROUP_NAME TimerCode  \
-    -DIRECTION Input
+    -DIRECTION INPUT
 
 
 set_io {timer_para[2]}     \
     -GROUP_NAME TimerCode  \
-    -DIRECTION Input
+    -DIRECTION INPUT
 
 
 set_io {timer_para[3]}     \
     -GROUP_NAME TimerCode  \
-    -DIRECTION Input
+    -DIRECTION INPUT
 
 
 set_io {timer_para[4]}     \
     -GROUP_NAME TimerCode  \
-    -DIRECTION Input
+    -DIRECTION INPUT
 
 
 set_io {timer_para[5]}     \
     -GROUP_NAME TimerCode  \
-    -DIRECTION Input
+    -DIRECTION INPUT
 
 
 set_io {timer_para[6]}     \
     -GROUP_NAME TimerCode  \
-    -DIRECTION Input
+    -DIRECTION INPUT
 
 
 set_io {timer_para[7]}     \
     -GROUP_NAME TimerCode  \
-    -DIRECTION Input
+    -DIRECTION INPUT
 
 
 set_io {timer_para[8]}     \
     -GROUP_NAME TimerCode  \
-    -DIRECTION Input
+    -DIRECTION INPUT
 
 
 set_io {timer_para[9]}     \
     -GROUP_NAME TimerCode  \
-    -DIRECTION Input
+    -DIRECTION INPUT
 
 
 set_io {timer_para[10]}    \
     -GROUP_NAME TimerCode  \
-    -DIRECTION Input
+    -DIRECTION INPUT
 
 
 set_io {timer_para[11]}    \
     -GROUP_NAME TimerCode  \
-    -DIRECTION Input
+    -DIRECTION INPUT
 
 
 set_io {timer_para[12]}    \
     -GROUP_NAME TimerCode  \
-    -DIRECTION Input
+    -DIRECTION INPUT
 
 
 set_io {timer_para[13]}    \
     -GROUP_NAME TimerCode  \
-    -DIRECTION Input
+    -DIRECTION INPUT
 
 
 set_io {timer_para[14]}    \
     -GROUP_NAME TimerCode  \
-    -DIRECTION Input
+    -DIRECTION INPUT
 
 
 set_io {timer_para[15]}    \
     -GROUP_NAME TimerCode  \
-    -DIRECTION Input
+    -DIRECTION INPUT
 
 
 
@@ -119,20 +138,20 @@ set_io {timer_para[15]}    \
 # Old IO constraints, commented out for reference
 #
 
-# set_io start -GROUP_NAME TimerCode -DIRECTION Input 
-# set_io {timer_para[0]} -GROUP_NAME TimerCode -DIRECTION Input 
-# set_io {timer_para[1]} -GROUP_NAME TimerCode -DIRECTION Input 
-# set_io {timer_para[2]} -GROUP_NAME TimerCode -DIRECTION Input 
-# set_io {timer_para[3]} -GROUP_NAME TimerCode -DIRECTION Input 
-# set_io {timer_para[4]} -GROUP_NAME TimerCode -DIRECTION Input 
-# set_io {timer_para[5]} -GROUP_NAME TimerCode -DIRECTION Input 
-# set_io {timer_para[6]} -GROUP_NAME TimerCode -DIRECTION Input 
-# set_io {timer_para[7]} -GROUP_NAME TimerCode -DIRECTION Input 
-# set_io {timer_para[8]} -GROUP_NAME TimerCode -DIRECTION Input 
-# set_io {timer_para[9]} -GROUP_NAME TimerCode -DIRECTION Input 
-# set_io {timer_para[10]} -GROUP_NAME TimerCode -DIRECTION Input 
-# set_io {timer_para[11]} -GROUP_NAME TimerCode -DIRECTION Input 
-# set_io {timer_para[12]} -GROUP_NAME TimerCode -DIRECTION Input 
-# set_io {timer_para[13]} -GROUP_NAME TimerCode -DIRECTION Input 
-# set_io {timer_para[14]} -GROUP_NAME TimerCode -DIRECTION Input 
-# set_io {timer_para[15]} -GROUP_NAME TimerCode -DIRECTION Input 
+# set_io start -GROUP_NAME TimerCode -DIRECTION INPUT 
+# set_io {timer_para[0]} -GROUP_NAME TimerCode -DIRECTION INPUT 
+# set_io {timer_para[1]} -GROUP_NAME TimerCode -DIRECTION INPUT 
+# set_io {timer_para[2]} -GROUP_NAME TimerCode -DIRECTION INPUT 
+# set_io {timer_para[3]} -GROUP_NAME TimerCode -DIRECTION INPUT 
+# set_io {timer_para[4]} -GROUP_NAME TimerCode -DIRECTION INPUT 
+# set_io {timer_para[5]} -GROUP_NAME TimerCode -DIRECTION INPUT 
+# set_io {timer_para[6]} -GROUP_NAME TimerCode -DIRECTION INPUT 
+# set_io {timer_para[7]} -GROUP_NAME TimerCode -DIRECTION INPUT 
+# set_io {timer_para[8]} -GROUP_NAME TimerCode -DIRECTION INPUT 
+# set_io {timer_para[9]} -GROUP_NAME TimerCode -DIRECTION INPUT 
+# set_io {timer_para[10]} -GROUP_NAME TimerCode -DIRECTION INPUT 
+# set_io {timer_para[11]} -GROUP_NAME TimerCode -DIRECTION INPUT 
+# set_io {timer_para[12]} -GROUP_NAME TimerCode -DIRECTION INPUT 
+# set_io {timer_para[13]} -GROUP_NAME TimerCode -DIRECTION INPUT 
+# set_io {timer_para[14]} -GROUP_NAME TimerCode -DIRECTION INPUT 
+# set_io {timer_para[15]} -GROUP_NAME TimerCode -DIRECTION INPUT 

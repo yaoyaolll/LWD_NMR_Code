@@ -11,103 +11,103 @@
     <hdl-type>Verilog</hdl-type>
     <project-description>
     </project-description>
-    <location>E:/LWD_NMR/Code/LWD_NMR_FPGA/20210603good/Libero_v11.9/2D_NMR_EC_FPGA_150205/component/work/NMR_TOP</location>
-    <state>GENERATED ( Fri Jun 04 09:24:20 2021 )</state>
+    <location>E:/LWD_NMR/Code/20210907respository/LWD_NMR_FPGA/Libero_v11.9/2D_NMR_EC_FPGA_150205/component/work/NMR_TOP</location>
+    <state>GENERATED ( Thu Dec 16 11:21:08 2021 )</state>
     <swide-toolchain>SoftConsole workspace has not been generated</swide-toolchain>
   </project-settings>
   <site-map>
   </site-map>
   <fileset>
     <name>HDL File(s)</name>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\CAL\CAL.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\ClockManagement\ClockManagement.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\DDS\DDS.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\DSTimer\DSTimer.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\DUMP\DUMP.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\DUMP_OFF\DUMP_OFF.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\DUMP_ON\DUMP_ON.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\GPMI\GPMI.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\NMR_TOP\NMR_TOP.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\noise_acq\noise_acq.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\pd_pluse_top\pd_pluse_top.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\PLUSE\PLUSE.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\sd_acq_top\sd_acq_top.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\signal_acq\signal_acq.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\Signal_Noise_Acq\Signal_Noise_Acq.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\syn_md_module\syn_md_module.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\timer_top\timer_top.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\1ms_dump_choice.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\add_reg.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\bridge_div.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\bri_coder.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\bri_dump_sw.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\bri_state.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\bri_timer.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\cal_div.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\cal_load.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\clk_10k.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\clk_5k.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\clk_div500.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\ctrl_addr.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\dds_change.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\dds_coder.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\dds_state.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\dds_timer.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\dump_coder.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\dump_state.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\dump_sustain_timer.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\dump_timer.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\link.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\long_timer.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\noiseclk.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\noiseclkctrl.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\noisestate.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\noise_addr.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\nsctrl_choice.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\n_pluse_acq.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\n_rdclk_syn.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\n_s_change.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\off_on_coder.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\off_on_state.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\off_on_timer.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\para_load.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\pd_pluse_coder.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\pd_pluse_state.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\pd_pluse_timer.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\plusestate.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\qq_coder.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\qq_state.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\qq_timer.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\readata_choice.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\reset_module.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\scalestate.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\scanstate.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\scan_scale_sw.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\sd_acq_coder.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\sd_acq_state.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\sd_acq_timer.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\signalclkctrl.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\state_1ms.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\state_switch.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\syn_md.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\syn_md_combine.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\syn_md_edge_detect.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\s_acq_change.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\s_clk_div.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\ten_choice_one.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\timer.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\topctrlchange.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\top_code.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\tri_state.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\xwe_xzcs2_syn.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\smartgen\cmp_constant_4b\cmp_constant_4b.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\smartgen\necount_cmp\necount_cmp.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\smartgen\necount_inc\necount_inc.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\smartgen\pd_pluse_inc\pd_pluse_inc.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\smartgen\pllclk\pllclk.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\smartgen\RAM\RAM.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\smartgen\sd_sacq_inc\sd_sacq_inc.v</file>
-    <file>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\smartgen\Timer_Cmp\Timer_Cmp.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\CAL\CAL.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\ClockManagement\ClockManagement.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\DDS\DDS.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\DSTimer\DSTimer.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\DUMP\DUMP.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\DUMP_OFF\DUMP_OFF.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\DUMP_ON\DUMP_ON.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\GPMI\GPMI.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\NMR_TOP\NMR_TOP.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\noise_acq\noise_acq.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\pd_pluse_top\pd_pluse_top.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\PLUSE\PLUSE.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\sd_acq_top\sd_acq_top.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\signal_acq\signal_acq.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\Signal_Noise_Acq\Signal_Noise_Acq.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\syn_md_module\syn_md_module.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\timer_top\timer_top.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\1ms_dump_choice.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\add_reg.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\bridge_div.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\bri_coder.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\bri_dump_sw.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\bri_state.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\bri_timer.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\cal_div.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\cal_load.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\clk_10k.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\clk_5k.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\clk_div500.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\ctrl_addr.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\dds_change.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\dds_coder.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\dds_state.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\dds_timer.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\dump_coder.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\dump_state.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\dump_sustain_timer.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\dump_timer.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\link.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\long_timer.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\noiseclk.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\noiseclkctrl.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\noisestate.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\noise_addr.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\nsctrl_choice.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\n_pluse_acq.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\n_rdclk_syn.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\n_s_change.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\off_on_coder.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\off_on_state.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\off_on_timer.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\para_load.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\pd_pluse_coder.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\pd_pluse_state.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\pd_pluse_timer.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\plusestate.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\qq_coder.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\qq_state.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\qq_timer.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\readata_choice.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\reset_module.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\scalestate.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\scanstate.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\scan_scale_sw.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\sd_acq_coder.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\sd_acq_state.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\sd_acq_timer.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\signalclkctrl.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\state_1ms.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\state_switch.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\syn_md.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\syn_md_combine.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\syn_md_edge_detect.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\s_acq_change.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\s_clk_div.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\ten_choice_one.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\timer.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\topctrlchange.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\top_code.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\tri_state.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\hdl\xwe_xzcs2_syn.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\smartgen\cmp_constant_4b\cmp_constant_4b.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\smartgen\necount_cmp\necount_cmp.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\smartgen\necount_inc\necount_inc.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\smartgen\pd_pluse_inc\pd_pluse_inc.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\smartgen\pllclk\pllclk.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\smartgen\RAM\RAM.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\smartgen\sd_sacq_inc\sd_sacq_inc.v</file>
+    <file>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\smartgen\Timer_Cmp\Timer_Cmp.v</file>
   </fileset>
   <io>
     <port-name>Acq_clk</port-name>
@@ -741,19 +741,19 @@
   <core type="ComponentModule">
     <core-type>ComponentModule</core-type>
     <core-exttype>SmartDesign</core-exttype>
-    <core-location>E:/LWD_NMR/Code/LWD_NMR_FPGA/20210603good/Libero_v11.9/2D_NMR_EC_FPGA_150205/component/work/CAL</core-location>
+    <core-location>E:/LWD_NMR/Code/20210907respository/LWD_NMR_FPGA/Libero_v11.9/2D_NMR_EC_FPGA_150205/component/work/CAL</core-location>
     <core-name>CAL_0</core-name>
   </core>
   <core type="ComponentModule">
     <core-type>ComponentModule</core-type>
     <core-exttype>SmartDesign</core-exttype>
-    <core-location>E:/LWD_NMR/Code/LWD_NMR_FPGA/20210603good/Libero_v11.9/2D_NMR_EC_FPGA_150205/component/work/ClockManagement</core-location>
+    <core-location>E:/LWD_NMR/Code/20210907respository/LWD_NMR_FPGA/Libero_v11.9/2D_NMR_EC_FPGA_150205/component/work/ClockManagement</core-location>
     <core-name>ClockManagement_0</core-name>
   </core>
   <core type="ComponentModule">
     <core-type>ComponentModule</core-type>
     <core-exttype>SmartDesign</core-exttype>
-    <core-location>E:/LWD_NMR/Code/LWD_NMR_FPGA/20210603good/Libero_v11.9/2D_NMR_EC_FPGA_150205/component/work/DDS</core-location>
+    <core-location>E:/LWD_NMR/Code/20210907respository/LWD_NMR_FPGA/Libero_v11.9/2D_NMR_EC_FPGA_150205/component/work/DDS</core-location>
     <core-name>DDS_0</core-name>
   </core>
   <core type="HdlModule">
@@ -765,37 +765,37 @@
   <core type="ComponentModule">
     <core-type>ComponentModule</core-type>
     <core-exttype>SmartDesign</core-exttype>
-    <core-location>E:/LWD_NMR/Code/LWD_NMR_FPGA/20210603good/Libero_v11.9/2D_NMR_EC_FPGA_150205/component/work/DSTimer</core-location>
+    <core-location>E:/LWD_NMR/Code/20210907respository/LWD_NMR_FPGA/Libero_v11.9/2D_NMR_EC_FPGA_150205/component/work/DSTimer</core-location>
     <core-name>DSTimer_0</core-name>
   </core>
   <core type="ComponentModule">
     <core-type>ComponentModule</core-type>
     <core-exttype>SmartDesign</core-exttype>
-    <core-location>E:/LWD_NMR/Code/LWD_NMR_FPGA/20210603good/Libero_v11.9/2D_NMR_EC_FPGA_150205/component/work/DUMP</core-location>
+    <core-location>E:/LWD_NMR/Code/20210907respository/LWD_NMR_FPGA/Libero_v11.9/2D_NMR_EC_FPGA_150205/component/work/DUMP</core-location>
     <core-name>DUMP_0</core-name>
   </core>
   <core type="ComponentModule">
     <core-type>ComponentModule</core-type>
     <core-exttype>SmartDesign</core-exttype>
-    <core-location>E:/LWD_NMR/Code/LWD_NMR_FPGA/20210603good/Libero_v11.9/2D_NMR_EC_FPGA_150205/component/work/DUMP_OFF</core-location>
+    <core-location>E:/LWD_NMR/Code/20210907respository/LWD_NMR_FPGA/Libero_v11.9/2D_NMR_EC_FPGA_150205/component/work/DUMP_OFF</core-location>
     <core-name>DUMP_OFF_0</core-name>
   </core>
   <core type="ComponentModule">
     <core-type>ComponentModule</core-type>
     <core-exttype>SmartDesign</core-exttype>
-    <core-location>E:/LWD_NMR/Code/LWD_NMR_FPGA/20210603good/Libero_v11.9/2D_NMR_EC_FPGA_150205/component/work/DUMP_OFF</core-location>
+    <core-location>E:/LWD_NMR/Code/20210907respository/LWD_NMR_FPGA/Libero_v11.9/2D_NMR_EC_FPGA_150205/component/work/DUMP_OFF</core-location>
     <core-name>DUMP_OFF_1</core-name>
   </core>
   <core type="ComponentModule">
     <core-type>ComponentModule</core-type>
     <core-exttype>SmartDesign</core-exttype>
-    <core-location>E:/LWD_NMR/Code/LWD_NMR_FPGA/20210603good/Libero_v11.9/2D_NMR_EC_FPGA_150205/component/work/DUMP_ON</core-location>
+    <core-location>E:/LWD_NMR/Code/20210907respository/LWD_NMR_FPGA/Libero_v11.9/2D_NMR_EC_FPGA_150205/component/work/DUMP_ON</core-location>
     <core-name>DUMP_ON_0</core-name>
   </core>
   <core type="ComponentModule">
     <core-type>ComponentModule</core-type>
     <core-exttype>SmartDesign</core-exttype>
-    <core-location>E:/LWD_NMR/Code/LWD_NMR_FPGA/20210603good/Libero_v11.9/2D_NMR_EC_FPGA_150205/component/work/GPMI</core-location>
+    <core-location>E:/LWD_NMR/Code/20210907respository/LWD_NMR_FPGA/Libero_v11.9/2D_NMR_EC_FPGA_150205/component/work/GPMI</core-location>
     <core-name>GPMI_0</core-name>
   </core>
   <core type="HdlModule">
@@ -839,13 +839,13 @@
   <core type="ComponentModule">
     <core-type>ComponentModule</core-type>
     <core-exttype>SmartDesign</core-exttype>
-    <core-location>E:/LWD_NMR/Code/LWD_NMR_FPGA/20210603good/Libero_v11.9/2D_NMR_EC_FPGA_150205/component/work/pd_pluse_top</core-location>
+    <core-location>E:/LWD_NMR/Code/20210907respository/LWD_NMR_FPGA/Libero_v11.9/2D_NMR_EC_FPGA_150205/component/work/pd_pluse_top</core-location>
     <core-name>pd_pluse_top_0</core-name>
   </core>
   <core type="ComponentModule">
     <core-type>ComponentModule</core-type>
     <core-exttype>SmartDesign</core-exttype>
-    <core-location>E:/LWD_NMR/Code/LWD_NMR_FPGA/20210603good/Libero_v11.9/2D_NMR_EC_FPGA_150205/component/work/PLUSE</core-location>
+    <core-location>E:/LWD_NMR/Code/20210907respository/LWD_NMR_FPGA/Libero_v11.9/2D_NMR_EC_FPGA_150205/component/work/PLUSE</core-location>
     <core-name>PLUSE_0</core-name>
   </core>
   <core type="HdlModule">
@@ -881,13 +881,13 @@
   <core type="ComponentModule">
     <core-type>ComponentModule</core-type>
     <core-exttype>SmartDesign</core-exttype>
-    <core-location>E:/LWD_NMR/Code/LWD_NMR_FPGA/20210603good/Libero_v11.9/2D_NMR_EC_FPGA_150205/component/work/sd_acq_top</core-location>
+    <core-location>E:/LWD_NMR/Code/20210907respository/LWD_NMR_FPGA/Libero_v11.9/2D_NMR_EC_FPGA_150205/component/work/sd_acq_top</core-location>
     <core-name>sd_acq_top_0</core-name>
   </core>
   <core type="ComponentModule">
     <core-type>ComponentModule</core-type>
     <core-exttype>SmartDesign</core-exttype>
-    <core-location>E:/LWD_NMR/Code/LWD_NMR_FPGA/20210603good/Libero_v11.9/2D_NMR_EC_FPGA_150205/component/work/Signal_Noise_Acq</core-location>
+    <core-location>E:/LWD_NMR/Code/20210907respository/LWD_NMR_FPGA/Libero_v11.9/2D_NMR_EC_FPGA_150205/component/work/Signal_Noise_Acq</core-location>
     <core-name>Signal_Noise_Acq_0</core-name>
   </core>
   <core type="HdlModule">
@@ -905,13 +905,13 @@
   <core type="ComponentModule">
     <core-type>ComponentModule</core-type>
     <core-exttype>SmartDesign</core-exttype>
-    <core-location>E:/LWD_NMR/Code/LWD_NMR_FPGA/20210603good/Libero_v11.9/2D_NMR_EC_FPGA_150205/component/work/syn_md_module</core-location>
+    <core-location>E:/LWD_NMR/Code/20210907respository/LWD_NMR_FPGA/Libero_v11.9/2D_NMR_EC_FPGA_150205/component/work/syn_md_module</core-location>
     <core-name>syn_md_module_1</core-name>
   </core>
   <core type="ComponentModule">
     <core-type>ComponentModule</core-type>
     <core-exttype>SmartDesign</core-exttype>
-    <core-location>E:/LWD_NMR/Code/LWD_NMR_FPGA/20210603good/Libero_v11.9/2D_NMR_EC_FPGA_150205/component/work/timer_top</core-location>
+    <core-location>E:/LWD_NMR/Code/20210907respository/LWD_NMR_FPGA/Libero_v11.9/2D_NMR_EC_FPGA_150205/component/work/timer_top</core-location>
     <core-name>timer_top_0</core-name>
   </core>
   <core type="HdlModule">

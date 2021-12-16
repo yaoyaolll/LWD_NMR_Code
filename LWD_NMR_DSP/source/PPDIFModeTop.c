@@ -55,7 +55,7 @@ void PPDIFModeTop(void)
 	Ne = PPDIF_NE_1C;
 	PulseParamIncrement();
 	EchoStorAddr += 2 * PPDIF_NE_1A1B;
-	DCWorkOnce(TransmitFre);
+	DCWorkOnce(TransmitFre);                    // 工作1次
 	int i = 0;
 	for (; i < PPDIF_Nrept_1C - 1; i++)
 	{
@@ -63,7 +63,7 @@ void PPDIFModeTop(void)
 
 		PulseParamIncrement();
 		EchoStorAddr += 2 * PPDIF_NE_1C;
-		DCWorkOnce(TransmitFre);
+		DCWorkOnce(TransmitFre);                // 工作PPDIF_Nrept_1C-1次
 	}
 
 	// 1B

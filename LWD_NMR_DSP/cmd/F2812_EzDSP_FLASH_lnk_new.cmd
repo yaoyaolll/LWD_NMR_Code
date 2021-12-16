@@ -88,7 +88,7 @@ PAGE 1 :
    /* For this example, H0 is split between PAGE 0 and PAGE 1 */
    RAMM0_1  				: origin = 0x0003B0, length = 0x000050
    RAMM1    				: origin = 0x000400, length = 0x000400
-   RAML0_CODE_USE   		: origin = 0x008000, length = 0x000100
+   RAML0_CODE_USE   		: origin = 0x008000, length = 0x000100		/* ´æ´¢±íÊý¾Ý */
    RAML0_CODE_USE1     		: origin = 0x008100, length = 0x000490
    myzone   				: origin = 0x008590, length = 0x000A70
    RAML1	    			: origin = 0x009000, length = 0x001000

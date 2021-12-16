@@ -2,6 +2,8 @@
 # Automatically-generated file. Do not edit!
 ################################################################################
 
+SHELL = cmd.exe
+
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../source/CasingDetectTop.c \
@@ -18,6 +20,7 @@ C_SRCS += \
 ../source/MyFPGAFunctions.c \
 ../source/MyFunctions.c \
 ../source/MyVariables.c \
+../source/PAPSTop.c \
 ../source/PPDIFModeTop.c \
 ../source/PPModeTop.c \
 ../source/PPOFTWModeTop.c \
@@ -32,6 +35,37 @@ C_SRCS += \
 ../source/StateCtrl.c \
 ../source/TableHandle.c \
 ../source/TuningModeTop.c 
+
+C_DEPS += \
+./source/CasingDetectTop.d \
+./source/CublicSplineAlogrithm.d \
+./source/DE_CPMG_Top.d \
+./source/DSP281x_CpuTimers.d \
+./source/DSP281x_DefaultIsr.d \
+./source/DSP281x_GlobalVariableDefs.d \
+./source/DSP281x_PieCtrl.d \
+./source/DSP281x_PieVect.d \
+./source/DSP281x_SysCtrl.d \
+./source/GaussFitAlogrithm.d \
+./source/MainInitial.d \
+./source/MyFPGAFunctions.d \
+./source/MyFunctions.d \
+./source/MyVariables.d \
+./source/PAPSTop.d \
+./source/PPDIFModeTop.d \
+./source/PPModeTop.d \
+./source/PPOFTWModeTop.d \
+./source/PPShortModeTop.d \
+./source/PPT1ModeTop.d \
+./source/PulseTop.d \
+./source/RelayCtrl.d \
+./source/SCIA_interrupt.d \
+./source/ScaleHoleTop.d \
+./source/ScanTop.d \
+./source/SingleOrderDeal.d \
+./source/StateCtrl.d \
+./source/TableHandle.d \
+./source/TuningModeTop.d 
 
 OBJS += \
 ./source/CasingDetectTop.obj \
@@ -48,6 +82,7 @@ OBJS += \
 ./source/MyFPGAFunctions.obj \
 ./source/MyFunctions.obj \
 ./source/MyVariables.obj \
+./source/PAPSTop.obj \
 ./source/PPDIFModeTop.obj \
 ./source/PPModeTop.obj \
 ./source/PPOFTWModeTop.obj \
@@ -62,66 +97,6 @@ OBJS += \
 ./source/StateCtrl.obj \
 ./source/TableHandle.obj \
 ./source/TuningModeTop.obj 
-
-C_DEPS += \
-./source/CasingDetectTop.pp \
-./source/CublicSplineAlogrithm.pp \
-./source/DE_CPMG_Top.pp \
-./source/DSP281x_CpuTimers.pp \
-./source/DSP281x_DefaultIsr.pp \
-./source/DSP281x_GlobalVariableDefs.pp \
-./source/DSP281x_PieCtrl.pp \
-./source/DSP281x_PieVect.pp \
-./source/DSP281x_SysCtrl.pp \
-./source/GaussFitAlogrithm.pp \
-./source/MainInitial.pp \
-./source/MyFPGAFunctions.pp \
-./source/MyFunctions.pp \
-./source/MyVariables.pp \
-./source/PPDIFModeTop.pp \
-./source/PPModeTop.pp \
-./source/PPOFTWModeTop.pp \
-./source/PPShortModeTop.pp \
-./source/PPT1ModeTop.pp \
-./source/PulseTop.pp \
-./source/RelayCtrl.pp \
-./source/SCIA_interrupt.pp \
-./source/ScaleHoleTop.pp \
-./source/ScanTop.pp \
-./source/SingleOrderDeal.pp \
-./source/StateCtrl.pp \
-./source/TableHandle.pp \
-./source/TuningModeTop.pp 
-
-C_DEPS__QUOTED += \
-"source\CasingDetectTop.pp" \
-"source\CublicSplineAlogrithm.pp" \
-"source\DE_CPMG_Top.pp" \
-"source\DSP281x_CpuTimers.pp" \
-"source\DSP281x_DefaultIsr.pp" \
-"source\DSP281x_GlobalVariableDefs.pp" \
-"source\DSP281x_PieCtrl.pp" \
-"source\DSP281x_PieVect.pp" \
-"source\DSP281x_SysCtrl.pp" \
-"source\GaussFitAlogrithm.pp" \
-"source\MainInitial.pp" \
-"source\MyFPGAFunctions.pp" \
-"source\MyFunctions.pp" \
-"source\MyVariables.pp" \
-"source\PPDIFModeTop.pp" \
-"source\PPModeTop.pp" \
-"source\PPOFTWModeTop.pp" \
-"source\PPShortModeTop.pp" \
-"source\PPT1ModeTop.pp" \
-"source\PulseTop.pp" \
-"source\RelayCtrl.pp" \
-"source\SCIA_interrupt.pp" \
-"source\ScaleHoleTop.pp" \
-"source\ScanTop.pp" \
-"source\SingleOrderDeal.pp" \
-"source\StateCtrl.pp" \
-"source\TableHandle.pp" \
-"source\TuningModeTop.pp" 
 
 OBJS__QUOTED += \
 "source\CasingDetectTop.obj" \
@@ -138,6 +113,7 @@ OBJS__QUOTED += \
 "source\MyFPGAFunctions.obj" \
 "source\MyFunctions.obj" \
 "source\MyVariables.obj" \
+"source\PAPSTop.obj" \
 "source\PPDIFModeTop.obj" \
 "source\PPModeTop.obj" \
 "source\PPOFTWModeTop.obj" \
@@ -152,6 +128,37 @@ OBJS__QUOTED += \
 "source\StateCtrl.obj" \
 "source\TableHandle.obj" \
 "source\TuningModeTop.obj" 
+
+C_DEPS__QUOTED += \
+"source\CasingDetectTop.d" \
+"source\CublicSplineAlogrithm.d" \
+"source\DE_CPMG_Top.d" \
+"source\DSP281x_CpuTimers.d" \
+"source\DSP281x_DefaultIsr.d" \
+"source\DSP281x_GlobalVariableDefs.d" \
+"source\DSP281x_PieCtrl.d" \
+"source\DSP281x_PieVect.d" \
+"source\DSP281x_SysCtrl.d" \
+"source\GaussFitAlogrithm.d" \
+"source\MainInitial.d" \
+"source\MyFPGAFunctions.d" \
+"source\MyFunctions.d" \
+"source\MyVariables.d" \
+"source\PAPSTop.d" \
+"source\PPDIFModeTop.d" \
+"source\PPModeTop.d" \
+"source\PPOFTWModeTop.d" \
+"source\PPShortModeTop.d" \
+"source\PPT1ModeTop.d" \
+"source\PulseTop.d" \
+"source\RelayCtrl.d" \
+"source\SCIA_interrupt.d" \
+"source\ScaleHoleTop.d" \
+"source\ScanTop.d" \
+"source\SingleOrderDeal.d" \
+"source\StateCtrl.d" \
+"source\TableHandle.d" \
+"source\TuningModeTop.d" 
 
 C_SRCS__QUOTED += \
 "../source/CasingDetectTop.c" \
@@ -168,6 +175,7 @@ C_SRCS__QUOTED += \
 "../source/MyFPGAFunctions.c" \
 "../source/MyFunctions.c" \
 "../source/MyVariables.c" \
+"../source/PAPSTop.c" \
 "../source/PPDIFModeTop.c" \
 "../source/PPModeTop.c" \
 "../source/PPOFTWModeTop.c" \

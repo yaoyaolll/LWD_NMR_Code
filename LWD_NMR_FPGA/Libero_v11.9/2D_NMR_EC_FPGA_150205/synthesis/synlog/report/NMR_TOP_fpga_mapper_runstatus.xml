@@ -5,7 +5,7 @@ The file contains the job information from mapper to be displayed as part of the
 *******************************************************************************************-->
 <job_run_status name="Mapper">
 <report_link name="Detailed report">
-<data>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\synthesis\synlog\NMR_TOP_fpga_mapper.srr</data>
+<data>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\synthesis\synlog\NMR_TOP_fpga_mapper.srr</data>
 <title>Synopsys Microsemi Technology Mapper</title>
 </report_link>
 <job_status>
@@ -15,32 +15,32 @@ The file contains the job information from mapper to be displayed as part of the
 <info name="Notes">
 <data>42</data>
 <report_link name="more">
-<data>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\synthesis\synlog\report\NMR_TOP_fpga_mapper_notes.txt</data>
+<data>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\synthesis\synlog\report\NMR_TOP_fpga_mapper_notes.txt</data>
 </report_link>
 </info>
 <info name="Warnings">
 <data>10</data>
 <report_link name="more">
-<data>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\synthesis\synlog\report\NMR_TOP_fpga_mapper_warnings.txt</data>
+<data>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\synthesis\synlog\report\NMR_TOP_fpga_mapper_warnings.txt</data>
 </report_link>
 </info>
 <info name="Errors">
 <data>0</data>
 <report_link name="more">
-<data>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\synthesis\synlog\report\NMR_TOP_fpga_mapper_errors.txt</data>
+<data>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\synthesis\synlog\report\NMR_TOP_fpga_mapper_errors.txt</data>
 </report_link>
 </info>
 <info name="CPU Time">
 <data>0h:00m:07s</data>
 </info>
 <info name="Real Time">
-<data>0h:00m:07s</data>
+<data>0h:00m:09s</data>
 </info>
 <info name="Peak Memory">
-<data>181MB</data>
+<data>182MB</data>
 </info>
 <info name="Date &amp; Time">
-<data type="timestamp">1622769905</data>
+<data type="timestamp">1639624894</data>
 </info>
 </job_info>
 </job_run_status>

@@ -1,7 +1,7 @@
 // long_timer.v
 
 module long_timer( 
-                  clk_5K,    
+                  clk_5K,    // 实际上为1KHz
                   clk_sys,//输入时钟
                   rst_n,     //复位
                   start,

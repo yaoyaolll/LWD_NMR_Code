@@ -6,7 +6,7 @@ The file contains the job information from compiler to be displayed as part of t
 
 <job_run_status name="compiler"> 
   <report_link name="Detailed report">
-    <data>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\synthesis\synlog\NMR_TOP_compiler.srr</data>
+    <data>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\synthesis\synlog\NMR_TOP_compiler.srr</data>
     <title>Synopsys HDL Compiler</title>
   </report_link> 
   <job_status>
@@ -15,27 +15,27 @@ The file contains the job information from compiler to be displayed as part of t
 <job_info> 
 			<info name="Notes">
   <data>264</data>
-  <report_link name="more"><data>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\synthesis\synlog\report\NMR_TOP_compiler_notes.txt</data></report_link>
+  <report_link name="more"><data>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\synthesis\synlog\report\NMR_TOP_compiler_notes.txt</data></report_link>
   </info>
 			<info name="Warnings">
-  <data>51</data>
-  <report_link name="more"><data>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\synthesis\synlog\report\NMR_TOP_compiler_warnings.txt</data></report_link>
+  <data>50</data>
+  <report_link name="more"><data>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\synthesis\synlog\report\NMR_TOP_compiler_warnings.txt</data></report_link>
   </info>
 			<info name="Errors">
   <data>0</data>
-  <report_link name="more"><data>E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\synthesis\synlog\report\NMR_TOP_compiler_errors.txt</data></report_link>
+  <report_link name="more"><data>E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\synthesis\synlog\report\NMR_TOP_compiler_errors.txt</data></report_link>
   </info>
 			<info name="CPU Time">
   <data>-</data>
   </info>
 			<info name="Real Time">
-  <data>00h:00m:01s</data>
+  <data>00h:00m:02s</data>
   </info>
 			<info name="Peak Memory">
   <data>-</data>
   </info>
 			<info name="Date &amp;Time">
-  <data type="timestamp">1622769895</data>
+  <data type="timestamp">1639624882</data>
   </info>
 			</job_info>
 </job_run_status>

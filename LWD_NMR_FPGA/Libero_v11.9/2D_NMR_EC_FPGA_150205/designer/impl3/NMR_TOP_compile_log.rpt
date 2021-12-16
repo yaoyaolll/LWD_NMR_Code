@@ -10,26 +10,26 @@ Opened an existing Libero design NMR_TOP_1.adb.
 'IDE_DESIGNERVIEW_REV0' set to 'Impl3'
 'IDE_DESIGNERVIEW_REVNUM0' set to '3'
 'IDE_DESIGNERVIEW_ROOTDIR' set to
-'E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\designer'
+'E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\designer'
 'IDE_DESIGNERVIEW_LASTREV' set to '3'
 The earlier timing information will be removed because of the new SDC file import.
 
- Netlist Reading Time = 0.0 seconds
+ Netlist Reading Time = 1.0 seconds
 Imported the files:
 
-E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\synthesis\NMR_TOP.\
-edn
+E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\synthesis\N\
+MR_TOP.edn
 
-E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\NMR\
-_TOP\NMR_TOP.pdc
+E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\w\
+ork\NMR_TOP\NMR_TOP.pdc
 
-E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\synthesis\NMR_TOP_\
-sdc.sdc
+E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\synthesis\N\
+MR_TOP_sdc.sdc
 
-E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\constraint\NMR_TOP\
-_PIN_LOCKED.pdc
+E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\constraint\\
+NMR_TOP_PIN_LOCKED.pdc
 
-The Import command succeeded ( 00:00:06 )
+The Import command succeeded ( 00:00:12 )
 =====================================================================
 Parameters used to run compile:
 ===============================
@@ -38,17 +38,17 @@ Family      : ProASIC3
 Device      : A3P1000
 Package     : 208 PQFP
 Source      :
-E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\synthesis\NMR_TOP.\
-edn
+E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\synthesis\N\
+MR_TOP.edn
 
-E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\work\NMR\
-_TOP\NMR_TOP.pdc
+E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\component\w\
+ork\NMR_TOP\NMR_TOP.pdc
 
-E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\synthesis\NMR_TOP_\
-sdc.sdc
+E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\synthesis\N\
+MR_TOP_sdc.sdc
 
-E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\constraint\NMR_TOP\
-_PIN_LOCKED.pdc
+E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\constraint\\
+NMR_TOP_PIN_LOCKED.pdc
 Format      : EDIF
 Topcell     : NMR_TOP
 Speed grade : -2
@@ -184,9 +184,9 @@ Optimized macros:
   - Buffers:                0
   - Inverters:              0
   - Tieoff:                 0
-  - Logic combining:        121
+  - Logic combining:        111
 
-    Total macros optimized  121
+    Total macros optimized  111
 
 Warning: CMP503: Remapped 26 enable flip-flop(s) to a 2-tile implementation because the CLR/PRE
          pin on the enable flip-flop is not being driven by a global net.
@@ -210,7 +210,7 @@ There were 0 error(s) and 0 warning(s) in reading the user pdc.
 Compile report:
 ===============
 
-    CORE                       Used:   7001  Total:  24576   (28.49%)
+    CORE                       Used:   6943  Total:  24576   (28.25%)
     IO (W/ clocks)             Used:    102  Total:    154   (66.23%)
     Differential IO            Used:      0  Total:     35   (0.00%)
     GLOBAL (Chip+Quadrant)     Used:      6  Total:     18   (33.33%)
@@ -235,8 +235,8 @@ Core Information:
 
     Type    | Instances    | Core tiles
     --------|--------------|-----------
-    COMB    | 4763         | 4763
-    SEQ     | 2238         | 2238
+    COMB    | 4726         | 4726
+    SEQ     | 2217         | 2217
 
 I/O Function:
 
@@ -283,10 +283,10 @@ The following nets drive enable flip-flops that have been remapped to a 2-tile i
 The following nets have been assigned to a chip global resource:
     Fanout  Type          Name
     --------------------------
-    1881    CLK_NET       Net   : GLA
+    1860    CLK_NET       Net   : GLA
                           Driver: ClockManagement_0/pllclk_0/Core
                           Source: ESSENTIAL
-    248     INT_NET       Net   : net_27
+    254     INT_NET       Net   : net_27
                           Driver: GPMI_0/rst_n_module_0/rst_nr2_RNISUE8
                           Source: NETLIST
     186     SET/RESET_NET Net   : s_acq_change_0_s_rst
@@ -320,16 +320,16 @@ High fanout nets in the post compile netlist:
                           Driver: top_code_0/scaledatain[4]
     24      INT_NET       Net   : top_code_0_scaledatain[5]
                           Driver: top_code_0/scaledatain[5]
-    24      INT_NET       Net   : top_code_0_scale_rst_0
-                          Driver: top_code_0/scale_rst_0_0
-    24      INT_NET       Net   : top_code_0_scale_rst_1
-                          Driver: top_code_0/scale_rst_1_0
-    24      INT_NET       Net   : top_code_0_scale_rst_2
-                          Driver: top_code_0/scale_rst_2
-    24      INT_NET       Net   : top_code_0_scale_rst_3
-                          Driver: top_code_0/scale_rst_3
-    24      INT_NET       Net   : top_code_0_scale_rst_4
-                          Driver: top_code_0/scale_rst_4
+    24      INT_NET       Net   : DDS_0/un1_dds_coder_0_1[0]
+                          Driver: DDS_0/dds_coder_0/i_1[0]
+    24      INT_NET       Net   : DDS_0/un1_dds_coder_0_0[0]
+                          Driver: DDS_0/dds_coder_0/i_0_0[0]
+    24      INT_NET       Net   : timer_top_0/state_switch_0/N_168
+                          Driver: timer_top_0/state_switch_0/state_start5_0_0_a2_0
+    24      INT_NET       Net   : state_1ms_0/CS[8]
+                          Driver: state_1ms_0/CS[8]
+    24      INT_NET       Net   : scalestate_0/un1_CS6_26
+                          Driver: scalestate_0/CS_0_RNIAQA34[11]
 
 Nets that are candidates for clock assignment and the resulting fanout:
     Fanout  Type          Name
@@ -348,12 +348,12 @@ Nets that are candidates for clock assignment and the resulting fanout:
                           Driver: top_code_0/scaledatain[4]
     24      INT_NET       Net   : top_code_0_scaledatain[5]
                           Driver: top_code_0/scaledatain[5]
-    24      INT_NET       Net   : top_code_0_scale_rst_0
-                          Driver: top_code_0/scale_rst_0_0
-    24      INT_NET       Net   : top_code_0_scale_rst_1
-                          Driver: top_code_0/scale_rst_1_0
-    24      INT_NET       Net   : top_code_0_scale_rst_2
-                          Driver: top_code_0/scale_rst_2
+    24      INT_NET       Net   : DDS_0/un1_dds_coder_0_1[0]
+                          Driver: DDS_0/dds_coder_0/i_1[0]
+    24      INT_NET       Net   : DDS_0/un1_dds_coder_0_0[0]
+                          Driver: DDS_0/dds_coder_0/i_0_0[0]
+    24      INT_NET       Net   : timer_top_0/state_switch_0/N_168
+                          Driver: timer_top_0/state_switch_0/state_start5_0_0_a2_0
 
 
 SDC Import: Begin processing constraints...
@@ -363,20 +363,20 @@ SDC Import: Begin processing constraints...
 SDC Import: End processing constraints
 
 
-The Compile command succeeded ( 00:00:12 )
+The Compile command succeeded ( 00:00:13 )
 Wrote status report to file: NMR_TOP_compile_report.txt
 
 The Report command succeeded ( 00:00:00 )
 Wrote pin report to file: NMR_TOP_report_pin_byname.txt
 
-The Report command succeeded ( 00:00:02 )
+The Report command succeeded ( 00:00:01 )
 Wrote pin report to file: NMR_TOP_report_pin_bynumber.txt
 
-The Report command succeeded ( 00:00:00 )
+The Report command succeeded ( 00:00:01 )
 Design saved to file
-E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\designer\impl3\NMR\
-_TOP_1.adb.
+E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\designer\im\
+pl3\NMR_TOP_1.adb.
 
-The Execute Script command succeeded ( 00:00:23 )
+The Execute Script command succeeded ( 00:00:30 )
 Design closed.
 

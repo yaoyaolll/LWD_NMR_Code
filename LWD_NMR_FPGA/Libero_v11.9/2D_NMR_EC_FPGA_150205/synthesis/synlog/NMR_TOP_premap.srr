@@ -1,4 +1,4 @@
-# Fri Jun 04 09:24:56 2021
+# Thu Dec 16 11:21:24 2021
 
 Synopsys Microsemi Technology Pre-mapping, Version mapact, Build 2172R, Built Oct 30 2017 10:54:39
 Copyright (C) 1994-2017 Synopsys, Inc. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
@@ -6,10 +6,10 @@ Product Version L-2016.09M-SP1-5
 
 Mapper Startup Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 99MB peak: 100MB)
 
-Reading constraint file: E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\constraint\NMR_TOP_syn.sdc
+Reading constraint file: E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\constraint\NMR_TOP_syn.sdc
 Adding property syn_global_buffer, value 9 to view:work.NMR_TOP(verilog)
-@L: E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\synthesis\NMR_TOP_scck.rpt 
-Printing clock  summary report in "E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\synthesis\NMR_TOP_scck.rpt" file 
+@L: E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\synthesis\NMR_TOP_scck.rpt 
+Printing clock  summary report in "E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\synthesis\NMR_TOP_scck.rpt" file 
 @N: MF248 |Running in 64-bit mode.
 @N: MF667 |Clock conversion disabled. (Command "set_option -fix_gated_and_generated_clocks 0" in the project file.)
 
@@ -31,7 +31,7 @@ Adding property syn_allow_retiming, value 1, to port top_code_0.state_1ms_start
 Adding property syn_allow_retiming, value 1, to instance scalestate_0.timecount[21:0]
 Adding property syn_allow_retiming, value 1, to port scalestate_0.timecount[21:0]
 Adding property syn_allow_retiming, value 1, to instance GPMI_0.xwe_xzcs2_syn_0.code_en
-@N: BN362 :"e:\lwd_nmr\code\lwd_nmr_fpga\20210603good\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\scanstate.v":127:0:127:5|Removing sequential instance resetout (in view: work.scanstate(verilog)) of type view:PrimLib.sdffre(prim) because it does not drive other instances.
+@N: BN362 :"e:\lwd_nmr\code\20210907respository\lwd_nmr_fpga\libero_v11.9\2d_nmr_ec_fpga_150205\hdl\scanstate.v":127:0:127:5|Removing sequential instance resetout (in view: work.scanstate(verilog)) of type view:PrimLib.sdffre(prim) because it does not drive other instances.
 
 Finished netlist restructuring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 120MB peak: 122MB)
 
@@ -44,7 +44,7 @@ Start                                                       Requested     Reques
 Clock                                                       Frequency     Period        Type         Group      Load 
 ---------------------------------------------------------------------------------------------------------------------
 ClockManagement_0.clk_10k_0.clock_10khz                     1.0 MHz       1000.000      declared     1MHz       6    
-ClockManagement_0.pllclk_0.GLA                              110.0 MHz     9.091         declared     100MHz     1800 
+ClockManagement_0.pllclk_0.GLA                              110.0 MHz     9.091         declared     100MHz     1803 
 Signal_Noise_Acq_0.noise_acq_0.n_rdclk_syn_0.n_rdclk        20.0 MHz      50.000        declared     DSP        32   
 Signal_Noise_Acq_0.noise_acq_0.noiseclk_0.clkout            20.0 MHz      50.000        declared     50MHz      42   
 Signal_Noise_Acq_0.signal_acq_0.s_clk_div4_0.clkout         20.0 MHz      50.000        declared     8MHz       20   
@@ -53,7 +53,7 @@ ddsclkout                                                   40.0 MHz      25.000
 =====================================================================================================================
 
 Finished Pre Mapping Phase.
-@N: BN225 |Writing default property annotation file E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\synthesis\NMR_TOP.sap.
+@N: BN225 |Writing default property annotation file E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\synthesis\NMR_TOP.sap.
 
 Starting constraint checker (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 119MB peak: 122MB)
 
@@ -237,15 +237,15 @@ original code -> new code
    1000000000 -> 1000000001
 None
 None
-@W: MF511 |Found issues with constraints. Please check constraint checker report "E:\LWD_NMR\Code\LWD_NMR_FPGA\20210603good\Libero_v11.9\2D_NMR_EC_FPGA_150205\synthesis\NMR_TOP_cck.rpt" .
+@W: MF511 |Found issues with constraints. Please check constraint checker report "E:\LWD_NMR\Code\20210907respository\LWD_NMR_FPGA\Libero_v11.9\2D_NMR_EC_FPGA_150205\synthesis\NMR_TOP_cck.rpt" .
 
-Finished constraint checker (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 124MB peak: 126MB)
+Finished constraint checker (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 124MB peak: 126MB)
 
 Pre-mapping successful!
 
-At Mapper Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 36MB peak: 126MB)
+At Mapper Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 36MB peak: 126MB)
 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
-# Fri Jun 04 09:24:57 2021
+# Thu Dec 16 11:21:25 2021
 
 ###########################################################]

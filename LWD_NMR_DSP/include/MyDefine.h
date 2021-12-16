@@ -1,4 +1,4 @@
-#define DEBUG       // 用来控制RAM和FALSH版本程序
+//#define DEBUG       // 用来控制RAM和FALSH版本程序
 
 // 参数表相关宏
 #define CAL_TABLE_LEN 	 	20  	// 刻度模式参数表长度
