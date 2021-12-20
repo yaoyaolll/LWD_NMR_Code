@@ -436,38 +436,12 @@ Uint16 *MiniTablePt;
 Uint16 *ChgTablePt;
 Uint16 *SaveTablePt;
 
-Uint16 RecSendTableFlag;	   // 上传表命令下载标志位
 Uint16 SendTableID;			   // 上传表ID
-Uint16 RecSendTableCmdParaLen; // 保存长度
-
-Uint16 RecSingleOrderFlag;      // 接收单个指令标志位
-
-SingleOrder_t SingleOrderData;	    // 接收单个变量结构体
-Uint16 SingleOrderAryChoice; // 单个变量函数选择
-
-ParameterOrder_u ParamOrderData; // 存储重要参数指令
-Uint16 RecParamOrderFlag;   // 接收重要参数指令标志位
-
-Uint16 IsParamUpdateFlag;   // 重要参数更新标志位
 
 void (*singleOrderFunc[])(void) = {EmptyDeal, InquireDeal, OperationDeal, CasingDeal, DataUpDeal, ModeConfirmDeal, K1K2EnDeal, K1K2DisDeal, HVStateDeal, SysCheckDeal, PAPSDataUpDeal};
 
-Uint16 RecK1K2CtrlFlag = CLEAR;
-
-#pragma DATA_SECTION(RecK1K2CtrlFlag, "MyVariablesZone");
-
-#pragma DATA_SECTION(ParamOrderData, "MyVariablesZone");
-#pragma DATA_SECTION(RecParamOrderFlag, "MyVariablesZone");
-#pragma DATA_SECTION(IsParamUpdateFlag, "MyVariablesZone");
-
 #pragma DATA_SECTION(singleOrderFunc, "MyVariablesZone");
-#pragma DATA_SECTION(SingleOrderAryChoice, "MyVariablesZone");
-
-#pragma DATA_SECTION(RecSingleOrderFlag, "MyVariablesZone");
-
-#pragma DATA_SECTION(RecSendTableFlag, "MyVariablesZone");
 #pragma DATA_SECTION(SendTableID, "MyVariablesZone");
-#pragma DATA_SECTION(RecSendTableCmdParaLen, "MyVariablesZone");
 
 #pragma DATA_SECTION(HVState, "MyVariablesZone");
 #pragma DATA_SECTION(PulseCycle, "MyVariablesZone");

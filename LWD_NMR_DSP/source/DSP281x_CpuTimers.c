@@ -104,8 +104,8 @@ void ConfigCpuTimer(struct CPUTIMER_VARS *Timer, float Freq, float Period)
 	// Initialize timer control register:
 	Timer->RegsAddr->TCR.bit.TSS = 1;      // 1 = Stop timer, 0 = Start/Restart Timer 
 	Timer->RegsAddr->TCR.bit.TRB = 1;      // 1 = reload timer
-	Timer->RegsAddr->TCR.bit.SOFT = 1;
-	Timer->RegsAddr->TCR.bit.FREE = 1;     // Timer Free Run
+	Timer->RegsAddr->TCR.bit.SOFT = 0;
+	Timer->RegsAddr->TCR.bit.FREE = 0;     // Timer Free Run
 	Timer->RegsAddr->TCR.bit.TIE = 1;      // 0 = Disable/ 1 = Enable Timer Interrupt
 	
 	// Reset interrupt counter:

@@ -6,6 +6,7 @@
 #define TUNING_TABLE_LEN 	69	 	// 刻度参数表，主要用来调谐，使用参数并不多
 #define CONFIG_TABLE_LEN 	19  	// 仪器配置参数表
 
+#define ADDR_TABLE_START        (Uint16 *)0x8000
 #define ADDR_CAL_TABLE_START	(Uint16 *)0x8002
 #define ADDR_WELL_TABLE_START	(Uint16 *)0x8018
 #define ADDR_TUNING_TABLE_START	(Uint16 *)0x8057
@@ -16,7 +17,7 @@
 
 //Address macro definations
 // TODO
-#define TABLE_START			0x8000    //参数表0x8000+78
+#define TABLE_START			0x8000    //参数表0x8000
 //#define WORK_MODE_ADDR		0x8001
 //#define FREQ_STR_ADDR		0x8002
 //#define FREQ_SEL_WORDS_ADDR	0x800A
@@ -299,8 +300,8 @@
 #define REPLY_PAPS_F        0x9988  // PAPS数据上传指令回复
 
 // 频率温度转换公式 f = -0.2516 * T + 568.0064
-#define f_T_k -2.516f          // 公式斜率
-#define f_T_b 5680.064f         // 公式截距
+// #define f_T_k -2.516f          // 公式斜率
+// #define f_T_b 5680.064f         // 公式截距
 
 //// 继电器对应的频率转换公式，10个继电器则有十位，从0到1023，对应440kHz-580kHz
 //#define RELAY_f_k -7.31f        // 公式斜率

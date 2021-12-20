@@ -27,6 +27,8 @@ void InitSci(void);
 unsigned int SciaTx_Ready(void);
 unsigned int SciaRx_Ready(void);
 void SciaSendOneWord(Uint16 data);
+void clear_sci_rec_buf();
+interrupt void CpuTimer0ISR(void);
 interrupt void SCIRXINTA_ISR(void);
 void ReplySingleVarFrame(Uint16 frameHead, Uint16 var);
 void ReplyNoVarFrame(Uint16 frameHead);
@@ -35,7 +37,12 @@ void ReplyLastCheckFrame(Uint16 frameHead, Uint16 lastCheckSum);
 void ReplyUpTableFrame(Uint16 tableID);
 void ReplyModeDataFrame(Uint32 startAddr, Uint32 dataLen);
 void ReplyCasingErrFrame();
-void software_handler(void);
+void parse_sci_rec_buf();
+void down_table_cmd(void);
+void up_table_cmd();
+void parameter_cmd();
+void K1K2_ctl_cmd();
+void single_order_cmd();
 
 //Functions defined in MyFPGAFunctions.c
 void ShutdownHV(void);

@@ -27,8 +27,12 @@ void InitAll(void)
 
 	//Initial GPIO and FPGA chip
 	InitGpio(); //复位GPIO，SCIA配置在这里面
+	clear_sci_rec_buf();	
+	InitSci();
 	InitFPGA(); //复位FPGA
-
+    // Initial timer module
+    InitCpuTimers();
+    ConfigCpuTimer(&CpuTimer0, 30, 1000);
 	//Initial PIE module
 	DINT;
 	IER &= 0x0000;
@@ -46,22 +50,28 @@ void InitAll(void)
 	PieVectTable.XINT1 = &XINT1_STOP;		//外部中断1入口地址
 	PieVectTable.XINT2 = &XINT2_DCStorData; //外部中断2入口地址
 	PieVectTable.RXAINT = &SCIRXINTA_ISR;	//SCIA接收中断向量入口地址
+	PieVectTable.TINT0 = &CpuTimer0ISR;    //定时器0中断入口地址
 	EDIS;									// 释放保护的寄存器
 
 	IER |= M_INT1;
 	IER |= M_INT9;
+
 	PieCtrlRegs.PIEIER1.bit.INTx4 = 1;
 	PieCtrlRegs.PIEIER1.bit.INTx5 = 1;
 	PieCtrlRegs.PIEIER9.bit.INTx1 = 1;		// SCIA
+	PieCtrlRegs.PIEIER1.bit.INTx7 = 1;
+
 	XIntruptRegs.XINT1CR.all = 0x5;			//打开管脚xint1外中断,设置上升沿中断
 	XIntruptRegs.XINT2CR.all = 0x5;			//打开管脚xint2外中断,设置上升沿中断
 	PieCtrlRegs.PIEACK.all = PIEACK_GROUP1; //清除PIE分组1的中断响应位
 	PieCtrlRegs.PIEACK.all = PIEACK_GROUP9;
-	EINT; // Enable Global interrupt INTM
+	EINT; 	// Enable Global interrupt INTM
+	ERTM;   // Enable Global realtime interrupt DBGM
+
 
 	GpioDataRegs.GPFDAT.bit.GPIOF11 = 0; //485接收器为接收状态
 
-	InitSci();
+    CpuTimer0Regs.TCR.bit.TSS = 0;    // 启动定时器
 
 	// Initial MCBSP module
 	// InitMcbsp();
@@ -874,10 +884,6 @@ void InitVariables(void)
 	CycleFlag = CLEAR;
 
 	SendTableFlag = CLEAR; //send table flag:发送参数表标志，为1时发送参数表
-	RecSingleOrderFlag = CLEAR;
-	RecParamOrderFlag = CLEAR;
-
-	IsParamUpdateFlag = CLEAR;
 
 	SingleModeFlag = CLEAR;
 	PPModeFlag = CLEAR;
@@ -892,12 +898,6 @@ void InitVariables(void)
 	PulseAcqFlag = CLEAR;
 
 	WorkMode = 8; // 扫频模式
-
-	RecSendTableFlag = CLEAR;	// 上传参数表标志位
-	RecSingleOrderFlag = CLEAR; // 接收单个指令标志位
-	DownTableFlag = CLEAR;		// 下载参数表标志位
-
-	SingleOrderAryChoice = 0;
 
 	SendTableID = 0x2; // 刻度参数表ID
 

@@ -296,10 +296,8 @@ void MiniScan(Uint16 MiniFreq, Uint32 NoiseStorAddr, Uint32 SiglStorAddr)
 	return;
 }
 
-int xint1_cnt = 0;
 interrupt void XINT1_STOP(void)
 {
-    xint1_cnt++;
 	SCAN_START_DIS = USER_DISABLE;
 	NOISE_START_DIS = USER_DISABLE;
 

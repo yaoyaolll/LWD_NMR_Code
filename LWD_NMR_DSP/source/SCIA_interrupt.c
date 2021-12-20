@@ -8,11 +8,11 @@
 #pragma CODE_SECTION(SCIRXINTA_ISR, "secureRamFuncs");
 
 // SCIA_interrupt.c
-Uint16 SciaDataEven = 0;
-Uint16 BufferSciaDataH;
-Uint16 BufferSciaDataL;
-Uint16 BufferSciaDataAll;
-Uint16 SciaRecFlag = 0;
+//Uint16 SciaDataEven = 0;
+//Uint16 BufferSciaDataH;
+//Uint16 BufferSciaDataL;
+//Uint16 BufferSciaDataAll;
+//Uint16 SciaRecFlag = 0;
 
 // 准备发送数据时为1，否则为0
 unsigned int SciaTx_Ready(void)
@@ -206,84 +206,101 @@ void ReplySingleVarFrame(Uint16 frameHead, Uint16 var)
 }
 
 
-Uint16 datda_rec[100];
-int index = 0;
-int int_cnt = 0;
+#define HIGH_BYTE 0
+#define LOW_BYTE 1
 
-Uint16 rec_complete_flag = 1;   // 接收一帧数据完成
-Uint16 is_first_byte_ok;
+#define REC_BUF_LEN 100
+
+// 485每次接收一个字节，拼接成一个字
+union Bytes2U16
+{
+    Uint16 data[REC_BUF_LEN];
+    unsigned char bytes[2 * REC_BUF_LEN];       // 实际上也是存的16位
+};
+
+// 定义长度为100的接收缓冲区
+typedef struct
+{
+    union Bytes2U16 buf;// 缓冲区
+    int idx;            // 已接收字节数目，0<=idx<=2*REC_BUF_LEN
+    int time_out;       // 超时标志，0未超时，1超时
+    // int rec_finish;     // 本帧数据是否接收完成，0未完成，1完成
+    int start_rec;      // 是否开始接收本帧数据，0已接收数据头，1未接收数据头
+    int frame_length;   // 接收的本帧数据的字节长度
+}RecBuffer_t;
+RecBuffer_t rec_buffer;
+
+// initialize sci rec_buf
+void clear_sci_rec_buf()
+{
+    rec_buffer.idx = 0;
+    rec_buffer.time_out = 0;
+    rec_buffer.start_rec = 1;
+    rec_buffer.frame_length = -1;
+}
+
+// 1ms定时器中断
+interrupt void CpuTimer0ISR(void) 
+{
+    CpuTimer0Regs.TCR.bit.TSS = 1;      //停止定时器
+    CpuTimer0Regs.TCR.bit.TRB = 1;      //定时器重装，将定时器周期寄存器的值装入定时器计数器寄存器
+
+    rec_buffer.time_out = 1;
+
+//    CpuTimer0Regs.TCR.bit.TIF = 1;    // 清除定时器中断标志位
+    PieCtrlRegs.PIEACK.bit.ACK1 = 1;    // 响应同组其他中断
+    EINT;                               // 开全局中断
+}
+
+
 // RS485中断处理函数
 interrupt void SCIRXINTA_ISR(void) // SCI-A接收中断函数
 {
-    int_cnt++;
+    // 超时处理
+    CpuTimer0Regs.TCR.bit.TRB = 1; //定时器重装，将定时器周期寄存器的值装入定时器计数器寄存器
+    CpuTimer0Regs.TCR.bit.TSS = 0; //重启定时器
+
+    if (rec_buffer.time_out)
+    {
+        // 放弃上次数据
+        rec_buffer.start_rec = 1;
+        rec_buffer.time_out = 0;
+    }
+
+    // 接收数据
     Uint16 sci_data;
     sci_data = SciaRegs.SCIRXBUF.bit.RXDT;          // 从寄存器获取数据
-    if (rec_complete_flag)                          // 帧头
+
+    if (rec_buffer.start_rec)  
     {
-        // 判断高字节是否符合要求，防止后续奇偶错位
-        if (sci_data == 0x99 || sci_data == 0x13 || sci_data == 0x14)
+        // 判断帧头字节是否符合要求，防止后续奇偶错位
+        if (sci_data == 0x99 || sci_data == 0x13 || sci_data == 0x14)       // 头部校验合格
         {
-            is_first_byte_ok = 1;
-            rec_complete_flag = 0;
+            rec_buffer.idx = 0;
+            rec_buffer.frame_length = -1;
+            rec_buffer.start_rec = 0;   // 已接收数据头
         }
-        else        // 丢弃此数据
+        else                                                                // 头部校验不合格
         {
-            is_first_byte_ok = 0;
             goto clear_int;
         }
     }
 
-    if (SciaDataEven == 0)
+    rec_buffer.buf.bytes[rec_buffer.idx++] = sci_data;          // 数据存入缓冲区    
+    
+    if (rec_buffer.idx == 4)                                    // 是否接收到帧长度
+        rec_buffer.frame_length = ((rec_buffer.buf.bytes[2]<<8 | rec_buffer.buf.bytes[3]) + 1) << 1;   // 整个帧的字节的长度
+
+    // 接收完成，解析数据
+    if (rec_buffer.frame_length == rec_buffer.idx)
     {
-        SciaDataEven = 1;
-        BufferSciaDataH = sci_data;
-        SciaRecFlag = 0;
+        CpuTimer0Regs.TCR.bit.TSS = 1;                  //停止定时器
+        
+        // parse rec_buf
+        parse_sci_rec_buf();
 
-//       test code
-        datda_rec[index++] = BufferSciaDataH;
-        if (index >= 100)
-            index = 0;
-    }
-    else if (SciaDataEven == 1)
-    {
-        SciaDataEven = 0;
-        BufferSciaDataL = sci_data;
-        BufferSciaDataAll = (BufferSciaDataH << 8) | BufferSciaDataL; // 读取主控板发送过来的16位数据
-        SciaRecFlag = 1;                                              // 接收到16位数的标志
-
-//         test code
-        datda_rec[index++] = BufferSciaDataL;
-        if (index >= 100)
-            index = 0;
-    }
-
-    // 接收到16位数据
-    if (SciaRecFlag)
-    {
-        if (DownTableFlag == SET || BufferSciaDataAll == DATA_DOWN_TABLE_F) // 下载参数表命令
-        {
-            RecDownTableCommand(BufferSciaDataAll);
-        }
-
-        else if (RecSendTableFlag == SET || BufferSciaDataAll == DATA_UP_TABLE_F) // 上传参数表命令
-        {
-            RecUpTableCommand(BufferSciaDataAll);
-        }
-
-        else if (RecParamOrderFlag == SET || BufferSciaDataAll == DATA_Parameter_F) // 重要参数下发指令
-        {
-            RecParameterCommand(BufferSciaDataAll);
-        }
-
-        else if (RecK1K2CtrlFlag == SET || BufferSciaDataAll == DATA_K1K2_EN_F)
-        {
-            RecK1K2CtrlCommand(BufferSciaDataAll);
-        }
-
-        else if (RecSingleOrderFlag == SET || (BufferSciaDataAll>=DATA_INQUIRE_F && BufferSciaDataAll<=DATA_PAPS_F))
-        {
-            RecSingleOrderCommand(BufferSciaDataAll);
-        }
+        rec_buffer.start_rec = 1;                       // 接收下一帧数据
+        rec_buffer.time_out = 0;
     }
 
 clear_int:
@@ -295,8 +312,186 @@ clear_int:
 }
 
 
-//void software_handler(void)
-//{
-//
-//}
+#define FRAME_HEAD_INDEX 0 
+#define FRAME_LEN_INDEX  1
+#define BOARD_ADDR_INDEX 2
+void parse_sci_rec_buf()
+{
+    // stitching data
+    int i = 0;
+    for (i=0;i<rec_buffer.idx;++i)
+        rec_buffer.buf.data[i] = rec_buffer.buf.bytes[2*i]<<8 | rec_buffer.buf.bytes[2*i+1];
 
+    // first validate address
+    if (rec_buffer.buf.data[BOARD_ADDR_INDEX] != EVENT_BOARD_ID)
+        return;
+
+    // second validate checksum
+    Uint16 check_sum = 0;
+    for (i=0; i<rec_buffer.buf.data[FRAME_LEN_INDEX]; ++i)
+    {
+        check_sum += rec_buffer.buf.data[i];
+    }
+    if (check_sum != rec_buffer.buf.data[i])
+        return;
+
+    // third analyze the data according to the frame header
+    if (rec_buffer.buf.data[FRAME_HEAD_INDEX] == DATA_DOWN_TABLE_F)    // 下载参数表命令
+    {
+        down_table_cmd();
+        // reply
+        ReplyLastCheckFrame(REPLY_DOWN_TABLE_F, check_sum); // 返回校验和
+        return;
+    }
+    else if (rec_buffer.buf.data[FRAME_HEAD_INDEX] == DATA_UP_TABLE_F)  // 上传参数表命令
+    {
+        up_table_cmd();
+        return;
+    }
+    else if (rec_buffer.buf.data[FRAME_HEAD_INDEX] == DATA_Parameter_F) // 重要参数下发指令
+    {
+        parameter_cmd();
+        // reply
+        ReplyLastCheckFrame(REPLY_Parameter_F, check_sum);
+        return;
+    }
+    else if (rec_buffer.buf.data[FRAME_HEAD_INDEX] == DATA_K1K2_EN_F)   // 储能短节控制指令
+    {
+        K1K2_ctl_cmd();
+        // reply
+        ReplyNoVarFrame(DATA_K1K2_EN_F);
+        return;
+    }
+    else if (rec_buffer.buf.data[FRAME_HEAD_INDEX] >= DATA_INQUIRE_F && rec_buffer.buf.data[BOARD_ADDR_INDEX] <= DATA_PAPS_F)   // 单命令
+    {
+        single_order_cmd();
+        return;
+    }
+}
+
+// 下载表并存入地址
+void down_table_cmd(void)
+{
+    // 根据表的不同进行解析
+    int len = rec_buffer.buf.data[FRAME_LEN_INDEX];
+    if (len == CAL_TABLE_LEN + 3){               // 刻度模式参数表
+        SaveTablePt = ADDR_CAL_TABLE_START;
+        *(Uint16 *)TABLE_START = rec_buffer.buf.data[3];    // 存储表ID
+    }             
+    else if (len == WELL_TABLE_LEN + 3){        // 测井模式参数表
+        SaveTablePt = ADDR_WELL_TABLE_START;
+        *(Uint16 *)TABLE_START = rec_buffer.buf.data[3];    // 存储表ID
+    }
+    else if (len == TUNING_TABLE_LEN + 3)       // 刻度参数表
+        SaveTablePt = ADDR_TUNING_TABLE_START;
+    else if (len == CONFIG_TABLE_LEN + 3)       // 仪器配置参数表
+        SaveTablePt = ADDR_CONFIG_TABLE_START;
+    
+    *SaveTablePt++ = len - 1;
+    int i= 0;
+    for (i=0; i<len-3;++i) {
+        *SaveTablePt++ = rec_buffer.buf.data[i+3];  // idx=3处为表起始处
+    }
+    
+    // 设置工作模式
+    if (*(Uint16 *)TABLE_START == 0x0002)
+        *(Uint16 *)0x8001 = *(Uint16 *)0x8007;
+    else if (*(Uint16 *)TABLE_START == 0x0003)
+        *(Uint16 *)0x8001 = *(Uint16 *)0x801D;
+}
+
+
+// 上传参数表指令解析
+void up_table_cmd()
+{
+    SendTableID = rec_buffer.buf.data[3];
+    SendTableFlag = SET;    // 在空闲状态下上传表
+}
+
+
+// 重要参数下发指令解析
+void parameter_cmd()
+{
+    // 根据主控板发来的温度计算发射频率和继电器码
+    Float2Uint16_u coe0;
+    Float2Uint16_u coe1;
+    Float2Uint16_u coe2;
+    float temperature = rec_buffer.buf.data[3] / 10.0;
+    coe0.data[0] = rec_buffer.buf.data[4];
+    coe0.data[1] = rec_buffer.buf.data[5];
+    coe1.data[0] = rec_buffer.buf.data[6];
+    coe1.data[1] = rec_buffer.buf.data[7];
+    coe2.data[0] = rec_buffer.buf.data[8];
+    coe2.data[1] = rec_buffer.buf.data[9];
+	// PAPS叠加次数
+	PAPSEntry.STKLEV = rec_buffer.buf.data[10];
+    // 计算频率
+    TransmitFre_f = coe0.real_data + coe1.real_data*temperature + coe2.real_data*temperature*temperature;
+    // 频率限幅
+	if (TransmitFre_f < 4400)   // 0.1kHz
+	    TransmitFre = 4400;
+	else if (TransmitFre_f > 5800)
+	    TransmitFre = 5800;
+	else
+	    TransmitFre = (Uint16)TransmitFre_f;
+    // 计算继电器码
+	RelayCtrlCode = CalRelayFromFre(TransmitFre);
+
+	// PAPS叠加次数
+	PAPSEntry.STKLEV = rec_buffer.buf.data[4];
+}
+
+
+// 储能短节控制指令解析
+void K1K2_ctl_cmd()
+{
+    /*
+        * K1K2: high level means close
+        *       low level means open
+        * FPGA code:
+                *-----k1------*
+                'h00A0:
+                        k1 <= 1;
+                'h00A1:
+                        k1 <= 0;
+
+                *-----k2------*
+                'h00A2:
+                        k2 <= 1;
+                'h00A3:
+                        k2 <= 0;
+    */
+    Uint16 K1K2_ctl_ord = rec_buffer.buf.data[3];
+    // K2为高字节，K1为低字节
+    if (K1K2_ctl_ord == 0x0001)            // 打开K1，闭合K2
+    {
+        K1_DIS = USER_ENABLE;       // K1打开（输出低）
+        K2_EN  = USER_ENABLE;       // K2闭合（输出高）
+        HVState = HV_OFF;           // 表明高压未启用
+    }
+    else if (K1K2_ctl_ord == 0x0101)       // K1 K2均打开
+    {
+        K1_DIS = USER_ENABLE;       // K1打开（输出低）
+        K2_DIS = USER_ENABLE;       // K2打开（输出低）
+        HVState = HV_OFF;           // 表明高压未启用
+    }
+    else if (K1K2_ctl_ord == 0)            // K1 K2均闭合
+    {
+        K1_EN = USER_DISABLE;      // K1闭合（输出高）
+        K2_EN = USER_DISABLE;      // K2闭合（输出高）
+        HVState = HV_ON;            // 表明开通状态
+    }
+}
+
+
+// 单个命令解析
+void single_order_cmd()
+{
+    int single_ord_ary_idx = rec_buffer.buf.data[0] & 0x000F;
+
+    // 接收到来自主控的数据延迟到此时处理
+    if (single_ord_ary_idx <= 0xA)  // 防止越界
+    {
+        (*(singleOrderFunc[single_ord_ary_idx]))(); // 单个命令处理函数
+    }
+}

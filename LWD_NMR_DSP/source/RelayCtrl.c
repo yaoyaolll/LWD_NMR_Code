@@ -5,7 +5,7 @@
  * @Company: HUST.AIA
  * @Date: 2021-06-03 17:49:32
  * @LastEditors: Yao Liu
- * @LastEditTime: 2021-09-23 16:06:17
+ * @LastEditTime: 2021-12-17 00:07:55
  */
 
 /*----------------------------头文件---------------------------------------------*/
@@ -35,7 +35,7 @@ Uint16 CalRelayFromFre(Uint16 TransmitFre)
     rca2.data[0] = TuningTableEntry->rca2[0];
     rca2.data[1] = TuningTableEntry->rca2[1];
 	// 二次项拟合公式，根据刻度参数表下发参数来计算
-//    TransmitFre = TransmitFre / 10;
+
     RelayCtrlCode_f = rca0.real_data + rca1.real_data*frequency + rca2.real_data*frequency*frequency;
 	// 目前只使用了8个继电器，需要时再扩增
 	// 限幅到0~255
@@ -47,25 +47,25 @@ Uint16 CalRelayFromFre(Uint16 TransmitFre)
 		return (Uint16)RelayCtrlCode_f;  // 强制类型转换
 }
 
-// 计算发射频率和继电器控制字，更新PAPS值
-void ParamUpdate()
-{
-    // 根据主控板发来的温度计算发射频率和继电器码
-    float temperature = ParamOrderData.data.Temperature / 10.0;
-	TransmitFre_f = f_T_k * temperature + f_T_b;
-	// 频率限幅
-	if (TransmitFre_f < 4400)   // 0.1kHz
-	    TransmitFre = 4400;
-	else if (TransmitFre_f > 5800)
-	    TransmitFre = 5800;
-	else
-	    TransmitFre = (Uint16)TransmitFre_f;
-
-	RelayCtrlCode = CalRelayFromFre(TransmitFre);
-
-	// PAPS叠加次数
-	PAPSEntry.STKLEV = ParamOrderData.data.PAPS_STKLEV;
-}
+//// 计算发射频率和继电器控制字，更新PAPS值
+//void ParamUpdate()
+//{
+//    // 根据主控板发来的温度计算发射频率和继电器码
+//    float temperature = ParamOrderData.data.Temperature / 10.0;
+//	TransmitFre_f = f_T_k * temperature + f_T_b;
+//	// 频率限幅
+//	if (TransmitFre_f < 4400)   // 0.1kHz
+//	    TransmitFre = 4400;
+//	else if (TransmitFre_f > 5800)
+//	    TransmitFre = 5800;
+//	else
+//	    TransmitFre = (Uint16)TransmitFre_f;
+//
+//	RelayCtrlCode = CalRelayFromFre(TransmitFre);
+//
+//	// PAPS叠加次数
+//	PAPSEntry.STKLEV = ParamOrderData.data.PAPS_STKLEV;
+//}
 
 
 /* 继电器为常开开关 */
