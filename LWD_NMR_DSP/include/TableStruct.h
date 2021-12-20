@@ -90,12 +90,15 @@ typedef struct
     Uint16 poro_verif;
     Uint16 noise_verif;
     Uint16 ring_verif;
+    Uint16 PTa0[2];
+    Uint16 PTa1[2];
+    Uint16 PTa2[2];
     // CheckSum
     Uint16 checksum;
 }TuningTableEntry_t;
 
 
-/* 定义仪器配置参数表 */
+/* 定义仪器配置参数表，事件板中不使用 */
 typedef struct
 {
     Uint16 length;      // length = table_len+2, addr is 0x80A2
@@ -119,7 +122,7 @@ typedef struct
     Uint16 checksum;
 }ConfigTableEntry_t;
 
-// 定义刻度模式参数表
+// 定义刻度模式参数表，未使用
 typedef struct
 {
     Uint16 length;      // length = table_len+2, addr is 0x8002
@@ -145,7 +148,7 @@ typedef struct
     Uint16 checksum;
 }ScaleTableEntry_t;
 
-// 定义测井模式参数表
+// 定义测井模式参数表，未使用
 typedef struct
 {
     Uint16 length;      // length = table_len+2, addr is 0x8018

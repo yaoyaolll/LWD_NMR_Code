@@ -3,14 +3,14 @@
 // 参数表相关宏
 #define CAL_TABLE_LEN 	 	20  	// 刻度模式参数表长度
 #define WELL_TABLE_LEN 	 	57  	// 测井模式参数表长度
-#define TUNING_TABLE_LEN 	69	 	// 刻度参数表，主要用来调谐，使用参数并不多
+#define TUNING_TABLE_LEN 	75	 	// 刻度参数表，主要用来调谐，使用参数并不多
 #define CONFIG_TABLE_LEN 	19  	// 仪器配置参数表
 
 #define ADDR_TABLE_START        (Uint16 *)0x8000
 #define ADDR_CAL_TABLE_START	(Uint16 *)0x8002
 #define ADDR_WELL_TABLE_START	(Uint16 *)0x8018
 #define ADDR_TUNING_TABLE_START	(Uint16 *)0x8057
-#define ADDR_CONFIG_TABLE_START	(Uint16 *)0x80A2
+#define ADDR_CONFIG_TABLE_START	(Uint16 *)0x80A5
 
 // 计算Q值的系数，Q=2*c*sqrt(log(sqrt(2))) Q_factor=2*sqrt(log(sqrt(2)))
 #define Q_FACTOR		0.775925	
@@ -30,7 +30,7 @@
 //#define MAT_PARA_STR_ADDR	0x801C
 //#define SCALE_TE_ADDR		0x801F
 
-#define DDS_FREQ_ADDR		0x80B9 //gai
+#define DDS_FREQ_ADDR		0x80C6 //gai
 
 #define SCANTABLE_START			0x120000		//扫频上传数据表首地址
 #define SCALETABLE_START		0x120000		//刻度数据表首地址

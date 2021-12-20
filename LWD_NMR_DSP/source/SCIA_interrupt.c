@@ -6,13 +6,26 @@
 #pragma CODE_SECTION(SciaTx_Ready, "secureRamFuncs");
 #pragma CODE_SECTION(SciaRx_Ready, "secureRamFuncs");
 #pragma CODE_SECTION(SCIRXINTA_ISR, "secureRamFuncs");
+#define REC_BUF_LEN 100
 
-// SCIA_interrupt.c
-//Uint16 SciaDataEven = 0;
-//Uint16 BufferSciaDataH;
-//Uint16 BufferSciaDataL;
-//Uint16 BufferSciaDataAll;
-//Uint16 SciaRecFlag = 0;
+// 485每次接收一个字节，拼接成一个字
+union Bytes2U16
+{
+    Uint16 data[REC_BUF_LEN];
+    unsigned char bytes[2 * REC_BUF_LEN];       // 实际上也是存的16位
+};
+
+// 定义长度为100的接收缓冲区
+typedef struct
+{
+    union Bytes2U16 buf;// 缓冲区
+    int idx;            // 已接收字节数目，0<=idx<=2*REC_BUF_LEN
+    int time_out;       // 超时标志，0未超时，1超时
+    // int rec_finish;     // 本帧数据是否接收完成，0未完成，1完成
+    int start_rec;      // 是否开始接收本帧数据，0已接收数据头，1未接收数据头
+    int frame_length;   // 接收的本帧数据的字节长度
+}RecBuffer_t;
+RecBuffer_t rec_buffer;
 
 // 准备发送数据时为1，否则为0
 unsigned int SciaTx_Ready(void)
@@ -108,34 +121,26 @@ void ReplyUpTableFrame(Uint16 tableID)
     Uint16 len = 0;
     Uint16 CheckSum = 0;
     int i = 0;
-    if (tableID == 1)           // 刻度参数表
-    {
-        addr = (Uint16 *)0x8057;
-    }
+    if (tableID == 1)               // 刻度参数表
+        addr = ADDR_TUNING_TABLE_START;
     else if (tableID == 2)          // 刻度模式参数表
-    {
-        addr = (Uint16 *)0x8002;
-    }
-    else if (tableID == 3)      // 测井模式参数表
-    {
-        addr = (Uint16 *)0x8018;
-    }
-    else                        // 防止误发
-    {
+        addr = ADDR_CAL_TABLE_START;
+    else if (tableID == 3)          // 测井模式参数表
+        addr = ADDR_WELL_TABLE_START;
+    else                            // 防止误发
         return;
-    }
 
     len = *addr;
 
     GpioDataRegs.GPFDAT.bit.GPIOF11 = 1;    // SCIA设置为发送状态
     SciaSendOneWord(REPLY_UP_TABLE_F);      // 帧头
-    SciaSendOneWord(len + 1);
+    SciaSendOneWord(len);
     SciaSendOneWord(EVENT_BOARD_ID);        // 新增从机标识
     addr++;
     CheckSum = REPLY_UP_TABLE_F;
-    CheckSum += (len + 1);
+    CheckSum += len;
     CheckSum += EVENT_BOARD_ID;
-    for (i = 0; i < len - 2; ++i)           // 参数表，不发送本地参数表末尾存储的CheckSum
+    for (i = 0; i < len - 3; ++i)           // 参数表，不发送本地参数表末尾存储的CheckSum
     {
         SciaSendOneWord(*addr);
         CheckSum += *addr;
@@ -205,30 +210,6 @@ void ReplySingleVarFrame(Uint16 frameHead, Uint16 var)
     GpioDataRegs.GPFDAT.bit.GPIOF11 = 0; // SCIA设置为接收状态
 }
 
-
-#define HIGH_BYTE 0
-#define LOW_BYTE 1
-
-#define REC_BUF_LEN 100
-
-// 485每次接收一个字节，拼接成一个字
-union Bytes2U16
-{
-    Uint16 data[REC_BUF_LEN];
-    unsigned char bytes[2 * REC_BUF_LEN];       // 实际上也是存的16位
-};
-
-// 定义长度为100的接收缓冲区
-typedef struct
-{
-    union Bytes2U16 buf;// 缓冲区
-    int idx;            // 已接收字节数目，0<=idx<=2*REC_BUF_LEN
-    int time_out;       // 超时标志，0未超时，1超时
-    // int rec_finish;     // 本帧数据是否接收完成，0未完成，1完成
-    int start_rec;      // 是否开始接收本帧数据，0已接收数据头，1未接收数据头
-    int frame_length;   // 接收的本帧数据的字节长度
-}RecBuffer_t;
-RecBuffer_t rec_buffer;
 
 // initialize sci rec_buf
 void clear_sci_rec_buf()
@@ -317,7 +298,7 @@ clear_int:
 #define BOARD_ADDR_INDEX 2
 void parse_sci_rec_buf()
 {
-    // stitching data
+    // copy data from buffer to ram
     int i = 0;
     for (i=0;i<rec_buffer.idx;++i)
         rec_buffer.buf.data[i] = rec_buffer.buf.bytes[2*i]<<8 | rec_buffer.buf.bytes[2*i+1];
@@ -387,13 +368,13 @@ void down_table_cmd(void)
     else if (len == CONFIG_TABLE_LEN + 3)       // 仪器配置参数表
         SaveTablePt = ADDR_CONFIG_TABLE_START;
     
-    *SaveTablePt++ = len - 1;
+    *SaveTablePt++ = len;
     int i= 0;
     for (i=0; i<len-3;++i) {
         *SaveTablePt++ = rec_buffer.buf.data[i+3];  // idx=3处为表起始处
     }
     
-    // 设置工作模式
+    // 根据刻度模式参数表和测井模式参数表设置具体工作模式
     if (*(Uint16 *)TABLE_START == 0x0002)
         *(Uint16 *)0x8001 = *(Uint16 *)0x8007;
     else if (*(Uint16 *)TABLE_START == 0x0003)
@@ -409,24 +390,37 @@ void up_table_cmd()
 }
 
 
+// 将uint16转换为float型
+float type_transform(Uint16 data1, Uint16 data2)
+{
+    Float2Uint16_u ret;
+    ret.data[0] = data1;
+    ret.data[1] = data2;
+
+    return ret.real_data;
+}
+
+
 // 重要参数下发指令解析
 void parameter_cmd()
 {
     // 根据主控板发来的温度计算发射频率和继电器码
-    Float2Uint16_u coe0;
-    Float2Uint16_u coe1;
-    Float2Uint16_u coe2;
+    float PTa0;
+    float PTa1;
+    float PTa2;
     float temperature = rec_buffer.buf.data[3] / 10.0;
-    coe0.data[0] = rec_buffer.buf.data[4];
-    coe0.data[1] = rec_buffer.buf.data[5];
-    coe1.data[0] = rec_buffer.buf.data[6];
-    coe1.data[1] = rec_buffer.buf.data[7];
-    coe2.data[0] = rec_buffer.buf.data[8];
-    coe2.data[1] = rec_buffer.buf.data[9];
+
+    // PTa从刻度参数表中得来
+    PTa0 = type_transform(TuningTableEntry->PTa0[0], TuningTableEntry->PTa0[1]);
+    PTa1 = type_transform(TuningTableEntry->PTa1[0], TuningTableEntry->PTa1[1]);
+    PTa2 = type_transform(TuningTableEntry->PTa2[0], TuningTableEntry->PTa2[1]);
+
 	// PAPS叠加次数
-	PAPSEntry.STKLEV = rec_buffer.buf.data[10];
+	PAPSEntry.STKLEV = rec_buffer.buf.data[4];
+
     // 计算频率
-    TransmitFre_f = coe0.real_data + coe1.real_data*temperature + coe2.real_data*temperature*temperature;
+    TransmitFre_f = (PTa0 + PTa1*temperature + PTa2*temperature*temperature) * 10.0;    // 0.1kHz
+
     // 频率限幅
 	if (TransmitFre_f < 4400)   // 0.1kHz
 	    TransmitFre = 4400;
@@ -434,6 +428,7 @@ void parameter_cmd()
 	    TransmitFre = 5800;
 	else
 	    TransmitFre = (Uint16)TransmitFre_f;
+
     // 计算继电器码
 	RelayCtrlCode = CalRelayFromFre(TransmitFre);
 

@@ -258,9 +258,9 @@ void InitTable(void)
     TuningTableEntry->rca2[0] = rca.data[0];
     TuningTableEntry->rca2[1] = rca.data[1];
 
-	TuningTableEntry->length = 71;
+	TuningTableEntry->length = 77;
 	TuningTableEntry->table_head.table_ID = 1;
-	TuningTableEntry->table_head.table_len = 69;
+	TuningTableEntry->table_head.table_len = 75;
 	TuningTableEntry->table_head.rsv_word[0] = 0xFFFF;
 	TuningTableEntry->table_head.rsv_word[1] = 0xFFFF;
 	TuningTableEntry->instruct_info.tool_ID[0] = 0x6D72;	// "MR"
@@ -268,7 +268,13 @@ void InitTable(void)
 	TuningTableEntry->instruct_info.tool_ID[2] = 0x352D;	// "5-"
 	TuningTableEntry->instruct_info.tool_ID[3] = 0x3231;	// "21"
 	TuningTableEntry->instruct_info.tool_ID[4] = 0x3031;	// "01"
-
+	// PTa
+	TuningTableEntry->PTa0[0] = 0;
+	TuningTableEntry->PTa0[1] = 0;
+	TuningTableEntry->PTa1[0] = 0;
+	TuningTableEntry->PTa1[1] = 0;
+	TuningTableEntry->PTa2[0] = 0;
+	TuningTableEntry->PTa2[1] = 0;
 
 	// 配置参数表
 	// TODO: 目前还没有需要使用的参数
