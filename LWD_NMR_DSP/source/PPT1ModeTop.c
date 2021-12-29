@@ -161,8 +161,8 @@ void PPT1ModeTop(void)
 	*SaveNTempPt++ = REPLY_MODE_DATA_F;				  // 数据头
 	*SaveNTempPt++ = 3 * EchoNum + DataTotalNum + 23; // 长度
 	*SaveNTempPt++ = EVENT_BOARD_ID;
-	*SaveNTempPt++ = 0x0004;		  // 工作模式
-	*SaveNTempPt++ = TransmitFre; // 工作频率
+	*SaveNTempPt++ = 0x0004;		    // 工作模式
+	*SaveNTempPt++ = TransmitFre;       // 工作频率
 
 	SaveNTempPt = (int *)(PPT1_TABLE_START + 17);
 	*SaveNTempPt++ = CalQValue(TransmitFre, PPT1_TABLE_START + 8);			   // Q值

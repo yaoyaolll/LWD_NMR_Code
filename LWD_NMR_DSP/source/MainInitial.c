@@ -26,7 +26,7 @@ void InitAll(void)
 #endif
 
 	//Initial GPIO and FPGA chip
-	InitGpio(); //复位GPIO，SCIA配置在这里面
+	InitGpio();     //复位GPIO，SCIA配置在这里面
 	clear_sci_rec_buf();	
 	InitSci();
 	InitFPGA(); //复位FPGA

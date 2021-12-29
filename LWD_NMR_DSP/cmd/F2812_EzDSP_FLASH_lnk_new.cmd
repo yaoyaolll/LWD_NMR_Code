@@ -89,8 +89,8 @@ PAGE 1 :
    RAMM0_1  				: origin = 0x0003B0, length = 0x000050
    RAMM1    				: origin = 0x000400, length = 0x000400
    RAML0_CODE_USE   		: origin = 0x008000, length = 0x000100		/* 存储表数据 */
-   RAML0_CODE_USE1     		: origin = 0x008100, length = 0x000490
-   myzone   				: origin = 0x008590, length = 0x000A70
+   RAML0_CODE_USE1     		: origin = 0x008100, length = 0x000490		/* 存储扫频数据 */
+   myzone   				: origin = 0x008590, length = 0x000A70		/* 存储变量 */
    RAML1	    			: origin = 0x009000, length = 0x001000
    RAMOUT_1_CODE_USE 		: origin = 0x120000, length = 0x00FFFF		/* 存储回波数据 */
    RAMOUT_2_CODE_USE 		: origin = 0x130000, length = 0x00FFFF		/* PAPS FIFO */

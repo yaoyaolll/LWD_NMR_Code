@@ -22,6 +22,9 @@ int main()
 	CheckReadTable();
 	while (1)
 	{
+//	    DeCpmgTop();
+//	    Delay(60000);
+//	    Delay(60000);
 	    // ×´Ì¬»úÖ´ÐÐº¯Êý
 		(*(eventFunc[EventBoardState]))();
 	}

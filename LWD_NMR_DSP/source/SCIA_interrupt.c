@@ -6,6 +6,7 @@
 #pragma CODE_SECTION(SciaTx_Ready, "secureRamFuncs");
 #pragma CODE_SECTION(SciaRx_Ready, "secureRamFuncs");
 #pragma CODE_SECTION(SCIRXINTA_ISR, "secureRamFuncs");
+#pragma CODE_SECTION(CpuTimer0ISR, "secureRamFuncs");
 #define REC_BUF_LEN 100
 
 // 485每次接收一个字节，拼接成一个字
@@ -18,12 +19,11 @@ union Bytes2U16
 // 定义长度为100的接收缓冲区
 typedef struct
 {
-    union Bytes2U16 buf;// 缓冲区
-    int idx;            // 已接收字节数目，0<=idx<=2*REC_BUF_LEN
-    int time_out;       // 超时标志，0未超时，1超时
-    // int rec_finish;     // 本帧数据是否接收完成，0未完成，1完成
-    int start_rec;      // 是否开始接收本帧数据，0已接收数据头，1未接收数据头
-    int frame_length;   // 接收的本帧数据的字节长度
+    union Bytes2U16 buf;    // 缓冲区
+    int idx;                // 已接收字节数目，0<=idx<=2*REC_BUF_LEN
+    int time_out;           // 超时标志，0未超时，1超时
+    int start_rec;          // 是否开始接收本帧数据，0已接收数据头，1未接收数据头
+    int frame_length;       // 接收的本帧数据的字节长度
 }RecBuffer_t;
 RecBuffer_t rec_buffer;
 
@@ -270,7 +270,11 @@ interrupt void SCIRXINTA_ISR(void) // SCI-A接收中断函数
     rec_buffer.buf.bytes[rec_buffer.idx++] = sci_data;          // 数据存入缓冲区    
     
     if (rec_buffer.idx == 4)                                    // 是否接收到帧长度
+    {
         rec_buffer.frame_length = ((rec_buffer.buf.bytes[2]<<8 | rec_buffer.buf.bytes[3]) + 1) << 1;   // 整个帧的字节的长度
+        if (rec_buffer.frame_length > 2 * REC_BUF_LEN)                      // 防止溢出
+            rec_buffer.start_rec = 1;
+    }
 
     // 接收完成，解析数据
     if (rec_buffer.frame_length == rec_buffer.idx)
