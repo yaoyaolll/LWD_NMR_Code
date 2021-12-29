@@ -819,8 +819,9 @@ void InitSci(void)
 	SciaRegs.SCICCR.bit.SCICHAR = 7;
 	SciaRegs.SCICTL1.bit.TXENA = 1; //SCIA模块的发送使能
 	SciaRegs.SCICTL1.bit.RXENA = 1; //SCIA模块的接收使能
+	SciaRegs.SCICTL1.bit.RXERRINTENA=1; //使能错误接收中断
 	SciaRegs.SCIHBAUD = 0x0;
-	SciaRegs.SCILBAUD = 32;
+	SciaRegs.SCILBAUD = 2;
 	/*
 	 * SCILBAUD = 2, 1.25M; SCILBAUD = 32, 115200
 	*/

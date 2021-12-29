@@ -233,13 +233,21 @@ interrupt void CpuTimer0ISR(void)
     EINT;                               // 开全局中断
 }
 
-
+Uint16 data_rec_ary[500];
+Uint16 idx = 0;
 // RS485中断处理函数
 interrupt void SCIRXINTA_ISR(void) // SCI-A接收中断函数
 {
     // 超时处理
     CpuTimer0Regs.TCR.bit.TRB = 1; //定时器重装，将定时器周期寄存器的值装入定时器计数器寄存器
     CpuTimer0Regs.TCR.bit.TSS = 0; //重启定时器
+
+    if (SciaRegs.SCIRXST.bit.RXERROR == 1)    // 进入错误中断，SW RESET
+    {
+        SciaRegs.SCICTL1.bit.SWRESET = 0;
+        Delay(1000);
+        SciaRegs.SCICTL1.bit.SWRESET = 1;
+    }
 
     if (rec_buffer.time_out)
     {
@@ -251,6 +259,11 @@ interrupt void SCIRXINTA_ISR(void) // SCI-A接收中断函数
     // 接收数据
     Uint16 sci_data;
     sci_data = SciaRegs.SCIRXBUF.bit.RXDT;          // 从寄存器获取数据
+
+    // test code
+    data_rec_ary[idx++] = sci_data;
+    if (idx>=500)
+        idx = 0;
 
     if (rec_buffer.start_rec)  
     {
@@ -272,7 +285,7 @@ interrupt void SCIRXINTA_ISR(void) // SCI-A接收中断函数
     if (rec_buffer.idx == 4)                                    // 是否接收到帧长度
     {
         rec_buffer.frame_length = ((rec_buffer.buf.bytes[2]<<8 | rec_buffer.buf.bytes[3]) + 1) << 1;   // 整个帧的字节的长度
-        if (rec_buffer.frame_length > 2 * REC_BUF_LEN)                      // 防止溢出
+        if (rec_buffer.frame_length > 2 * REC_BUF_LEN || rec_buffer.frame_length <= 0)                      // 防止溢出
             rec_buffer.start_rec = 1;
     }
 
