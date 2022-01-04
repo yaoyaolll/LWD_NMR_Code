@@ -44,28 +44,9 @@ Uint16 CalRelayFromFre(Uint16 TransmitFre)
 	else if (RelayCtrlCode_f > 255)
 		return 255;
 	else
-		return (Uint16)RelayCtrlCode_f;  // 强制类型转换
+		return (Uint16)(RelayCtrlCode_f + 0.5);  // 强制类型转换
 }
 
-//// 计算发射频率和继电器控制字，更新PAPS值
-//void ParamUpdate()
-//{
-//    // 根据主控板发来的温度计算发射频率和继电器码
-//    float temperature = ParamOrderData.data.Temperature / 10.0;
-//	TransmitFre_f = f_T_k * temperature + f_T_b;
-//	// 频率限幅
-//	if (TransmitFre_f < 4400)   // 0.1kHz
-//	    TransmitFre = 4400;
-//	else if (TransmitFre_f > 5800)
-//	    TransmitFre = 5800;
-//	else
-//	    TransmitFre = (Uint16)TransmitFre_f;
-//
-//	RelayCtrlCode = CalRelayFromFre(TransmitFre);
-//
-//	// PAPS叠加次数
-//	PAPSEntry.STKLEV = ParamOrderData.data.PAPS_STKLEV;
-//}
 
 
 /* 继电器为常开开关 */

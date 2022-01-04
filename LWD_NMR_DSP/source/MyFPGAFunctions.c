@@ -34,7 +34,8 @@
 
 void ShutdownHV(void)
 {
-    K1_DIS = USER_DISABLE;     
+    // K1±ÕºÏ£¬K2¶Ï¿ª
+    K1_EN = USER_DISABLE;
     K2_DIS = USER_DISABLE;        
     HVState = HV_OFF;
 	return;
