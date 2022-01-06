@@ -35,8 +35,8 @@
 void ShutdownHV(void)
 {
     // K1闭合，K2断开
-    K1_EN = USER_DISABLE;
-    K2_DIS = USER_DISABLE;        
+    K1_EN = USER_ENABLE;   // K1输出高
+    K2_DIS = USER_DISABLE;  // K2输出低
     HVState = HV_OFF;
 	return;
 }

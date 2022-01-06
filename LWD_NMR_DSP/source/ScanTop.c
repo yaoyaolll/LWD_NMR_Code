@@ -24,9 +24,9 @@ void ScanModeTop(void)
 	// 此模式下的继电器码根据下发的频率计算得到
 	RelayCode = CalRelayFromFre(CenterFreq);
 	
-	K1_DIS = USER_DISABLE; // 储能短接断开信号
-	K2_DIS = USER_DISABLE;
-	HVState = HV_OFF;
+//    K1_EN = USER_ENABLE;    // K1输出高
+//    K2_DIS = USER_DISABLE;  // K2输出低
+//	HVState = HV_OFF;
 
 	NTimeDec = (Calib_TE * 50 - 90) * FPGA_COUNT; //计算噪声采集状态机参数NTimeDec，NTimeDec为DECOUPLE板导通稳定所需时间的FPGA计数值
 	STimeDec = (Calib_TE * 50 - 90) * FPGA_COUNT;

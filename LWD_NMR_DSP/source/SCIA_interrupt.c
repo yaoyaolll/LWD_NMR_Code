@@ -306,6 +306,7 @@ void K1K2_ctl_cmd()
         K1_DIS = USER_ENABLE;       // K1断开（输出低）
         K2_EN  = USER_ENABLE;       // K2闭合（输出高）
         HVState = HV_ON;           // 表明高压启用
+//        HVState = HV_OFF;
     }
     else if (K1K2_ctl_ord == 0x0100)
     {
@@ -324,6 +325,7 @@ void K1K2_ctl_cmd()
         K1_EN = USER_DISABLE;      // K1闭合（输出高）
         K2_EN = USER_DISABLE;      // K2闭合（输出高）
         HVState = HV_OFF;            // 表明高压未启用
+//        HVState = HV_ON;
     }
 }
 

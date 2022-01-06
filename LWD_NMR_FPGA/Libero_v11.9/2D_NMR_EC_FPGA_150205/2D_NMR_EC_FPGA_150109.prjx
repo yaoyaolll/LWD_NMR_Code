@@ -395,7 +395,7 @@ SIZE="7651"
 ENDFILE
 VALUE "<project>\designer\impl1\NMR_TOP_prgdata_log.rpt,log"
 STATE="utd"
-TIME="1637890336"
+TIME="1639625213"
 SIZE="892"
 ENDFILE
 VALUE "<project>\designer\impl3\NMR_TOP.adb,adb"
@@ -410,13 +410,13 @@ SIZE="333824"
 ENDFILE
 VALUE "<project>\designer\impl3\NMR_TOP_1.adb,adb"
 STATE="utd"
-TIME="1637890335"
+TIME="1639625212"
 SIZE="6417920"
 ENDFILE
 VALUE "<project>\designer\impl3\NMR_TOP_1.ide_des,ide_des"
 STATE="utd"
-TIME="1637891107"
-SIZE="1695"
+TIME="1639625213"
+SIZE="1700"
 ENDFILE
 VALUE "<project>\designer\impl3\NMR_TOP_1.pdb,pdb"
 STATE="utd"
@@ -435,13 +435,13 @@ SIZE="1968091"
 ENDFILE
 VALUE "<project>\designer\impl3\NMR_TOP_1_fp\NMR_TOP_1.pro,pro"
 STATE="utd"
-TIME="1634987889"
+TIME="1639625402"
 SIZE="2498"
 ENDFILE
 VALUE "<project>\designer\impl3\NMR_TOP_1_fp\projectData\NMR_TOP_1.pdb,pdb"
 STATE="utd"
-TIME="1631785498"
-SIZE="296049"
+TIME="1639625402"
+SIZE="294578"
 ENDFILE
 VALUE "<project>\designer\impl3\NMR_TOP_ba.sdf,ba_sdf"
 STATE="ood"
@@ -1167,12 +1167,12 @@ SIZE="2296"
 ENDFILE
 VALUE "<project>\synthesis\NMR_TOP.edn,syn_edn"
 STATE="utd"
-TIME="1637889940"
-SIZE="3671265"
+TIME="1639624894"
+SIZE="3641430"
 ENDFILE
 VALUE "<project>\synthesis\NMR_TOP.so,so"
 STATE="utd"
-TIME="1637889940"
+TIME="1639624894"
 SIZE="267"
 ENDFILE
 VALUE "<project>\synthesis\NMR_TOP.v,syn_hdl"
@@ -1182,12 +1182,12 @@ SIZE="1152396"
 ENDFILE
 VALUE "<project>\synthesis\NMR_TOP_sdc.sdc,syn_sdc"
 STATE="utd"
-TIME="1637889940"
+TIME="1639624894"
 SIZE="1414"
 ENDFILE
 VALUE "<project>\synthesis\NMR_TOP_syn.prj,prj"
 STATE="utd"
-TIME="1637889941"
+TIME="1639624894"
 SIZE="13273"
 ENDFILE
 VALUE "<project>\synthesis\synwork\layer0.so,so"
@@ -1974,8 +1974,8 @@ NAME="Synplify Pro ME"
 FUNCTION="Synthesis"
 TOOL="Synplify Pro ME"
 LOCATION="D:\Libero_Soc11.9\SynplifyPro\bin\synplify_pro.exe"
-PARAM="-licensetype synplifypro_actel -batch -log synplify.log"
-BATCH=1
+PARAM=""
+BATCH=0
 LICENSE=""
 IS32BIT="1"
 EndProfile
@@ -2220,21 +2220,8 @@ LIST UserCustomizedFileList
 ENDLIST
 LIST OpenedFileList
 ORIENTATION;HORIZONTAL
-Reports;Reports;0
-ReportsCurrentItem;Verify Timing:NMR_TOP_verifytiming_log.rpt
-SmartDesign;ClockManagement;0
-SmartDesign;CAL;0
-SmartDesign;DDS;0
-SmartDesign;Signal_Noise_Acq;0
 StartPage;StartPage;0
-SmartDesign;PLUSE;0
-SmartDesign;noise_acq;0
-SmartDesign;GPMI;0
-SmartDesign;NMR_TOP;0
-SmartDesign;signal_acq;0
-SmartDesign;syn_md_module;0
-SmartDesign;sd_acq_top;0
-ACTIVEVIEW;Reports
+ACTIVEVIEW;StartPage
 ENDLIST
 LIST ModuleSubBlockList
 LIST "add_reg::work","hdl\add_reg.v","FALSE","FALSE"

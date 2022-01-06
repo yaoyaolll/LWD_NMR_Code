@@ -107,20 +107,20 @@ void ModeConfirmDeal()
 // single_ord_ary_idx = 6，储能短节连接指令，暂时未用
 void K1K2EnDeal()
 {
-    K1_EN = USER_ENABLE; // K1闭合（输出高）
-    K2_EN = USER_ENABLE; // K2闭合
-    HVState = HV_ON;     // 表明开通状态
-    ReplyNoVarFrame(DATA_K1K2_EN_F);
+//    K1_EN = USER_ENABLE; // K1闭合（输出高）
+//    K2_EN = USER_ENABLE; // K2闭合
+//    HVState = HV_ON;     // 表明开通状态
+//    ReplyNoVarFrame(DATA_K1K2_EN_F);
 }
 
 // TODO
 // single_ord_ary_idx = 7，储能短节断开指令，暂时未用
 void K1K2DisDeal()
 {
-    K1_DIS = USER_DISABLE;
-    K2_DIS = USER_DISABLE;
-    HVState = HV_OFF;
-    ReplyNoVarFrame(DATA_K1K2_DIS_F);
+//    K1_DIS = USER_DISABLE;
+//    K2_DIS = USER_DISABLE;
+//    HVState = HV_OFF;
+//    ReplyNoVarFrame(DATA_K1K2_DIS_F);
 }
 
 // single_ord_ary_idx = 8，储能短节状态判断指令

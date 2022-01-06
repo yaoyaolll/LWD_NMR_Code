@@ -10,7 +10,7 @@ void DeCpmgTop(void) //单TE单TW主函数
 //     test code
 //    STWTE_NE = 100;
 //    STWTE_TE = 5;
-//    TransmitFre = 4750;
+//    TransmitFre = 5540;
 
 	Ne = STWTE_NE;
 	ScaleM = 0;
