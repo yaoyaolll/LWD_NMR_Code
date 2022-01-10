@@ -29,7 +29,33 @@ void PulseTop(void) //波形检测主函数
     RelayOpen(RelayCode);
 
 	//mini scan and pulse acquisition
-	MiniScan(MatFreq, PLUSETABLE_START + 4, PLUSETABLE_START + 7); //mini扫频
+	MiniScan(MatFreq, PLUSETABLE_START + 5, PLUSETABLE_START + 8); //mini扫频
+
+//    AcqNoise();                                        //采集噪声
+//    CalNoise();                                        //计算噪声
+//
+//    SaveNTempPt = (int *)(PLUSETABLE_START + 4); //指向均值地址
+//    *SaveNTempPt = _IQint(_IQmpy(NoiseAveIQ, _IQ(10)));
+//
+//    SaveNTempPt++; //指向标准偏差地址
+//    *SaveNTempPt = _IQint(_IQmpy(NoiseSqrAveIQ, _IQ(10)));
+//
+//    SaveNTempPt++; //指向最大偏差地址
+//    *SaveNTempPt = _IQint(_IQmpy(NoiseMaxValIQ, _IQ(10)));
+//
+//    MiniFreq = MatFreq;
+//    MiniFreq -= ScanDeltaFreq * 4;
+//    for (MiniFreqCnt = 0; MiniFreqCnt < 9; MiniFreqCnt++) //某频带已扫频个数0-8
+//    {
+//        FreqScan = MiniFreq + MiniFreqCnt * ScanDeltaFreq; //计算扫频频率FreqScan，以理论工作频率MiniFreq为中心，加上i-5倍的步进频率ScanDeltaFreq
+//
+//        *(Uint16 *)DDS_FREQ_ADDR = FreqScan;
+//        ScanFreqOnce();           //扫频操作
+//        CalSignal(ScanSignalNum); //计算信号
+//        SaveSignal(PLUSETABLE_START + 7 + MiniFreqCnt);
+//    }
+
+
 
 	//波形检测
 	PulseAcq();

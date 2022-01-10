@@ -137,7 +137,7 @@ void PPDIFModeTop(void)
 
 	//SciaSendDataNWords(PPDIF_TABLE_START, 3*EchoNum+DataTotalNum+21);
 
-	// PAPS数据存储
+	// PAPS数据存储0
 	PAPSEntry.current_well_mode = 0x0003;
 	PAPSEntry.echo_1A_num = PPDIF_NE_1A1B;
 	PAPSEntry.echo_1A_addr = PPDIF_TABLE_START + 21;

@@ -54,19 +54,19 @@ void CheckReadTable(void)
 	//common parameters
 	CheckWorkMode();
 
-	// 刻度模式与测井模式共用同一个90度脉冲宽度
-	CheckTablePt = (Uint16 *)0x800E;
-	Width90Pulse = *CheckTablePt;
-	if (Width90Pulse < 10 || Width90Pulse > 100) // us
-	{
-		Width90Pulse = 48;
-		*CheckTablePt = 48;
-	}
-
 	CheckTablePt = (Uint16 *)0x8000; // choose table id
 	// scale mode parameter table
 	if (*CheckTablePt == 0x0002)
 	{
+	    // 刻度模式下使用刻度参数表中的Width90Pulse
+	    CheckTablePt = (Uint16 *)0x800E;
+	    Width90Pulse = *CheckTablePt;
+	    if (Width90Pulse < 10 || Width90Pulse > 100) // us
+	    {
+	        Width90Pulse = 48;
+	        *CheckTablePt = 48;
+	    }
+
 		CheckTablePt = (Uint16 *)0x8008;
 		RelayCode = *CheckTablePt;
 		if (RelayCode > 1023)					// 调谐码
@@ -199,6 +199,14 @@ void CheckReadTable(void)
 	// well mode parameter table
 	else if (*CheckTablePt == 0x0003)
 	{
+	    // 测井模式下使用刻度参数表中的Width90Pulse
+	    Width90Pulse = TuningTableEntry->width90_P;
+	    if (Width90Pulse < 10 || Width90Pulse > 100) // us
+	    {
+	        Width90Pulse = 64;
+	        TuningTableEntry->width90_P = 64;
+	    }
+
 		CheckTablePt = (Uint16 *)0x801E;
 		CenterFreq = *CheckTablePt;
 		if (CenterFreq < 4500 || CenterFreq > 5150) // unit 0.1kHz

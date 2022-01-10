@@ -418,11 +418,6 @@ STATE="utd"
 TIME="1639625213"
 SIZE="1700"
 ENDFILE
-VALUE "<project>\designer\impl3\NMR_TOP_1.pdb,pdb"
-STATE="utd"
-TIME="1639625211"
-SIZE="294578"
-ENDFILE
 VALUE "<project>\designer\impl3\NMR_TOP_1_ba.sdf,ba_sdf"
 STATE="ood"
 TIME="1631785498"
@@ -448,11 +443,6 @@ STATE="ood"
 TIME="1631785498"
 SIZE="3960150"
 ENDFILE
-VALUE "<project>\designer\impl3\NMR_TOP_compile_log.rpt,log"
-STATE="utd"
-TIME="1639624929"
-SIZE="20598"
-ENDFILE
 VALUE "<project>\designer\impl3\NMR_TOP_fp\NMR_TOP.pro,pro"
 STATE="utd"
 TIME="1634987889"
@@ -462,16 +452,6 @@ VALUE "<project>\designer\impl3\NMR_TOP_fp\projectData\NMR_TOP.pdb,pdb"
 STATE="utd"
 TIME="1631785498"
 SIZE="335872"
-ENDFILE
-VALUE "<project>\designer\impl3\NMR_TOP_placeroute_log.rpt,log"
-STATE="utd"
-TIME="1639625110"
-SIZE="2658"
-ENDFILE
-VALUE "<project>\designer\impl3\NMR_TOP_verifytiming_log.rpt,log"
-STATE="utd"
-TIME="1639625190"
-SIZE="1247"
 ENDFILE
 VALUE "<project>\designer\impl3\syn_md_combine.ide_des,ide_des"
 STATE="utd"
@@ -1590,10 +1570,6 @@ VALUE "<project>\designer\impl3\NMR_TOP_1_fp\NMR_TOP_1.pro,pro"
 ENDUsed_File_List
 ENDLIST
 ENDLIST
-LIST PinReports
-VALUE "<project>\designer\impl3\NMR_TOP_report_pin_byname.txt,log"
-VALUE "<project>\designer\impl3\NMR_TOP_report_pin_bynumber.txt,log"
-ENDLIST
 ENDLIST
 LIST "noise_acq::work"
 FILE "<project>\component\work\noise_acq\noise_acq.v,hdl"
@@ -2220,8 +2196,21 @@ LIST UserCustomizedFileList
 ENDLIST
 LIST OpenedFileList
 ORIENTATION;HORIZONTAL
+SmartDesign;sd_acq_top;0
+SmartDesign;syn_md_module;0
+SmartDesign;signal_acq;0
+SmartDesign;NMR_TOP;0
+Reports;Reports;0
+ReportsCurrentItem;Verify Timing:NMR_TOP_verifytiming_log.rpt
+SmartDesign;ClockManagement;0
+SmartDesign;CAL;0
+SmartDesign;DDS;0
+SmartDesign;Signal_Noise_Acq;0
 StartPage;StartPage;0
-ACTIVEVIEW;StartPage
+SmartDesign;PLUSE;0
+SmartDesign;noise_acq;0
+SmartDesign;GPMI;0
+ACTIVEVIEW;Reports
 ENDLIST
 LIST ModuleSubBlockList
 LIST "add_reg::work","hdl\add_reg.v","FALSE","FALSE"
