@@ -22,9 +22,8 @@ int main()
 	CheckReadTable();
 	while (1)
 	{
-//	    DeCpmgTop();
-//	    Delay(60000);
-//	    Delay(60000);
+	    // 重置sci接收错误寄存器
+	    reset_sci();
 	    // 状态机执行函数
 		(*(eventFunc[EventBoardState]))();
 	}

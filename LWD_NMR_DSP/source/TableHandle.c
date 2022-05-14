@@ -69,10 +69,10 @@ void CheckReadTable(void)
 
 		CheckTablePt = (Uint16 *)0x8008;
 		RelayCode = *CheckTablePt;
-		if (RelayCode > 1023)					// µ÷Ð³Âë
+		if (RelayCode > 255)					// µ÷Ð³Âë
 		{
-			RelayCode = 512;
-			*CheckTablePt = 512;
+			RelayCode = 120;
+			*CheckTablePt = 120;
 		}
 
 		CheckTablePt = (Uint16 *)0x8009;
@@ -209,7 +209,7 @@ void CheckReadTable(void)
 
 		CheckTablePt = (Uint16 *)0x801E;
 		CenterFreq = *CheckTablePt;
-		if (CenterFreq < 4500 || CenterFreq > 5150) // unit 0.1kHz
+		if (CenterFreq < 3000 || CenterFreq > 6000) // unit 0.1kHz
 		{
 			CenterFreq = 4850;
 			*CheckTablePt = 4850;

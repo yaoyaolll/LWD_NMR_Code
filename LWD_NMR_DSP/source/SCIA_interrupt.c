@@ -54,10 +54,16 @@ interrupt void CpuTimer0ISR(void)
     EINT;                               // 开全局中断
 }
 
-//Uint16 data_rec_ary[500];
-//Uint16 idx = 0;
 
-//Uint16 error_cnt = 0;
+// 重置sci接收错误寄存器
+void reset_sci(){
+    if (SciaRegs.SCIRXST.bit.RXERROR == 1)    // 进入错误中断，SW RESET
+    {
+        SciaRegs.SCICTL1.bit.SWRESET = 0;
+        SciaRegs.SCICTL1.bit.SWRESET = 1;
+    }
+}
+
 
 // RS485中断处理函数
 interrupt void SCIRXINTA_ISR(void) // SCI-A接收中断函数
@@ -65,14 +71,6 @@ interrupt void SCIRXINTA_ISR(void) // SCI-A接收中断函数
     // 超时处理
     CpuTimer0Regs.TCR.bit.TRB = 1; //定时器重装，将定时器周期寄存器的值装入定时器计数器寄存器
     CpuTimer0Regs.TCR.bit.TSS = 0; //重启定时器
-
-    if (SciaRegs.SCIRXST.bit.RXERROR == 1)    // 进入错误中断，SW RESET
-    {
-        SciaRegs.SCICTL1.bit.SWRESET = 0;
-//        Delay(1000);
-        SciaRegs.SCICTL1.bit.SWRESET = 1;
-//        error_cnt++;
-    }
 
     if (rec_buffer.time_out)
     {
@@ -233,15 +231,18 @@ void up_table_cmd()
 
 
 // 将uint16转换为float型
-float type_transform(Uint16 data1, Uint16 data2)
-{
-    Float2Uint16_u ret;
-    ret.data[0] = data1;
-    ret.data[1] = data2;
-
-    return ret.real_data;
+// 需要注意的是上位机发下来的数据可通过此函数解析，而事件板向上位机发送的则无需这样解析
+// 小端在前
+float type_transform(Uint16 data1, Uint16 data2){
+    Float2Uint16_u xxx;
+    unsigned char c_l = data1 & 0xff;
+    unsigned char c_h = data1 >> 8;
+    xxx.data[1] = c_l << 8 | c_h;
+    c_l = data2 & 0xff;
+    c_h = data2 >> 8;
+    xxx.data[0] = c_l << 8 | c_h;
+    return xxx.real_data;
 }
-
 
 // 重要参数下发指令解析
 void parameter_cmd()
@@ -264,20 +265,39 @@ void parameter_cmd()
     TransmitFre_f = (PTa0 + PTa1*temperature + PTa2*temperature*temperature) * 10.0;    // 0.1kHz
 
     // 频率限幅
-    if (TransmitFre_f < 4400)   // 0.1kHz
-        TransmitFre = 4400;
-    else if (TransmitFre_f > 5800)
-        TransmitFre = 5800;
+    if (TransmitFre_f < 3000)   // 0.1kHz
+        TransmitFre = 3000;
+    else if (TransmitFre_f > 6000)
+        TransmitFre = 6000;
     else
         TransmitFre = (Uint16)(TransmitFre_f + 0.5);    // 四舍五入
 
-    // 计算继电器码
+//    // 计算继电器码
+//    float rca0;
+//    float rca1;
+//    float rca2;
+//    float frequency = TransmitFre / 10.0;
+//
+//    rca0 = type_transform(TuningTableEntry->rca0[0], TuningTableEntry->rca0[1]);
+//    rca1 = type_transform(TuningTableEntry->rca1[0], TuningTableEntry->rca1[1]);
+//    rca2 = type_transform(TuningTableEntry->rca2[0], TuningTableEntry->rca2[1]);
+//
+//    // 二次项拟合公式，根据刻度参数表下发参数来计算
+//    RelayCtrlCode_f = rca0 + rca1*frequency + rca2*frequency*frequency;
+//
+//    // 目前只使用了8个继电器，需要时再扩增
+//    // 限幅到0~255
+//    if (RelayCtrlCode_f < 0)
+//        RelayCtrlCode =  0;
+//    else if (RelayCtrlCode_f > 255)
+//        RelayCtrlCode =  255;
+//    else
+//        RelayCtrlCode =  (Uint16)(RelayCtrlCode_f + 0.5);  // 强制类型转换
     RelayCtrlCode = CalRelayFromFre(TransmitFre);
 
     // PAPS叠加次数
     PAPSEntry.STKLEV = rec_buffer.buf.data[4];
 }
-
 
 // 储能短节控制指令解析
 void K1K2_ctl_cmd()

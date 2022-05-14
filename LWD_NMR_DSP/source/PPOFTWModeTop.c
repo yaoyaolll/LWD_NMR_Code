@@ -31,7 +31,7 @@ void PPOFTWModeTop(void)
     RelayOpen(RelayCtrlCode);
 
 	// 1A
-	//StartS1msModule(15000);      
+	//StartS1msModule(15000);
 	MiniScan(TransmitFre, MINITABLE_START + 10, MINITABLE_START + 1);
 
 	Tes = (Uint32)100 * PPOFTW_TE_1ADEFGH * FPGA_COUNT;

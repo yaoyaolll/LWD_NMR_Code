@@ -24,19 +24,19 @@
 
 Uint16 CalRelayFromFre(Uint16 TransmitFre)
 {
-    Float2Uint16_u rca0;
-    Float2Uint16_u rca1;
-    Float2Uint16_u rca2;
+    // 计算继电器码
+    float rca0;
+    float rca1;
+    float rca2;
     float frequency = TransmitFre / 10.0;
-    rca0.data[0] = TuningTableEntry->rca0[0];
-    rca0.data[1] = TuningTableEntry->rca0[1];
-    rca1.data[0] = TuningTableEntry->rca1[0];
-    rca1.data[1] = TuningTableEntry->rca1[1];
-    rca2.data[0] = TuningTableEntry->rca2[0];
-    rca2.data[1] = TuningTableEntry->rca2[1];
-	// 二次项拟合公式，根据刻度参数表下发参数来计算
 
-    RelayCtrlCode_f = rca0.real_data + rca1.real_data*frequency + rca2.real_data*frequency*frequency;
+    rca0 = type_transform(TuningTableEntry->rca0[0], TuningTableEntry->rca0[1]);
+    rca1 = type_transform(TuningTableEntry->rca1[0], TuningTableEntry->rca1[1]);
+    rca2 = type_transform(TuningTableEntry->rca2[0], TuningTableEntry->rca2[1]);
+
+	// 二次项拟合公式，根据刻度参数表下发参数来计算
+    RelayCtrlCode_f = rca0 + rca1*frequency + rca2*frequency*frequency;
+
 	// 目前只使用了8个继电器，需要时再扩增
 	// 限幅到0~255
 	if (RelayCtrlCode_f < 0)
